@@ -1,0 +1,278 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Resources/gui_images/UI board Small  stone.png" type="Texture" id=1]
+[ext_resource path="res://UI/CombatScreen/Bottom/CombatBottom.gd" type="Script" id=2]
+[ext_resource path="res://UI/CombatScreen/Bottom/SkillIcon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/CombatScreen/HpBar/HpBarForeground.tres" type="StyleBox" id=4]
+[ext_resource path="res://UI/CombatScreen/HpBar/HpBarBackground.tres" type="StyleBox" id=5]
+[ext_resource path="res://Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Resources/gui_images/Division line.png" type="Texture" id=7]
+[ext_resource path="res://Resources/icons/human.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://resources/font/BMYEONSUNG_ttf.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = SubResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.615686, 0.352941, 0.0980392, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_bottom = 10
+border_color = Color( 0.129412, 0.141176, 0.145098, 1 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 6 )
+
+[node name="CombatBottom" type="Control"]
+anchor_top = 0.688
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -100.96
+rect_min_size = Vector2( 0, 700 )
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Effects" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1080.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="Background" type="NinePatchRect" parent="VBoxContainer"]
+margin_top = 104.0
+margin_right = 1080.0
+margin_bottom = 700.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+patch_margin_left = 33
+patch_margin_top = 44
+patch_margin_right = 31
+patch_margin_bottom = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 25.0
+margin_right = -15.0
+margin_bottom = -15.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="HBoxContainer" parent="VBoxContainer/Background/VBoxContainer"]
+margin_right = 1050.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 180 )
+size_flags_vertical = 3
+
+[node name="CharacterInfo" type="VBoxContainer" parent="VBoxContainer/Background/VBoxContainer/Stats"]
+margin_right = 190.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 190, 0 )
+size_flags_vertical = 3
+
+[node name="Portrait" type="TextureRect" parent="VBoxContainer/Background/VBoxContainer/Stats/CharacterInfo"]
+margin_right = 190.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Background/VBoxContainer/Stats/CharacterInfo"]
+margin_top = 132.0
+margin_right = 190.0
+margin_bottom = 180.0
+custom_fonts/font = SubResource( 1 )
+text = "Thysenn"
+align = 1
+valign = 1
+
+[node name="Bars" type="VBoxContainer" parent="VBoxContainer/Background/VBoxContainer/Stats"]
+margin_left = 194.0
+margin_right = 856.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HPBar" type="ProgressBar" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars"]
+margin_right = 662.0
+margin_bottom = 102.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/fg = ExtResource( 4 )
+custom_styles/bg = ExtResource( 5 )
+max_value = 1.0
+value = 1.0
+percent_visible = false
+
+[node name="HPValue" type="Label" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars/HPBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "100 HP"
+align = 1
+valign = 1
+
+[node name="Tween" type="Tween" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars/HPBar"]
+
+[node name="Margin" type="Label" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars"]
+margin_top = 106.0
+margin_right = 662.0
+margin_bottom = 121.0
+rect_min_size = Vector2( 0, 15 )
+
+[node name="EssenceBar" type="ProgressBar" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars"]
+margin_top = 125.0
+margin_right = 662.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 55 )
+size_flags_vertical = 1
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = ExtResource( 5 )
+percent_visible = false
+
+[node name="EssenceValue" type="Label" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars/EssenceBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars/EssenceBar"]
+
+[node name="Stats" type="VBoxContainer" parent="VBoxContainer/Background/VBoxContainer/Stats"]
+margin_left = 860.0
+margin_right = 1050.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 190, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Background/VBoxContainer"]
+margin_top = 184.0
+margin_right = 1050.0
+margin_bottom = 199.0
+rect_min_size = Vector2( 0, 15 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="Skills" type="HBoxContainer" parent="VBoxContainer/Background/VBoxContainer"]
+margin_top = 203.0
+margin_right = 1050.0
+margin_bottom = 353.0
+rect_min_size = Vector2( 0, 150 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Margin1" type="Label" parent="VBoxContainer/Background/VBoxContainer/Skills"]
+margin_right = 6.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Skill1" parent="VBoxContainer/Background/VBoxContainer/Skills" groups=["skills"] instance=ExtResource( 3 )]
+margin_bottom = 150.0
+
+[node name="Margin2" type="Label" parent="VBoxContainer/Background/VBoxContainer/Skills"]
+margin_left = 174.0
+margin_right = 180.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Skill2" parent="VBoxContainer/Background/VBoxContainer/Skills" groups=["skills"] instance=ExtResource( 3 )]
+margin_left = 184.0
+margin_right = 344.0
+margin_bottom = 150.0
+
+[node name="Margin3" type="Label" parent="VBoxContainer/Background/VBoxContainer/Skills"]
+margin_left = 348.0
+margin_right = 354.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Skill3" parent="VBoxContainer/Background/VBoxContainer/Skills" groups=["skills"] instance=ExtResource( 3 )]
+margin_left = 358.0
+margin_right = 518.0
+margin_bottom = 150.0
+
+[node name="Margin4" type="Label" parent="VBoxContainer/Background/VBoxContainer/Skills"]
+margin_left = 522.0
+margin_right = 528.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Skill4" parent="VBoxContainer/Background/VBoxContainer/Skills" groups=["skills"] instance=ExtResource( 3 )]
+margin_left = 532.0
+margin_right = 692.0
+margin_bottom = 150.0
+
+[node name="Margin5" type="Label" parent="VBoxContainer/Background/VBoxContainer/Skills"]
+margin_left = 696.0
+margin_right = 702.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Skill5" parent="VBoxContainer/Background/VBoxContainer/Skills" groups=["skills"] instance=ExtResource( 3 )]
+margin_left = 706.0
+margin_right = 866.0
+margin_bottom = 150.0
+
+[node name="Margin6" type="Label" parent="VBoxContainer/Background/VBoxContainer/Skills"]
+margin_left = 870.0
+margin_right = 876.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Skill6" parent="VBoxContainer/Background/VBoxContainer/Skills" groups=["skills"] instance=ExtResource( 3 )]
+margin_left = 880.0
+margin_right = 1040.0
+margin_bottom = 150.0
+
+[node name="Margin7" type="Label" parent="VBoxContainer/Background/VBoxContainer/Skills"]
+margin_left = 1044.0
+margin_right = 1050.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BottomBar" type="Label" parent="VBoxContainer/Background/VBoxContainer"]
+margin_top = 357.0
+margin_right = 1050.0
+margin_bottom = 557.0
+rect_min_size = Vector2( 0, 200 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

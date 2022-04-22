@@ -1,0 +1,102 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "CraftingMaterial",
+"language": "GDScript",
+"path": "res://Materials/CraftingMaterial.gd"
+}, {
+"base": "Node2D",
+"class": "Effect",
+"language": "GDScript",
+"path": "res://Effects/Effect.gd"
+}, {
+"base": "AnimatedSprite",
+"class": "Entity",
+"language": "GDScript",
+"path": "res://Entities/Entity.gd"
+}, {
+"base": "Node2D",
+"class": "GameScreen",
+"language": "GDScript",
+"path": "res://GameScreens/GameScreen.gd"
+}, {
+"base": "Node2D",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Items/Item.gd"
+}, {
+"base": "Node2D",
+"class": "ItemPart",
+"language": "GDScript",
+"path": "res://ItemParts/ItemPart.gd"
+}, {
+"base": "Resource",
+"class": "Modifier",
+"language": "GDScript",
+"path": "res://Modifiers/Modifier.gd"
+}, {
+"base": "Entity",
+"class": "Monster",
+"language": "GDScript",
+"path": "res://Entities/Monster/Monster.gd"
+}, {
+"base": "Node2D",
+"class": "Skill",
+"language": "GDScript",
+"path": "res://Skills/Skill.gd"
+}, {
+"base": "Node2D",
+"class": "Zone",
+"language": "GDScript",
+"path": "res://Zones/Zone.gd"
+} ]
+_global_script_class_icons={
+"CraftingMaterial": "",
+"Effect": "",
+"Entity": "",
+"GameScreen": "",
+"Item": "",
+"ItemPart": "",
+"Modifier": "",
+"Monster": "",
+"Skill": "",
+"Zone": ""
+}
+
+[application]
+
+config/name="Idle Dungeon Runner"
+run/main_scene="res://Main/Main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+CombatProcessor="*res://Autoload/CombatProcessor.gd"
+CraftingProcessor="*res://Autoload/CraftingProcessor.gd"
+
+[display]
+
+window/size/width=1080
+window/size/height=1920
+window/handheld/orientation="portrait"
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[global]
+
+autoload=false
+CombatProcessor=NodePath("")
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
+quality/2d/use_nvidia_rect_flicker_workaround=true

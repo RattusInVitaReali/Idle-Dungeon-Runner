@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=1]
+
+[node name="ItemPart" instance=ExtResource( 1 )]
+type = 2
+cost = 5
+durability_multi = 0.2
+allowed_material_types = [ 0, 1, 2 ]
+stat_multipliers = {
+"crit_chance": 0.2,
+"crit_multi": 0.2,
+"magic_damage": 0.2,
+"magic_protection": 0.0,
+"max_hp": 0.0,
+"phys_damage": 0.2,
+"phys_protection": 0.0
+}

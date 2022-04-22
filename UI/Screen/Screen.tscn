@@ -1,0 +1,204 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://UI/Screen/Screen.gd" type="Script" id=1]
+[ext_resource path="res://Resources/gui_images/Frame.png" type="Texture" id=2]
+[ext_resource path="res://Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Resources/gui_images/UI board Small  parchment.png" type="Texture" id=5]
+[ext_resource path="res://Resources/gui_images/UI board Small  stone.png" type="Texture" id=6]
+[ext_resource path="res://Resources/gui_images/GoldIcon.png" type="Texture" id=7]
+[ext_resource path="res://Resources/icons2/image_part_051.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 65
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 4 )
+
+[node name="Screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Upper" type="NinePatchRect" parent="VBoxContainer"]
+margin_right = 1080.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 300 )
+texture = ExtResource( 6 )
+patch_margin_left = 55
+patch_margin_top = 55
+patch_margin_right = 47
+patch_margin_bottom = 47
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Upper"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 20.0
+margin_right = -30.0
+margin_bottom = -30.0
+
+[node name="Name" type="HBoxContainer" parent="VBoxContainer/Upper/VBoxContainer"]
+margin_right = 1020.0
+margin_bottom = 123.0
+size_flags_vertical = 3
+
+[node name="LeftMargin" type="TextureRect" parent="VBoxContainer/Upper/VBoxContainer/Name"]
+margin_right = 175.0
+margin_bottom = 123.0
+rect_min_size = Vector2( 175, 0 )
+size_flags_vertical = 3
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Upper/VBoxContainer/Name"]
+margin_left = 179.0
+margin_right = 841.0
+margin_bottom = 123.0
+size_flags_horizontal = 3
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label" type="Label" parent="VBoxContainer/Upper/VBoxContainer/Name/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 12.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Screen"
+align = 1
+valign = 1
+
+[node name="RightMargin" type="TextureRect" parent="VBoxContainer/Upper/VBoxContainer/Name"]
+margin_left = 845.0
+margin_right = 1020.0
+margin_bottom = 123.0
+rect_min_size = Vector2( 175, 0 )
+size_flags_vertical = 3
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+flip_h = true
+
+[node name="ResourcesBackground" type="NinePatchRect" parent="VBoxContainer/Upper/VBoxContainer"]
+margin_top = 127.0
+margin_right = 1020.0
+margin_bottom = 250.0
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 100, 100 )
+patch_margin_left = 18
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Resources" type="HBoxContainer" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources"]
+margin_right = 120.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="ResourceValue1" type="Label" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources"]
+margin_left = 124.0
+margin_right = 249.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "20"
+valign = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources"]
+margin_left = 253.0
+margin_right = 373.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="ResourceValue2" type="Label" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources"]
+margin_left = 377.0
+margin_right = 503.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "20"
+valign = 1
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources"]
+margin_left = 507.0
+margin_right = 627.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="ResourceValue3" type="Label" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources"]
+margin_left = 631.0
+margin_right = 756.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "20"
+valign = 1
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources"]
+margin_left = 760.0
+margin_right = 880.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="ResourceValue4" type="Label" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources"]
+margin_left = 884.0
+margin_right = 1010.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "20"
+valign = 1
+
+[node name="Screen" type="NinePatchRect" parent="VBoxContainer"]
+margin_top = 304.0
+margin_right = 1080.0
+margin_bottom = 1920.0
+size_flags_vertical = 3
+patch_margin_left = 33
+patch_margin_top = 36
+patch_margin_right = 39
+patch_margin_bottom = 39
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Screen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BottomOffset" type="Label" parent="VBoxContainer/Screen/VBoxContainer"]
+margin_right = 1080.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 0, 220 )

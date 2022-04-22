@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Effects/Effect.gd" type="Script" id=1]
+
+[node name="Effect" type="Node2D"]
+script = ExtResource( 1 )
+base_duration = 5.0
+base_tick_duration = 0.25
+
+[node name="EffectTime" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="TickTime" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="EffectTime" to="." method="_on_EffectTime_timeout"]
+[connection signal="timeout" from="TickTime" to="." method="_on_TickTime_timeout"]

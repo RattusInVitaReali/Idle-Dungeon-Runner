@@ -1,0 +1,720 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/gui_images/UI board Large stone.png" type="Texture" id=2]
+[ext_resource path="res://UI/Slot/Slot.tscn" type="PackedScene" id=3]
+
+[node name="SlottableInventory" type="NinePatchRect"]
+margin_right = 1080.0
+margin_bottom = 1392.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+patch_margin_left = 42
+patch_margin_top = 46
+patch_margin_right = 42
+patch_margin_bottom = 47
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 1018.0
+margin_bottom = 1716.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Line1" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_right = 1018.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="Slot1" parent="ScrollContainer/VBoxContainer/Line1" groups=["slots"] instance=ExtResource( 3 )]
+
+[node name="Margin1" type="Label" parent="ScrollContainer/VBoxContainer/Line1"]
+margin_left = 154.0
+margin_right = 169.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot2" parent="ScrollContainer/VBoxContainer/Line1" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 173.0
+margin_right = 323.0
+
+[node name="Margin2" type="Label" parent="ScrollContainer/VBoxContainer/Line1"]
+margin_left = 327.0
+margin_right = 343.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot3" parent="ScrollContainer/VBoxContainer/Line1" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 347.0
+margin_right = 497.0
+
+[node name="Margin3" type="Label" parent="ScrollContainer/VBoxContainer/Line1"]
+margin_left = 501.0
+margin_right = 516.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot4" parent="ScrollContainer/VBoxContainer/Line1" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 520.0
+margin_right = 670.0
+
+[node name="Margin4" type="Label" parent="ScrollContainer/VBoxContainer/Line1"]
+margin_left = 674.0
+margin_right = 690.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot5" parent="ScrollContainer/VBoxContainer/Line1" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 694.0
+margin_right = 844.0
+
+[node name="Margin5" type="Label" parent="ScrollContainer/VBoxContainer/Line1"]
+margin_left = 848.0
+margin_right = 864.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot6" parent="ScrollContainer/VBoxContainer/Line1" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 868.0
+margin_right = 1018.0
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 154.0
+margin_right = 1018.0
+margin_bottom = 168.0
+size_flags_vertical = 3
+
+[node name="Line2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 172.0
+margin_right = 1018.0
+margin_bottom = 322.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="Slot1" parent="ScrollContainer/VBoxContainer/Line2" groups=["slots"] instance=ExtResource( 3 )]
+
+[node name="Margin1" type="Label" parent="ScrollContainer/VBoxContainer/Line2"]
+margin_left = 154.0
+margin_right = 169.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot2" parent="ScrollContainer/VBoxContainer/Line2" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 173.0
+margin_right = 323.0
+
+[node name="Margin2" type="Label" parent="ScrollContainer/VBoxContainer/Line2"]
+margin_left = 327.0
+margin_right = 343.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot3" parent="ScrollContainer/VBoxContainer/Line2" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 347.0
+margin_right = 497.0
+
+[node name="Margin3" type="Label" parent="ScrollContainer/VBoxContainer/Line2"]
+margin_left = 501.0
+margin_right = 516.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot4" parent="ScrollContainer/VBoxContainer/Line2" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 520.0
+margin_right = 670.0
+
+[node name="Margin4" type="Label" parent="ScrollContainer/VBoxContainer/Line2"]
+margin_left = 674.0
+margin_right = 690.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot5" parent="ScrollContainer/VBoxContainer/Line2" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 694.0
+margin_right = 844.0
+
+[node name="Margin5" type="Label" parent="ScrollContainer/VBoxContainer/Line2"]
+margin_left = 848.0
+margin_right = 864.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot6" parent="ScrollContainer/VBoxContainer/Line2" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 868.0
+margin_right = 1018.0
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 326.0
+margin_right = 1018.0
+margin_bottom = 340.0
+size_flags_vertical = 3
+
+[node name="Line3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 344.0
+margin_right = 1018.0
+margin_bottom = 494.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="Slot1" parent="ScrollContainer/VBoxContainer/Line3" groups=["slots"] instance=ExtResource( 3 )]
+
+[node name="Margin1" type="Label" parent="ScrollContainer/VBoxContainer/Line3"]
+margin_left = 154.0
+margin_right = 169.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot2" parent="ScrollContainer/VBoxContainer/Line3" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 173.0
+margin_right = 323.0
+
+[node name="Margin2" type="Label" parent="ScrollContainer/VBoxContainer/Line3"]
+margin_left = 327.0
+margin_right = 343.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot3" parent="ScrollContainer/VBoxContainer/Line3" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 347.0
+margin_right = 497.0
+
+[node name="Margin3" type="Label" parent="ScrollContainer/VBoxContainer/Line3"]
+margin_left = 501.0
+margin_right = 516.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot4" parent="ScrollContainer/VBoxContainer/Line3" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 520.0
+margin_right = 670.0
+
+[node name="Margin4" type="Label" parent="ScrollContainer/VBoxContainer/Line3"]
+margin_left = 674.0
+margin_right = 690.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot5" parent="ScrollContainer/VBoxContainer/Line3" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 694.0
+margin_right = 844.0
+
+[node name="Margin5" type="Label" parent="ScrollContainer/VBoxContainer/Line3"]
+margin_left = 848.0
+margin_right = 864.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot6" parent="ScrollContainer/VBoxContainer/Line3" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 868.0
+margin_right = 1018.0
+
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 498.0
+margin_right = 1018.0
+margin_bottom = 512.0
+size_flags_vertical = 3
+
+[node name="Line4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 516.0
+margin_right = 1018.0
+margin_bottom = 666.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="Slot1" parent="ScrollContainer/VBoxContainer/Line4" groups=["slots"] instance=ExtResource( 3 )]
+
+[node name="Margin1" type="Label" parent="ScrollContainer/VBoxContainer/Line4"]
+margin_left = 154.0
+margin_right = 169.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot2" parent="ScrollContainer/VBoxContainer/Line4" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 173.0
+margin_right = 323.0
+
+[node name="Margin2" type="Label" parent="ScrollContainer/VBoxContainer/Line4"]
+margin_left = 327.0
+margin_right = 343.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot3" parent="ScrollContainer/VBoxContainer/Line4" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 347.0
+margin_right = 497.0
+
+[node name="Margin3" type="Label" parent="ScrollContainer/VBoxContainer/Line4"]
+margin_left = 501.0
+margin_right = 516.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot4" parent="ScrollContainer/VBoxContainer/Line4" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 520.0
+margin_right = 670.0
+
+[node name="Margin4" type="Label" parent="ScrollContainer/VBoxContainer/Line4"]
+margin_left = 674.0
+margin_right = 690.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot5" parent="ScrollContainer/VBoxContainer/Line4" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 694.0
+margin_right = 844.0
+
+[node name="Margin5" type="Label" parent="ScrollContainer/VBoxContainer/Line4"]
+margin_left = 848.0
+margin_right = 864.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot6" parent="ScrollContainer/VBoxContainer/Line4" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 868.0
+margin_right = 1018.0
+
+[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 670.0
+margin_right = 1018.0
+margin_bottom = 684.0
+size_flags_vertical = 3
+
+[node name="Line5" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 688.0
+margin_right = 1018.0
+margin_bottom = 838.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="Slot1" parent="ScrollContainer/VBoxContainer/Line5" groups=["slots"] instance=ExtResource( 3 )]
+
+[node name="Margin1" type="Label" parent="ScrollContainer/VBoxContainer/Line5"]
+margin_left = 154.0
+margin_right = 169.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot2" parent="ScrollContainer/VBoxContainer/Line5" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 173.0
+margin_right = 323.0
+
+[node name="Margin2" type="Label" parent="ScrollContainer/VBoxContainer/Line5"]
+margin_left = 327.0
+margin_right = 343.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot3" parent="ScrollContainer/VBoxContainer/Line5" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 347.0
+margin_right = 497.0
+
+[node name="Margin3" type="Label" parent="ScrollContainer/VBoxContainer/Line5"]
+margin_left = 501.0
+margin_right = 516.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot4" parent="ScrollContainer/VBoxContainer/Line5" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 520.0
+margin_right = 670.0
+
+[node name="Margin4" type="Label" parent="ScrollContainer/VBoxContainer/Line5"]
+margin_left = 674.0
+margin_right = 690.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot5" parent="ScrollContainer/VBoxContainer/Line5" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 694.0
+margin_right = 844.0
+
+[node name="Margin5" type="Label" parent="ScrollContainer/VBoxContainer/Line5"]
+margin_left = 848.0
+margin_right = 864.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot6" parent="ScrollContainer/VBoxContainer/Line5" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 868.0
+margin_right = 1018.0
+
+[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 842.0
+margin_right = 1018.0
+margin_bottom = 856.0
+size_flags_vertical = 3
+
+[node name="Line6" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 860.0
+margin_right = 1018.0
+margin_bottom = 1010.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="Slot1" parent="ScrollContainer/VBoxContainer/Line6" groups=["slots"] instance=ExtResource( 3 )]
+
+[node name="Margin1" type="Label" parent="ScrollContainer/VBoxContainer/Line6"]
+margin_left = 154.0
+margin_right = 169.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot2" parent="ScrollContainer/VBoxContainer/Line6" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 173.0
+margin_right = 323.0
+
+[node name="Margin2" type="Label" parent="ScrollContainer/VBoxContainer/Line6"]
+margin_left = 327.0
+margin_right = 343.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot3" parent="ScrollContainer/VBoxContainer/Line6" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 347.0
+margin_right = 497.0
+
+[node name="Margin3" type="Label" parent="ScrollContainer/VBoxContainer/Line6"]
+margin_left = 501.0
+margin_right = 516.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot4" parent="ScrollContainer/VBoxContainer/Line6" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 520.0
+margin_right = 670.0
+
+[node name="Margin4" type="Label" parent="ScrollContainer/VBoxContainer/Line6"]
+margin_left = 674.0
+margin_right = 690.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot5" parent="ScrollContainer/VBoxContainer/Line6" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 694.0
+margin_right = 844.0
+
+[node name="Margin5" type="Label" parent="ScrollContainer/VBoxContainer/Line6"]
+margin_left = 848.0
+margin_right = 864.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot6" parent="ScrollContainer/VBoxContainer/Line6" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 868.0
+margin_right = 1018.0
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1014.0
+margin_right = 1018.0
+margin_bottom = 1028.0
+size_flags_vertical = 3
+
+[node name="Line7" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1032.0
+margin_right = 1018.0
+margin_bottom = 1182.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="Slot1" parent="ScrollContainer/VBoxContainer/Line7" groups=["slots"] instance=ExtResource( 3 )]
+
+[node name="Margin1" type="Label" parent="ScrollContainer/VBoxContainer/Line7"]
+margin_left = 154.0
+margin_right = 169.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot2" parent="ScrollContainer/VBoxContainer/Line7" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 173.0
+margin_right = 323.0
+
+[node name="Margin2" type="Label" parent="ScrollContainer/VBoxContainer/Line7"]
+margin_left = 327.0
+margin_right = 343.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot3" parent="ScrollContainer/VBoxContainer/Line7" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 347.0
+margin_right = 497.0
+
+[node name="Margin3" type="Label" parent="ScrollContainer/VBoxContainer/Line7"]
+margin_left = 501.0
+margin_right = 516.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot4" parent="ScrollContainer/VBoxContainer/Line7" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 520.0
+margin_right = 670.0
+
+[node name="Margin4" type="Label" parent="ScrollContainer/VBoxContainer/Line7"]
+margin_left = 674.0
+margin_right = 690.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot5" parent="ScrollContainer/VBoxContainer/Line7" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 694.0
+margin_right = 844.0
+
+[node name="Margin5" type="Label" parent="ScrollContainer/VBoxContainer/Line7"]
+margin_left = 848.0
+margin_right = 864.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot6" parent="ScrollContainer/VBoxContainer/Line7" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 868.0
+margin_right = 1018.0
+
+[node name="Label7" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1186.0
+margin_right = 1018.0
+margin_bottom = 1200.0
+size_flags_vertical = 3
+
+[node name="Line8" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1204.0
+margin_right = 1018.0
+margin_bottom = 1354.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="Slot1" parent="ScrollContainer/VBoxContainer/Line8" groups=["slots"] instance=ExtResource( 3 )]
+
+[node name="Margin1" type="Label" parent="ScrollContainer/VBoxContainer/Line8"]
+margin_left = 154.0
+margin_right = 169.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot2" parent="ScrollContainer/VBoxContainer/Line8" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 173.0
+margin_right = 323.0
+
+[node name="Margin2" type="Label" parent="ScrollContainer/VBoxContainer/Line8"]
+margin_left = 327.0
+margin_right = 343.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot3" parent="ScrollContainer/VBoxContainer/Line8" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 347.0
+margin_right = 497.0
+
+[node name="Margin3" type="Label" parent="ScrollContainer/VBoxContainer/Line8"]
+margin_left = 501.0
+margin_right = 516.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot4" parent="ScrollContainer/VBoxContainer/Line8" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 520.0
+margin_right = 670.0
+
+[node name="Margin4" type="Label" parent="ScrollContainer/VBoxContainer/Line8"]
+margin_left = 674.0
+margin_right = 690.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot5" parent="ScrollContainer/VBoxContainer/Line8" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 694.0
+margin_right = 844.0
+
+[node name="Margin5" type="Label" parent="ScrollContainer/VBoxContainer/Line8"]
+margin_left = 848.0
+margin_right = 864.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot6" parent="ScrollContainer/VBoxContainer/Line8" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 868.0
+margin_right = 1018.0
+
+[node name="Label8" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1358.0
+margin_right = 1018.0
+margin_bottom = 1372.0
+size_flags_vertical = 3
+
+[node name="Line9" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1376.0
+margin_right = 1018.0
+margin_bottom = 1526.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="Slot1" parent="ScrollContainer/VBoxContainer/Line9" groups=["slots"] instance=ExtResource( 3 )]
+
+[node name="Margin1" type="Label" parent="ScrollContainer/VBoxContainer/Line9"]
+margin_left = 154.0
+margin_right = 169.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot2" parent="ScrollContainer/VBoxContainer/Line9" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 173.0
+margin_right = 323.0
+
+[node name="Margin2" type="Label" parent="ScrollContainer/VBoxContainer/Line9"]
+margin_left = 327.0
+margin_right = 343.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot3" parent="ScrollContainer/VBoxContainer/Line9" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 347.0
+margin_right = 497.0
+
+[node name="Margin3" type="Label" parent="ScrollContainer/VBoxContainer/Line9"]
+margin_left = 501.0
+margin_right = 516.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot4" parent="ScrollContainer/VBoxContainer/Line9" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 520.0
+margin_right = 670.0
+
+[node name="Margin4" type="Label" parent="ScrollContainer/VBoxContainer/Line9"]
+margin_left = 674.0
+margin_right = 690.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot5" parent="ScrollContainer/VBoxContainer/Line9" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 694.0
+margin_right = 844.0
+
+[node name="Margin5" type="Label" parent="ScrollContainer/VBoxContainer/Line9"]
+margin_left = 848.0
+margin_right = 864.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot6" parent="ScrollContainer/VBoxContainer/Line9" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 868.0
+margin_right = 1018.0
+
+[node name="Label9" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1530.0
+margin_right = 1018.0
+margin_bottom = 1544.0
+size_flags_vertical = 3
+
+[node name="Line10" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1548.0
+margin_right = 1018.0
+margin_bottom = 1698.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="Slot1" parent="ScrollContainer/VBoxContainer/Line10" groups=["slots"] instance=ExtResource( 3 )]
+
+[node name="Margin1" type="Label" parent="ScrollContainer/VBoxContainer/Line10"]
+margin_left = 154.0
+margin_right = 169.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot2" parent="ScrollContainer/VBoxContainer/Line10" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 173.0
+margin_right = 323.0
+
+[node name="Margin2" type="Label" parent="ScrollContainer/VBoxContainer/Line10"]
+margin_left = 327.0
+margin_right = 343.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot3" parent="ScrollContainer/VBoxContainer/Line10" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 347.0
+margin_right = 497.0
+
+[node name="Margin3" type="Label" parent="ScrollContainer/VBoxContainer/Line10"]
+margin_left = 501.0
+margin_right = 516.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot4" parent="ScrollContainer/VBoxContainer/Line10" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 520.0
+margin_right = 670.0
+
+[node name="Margin4" type="Label" parent="ScrollContainer/VBoxContainer/Line10"]
+margin_left = 674.0
+margin_right = 690.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot5" parent="ScrollContainer/VBoxContainer/Line10" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 694.0
+margin_right = 844.0
+
+[node name="Margin5" type="Label" parent="ScrollContainer/VBoxContainer/Line10"]
+margin_left = 848.0
+margin_right = 864.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot6" parent="ScrollContainer/VBoxContainer/Line10" groups=["slots"] instance=ExtResource( 3 )]
+margin_left = 868.0
+margin_right = 1018.0
+
+[node name="Label10" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1702.0
+margin_right = 1018.0
+margin_bottom = 1716.0
+size_flags_vertical = 3

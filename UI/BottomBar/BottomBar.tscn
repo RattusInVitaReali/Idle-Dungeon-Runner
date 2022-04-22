@@ -1,0 +1,243 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/gui_images/UI board Small  stone.png" type="Texture" id=1]
+[ext_resource path="res://Resources/gui_images/BowBeta.png" type="Texture" id=2]
+[ext_resource path="res://Resources/gui_images/UI board Large  parchment.png" type="Texture" id=3]
+
+[node name="BottomBar" type="Control"]
+anchor_top = 0.921
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -48.3199
+margin_bottom = 0.00012207
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+patch_margin_left = 38
+patch_margin_top = 49
+patch_margin_right = 45
+patch_margin_bottom = 47
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonBackground1" type="TextureRect" parent="NinePatchRect/HBoxContainer"]
+margin_right = 160.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 0 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="ButtonImage" type="TextureRect" parent="NinePatchRect/HBoxContainer/ButtonBackground1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="NinePatchRect/HBoxContainer/ButtonBackground1/ButtonImage"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="Label" parent="NinePatchRect/HBoxContainer"]
+margin_left = 164.0
+margin_right = 172.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonBackground2" type="TextureRect" parent="NinePatchRect/HBoxContainer"]
+margin_left = 176.0
+margin_right = 336.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 0 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="ButtonImage" type="TextureRect" parent="NinePatchRect/HBoxContainer/ButtonBackground2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="NinePatchRect/HBoxContainer/ButtonBackground2/ButtonImage"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin2" type="Label" parent="NinePatchRect/HBoxContainer"]
+margin_left = 340.0
+margin_right = 348.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonBackground3" type="TextureRect" parent="NinePatchRect/HBoxContainer"]
+margin_left = 352.0
+margin_right = 512.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 0 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="ButtonImage" type="TextureRect" parent="NinePatchRect/HBoxContainer/ButtonBackground3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="NinePatchRect/HBoxContainer/ButtonBackground3/ButtonImage"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin3" type="Label" parent="NinePatchRect/HBoxContainer"]
+margin_left = 516.0
+margin_right = 524.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonBackground4" type="TextureRect" parent="NinePatchRect/HBoxContainer"]
+margin_left = 528.0
+margin_right = 688.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 0 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="ButtonImage" type="TextureRect" parent="NinePatchRect/HBoxContainer/ButtonBackground4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="NinePatchRect/HBoxContainer/ButtonBackground4/ButtonImage"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin4" type="Label" parent="NinePatchRect/HBoxContainer"]
+margin_left = 692.0
+margin_right = 700.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonBackground5" type="TextureRect" parent="NinePatchRect/HBoxContainer"]
+margin_left = 704.0
+margin_right = 864.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 0 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="ButtonImage" type="TextureRect" parent="NinePatchRect/HBoxContainer/ButtonBackground5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="NinePatchRect/HBoxContainer/ButtonBackground5/ButtonImage"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin5" type="Label" parent="NinePatchRect/HBoxContainer"]
+margin_left = 868.0
+margin_right = 876.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonBackground6" type="TextureRect" parent="NinePatchRect/HBoxContainer"]
+margin_left = 880.0
+margin_right = 1040.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 0 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="ButtonImage" type="TextureRect" parent="NinePatchRect/HBoxContainer/ButtonBackground6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="NinePatchRect/HBoxContainer/ButtonBackground6/ButtonImage"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

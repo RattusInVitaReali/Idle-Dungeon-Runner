@@ -1,0 +1,16 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Entities/Player/PlayerAnimations.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Skills/BasicAttack/BasicAttack.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Skills/Lacerate/Lacerate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Entities/Entity.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entities/Player/Player.gd" type="Script" id=5]
+
+[node name="Player" instance=ExtResource( 4 )]
+frames = ExtResource( 1 )
+animation = "idle"
+script = ExtResource( 5 )
+
+[node name="BasicAttack" parent="Skills" index="0" instance=ExtResource( 2 )]
+
+[node name="Lacerate" parent="Skills" index="1" instance=ExtResource( 3 )]

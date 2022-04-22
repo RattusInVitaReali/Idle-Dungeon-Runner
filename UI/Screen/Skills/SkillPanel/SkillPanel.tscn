@@ -1,0 +1,241 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Resources/skill_icons/lock.png" type="Texture" id=1]
+[ext_resource path="res://Resources/gui_images/Division line.png" type="Texture" id=2]
+[ext_resource path="res://Resources/skill_borders/Border3.png" type="Texture" id=3]
+[ext_resource path="res://UI/Screen/Skills/SkillPanel/SkillPanel.gd" type="Script" id=4]
+[ext_resource path="res://Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.396078, 0.443137, 0.45098, 1 )
+border_width_left = 13
+border_width_top = 13
+border_width_right = 13
+border_width_bottom = 13
+border_color = Color( 0.756863, 0.721569, 0.647059, 1 )
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.678431, 0.270588, 0.686275, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.129412, 0.141176, 0.145098, 1 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.129412, 0.141176, 0.145098, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 60
+font_data = ExtResource( 5 )
+
+[node name="SkillPanel" type="Panel"]
+margin_right = 1020.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 250 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skill" type="TextureRect" parent="HBoxContainer"]
+margin_right = 225.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 225, 220 )
+mouse_filter = 2
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkillIcon" type="TextureButton" parent="HBoxContainer/Skill"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameAndLevel" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 229.0
+margin_right = 761.0
+margin_bottom = 224.0
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="HBoxContainer/NameAndLevel"]
+margin_right = 532.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 2 )
+text = "Skill Name"
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/NameAndLevel"]
+margin_top = 76.0
+margin_right = 532.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 0, 15 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="TextureProgress" type="ProgressBar" parent="HBoxContainer/NameAndLevel"]
+margin_top = 95.0
+margin_right = 532.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+value = 50.0
+percent_visible = false
+
+[node name="ExperienceText" type="Label" parent="HBoxContainer/NameAndLevel/TextureProgress"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+text = "5010 / 100134"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/NameAndLevel"]
+margin_top = 209.0
+margin_right = 532.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 0, 15 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 765.0
+margin_right = 990.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 225, 0 )
+
+[node name="Level" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_right = 225.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 6 )
+text = "Level 120"
+align = 1
+valign = 1
+
+[node name="Tags1" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 76.0
+margin_right = 225.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Tag1" type="TextureRect" parent="HBoxContainer/VBoxContainer/Tags1" groups=["tags"]]
+margin_right = 72.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+stretch_mode = 6
+
+[node name="Tag2" type="TextureRect" parent="HBoxContainer/VBoxContainer/Tags1" groups=["tags"]]
+margin_left = 76.0
+margin_right = 148.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+stretch_mode = 6
+
+[node name="Tag3" type="TextureRect" parent="HBoxContainer/VBoxContainer/Tags1" groups=["tags"]]
+margin_left = 152.0
+margin_right = 225.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+stretch_mode = 6
+
+[node name="Tags2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 152.0
+margin_right = 225.0
+margin_bottom = 224.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Tag4" type="TextureRect" parent="HBoxContainer/VBoxContainer/Tags2" groups=["tags"]]
+margin_right = 72.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+stretch_mode = 6
+
+[node name="Tag5" type="TextureRect" parent="HBoxContainer/VBoxContainer/Tags2" groups=["tags"]]
+margin_left = 76.0
+margin_right = 148.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+stretch_mode = 6
+
+[node name="Tag6" type="TextureRect" parent="HBoxContainer/VBoxContainer/Tags2" groups=["tags"]]
+margin_left = 152.0
+margin_right = 225.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+stretch_mode = 6

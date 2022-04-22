@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://GameScreens/CombatScreen/CombatScreen.gd" type="Script" id=1]
+[ext_resource path="res://Resources/backgrounds/forest.png" type="Texture" id=2]
+[ext_resource path="res://UI/CombatScreen/Combat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameScreens/GameScreen.tscn" type="PackedScene" id=4]
+
+[node name="CombatScreen" instance=ExtResource( 4 )]
+script = ExtResource( 1 )
+
+[node name="Background" parent="." index="0"]
+z_index = -100
+
+[node name="Map" type="Node2D" parent="." index="1"]
+
+[node name="Image1" type="Sprite" parent="Map" index="0"]
+position = Vector2( 540, 1600 )
+z_index = -20
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1600, 3200 )
+
+[node name="Image2" type="Sprite" parent="Map" index="1"]
+position = Vector2( 540, -1600 )
+z_index = -20
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1600, 3200 )
+
+[node name="Zone" type="Node2D" parent="." index="2"]
+
+[node name="Combat" parent="." index="3" instance=ExtResource( 3 )]
+margin_right = 1080.0
+margin_bottom = 1920.0
+rect_min_size = Vector2( 1080, 1920 )

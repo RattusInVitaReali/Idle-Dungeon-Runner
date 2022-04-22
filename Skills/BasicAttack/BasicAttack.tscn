@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Skills/Skill.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Skills/BasicAttack/BasicAttack.gd" type="Script" id=2]
+[ext_resource path="res://Resources/skill_icons/Icon1.png" type="Texture" id=3]
+
+[node name="BasicAttack" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+base_cooldown = 2.0
+skill_name = "Basic Attack"
+icon = ExtResource( 3 )
+description = "A basic strike with a short Cooldown. Deals Physical Damage."
+phys = true
+attack = true

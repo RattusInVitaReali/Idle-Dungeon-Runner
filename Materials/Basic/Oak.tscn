@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Materials/CraftingMaterial.tscn" type="PackedScene" id=1]
+
+[node name="Oak" instance=ExtResource( 1 )]
+material_name = "Oak"
+prefix = "Oak"
+type = 2
+weight = 1
+durability = 100
+stats = {
+"crit_chance": 0.05,
+"crit_multi": 0.0,
+"magic_damage": 0.0,
+"magic_protection": 0.0,
+"max_hp": 15,
+"phys_damage": 2.0,
+"phys_protection": 2.0
+}

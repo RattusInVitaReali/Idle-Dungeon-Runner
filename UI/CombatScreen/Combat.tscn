@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/CombatScreen/CombatModeButton/CombatModeButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/CombatScreen/Bottom/CombatBottom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/CombatScreen/Top/CombatTop.tscn" type="PackedScene" id=3]
+
+[node name="Combat" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CombatBottom" parent="." instance=ExtResource( 2 )]
+
+[node name="CombatModeButton" parent="." instance=ExtResource( 1 )]
+margin_left = 856.0
+margin_top = 1056.0
+margin_right = -32.0
+margin_bottom = -736.0
+
+[node name="CombatTop" parent="." instance=ExtResource( 3 )]

@@ -1,0 +1,458 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Resources/gui_images/UI board Large  parchment.png" type="Texture" id=2]
+[ext_resource path="res://Resources/gui_images/Division line.png" type="Texture" id=3]
+[ext_resource path="res://Resources/socket.png" type="Texture" id=4]
+[ext_resource path="res://UI/ItemInspector/StatLabel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/icons/tile124.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.317647, 0.317647, 0.317647, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 70
+font_data = ExtResource( 1 )
+
+[node name="ItemInspector" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BackgroundDimm" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0.690196 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="BackgroundDimm"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 200.0
+margin_right = -100.0
+margin_bottom = -250.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Panel/VBoxContainer"]
+margin_right = 840.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 0, 70 )
+custom_fonts/font = SubResource( 2 )
+text = "Flaring Broadsword of Penetration"
+align = 1
+valign = 2
+
+[node name="iLevelType" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 74.0
+margin_right = 840.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 3 )
+text = "iLevel 83 Rare Broadsword"
+align = 1
+valign = 1
+
+[node name="Line1" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 114.0
+margin_right = 840.0
+margin_bottom = 129.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line1"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line1"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line1"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Affixes" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 133.0
+margin_right = 840.0
+margin_bottom = 169.0
+custom_fonts/font = SubResource( 4 )
+text = "Awakened - Penetrating - Flaring - of Skill - of Penetration"
+align = 1
+valign = 1
+
+[node name="Line2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 173.0
+margin_right = 840.0
+margin_bottom = 188.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line2"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line2"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line2"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Image" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 192.0
+margin_right = 840.0
+margin_bottom = 592.0
+rect_min_size = Vector2( 0, 400 )
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Image"]
+margin_right = 840.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 400, 15 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Line3" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 596.0
+margin_right = 840.0
+margin_bottom = 611.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line3"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line3"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line3"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Implicit" type="VBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 615.0
+margin_right = 840.0
+margin_bottom = 680.0
+
+[node name="StatLabel" parent="Panel/VBoxContainer/Implicit" instance=ExtResource( 5 )]
+text = "(IMPLICIT) 100% Increased Stat"
+
+[node name="Line4" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 684.0
+margin_right = 840.0
+margin_bottom = 699.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line4"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line4"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line4"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Stats" type="ScrollContainer" parent="Panel/VBoxContainer"]
+margin_top = 703.0
+margin_right = 840.0
+margin_bottom = 1020.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/Stats"]
+margin_right = 840.0
+margin_bottom = 317.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StatLabel1" parent="Panel/VBoxContainer/Stats/VBoxContainer" instance=ExtResource( 5 )]
+
+[node name="StatLabel2" parent="Panel/VBoxContainer/Stats/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 69.0
+margin_bottom = 134.0
+
+[node name="StatLabel3" parent="Panel/VBoxContainer/Stats/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 138.0
+margin_bottom = 203.0
+
+[node name="StatLabel4" parent="Panel/VBoxContainer/Stats/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 207.0
+margin_bottom = 272.0
+
+[node name="Margin1" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 1024.0
+margin_right = 840.0
+margin_bottom = 1038.0
+
+[node name="Line5" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 1042.0
+margin_right = 840.0
+margin_bottom = 1057.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line5"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line5"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line5"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Margin2" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 1061.0
+margin_right = 840.0
+margin_bottom = 1075.0
+
+[node name="Sockets" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 1079.0
+margin_right = 840.0
+margin_bottom = 1219.0
+rect_min_size = Vector2( 0, 140 )
+
+[node name="Margin1" type="Label" parent="Panel/VBoxContainer/Sockets"]
+margin_right = 100.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect1" type="TextureRect" parent="Panel/VBoxContainer/Sockets"]
+margin_left = 104.0
+margin_right = 242.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Margin2" type="Label" parent="Panel/VBoxContainer/Sockets"]
+margin_left = 246.0
+margin_right = 346.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/VBoxContainer/Sockets"]
+margin_left = 350.0
+margin_right = 489.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Margin3" type="Label" parent="Panel/VBoxContainer/Sockets"]
+margin_left = 493.0
+margin_right = 593.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/VBoxContainer/Sockets"]
+margin_left = 597.0
+margin_right = 736.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Margin4" type="Label" parent="Panel/VBoxContainer/Sockets"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Margin3" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 1223.0
+margin_right = 840.0
+margin_bottom = 1237.0
+
+[node name="Line6" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 1241.0
+margin_right = 840.0
+margin_bottom = 1256.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line6"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line6"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line6"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 1260.0
+margin_right = 840.0
+margin_bottom = 1410.0
+rect_min_size = Vector2( 0, 150 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Equip" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_left = 104.0
+margin_right = 418.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Equip"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "EQUIP"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sell" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_left = 422.0
+margin_right = 736.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Sell"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "SELL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[connection signal="pressed" from="BackgroundDimm/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Equip" to="." method="_on_Equip_pressed"]
