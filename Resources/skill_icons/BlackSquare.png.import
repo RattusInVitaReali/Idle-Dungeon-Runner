@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BlackSquare.png-b6b24bc637a4a7e88f8d237d0bc40c27.stex"
+path="res://.import/BlackSquare.png-e6c92aa1d652be84fa7ab019910b095e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/skill_icons/BlackSquare.png"
-dest_files=[ "res://.import/BlackSquare.png-b6b24bc637a4a7e88f8d237d0bc40c27.stex" ]
+source_file="res://RESOURCES/skill_icons/BlackSquare.png"
+dest_files=[ "res://.import/BlackSquare.png-e6c92aa1d652be84fa7ab019910b095e.stex" ]
 
 [params]
 

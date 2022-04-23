@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LeftArrow.png-b543d56b27f1db49b4469fee304df595.stex"
+path="res://.import/LeftArrow.png-5af903a89644ccc6ffd9fcec3f33a135.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/LeftArrow.png"
-dest_files=[ "res://.import/LeftArrow.png-b543d56b27f1db49b4469fee304df595.stex" ]
+source_file="res://RESOURCES/gui_images/LeftArrow.png"
+dest_files=[ "res://.import/LeftArrow.png-5af903a89644ccc6ffd9fcec3f33a135.stex" ]
 
 [params]
 

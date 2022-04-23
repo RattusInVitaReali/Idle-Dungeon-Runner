@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sword_gold.png-d79bdfb822e38ee2ac95b706ce139aa4.stex"
+path="res://.import/sword_gold.png-47d63bc2021884fc05b50510872b9af8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/sword_gold.png"
-dest_files=[ "res://.import/sword_gold.png-d79bdfb822e38ee2ac95b706ce139aa4.stex" ]
+source_file="res://RESOURCES/icons/sword_gold.png"
+dest_files=[ "res://.import/sword_gold.png-47d63bc2021884fc05b50510872b9af8.stex" ]
 
 [params]
 

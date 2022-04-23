@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Resources/backgrounds/wall.png" type="Texture" id=1]
+[ext_resource path="res://RESOURCES/backgrounds/wall.png" type="Texture" id=1]
 [ext_resource path="res://GameScreens/GameScreen.gd" type="Script" id=2]
 
 [node name="GameScreen" type="Node2D"]

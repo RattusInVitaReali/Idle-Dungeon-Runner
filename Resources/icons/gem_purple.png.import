@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gem_purple.png-ce6c308ef3811dbf256364dc9aaff21d.stex"
+path="res://.import/gem_purple.png-4503e0b87f7ffd34f55f750f2df8099f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/gem_purple.png"
-dest_files=[ "res://.import/gem_purple.png-ce6c308ef3811dbf256364dc9aaff21d.stex" ]
+source_file="res://RESOURCES/icons/gem_purple.png"
+dest_files=[ "res://.import/gem_purple.png-4503e0b87f7ffd34f55f750f2df8099f.stex" ]
 
 [params]
 

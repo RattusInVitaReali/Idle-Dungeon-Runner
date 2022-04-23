@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BagIcon.png-bb1aba83f88c805a9dc42911352417fd.stex"
+path="res://.import/BagIcon.png-bf1a1dfe80dd006f999b5a8eaee0500f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/BagIcon.png"
-dest_files=[ "res://.import/BagIcon.png-bb1aba83f88c805a9dc42911352417fd.stex" ]
+source_file="res://RESOURCES/gui_images/BagIcon.png"
+dest_files=[ "res://.import/BagIcon.png-bf1a1dfe80dd006f999b5a8eaee0500f.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TextBTN_New-Start_Pressed.png-52b0228b7e9ec8882d81b4dc60931389.stex"
+path="res://.import/TextBTN_New-Start_Pressed.png-0ebdadf112c0dd4cb8509eeeec3e7eab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/TextBTN_New-Start_Pressed.png"
-dest_files=[ "res://.import/TextBTN_New-Start_Pressed.png-52b0228b7e9ec8882d81b4dc60931389.stex" ]
+source_file="res://RESOURCES/gui_images/TextBTN_New-Start_Pressed.png"
+dest_files=[ "res://.import/TextBTN_New-Start_Pressed.png-0ebdadf112c0dd4cb8509eeeec3e7eab.stex" ]
 
 [params]
 

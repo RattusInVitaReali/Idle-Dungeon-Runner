@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/armour_plat.png-305094ecc4968adc8b4a9222e2b8e4a5.stex"
+path="res://.import/armour_plat.png-db610bb18c84214478e65c2d416fa366.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/armour_plat.png"
-dest_files=[ "res://.import/armour_plat.png-305094ecc4968adc8b4a9222e2b8e4a5.stex" ]
+source_file="res://RESOURCES/icons/armour_plat.png"
+dest_files=[ "res://.import/armour_plat.png-db610bb18c84214478e65c2d416fa366.stex" ]
 
 [params]
 

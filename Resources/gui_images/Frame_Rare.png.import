@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Frame_Rare.png-6b418d40a4e089d2568a6e964b62b1f3.stex"
+path="res://.import/Frame_Rare.png-63c4059ae568913943c602aeb2108893.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/Frame_Rare.png"
-dest_files=[ "res://.import/Frame_Rare.png-6b418d40a4e089d2568a6e964b62b1f3.stex" ]
+source_file="res://RESOURCES/gui_images/Frame_Rare.png"
+dest_files=[ "res://.import/Frame_Rare.png-63c4059ae568913943c602aeb2108893.stex" ]
 
 [params]
 

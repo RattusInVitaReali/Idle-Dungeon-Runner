@@ -1,4 +1,4 @@
-extends Node2D
+extends Slottable
 class_name Item
 
 export (Array, CraftingProcessor.PART_TYPE) var required_parts
@@ -17,7 +17,6 @@ var stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection
 
 var item_name
 var durability
-var rarity = CraftingProcessor.RARITY.BASIC
 
 func create(parts : Array):
 	for req_part_type in required_parts:

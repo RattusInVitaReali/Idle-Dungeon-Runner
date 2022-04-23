@@ -11,7 +11,7 @@ func initialize(_effect):
 		expire()
 	effect = _effect
 	effect.connect("effect_expired", self, "expire")
-	$TextureRect.texture = effect.image
+	$TextureRect.texture = effect.icon
 	duration = effect.duration
 
 func expire():

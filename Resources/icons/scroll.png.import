@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scroll.png-b0daaf3711f40bf5581b2b183c8dcecf.stex"
+path="res://.import/scroll.png-fca056fb409015eb716d8a666cc658ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/scroll.png"
-dest_files=[ "res://.import/scroll.png-b0daaf3711f40bf5581b2b183c8dcecf.stex" ]
+source_file="res://RESOURCES/icons/scroll.png"
+dest_files=[ "res://.import/scroll.png-fca056fb409015eb716d8a666cc658ff.stex" ]
 
 [params]
 

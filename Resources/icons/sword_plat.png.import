@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sword_plat.png-12d39678040f2f4712e147f5afe3c7ad.stex"
+path="res://.import/sword_plat.png-56058a66f9c69c8e7a3fde4fc5519e44.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/sword_plat.png"
-dest_files=[ "res://.import/sword_plat.png-12d39678040f2f4712e147f5afe3c7ad.stex" ]
+source_file="res://RESOURCES/icons/sword_plat.png"
+dest_files=[ "res://.import/sword_plat.png-56058a66f9c69c8e7a3fde4fc5519e44.stex" ]
 
 [params]
 

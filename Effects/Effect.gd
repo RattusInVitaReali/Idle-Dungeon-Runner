@@ -3,7 +3,7 @@ class_name Effect
 
 signal effect_expired
 
-export (Texture) var image
+export (Texture) var icon
 export var base_duration = 0.0
 export var base_tick_duration = 0.0
 export var tick_based = true

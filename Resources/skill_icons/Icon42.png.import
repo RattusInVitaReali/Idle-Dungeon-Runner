@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Icon42.png-87f801c46982f7707d367a3f7d303d04.stex"
+path="res://.import/Icon42.png-a4ef099cb4ab024e849a8b6fe51e3704.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/skill_icons/Icon42.png"
-dest_files=[ "res://.import/Icon42.png-87f801c46982f7707d367a3f7d303d04.stex" ]
+source_file="res://RESOURCES/skill_icons/Icon42.png"
+dest_files=[ "res://.import/Icon42.png-a4ef099cb4ab024e849a8b6fe51e3704.stex" ]
 
 [params]
 

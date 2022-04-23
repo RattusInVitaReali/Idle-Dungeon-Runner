@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CrystalIcon.png-cd7a5392b37f9b714fdeef335189e3f9.stex"
+path="res://.import/CrystalIcon.png-9555bae636ca8519832b72d97d00c272.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/CrystalIcon.png"
-dest_files=[ "res://.import/CrystalIcon.png-cd7a5392b37f9b714fdeef335189e3f9.stex" ]
+source_file="res://RESOURCES/gui_images/CrystalIcon.png"
+dest_files=[ "res://.import/CrystalIcon.png-9555bae636ca8519832b72d97d00c272.stex" ]
 
 [params]
 

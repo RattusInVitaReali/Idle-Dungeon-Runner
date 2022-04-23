@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Exclamation_Gray.png-87c37266bef782ae65c4570c619ada23.stex"
+path="res://.import/Exclamation_Gray.png-e58b4b0b3612fb9b40a4d8703f37ac2b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/Exclamation_Gray.png"
-dest_files=[ "res://.import/Exclamation_Gray.png-87c37266bef782ae65c4570c619ada23.stex" ]
+source_file="res://RESOURCES/gui_images/Exclamation_Gray.png"
+dest_files=[ "res://.import/Exclamation_Gray.png-e58b4b0b3612fb9b40a4d8703f37ac2b.stex" ]
 
 [params]
 

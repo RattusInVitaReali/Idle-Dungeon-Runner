@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/UI board Small  parchment.png-8a75322b8d3d9010585e1956ba6a823d.stex"
+path="res://.import/UI board Small  parchment.png-c01f14103150266e450c4adcbc7fcab1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/UI board Small  parchment.png"
-dest_files=[ "res://.import/UI board Small  parchment.png-8a75322b8d3d9010585e1956ba6a823d.stex" ]
+source_file="res://RESOURCES/gui_images/UI board Small  parchment.png"
+dest_files=[ "res://.import/UI board Small  parchment.png-c01f14103150266e450c4adcbc7fcab1.stex" ]
 
 [params]
 

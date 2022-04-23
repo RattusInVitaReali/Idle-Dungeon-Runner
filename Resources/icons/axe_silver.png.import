@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/axe_silver.png-e7442af2a14d4b663a949f79b35d6e66.stex"
+path="res://.import/axe_silver.png-5ba6a85235a64c3a03ac386ea3c43a35.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/axe_silver.png"
-dest_files=[ "res://.import/axe_silver.png-e7442af2a14d4b663a949f79b35d6e66.stex" ]
+source_file="res://RESOURCES/icons/axe_silver.png"
+dest_files=[ "res://.import/axe_silver.png-5ba6a85235a64c3a03ac386ea3c43a35.stex" ]
 
 [params]
 

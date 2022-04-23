@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shield_silver.png-691338f3edb805993a7434d44b85fe88.stex"
+path="res://.import/shield_silver.png-f3ce4cab54e54e319d55632543fa3eff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/shield_silver.png"
-dest_files=[ "res://.import/shield_silver.png-691338f3edb805993a7434d44b85fe88.stex" ]
+source_file="res://RESOURCES/icons/shield_silver.png"
+dest_files=[ "res://.import/shield_silver.png-f3ce4cab54e54e319d55632543fa3eff.stex" ]
 
 [params]
 

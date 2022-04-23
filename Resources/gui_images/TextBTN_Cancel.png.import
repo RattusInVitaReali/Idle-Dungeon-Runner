@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TextBTN_Cancel.png-fb0b91eed6e63fe31023b06ef87fcf18.stex"
+path="res://.import/TextBTN_Cancel.png-32da8cfda2e8d8d07aa8c2ea63717e8b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/TextBTN_Cancel.png"
-dest_files=[ "res://.import/TextBTN_Cancel.png-fb0b91eed6e63fe31023b06ef87fcf18.stex" ]
+source_file="res://RESOURCES/gui_images/TextBTN_Cancel.png"
+dest_files=[ "res://.import/TextBTN_Cancel.png-32da8cfda2e8d8d07aa8c2ea63717e8b.stex" ]
 
 [params]
 

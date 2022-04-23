@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BowBeta.png-f2278ace29661614668805ee2efc42e7.stex"
+path="res://.import/BowBeta.png-557cc12816b359aee924cba41551e6ef.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/BowBeta.png"
-dest_files=[ "res://.import/BowBeta.png-f2278ace29661614668805ee2efc42e7.stex" ]
+source_file="res://RESOURCES/gui_images/BowBeta.png"
+dest_files=[ "res://.import/BowBeta.png-557cc12816b359aee924cba41551e6ef.stex" ]
 
 [params]
 

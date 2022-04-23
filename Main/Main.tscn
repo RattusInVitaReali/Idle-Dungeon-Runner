@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Main/Main.gd" type="Script" id=1]
 [ext_resource path="res://UI/BottomBar/BottomBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameScreens/InventoryScreen/InventoryScreen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GameScreens/CombatScreen/CombatScreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GameScreens/PartForgeScreen/PartForgeScreen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GameScreens/ItemForgeScreen/ItemForgeScreen.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -21,6 +23,12 @@ margin_bottom = -16.0
 
 [node name="InventoryScreen" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1080, 0 )
+
+[node name="PartForgeScreen" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2160, 0 )
+
+[node name="ItemForgeScreen" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3240, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

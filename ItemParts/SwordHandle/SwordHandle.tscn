@@ -4,7 +4,8 @@
 
 [node name="SwordHandle" instance=ExtResource( 1 )]
 type = 1
-cost = 5
+cost = 10
+base_part_name = "Sword Handle"
 durability_multi = 0.3
 allowed_material_types = [ 1, 2 ]
 stat_multipliers = {

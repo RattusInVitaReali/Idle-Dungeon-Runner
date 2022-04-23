@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/SlottableInventory/Line/Line.gd" type="Script" id=1]
+[ext_resource path="res://UI/Slot/Slot.tscn" type="PackedScene" id=2]
+
+[node name="Line" type="VBoxContainer"]
+margin_right = 1030.0
+margin_bottom = 169.0
+script = ExtResource( 1 )
+
+[node name="Line" type="HBoxContainer" parent="."]
+margin_right = 1030.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="Slot1" parent="Line" instance=ExtResource( 2 )]
+
+[node name="Margin1" type="Label" parent="Line"]
+margin_left = 154.0
+margin_right = 172.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot2" parent="Line" instance=ExtResource( 2 )]
+margin_left = 176.0
+margin_right = 326.0
+
+[node name="Margin2" type="Label" parent="Line"]
+margin_left = 330.0
+margin_right = 348.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot3" parent="Line" instance=ExtResource( 2 )]
+margin_left = 352.0
+margin_right = 502.0
+
+[node name="Margin3" type="Label" parent="Line"]
+margin_left = 506.0
+margin_right = 524.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot4" parent="Line" instance=ExtResource( 2 )]
+margin_left = 528.0
+margin_right = 678.0
+
+[node name="Margin4" type="Label" parent="Line"]
+margin_left = 682.0
+margin_right = 700.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot5" parent="Line" instance=ExtResource( 2 )]
+margin_left = 704.0
+margin_right = 854.0
+
+[node name="Margin5" type="Label" parent="Line"]
+margin_left = 858.0
+margin_right = 876.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Slot6" parent="Line" instance=ExtResource( 2 )]
+margin_left = 880.0
+margin_right = 1030.0
+
+[node name="Label" type="Label" parent="."]
+margin_top = 154.0
+margin_right = 1030.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_vertical = 1

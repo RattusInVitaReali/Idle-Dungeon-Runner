@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/IRONY TITLE  empty.png-9a7d2354a4ba8e1fae225c4166854936.stex"
+path="res://.import/IRONY TITLE  empty.png-0ae8513df914c9a4f19f8e32b2a13f5b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/IRONY TITLE  empty.png"
-dest_files=[ "res://.import/IRONY TITLE  empty.png-9a7d2354a4ba8e1fae225c4166854936.stex" ]
+source_file="res://RESOURCES/gui_images/IRONY TITLE  empty.png"
+dest_files=[ "res://.import/IRONY TITLE  empty.png-0ae8513df914c9a4f19f8e32b2a13f5b.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/armour_gold.png-fa9d26edec34b118867e46bbe921da48.stex"
+path="res://.import/armour_gold.png-36470317b5cbe0ed4a33119f229b09f7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/armour_gold.png"
-dest_files=[ "res://.import/armour_gold.png-fa9d26edec34b118867e46bbe921da48.stex" ]
+source_file="res://RESOURCES/icons/armour_gold.png"
+dest_files=[ "res://.import/armour_gold.png-36470317b5cbe0ed4a33119f229b09f7.stex" ]
 
 [params]
 

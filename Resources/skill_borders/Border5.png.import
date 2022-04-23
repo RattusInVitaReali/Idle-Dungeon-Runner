@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Border5.png-41ff3654f4937216cb0b4665071c36cf.stex"
+path="res://.import/Border5.png-83d73f4b8046e45470eaf936db45b96b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/skill_borders/Border5.png"
-dest_files=[ "res://.import/Border5.png-41ff3654f4937216cb0b4665071c36cf.stex" ]
+source_file="res://RESOURCES/skill_borders/Border5.png"
+dest_files=[ "res://.import/Border5.png-83d73f4b8046e45470eaf936db45b96b.stex" ]
 
 [params]
 

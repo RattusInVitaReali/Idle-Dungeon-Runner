@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wand_yellow.png-d29303b608cabf628b2273ac7645a0f8.stex"
+path="res://.import/wand_yellow.png-776a188a8eca5861c0ce7b6672a19942.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/wand_yellow.png"
-dest_files=[ "res://.import/wand_yellow.png-d29303b608cabf628b2273ac7645a0f8.stex" ]
+source_file="res://RESOURCES/icons/wand_yellow.png"
+dest_files=[ "res://.import/wand_yellow.png-776a188a8eca5861c0ce7b6672a19942.stex" ]
 
 [params]
 

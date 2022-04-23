@@ -1,4 +1,5 @@
 extends Entity
+class_name Player
 
 signal used_skill
 
@@ -14,9 +15,10 @@ func _ready():
 	stats["action_time_auto"] = 0.3
 	stats["action_time_manual"] = 0.1
 	# TESTING
-	set_level(3)
+	set_level(2)
 	var Sword = load("res://Items/Sword/Sword.tscn")
 	var sword = Sword.instance()
+	sword.test()
 	equip_item(sword)
 	# /TESTING
 	play("run")

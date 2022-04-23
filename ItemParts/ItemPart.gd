@@ -1,9 +1,8 @@
-extends Node2D
+extends Slottable
 class_name ItemPart
 
 export (CraftingProcessor.PART_TYPE) var type
 export (int) var cost
-export (String) var base_part_name = "Part"
 export (int) var base_durability
 export (float) var durability_multi
 
@@ -20,7 +19,6 @@ var stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection
 
 var part_name
 var durability
-var rarity = CraftingProcessor.RARITY.BASIC
 var mat
 
 func calculate_stats(mat : CraftingMaterial):

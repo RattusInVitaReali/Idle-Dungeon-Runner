@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Exclamation_Red.png-fa89e4308734df3c29dfe5ddb40b27c3.stex"
+path="res://.import/Exclamation_Red.png-e9184d3599e5e71e08ef37d424a85a2e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/Exclamation_Red.png"
-dest_files=[ "res://.import/Exclamation_Red.png-fa89e4308734df3c29dfe5ddb40b27c3.stex" ]
+source_file="res://RESOURCES/gui_images/Exclamation_Red.png"
+dest_files=[ "res://.import/Exclamation_Red.png-e9184d3599e5e71e08ef37d424a85a2e.stex" ]
 
 [params]
 

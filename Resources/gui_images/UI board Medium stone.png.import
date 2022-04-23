@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/UI board Medium stone.png-dad8715e32a71edffe775759cdb2c3b7.stex"
+path="res://.import/UI board Medium stone.png-cba3f864eb16a2825642e2df1041016b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/UI board Medium stone.png"
-dest_files=[ "res://.import/UI board Medium stone.png-dad8715e32a71edffe775759cdb2c3b7.stex" ]
+source_file="res://RESOURCES/gui_images/UI board Medium stone.png"
+dest_files=[ "res://.import/UI board Medium stone.png-cba3f864eb16a2825642e2df1041016b.stex" ]
 
 [params]
 

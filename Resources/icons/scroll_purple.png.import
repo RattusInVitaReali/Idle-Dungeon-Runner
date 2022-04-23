@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scroll_purple.png-da7c69f0d98c3762fc319c27273d1641.stex"
+path="res://.import/scroll_purple.png-5106a2db13da5ad2da6a27a032739358.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/scroll_purple.png"
-dest_files=[ "res://.import/scroll_purple.png-da7c69f0d98c3762fc319c27273d1641.stex" ]
+source_file="res://RESOURCES/icons/scroll_purple.png"
+dest_files=[ "res://.import/scroll_purple.png-5106a2db13da5ad2da6a27a032739358.stex" ]
 
 [params]
 

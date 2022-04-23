@@ -36,6 +36,9 @@ func update_manual_cooldown():
 func set_attacker_and_target():
 	pass
 
+func set_level(_level):
+	level = _level
+
 func update_cooldowns(auto_combat):
 	# Apply cdr stat in the future
 	auto_cooldown = base_cooldown

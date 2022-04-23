@@ -10,22 +10,20 @@ signal apply_effect
 signal effect_applied
 signal died
 
+export var base_stats = { "hp": 100, "max_hp": 100, "phys_damage": 10, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.05,
+			 "crit_multi": 1.5, "action_time": 0.3, "manual_cd_multi": 0.33 }
+
+export var per_level = { "max_hp": 10, "phys_damage": 1, "magic_damage": 0, "phys_protection": 2, "magic_protection": 2 }
+
+var stats = { "hp": 100, "max_hp": 100, "phys_damage": 10, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.05,
+			 "crit_multi": 1.5, "action_time": 0.3, "manual_cd_multi": 0.33 }
+
 var dead = false
 var can_be_attacked = true
 var next_action_ready = false
-
 var enemy = null
-
-var base_action_time = 0.3
 var level = 0
 
-var base_stats = { "hp": 100, "max_hp": 100, "phys_damage": 10, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.05,
-			 "crit_multi": 1.5, "action_time": base_action_time, "manual_cd_multi": 0.33 }
-
-var per_level = { "max_hp": 10, "phys_damage": 1, "magic_damage": 0, "phys_protection": 2, "magic_protection": 2 }
-
-var stats = { "hp": 100, "max_hp": 100, "phys_damage": 10, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.05,
-			 "crit_multi": 1.5, "action_time": base_action_time, "manual_cd_multi": 0.33 }
 
 func _ready():
 	rng.randomize()
@@ -68,6 +66,11 @@ func equip_item(_item : Item):
 	$Items.add_child(_item)
 	update_stats()
 
+# Final for Monster, temp for Player
+func update_skill_levels():
+	for skill in get_skills():
+		skill.set_level(level)
+
 func update_skill_cooldowns(auto_combat):
 	for skill in get_skills():
 		skill.update_cooldowns(auto_combat)
@@ -77,6 +80,7 @@ func update_stats():
 		reset_stats()
 		apply_level_stats()
 		apply_item_stats()
+		update_skill_levels()
 		update_skill_cooldowns(CombatProcessor.auto_combat)
 		if !CombatProcessor.in_combat:
 			stats.hp = stats.max_hp
@@ -215,7 +219,7 @@ func die():
 
 func calculate_anim_speed():
 	if CombatProcessor.in_combat:
-		speed_scale = base_action_time / stats.action_time
+		speed_scale = base_stats.action_time / stats.action_time
 
 func start_action_timer():
 	next_action_ready = false

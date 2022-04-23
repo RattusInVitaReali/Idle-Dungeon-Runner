@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/0_Warrior_Attack_1_012.png-038c1ff82ea2e78d56c4f03b3428aee1.stex"
+path="res://.import/0_Warrior_Attack_1_012.png-0ff4faf1bc468df5a0a46b39d1b9e2b4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/monsters/bandit/attack/0_Warrior_Attack_1_012.png"
-dest_files=[ "res://.import/0_Warrior_Attack_1_012.png-038c1ff82ea2e78d56c4f03b3428aee1.stex" ]
+source_file="res://RESOURCES/monsters/bandit/attack/0_Warrior_Attack_1_012.png"
+dest_files=[ "res://.import/0_Warrior_Attack_1_012.png-0ff4faf1bc468df5a0a46b39d1b9e2b4.stex" ]
 
 [params]
 

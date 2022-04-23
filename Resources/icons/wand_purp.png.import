@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wand_purp.png-4e5a7a2b4c9cbc62b2e4cc9f77c1eecf.stex"
+path="res://.import/wand_purp.png-e5850c81f00b19ddbb9f6f5552ab8f70.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/wand_purp.png"
-dest_files=[ "res://.import/wand_purp.png-4e5a7a2b4c9cbc62b2e4cc9f77c1eecf.stex" ]
+source_file="res://RESOURCES/icons/wand_purp.png"
+dest_files=[ "res://.import/wand_purp.png-e5850c81f00b19ddbb9f6f5552ab8f70.stex" ]
 
 [params]
 

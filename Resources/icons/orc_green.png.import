@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/orc_green.png-c3b435ba70e276cc943d96a0b2a8f136.stex"
+path="res://.import/orc_green.png-40acbcb48fd80aa0ea0cf3ce75b468a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/orc_green.png"
-dest_files=[ "res://.import/orc_green.png-c3b435ba70e276cc943d96a0b2a8f136.stex" ]
+source_file="res://RESOURCES/icons/orc_green.png"
+dest_files=[ "res://.import/orc_green.png-40acbcb48fd80aa0ea0cf3ce75b468a7.stex" ]
 
 [params]
 

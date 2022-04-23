@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RightArrow.png-cf11767ee088087d93c685b63d0dcd89.stex"
+path="res://.import/RightArrow.png-0200c7542986817d3f4169ab44e30912.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/RightArrow.png"
-dest_files=[ "res://.import/RightArrow.png-cf11767ee088087d93c685b63d0dcd89.stex" ]
+source_file="res://RESOURCES/gui_images/RightArrow.png"
+dest_files=[ "res://.import/RightArrow.png-0200c7542986817d3f4169ab44e30912.stex" ]
 
 [params]
 

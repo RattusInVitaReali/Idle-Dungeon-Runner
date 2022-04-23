@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arrow_bronze.png-b480265b898b9536fcaadd2b15e01fda.stex"
+path="res://.import/arrow_bronze.png-e5bbcb34f8c7296ed64f7593d77ff90f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/arrow_bronze.png"
-dest_files=[ "res://.import/arrow_bronze.png-b480265b898b9536fcaadd2b15e01fda.stex" ]
+source_file="res://RESOURCES/icons/arrow_bronze.png"
+dest_files=[ "res://.import/arrow_bronze.png-e5bbcb34f8c7296ed64f7593d77ff90f.stex" ]
 
 [params]
 

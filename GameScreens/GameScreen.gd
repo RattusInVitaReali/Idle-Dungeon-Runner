@@ -1,5 +1,8 @@
 extends Node2D
 class_name GameScreen
 
-func _ready():
+func on_focused():
+	update_screen()
+
+func update_screen():
 	pass

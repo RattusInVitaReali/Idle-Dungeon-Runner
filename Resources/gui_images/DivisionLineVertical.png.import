@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DivisionLineVertical.png-e778c8d7e416d68c1363fb74761b8c17.stex"
+path="res://.import/DivisionLineVertical.png-983bfc85529694fa9b43ed13e2fa3159.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/gui_images/DivisionLineVertical.png"
-dest_files=[ "res://.import/DivisionLineVertical.png-e778c8d7e416d68c1363fb74761b8c17.stex" ]
+source_file="res://RESOURCES/gui_images/DivisionLineVertical.png"
+dest_files=[ "res://.import/DivisionLineVertical.png-983bfc85529694fa9b43ed13e2fa3159.stex" ]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://GameScreens/CombatScreen/CombatScreen.gd" type="Script" id=1]
-[ext_resource path="res://Resources/backgrounds/forest.png" type="Texture" id=2]
+[ext_resource path="res://RESOURCES/backgrounds/forest.png" type="Texture" id=2]
 [ext_resource path="res://UI/CombatScreen/Combat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GameScreens/GameScreen.tscn" type="PackedScene" id=4]
 

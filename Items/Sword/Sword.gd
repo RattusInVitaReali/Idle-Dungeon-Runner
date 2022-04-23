@@ -1,8 +1,5 @@
 extends Item
 
-func _ready():
-	test()
-
 # Makes a sword
 func test():
 	var Oak = load("res://Materials/Basic/Oak.tscn")
@@ -29,11 +26,3 @@ func test():
 	add_part(
 		pommel
 	)
-	
-	print_item()
-	sword_blade.print_part()
-	sword_handle.print_part()
-	pommel.print_part()
-	oak.print_material()
-	iron1.print_material()
-	bloodsteel.print_material()

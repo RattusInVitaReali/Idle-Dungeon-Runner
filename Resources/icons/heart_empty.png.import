@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heart_empty.png-ac4bff68ba4ac4d09f973cfe9cbfcb05.stex"
+path="res://.import/heart_empty.png-6baa8d4b295d4276438014d399ef4ec5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/heart_empty.png"
-dest_files=[ "res://.import/heart_empty.png-ac4bff68ba4ac4d09f973cfe9cbfcb05.stex" ]
+source_file="res://RESOURCES/icons/heart_empty.png"
+dest_files=[ "res://.import/heart_empty.png-6baa8d4b295d4276438014d399ef4ec5.stex" ]
 
 [params]
 

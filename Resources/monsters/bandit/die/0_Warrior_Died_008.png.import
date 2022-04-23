@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/0_Warrior_Died_008.png-bbda9454664521bcf2f67ee91f161534.stex"
+path="res://.import/0_Warrior_Died_008.png-16c497e339bba2a2b8b692b3162c4e18.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/monsters/bandit/die/0_Warrior_Died_008.png"
-dest_files=[ "res://.import/0_Warrior_Died_008.png-bbda9454664521bcf2f67ee91f161534.stex" ]
+source_file="res://RESOURCES/monsters/bandit/die/0_Warrior_Died_008.png"
+dest_files=[ "res://.import/0_Warrior_Died_008.png-16c497e339bba2a2b8b692b3162c4e18.stex" ]
 
 [params]
 

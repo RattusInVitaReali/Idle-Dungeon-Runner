@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/axe_plat.png-67f3c9618280fc11ae57398350f4044b.stex"
+path="res://.import/axe_plat.png-65b983f2bce228c2eb9e2a7febfddef9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/axe_plat.png"
-dest_files=[ "res://.import/axe_plat.png-67f3c9618280fc11ae57398350f4044b.stex" ]
+source_file="res://RESOURCES/icons/axe_plat.png"
+dest_files=[ "res://.import/axe_plat.png-65b983f2bce228c2eb9e2a7febfddef9.stex" ]
 
 [params]
 

@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
+"base": "Slottable",
 "class": "CraftingMaterial",
 "language": "GDScript",
 "path": "res://Materials/CraftingMaterial.gd"
@@ -29,12 +29,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://GameScreens/GameScreen.gd"
 }, {
-"base": "Node2D",
+"base": "Slottable",
 "class": "Item",
 "language": "GDScript",
 "path": "res://Items/Item.gd"
 }, {
-"base": "Node2D",
+"base": "Slottable",
 "class": "ItemPart",
 "language": "GDScript",
 "path": "res://ItemParts/ItemPart.gd"
@@ -49,10 +49,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Entities/Monster/Monster.gd"
 }, {
+"base": "Entity",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Entities/Player/Player.gd"
+}, {
+"base": "Control",
+"class": "Screen",
+"language": "GDScript",
+"path": "res://UI/Screens/Screen.gd"
+}, {
 "base": "Node2D",
 "class": "Skill",
 "language": "GDScript",
 "path": "res://Skills/Skill.gd"
+}, {
+"base": "Node2D",
+"class": "Slottable",
+"language": "GDScript",
+"path": "res://Slottable/Slottable.gd"
 }, {
 "base": "Node2D",
 "class": "Zone",
@@ -68,7 +83,10 @@ _global_script_class_icons={
 "ItemPart": "",
 "Modifier": "",
 "Monster": "",
+"Player": "",
+"Screen": "",
 "Skill": "",
+"Slottable": "",
 "Zone": ""
 }
 
@@ -82,6 +100,7 @@ config/icon="res://icon.png"
 
 CombatProcessor="*res://Autoload/CombatProcessor.gd"
 CraftingProcessor="*res://Autoload/CraftingProcessor.gd"
+LootManager="*res://Autoload/LootManager.gd"
 
 [display]
 

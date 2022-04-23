@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/skull.png-5ea14e4df8d1866e3e808917e681cdab.stex"
+path="res://.import/skull.png-65ca6a9ab103ee95a11b127c55e0b6af.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/skull.png"
-dest_files=[ "res://.import/skull.png-5ea14e4df8d1866e3e808917e681cdab.stex" ]
+source_file="res://RESOURCES/icons/skull.png"
+dest_files=[ "res://.import/skull.png-65ca6a9ab103ee95a11b127c55e0b6af.stex" ]
 
 [params]
 

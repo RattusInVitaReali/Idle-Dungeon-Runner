@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sword_bronze.png-2e29b55965a12c1a78eac8639581ebca.stex"
+path="res://.import/sword_bronze.png-8efedce0d5ba029f6951ac06df60b6c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/icons/sword_bronze.png"
-dest_files=[ "res://.import/sword_bronze.png-2e29b55965a12c1a78eac8639581ebca.stex" ]
+source_file="res://RESOURCES/icons/sword_bronze.png"
+dest_files=[ "res://.import/sword_bronze.png-8efedce0d5ba029f6951ac06df60b6c6.stex" ]
 
 [params]
 
