@@ -4,8 +4,18 @@ const Line = preload("res://UI/SlottableInventory/Line/Line.tscn")
 
 onready var lines_container = $ScrollContainer/VBoxContainer
 
-func add_item(item):
-	$Items.add_child(item)
+func add_item(_item):
+	var added = false
+	if _item.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL:
+		for item in $Items.get_children():
+			if item.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL:
+				if item.same_as(_item):
+					item.add_quantity(_item.quantity)
+					added = true
+					break
+	if !added:
+		$Items.add_child(_item)
+	update_inventory()
 
 func update_inventory():
 	for line in lines_container.get_children():

@@ -7,18 +7,14 @@ func get_item(item):
 
 # Generates 1 item, 1 item part and 1 material
 func generate_test_loot():
-	var Oak = load("res://Materials/Basic/Oak.tscn")
 	
-	var Bloodsteel = load("res://Materials/Rare/Bloodsteel.tscn")
-	var SwordBlade = load("res://ItemParts/SwordBlade/SwordBlade.tscn")
+	var oak = CraftingManager.CraftingMaterial.instance()
+	var sword_blade = CraftingManager.SwordBlade.instance()
+	var sword = CraftingManager.Sword.instance()
 	
-	var Sword = load("res://Items/Sword/Sword.tscn")
-	
-	var oak = Oak.instance()
-	var bloodsteel = Bloodsteel.instance()
-	var sword_blade = SwordBlade.instance()
-	sword_blade.set_mat(bloodsteel)
-	var sword = Sword.instance()
+	oak.set_mat(CraftingManager.Oak)
+	oak.quantity = randi() % 5 + 1
+	sword_blade.test()
 	sword.test()
 	
 	get_item(oak)

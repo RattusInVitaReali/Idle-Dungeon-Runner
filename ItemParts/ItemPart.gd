@@ -1,12 +1,14 @@
 extends Slottable
 class_name ItemPart
 
-export (CraftingProcessor.PART_TYPE) var type
+export (Texture) var base_icon
+
+export (CraftingManager.PART_TYPE) var type
 export (int) var cost
 export (int) var base_durability
 export (float) var durability_multi
 
-export (Array, CraftingProcessor.MATERIAL_TYPE) var allowed_material_types
+export (Array, CraftingManager.MATERIAL_TYPE) var allowed_material_types
 
 export var stat_multipliers = { "phys_damage": 0.0, "magic_damage": 0.0, "phys_protection": 0.0, "magic_protection": 0.0, 
 								"max_hp": 0.0, "crit_chance": 0.0, "crit_multi": 0.0 }
@@ -20,6 +22,10 @@ var stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection
 var part_name
 var durability
 var mat
+
+func _ready():
+	# Temp
+	icon = base_icon
 
 func calculate_stats(mat : CraftingMaterial):
 	for stat in mat.stats:
@@ -37,10 +43,10 @@ func set_mat(mat : CraftingMaterial):
 	return null
 
 func set_part_name(mat : CraftingMaterial):
-	part_name = mat.prefix + " " + CraftingProcessor.PART_TYPE.keys()[type].capitalize()
+	part_name = mat.prefix + " " + CraftingManager.PART_TYPE.keys()[type].capitalize()
 
 func print_part():
-	print("Part : %s (%s)" % [part_name, CraftingProcessor.RARITY.keys()[rarity]])
+	print("Part : %s (%s)" % [part_name, CraftingManager.RARITY.keys()[rarity]])
 	print("- Durability : %s" % durability)
 	for stat in stats:
 		if stats[stat] != 0:

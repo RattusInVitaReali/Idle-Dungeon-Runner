@@ -40,6 +40,11 @@ _global_script_classes=[ {
 "path": "res://ItemParts/ItemPart.gd"
 }, {
 "base": "Resource",
+"class": "MaterialResource",
+"language": "GDScript",
+"path": "res://Materials/MaterialResource.gd"
+}, {
+"base": "Resource",
 "class": "Modifier",
 "language": "GDScript",
 "path": "res://Modifiers/Modifier.gd"
@@ -81,6 +86,7 @@ _global_script_class_icons={
 "GameScreen": "",
 "Item": "",
 "ItemPart": "",
+"MaterialResource": "",
 "Modifier": "",
 "Monster": "",
 "Player": "",
@@ -99,7 +105,7 @@ config/icon="res://icon.png"
 [autoload]
 
 CombatProcessor="*res://Autoload/CombatProcessor.gd"
-CraftingProcessor="*res://Autoload/CraftingProcessor.gd"
+CraftingManager="*res://Autoload/CraftingManager.gd"
 LootManager="*res://Autoload/LootManager.gd"
 
 [display]

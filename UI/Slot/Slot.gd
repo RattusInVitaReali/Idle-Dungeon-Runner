@@ -25,15 +25,15 @@ func update_slot(_item):
 		$Quantity.visible = false
 	else:
 		match item.rarity:
-			CraftingProcessor.RARITY.BASIC:
+			CraftingManager.RARITY.BASIC:
 				texture = FrameBasic
-			CraftingProcessor.RARITY.COMMON:
+			CraftingManager.RARITY.COMMON:
 				texture = FrameCommon
-			CraftingProcessor.RARITY.UNCOMMON:
+			CraftingManager.RARITY.UNCOMMON:
 				texture = FrameUncommon
-			CraftingProcessor.RARITY.RARE:
+			CraftingManager.RARITY.RARE:
 				texture = FrameRare
-			CraftingProcessor.RARITY.EPIC:
+			CraftingManager.RARITY.EPIC:
 				texture = FrameEpic
 		$Icon.texture_normal = item.icon
 		$Quantity.text = str(item.quantity)

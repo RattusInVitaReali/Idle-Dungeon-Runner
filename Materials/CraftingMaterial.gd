@@ -1,35 +1,45 @@
 extends Slottable
 class_name CraftingMaterial
 
-# PUT ALL THESE STATS INTO A RESOURCE
-export (String) var material_name
-export (String) var prefix
-export (String) var special_weapon
-export (String) var special_armor
+var mat
 
-export (CraftingProcessor.MATERIAL_TYPE) var type
-export (CraftingProcessor.RARITY) var base_rarity
-export (CraftingProcessor.MATERIAL_WEIGHT) var weight
-export (int) var tier
-export (int) var durability
+var material_name
+var prefix
+var special_weapon
+var special_armor
 
-export var stats = { "phys_damage": 0.0, "magic_damage": 0.0, "phys_protection": 0.0, "magic_protection": 0.0, 
+var type
+var weight
+var tier
+var durability
+
+var stats = { "phys_damage": 0.0, "magic_damage": 0.0, "phys_protection": 0.0, "magic_protection": 0.0, 
 					"max_hp": 0, "crit_chance": 0.0, "crit_multi": 0.0 }
-# PUT ALL THESE STATS INTO A RESOURCE
 
-func _ready():
-	rarity = base_rarity
+func set_mat(_mat : MaterialResource):
+	mat = _mat
+	for property in get_script().get_script_property_list():
+		if property.name in _mat:
+			set(property.name, _mat.get(property.name))
+	stats = _mat.stats.duplicate()
+	return self
 
 func print_material():
-	print("Material : %s (%s)" % [material_name, CraftingProcessor.RARITY.keys()[rarity]])
+	print("Material : %s (%s)" % [material_name, CraftingManager.RARITY.keys()[rarity]])
 	print("- Durability : %s" % durability)
 	for stat in stats:
 		if stats[stat] != 0:
 			print("- %s : %s" % [stat.capitalize(), stats[stat]])
 	print()
 
+func same_as(_mat):
+	return material_name == _mat.material_name and mat == _mat.mat and stats.hash() == _mat.stats.hash()
+
+func add_quantity(amount):
+	quantity += amount
+
 func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo, item):
-	pass
+	mat.on_outgoing_damage(damage_info, item)
 
 func on_incoming_damage(damage_info : CombatProcessor.DamageInfo, item):
-	pass
+	mat.on_incoming_damage(damage_info, item)

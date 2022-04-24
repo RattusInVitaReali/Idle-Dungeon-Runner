@@ -3,8 +3,8 @@ class_name Slottable
 
 enum SLOTTABLE_TYPE { MATERIAL, ITEM_PART, ITEM }
 
-export (Texture) var icon
+var icon
 export (SLOTTABLE_TYPE) var slottable_type
 
 var quantity = 1
-var rarity = CraftingProcessor.RARITY.BASIC
+var rarity = CraftingManager.RARITY.BASIC

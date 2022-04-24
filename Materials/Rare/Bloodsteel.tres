@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Materials/Rare/Bloodsteel.gd" type="Script" id=1]
+[ext_resource path="res://RESOURCES/icons2/image_part_326.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+icon = ExtResource( 2 )
+material_name = "Bloodsteel"
+prefix = "Bloodsteel"
+special_weapon = "Bleeding deals double damage."
+special_armor = ""
+type = 1
+rarity = 3
+weight = 2
+tier = 0
+durability = 400
+stats = {
+"crit_chance": 0.1,
+"crit_multi": 0.3,
+"magic_damage": 9.0,
+"magic_protection": 9.0,
+"max_hp": 30,
+"phys_damage": 3.0,
+"phys_protection": 3.0
+}

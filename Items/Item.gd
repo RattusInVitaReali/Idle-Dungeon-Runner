@@ -1,10 +1,12 @@
 extends Slottable
 class_name Item
 
-export (Array, CraftingProcessor.PART_TYPE) var required_parts
-export (Array, CraftingProcessor.PART_TYPE) var optional_parts
-export (CraftingProcessor.ITEM_TYPE) var type
-export (CraftingProcessor.ITEM_SUBTYPE) var subtype
+export (Texture) var base_icon
+
+export (Array, CraftingManager.PART_TYPE) var required_parts
+export (Array, CraftingManager.PART_TYPE) var optional_parts
+export (CraftingManager.ITEM_TYPE) var type
+export (CraftingManager.ITEM_SUBTYPE) var subtype
 
 export (int) var base_durability
 export (float) var durability_multi
@@ -17,6 +19,10 @@ var stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection
 
 var item_name
 var durability
+
+func _ready():
+	# Temp
+	icon = base_icon
 
 func create(parts : Array):
 	for req_part_type in required_parts:
@@ -53,7 +59,7 @@ func set_item_name():
 				break
 	new_name.erase(new_name.length() - 1, 1)
 	new_name += " "
-	new_name += CraftingProcessor.ITEM_SUBTYPE.keys()[subtype].capitalize()
+	new_name += CraftingManager.ITEM_SUBTYPE.keys()[subtype].capitalize()
 	item_name = new_name
 
 func calculate_stats():
@@ -73,7 +79,7 @@ func apply_stats(_stats):
 		_stats[stat] += stats[stat]
 
 func print_item():
-	print("Item : %s (%s)" % [item_name, CraftingProcessor.RARITY.keys()[rarity]])
+	print("Item : %s (%s)" % [item_name, CraftingManager.RARITY.keys()[rarity]])
 	print("- Durability : %s" % durability)
 	for stat in stats:
 		if stats[stat] != 0:
