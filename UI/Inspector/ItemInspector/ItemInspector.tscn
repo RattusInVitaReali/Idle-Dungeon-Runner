@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/Inspector/Inspector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Inspector/ItemInspector/ItemInspector.gd" type="Script" id=2]
 [ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://_Resources/gui_images/Division line.png" type="Texture" id=4]
+[ext_resource path="res://_Resources/gui_images/UI board Small  parchment.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 75
 font_data = ExtResource( 3 )
 
 [node name="ItemInspector" instance=ExtResource( 1 )]
@@ -59,6 +64,62 @@ margin_bottom = 688.0
 
 [node name="Stats" parent="Panel/VBoxContainer" index="7"]
 margin_top = 692.0
+margin_bottom = 1129.0
 
 [node name="StatsContainer" parent="Panel/VBoxContainer/Stats" index="0"]
-margin_bottom = 635.0
+margin_bottom = 437.0
+
+[node name="Line4" parent="Panel/VBoxContainer" index="8"]
+margin_top = 1133.0
+margin_bottom = 1148.0
+
+[node name="Special" parent="Panel/VBoxContainer" index="9"]
+margin_top = 1152.0
+margin_bottom = 1212.0
+
+[node name="Line5" type="HBoxContainer" parent="Panel/VBoxContainer" index="10"]
+margin_top = 1216.0
+margin_right = 840.0
+margin_bottom = 1231.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line5" index="0"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line5" index="1"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 4 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line5" index="2"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Equip" type="TextureButton" parent="Panel/VBoxContainer" index="11"]
+margin_top = 1235.0
+margin_right = 840.0
+margin_bottom = 1410.0
+rect_min_size = Vector2( 0, 175 )
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Equip" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "EQUIP"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Panel/VBoxContainer/Equip" to="." method="_on_Equip_pressed"]

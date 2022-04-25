@@ -15,11 +15,7 @@ func _ready():
 	stats["action_time_auto"] = 0.3
 	stats["action_time_manual"] = 0.1
 	# TESTING
-	set_level(2)
-	var Sword = load("res://Items/Sword/Sword.tscn")
-	var sword = Sword.instance()
-	sword.test()
-	equip_item(sword)
+	set_level(5)
 	# /TESTING
 	play("run")
 	ready = true

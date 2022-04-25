@@ -1,5 +1,7 @@
 extends Inspector
 
+signal equip
+
 onready var parts = $Panel/VBoxContainer/Parts
 
 func set_slottable(_slottable):
@@ -18,3 +20,8 @@ func test():
 	var sword = CraftingManager.Sword.instance()
 	sword.test()
 	set_slottable(sword)
+
+
+func _on_Equip_pressed():
+	emit_signal("equip", slottable)
+	queue_free()

@@ -61,10 +61,14 @@ func set_skills_attacker():
 func equip_item(_item : Item):
 	for item in get_items():
 		if item.type == _item.type:
-			remove_child(item)
+			unequip_item(item)
 			break
 	$Items.add_child(_item)
 	update_stats()
+
+func unequip_item(item):
+	$Items.remove_child(item)
+	LootManager.get_item(item)
 
 # Final for Monster, temp for Player
 func update_skill_levels():

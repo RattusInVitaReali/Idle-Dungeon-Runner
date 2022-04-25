@@ -19,6 +19,12 @@ func add_item(_item):
 		$Items.add_child(_item)
 	update_inventory()
 
+func remove_item(item, quantity = 1):
+	item.quantity -= 1
+	if item.quantity == 0:
+		$Items.remove_child(item)
+	update_inventory()
+
 func update_inventory():
 	for line in lines_container.get_children():
 		lines_container.remove_child(line)
