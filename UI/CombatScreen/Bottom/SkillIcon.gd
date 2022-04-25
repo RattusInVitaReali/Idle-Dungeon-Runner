@@ -1,6 +1,6 @@
 extends TextureRect
 
-const lock = preload("res://Resources/skill_icons/lock.png")
+const lock = preload("res://_Resources/skill_icons/lock.png")
 
 signal manual_use_skill
 

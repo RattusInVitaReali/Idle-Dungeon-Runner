@@ -3,7 +3,6 @@ class_name CraftingMaterial
 
 var mat
 
-var material_name
 var prefix
 var special_weapon
 var special_armor
@@ -25,7 +24,7 @@ func set_mat(_mat : MaterialResource):
 	return self
 
 func print_material():
-	print("Material : %s (%s)" % [material_name, CraftingManager.RARITY.keys()[rarity]])
+	print("Material : %s (%s)" % [slottable_name, CraftingManager.RARITY.keys()[rarity]])
 	print("- Durability : %s" % durability)
 	for stat in stats:
 		if stats[stat] != 0:
@@ -33,7 +32,7 @@ func print_material():
 	print()
 
 func same_as(_mat):
-	return material_name == _mat.material_name and mat == _mat.mat and stats.hash() == _mat.stats.hash()
+	return slottable_name == _mat.slottable_name and mat == _mat.mat and stats.hash() == _mat.stats.hash()
 
 func add_quantity(amount):
 	quantity += amount

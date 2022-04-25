@@ -1,6 +1,12 @@
 extends VBoxContainer
 
+signal inspector
+
 onready var slots = [$Line/Slot1, $Line/Slot2, $Line/Slot3, $Line/Slot4, $Line/Slot5, $Line/Slot6]
+
+func _ready():
+	for slot in slots:
+		slot.connect("inspector", self, "_on_inspector")
 
 func update_line(items):
 	var i = 0
@@ -10,3 +16,6 @@ func update_line(items):
 		else:
 			slot.update_slot(null)
 		i += 1
+
+func _on_inspector(inspector):
+	emit_signal("inspector", inspector)

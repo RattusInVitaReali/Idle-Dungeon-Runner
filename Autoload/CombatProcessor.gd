@@ -71,6 +71,8 @@ class DamageInfo:
 		magic_damage *= crit_multi
 		can_crit = false
 		is_crit = true
+		for effect in effects:
+			effect.apply_crit()
 		return self
 
 func damage_enemy(damage_info):

@@ -1,15 +1,15 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Materials/Rare/Bloodsteel.gd" type="Script" id=1]
-[ext_resource path="res://RESOURCES/icons2/image_part_326.png" type="Texture" id=2]
+[ext_resource path="res://_Resources/icons2/image_part_326.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
 icon = ExtResource( 2 )
-material_name = "Bloodsteel"
+slottable_name = "Bloodsteel"
 prefix = "Bloodsteel"
 special_weapon = "Bleeding deals double damage."
-special_armor = ""
+special_armor = "Bleeding against you is half as effective."
 type = 1
 rarity = 3
 weight = 2

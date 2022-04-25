@@ -13,6 +13,7 @@ var tick_duration = 0.0
 var attacker = null
 var target = null
 
+var is_crit = false
 
 func initialize(_attacker, _target):
 	attacker = _attacker
@@ -52,6 +53,9 @@ func do_at_end():
 func expire():
 	emit_signal("effect_expired")
 	queue_free()
+
+func apply_crit():
+	is_crit = true
 
 func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	pass

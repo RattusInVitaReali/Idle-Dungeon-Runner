@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://RESOURCES/gui_images/Frame.png" type="Texture" id=1]
+[ext_resource path="res://_Resources/gui_images/Frame.png" type="Texture" id=1]
 [ext_resource path="res://UI/Slot/Slot.gd" type="Script" id=2]
-[ext_resource path="res://RESOURCES/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -40,4 +40,4 @@ text = "12"
 align = 2
 valign = 2
 
-[connection signal="pressed" from="Icon" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Icon" to="." method="_on_Icon_pressed"]

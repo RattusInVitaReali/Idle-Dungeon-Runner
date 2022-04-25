@@ -1,30 +1,36 @@
 extends TextureRect
 
-const Frame = preload("res://Resources/gui_images/Frame.png")
-const FrameBasic = preload("res://Resources/gui_images/Frame_Basic.png")
-const FrameCommon = preload("res://Resources/gui_images/Frame_Common.png")
-const FrameUncommon = preload("res://Resources/gui_images/Frame_Uncommon.png")
-const FrameRare = preload("res://Resources/gui_images/Frame_Rare.png")
-const FrameEpic = preload("res://Resources/gui_images/Frame_Epic.png")
+signal inspector
 
-var item = null
+const Frame = preload("res://_Resources/gui_images/Frame.png")
+const FrameBasic = preload("res://_Resources/gui_images/Frame_Basic.png")
+const FrameCommon = preload("res://_Resources/gui_images/Frame_Common.png")
+const FrameUncommon = preload("res://_Resources/gui_images/Frame_Uncommon.png")
+const FrameRare = preload("res://_Resources/gui_images/Frame_Rare.png")
+const FrameEpic = preload("res://_Resources/gui_images/Frame_Epic.png")
 
-func try_to_add_item(_item):
-	if item == null:
-		update_slot(_item)
-		return item
+const MaterialInspector = preload("res://UI/Inspector/MaterialInspector/MaterialInspector.tscn")
+const PartInspector = preload("res://UI/Inspector/PartInspector/PartInspector.tscn")
+const ItemInspector = preload("res://UI/Inspector/ItemInspector/ItemInspector.tscn")
+
+var slottable = null
+
+func try_to_add_slottable(_slottable):
+	if slottable == null:
+		update_slot(_slottable)
+		return slottable
 	return null
 
-func update_slot(_item):
-	if item == _item:
+func update_slot(_slottable):
+	if slottable == _slottable:
 		return
-	item = _item
-	if _item == null:
+	slottable = _slottable
+	if _slottable == null:
 		texture = Frame
 		$Icon.texture_normal = null
 		$Quantity.visible = false
 	else:
-		match item.rarity:
+		match slottable.rarity:
 			CraftingManager.RARITY.BASIC:
 				texture = FrameBasic
 			CraftingManager.RARITY.COMMON:
@@ -35,12 +41,27 @@ func update_slot(_item):
 				texture = FrameRare
 			CraftingManager.RARITY.EPIC:
 				texture = FrameEpic
-		$Icon.texture_normal = item.icon
-		$Quantity.text = str(item.quantity)
-		if item.quantity > 1:
+		$Icon.texture_normal = slottable.icon
+		$Quantity.text = str(slottable.quantity)
+		if slottable.quantity > 1:
 			$Quantity.visible = true
 		else:
 			$Quantity.visible = false
 
-func _ready():
-	pass
+func _on_Icon_pressed():
+	var inspector
+	if slottable != null:
+		match slottable.slottable_type:
+			Slottable.SLOTTABLE_TYPE.MATERIAL:
+				inspector = MaterialInspector.instance()
+			Slottable.SLOTTABLE_TYPE.ITEM_PART:
+				inspector = PartInspector.instance()
+			Slottable.SLOTTABLE_TYPE.ITEM:
+				inspector = ItemInspector.instance()
+		emit_signal("inspector", inspector)
+		inspector.set_slottable(slottable)
+
+func test():
+	var sword = CraftingManager.Sword.instance()
+	sword.test()
+	update_slot(sword)

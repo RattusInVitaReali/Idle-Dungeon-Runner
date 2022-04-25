@@ -3,7 +3,7 @@ class_name MaterialResource
 
 export (Texture) var icon
 
-export (String) var material_name
+export (String) var slottable_name
 export (String) var prefix
 export (String) var special_weapon
 export (String) var special_armor

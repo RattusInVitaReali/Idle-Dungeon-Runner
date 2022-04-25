@@ -1,12 +1,12 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Materials/MaterialResource.gd" type="Script" id=1]
-[ext_resource path="res://RESOURCES/icons2/image_part_273.png" type="Texture" id=2]
+[ext_resource path="res://_Resources/icons2/image_part_273.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
 icon = ExtResource( 2 )
-material_name = "Oak"
+slottable_name = "Oak"
 prefix = "Oak"
 special_weapon = ""
 special_armor = ""

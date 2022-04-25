@@ -7,8 +7,10 @@ func tick_damage(_tick_damage):
 	return self
 
 func tick():
-	attacker.process_outgoing_damage(
+	var damage_info = \
 		CombatProcessor.DamageInfo.new(attacker, target) \
 		.phys_damage(tick_damage) \
 		.bleeding_tick(true)
-	)
+	if is_crit:
+		damage_info.apply_crit(attacker.stats.crit_multi)
+	attacker.process_outgoing_damage(damage_info)

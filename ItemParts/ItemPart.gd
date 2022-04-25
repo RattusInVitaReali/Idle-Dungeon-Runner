@@ -4,6 +4,7 @@ class_name ItemPart
 export (Texture) var base_icon
 
 export (CraftingManager.PART_TYPE) var type
+export (CraftingManager.ITEM_TYPE) var used_for
 export (int) var cost
 export (int) var base_durability
 export (float) var durability_multi
@@ -19,34 +20,48 @@ export var base_stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phy
 var stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.0,
 			 "crit_multi": 0.0, "action_time" : 0 }
 
-var part_name
 var durability
 var mat
+var special = ""
 
 func _ready():
 	# Temp
 	icon = base_icon
 
-func calculate_stats(mat : CraftingMaterial):
+func set_mat(_mat : CraftingMaterial):
+	if _mat.type in allowed_material_types:
+		mat = _mat
+		add_child(mat)
+		calculate_stats()
+		calculate_durability()
+		set_slottable_name()
+		set_special()
+		rarity = mat.rarity
+		return self
+		
+	return null
+
+func calculate_stats():
 	for stat in mat.stats:
 		stats[stat] = base_stats[stat] + mat.stats[stat] * stat_multipliers[stat]
 
-func set_mat(mat : CraftingMaterial):
-	if mat.type in allowed_material_types:
-		add_child(mat)
-		calculate_stats(mat)
-		durability = base_durability + mat.durability * durability_multi
-		set_part_name(mat)
-		rarity = mat.rarity
-		self.mat = mat
-		return self
-	return null
+func calculate_durability():
+	durability = base_durability + mat.durability * durability_multi
 
-func set_part_name(mat : CraftingMaterial):
-	part_name = mat.prefix + " " + CraftingManager.PART_TYPE.keys()[type].capitalize()
+func set_slottable_name():
+	slottable_name = mat.prefix + " " + CraftingManager.PART_TYPE.keys()[type].capitalize()
+
+func set_special():
+	match used_for:
+		CraftingManager.ITEM_TYPE.WEAPON:
+			special = mat.special_weapon
+		CraftingManager.TYPE.ARMOR:
+			special = mat.special_armor
+		CraftingManager.ITEM_TYPE.ANY:
+			special = "Weapon: " + mat.special_weapon + "Armor: " + mat.special_armor
 
 func print_part():
-	print("Part : %s (%s)" % [part_name, CraftingManager.RARITY.keys()[rarity]])
+	print("Part : %s (%s)" % [slottable_name, CraftingManager.RARITY.keys()[rarity]])
 	print("- Durability : %s" % durability)
 	for stat in stats:
 		if stats[stat] != 0:

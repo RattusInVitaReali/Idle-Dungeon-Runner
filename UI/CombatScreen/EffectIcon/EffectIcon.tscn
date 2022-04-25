@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://RESOURCES/skill_borders/Border2.png" type="Texture" id=1]
-[ext_resource path="res://RESOURCES/skill_icons/BlackSquare.png" type="Texture" id=2]
+[ext_resource path="res://_Resources/skill_borders/Border2.png" type="Texture" id=1]
+[ext_resource path="res://_Resources/skill_icons/BlackSquare.png" type="Texture" id=2]
 [ext_resource path="res://UI/CombatScreen/EffectIcon/EffectIcon.gd" type="Script" id=3]
 
 

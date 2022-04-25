@@ -1,5 +1,7 @@
 extends NinePatchRect
 
+signal inspector
+
 const Line = preload("res://UI/SlottableInventory/Line/Line.tscn")
 
 onready var lines_container = $ScrollContainer/VBoxContainer
@@ -35,4 +37,8 @@ func update_inventory():
 	for item_list in lines:
 		var new_line = Line.instance()
 		lines_container.add_child(new_line)
+		new_line.connect("inspector", self, "_on_inspector")
 		new_line.update_line(item_list)
+
+func _on_inspector(inspector):
+	emit_signal("inspector", inspector)
