@@ -20,15 +20,13 @@ func add_item(item):
 func _on_inspector(inspector):
 	add_child(inspector)
 	inspector.connect("equip", self, "_on_equip")
-	if !inspector.connect("unequip", self, "_on_unequip"):
-		print("Unequip connected")
+	inspector.connect("unequip", self, "_on_unequip")
 
 func _on_equip(item):
 	items.remove_slottable(item)
 	CombatProcessor.Player.equip_item(item)
 
 func _on_unequip(item):
-	print("Unequip")
 	CombatProcessor.Player.unequip_item(item)
 
 func _on_items_changed():
