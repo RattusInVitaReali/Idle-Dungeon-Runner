@@ -71,7 +71,7 @@ margin_right = 494.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 0, 150 )
 
-[node name="GearSlot1" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line1" index="0" groups=["gear_slots"] instance=ExtResource( 4 )]
+[node name="GearSlot1" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line1" index="0" instance=ExtResource( 4 )]
 
 [node name="Margin1" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line1" index="1"]
 margin_left = 154.0
@@ -80,7 +80,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GearSlot2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line1" index="2" groups=["gear_slots"] instance=ExtResource( 4 )]
+[node name="GearSlot2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line1" index="2" instance=ExtResource( 4 )]
 margin_left = 172.0
 margin_right = 322.0
 
@@ -91,7 +91,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GearSlot3" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line1" index="4" groups=["gear_slots"] instance=ExtResource( 4 )]
+[node name="GearSlot3" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line1" index="4" instance=ExtResource( 4 )]
 margin_left = 344.0
 margin_right = 494.0
 
@@ -108,7 +108,7 @@ margin_right = 494.0
 margin_bottom = 329.0
 rect_min_size = Vector2( 0, 150 )
 
-[node name="GearSlot1" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line2" index="0" groups=["gear_slots"] instance=ExtResource( 4 )]
+[node name="GearSlot1" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line2" index="0" instance=ExtResource( 4 )]
 
 [node name="Margin1" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line2" index="1"]
 margin_left = 154.0
@@ -117,7 +117,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GearSlot2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line2" index="2" groups=["gear_slots"] instance=ExtResource( 4 )]
+[node name="GearSlot2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line2" index="2" instance=ExtResource( 4 )]
 margin_left = 172.0
 margin_right = 322.0
 
@@ -128,7 +128,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GearSlot3" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line2" index="4" groups=["gear_slots"] instance=ExtResource( 4 )]
+[node name="GearSlot3" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line2" index="4" instance=ExtResource( 4 )]
 margin_left = 344.0
 margin_right = 494.0
 
@@ -145,7 +145,7 @@ margin_right = 494.0
 margin_bottom = 508.0
 rect_min_size = Vector2( 0, 150 )
 
-[node name="GearSlot1" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line3" index="0" groups=["gear_slots"] instance=ExtResource( 4 )]
+[node name="GearSlot1" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line3" index="0" instance=ExtResource( 4 )]
 
 [node name="Margin1" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line3" index="1"]
 margin_left = 154.0
@@ -154,7 +154,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GearSlot2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line3" index="2" groups=["gear_slots"] instance=ExtResource( 4 )]
+[node name="GearSlot2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line3" index="2" instance=ExtResource( 4 )]
 margin_left = 172.0
 margin_right = 322.0
 
@@ -165,7 +165,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GearSlot3" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line3" index="4" groups=["gear_slots"] instance=ExtResource( 4 )]
+[node name="GearSlot3" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line3" index="4" instance=ExtResource( 4 )]
 margin_left = 344.0
 margin_right = 494.0
 
@@ -182,7 +182,7 @@ margin_right = 494.0
 margin_bottom = 688.0
 rect_min_size = Vector2( 0, 150 )
 
-[node name="GearSlot1" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4" index="0" groups=["gear_slots"] instance=ExtResource( 4 )]
+[node name="Weapon1" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4" index="0" instance=ExtResource( 4 )]
 
 [node name="Margin1" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4" index="1"]
 margin_left = 154.0
@@ -191,7 +191,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GearSlot2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4" index="2" groups=["gear_slots"] instance=ExtResource( 4 )]
+[node name="GearSlot2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4" index="2" instance=ExtResource( 4 )]
 margin_left = 172.0
 margin_right = 322.0
 
@@ -202,7 +202,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GearSlot3" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4" index="4" groups=["gear_slots"] instance=ExtResource( 4 )]
+[node name="Weapon2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4" index="4" instance=ExtResource( 4 )]
 margin_left = 344.0
 margin_right = 494.0
 

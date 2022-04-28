@@ -1,4 +1,5 @@
 extends NinePatchRect
+class_name SlottableInventory
 
 signal inspector
 
@@ -6,23 +7,26 @@ const Line = preload("res://UI/SlottableInventory/Line/Line.tscn")
 
 onready var lines_container = $ScrollContainer/VBoxContainer
 
-func add_item(_item):
+func add_slottable(_slottable):
 	var added = false
-	if _item.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL:
-		for item in $Items.get_children():
-			if item.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL:
-				if item.same_as(_item):
-					item.add_quantity(_item.quantity)
+	if _slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL:
+		for slottable in $Items.get_children():
+			if slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL:
+				if slottable.same_as(_slottable):
+					slottable.add_quantity(_slottable.quantity)
 					added = true
 					break
 	if !added:
-		$Items.add_child(_item)
+		$Items.add_child(_slottable)
 	update_inventory()
 
-func remove_item(item, quantity = 1):
-	item.quantity -= 1
-	if item.quantity == 0:
-		$Items.remove_child(item)
+func remove_slottable(slottable, quantity = 1):
+	if slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL:
+		slottable.quantity -= quantity
+		if slottable.quantity == 0:
+			$Items.remove_child(slottable)
+	else:
+		$Items.remove_child(slottable)
 	update_inventory()
 
 func update_inventory():
@@ -31,8 +35,8 @@ func update_inventory():
 	var lines = []
 	var line = []
 	var i = 0
-	for item in $Items.get_children():
-		line.append(item)
+	for slottable in $Items.get_children():
+		line.append(slottable)
 		i += 1
 		if i == 6:
 			lines.append(line)
@@ -40,11 +44,11 @@ func update_inventory():
 			i = 0
 	if i != 0:
 		lines.append(line)
-	for item_list in lines:
+	for slottable_list in lines:
 		var new_line = Line.instance()
 		lines_container.add_child(new_line)
 		new_line.connect("inspector", self, "_on_inspector")
-		new_line.update_line(item_list)
+		new_line.update_line(slottable_list)
 
 func _on_inspector(inspector):
 	emit_signal("inspector", inspector)

@@ -1,23 +1,26 @@
 extends Node2D
+class_name Main
 
-onready var screen_order = [$CombatScreen, $InventoryScreen, $PartForgeScreen, $ItemForgeScreen]
+enum SCREEN { COMBAT, INVENTORY, PART_FORGE, ITEM_FORGE }
+
+onready var bottom_bar = $UI/BottomBar
+
+onready var screens = {
+	SCREEN.COMBAT: $CombatScreen,
+	SCREEN.INVENTORY: $InventoryScreen,
+	SCREEN.PART_FORGE: $PartForgeScreen,
+	SCREEN.ITEM_FORGE: $ItemForgeScreen
+}
 
 var curr_screen = 0
 
 func _ready():
-	pass
+	bottom_bar.connect("change_screen", self, "change_screen")
 
 func move_camera(screen):
 	$Camera2D.position = screen.position
 
-func _input(event):
-	if event.is_action_pressed("ui_focus_next"):
-		next_screen()
-
-func next_screen():
-	curr_screen = (curr_screen + 1) % screen_order.size()
-	switch_screen(screen_order[curr_screen])
-
-func switch_screen(screen):
+func change_screen(screen_enum):
+	var screen = screens[screen_enum]
 	screen.on_focused()
 	move_camera(screen)

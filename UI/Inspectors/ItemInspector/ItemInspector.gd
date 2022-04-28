@@ -1,4 +1,5 @@
 extends Inspector
+class_name ItemInspector
 
 signal equip
 

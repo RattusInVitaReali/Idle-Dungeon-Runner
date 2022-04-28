@@ -6,7 +6,7 @@ func _ready():
 	parts.connect("inspector", self, "_on_inspector")
 
 func add_part(part):
-	parts.add_item(part)
+	parts.add_slottable(part)
 
 func _on_inspector(inspector):
 	add_child(inspector)

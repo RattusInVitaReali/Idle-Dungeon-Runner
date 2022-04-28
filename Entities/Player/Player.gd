@@ -2,11 +2,13 @@ extends Entity
 class_name Player
 
 signal used_skill
+signal items_changed
 
 func _ready():
 	._ready()
 	connect("hp_updated", CombatProcessor, "_on_player_hp_updated")
 	connect("used_skill", CombatProcessor, "_on_player_used_skill")
+	connect("items_changed", CombatProcessor, "_on_player_items_changed")
 	CombatProcessor.connect("entered_auto_combat", self, "_on_enter_auto_combat")
 	CombatProcessor.connect("entered_manual_combat", self, "_on_enter_manual_combat")
 	CombatProcessor.connect("manual_use_skill", self, "try_to_use_skill")
@@ -36,6 +38,14 @@ func enter_combat():
 func exit_combat():
 	speed_scale = 1
 	play_animation("run")
+
+func equip_item(item : Item):
+	.equip_item(item)
+	emit_signal("items_changed")
+
+func unequip_item(item : Item):
+	.unequip_item(item)
+	emit_signal("items_changed")
 
 func _on_enter_manual_combat():
 	update_skill_cooldowns(CombatProcessor.auto_combat)

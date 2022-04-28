@@ -59,15 +59,21 @@ func set_skills_attacker():
 
 # Add check for 2 weapons, signal for equipping / unequipping items
 func equip_item(_item : Item):
+	var weapon_count = 0
 	for item in get_items():
+		if item.type == CraftingManager.ITEM_TYPE.WEAPON:
+			weapon_count += 1
 		if item.type == _item.type:
+			if _item.type == CraftingManager.ITEM_TYPE.WEAPON and weapon_count < 2:
+				continue
 			unequip_item(item)
 			break
 	$Items.add_child(_item)
 	update_stats()
 
-func unequip_item(item):
+func unequip_item(item : Item):
 	$Items.remove_child(item)
+	update_stats()
 	LootManager.get_item(item)
 
 # Final for Monster, temp for Player

@@ -12,9 +12,9 @@ func update_line(items):
 	var i = 0
 	for slot in slots:
 		if i < items.size():
-			slot.update_slot(items[i])
+			slot.set_slottable(items[i])
 		else:
-			slot.update_slot(null)
+			slot.set_slottable(null)
 		i += 1
 
 func _on_inspector(inspector):

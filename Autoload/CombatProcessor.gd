@@ -15,6 +15,8 @@ signal used_skill
 signal effect_applied
 signal manual_use_skill
 
+signal items_changed
+
 var Monster
 var Player
 var Zone
@@ -136,3 +138,6 @@ func _on_player_used_skill(skill):
 	
 func _on_manual_use_skill(skill):
 	emit_signal("manual_use_skill", skill)
+
+func _on_player_items_changed():
+	emit_signal("items_changed")

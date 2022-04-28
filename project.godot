@@ -32,17 +32,32 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "Inspector",
 "language": "GDScript",
-"path": "res://UI/Inspector/Inspector.gd"
+"path": "res://UI/Inspectors/Inspector.gd"
+}, {
+"base": "Screen",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://UI/Screens/Inventory/Inventory.gd"
 }, {
 "base": "Slottable",
 "class": "Item",
 "language": "GDScript",
 "path": "res://Items/Item.gd"
 }, {
+"base": "Inspector",
+"class": "ItemInspector",
+"language": "GDScript",
+"path": "res://UI/Inspectors/ItemInspector/ItemInspector.gd"
+}, {
 "base": "Slottable",
 "class": "ItemPart",
 "language": "GDScript",
 "path": "res://ItemParts/ItemPart.gd"
+}, {
+"base": "Node2D",
+"class": "Main",
+"language": "GDScript",
+"path": "res://Main/Main.gd"
 }, {
 "base": "Resource",
 "class": "MaterialResource",
@@ -79,6 +94,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Slottable/Slottable.gd"
 }, {
+"base": "NinePatchRect",
+"class": "SlottableInventory",
+"language": "GDScript",
+"path": "res://UI/SlottableInventory/SlottableInventory.gd"
+}, {
 "base": "Node2D",
 "class": "Zone",
 "language": "GDScript",
@@ -90,8 +110,11 @@ _global_script_class_icons={
 "Entity": "",
 "GameScreen": "",
 "Inspector": "",
+"Inventory": "",
 "Item": "",
+"ItemInspector": "",
 "ItemPart": "",
+"Main": "",
 "MaterialResource": "",
 "Modifier": "",
 "Monster": "",
@@ -99,6 +122,7 @@ _global_script_class_icons={
 "Screen": "",
 "Skill": "",
 "Slottable": "",
+"SlottableInventory": "",
 "Zone": ""
 }
 

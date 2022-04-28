@@ -1,7 +1,7 @@
 extends Control
 class_name Inspector
 
-const StatLabel = preload("res://UI/Inspector/StatLabel.tscn")
+const StatLabel = preload("res://UI/Inspectors/StatLabel.tscn")
 
 onready var slottable_name = $Panel/VBoxContainer/Name
 onready var rarity = $Panel/VBoxContainer/Rarity
