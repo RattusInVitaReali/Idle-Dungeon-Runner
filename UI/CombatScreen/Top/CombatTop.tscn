@@ -8,7 +8,6 @@
 [ext_resource path="res://_Resources/gui_images/chain.png" type="Texture" id=6]
 [ext_resource path="res://_Resources/gui_images/UI board Medium stone.png" type="Texture" id=7]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 45
 font_data = ExtResource( 3 )
@@ -251,7 +250,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
-text = "Really Big White Wolf of Great Size"
+text = "40"
 align = 1
 valign = 1
 clip_text = true

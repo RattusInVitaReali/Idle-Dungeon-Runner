@@ -10,7 +10,8 @@ func tick():
 	var damage_info = \
 		CombatProcessor.DamageInfo.new(attacker, target) \
 		.phys_damage(tick_damage) \
-		.bleeding_tick(true)
+		.bleeding_tick(true) \
+		.can_crit(false)
 	if is_crit:
 		damage_info.apply_crit(attacker.stats.crit_multi)
 	attacker.process_outgoing_damage(damage_info)

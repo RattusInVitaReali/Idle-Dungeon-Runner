@@ -10,13 +10,12 @@ signal apply_effect
 signal effect_applied
 signal died
 
-export var base_stats = { "hp": 100, "max_hp": 100, "phys_damage": 10, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.05,
+export var base_stats = { "hp": 100, "max_hp": 100, "phys_damage": 10, "magic_damage": 0, "phys_protection": 20, "magic_protection": 20, "crit_chance": 0.05,
 			 "crit_multi": 1.5, "action_time": 0.3, "manual_cd_multi": 0.33 }
 
 export var per_level = { "max_hp": 10, "phys_damage": 1, "magic_damage": 0, "phys_protection": 2, "magic_protection": 2 }
 
-var stats = { "hp": 100, "max_hp": 100, "phys_damage": 10, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.05,
-			 "crit_multi": 1.5, "action_time": 0.3, "manual_cd_multi": 0.33 }
+var stats = base_stats.duplicate()
 
 var dead = false
 var can_be_attacked = true
@@ -185,8 +184,8 @@ func process_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 	effects_incoming_damage(damage_info)
 	for effect in damage_info.effects:
 		process_incoming_effect(effect)
-	take_damage(damage_info.phys_damage)
-	take_damage(damage_info.magic_damage)
+	stats_incoming_damage(damage_info)
+	take_damage_info(damage_info)
 
 func items_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 	for item in get_items():
@@ -201,8 +200,14 @@ func process_incoming_effect(effect : Effect):
 	effect.begin()
 	emit_signal("effect_applied", effect)
 
-func exit_combat():
-	pass
+func stats_incoming_damage(damage_info : CombatProcessor.DamageInfo):
+	damage_info.phys_damage = damage_info.phys_damage * 100 / (100 + stats.phys_protection)
+	damage_info.magic_damage = damage_info.magic_damage * 100 / (100 + stats.magic_protection)
+
+func take_damage_info(damage_info : CombatProcessor.DamageInfo):
+	take_damage(damage_info.phys_damage)
+	take_damage(damage_info.magic_damage)
+	$DamageNumberManager.new_damage_number(damage_info)
 
 func take_damage(damage):
 	if damage <= 0:
@@ -220,6 +225,9 @@ func heal(amount):
 		set_hp(stats.hp + amount)
 	else:
 		set_hp(stats.max_hp)
+
+func exit_combat():
+	pass
 
 func die():
 	dead = true
