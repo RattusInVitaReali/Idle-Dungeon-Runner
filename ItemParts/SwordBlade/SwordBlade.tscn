@@ -6,10 +6,11 @@
 [node name="SwordBlade" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 cost = 15
+durability_multi = 0.7
 allowed_material_types = [ 1, 2 ]
 stat_multipliers = {
-"crit_chance": 1.0,
-"crit_multi": 0.75,
+"crit_chance": 0.75,
+"crit_multi": 1.0,
 "magic_damage": 2.5,
 "magic_protection": 0.0,
 "max_hp": 0.0,

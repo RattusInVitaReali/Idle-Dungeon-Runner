@@ -1,26 +1,26 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Materials/MaterialResource.gd" type="Script" id=1]
-[ext_resource path="res://_Resources/icons2/image_part_333.png" type="Texture" id=2]
+[ext_resource path="res://_Resources/icons2/image_part_324.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
 icon = ExtResource( 2 )
-slottable_name = "Iron"
-prefix = "Iron"
+slottable_name = "Copper"
+prefix = "Copper"
 special_weapon = ""
 special_armor = ""
 type = 1
 rarity = 0
 weight = 3
 tier = 0
-durability = 120
+durability = 75
 stats = {
-"crit_chance": 0.03,
-"crit_multi": 0.12,
+"crit_chance": 0.0,
+"crit_multi": 0.1,
 "magic_damage": 0.0,
 "magic_protection": 0.0,
 "max_hp": 0,
-"phys_damage": 2.5,
-"phys_protection": 2.5
+"phys_damage": 1.2,
+"phys_protection": 1.2
 }

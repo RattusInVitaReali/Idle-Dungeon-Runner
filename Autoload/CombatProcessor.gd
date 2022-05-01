@@ -98,9 +98,6 @@ func _on_player_hp_updated():
 	emit_signal("player_hp_updated")
 
 func _on_monster_died():
-	# TESTING
-	LootManager.generate_test_loot()
-	# /TESTING
 	pass
 
 func _on_monster_despawned():

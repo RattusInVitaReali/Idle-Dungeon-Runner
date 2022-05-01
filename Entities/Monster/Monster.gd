@@ -3,8 +3,11 @@ class_name Monster
 
 signal monster_died
 signal monster_despawned
+signal loot
 
 export var base_name = "Monster"
+export (Array, Resource) var loot
+
 var monster_name
 var modifiers = []
 
@@ -16,6 +19,7 @@ func _ready():
 	connect("hp_updated", CombatProcessor, "_on_monster_hp_updated")
 	connect("died", CombatProcessor, "_on_monster_died")
 	connect("monster_despawned", CombatProcessor, "_on_monster_despawned")
+	connect("loot", LootManager, "_on_loot")
 	update_skill_cooldowns(true)
 	make_name()
 	play("idle")
@@ -59,8 +63,15 @@ func make_name():
 		var suffix = suffixes[randi() % len(suffixes)]
 		monster_name += " " + suffix
 
+func die():
+	.die()
+	drop_loot()
+
 func _on_Entity_animation_finished():
 	._on_Entity_animation_finished()
 	if animation == "die":
 		emit_signal("monster_despawned")
 		queue_free()
+
+func drop_loot():
+	emit_signal("loot", loot)

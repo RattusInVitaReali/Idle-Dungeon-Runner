@@ -21,6 +21,6 @@ stats = {
 "magic_damage": 0.0,
 "magic_protection": 0.0,
 "max_hp": 0,
-"phys_damage": 2.0,
-"phys_protection": 2.0
+"phys_damage": 1.0,
+"phys_protection": 1.0
 }

@@ -7,5 +7,4 @@ var icon
 var slottable_name
 export (SLOTTABLE_TYPE) var slottable_type
 
-var quantity = 1
 var rarity = CraftingManager.RARITY.BASIC

@@ -12,6 +12,8 @@ var weight
 var tier
 var durability
 
+var quantity = 1
+
 var stats = { "phys_damage": 0.0, "magic_damage": 0.0, "phys_protection": 0.0, "magic_protection": 0.0, 
 					"max_hp": 0, "crit_chance": 0.0, "crit_multi": 0.0 }
 
@@ -21,6 +23,10 @@ func set_mat(_mat : MaterialResource):
 		if property.name in _mat:
 			set(property.name, _mat.get(property.name))
 	stats = _mat.stats.duplicate()
+	return self
+
+func quantity(quant):
+	quantity = quant;
 	return self
 
 func print_material():
