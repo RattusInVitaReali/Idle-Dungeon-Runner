@@ -18,6 +18,10 @@ func _ready():
 	ready = true
 	update_stats()
 
+func update_stats():
+	.update_stats()
+	update_skill_cooldowns(CombatProcessor.auto_combat)
+
 func next_action():
 	if CombatProcessor.auto_combat:
 		var skill_name = .next_action()

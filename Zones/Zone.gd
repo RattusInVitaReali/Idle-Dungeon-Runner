@@ -47,7 +47,6 @@ func _on_quest_completed():
 	new_quest()
 
 func new_quest():
-	print("New quest")
 	if !quests.empty():
 		quest = quests[randi() % quests.size()].get_quest()
 		add_child(quest)

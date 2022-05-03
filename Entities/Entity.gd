@@ -84,12 +84,11 @@ func update_skill_cooldowns(auto_combat):
 		skill.update_cooldowns(auto_combat)
 
 func update_stats():
-	if ready:
+	if ready: # No idea why you cant yield(ready), but this works
 		reset_stats()
 		apply_level_stats()
 		apply_item_stats()
 		update_skill_levels()
-		update_skill_cooldowns(CombatProcessor.auto_combat)
 		if !CombatProcessor.in_combat:
 			stats.hp = stats.max_hp
 

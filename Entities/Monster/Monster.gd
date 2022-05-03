@@ -21,7 +21,6 @@ var suffixes = []
 
 func _ready():
 	._ready()
-	connect("hp_updated", CombatProcessor, "_on_monster_hp_updated")
 	connect("died", CombatProcessor, "_on_monster_died")
 	connect("monster_despawned", CombatProcessor, "_on_monster_despawned")
 	connect("loot", LootManager, "_on_loot")
@@ -59,6 +58,7 @@ func apply_modifiers():
 func update_stats():
 	.update_stats()
 	apply_modifiers()
+	update_skill_cooldowns(true)
 
 func make_name():
 	monster_name = base_name

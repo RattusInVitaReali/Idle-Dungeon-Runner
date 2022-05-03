@@ -41,12 +41,13 @@ func set_level(_level):
 
 func update_cooldowns(auto_combat):
 	# Apply cdr stat in the future
-	auto_cooldown = base_cooldown
-	manual_cooldown = base_cooldown * attacker.stats.manual_cd_multi
-	if auto_combat:
-		cooldown = auto_cooldown
-	else:
-		cooldown = manual_cooldown
+	if attacker != null:
+		auto_cooldown = base_cooldown
+		manual_cooldown = base_cooldown * attacker.stats.manual_cd_multi
+		if auto_combat:
+			cooldown = auto_cooldown
+		else:
+			cooldown = manual_cooldown
 
 func use_skill():
 	do_skill()
