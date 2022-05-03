@@ -6,7 +6,6 @@ func get_item(item):
 	emit_signal("item_acquired", item)
 
 func _on_loot(loot):
-	print("Getting loot")
 	for lootable in loot:
 		var new = lootable.get_loot()
 		get_item(new)

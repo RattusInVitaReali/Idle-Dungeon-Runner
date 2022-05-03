@@ -76,7 +76,6 @@
 [ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_026.png" type="Texture" id=74]
 [ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_023.png" type="Texture" id=75]
 
-
 [resource]
 animations = [ {
 "frames": [ ExtResource( 30 ), ExtResource( 53 ), ExtResource( 57 ), ExtResource( 20 ), ExtResource( 8 ), ExtResource( 59 ), ExtResource( 38 ), ExtResource( 48 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 51 ), ExtResource( 6 ), ExtResource( 49 ), ExtResource( 4 ), ExtResource( 26 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 45 ), ExtResource( 50 ), ExtResource( 15 ), ExtResource( 64 ), ExtResource( 35 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 43 ), ExtResource( 16 ), ExtResource( 3 ), ExtResource( 56 ) ],

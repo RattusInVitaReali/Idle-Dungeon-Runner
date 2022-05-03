@@ -20,6 +20,7 @@ var stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection
 var durability
 
 var special = ""
+var custom_name = ""
 
 func _ready():
 	icon = base_icon
@@ -53,18 +54,25 @@ func add_part(part):
 func update_rarity(part):
 	rarity = max(rarity, part.rarity)
 
+func custom_name(_name):
+	custom_name = _name
+	set_slottable_name()
+
 func set_slottable_name():
-	var new_name = ""
-	for part_type in required_parts:
-		for child in get_children():
-			if child.type == part_type:
-				if !(child.mat.prefix in new_name):
-					new_name += child.mat.prefix + "-"
-				break
-	new_name.erase(new_name.length() - 1, 1)
-	new_name += " "
-	new_name += CraftingManager.ITEM_SUBTYPE.keys()[subtype].capitalize()
-	slottable_name = new_name
+	if custom_name != "":
+		slottable_name = custom_name
+	else:
+		var new_name = ""
+		for part_type in required_parts:
+			for child in get_children():
+				if child.type == part_type:
+					if !(child.mat.prefix in new_name):
+						new_name += child.mat.prefix + "-"
+					break
+		new_name.erase(new_name.length() - 1, 1)
+		new_name += " "
+		new_name += CraftingManager.ITEM_SUBTYPE.keys()[subtype].capitalize()
+		slottable_name = new_name
 
 func calculate_stats():
 	for stat in stats:
@@ -100,3 +108,11 @@ func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 func on_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 	for part in get_children():
 		part.on_incoming_damage(damage_info, self)
+
+func from_lootable(lootable):
+	var _parts = []
+	for part in lootable.parts:
+		_parts.append(part.get_loot()) # Making use of ItemPartLootable.get_loot()
+	create(_parts)
+	custom_name(lootable.custom_name)
+	return self

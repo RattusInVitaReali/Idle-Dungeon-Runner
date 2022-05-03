@@ -9,3 +9,4 @@
 script = ExtResource( 1 )
 item_type = ExtResource( 4 )
 parts = [ ExtResource( 2 ), ExtResource( 3 ) ]
+custom_name = "Bandit Sword"

@@ -1,6 +1,8 @@
 extends Slottable
 class_name ItemPart
 
+const CraftingMaterial = preload("res://Materials/CraftingMaterial.tscn")
+
 export (Texture) var base_icon
 
 export (CraftingManager.PART_TYPE) var type
@@ -38,7 +40,6 @@ func set_mat(_mat : CraftingMaterial):
 		set_special()
 		rarity = mat.rarity
 		return self
-		
 	return null
 
 func calculate_stats():
@@ -75,3 +76,8 @@ func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo, item):
 func on_incoming_damage(damage_info : CombatProcessor.DamageInfo, item):
 	for mat in get_children():
 		mat.on_incoming_damage(damage_info, item)
+
+func from_lootable(lootable):
+	var mat = CraftingMaterial.instance().set_mat(lootable.material)
+	set_mat(mat)
+	return self

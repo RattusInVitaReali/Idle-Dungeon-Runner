@@ -8,3 +8,6 @@ var slottable_name
 export (SLOTTABLE_TYPE) var slottable_type
 
 var rarity = CraftingManager.RARITY.BASIC
+
+func from_lootable(lootable):
+	pass

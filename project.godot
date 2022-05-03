@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Monster",
+"class": "Bandit",
+"language": "GDScript",
+"path": "res://Entities/Monster/Bandit/Bandit.gd"
+}, {
 "base": "Slottable",
 "class": "CraftingMaterial",
 "language": "GDScript",
@@ -104,6 +109,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://ItemParts/Pommel/Pommel.gd"
 }, {
+"base": "Node2D",
+"class": "Quest",
+"language": "GDScript",
+"path": "res://Quests/Quest.gd"
+}, {
+"base": "Resource",
+"class": "QuestResource",
+"language": "GDScript",
+"path": "res://Quests/QuestResource.gd"
+}, {
 "base": "Control",
 "class": "Screen",
 "language": "GDScript",
@@ -145,6 +160,7 @@ _global_script_classes=[ {
 "path": "res://Zones/Zone.gd"
 } ]
 _global_script_class_icons={
+"Bandit": "",
 "CraftingMaterial": "",
 "Effect": "",
 "Entity": "",
@@ -164,6 +180,8 @@ _global_script_class_icons={
 "Monster": "",
 "Player": "",
 "Pommel": "",
+"Quest": "",
+"QuestResource": "",
 "Screen": "",
 "Skill": "",
 "Slottable": "",
@@ -185,6 +203,7 @@ config/icon="res://icon.png"
 CombatProcessor="*res://Autoload/CombatProcessor.gd"
 CraftingManager="*res://Autoload/CraftingManager.gd"
 LootManager="*res://Autoload/LootManager.gd"
+QuestManager="*res://Autoload/QuestManager.gd"
 
 [display]
 

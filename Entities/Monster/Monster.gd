@@ -1,12 +1,17 @@
 extends Entity
 class_name Monster
 
+enum MONSTER_TYPE { BANDIT, WOLF }
+
 signal monster_died
 signal monster_despawned
 signal loot
 
 export var base_name = "Monster"
-export (Array, Resource) var loot
+export (Array, Resource) var base_loot
+export (Array, MONSTER_TYPE) var monster_types
+
+var loot = []
 
 var monster_name
 var modifiers = []
@@ -23,6 +28,7 @@ func _ready():
 	update_skill_cooldowns(true)
 	make_name()
 	play("idle")
+	loot += base_loot.duplicate()
 	ready = true
 	update_stats()
 
@@ -72,6 +78,11 @@ func _on_Entity_animation_finished():
 	if animation == "die":
 		emit_signal("monster_despawned")
 		queue_free()
+
+func add_loot(_loot):
+	for lootable in _loot:
+		loot.append(lootable)
+	return self
 
 func drop_loot():
 	emit_signal("loot", loot)

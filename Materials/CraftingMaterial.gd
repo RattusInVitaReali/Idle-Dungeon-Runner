@@ -48,3 +48,8 @@ func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo, item):
 
 func on_incoming_damage(damage_info : CombatProcessor.DamageInfo, item):
 	mat.on_incoming_damage(damage_info, item)
+
+func from_lootable(lootable):
+	set_mat(lootable.material)
+	quantity = lootable.min_quantity + randi() % (lootable.max_quantity - lootable.min_quantity + 1)
+	return self

@@ -116,9 +116,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 10.0
 margin_bottom = -15.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" type="TextureRect" parent="Main/HigherBackground/Background/VBoxContainer"]
 margin_right = 700.0
@@ -145,7 +142,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuestProgressBar" type="HBoxContainer" parent="Main/HigherBackground/Background/VBoxContainer"]
+[node name="Quest" type="HBoxContainer" parent="Main/HigherBackground/Background/VBoxContainer"]
 margin_top = 85.0
 margin_right = 700.0
 margin_bottom = 125.0
@@ -154,13 +151,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LeftMargin" type="Label" parent="Main/HigherBackground/Background/VBoxContainer/QuestProgressBar"]
+[node name="LeftMargin" type="Label" parent="Main/HigherBackground/Background/VBoxContainer/Quest"]
 margin_right = 12.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 12, 0 )
 size_flags_vertical = 3
 
-[node name="QuestBar" type="ProgressBar" parent="Main/HigherBackground/Background/VBoxContainer/QuestProgressBar"]
+[node name="QuestBar" type="ProgressBar" parent="Main/HigherBackground/Background/VBoxContainer/Quest"]
 margin_left = 16.0
 margin_right = 684.0
 margin_bottom = 40.0
@@ -173,18 +170,17 @@ value = 50.0
 rounded = true
 percent_visible = false
 
-[node name="Label" type="Label" parent="Main/HigherBackground/Background/VBoxContainer/QuestProgressBar/QuestBar"]
+[node name="QuestInfo" type="Label" parent="Main/HigherBackground/Background/VBoxContainer/Quest/QuestBar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 4 )
 text = "Quest: Bandit Hunter Progress - 1 / 15"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="RightMargin" type="Label" parent="Main/HigherBackground/Background/VBoxContainer/QuestProgressBar"]
+[node name="QuestTween" type="Tween" parent="Main/HigherBackground/Background/VBoxContainer/Quest/QuestBar"]
+
+[node name="RightMargin" type="Label" parent="Main/HigherBackground/Background/VBoxContainer/Quest"]
 margin_left = 688.0
 margin_right = 700.0
 margin_bottom = 40.0
@@ -323,9 +319,6 @@ custom_fonts/font = SubResource( 7 )
 text = "100 HP"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Tween" type="Tween" parent="Main/LowerBackground/VBoxContainer/HBoxContainer/MonsterHP"]
 
@@ -345,9 +338,6 @@ rect_min_size = Vector2( 0, 100 )
 [node name="Chain" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 margin_bottom = 160.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="LeftMargin" type="Label" parent="Chain"]
 margin_right = 73.0

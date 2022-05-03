@@ -31,7 +31,6 @@ func _ready():
 	connect("player_spawned", CombatProcessor, "_on_player_spawned")
 	connect("monster_spawned", CombatProcessor, "_on_monster_spawned")
 	connect("monster_arrived", CombatProcessor, "_on_monster_arrived")
-	connect("zone_changed", CombatProcessor, "_on_zone_changed")
 	measure_screen()
 	image_1.position.x = screen_center_x
 	image_2.position.x = screen_center_x
@@ -55,11 +54,13 @@ func spawn_monster():
 	emit_signal("monster_spawned", enemy)
 
 func change_zone(zone_scene):
+	for zone in $Zone.get_children():
+		zone.queue_free()
 	var new_zone = zone_scene.instance()
 	$Zone.add_child(new_zone)
 	zone = new_zone
 	load_images()
-	emit_signal("zone_changed", zone)
+	CombatProcessor.emit_signal("zone_changed", zone)
 
 func load_images():
 	image_1.texture = zone.texture
