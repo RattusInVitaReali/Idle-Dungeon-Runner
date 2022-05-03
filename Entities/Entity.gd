@@ -28,7 +28,6 @@ func _ready():
 	rng.randomize()
 	connect("damage_enemy", CombatProcessor, "damage_enemy")
 	connect("apply_effect", CombatProcessor, "apply_effect")
-	connect("effect_applied", CombatProcessor, "_on_effect_applied")
 	CombatProcessor.connect("entered_combat", self, "enter_combat")
 	CombatProcessor.connect("exited_combat", self, "exit_combat")
 	set_skills_attacker()

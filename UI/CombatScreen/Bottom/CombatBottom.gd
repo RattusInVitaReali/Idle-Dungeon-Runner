@@ -11,13 +11,13 @@ var player
 
 func _ready():
 	CombatProcessor.connect("player_spawned", self, "update_info")
-	CombatProcessor.connect("player_hp_updated", self, "update_player_hp")
-	CombatProcessor.connect("effect_applied", self, "apply_effect")
 
 func update_info(_player):
 	player = _player
-	update_skills()
+	player.connect("hp_updated", self, "update_player_hp")
+	player.connect("effect_applied", self, "apply_effect")
 	update_player_hp()
+	update_skills()
 
 func update_player_hp():
 	player_hp_bar.max_value = player.stats.max_hp
@@ -42,7 +42,6 @@ func update_skills():
 				break
 
 func apply_effect(effect):
-	if effect.target == player:
-		var new_effect = EffectIcon.instance()
-		new_effect.initialize(effect)
-		effects.add_child(new_effect)
+	var new_effect = EffectIcon.instance()
+	new_effect.initialize(effect)
+	effects.add_child(new_effect)

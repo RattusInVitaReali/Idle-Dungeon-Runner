@@ -7,12 +7,18 @@ onready var weapon2 = $VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/E
 
 onready var gear_slots = [weapon1, weapon2]
 
+var player = null
+
 func _ready():
 	for slot in gear_slots:
 		slot.connect("inspector", self, "_on_inspector")
 		slot.gear = true;
-	CombatProcessor.connect("items_changed", self, "_on_items_changed")
+	CombatProcessor.connect("player_spawned", self, "_on_player_spawned")
 	items.connect("inspector", self, "_on_inspector")
+
+func _on_player_spawned(_player):
+	player = _player
+	player.connect("items_changed", self, "update_equipped")
 
 func add_item(item):
 	items.add_slottable(item)

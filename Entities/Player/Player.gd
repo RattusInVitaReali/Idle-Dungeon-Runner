@@ -1,17 +1,12 @@
 extends Entity
 class_name Player
 
-signal used_skill
 signal items_changed
 
 func _ready():
 	._ready()
-	connect("hp_updated", CombatProcessor, "_on_player_hp_updated")
-	connect("used_skill", CombatProcessor, "_on_player_used_skill")
-	connect("items_changed", CombatProcessor, "_on_player_items_changed")
 	CombatProcessor.connect("entered_auto_combat", self, "_on_enter_auto_combat")
 	CombatProcessor.connect("entered_manual_combat", self, "_on_enter_manual_combat")
-	CombatProcessor.connect("manual_use_skill", self, "try_to_use_skill")
 	base_stats["action_time_auto"] = 0.3
 	base_stats["action_time_manual"] = 0.1
 	stats["action_time_auto"] = 0.3

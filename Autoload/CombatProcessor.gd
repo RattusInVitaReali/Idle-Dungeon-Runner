@@ -5,24 +5,18 @@ var Bleeding = load("res://Effects/Bleeding/Bleeding.tscn")
 signal entered_combat
 signal exited_combat
 signal next_combat_ready
+
 signal entered_auto_combat
 signal entered_manual_combat
 
-signal monster_hp_updated
-signal monster_died
 signal monster_spawned
+signal monster_died
 
-signal player_hp_updated
 signal player_spawned
-
-signal used_skill
-signal effect_applied
-signal manual_use_skill
+signal player_died
 
 signal zone_changed
 signal quest_changed
-
-signal items_changed # Temp? 
 
 var Monster
 var Player
@@ -97,15 +91,6 @@ func exit_combat():
 	in_combat = false
 	emit_signal("exited_combat")
 
-# remove
-func _on_monster_hp_updated():
-	emit_signal("monster_hp_updated")
-
-# remove
-func _on_player_hp_updated():
-	emit_signal("player_hp_updated")
-
-
 func _on_monster_died():
 	emit_signal("monster_died", Monster)
 
@@ -131,9 +116,6 @@ func _on_quest_changed(quest):
 func _on_monster_arrived():
 	enter_combat()
 
-func _on_effect_applied(effect):
-	emit_signal("effect_applied", effect)
-
 func enter_manual_combat():
 	auto_combat = false
 	emit_signal("entered_manual_combat")
@@ -141,13 +123,4 @@ func enter_manual_combat():
 func enter_auto_combat():
 	auto_combat = true
 	emit_signal("entered_auto_combat")
-
-func _on_player_used_skill(skill):
-	emit_signal("used_skill", skill)
-	
-func _on_manual_use_skill(skill):
-	emit_signal("manual_use_skill", skill)
-
-func _on_player_items_changed():
-	emit_signal("items_changed")
 

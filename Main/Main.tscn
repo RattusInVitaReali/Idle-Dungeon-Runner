@@ -19,8 +19,6 @@ margin_top = -64.3201
 margin_right = -16.0
 margin_bottom = -16.0
 
-[node name="CombatScreen" parent="." instance=ExtResource( 4 )]
-
 [node name="InventoryScreen" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1080, 0 )
 
@@ -29,6 +27,8 @@ position = Vector2( 2160, 0 )
 
 [node name="ItemForgeScreen" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3240, 0 )
+
+[node name="CombatScreen" parent="." instance=ExtResource( 4 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

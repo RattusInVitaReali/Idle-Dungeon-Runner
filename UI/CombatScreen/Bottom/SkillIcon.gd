@@ -2,8 +2,6 @@ extends TextureRect
 
 const lock = preload("res://_Resources/skill_icons/lock.png")
 
-signal manual_use_skill
-
 var skill
 var cooldown
 var max_cooldown
@@ -11,7 +9,6 @@ var max_cooldown
 func _ready():
 	CombatProcessor.connect("entered_combat", self, "set_enabled")
 	CombatProcessor.connect("exited_combat", self, "set_disabled")
-	connect("manual_use_skill", CombatProcessor, "_on_manual_use_skill")
 	update_skill(null)
 
 func _process(delta):
@@ -55,4 +52,4 @@ func set_disabled():
 
 func _on_SkillIcon_pressed():
 	if not CombatProcessor.auto_combat and CombatProcessor.in_combat:
-		emit_signal("manual_use_skill", skill)
+		skill.attacker.try_to_use_skill(skill)
