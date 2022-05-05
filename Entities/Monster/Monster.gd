@@ -3,7 +3,6 @@ class_name Monster
 
 enum MONSTER_TYPE { BANDIT, WOLF }
 
-signal monster_died
 signal monster_despawned
 signal loot
 

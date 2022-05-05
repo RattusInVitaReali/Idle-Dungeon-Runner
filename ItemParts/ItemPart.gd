@@ -22,6 +22,8 @@ export var base_stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phy
 var stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.0,
 			 "crit_multi": 0.0, "action_time" : 0 }
 
+export (String) var description
+
 var durability
 var mat
 var special = ""

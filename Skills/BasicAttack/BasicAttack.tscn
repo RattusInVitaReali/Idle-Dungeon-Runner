@@ -9,6 +9,6 @@ script = ExtResource( 2 )
 base_cooldown = 2.0
 skill_name = "Basic Attack"
 icon = ExtResource( 3 )
-description = "A basic strike with a short Cooldown. Deals Physical Damage."
+description = "A basic strike with a short cooldown. Deals physical damage."
 phys = true
 attack = true

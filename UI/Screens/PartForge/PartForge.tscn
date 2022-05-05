@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://_Resources/icons2/image_part_069.png" type="Texture" id=1]
 [ext_resource path="res://UI/Screens/PartForge/PartForge.gd" type="Script" id=2]
@@ -8,6 +8,17 @@
 [ext_resource path="res://_Resources/gui_images/UI board Small Set.png" type="Texture" id=6]
 [ext_resource path="res://_Resources/Forge.png" type="Texture" id=7]
 [ext_resource path="res://_Resources/gui_images/UI board Small  stone.png" type="Texture" id=8]
+[ext_resource path="res://_Resources/gui_images/DivisionLineVertical.png" type="Texture" id=9]
+[ext_resource path="res://_Resources/gui_images/UI board Large  parchment.png" type="Texture" id=10]
+[ext_resource path="res://UI/SlottableInventory/PartSelectionInventory/PartSelectionInventory.tscn" type="PackedScene" id=11]
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 85
@@ -35,7 +46,7 @@ patch_margin_top = 39
 patch_margin_right = 38
 patch_margin_bottom = 35
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Screen/VBoxContainer/Image" index="0"]
+[node name="ForgeImage" type="TextureRect" parent="VBoxContainer/Screen/VBoxContainer/Image" index="0"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 25.0
@@ -44,6 +55,83 @@ margin_right = -25.0
 margin_bottom = -25.0
 texture = ExtResource( 7 )
 expand = true
+
+[node name="PartCreation" type="HBoxContainer" parent="VBoxContainer/Screen/VBoxContainer/Image" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+
+[node name="PartSelectionInventory" parent="VBoxContainer/Screen/VBoxContainer/Image/PartCreation" index="0" instance=ExtResource( 11 )]
+margin_right = 508.0
+margin_bottom = 460.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Screen/VBoxContainer/Image/PartCreation" index="1"]
+margin_left = 512.0
+margin_right = 527.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 15, 0 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 1
+
+[node name="PartInfoBackground" type="TextureRect" parent="VBoxContainer/Screen/VBoxContainer/Image/PartCreation" index="2"]
+margin_left = 531.0
+margin_right = 1040.0
+margin_bottom = 460.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+texture = ExtResource( 10 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartInfoBackground" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+
+[node name="PartType" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartInfoBackground/VBoxContainer" index="0"]
+margin_right = 469.0
+margin_bottom = 137.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Sword Blade"
+align = 1
+valign = 2
+autowrap = true
+
+[node name="PartMaterials" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartInfoBackground/VBoxContainer" index="1"]
+margin_top = 141.0
+margin_right = 469.0
+margin_bottom = 278.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Allowed material types:
+Metal - Wood - Gem"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="PartDescription" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartInfoBackground/VBoxContainer" index="2"]
+margin_top = 282.0
+margin_right = 469.0
+margin_bottom = 420.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "A blade used for forging different sword-type weapons."
+align = 1
+autowrap = true
 
 [node name="SlottableInventory" parent="VBoxContainer/Screen/VBoxContainer" index="1" instance=ExtResource( 3 )]
 margin_top = 504.0
@@ -91,3 +179,5 @@ valign = 1
 [node name="BottomOffset" parent="VBoxContainer/Screen/VBoxContainer" index="3"]
 margin_top = 1396.0
 margin_bottom = 1616.0
+
+[connection signal="pressed" from="VBoxContainer/Screen/VBoxContainer/Buttons/NewPart" to="." method="_on_NewPart_pressed"]

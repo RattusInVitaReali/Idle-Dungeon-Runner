@@ -17,3 +17,4 @@ stat_multipliers = {
 "phys_damage": 2.5,
 "phys_protection": 0.0
 }
+description = "A blade used for forging different sword-like weapons."

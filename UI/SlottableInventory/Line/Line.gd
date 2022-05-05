@@ -2,11 +2,23 @@ extends VBoxContainer
 
 signal inspector
 
-onready var slots = [$Line/Slot1, $Line/Slot2, $Line/Slot3, $Line/Slot4, $Line/Slot5, $Line/Slot6]
+const Slot = preload("res://UI/Slot/Slot.tscn")
+const Margin = preload("res://UI/SlottableInventory/Line/LineMargin.tscn")
 
-func _ready():
-	for slot in slots:
-		slot.connect("inspector", self, "_on_inspector")
+onready var slots = []
+
+
+func init(slot_count = 6):
+	var last_margin = null
+	for i in range(slot_count):
+		var new_slot = Slot.instance()
+		var new_margin = Margin.instance()
+		last_margin = new_margin
+		$Line.add_child(new_slot)
+		$Line.add_child(new_margin)
+		slots.append(new_slot)
+		new_slot.connect("inspector", self, "_on_inspector")
+	$Line.remove_child(last_margin)
 
 func update_line(items):
 	var i = 0
@@ -17,5 +29,5 @@ func update_line(items):
 			slot.set_slottable(null)
 		i += 1
 
-func _on_inspector(inspector):
-	emit_signal("inspector", inspector)
+func _on_inspector(slottable, gear):
+	emit_signal("inspector", slottable, gear)

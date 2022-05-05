@@ -18,3 +18,4 @@ stat_multipliers = {
 "phys_damage": 0.5,
 "phys_protection": 0.0
 }
+description = "A decorative part that goes under the handle."

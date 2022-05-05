@@ -24,9 +24,7 @@ func update_stats():
 
 func next_action():
 	if CombatProcessor.auto_combat:
-		var skill_name = .next_action()
-		if skill_name:
-			emit_signal("used_skill", skill_name)
+		.next_action()
 
 func enter_combat():
 	.enter_combat()

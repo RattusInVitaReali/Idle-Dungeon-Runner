@@ -7,6 +7,3 @@ func _ready():
 
 func add_part(part):
 	parts.add_slottable(part)
-
-func _on_inspector(inspector):
-	add_child(inspector)

@@ -23,8 +23,8 @@ func _on_player_spawned(_player):
 func add_item(item):
 	items.add_slottable(item)
 
-func _on_inspector(inspector):
-	add_child(inspector)
+func _on_inspector(slottable, gear):
+	var inspector = ._on_inspector(slottable, gear)
 	inspector.connect("equip", self, "_on_equip")
 	inspector.connect("unequip", self, "_on_unequip")
 

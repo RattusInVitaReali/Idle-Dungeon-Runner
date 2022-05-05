@@ -18,3 +18,4 @@ stat_multipliers = {
 "phys_damage": 1.0,
 "phys_protection": 0.0
 }
+description = "A simple handle for swords weapons."

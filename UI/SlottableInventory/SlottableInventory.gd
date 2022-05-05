@@ -7,6 +7,8 @@ const Line = preload("res://UI/SlottableInventory/Line/Line.tscn")
 
 onready var lines_container = $ScrollContainer/VBoxContainer
 
+export var line_size = 6
+
 func add_slottable(_slottable):
 	var added = false
 	if _slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL:
@@ -38,7 +40,7 @@ func update_inventory():
 	for slottable in $Items.get_children():
 		line.append(slottable)
 		i += 1
-		if i == 6:
+		if i == line_size:
 			lines.append(line)
 			line = []
 			i = 0
@@ -47,8 +49,9 @@ func update_inventory():
 	for slottable_list in lines:
 		var new_line = Line.instance()
 		lines_container.add_child(new_line)
+		new_line.init(line_size)
 		new_line.connect("inspector", self, "_on_inspector")
 		new_line.update_line(slottable_list)
 
-func _on_inspector(inspector):
-	emit_signal("inspector", inspector)
+func _on_inspector(slottable, gear):
+	emit_signal("inspector", slottable, gear)

@@ -1,6 +1,9 @@
 extends Slottable
 class_name CraftingMaterial
 
+enum MATERIAL_TYPE { GEM, METAL, WOOD, FABRIC }
+enum MATERIAL_WEIGHT { VERY_LIGHT, LIGHT, MEDIUM, HEAVY, VERY_HEAVY }
+
 var mat
 
 var prefix
