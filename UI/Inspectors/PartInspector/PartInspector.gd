@@ -1,4 +1,5 @@
 extends Inspector
+class_name PartInspector
 
 func test():
 	var sword_blade = CraftingManager.SwordBlade.instance()

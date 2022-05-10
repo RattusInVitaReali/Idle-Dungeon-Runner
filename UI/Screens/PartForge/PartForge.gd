@@ -1,18 +1,26 @@
 extends Screen
 
-var creating = false
+const PartConfirmInspector = preload("res://UI/Inspectors/PartInspector/PartConfirmInspector/PartConfirmInspector.tscn")
 
 onready var materials = $VBoxContainer/Screen/VBoxContainer/SlottableInventory
 onready var part_selection = $VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartSelectionInventory
 
 onready var part_creation = $VBoxContainer/Screen/VBoxContainer/Image/PartCreation
 onready var forge = $VBoxContainer/Screen/VBoxContainer/Image/ForgeImage
+onready var materials_dimm = $VBoxContainer/Screen/VBoxContainer/SlottableInventory/MaterialsDimm
+onready var parts_dimm = $VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartSelectionInventory/PartSelectionDimm
 
 onready var part_type = $VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartInfoBackground/VBoxContainer/PartType
 onready var part_materials = $VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartInfoBackground/VBoxContainer/PartMaterials
 onready var part_description = $VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartInfoBackground/VBoxContainer/PartDescription
 
-onready var new_part = $VBoxContainer/Screen/VBoxContainer/Buttons/NewPart/Label
+onready var button_left = $VBoxContainer/Screen/VBoxContainer/Buttons/ButtonLeft/Label
+onready var button_right = $VBoxContainer/Screen/VBoxContainer/Buttons/ButtonRight/Label
+
+var creating = false
+var selecting_material = false
+var selected_part = null
+var selected_material = null
 
 func _ready():
 	materials.connect("inspector", self, "_on_inspector")
@@ -23,25 +31,83 @@ func add_material(mat):
 
 func _on_part_type_selected(part):
 	update_part_info(part)
+	selected_part = part
 
-func update_part_info(part : ItemPart):
-	part_type.text = CraftingManager.PART_TYPE.keys()[part.type].capitalize()
-	var types = ""
-	for type in part.allowed_material_types:
-		types += CraftingManager.MATERIAL_TYPE.keys()[type].capitalize() + " - "
-	if types != "":
-		types.erase(types.length() - 3, 3)
-	part_materials.text = "Allowed material types:\n" + types
-	part_description.text = part.description
-
-func _on_NewPart_pressed():
-	if !creating:
-		forge.hide()
-		part_creation.show()
-		creating = true
-		new_part.text = "Cancel"
+func update_part_info(part : ItemPart = null):
+	if part != null:
+		part_type.text = CraftingManager.PART_TYPE.keys()[part.type].capitalize()
+		var types = ""
+		for type in part.allowed_material_types:
+			types += CraftingManager.MATERIAL_TYPE.keys()[type].capitalize() + " - "
+		if types != "":
+			types.erase(types.length() - 3, 3)
+		part_materials.text = "Cost: " + str(part.cost) + "\n" + "Allowed material types:\n" + types
+		part_description.text = part.description
 	else:
-		forge.show()
-		part_creation.hide()
-		creating = false
-		new_part.text = "New Part"
+		part_type.text = ""
+		part_materials.text = ""
+		part_description.text = ""
+
+func _on_inspector(slottable, gear):
+	if !creating:
+		._on_inspector(slottable, gear)
+	elif selecting_material:
+		var new_part = CraftingManager.try_to_forge_part(selected_part, slottable)
+		if new_part != null:
+			var insp = part_confirm_inspector(new_part)
+			var response = yield(insp, "confirmed")
+			if response:
+				LootManager.get_item(CraftingManager.actually_forge_part(selected_part, slottable))
+				new_part.queue_free()
+				materials.update_inventory()
+				end_creation()
+			else:
+				pass
+
+func part_confirm_inspector(part):
+	var inspector = PartConfirmInspector.instance()
+	add_child(inspector)
+	inspector.set_slottable(part)
+	return inspector
+
+func _on_ButtonLeft_pressed():
+	update_part_info()
+	if !creating:
+		start_creation()
+	else:
+		end_creation()
+
+func _on_ButtonRight_pressed():
+	if !creating or (creating and selected_part == null):
+		return
+	else: 
+		start_material_selection()
+
+func start_creation():
+	creating = true
+	selecting_material = false
+	selected_part = null
+	selected_material = null
+	forge.hide()
+	materials_dimm.show()
+	parts_dimm.hide()
+	part_creation.show()
+	button_left.text = "Cancel"
+	button_right.text = "Confirm"
+
+func end_creation():
+	creating = false
+	selecting_material = false
+	selected_part = null
+	selected_material = null
+	forge.show()
+	materials_dimm.hide()
+	parts_dimm.hide()
+	part_creation.hide()
+	button_left.text = "New Part"
+	button_right.text = ""
+
+func start_material_selection():
+	selecting_material = true
+	parts_dimm.show()
+	materials_dimm.hide()

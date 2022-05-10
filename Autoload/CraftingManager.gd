@@ -31,3 +31,21 @@ func new_material(base = null, quantity = 1):
 
 func new_part(part, material):
 	return part.instance().set_mat(material)
+
+func try_to_forge_part(part, material):
+	if part.can_use_material(material):
+		var new_mat = material.split(0)
+		if new_mat == null:
+			return null
+		var new_part = part.duplicate()
+		new_part.set_mat(new_mat)
+		return new_part
+	return null
+
+func actually_forge_part(part, material):
+	var new_mat = material.split(part.cost)
+	if new_mat == null:
+		return null
+	var new_part = part.duplicate()
+	new_part.set_mat(new_mat)
+	return new_part

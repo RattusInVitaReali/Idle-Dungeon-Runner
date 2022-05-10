@@ -99,6 +99,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Entities/Monster/Monster.gd"
 }, {
+"base": "Inspector",
+"class": "PartInspector",
+"language": "GDScript",
+"path": "res://UI/Inspectors/PartInspector/PartInspector.gd"
+}, {
 "base": "SlottableInventory",
 "class": "PartSelectionInventory",
 "language": "GDScript",
@@ -183,6 +188,7 @@ _global_script_class_icons={
 "MaterialResource": "",
 "Modifier": "",
 "Monster": "",
+"PartInspector": "",
 "PartSelectionInventory": "",
 "Player": "",
 "Pommel": "",

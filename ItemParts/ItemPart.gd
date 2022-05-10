@@ -32,6 +32,9 @@ func _ready():
 	# Temp
 	icon = base_icon
 
+func can_use_material(mat : CraftingMaterial):
+	return mat.type in allowed_material_types and mat.quantity >= cost
+
 func set_mat(_mat : CraftingMaterial):
 	if _mat.type in allowed_material_types:
 		mat = _mat
@@ -41,6 +44,7 @@ func set_mat(_mat : CraftingMaterial):
 		set_slottable_name()
 		set_special()
 		rarity = mat.rarity
+		icon = base_icon # Temp
 		return self
 	return null
 

@@ -34,10 +34,14 @@ func remove_slottable(slottable, quantity = 1):
 func update_inventory():
 	for line in lines_container.get_children():
 		lines_container.remove_child(line)
+		line.queue_free()
 	var lines = []
 	var line = []
 	var i = 0
 	for slottable in $Items.get_children():
+		if slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL:
+			if slottable.quantity == 0:
+				continue
 		line.append(slottable)
 		i += 1
 		if i == line_size:

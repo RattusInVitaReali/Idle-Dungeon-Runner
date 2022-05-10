@@ -42,6 +42,7 @@ func update_icon():
 func update_stats():
 	for stat in stats_container.get_children():
 		stats_container.remove_child(stat)
+		stat.queue_free()
 	for stat in slottable.stats:
 		if slottable.stats[stat] != 0:
 			var new_label = StatLabel.instance()

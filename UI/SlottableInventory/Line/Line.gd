@@ -19,6 +19,7 @@ func init(slot_count = 6):
 		slots.append(new_slot)
 		new_slot.connect("inspector", self, "_on_inspector")
 	$Line.remove_child(last_margin)
+	last_margin.queue_free()
 
 func update_line(items):
 	var i = 0

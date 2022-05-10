@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Inspectors/PartInspector/PartInspector.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Inspectors/PartInspector/PartConfirmInspector/PartConfirmInspector.gd" type="Script" id=2]
+
+[node name="PartConfirmInspector" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Confirm" to="." method="_on_Confirm_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Cancel" to="." method="_on_Cancel_pressed"]
