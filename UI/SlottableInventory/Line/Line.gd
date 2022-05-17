@@ -30,5 +30,5 @@ func update_line(items):
 			slot.set_slottable(null)
 		i += 1
 
-func _on_inspector(slottable, gear):
-	emit_signal("inspector", slottable, gear)
+func _on_inspector(slot, gear):
+	emit_signal("inspector", slot, gear)

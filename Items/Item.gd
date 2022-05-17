@@ -11,6 +11,8 @@ export (CraftingManager.ITEM_SUBTYPE) var subtype
 export (int) var base_durability
 export (float) var durability_multi
 
+export (String) var description
+
 export var base_stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.0,
 			 "crit_multi": 0.0, "action_time" : 0 }
 
@@ -25,7 +27,7 @@ var custom_name = ""
 func _ready():
 	icon = base_icon
 
-func create(parts : Array):
+func can_create(parts : Array):
 	for req_part_type in required_parts:
 		var found = false
 		for part in parts:
@@ -34,8 +36,15 @@ func create(parts : Array):
 				break
 		if !found:
 			return false
-	for part in parts:
-		add_part(part)
+	return true
+
+func create(parts : Array):
+	if can_create(parts):
+		for part in parts:
+			add_part(part)
+		icon = base_icon # Temp
+		return true
+	return false
 
 func get_parts():
 	return get_children()

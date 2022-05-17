@@ -11,7 +11,7 @@ size = 40
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 75
+size = 85
 font_data = ExtResource( 3 )
 
 [node name="ItemInspector" instance=ExtResource( 1 )]
@@ -64,23 +64,23 @@ margin_bottom = 688.0
 
 [node name="Stats" parent="Panel/VBoxContainer" index="7"]
 margin_top = 692.0
-margin_bottom = 1129.0
+margin_bottom = 1084.0
 
 [node name="StatsContainer" parent="Panel/VBoxContainer/Stats" index="0"]
-margin_bottom = 437.0
+margin_bottom = 392.0
 
 [node name="Line4" parent="Panel/VBoxContainer" index="8"]
-margin_top = 1133.0
-margin_bottom = 1148.0
+margin_top = 1088.0
+margin_bottom = 1103.0
 
 [node name="Special" parent="Panel/VBoxContainer" index="9"]
-margin_top = 1152.0
-margin_bottom = 1212.0
+margin_top = 1107.0
+margin_bottom = 1167.0
 
 [node name="Line5" type="HBoxContainer" parent="Panel/VBoxContainer" index="10"]
-margin_top = 1216.0
+margin_top = 1171.0
 margin_right = 840.0
-margin_bottom = 1231.0
+margin_bottom = 1186.0
 
 [node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line5" index="0"]
 margin_right = 100.0
@@ -104,22 +104,28 @@ margin_bottom = 15.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 3
 
-[node name="Equip" type="TextureButton" parent="Panel/VBoxContainer" index="11"]
-margin_top = 1235.0
+[node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer" index="11"]
+margin_top = 1190.0
 margin_right = 840.0
 margin_bottom = 1410.0
+rect_min_size = Vector2( 0, 220 )
+
+[node name="Equip" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="0"]
+margin_right = 840.0
+margin_bottom = 220.0
 rect_min_size = Vector2( 0, 175 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource( 5 )
 expand = true
-stretch_mode = 5
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/Equip" index="0"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Buttons/Equip" index="0"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "EQUIP"
+text = "Equip"
 align = 1
 valign = 1
 
-[connection signal="pressed" from="Panel/VBoxContainer/Equip" to="." method="_on_Equip_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Equip" to="." method="_on_Equip_pressed"]

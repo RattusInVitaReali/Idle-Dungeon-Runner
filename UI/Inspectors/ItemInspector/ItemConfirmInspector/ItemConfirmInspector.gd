@@ -1,9 +1,10 @@
-extends PartInspector
-class_name PartConfirmInspector
+extends ItemInspector
+class_name ItemConfirmInspector
 
 signal confirmed
 
-func _on_Confirm_pressed():
+# HACKERINO
+func _on_Equip_pressed():
 	emit_signal("confirmed", true)
 	queue_free()
 

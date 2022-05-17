@@ -46,12 +46,25 @@ func set_slottable(_slottable):
 			$Quantity.visible = false
 
 func _on_Icon_pressed():
-	inspector()
+	if slottable != null:
+		inspector()
 
 func inspector():
-	emit_signal("inspector", slottable, gear)
+	emit_signal("inspector", self, gear)
 
 func test():
 	var sword = CraftingManager.Sword.instance()
 	sword.test()
 	set_slottable(sword)
+
+func select():
+	$Selection.show()
+
+func deselect():
+	$Selection.hide()
+
+func toggle_selection():
+	if $Selection.visible:
+		deselect()
+	else:
+		select()

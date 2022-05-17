@@ -49,3 +49,13 @@ func actually_forge_part(part, material):
 	var new_part = part.duplicate()
 	new_part.set_mat(new_mat)
 	return new_part
+
+func forge_item(item, parts):
+	if item.can_create(parts):
+		var new_item = item.duplicate()
+		var parent = parts[0].get_parent()
+		for part in parts:
+			parent.remove_child(part)
+		new_item.create(parts)
+		return new_item
+	return null

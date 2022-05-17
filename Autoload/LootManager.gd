@@ -2,11 +2,8 @@ extends Node
 
 signal item_acquired
 
-var printed = 0
 func get_item(item):
-	if printed == 3:
-		print_stray_nodes()
-	printed += 1
+
 	emit_signal("item_acquired", item)
 
 func _on_loot(loot):

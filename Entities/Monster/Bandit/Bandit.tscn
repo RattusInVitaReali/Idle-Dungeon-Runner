@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Entities/Monster/Bandit/BanditAnimations.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Entities/Monster/Monster.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Skills/Lacerate/Lacerate.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Lootable/ItemLootable/BanditSword.tres" type="Resource" id=5]
-[ext_resource path="res://Lootable/ItemPartLootable/CopperSwordBlade.tres" type="Resource" id=7]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/LargeShadow.png-88aeec311a281685b82a43bc225091aa.stex"
@@ -32,7 +30,6 @@ per_level = {
 "phys_protection": 2
 }
 base_name = "Bandit"
-base_loot = [ ExtResource( 5 ), ExtResource( 7 ) ]
 monster_types = [ 0 ]
 
 [node name="Lacerate" parent="Skills" index="0" instance=ExtResource( 3 )]

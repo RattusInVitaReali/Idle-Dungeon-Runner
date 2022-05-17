@@ -6,7 +6,8 @@ const PartInspector = preload("res://UI/Inspectors/PartInspector/PartInspector.t
 const ItemInspector = preload("res://UI/Inspectors/ItemInspector/ItemInspector.tscn")
 const GearInspector = preload("res://UI/Inspectors/ItemInspector/GearInspector/GearInspector.tscn")
 
-func _on_inspector(slottable, gear):
+func _on_inspector(slot, gear):
+	var slottable = slot.slottable
 	var inspector = null
 	if slottable != null:
 		match slottable.slottable_type:

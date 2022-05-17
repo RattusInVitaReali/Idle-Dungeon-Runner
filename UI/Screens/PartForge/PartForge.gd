@@ -22,6 +22,8 @@ var selecting_material = false
 var selected_part = null
 var selected_material = null
 
+var selected_part_slot = null
+
 func _ready():
 	materials.connect("inspector", self, "_on_inspector")
 	part_selection.connect("part_type_selected", self, "_on_part_type_selected")
@@ -29,7 +31,12 @@ func _ready():
 func add_material(mat):
 	materials.add_slottable(mat)
 
-func _on_part_type_selected(part):
+func _on_part_type_selected(slot):
+	var part = slot.slottable
+	if selected_part_slot != null:
+		selected_part_slot.deselect()
+	slot.select()
+	selected_part_slot = slot
 	update_part_info(part)
 	selected_part = part
 
@@ -48,10 +55,11 @@ func update_part_info(part : ItemPart = null):
 		part_materials.text = ""
 		part_description.text = ""
 
-func _on_inspector(slottable, gear):
+func _on_inspector(slot, gear):
 	if !creating:
-		._on_inspector(slottable, gear)
+		._on_inspector(slot, gear)
 	elif selecting_material:
+		var slottable = slot.slottable
 		var new_part = CraftingManager.try_to_forge_part(selected_part, slottable)
 		if new_part != null:
 			var insp = part_confirm_inspector(new_part)
@@ -61,8 +69,7 @@ func _on_inspector(slottable, gear):
 				new_part.queue_free()
 				materials.update_inventory()
 				end_creation()
-			else:
-				pass
+			new_part.queue_free()
 
 func part_confirm_inspector(part):
 	var inspector = PartConfirmInspector.instance()
@@ -94,6 +101,8 @@ func start_creation():
 	part_creation.show()
 	button_left.text = "Cancel"
 	button_right.text = "Confirm"
+	if selected_part_slot != null:
+		selected_part_slot.deselect()
 
 func end_creation():
 	creating = false
@@ -106,6 +115,8 @@ func end_creation():
 	part_creation.hide()
 	button_left.text = "New Part"
 	button_right.text = ""
+	if selected_part_slot != null:
+		selected_part_slot.deselect()
 
 func start_material_selection():
 	selecting_material = true

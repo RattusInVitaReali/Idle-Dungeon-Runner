@@ -12,6 +12,7 @@ export (int) var base_durability
 export (float) var durability_multi
 
 export (Array, CraftingManager.MATERIAL_TYPE) var allowed_material_types
+export (String) var description
 
 export var stat_multipliers = { "phys_damage": 0.0, "magic_damage": 0.0, "phys_protection": 0.0, "magic_protection": 0.0, 
 								"max_hp": 0.0, "crit_chance": 0.0, "crit_multi": 0.0 }
@@ -22,7 +23,6 @@ export var base_stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phy
 var stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.0,
 			 "crit_multi": 0.0, "action_time" : 0 }
 
-export (String) var description
 
 var durability
 var mat
@@ -87,3 +87,16 @@ func from_lootable(lootable):
 	var mat = CraftingMaterial.instance().set_mat(lootable.material)
 	set_mat(mat)
 	return self
+
+func make_copy():
+	var new_part = self.duplicate()
+	for property in get_script().get_script_property_list():
+		new_part.set(property.name, get(property.name))
+	new_part.stats = stats.duplicate()
+	for mat in get_children():
+		mat.quantity(mat.quantity + 1)
+		var new_mat = mat.split(1)
+		new_mat.quantity(mat.quantity)
+		new_part.add_child(new_mat)
+		new_mat.print_material()
+	return new_part

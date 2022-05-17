@@ -7,3 +7,4 @@
 script = ExtResource( 1 )
 required_parts = [ 0, 1 ]
 optional_parts = [ 2 ]
+description = "A simple slashing weapon."

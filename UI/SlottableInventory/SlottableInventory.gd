@@ -57,5 +57,5 @@ func update_inventory():
 		new_line.connect("inspector", self, "_on_inspector")
 		new_line.update_line(slottable_list)
 
-func _on_inspector(slottable, gear):
-	emit_signal("inspector", slottable, gear)
+func _on_inspector(slot, gear):
+	emit_signal("inspector", slot, gear)
