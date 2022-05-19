@@ -1,14 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ItemParts/SwordHandle/SwordHandle.gd" type="Script" id=2]
+[ext_resource path="res://_Resources/ItemParts/SwordHandle.png" type="Texture" id=3]
 
 [node name="SwordHandle" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+base_icon = ExtResource( 3 )
 type = 1
 cost = 10
 durability_multi = 0.3
 allowed_material_types = [ 1, 2 ]
+description = "A simple handle for swords weapons."
 stat_multipliers = {
 "crit_chance": 0.5,
 "crit_multi": 1.0,
@@ -18,4 +21,3 @@ stat_multipliers = {
 "phys_damage": 1.0,
 "phys_protection": 0.0
 }
-description = "A simple handle for swords weapons."

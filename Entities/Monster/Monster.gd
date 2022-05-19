@@ -62,10 +62,10 @@ func update_stats():
 func make_name():
 	monster_name = base_name
 	if not prefixes.empty():
-		var prefix = prefixes[randi() % len(prefixes)]
+		var prefix = prefixes[Random.rng.randi() % len(prefixes)]
 		monster_name = prefix + " " + base_name
 	if not suffixes.empty():
-		var suffix = suffixes[randi() % len(suffixes)]
+		var suffix = suffixes[Random.rng.randi() % len(suffixes)]
 		monster_name += " " + suffix
 
 func die():

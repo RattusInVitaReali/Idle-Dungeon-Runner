@@ -13,6 +13,7 @@
 [node name="ZoneForest" instance=ExtResource( 2 )]
 script = ExtResource( 9 )
 zone_name = "Forest"
+level = 10
 modifiers = [ ExtResource( 4 ) ]
 enemies = [ ExtResource( 3 ) ]
 loot = [ ExtResource( 6 ), ExtResource( 5 ) ]

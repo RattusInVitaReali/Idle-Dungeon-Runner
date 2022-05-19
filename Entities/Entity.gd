@@ -1,7 +1,6 @@
 extends AnimatedSprite
 class_name Entity
 
-var rng = RandomNumberGenerator.new()
 var ready = false
 
 signal hp_updated
@@ -25,7 +24,6 @@ var level = 0
 
 
 func _ready():
-	rng.randomize()
 	connect("damage_enemy", CombatProcessor, "damage_enemy")
 	connect("apply_effect", CombatProcessor, "apply_effect")
 	CombatProcessor.connect("entered_combat", self, "enter_combat")
@@ -161,7 +159,7 @@ func process_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 
 func apply_crit(damage_info : CombatProcessor.DamageInfo):
 	if damage_info.can_crit:
-		var roll = rng.randf()
+		var roll = Random.rng.randf()
 		if roll < stats.crit_chance:
 			damage_info.apply_crit(stats.crit_multi)
 

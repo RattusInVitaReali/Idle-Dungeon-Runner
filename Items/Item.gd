@@ -58,7 +58,7 @@ func add_part(part):
 	set_slottable_name()
 	calculate_stats()
 	calculate_durability()
-	update_special(part)
+	update_special()
 
 func update_rarity(part):
 	rarity = max(rarity, part.rarity)
@@ -95,8 +95,12 @@ func calculate_durability():
 	for part in get_children():
 		durability += part.durability
 
-func update_special(part):
-	special += part.special
+func update_special():
+	special = ""
+	for part in get_children():
+		if special != "":
+			special += '\n'
+		special += part.special
 
 func apply_stats(_stats):
 	for stat in stats:

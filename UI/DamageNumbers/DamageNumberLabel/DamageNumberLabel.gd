@@ -4,7 +4,7 @@ func set_params(value, color, crit_color, travel, duration, spread, crit = false
 	rect_position.y -= 250
 	text = value
 	modulate = color
-	var movement = travel.rotated(rand_range(-spread/2, spread/2))
+	var movement = travel.rotated(Random.rng.randf_range(-spread/2, spread/2))
 	rect_pivot_offset = rect_size / 2
 	$Tween.interpolate_property(self, "rect_position",
 			rect_position, rect_position + movement,

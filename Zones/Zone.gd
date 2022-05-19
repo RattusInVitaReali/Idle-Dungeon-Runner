@@ -31,7 +31,7 @@ func get_zone_info():
 	return "Level " + str(level) + " " + zone_name + " : " + str(zone_floor)
 
 func make_zone_monster():
-	var monster_scene = enemies[randi() % (enemies.size())]
+	var monster_scene = enemies[Random.rng.randi() % (enemies.size())]
 	var new_monster = monster_scene.instance() \
 		.set_level(level) \
 		.add_modifiers(modifiers) \
@@ -48,7 +48,7 @@ func _on_quest_completed():
 
 func new_quest():
 	if !quests.empty():
-		quest = quests[randi() % quests.size()].get_quest()
+		quest = quests[Random.rng.randi() % quests.size()].get_quest()
 		add_child(quest)
 		quest.connect("quest_completed", self, "_on_quest_completed")
 		CombatProcessor.emit_signal("quest_changed", quest)

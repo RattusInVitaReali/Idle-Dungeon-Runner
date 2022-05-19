@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource( 1 )
+chance = 0.25
 material = ExtResource( 2 )
 min_quantity = 10
 max_quantity = 10
