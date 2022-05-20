@@ -3,9 +3,13 @@ extends GameScreen
 const Player = preload("res://Entities/Player/Player.tscn")
 const ZoneForest = preload("res://Zones/Forest/Forest.tscn")
 
-signal monster_arrived
 signal monster_spawned
+signal monster_arrived
+signal monster_despawned
+
 signal player_spawned
+signal player_despawned
+
 signal zone_changed
 
 var screen_width = 1080
@@ -25,12 +29,12 @@ var zone = null
 onready var image_1 = $Map/Image1
 onready var image_2 = $Map/Image2
 
-
 func _ready():
-	CombatProcessor.connect("next_combat_ready", self, "spawn_monster")
 	connect("player_spawned", CombatProcessor, "_on_player_spawned")
+	connect("player_despawned", CombatProcessor, "_on_player_despawned")
 	connect("monster_spawned", CombatProcessor, "_on_monster_spawned")
 	connect("monster_arrived", CombatProcessor, "_on_monster_arrived")
+	connect("monster_despawned", CombatProcessor, "_on_monster_despawned")
 	measure_screen()
 	image_1.position.x = screen_center_x
 	image_2.position.x = screen_center_x
@@ -41,6 +45,7 @@ func _ready():
 func spawn_player():
 	var player = Player.instance()
 	add_child(player)
+	player.connect("despawned", self, "_on_player_despawned")
 	player.position = Vector2(screen_center_x, player_spawn_pos_x)
 	player.scale = Vector2(0.25, 0.25)
 	emit_signal("player_spawned", player)
@@ -48,10 +53,21 @@ func spawn_player():
 func spawn_monster():
 	var _monster = zone.make_zone_monster()
 	add_child_below_node($Zone, _monster)
+	_monster.connect("despawned", self, "_on_monster_despawned")
 	enemy = _monster
 	enemy.position = Vector2(screen_center_x, monster_spawn_pos_x)
 	enemy.scale = Vector2(0.25, 0.25)
 	emit_signal("monster_spawned", enemy)
+
+func _on_player_despawned():
+	emit_signal("player_despawned")
+
+func _on_monster_despawned():
+	emit_signal("monster_despawned")
+	new_combat()
+
+func new_combat():
+	spawn_monster()
 
 func change_zone(zone_scene):
 	for zone in $Zone.get_children():
@@ -77,7 +93,7 @@ var f2_on_top = true
 var f1_on_top = false
 
 func _process(delta):
-	if not CombatProcessor.in_combat:
+	if not CombatProcessor.in_combat and CombatProcessor.Player != null:
 		move_map(delta)
 		move_monster(delta)
 

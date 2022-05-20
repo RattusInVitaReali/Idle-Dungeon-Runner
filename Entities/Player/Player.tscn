@@ -8,7 +8,7 @@
 
 [node name="Player" instance=ExtResource( 4 )]
 frames = ExtResource( 1 )
-animation = "idle"
+animation = "die"
 script = ExtResource( 5 )
 base_stats = {
 "action_time": 0.3,

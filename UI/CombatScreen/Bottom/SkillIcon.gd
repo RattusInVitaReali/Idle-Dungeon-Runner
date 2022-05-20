@@ -28,13 +28,14 @@ func _process(delta):
 			$CooldownValue.visible = false
 			set_enabled()
 
-func update_skill(_skill):
+func update_skill(_skill = null):
 	if skill == _skill:
 		return
 	skill = _skill
 	if skill != null:
 		$SkillIcon.texture_normal = skill.icon
 		$SkillIcon.disabled = false
+		skill.connect("tree_exited", self, "update_skill")
 	else:
 		$SkillIcon.texture_normal = lock
 		$SkillIcon.disabled = true

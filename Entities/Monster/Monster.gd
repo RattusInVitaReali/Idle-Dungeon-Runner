@@ -3,7 +3,6 @@ class_name Monster
 
 enum MONSTER_TYPE { BANDIT, WOLF }
 
-signal monster_despawned
 signal loot
 
 export var base_name = "Monster"
@@ -71,12 +70,6 @@ func make_name():
 func die():
 	.die()
 	drop_loot()
-
-func _on_Entity_animation_finished():
-	._on_Entity_animation_finished()
-	if animation == "die":
-		emit_signal("monster_despawned")
-		queue_free()
 
 func add_loot(_loot):
 	for lootable in _loot:

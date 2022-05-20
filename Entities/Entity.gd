@@ -8,6 +8,7 @@ signal damage_enemy
 signal apply_effect
 signal effect_applied
 signal died
+signal despawned
 
 export var base_stats = { "hp": 100, "max_hp": 100, "phys_damage": 10, "magic_damage": 0, "phys_protection": 20, "magic_protection": 20, "crit_chance": 0.05,
 			 "crit_multi": 1.5, "action_time": 0.3, "manual_cd_multi": 0.33 }
@@ -145,7 +146,7 @@ func next_action():
 
 func try_to_use_skill(skill):
 	var _skill = null
-	if next_action_ready: 
+	if next_action_ready and !dead: 
 		_skill = skill.try_to_use_skill()
 		if _skill:
 			start_action_timer()
@@ -245,3 +246,6 @@ func _on_ActionTimer_timeout():
 func _on_Entity_animation_finished():
 	if animation == "attack" or animation == "attack_alt":
 		play("idle")
+	elif animation == "die":
+		emit_signal("despawned")
+		queue_free()

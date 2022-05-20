@@ -6,7 +6,6 @@
 [ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://_Resources/skill_borders/Border3.png" type="Texture" id=5]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 75
 font_data = ExtResource( 4 )

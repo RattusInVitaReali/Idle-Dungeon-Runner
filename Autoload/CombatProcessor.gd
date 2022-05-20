@@ -91,21 +91,27 @@ func exit_combat():
 	in_combat = false
 	emit_signal("exited_combat")
 
+func _on_monster_spawned(_monster):
+	Monster = _monster
+	emit_signal("monster_spawned", Monster)
+
 func _on_monster_died():
 	emit_signal("monster_died", Monster)
 
 func _on_monster_despawned():
 	Monster = null
 	exit_combat()
-	emit_signal("next_combat_ready")
 
 func _on_player_spawned(_player):
 	Player = _player
 	emit_signal("player_spawned", Player)
 
-func _on_monster_spawned(_monster):
-	Monster = _monster
-	emit_signal("monster_spawned", Monster)
+func _on_player_died():
+	pass
+
+func _on_player_despawned():
+	Player = null
+	exit_combat()
 
 func _on_zone_changed(_zone):
 	emit_signal("zone_changed", _zone)
