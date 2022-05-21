@@ -113,14 +113,14 @@ animations = [ {
 "name": "idle",
 "speed": 30.0
 }, {
+"frames": [ ExtResource( 88 ), ExtResource( 104 ), ExtResource( 79 ), ExtResource( 78 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 85 ), ExtResource( 93 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 96 ), ExtResource( 80 ), ExtResource( 89 ), ExtResource( 92 ), ExtResource( 84 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 100 ), ExtResource( 94 ), ExtResource( 77 ), ExtResource( 90 ), ExtResource( 95 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 103 ), ExtResource( 91 ), ExtResource( 105 ), ExtResource( 102 ), ExtResource( 98 ), ExtResource( 97 ) ],
+"loop": false,
+"name": "die",
+"speed": 30.0
+}, {
 "frames": [ ExtResource( 47 ), ExtResource( 51 ), ExtResource( 73 ), ExtResource( 27 ), ExtResource( 56 ), ExtResource( 39 ), ExtResource( 57 ), ExtResource( 13 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 70 ), ExtResource( 40 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 72 ) ],
 "loop": true,
 "name": "attack",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 88 ), ExtResource( 104 ), ExtResource( 79 ), ExtResource( 78 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 85 ), ExtResource( 93 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 96 ), ExtResource( 80 ), ExtResource( 89 ), ExtResource( 92 ), ExtResource( 84 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 100 ), ExtResource( 94 ), ExtResource( 77 ), ExtResource( 90 ), ExtResource( 95 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 103 ), ExtResource( 91 ), ExtResource( 105 ), ExtResource( 102 ), ExtResource( 98 ), ExtResource( 97 ) ],
-"loop": true,
-"name": "die",
 "speed": 30.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 38 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 15 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 22 ), ExtResource( 36 ), ExtResource( 16 ), ExtResource( 7 ), ExtResource( 66 ) ],

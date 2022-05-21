@@ -78,3 +78,8 @@ func add_loot(_loot):
 
 func drop_loot():
 	emit_signal("loot", loot)
+
+func _on_Entity_animation_finished():
+	._on_Entity_animation_finished()
+	if animation == "die":
+		queue_free()

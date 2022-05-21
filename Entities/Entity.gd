@@ -109,12 +109,11 @@ func play_animation(animation):
 	play(animation)
 
 func enter_combat():
-	set_hp(stats.max_hp)
 	next_action_ready = false
 	calculate_anim_speed()
 	play_animation("idle")
 
-func set_target(target):
+func set_target(target): 
 	enemy = target
 	for skill in get_skills():
 		if !skill.cast_on_self:
@@ -248,4 +247,3 @@ func _on_Entity_animation_finished():
 		play("idle")
 	elif animation == "die":
 		emit_signal("despawned")
-		queue_free()

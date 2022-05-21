@@ -2,6 +2,7 @@ extends Node2D
 class_name Zone
 
 signal zone_updated
+signal quest_changed
 
 export var zone_name = ""
 export var level = 1
@@ -15,7 +16,6 @@ var zone_floor = 0
 var quest = null
 
 func _ready():
-	CombatProcessor.connect("exited_combat", self, "_on_exited_combat")
 	new_quest()
 
 func modifier(_modifier):
@@ -38,8 +38,14 @@ func make_zone_monster():
 		.add_loot(loot)
 	return new_monster
 
+func increment_level():
+	level += 1
+
+func decrement_level():
+	level -= 1
+
 # Override for cool ass zones
-func _on_exited_combat():
+func _on_monster_despawned():
 	zone_floor += 1
 	emit_signal("zone_updated")
 
@@ -51,4 +57,4 @@ func new_quest():
 		quest = quests[Random.rng.randi() % quests.size()].get_quest()
 		add_child(quest)
 		quest.connect("quest_completed", self, "_on_quest_completed")
-		CombatProcessor.emit_signal("quest_changed", quest)
+		emit_signal("quest_changed", quest)

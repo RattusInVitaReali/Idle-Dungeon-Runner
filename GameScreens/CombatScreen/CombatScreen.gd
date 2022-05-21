@@ -10,8 +10,6 @@ signal monster_despawned
 signal player_spawned
 signal player_despawned
 
-signal zone_changed
-
 var screen_width = 1080
 var screen_height = 1920
 var screen_center_x = 540
@@ -23,7 +21,11 @@ var global_speed = 300
 var monster_spawn_pos_x = -500
 var player_spawn_pos_x = 1020
 
-var enemy = null
+var deaths = 0
+var timeout = 0
+const timeout_per_death = 2
+
+var monster = null
 var zone = null
 
 onready var image_1 = $Map/Image1
@@ -48,35 +50,64 @@ func spawn_player():
 	player.connect("despawned", self, "_on_player_despawned")
 	player.position = Vector2(screen_center_x, player_spawn_pos_x)
 	player.scale = Vector2(0.25, 0.25)
+	$Combat.player_spawned(player)
 	emit_signal("player_spawned", player)
 
 func spawn_monster():
 	var _monster = zone.make_zone_monster()
 	add_child_below_node($Zone, _monster)
 	_monster.connect("despawned", self, "_on_monster_despawned")
-	enemy = _monster
-	enemy.position = Vector2(screen_center_x, monster_spawn_pos_x)
-	enemy.scale = Vector2(0.25, 0.25)
-	emit_signal("monster_spawned", enemy)
-
-func _on_player_despawned():
-	emit_signal("player_despawned")
-
-func _on_monster_despawned():
-	emit_signal("monster_despawned")
-	new_combat()
-
-func new_combat():
-	spawn_monster()
+	monster = _monster
+	monster.position = Vector2(screen_center_x, monster_spawn_pos_x)
+	monster.scale = Vector2(0.25, 0.25)
+	$Combat.monster_spawned(monster)
+	emit_signal("monster_spawned", monster)
 
 func change_zone(zone_scene):
 	for zone in $Zone.get_children():
 		zone.queue_free()
 	var new_zone = zone_scene.instance()
 	$Zone.add_child(new_zone)
+	connect("monster_despawned", new_zone, "_on_monster_despawned")
+	new_zone.connect("quest_changed", self, "quest_changed")
 	zone = new_zone
 	load_images()
-	CombatProcessor.emit_signal("zone_changed", zone)
+	$Combat.zone_changed(zone)
+
+func quest_changed(quest):
+	$Combat.quest_changed(quest)
+
+func increment_timeout():
+	deaths += 1
+	timeout += timeout_per_death
+
+func reset_timeout():
+	deaths = 0
+	timeout = 0
+
+func increment_level():
+	zone.increment_level()
+
+func decrement_level():
+	zone.decrement_level()
+
+func _on_player_despawned():
+	emit_signal("player_despawned")
+	increment_timeout()
+	respawn_player()
+
+func _on_monster_despawned():
+	emit_signal("monster_despawned")
+	new_combat()
+
+func respawn_player():
+	yield(get_tree().create_timer(timeout), "timeout")
+	CombatProcessor.Player.fake_respawn()
+	emit_signal("player_spawned")
+
+func new_combat():
+	reset_timeout()
+	spawn_monster()
 
 func load_images():
 	image_1.texture = zone.texture
@@ -93,9 +124,10 @@ var f2_on_top = true
 var f1_on_top = false
 
 func _process(delta):
-	if not CombatProcessor.in_combat and CombatProcessor.Player != null:
-		move_map(delta)
+	if not CombatProcessor.in_combat and !CombatProcessor.Player.dead:
 		move_monster(delta)
+	if not CombatProcessor.in_combat and !CombatProcessor.Player.dead:
+		move_map(delta)
 
 func move_map(delta):
 	if f2_on_top:
@@ -115,8 +147,8 @@ func move_map(delta):
 
 # emit_signal("monster_arrived"), CombatProcessor starts the combat
 func move_monster(delta):
-	if enemy != null:
-		if enemy.position != Vector2(screen_center_x, padding_top):
-			enemy.position = enemy.position.move_toward(Vector2(screen_center_x, padding_top), global_speed * delta)
+	if monster != null:
+		if monster.position != Vector2(screen_center_x, padding_top):
+			monster.position = monster.position.move_toward(Vector2(screen_center_x, padding_top), global_speed * delta)
 		else:
 			emit_signal("monster_arrived")

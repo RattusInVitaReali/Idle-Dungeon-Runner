@@ -19,11 +19,6 @@ var monster = null
 var zone = null
 var quest = null
 
-func _ready():
-	CombatProcessor.connect("monster_spawned", self, "update_monster_info")
-	CombatProcessor.connect("quest_changed", self, "change_quest")
-	CombatProcessor.connect("zone_changed", self, "change_zone")
-
 func update_monster_info(_monster):
 	monster = _monster
 	monster.connect("hp_updated", self, "update_monster_hp")

@@ -9,9 +9,6 @@ onready var effects = $VBoxContainer/Effects
 
 var player
 
-func _ready():
-	CombatProcessor.connect("player_spawned", self, "update_info")
-
 func update_info(_player):
 	player = _player
 	player.connect("hp_updated", self, "update_player_hp")

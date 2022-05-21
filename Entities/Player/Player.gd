@@ -28,13 +28,15 @@ func next_action():
 
 func enter_combat():
 	.enter_combat()
+	set_hp(stats.max_hp)
 	set_target(CombatProcessor.Monster)
 	if !CombatProcessor.auto_combat:
 		next_action_ready = true
 
 func exit_combat():
-	speed_scale = 1
-	play_animation("run")
+	if !dead:
+		speed_scale = 1
+		play_animation("run")
 
 func equip_item(item : Item):
 	.equip_item(item)
@@ -55,3 +57,17 @@ func _on_enter_auto_combat():
 	if $ActionTimer.time_left == 0:
 		start_action_timer()
 	calculate_anim_speed()
+
+func _on_Entity_animation_finished():
+	._on_Entity_animation_finished()
+	if animation == "die":
+		fake_die()
+
+func fake_die():
+	visible = false
+
+func fake_respawn():
+	dead = false
+	can_be_attacked = true
+	visible = true
+	play("idle")

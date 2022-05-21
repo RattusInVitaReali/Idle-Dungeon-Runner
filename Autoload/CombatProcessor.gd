@@ -4,7 +4,6 @@ var Bleeding = load("res://Effects/Bleeding/Bleeding.tscn")
 
 signal entered_combat
 signal exited_combat
-signal next_combat_ready
 
 signal entered_auto_combat
 signal entered_manual_combat
@@ -13,10 +12,6 @@ signal monster_spawned
 signal monster_died
 
 signal player_spawned
-signal player_died
-
-signal zone_changed
-signal quest_changed
 
 var Monster
 var Player
@@ -106,18 +101,8 @@ func _on_player_spawned(_player):
 	Player = _player
 	emit_signal("player_spawned", Player)
 
-func _on_player_died():
-	pass
-
 func _on_player_despawned():
-	Player = null
 	exit_combat()
-
-func _on_zone_changed(_zone):
-	emit_signal("zone_changed", _zone)
-
-func _on_quest_changed(quest):
-	emit_signal("quest_changed", quest)
 
 func _on_monster_arrived():
 	enter_combat()
