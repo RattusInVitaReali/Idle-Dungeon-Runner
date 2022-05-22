@@ -13,3 +13,6 @@ func _on_PartForge_pressed():
 
 func _on_ItemForge_pressed():
 	emit_signal("change_screen", Main.SCREEN.ITEM_FORGE)
+
+func _on_Stats_pressed():
+	emit_signal("change_screen", Main.SCREEN.STATS)

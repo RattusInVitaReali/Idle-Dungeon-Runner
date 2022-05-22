@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Main/Main.gd" type="Script" id=1]
 [ext_resource path="res://UI/BottomBar/BottomBar.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://GameScreens/CombatScreen/CombatScreen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameScreens/PartForgeScreen/PartForgeScreen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GameScreens/ItemForgeScreen/ItemForgeScreen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GameScreens/StatsScreen/StatsScreen.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -27,6 +28,9 @@ position = Vector2( 2160, 0 )
 
 [node name="ItemForgeScreen" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3240, 0 )
+
+[node name="StatsScreen" parent="." instance=ExtResource( 7 )]
+position = Vector2( 4320, 0 )
 
 [node name="CombatScreen" parent="." instance=ExtResource( 4 )]
 

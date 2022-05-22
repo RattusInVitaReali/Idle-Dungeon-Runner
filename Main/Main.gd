@@ -1,7 +1,7 @@
 extends Node2D
 class_name Main
 
-enum SCREEN { COMBAT, INVENTORY, PART_FORGE, ITEM_FORGE }
+enum SCREEN { COMBAT, INVENTORY, PART_FORGE, ITEM_FORGE, STATS }
 
 onready var bottom_bar = $UI/BottomBar
 
@@ -9,7 +9,8 @@ onready var screens = {
 	SCREEN.COMBAT: $CombatScreen,
 	SCREEN.INVENTORY: $InventoryScreen,
 	SCREEN.PART_FORGE: $PartForgeScreen,
-	SCREEN.ITEM_FORGE: $ItemForgeScreen
+	SCREEN.ITEM_FORGE: $ItemForgeScreen,
+	SCREEN.STATS: $StatsScreen
 }
 
 var curr_screen = 0

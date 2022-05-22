@@ -4,6 +4,7 @@ class_name Entity
 var ready = false
 
 signal hp_updated
+signal stats_updated
 signal damage_enemy
 signal apply_effect
 signal effect_applied
@@ -90,6 +91,7 @@ func update_stats():
 		update_skill_levels()
 		if !CombatProcessor.in_combat:
 			stats.hp = stats.max_hp
+		emit_signal("stats_updated")
 
 func reset_stats():
 	for stat in stats:
