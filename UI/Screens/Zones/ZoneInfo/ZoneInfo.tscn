@@ -1,0 +1,132 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://_Resources/gui_images/RightArrow.png" type="Texture" id=1]
+[ext_resource path="res://_Resources/gui_images/UpArrow.png" type="Texture" id=2]
+[ext_resource path="res://_Resources/gui_images/DownArrow.png" type="Texture" id=3]
+[ext_resource path="res://_Resources/backgrounds/forest.png" type="Texture" id=4]
+[ext_resource path="res://_Resources/gui_images/UI board Small  stone.png" type="Texture" id=5]
+[ext_resource path="res://_Resources/gui_images/UI board Small  parchment.png" type="Texture" id=6]
+[ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://UI/Screens/Zones/ZoneInfo/ZoneInfo.gd" type="Script" id=8]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 4 )
+region = Rect2( 270, 0, 1040, 260 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = ExtResource( 7 )
+
+[node name="ZoneInfo" type="NinePatchRect"]
+margin_right = 1080.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 300 )
+texture = ExtResource( 5 )
+patch_margin_left = 30
+patch_margin_top = 40
+patch_margin_right = 31
+patch_margin_bottom = 39
+script = ExtResource( 8 )
+
+[node name="ZoneBackground" type="TextureRect" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 670.0
+margin_bottom = 280.0
+texture = SubResource( 1 )
+
+[node name="Panel" type="Panel" parent="ZoneBackground"]
+modulate = Color( 0, 0, 0, 0.560784 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ZoneBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="LevelDisplay" type="TextureRect" parent="ZoneBackground/HBoxContainer"]
+margin_right = 260.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 260, 0 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Level" type="Label" parent="ZoneBackground/HBoxContainer/LevelDisplay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Level
+23"
+align = 1
+valign = 1
+
+[node name="ZoneName" type="Label" parent="ZoneBackground/HBoxContainer"]
+margin_left = 264.0
+margin_top = 46.0
+margin_right = 748.0
+margin_bottom = 193.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Bandit-infested Forest"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="LevelControl" type="VBoxContainer" parent="ZoneBackground/HBoxContainer"]
+margin_left = 752.0
+margin_right = 872.0
+margin_bottom = 240.0
+
+[node name="LevelUp" type="TextureButton" parent="ZoneBackground/HBoxContainer/LevelControl"]
+margin_right = 120.0
+margin_bottom = 101.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="Margin" type="Label" parent="ZoneBackground/HBoxContainer/LevelControl"]
+margin_top = 105.0
+margin_right = 120.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="LevelDown" type="TextureButton" parent="ZoneBackground/HBoxContainer/LevelControl"]
+margin_top = 139.0
+margin_right = 120.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 3 )
+expand = true
+
+[node name="Margin" type="Label" parent="ZoneBackground/HBoxContainer"]
+margin_left = 876.0
+margin_top = 113.0
+margin_right = 896.0
+margin_bottom = 127.0
+rect_min_size = Vector2( 20, 0 )
+
+[node name="Play" type="TextureButton" parent="ZoneBackground/HBoxContainer"]
+margin_left = 900.0
+margin_right = 1020.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 120, 0 )
+texture_normal = ExtResource( 1 )
+expand = true
+
+[connection signal="pressed" from="ZoneBackground/HBoxContainer/LevelControl/LevelUp" to="." method="_on_LevelUp_pressed"]
+[connection signal="pressed" from="ZoneBackground/HBoxContainer/LevelControl/LevelDown" to="." method="_on_LevelDown_pressed"]
+[connection signal="pressed" from="ZoneBackground/HBoxContainer/Play" to="." method="_on_Play_pressed"]

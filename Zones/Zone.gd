@@ -5,27 +5,26 @@ signal zone_updated
 signal quest_changed
 
 export var zone_name = ""
-export var level = 1
 export (Array, Resource) var modifiers = []
 export (Array, PackedScene) var enemies = []
 export (Array, Resource) var loot = []
 export (Array, Resource) var quests = []
 export (Texture) var texture
 
+var level = 1
+export (int) var min_level
+export (int) var max_level
+
 var zone_floor = 0
 var quest = null
 
 func _ready():
+	level = min_level
+	set_material_quantity()
 	new_quest()
 
 func modifier(_modifier):
 	modifiers.append(_modifier)
-
-func level(_level):
-	level = _level
-
-func zone_name(_zone_name):
-	zone_name = _zone_name
 
 func get_zone_info():
 	return "Level " + str(level) + " " + zone_name + " : " + str(zone_floor)
@@ -38,11 +37,18 @@ func make_zone_monster():
 		.add_loot(loot)
 	return new_monster
 
-func increment_level():
-	level += 1
+func level_up():
+	level = min(level + 1, max_level)
+	set_material_quantity()
 
-func decrement_level():
-	level -= 1
+func level_down():
+	level = max(level - 1, min_level)
+	set_material_quantity()
+
+func set_material_quantity():
+	for lootable in loot:
+		if lootable is MaterialLootable:
+			lootable.set_quantity(level)
 
 # Override for cool ass zones
 func _on_monster_despawned():

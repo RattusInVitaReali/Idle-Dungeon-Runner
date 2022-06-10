@@ -11,6 +11,7 @@ var required_types
 var reward
 
 var kill_count = 0
+var total_levels = 0
 
 func _ready():
 	connect("loot", LootManager, "_on_loot")
@@ -26,7 +27,9 @@ func from_resource(resource):
 func _on_monster_died(monster : Monster):
 	for type in required_types:
 		if type in monster.monster_types:
+			total_levels += monster.level
 			add_kills(1)
+			break
 
 func add_kills(count):
 	if count == 0:
@@ -36,7 +39,13 @@ func add_kills(count):
 	if kill_count == required_kills:
 		complete()
 
+func set_material_levels():
+	for lootable in reward:
+		if lootable is MaterialLootable:
+			lootable.set_quantity(total_levels / kill_count)
+
 func complete():
+	set_material_levels()
 	emit_signal("quest_completed")
 	emit_signal("loot", reward)
 	queue_free()

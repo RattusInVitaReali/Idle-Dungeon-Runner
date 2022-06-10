@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Zones/Desert/Desert.tscn" type="PackedScene" id=1]
+
+[node name="DesertHard" instance=ExtResource( 1 )]
+zone_name = "Hard Desert"
+min_level = 21
+max_level = 45

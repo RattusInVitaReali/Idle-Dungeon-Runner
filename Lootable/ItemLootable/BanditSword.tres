@@ -6,6 +6,7 @@
 [ext_resource path="res://Items/Sword/Sword.tscn" type="PackedScene" id=4]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource( 1 )
 chance = 0.075
 item_type = ExtResource( 4 )

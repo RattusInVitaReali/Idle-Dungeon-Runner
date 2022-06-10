@@ -4,8 +4,9 @@
 [ext_resource path="res://Materials/Common/Iron.tres" type="Resource" id=2]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource( 1 )
 chance = 1.0
 material = ExtResource( 2 )
-min_quantity = 15
-max_quantity = 20
+base_min_quantity = 10
+base_max_quantity = 15

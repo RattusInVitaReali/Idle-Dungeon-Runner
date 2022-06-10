@@ -2,6 +2,7 @@ extends GameScreen
 
 const Player = preload("res://Entities/Player/Player.tscn")
 const ZoneForest = preload("res://Zones/Forest/Forest.tscn")
+const ZoneDesertEasy = preload("res://Zones/Desert/Variants/DesertEasy.tscn")
 
 signal monster_spawned
 signal monster_arrived
@@ -40,7 +41,8 @@ func _ready():
 	measure_screen()
 	image_1.position.x = screen_center_x
 	image_2.position.x = screen_center_x
-	change_zone(ZoneForest)
+	change_zone(ZoneDesertEasy)
+	
 	spawn_player()
 	spawn_monster()
 

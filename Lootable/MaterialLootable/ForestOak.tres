@@ -4,8 +4,9 @@
 [ext_resource path="res://Materials/Basic/Oak.tres" type="Resource" id=2]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource( 1 )
 chance = 0.3
 material = ExtResource( 2 )
-min_quantity = 3
-max_quantity = 5
+base_min_quantity = 2
+base_max_quantity = 3

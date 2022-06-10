@@ -10,12 +10,13 @@
 [ext_resource path="res://Quests/Variants/BanditSlayer.tres" type="Resource" id=8]
 [ext_resource path="res://Zones/Forest/Forest.gd" type="Script" id=9]
 
-[node name="ZoneForest" instance=ExtResource( 2 )]
+[node name="Forest" instance=ExtResource( 2 )]
 script = ExtResource( 9 )
 zone_name = "Forest"
-level = 10
 modifiers = [ ExtResource( 4 ) ]
 enemies = [ ExtResource( 3 ) ]
 loot = [ ExtResource( 6 ), ExtResource( 5 ) ]
 quests = [ ExtResource( 7 ), ExtResource( 8 ) ]
 texture = ExtResource( 1 )
+min_level = 1
+max_level = 15

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Zones/Forest/Forest.tscn" type="PackedScene" id=1]
+
+[node name="ForestEasy" instance=ExtResource( 1 )]
+zone_name = "Easy Forest"

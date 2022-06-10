@@ -5,6 +5,7 @@
 [ext_resource path="res://Lootable/ItemPartLootable/_ItemPartLootable.gd" type="Script" id=3]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource( 3 )
 chance = 0.1
 part_type = ExtResource( 2 )
