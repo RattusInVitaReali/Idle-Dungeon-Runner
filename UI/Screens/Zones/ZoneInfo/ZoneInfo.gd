@@ -25,6 +25,9 @@ func _on_LevelDown_pressed():
 	update_level()
 
 func _on_Play_pressed():
+	play_zone()
+
+func play_zone():
 	emit_signal("play_zone", zone)
 
 func update_level():

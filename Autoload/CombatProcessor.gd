@@ -13,6 +13,8 @@ signal monster_died
 
 signal player_spawned
 
+signal zone_changed
+
 var Monster
 var Player
 

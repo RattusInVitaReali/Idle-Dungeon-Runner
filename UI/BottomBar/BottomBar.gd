@@ -16,3 +16,6 @@ func _on_ItemForge_pressed():
 
 func _on_Stats_pressed():
 	emit_signal("change_screen", Main.SCREEN.STATS)
+
+func _on_Zones_pressed():
+	emit_signal("change_screen", Main.SCREEN.ZONES)

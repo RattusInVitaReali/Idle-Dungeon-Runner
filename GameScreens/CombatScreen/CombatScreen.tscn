@@ -27,9 +27,7 @@ texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1600, 3200 )
 
-[node name="Zone" type="Node2D" parent="." index="2"]
-
-[node name="Combat" parent="." index="3" instance=ExtResource( 3 )]
+[node name="Combat" parent="." index="2" instance=ExtResource( 3 )]
 margin_right = 1080.0
 margin_bottom = 1920.0
 rect_min_size = Vector2( 1080, 1920 )

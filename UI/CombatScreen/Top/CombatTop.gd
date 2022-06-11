@@ -58,6 +58,8 @@ func apply_effect(effect):
 	effects.add_child(new_effect)
 
 func change_zone(_zone):
+	if zone != null:
+		zone.disconnect("zone_updated", self, "update_zone")
 	zone = _zone
 	zone.connect("zone_updated", self, "update_zone")
 	update_zone()

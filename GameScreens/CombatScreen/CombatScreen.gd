@@ -1,8 +1,6 @@
 extends GameScreen
 
 const Player = preload("res://Entities/Player/Player.tscn")
-const ZoneForest = preload("res://Zones/Forest/Forest.tscn")
-const ZoneDesertEasy = preload("res://Zones/Desert/Variants/DesertEasy.tscn")
 
 signal monster_spawned
 signal monster_arrived
@@ -10,6 +8,8 @@ signal monster_despawned
 
 signal player_spawned
 signal player_despawned
+
+signal zone_changed
 
 var screen_width = 1080
 var screen_height = 1920
@@ -33,6 +33,7 @@ onready var image_1 = $Map/Image1
 onready var image_2 = $Map/Image2
 
 func _ready():
+	CombatProcessor.connect("zone_changed", self, "change_zone")
 	connect("player_spawned", CombatProcessor, "_on_player_spawned")
 	connect("player_despawned", CombatProcessor, "_on_player_despawned")
 	connect("monster_spawned", CombatProcessor, "_on_monster_spawned")
@@ -41,9 +42,9 @@ func _ready():
 	measure_screen()
 	image_1.position.x = screen_center_x
 	image_2.position.x = screen_center_x
-	change_zone(ZoneDesertEasy)
-	
 	spawn_player()
+	
+	yield(self, "zone_changed")
 	spawn_monster()
 
 func spawn_player():
@@ -57,7 +58,7 @@ func spawn_player():
 
 func spawn_monster():
 	var _monster = zone.make_zone_monster()
-	add_child_below_node($Zone, _monster)
+	add_child_below_node($Map, _monster)
 	_monster.connect("despawned", self, "_on_monster_despawned")
 	monster = _monster
 	monster.position = Vector2(screen_center_x, monster_spawn_pos_x)
@@ -65,18 +66,18 @@ func spawn_monster():
 	$Combat.monster_spawned(monster)
 	emit_signal("monster_spawned", monster)
 
-func change_zone(zone_scene):
-	for zone in $Zone.get_children():
-		zone.queue_free()
-	var new_zone = zone_scene.instance()
-	$Zone.add_child(new_zone)
-	connect("monster_despawned", new_zone, "_on_monster_despawned")
-	new_zone.connect("quest_changed", self, "quest_changed")
+func change_zone(new_zone):
+	if zone != null:
+		disconnect("monster_despawned", zone, "_on_monster_despawned")
+		zone.disconnect("quest_changed", self, "_on_quest_changed")
 	zone = new_zone
+	connect("monster_despawned", zone, "_on_monster_despawned")
+	zone.connect("quest_changed", self, "_on_quest_changed")
 	load_images()
 	$Combat.zone_changed(zone)
+	emit_signal("zone_changed")
 
-func quest_changed(quest):
+func _on_quest_changed(quest):
 	$Combat.quest_changed(quest)
 
 func increment_timeout():
