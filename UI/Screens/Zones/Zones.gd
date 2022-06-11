@@ -22,6 +22,7 @@ func _ready():
 		zone_infos.add_child(zone_info)
 		zone_info.set_zone(zone)
 		zone_info.connect("play_zone", self, "_on_play_zone")
+	yield(get_parent(), "ready")
 	starter_zone()
 
 func _on_play_zone(zone):

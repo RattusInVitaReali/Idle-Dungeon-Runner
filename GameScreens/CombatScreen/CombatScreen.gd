@@ -34,6 +34,7 @@ onready var image_2 = $Map/Image2
 
 func _ready():
 	CombatProcessor.connect("zone_changed", self, "change_zone")
+	print("Connected")
 	connect("player_spawned", CombatProcessor, "_on_player_spawned")
 	connect("player_despawned", CombatProcessor, "_on_player_despawned")
 	connect("monster_spawned", CombatProcessor, "_on_monster_spawned")

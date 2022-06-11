@@ -5,3 +5,4 @@ func _ready():
 
 func _on_play_zone(zone):
 	CombatProcessor.emit_signal("zone_changed", zone)
+	print("Emitted")
