@@ -7,10 +7,6 @@ onready var zone_name = $ZoneBackground/HBoxContainer/ZoneName
 
 var zone : Zone = null;
 
-func _ready():
-	var Desert = load("res://Zones/Desert/Variants/DesertMedium.tscn")
-	set_zone(Desert)
-
 func set_zone(zone_scene : PackedScene):
 	zone = zone_scene.instance()
 	add_child(zone)
@@ -34,7 +30,7 @@ func update_level():
 	zone_level.text = "Level\n" + str(zone.level)
 
 func update_name():
-	zone_name.text = zone.zone_name
+	zone_name.text = zone.zone_name + '\n' + str(zone.min_level) + " - " + str(zone.max_level)
 
 func update_background():
 	var new_atlas = AtlasTexture.new()

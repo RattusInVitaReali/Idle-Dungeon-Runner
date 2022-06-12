@@ -117,3 +117,5 @@ func enter_auto_combat():
 	auto_combat = true
 	emit_signal("entered_auto_combat")
 
+func change_zone(zone):
+	emit_signal("zone_changed", zone)

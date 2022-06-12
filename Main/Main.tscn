@@ -21,6 +21,14 @@ margin_top = -64.3201
 margin_right = -16.0
 margin_bottom = -16.0
 
+[node name="DimmControl" type="Panel" parent="UI"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Tween" type="Tween" parent="UI"]
+
 [node name="InventoryScreen" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1080, 0 )
 

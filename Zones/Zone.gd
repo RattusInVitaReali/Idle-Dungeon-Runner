@@ -50,6 +50,10 @@ func set_material_quantity():
 		if lootable is MaterialLootable:
 			lootable.set_quantity(level)
 
+func activate_quest(value):
+	if quest != null:
+		quest.active = value
+
 # Override for cool ass zones
 func _on_monster_despawned():
 	zone_floor += 1

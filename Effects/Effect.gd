@@ -18,6 +18,8 @@ var is_crit = false
 func initialize(_attacker, _target):
 	attacker = _attacker
 	target = _target
+	attacker.connect("tree_exiting", self, "expire")
+	target.connect("tree_exiting", self, "expire")
 	attacker.connect("died", self, "expire")
 	target.connect("died", self, "_on_EffectTime_timeout")
 	return self

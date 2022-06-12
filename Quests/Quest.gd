@@ -13,6 +13,8 @@ var reward
 var kill_count = 0
 var total_levels = 0
 
+var active = false
+
 func _ready():
 	connect("loot", LootManager, "_on_loot")
 	CombatProcessor.connect("monster_died", self, "_on_monster_died")
@@ -25,11 +27,12 @@ func from_resource(resource):
 	return self
  
 func _on_monster_died(monster : Monster):
-	for type in required_types:
-		if type in monster.monster_types:
-			total_levels += monster.level
-			add_kills(1)
-			break
+	if active:
+		for type in required_types:
+			if type in monster.monster_types:
+				total_levels += monster.level
+				add_kills(1)
+				break
 
 func add_kills(count):
 	if count == 0:

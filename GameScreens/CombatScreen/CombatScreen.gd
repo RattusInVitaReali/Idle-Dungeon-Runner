@@ -34,7 +34,6 @@ onready var image_2 = $Map/Image2
 
 func _ready():
 	CombatProcessor.connect("zone_changed", self, "change_zone")
-	print("Connected")
 	connect("player_spawned", CombatProcessor, "_on_player_spawned")
 	connect("player_despawned", CombatProcessor, "_on_player_despawned")
 	connect("monster_spawned", CombatProcessor, "_on_monster_spawned")
@@ -44,9 +43,6 @@ func _ready():
 	image_1.position.x = screen_center_x
 	image_2.position.x = screen_center_x
 	spawn_player()
-	
-	yield(self, "zone_changed")
-	spawn_monster()
 
 func spawn_player():
 	var player = Player.instance()
@@ -68,17 +64,28 @@ func spawn_monster():
 	emit_signal("monster_spawned", monster)
 
 func change_zone(new_zone):
+	if (CombatProcessor.in_combat):
+		CombatProcessor.exit_combat()
+	if CombatProcessor.Monster != null:
+		CombatProcessor.Monster.queue_free()
 	if zone != null:
 		disconnect("monster_despawned", zone, "_on_monster_despawned")
 		zone.disconnect("quest_changed", self, "_on_quest_changed")
+		zone.activate_quest(false)
 	zone = new_zone
 	connect("monster_despawned", zone, "_on_monster_despawned")
 	zone.connect("quest_changed", self, "_on_quest_changed")
 	load_images()
 	$Combat.zone_changed(zone)
+	zone.activate_quest(true)
+	update_quest(zone.quest)
 	emit_signal("zone_changed")
+	new_combat()
 
 func _on_quest_changed(quest):
+	update_quest(quest)
+
+func update_quest(quest):
 	$Combat.quest_changed(quest)
 
 func increment_timeout():

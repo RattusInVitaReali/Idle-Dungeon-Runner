@@ -70,4 +70,7 @@ func fake_respawn():
 	dead = false
 	can_be_attacked = true
 	visible = true
-	play("idle")
+	if CombatProcessor.in_combat:
+		play("idle")
+	else:
+		play("run")

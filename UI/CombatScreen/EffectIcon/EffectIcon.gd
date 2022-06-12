@@ -3,6 +3,8 @@ extends TextureRect
 var effect
 var duration
 
+var valid = true
+
 func _process(delta):
 	$TimeProgress.value = (effect.get_duration_timer().time_left / duration) * 100
 
