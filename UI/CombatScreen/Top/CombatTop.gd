@@ -68,6 +68,9 @@ func update_zone():
 	zone_info.text = zone.get_zone_info()
 
 func change_quest(_quest):
+	print("Quest changed")
+	if quest != null:
+		quest.disconnect("quest_updated", self, "update_quest")
 	quest = _quest
 	quest.connect("quest_updated", self, "update_quest")
 	update_quest()

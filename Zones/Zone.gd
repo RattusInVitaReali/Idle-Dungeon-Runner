@@ -20,7 +20,6 @@ var quest = null
 
 func _ready():
 	level = min_level
-	set_material_quantity()
 	new_quest()
 
 func modifier(_modifier):
@@ -39,16 +38,9 @@ func make_zone_monster():
 
 func level_up():
 	level = min(level + 1, max_level)
-	set_material_quantity()
 
 func level_down():
 	level = max(level - 1, min_level)
-	set_material_quantity()
-
-func set_material_quantity():
-	for lootable in loot:
-		if lootable is MaterialLootable:
-			lootable.set_quantity(level)
 
 func activate_quest(value):
 	if quest != null:

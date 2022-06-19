@@ -77,7 +77,13 @@ func add_loot(_loot):
 	return self
 
 func drop_loot():
+	set_material_quantity()
 	emit_signal("loot", loot)
+
+func set_material_quantity():
+	for lootable in loot:
+		if lootable is MaterialLootable:
+			lootable.set_quantity(level)
 
 func _on_Entity_animation_finished():
 	._on_Entity_animation_finished()

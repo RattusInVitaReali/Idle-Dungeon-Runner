@@ -83,6 +83,7 @@ func change_zone(new_zone):
 	new_combat()
 
 func _on_quest_changed(quest):
+	quest.active = true
 	update_quest(quest)
 
 func update_quest(quest):
