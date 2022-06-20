@@ -8,10 +8,10 @@ const Margin = preload("res://UI/SlottableInventory/Line/LineMargin.tscn")
 onready var slots = []
 
 
-func init(slot_count = 6):
+func init(slot_count = 6, slot_scene = Slot):
 	var last_margin = null
 	for i in range(slot_count):
-		var new_slot = Slot.instance()
+		var new_slot = slot_scene.instance()
 		var new_margin = Margin.instance()
 		last_margin = new_margin
 		$Line.add_child(new_slot)

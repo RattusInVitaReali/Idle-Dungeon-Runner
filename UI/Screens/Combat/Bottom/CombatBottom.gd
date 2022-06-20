@@ -1,6 +1,6 @@
 extends Control
 
-const EffectIcon = preload("res://UI/CombatScreen/EffectIcon/EffectIcon.tscn")
+const EffectIcon = preload("res://UI/Screens/Combat/EffectIcon/EffectIcon.tscn")
 
 onready var player_hp_bar = $VBoxContainer/Background/VBoxContainer/Stats/Bars/HPBar
 onready var player_hp_value = $VBoxContainer/Background/VBoxContainer/Stats/Bars/HPBar/HPValue

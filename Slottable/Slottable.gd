@@ -1,7 +1,7 @@
 extends Node2D
 class_name Slottable
 
-enum SLOTTABLE_TYPE { MATERIAL, ITEM_PART, ITEM }
+enum SLOTTABLE_TYPE { MATERIAL, ITEM_PART, ITEM, SKILL }
 
 var icon
 var slottable_name

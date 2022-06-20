@@ -19,3 +19,6 @@ func _on_Stats_pressed():
 
 func _on_Zones_pressed():
 	emit_signal("change_screen", Main.SCREEN.ZONES)
+
+func _on_Skills_pressed():
+	emit_signal("change_screen", Main.SCREEN.SKILLS)

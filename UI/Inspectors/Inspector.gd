@@ -11,10 +11,6 @@ onready var special = $Panel/VBoxContainer/Special
 
 var slottable
 
-func _ready():
-	#test()
-	pass
-
 func set_slottable(_slottable):
 	slottable = _slottable
 	update_name()
@@ -35,6 +31,8 @@ func update_rarity():
 			rarity.text += CraftingManager.PART_TYPE.keys()[slottable.type].capitalize()
 		Slottable.SLOTTABLE_TYPE.MATERIAL:
 			rarity.text += CraftingManager.MATERIAL_TYPE.keys()[slottable.type].capitalize()
+		Slottable.SLOTTABLE_TYPE.SKILL:
+			rarity.text += "Skill"
 
 func update_icon():
 	icon.texture = slottable.icon
@@ -54,6 +52,3 @@ func update_special():
 
 func _on_TextureButton_pressed():
 	queue_free()
-
-func test():
-	pass

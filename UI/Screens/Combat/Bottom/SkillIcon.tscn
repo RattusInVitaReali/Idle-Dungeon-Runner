@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://_Resources/skill_icons/BlackSquare.png" type="Texture" id=1]
-[ext_resource path="res://UI/CombatScreen/Bottom/SkillIcon.gd" type="Script" id=2]
-[ext_resource path="res://_Resources/skill_icons/lock.png" type="Texture" id=3]
-[ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://_Resources/skill_borders/Border3.png" type="Texture" id=5]
+[ext_resource path="res://_Resources/skill_borders/Border3.png" type="Texture" id=1]
+[ext_resource path="res://_Resources/skill_icons/BlackSquare.png" type="Texture" id=2]
+[ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://_Resources/skill_icons/lock.png" type="Texture" id=4]
+[ext_resource path="res://UI/Screens/Combat/Bottom/SkillIcon.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 75
-font_data = ExtResource( 4 )
+font_data = ExtResource( 3 )
 
 [node name="Skill" type="TextureRect"]
 margin_left = 10.0
@@ -16,10 +16,10 @@ margin_right = 170.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 160, 0 )
 mouse_filter = 2
-texture = ExtResource( 5 )
+texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 
 [node name="CooldownValue" type="Label" parent="."]
 visible = false
@@ -43,7 +43,7 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource( 4 )
 expand = true
 stretch_mode = 5
 __meta__ = {
@@ -60,7 +60,7 @@ margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
 mouse_filter = 2
-texture_progress = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
 fill_mode = 5
 nine_patch_stretch = true
 

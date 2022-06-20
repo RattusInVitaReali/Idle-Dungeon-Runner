@@ -1,6 +1,6 @@
 extends Control
 
-const EffectIcon = preload("res://UI/CombatScreen/EffectIcon/EffectIcon.tscn")
+const EffectIcon = preload("res://UI/Screens/Combat/EffectIcon/EffectIcon.tscn")
 
 onready var zone_info = $Main/HigherBackground/Background/VBoxContainer/Background/ZoneInfo
 onready var quest_info = $Main/HigherBackground/Background/VBoxContainer/Quest/QuestBar/QuestInfo
@@ -68,7 +68,6 @@ func update_zone():
 	zone_info.text = zone.get_zone_info()
 
 func change_quest(_quest):
-	print("Quest changed")
 	if quest != null:
 		quest.disconnect("quest_updated", self, "update_quest")
 	quest = _quest

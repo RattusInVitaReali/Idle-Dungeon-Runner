@@ -1,4 +1,5 @@
 extends TextureRect
+class_name Slot
 
 signal inspector
 signal test
@@ -51,11 +52,6 @@ func _on_Icon_pressed():
 
 func inspector():
 	emit_signal("inspector", self, gear)
-
-func test():
-	var sword = CraftingManager.Sword.instance()
-	sword.test()
-	set_slottable(sword)
 
 func select():
 	$Selection.show()

@@ -1,4 +1,4 @@
-extends Node2D
+extends Slottable
 class_name Skill
 
 signal play_animation
@@ -8,7 +8,7 @@ var target
 
 export (float) var base_cooldown
 export (String) var skill_name
-export (Texture) var icon
+export (Texture) var skill_icon
 export (String) var description
 
 # Tags
@@ -24,17 +24,13 @@ var manual_cooldown
 var on_cd = false
 
 func _ready():
+	slottable_name = skill_name
 	cooldown = base_cooldown
 	auto_cooldown = base_cooldown
+	icon = skill_icon
 
 func get_cooldown_timer():
 	return $Cooldown
-
-func update_manual_cooldown():
-	pass
-
-func set_attacker_and_target():
-	pass
 
 func set_level(_level):
 	level = _level

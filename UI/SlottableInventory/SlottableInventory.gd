@@ -4,6 +4,7 @@ class_name SlottableInventory
 signal inspector
 
 const Line = preload("res://UI/SlottableInventory/Line/Line.tscn")
+export var Slot = preload("res://UI/Slot/Slot.tscn")
 
 onready var lines_container = $ScrollContainer/VBoxContainer
 
@@ -38,7 +39,7 @@ func update_inventory():
 	var lines = []
 	var line = []
 	var i = 0
-	for slottable in $Items.get_children():
+	for slottable in get_items_container():
 		if slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL:
 			if slottable.quantity == 0:
 				continue
@@ -53,9 +54,12 @@ func update_inventory():
 	for slottable_list in lines:
 		var new_line = Line.instance()
 		lines_container.add_child(new_line)
-		new_line.init(line_size)
+		new_line.init(line_size, Slot)
 		new_line.connect("inspector", self, "_on_inspector")
 		new_line.update_line(slottable_list)
+
+func get_items_container():
+	return $Items.get_children()
 
 func _on_inspector(slot, gear):
 	emit_signal("inspector", slot, gear)

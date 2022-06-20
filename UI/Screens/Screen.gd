@@ -5,6 +5,8 @@ const MaterialInspector = preload("res://UI/Inspectors/MaterialInspector/Materia
 const PartInspector = preload("res://UI/Inspectors/PartInspector/PartInspector.tscn")
 const ItemInspector = preload("res://UI/Inspectors/ItemInspector/ItemInspector.tscn")
 const GearInspector = preload("res://UI/Inspectors/ItemInspector/GearInspector/GearInspector.tscn")
+const SkillInspector = preload("res://UI/Inspectors/SkillInspector/SkillInspector.tscn")
+
 
 func _on_inspector(slot, gear):
 	var slottable = slot.slottable
@@ -20,6 +22,9 @@ func _on_inspector(slot, gear):
 					inspector = GearInspector.instance()
 				else:
 					inspector = ItemInspector.instance()
-		add_child(inspector)
-		inspector.set_slottable(slottable)
+			Slottable.SLOTTABLE_TYPE.SKILL:
+				inspector = SkillInspector.instance()
+		if inspector != null:
+			add_child(inspector)
+			inspector.set_slottable(slottable)
 	return inspector
