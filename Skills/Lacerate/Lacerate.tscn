@@ -9,6 +9,4 @@ script = ExtResource( 2 )
 base_cooldown = 4.0
 skill_name = "Lacerate"
 skill_icon = ExtResource( 3 )
-description = "A strike that applies bleeding."
-phys = true
-attack = true
+tags = [ 0, 2 ]

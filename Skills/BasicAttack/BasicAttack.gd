@@ -22,3 +22,7 @@ func do_skill():
 		CombatProcessor.DamageInfo.new(attacker, target) \
 		.phys_damage(damage)
 	)
+
+func description():
+	var text = "Deal (" + str(base_damage()) + " + " + str(multiplier() * 100) + "% PD) = " + str(calculate_damage()) + " physical damage to your enemy."
+	return text

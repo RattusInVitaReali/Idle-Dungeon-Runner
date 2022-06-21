@@ -13,19 +13,20 @@ func _ready():
 
 func _process(delta):
 	if skill != null:
-		if skill.get_cooldown_timer().get_time_left() >= skill.attacker.get_action_timer().get_time_left():
-			cooldown = skill.get_cooldown_timer().get_time_left()
-			max_cooldown = skill.cooldown
-		else:
-			cooldown = skill.attacker.get_action_timer().get_time_left()
-			max_cooldown = skill.attacker.stats.action_time
-		$CooldownValue.text = "%3.1f" % cooldown
-		$CooldownTexture.value = (cooldown / max_cooldown) * 100
-		if cooldown > 0:
-			$CooldownValue.visible = true
-			set_disabled()
-		else:
-			$CooldownValue.visible = false
+		if skill.equipped and !skill.locked:
+			if skill.get_cooldown_timer().get_time_left() >= skill.attacker.get_action_timer().get_time_left():
+				cooldown = skill.get_cooldown_timer().get_time_left()
+				max_cooldown = skill.cooldown
+			else:
+				cooldown = skill.attacker.get_action_timer().get_time_left()
+				max_cooldown = skill.attacker.stats.action_time
+			$CooldownValue.text = "%3.1f" % cooldown
+			$CooldownTexture.value = (cooldown / max_cooldown) * 100
+			if cooldown > 0:
+				$CooldownValue.visible = true
+				set_disabled()
+			else:
+				$CooldownValue.visible = false
 			set_enabled()
 
 func update_skill(_skill = null):
@@ -33,12 +34,13 @@ func update_skill(_skill = null):
 		return
 	skill = _skill
 	if skill != null:
-		$SkillIcon.texture_normal = skill.icon
-		$SkillIcon.disabled = false
-		skill.connect("tree_exited", self, "update_skill")
-	else:
-		$SkillIcon.texture_normal = lock
-		$SkillIcon.disabled = true
+		if skill.equipped and !skill.locked:
+			$SkillIcon.texture_normal = skill.icon
+			$SkillIcon.disabled = false
+			skill.connect("tree_exited", self, "update_skill")
+			return
+	$SkillIcon.texture_normal = lock
+	$SkillIcon.disabled = true
 
 func player_use_skill():
 	if skill != null:

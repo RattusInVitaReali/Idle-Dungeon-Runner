@@ -50,9 +50,13 @@ func set_level(_level):
 func set_skills_attacker():
 	for skill in get_skills():
 		skill.attacker = self
-		if skill.cast_on_self:
+		if skill.cast_on_self():
 			skill.target = self
 		skill.connect("play_animation", self, "play_animation")
+		if skill.level_required <= level:
+			skill.unlock()
+		else:
+			skill.lock()
 	return self
 
 # Add check for 2 weapons, signal for equipping / unequipping items
@@ -118,7 +122,7 @@ func enter_combat():
 func set_target(target): 
 	enemy = target
 	for skill in get_skills():
-		if !skill.cast_on_self:
+		if !skill.cast_on_self():
 			skill.target = enemy
 
 func get_action_timer():

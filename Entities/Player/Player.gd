@@ -12,7 +12,7 @@ func _ready():
 	stats["action_time_auto"] = 0.3
 	stats["action_time_manual"] = 0.1
 	# TESTING
-	set_level(5)
+	set_level(15)
 	# /TESTING
 	play("run")
 	ready = true
