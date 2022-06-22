@@ -4,6 +4,7 @@ class_name Skill
 enum SKILL_TAGS { PHYSICAL, MAGIC, ATTACK, CAST_ON_SELF }
 
 signal play_animation
+signal skill_updated
 
 var attacker
 var target
@@ -46,10 +47,12 @@ func get_cooldown_timer():
 func set_level(_level):
 	level = _level
 	check_level()
+	emit_signal("skill_updated")
 
 func levelup():
 	level += 1
 	check_level()
+	emit_signal("skill_updated")
 
 func check_level():
 	if level >= level_required:

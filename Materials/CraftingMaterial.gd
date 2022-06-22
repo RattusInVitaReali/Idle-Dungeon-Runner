@@ -15,8 +15,6 @@ var weight
 var tier
 var durability
 
-var quantity = 1
-
 var stats = { "phys_damage": 0.0, "magic_damage": 0.0, "phys_protection": 0.0, "magic_protection": 0.0, 
 					"max_hp": 0, "crit_chance": 0.0, "crit_multi": 0.0 }
 
@@ -60,13 +58,6 @@ func from_lootable(lootable):
 	quantity = lootable.min_quantity + Random.rng.randi() % (lootable.max_quantity - lootable.min_quantity + 1)
 	return self
 
-func split(quant):
-	if quant > quantity: 
-		return null
-	var new_mat = self.duplicate()
-	for property in get_script().get_script_property_list():
-		new_mat.set(property.name, get(property.name))
-	new_mat.stats = stats.duplicate()
-	new_mat.quantity(quant)
-	quantity(quantity - quant)
-	return new_mat
+func special_copy(new_slottable):
+	new_slottable.stats = stats.duplicate()
+	

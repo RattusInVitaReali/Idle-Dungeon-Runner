@@ -40,7 +40,7 @@ func set_slottable(_slottable):
 			CraftingManager.RARITY.EPIC:
 				texture = FrameEpic
 		$Icon.texture_normal = slottable.icon
-		if (slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL):
+		if (slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL or slottable.slottable_type == Slottable.SLOTTABLE_TYPE.ITEM_PART):
 			$Quantity.text = str(slottable.quantity)
 			$Quantity.visible = true
 		else:

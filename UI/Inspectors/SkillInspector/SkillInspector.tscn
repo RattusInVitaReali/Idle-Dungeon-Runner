@@ -1,13 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/Inspectors/Inspector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Inspectors/SkillInspector/SkillInspector.gd" type="Script" id=2]
 [ext_resource path="res://_Resources/skill_borders/Border3.png" type="Texture" id=3]
 [ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://_Resources/gui_images/Division line.png" type="Texture" id=5]
+[ext_resource path="res://_Resources/gui_images/UI board Small  parchment.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 85
 font_data = ExtResource( 4 )
 
 [node name="SkillInspector" instance=ExtResource( 1 )]
@@ -111,14 +116,15 @@ margin_bottom = 732.0
 
 [node name="Stats" parent="Panel/VBoxContainer" index="9"]
 margin_top = 736.0
+margin_bottom = 1167.0
 
 [node name="StatsContainer" parent="Panel/VBoxContainer/Stats" index="0"]
-margin_bottom = 591.0
+margin_bottom = 431.0
 
 [node name="SkillDescription" type="Label" parent="Panel/VBoxContainer/Stats/StatsContainer" index="0"]
-margin_top = 265.0
+margin_top = 185.0
 margin_right = 840.0
-margin_bottom = 325.0
+margin_bottom = 245.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -128,5 +134,52 @@ align = 1
 valign = 1
 autowrap = true
 
+[node name="Line4" parent="Panel/VBoxContainer" index="10"]
+margin_top = 1171.0
+margin_bottom = 1186.0
+
 [node name="Special" parent="Panel/VBoxContainer" index="11"]
+visible = false
 text = ""
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer" index="12"]
+margin_top = 1190.0
+margin_right = 840.0
+margin_bottom = 1410.0
+rect_min_size = Vector2( 0, 220 )
+
+[node name="Upgrade" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="0"]
+margin_right = 418.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Buttons/Upgrade" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Upgrade"
+align = 1
+valign = 1
+
+[node name="Equip" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="1"]
+margin_left = 422.0
+margin_right = 840.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Buttons/Equip" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Equip"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Upgrade" to="." method="_on_Upgrade_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Equip" to="." method="_on_Equip_pressed"]

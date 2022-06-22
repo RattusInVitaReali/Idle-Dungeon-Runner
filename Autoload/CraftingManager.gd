@@ -54,8 +54,9 @@ func forge_item(item, parts):
 	if item.can_create(parts):
 		var new_item = item.duplicate()
 		var parent = parts[0].get_parent()
+		var new_parts = []
 		for part in parts:
-			parent.remove_child(part)
-		new_item.create(parts)
+			new_parts.append(part.split(1))
+		new_item.create(new_parts)
 		return new_item
 	return null

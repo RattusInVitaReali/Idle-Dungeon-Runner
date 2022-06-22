@@ -24,6 +24,8 @@ var stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection
 			 "crit_multi": 0.0, "action_time" : 0 }
 
 
+var tier = 1
+
 var durability
 var mat
 var special = ""
@@ -36,6 +38,8 @@ func can_use_material(mat : CraftingMaterial):
 	return mat.type in allowed_material_types and mat.quantity >= cost
 
 func set_mat(_mat : CraftingMaterial):
+	for child in get_children():
+		remove_child(child)
 	if _mat.type in allowed_material_types:
 		mat = _mat
 		add_child(mat)
@@ -88,15 +92,16 @@ func from_lootable(lootable):
 	set_mat(mat)
 	return self
 
-func make_copy():
-	var new_part = self.duplicate()
-	for property in get_script().get_script_property_list():
-		new_part.set(property.name, get(property.name))
-	new_part.stats = stats.duplicate()
+func special_copy(new_slottable):
+	new_slottable.stats = stats.duplicate()
 	for mat in get_children():
 		mat.quantity(mat.quantity + 1)
 		var new_mat = mat.split(1)
-		new_mat.quantity(mat.quantity)
-		new_part.add_child(new_mat)
-		new_mat.print_material()
-	return new_part
+		new_slottable.set_mat(new_mat)
+
+func same_as(item_part):
+	if item_part == null:
+		return false
+	if mat == null or item_part.mat == null:
+		return false
+	return mat.same_as(item_part.mat) and tier == item_part.tier and type == item_part.type

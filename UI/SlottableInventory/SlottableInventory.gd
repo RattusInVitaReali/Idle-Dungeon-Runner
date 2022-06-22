@@ -12,9 +12,9 @@ export var line_size = 6
 
 func add_slottable(_slottable):
 	var added = false
-	if _slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL:
+	if _slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL or _slottable.slottable_type == Slottable.SLOTTABLE_TYPE.ITEM_PART:
 		for slottable in $Items.get_children():
-			if slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL:
+			if slottable.slottable_type == _slottable.slottable_type:
 				if slottable.same_as(_slottable):
 					slottable.add_quantity(_slottable.quantity)
 					added = true
