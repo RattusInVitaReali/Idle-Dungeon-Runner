@@ -32,7 +32,7 @@ func remove_slottable(slottable, quantity = 1):
 		$Items.remove_child(slottable)
 	update_inventory()
 
-func _sort_rarity(a, b):
+static func _sort_rarity(a, b):
 	if a == null or b == null:
 		return false
 	if a.rarity == null or b.rarity == null:
@@ -41,7 +41,7 @@ func _sort_rarity(a, b):
 		return true
 	return false
 
-func _sort_name(a, b):
+static func _sort_name(a, b):
 	if a == null or b == null:
 		return false
 	if a.slottable_name == null or b.slottable_name == null:
@@ -50,7 +50,7 @@ func _sort_name(a, b):
 		return true
 	return false
 
-func _sort_tier(a, b):
+static func _sort_tier(a, b):
 	if a == null or b == null:
 		return false
 	if a.tier == null or b.tier == null:

@@ -5,6 +5,7 @@ const EffectIcon = preload("res://UI/Screens/Combat/EffectIcon/EffectIcon.tscn")
 onready var player_hp_bar = $VBoxContainer/Background/VBoxContainer/Stats/Bars/HPBar
 onready var player_hp_value = $VBoxContainer/Background/VBoxContainer/Stats/Bars/HPBar/HPValue
 onready var player_hp_tween = $VBoxContainer/Background/VBoxContainer/Stats/Bars/HPBar/Tween
+onready var level_label = $VBoxContainer/Background/VBoxContainer/Stats/Level/Control/TextureRect/LevelLabel
 onready var effects = $VBoxContainer/Effects
 
 var player
@@ -15,6 +16,7 @@ func update_info(_player):
 	player.connect("effect_applied", self, "apply_effect")
 	update_player_hp()
 	update_skills()
+	update_player_level()
 
 func update_player_hp():
 	player_hp_bar.max_value = player.stats.max_hp
@@ -37,6 +39,9 @@ func update_skills():
 			if skill_icon.skill == null:
 				skill_icon.update_skill(skill)
 				break
+
+func update_player_level():
+	level_label.text = str(player.level)
 
 func apply_effect(effect):
 	var new_effect = EffectIcon.instance()

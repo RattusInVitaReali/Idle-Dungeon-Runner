@@ -11,3 +11,6 @@ func quest_changed(quest):
 
 func zone_changed(zone):
 	$CombatTop.change_zone(zone)
+
+func player_level_changed():
+	$CombatBottom.update_player_level()

@@ -48,10 +48,14 @@ func spawn_player():
 	var player = Player.instance()
 	add_child(player)
 	player.connect("despawned", self, "_on_player_despawned")
+	player.connect("level_changed", self, "_on_player_level_changed")
 	player.position = Vector2(screen_center_x, player_spawn_pos_x)
 	player.scale = Vector2(0.25, 0.25)
 	$Combat.player_spawned(player)
 	emit_signal("player_spawned", player)
+
+func _on_player_level_changed():
+	$Combat.player_level_changed()
 
 func spawn_monster():
 	var _monster = zone.make_zone_monster()
@@ -96,12 +100,6 @@ func increment_timeout():
 func reset_timeout():
 	deaths = 0
 	timeout = 0
-
-func increment_level():
-	zone.increment_level()
-
-func decrement_level():
-	zone.decrement_level()
 
 func _on_player_despawned():
 	emit_signal("player_despawned")

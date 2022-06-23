@@ -34,6 +34,7 @@ func enter_combat():
 		next_action_ready = true
 
 func exit_combat():
+	level_up()
 	if !dead:
 		speed_scale = 1
 		play_animation("run")

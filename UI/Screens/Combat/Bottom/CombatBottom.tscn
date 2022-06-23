@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/Screens/Combat/Bottom/SkillIcon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://_Resources/icons/human.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://UI/Screens/Combat/HpBar/HpBarBackground.tres" type="StyleBox" id=6]
 [ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://_Resources/gui_images/UI board Small  stone.png" type="Texture" id=8]
+[ext_resource path="res://_Resources/gui_images/UI board Small  parchment.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -31,6 +32,10 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="DynamicFont" id=5]
 size = 40
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 67
 font_data = ExtResource( 7 )
 
 [node name="CombatBottom" type="Control"]
@@ -75,9 +80,6 @@ margin_left = 15.0
 margin_top = 25.0
 margin_right = -15.0
 margin_bottom = -15.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Stats" type="HBoxContainer" parent="VBoxContainer/Background/VBoxContainer"]
 margin_right = 1050.0
@@ -166,12 +168,50 @@ __meta__ = {
 
 [node name="Tween" type="Tween" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars/EssenceBar"]
 
-[node name="Stats" type="VBoxContainer" parent="VBoxContainer/Background/VBoxContainer/Stats"]
+[node name="Level" type="VBoxContainer" parent="VBoxContainer/Background/VBoxContainer/Stats"]
 margin_left = 860.0
 margin_right = 1050.0
 margin_bottom = 180.0
 rect_min_size = Vector2( 190, 0 )
 size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/Background/VBoxContainer/Stats/Level"]
+margin_right = 190.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Background/VBoxContainer/Stats/Level/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 5.0
+margin_right = -15.0
+margin_bottom = -5.0
+size_flags_vertical = 3
+texture = ExtResource( 9 )
+expand = true
+
+[node name="LevelLabel" type="Label" parent="VBoxContainer/Background/VBoxContainer/Stats/Level/Control/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "135"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="Label" type="Label" parent="VBoxContainer/Background/VBoxContainer/Stats/Level"]
+margin_top = 132.0
+margin_right = 190.0
+margin_bottom = 180.0
+custom_fonts/font = SubResource( 1 )
+text = "Level"
+align = 1
+valign = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Background/VBoxContainer"]
 margin_top = 184.0

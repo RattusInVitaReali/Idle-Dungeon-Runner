@@ -5,6 +5,7 @@ var ready = false
 
 signal hp_updated
 signal stats_updated
+signal level_changed
 signal damage_enemy
 signal apply_effect
 signal effect_applied
@@ -44,7 +45,11 @@ func set_hp(hp):
 func set_level(_level):
 	level = _level
 	update_stats()
+	emit_signal("level_changed")
 	return self
+
+func level_up():
+	set_level(level + 1)
 
 # On creation
 func set_skills_attacker():
