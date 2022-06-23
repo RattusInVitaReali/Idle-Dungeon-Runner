@@ -1,8 +1,6 @@
 extends Inspector
 
-func test():
-	var bloodsteel = CraftingManager.new_material(CraftingManager.Bloodsteel)
-	set_slottable(bloodsteel)
+signal merge
 
 func update_special():
 	if slottable.special_weapon and slottable.special_armor:
@@ -13,3 +11,13 @@ func update_special():
 		special.text = "Armor: " + slottable.special_armor
 	else:
 		special.text = ""
+
+func _on_Button1_pressed():
+	emit_signal("merge", slottable)
+	queue_free()
+
+func _on_Cancel_pressed():
+	queue_free()
+
+func _on_TextureButton_pressed():
+	_on_Cancel_pressed()

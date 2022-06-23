@@ -9,6 +9,7 @@ var quantity = 1
 export (SLOTTABLE_TYPE) var slottable_type
 
 var rarity = CraftingManager.RARITY.BASIC
+var tier = 0
 
 func from_lootable(lootable):
 	pass

@@ -50,4 +50,11 @@ texture = ExtResource( 4 )
 expand = true
 stretch_mode = 1
 
+[node name="TierStars" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = 5.0
+
 [connection signal="pressed" from="Icon" to="." method="_on_Icon_pressed"]

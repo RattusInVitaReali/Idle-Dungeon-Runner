@@ -12,20 +12,29 @@ var special_armor
 
 var type
 var weight
-var tier
 var durability
 
 var stats = { "phys_damage": 0.0, "magic_damage": 0.0, "phys_protection": 0.0, "magic_protection": 0.0, 
 					"max_hp": 0, "crit_chance": 0.0, "crit_multi": 0.0 }
 
 
-func set_mat(_mat : MaterialResource):
+func set_mat(_mat : MaterialResource, _tier = 0, _quantity = 1):
 	mat = _mat
 	for property in get_script().get_script_property_list():
-		if property.name in _mat:
-			set(property.name, _mat.get(property.name))
-	stats = _mat.stats.duplicate()
+		if property.name in mat:
+			set(property.name, mat.get(property.name))
+	set_tier(_tier)
+	quantity(_quantity)
 	return self
+
+func set_tier(_tier):
+	tier = _tier
+	stats = mat.stats.duplicate()
+	var i = tier
+	while i > 0:
+		for stat in stats:
+			stats[stat] = 2 * stats[stat]
+		i -= 1
 
 func quantity(quant):
 	quantity = quant;
@@ -60,4 +69,12 @@ func from_lootable(lootable):
 
 func special_copy(new_slottable):
 	new_slottable.stats = stats.duplicate()
-	
+
+func try_to_merge():
+	if quantity < 3:
+		return null
+	var new_quantity = int(quantity / 3)
+	var new_mat = duplicate()
+	new_mat.set_mat(mat, tier + 1, new_quantity)
+	quantity(quantity % 3)
+	return new_mat

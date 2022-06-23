@@ -9,5 +9,5 @@ func _ready():
 	for part in parts:
 		add_slottable(part.instance())
 
-func _on_inspector(slot, gear):
+func _on_inspector(slot, flags):
 	emit_signal("part_type_selected", slot)

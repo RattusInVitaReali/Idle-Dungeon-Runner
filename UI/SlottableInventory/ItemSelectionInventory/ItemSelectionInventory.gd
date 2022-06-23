@@ -9,5 +9,5 @@ func _ready():
 	for item in items:
 		add_slottable(item.instance())
 
-func _on_inspector(slot, gear):
+func _on_inspector(slot, flags):
 	emit_signal("item_type_selected", slot)

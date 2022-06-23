@@ -61,9 +61,10 @@ func update_item_info(item : Item = null):
 		item_parts.text = ""
 		item_description.text = ""
 
-func _on_inspector(slot, gear):
+func _on_inspector(slot, flags):
 	if !creating:
-		._on_inspector(slot, gear)
+		var inspector = ._on_inspector(slot, flags)
+		inspector.connect("merge", self, "_on_merge")
 	elif selecting_parts:
 		if slot in selected_part_slots:
 			slot.deselect()
@@ -83,6 +84,11 @@ func _on_inspector(slot, gear):
 				break
 		selected_parts.append(slottable)
 		selected_part_slots.append(slot)
+
+func _on_merge(slottable):
+	var new_item = slottable.try_to_merge()
+	if new_item != null:
+		LootManager.get_item(new_item)
 
 func item_confirm_inspector(part):
 	var inspector = ItemConfirmInspector.instance()

@@ -4,6 +4,8 @@ class_name Slot
 signal inspector
 signal test
 
+const TierStar = preload("res://UI/Slot/TierStar.tscn")
+
 const Frame = preload("res://_Resources/gui_images/Frame.png")
 const FrameBasic = preload("res://_Resources/gui_images/Frame_Basic.png")
 const FrameCommon = preload("res://_Resources/gui_images/Frame_Common.png")
@@ -43,15 +45,27 @@ func set_slottable(_slottable):
 		if (slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL or slottable.slottable_type == Slottable.SLOTTABLE_TYPE.ITEM_PART):
 			$Quantity.text = str(slottable.quantity)
 			$Quantity.visible = true
+			for tier_star in $TierStars.get_children():
+				$TierStars.remove_child(tier_star)
+				tier_star.queue_free()
+			var i = slottable.tier
+			while i > 0:
+				$TierStars.add_child(TierStar.instance())
+				i -= 1
+			$TierStars.visible = true
 		else:
 			$Quantity.visible = false
+			$TierStars.visible = false
 
 func _on_Icon_pressed():
 	if slottable != null:
 		inspector()
 
 func inspector():
-	emit_signal("inspector", self, gear)
+	var flags = 0
+	if gear:
+		flags |= Screen.GEAR_FLAG
+	emit_signal("inspector", self, flags)
 
 func select():
 	$Selection.show()

@@ -6,5 +6,5 @@
 [node name="PartConfirmInspector" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Confirm" to="." method="_on_Confirm_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Cancel" to="." method="_on_Cancel_pressed"]
+[node name="Label" parent="Panel/VBoxContainer/Buttons/Button1" index="0"]
+text = "Confirm"

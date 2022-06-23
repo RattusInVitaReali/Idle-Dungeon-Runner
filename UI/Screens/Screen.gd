@@ -7,8 +7,10 @@ const ItemInspector = preload("res://UI/Inspectors/ItemInspector/ItemInspector.t
 const GearInspector = preload("res://UI/Inspectors/ItemInspector/GearInspector/GearInspector.tscn")
 const SkillInspector = preload("res://UI/Inspectors/SkillInspector/SkillInspector.tscn")
 
+const GEAR_FLAG = 1
+const MERGE_FLAG = 2
 
-func _on_inspector(slot, gear):
+func _on_inspector(slot, flags):
 	var slottable = slot.slottable
 	var inspector = null
 	if slottable != null:
@@ -18,7 +20,7 @@ func _on_inspector(slot, gear):
 			Slottable.SLOTTABLE_TYPE.ITEM_PART:
 				inspector = PartInspector.instance()
 			Slottable.SLOTTABLE_TYPE.ITEM:
-				if gear:
+				if flags & GEAR_FLAG:
 					inspector = GearInspector.instance()
 				else:
 					inspector = ItemInspector.instance()
