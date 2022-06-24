@@ -11,18 +11,9 @@ onready var skill_name = $NameBackground/Name
 
 func set_slottable(_slottable):
 	slottable = _slottable
-	set_border()
-	if _slottable != null:
+	if slottable != null:
 		slottable.connect("skill_updated", self, "update_skill")
-		if !_slottable.locked:
-			$Icon.texture_normal = slottable.icon
-			skill_name.text = slottable.skill_name
-		else:
-			$Icon.texture_normal = Lock
-			skill_name.text = "Locked"
-		return
-	$Icon.texture_normal = null
-	skill_name.text = ""
+	update_skill()
 
 func set_border():
 	if slottable == null:
@@ -36,8 +27,20 @@ func set_border():
 	else:
 		texture = BorderTexture4
 
+func set_icon():
+	if slottable == null:
+		$Icon.texture_normal = null
+		skill_name.text = ""
+	elif !slottable.locked:
+		$Icon.texture_normal = slottable.icon
+		skill_name.text = slottable.skill_name
+	else:
+		$Icon.texture_normal = Lock
+		skill_name.text = "Locked"
+
 func update_skill():
 	set_border()
+	set_icon()
 
 func _on_Icon_pressed():
 	if slottable != null:

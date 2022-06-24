@@ -8,5 +8,5 @@ resource_local_to_scene = true
 script = ExtResource( 1 )
 chance = 1.0
 material = ExtResource( 2 )
-base_min_quantity = 10
-base_max_quantity = 15
+base_min_quantity = 15
+base_max_quantity = 25

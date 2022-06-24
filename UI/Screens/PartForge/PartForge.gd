@@ -1,5 +1,7 @@
 extends Screen
 
+signal creation_finished
+
 const PartConfirmInspector = preload("res://UI/Inspectors/PartInspector/PartConfirmInspector/PartConfirmInspector.tscn")
 
 onready var materials = $VBoxContainer/Screen/VBoxContainer/SlottableInventory
@@ -29,6 +31,8 @@ func _ready():
 	part_selection.connect("part_type_selected", self, "_on_part_type_selected")
 
 func add_material(mat):
+	if creating:
+		yield(self, "creation_finished")
 	materials.add_slottable(mat)
 
 func _on_part_type_selected(slot):
@@ -123,6 +127,7 @@ func end_creation():
 	button_right.text = ""
 	if selected_part_slot != null:
 		selected_part_slot.deselect()
+	emit_signal("creation_finished")
 
 func start_material_selection():
 	selecting_material = true

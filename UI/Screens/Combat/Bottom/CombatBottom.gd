@@ -33,11 +33,11 @@ func update_player_hp():
 
 func update_skills():
 	for skill_icon in get_tree().get_nodes_in_group("skills"):
-		skill_icon.update_skill(null)
+		skill_icon.set_skill(null)
 	for skill in player.get_skills():
 		for skill_icon in get_tree().get_nodes_in_group("skills"):
 			if skill_icon.skill == null:
-				skill_icon.update_skill(skill)
+				skill_icon.set_skill(skill)
 				break
 
 func update_player_level():

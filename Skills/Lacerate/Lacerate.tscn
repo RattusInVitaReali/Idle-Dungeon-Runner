@@ -10,3 +10,4 @@ base_cooldown = 4.0
 skill_name = "Lacerate"
 skill_icon = ExtResource( 3 )
 tags = [ 0, 2 ]
+level_required = 4

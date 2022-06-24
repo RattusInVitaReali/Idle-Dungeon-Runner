@@ -246,6 +246,7 @@ CombatProcessor="*res://Autoload/CombatProcessor.gd"
 CraftingManager="*res://Autoload/CraftingManager.gd"
 LootManager="*res://Autoload/LootManager.gd"
 Random="*res://Autoload/Random.gd"
+GlobalResources="*res://Autoload/GlobalResources.gd"
 
 [display]
 

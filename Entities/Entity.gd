@@ -55,13 +55,6 @@ func level_up():
 func set_skills_attacker():
 	for skill in get_skills():
 		skill.attacker = self
-		if skill.cast_on_self():
-			skill.target = self
-		skill.connect("play_animation", self, "play_animation")
-		if skill.level_required <= level:
-			skill.unlock()
-		else:
-			skill.lock()
 	return self
 
 # Add check for 2 weapons, signal for equipping / unequipping items

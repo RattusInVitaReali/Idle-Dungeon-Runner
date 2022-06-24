@@ -18,6 +18,9 @@ func _ready():
 	ready = true
 	update_stats()
 
+func update_skill_levels():
+	pass
+
 func update_stats():
 	.update_stats()
 	update_skill_cooldowns(CombatProcessor.auto_combat)

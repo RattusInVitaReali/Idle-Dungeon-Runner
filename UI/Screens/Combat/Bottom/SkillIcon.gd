@@ -9,7 +9,6 @@ var max_cooldown
 func _ready():
 	CombatProcessor.connect("entered_combat", self, "set_enabled")
 	CombatProcessor.connect("exited_combat", self, "set_disabled")
-	update_skill(null)
 
 func _process(delta):
 	if skill != null:
@@ -29,18 +28,28 @@ func _process(delta):
 				$CooldownValue.visible = false
 			set_enabled()
 
-func update_skill(_skill = null):
+func set_skill(_skill = null):
 	if skill == _skill:
 		return
+	if skill != null:
+		skill.disconnect("tree_exited", self, "update_skill")
 	skill = _skill
 	if skill != null:
-		if skill.equipped and !skill.locked:
-			$SkillIcon.texture_normal = skill.icon
-			$SkillIcon.disabled = false
-			skill.connect("tree_exited", self, "update_skill")
-			return
-	$SkillIcon.texture_normal = lock
-	$SkillIcon.disabled = true
+		skill.connect("tree_exited", self, "update_skill")
+		skill.connect("skill_updated", self, "update_skill")
+	update_skill()
+
+func update_skill():
+	if skill == null:
+		$SkillIcon.texture_normal = lock
+		$SkillIcon.disabled = true
+	elif skill.equipped and !skill.locked:
+		$SkillIcon.texture_normal = skill.icon
+		$SkillIcon.disabled = false
+		skill.connect("tree_exited", self, "update_skill")
+	else:
+		$SkillIcon.texture_normal = lock
+		$SkillIcon.disabled = true
 
 func player_use_skill():
 	if skill != null:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://UI/Inspectors/Inspector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Inspectors/SkillInspector/SkillInspector.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://_Resources/gui_images/Division line.png" type="Texture" id=5]
 [ext_resource path="res://_Resources/gui_images/UI board Small  parchment.png" type="Texture" id=6]
+[ext_resource path="res://UI/Inspectors/SkillInspector/UpgradeRequirement/UpgradeRequirement.tscn" type="PackedScene" id=7]
+[ext_resource path="res://_Resources/skill_icons/Icon7.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -15,8 +17,18 @@ font_data = ExtResource( 4 )
 size = 85
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 4 )
+
 [node name="SkillInspector" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="Name" parent="Panel/VBoxContainer" index="0"]
+text = "Kick In The Ass"
+
+[node name="Rarity" parent="Panel/VBoxContainer" index="1"]
+text = "Common Skill"
 
 [node name="SkillTags" type="Label" parent="Panel/VBoxContainer" index="3"]
 margin_top = 147.0
@@ -60,6 +72,9 @@ size_flags_vertical = 3
 margin_top = 230.0
 margin_bottom = 630.0
 
+[node name="Icon" parent="Panel/VBoxContainer/Image" index="0"]
+texture = ExtResource( 3 )
+
 [node name="ActualIcon" type="TextureRect" parent="Panel/VBoxContainer/Image/Icon" index="0"]
 show_behind_parent = true
 anchor_right = 1.0
@@ -68,7 +83,7 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
-texture = ExtResource( 3 )
+texture = ExtResource( 8 )
 expand = true
 stretch_mode = 6
 
@@ -116,36 +131,36 @@ margin_bottom = 732.0
 
 [node name="Stats" parent="Panel/VBoxContainer" index="9"]
 margin_top = 736.0
-margin_bottom = 1167.0
+margin_bottom = 1044.0
 
 [node name="StatsContainer" parent="Panel/VBoxContainer/Stats" index="0"]
-margin_bottom = 431.0
+margin_bottom = 308.0
 
 [node name="SkillDescription" type="Label" parent="Panel/VBoxContainer/Stats/StatsContainer" index="0"]
-margin_top = 185.0
+margin_top = 92.0
 margin_right = 840.0
-margin_bottom = 245.0
+margin_bottom = 215.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "A basic attack skill"
+text = "Kick your enemy in the ass for (69 + 123% PD) = 420 physical damage."
 align = 1
 valign = 1
 autowrap = true
 
 [node name="Line4" parent="Panel/VBoxContainer" index="10"]
-margin_top = 1171.0
-margin_bottom = 1186.0
+margin_top = 1048.0
+margin_bottom = 1063.0
 
 [node name="Special" parent="Panel/VBoxContainer" index="11"]
 visible = false
 text = ""
 
 [node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer" index="12"]
-margin_top = 1190.0
+margin_top = 1067.0
 margin_right = 840.0
-margin_bottom = 1410.0
+margin_bottom = 1287.0
 rect_min_size = Vector2( 0, 220 )
 
 [node name="Upgrade" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="0"]
@@ -180,6 +195,60 @@ custom_fonts/font = SubResource( 2 )
 text = "Equip"
 align = 1
 valign = 1
+
+[node name="Line7" type="HBoxContainer" parent="Panel/VBoxContainer" index="13"]
+margin_top = 1291.0
+margin_right = 840.0
+margin_bottom = 1306.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line7" index="0"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line7" index="1"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 5 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line7" index="2"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" index="14"]
+margin_top = 1310.0
+margin_right = 840.0
+margin_bottom = 1410.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer" index="0"]
+margin_top = 26.0
+margin_right = 225.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 3 )
+text = "Upgrade reqs:"
+valign = 1
+
+[node name="Margin" type="Label" parent="Panel/VBoxContainer/HBoxContainer" index="1"]
+margin_left = 229.0
+margin_top = 43.0
+margin_right = 636.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+
+[node name="UpgradeReqContainter" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer" index="2"]
+margin_left = 640.0
+margin_right = 840.0
+margin_bottom = 100.0
+
+[node name="UpgradeRequirement" parent="Panel/VBoxContainer/HBoxContainer/UpgradeReqContainter" index="0" instance=ExtResource( 7 )]
 
 [connection signal="pressed" from="Panel/VBoxContainer/Buttons/Upgrade" to="." method="_on_Upgrade_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Buttons/Equip" to="." method="_on_Equip_pressed"]

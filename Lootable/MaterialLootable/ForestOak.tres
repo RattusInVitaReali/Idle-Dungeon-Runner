@@ -6,7 +6,7 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )
-chance = 0.3
+chance = 0.5
 material = ExtResource( 2 )
-base_min_quantity = 2
-base_max_quantity = 3
+base_min_quantity = 3
+base_max_quantity = 5
