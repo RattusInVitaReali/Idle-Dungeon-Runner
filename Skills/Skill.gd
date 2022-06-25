@@ -91,7 +91,6 @@ func level_up():
 	emit_signal("skill_updated")
 
 func check_level():
-	print("Checking level : " + str(self) + " : "+ str(attacker))
 	if attacker == null:
 		return
 	if attacker.level >= level_required:

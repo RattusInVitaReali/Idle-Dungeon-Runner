@@ -11,7 +11,9 @@ const zones = [
 
 	preload("res://Zones/Desert/Variants/DesertEasy.tscn"),
 	preload("res://Zones/Desert/Variants/DesertMedium.tscn"),
-	preload("res://Zones/Desert/Variants/DesertHard.tscn")
+	preload("res://Zones/Desert/Variants/DesertHard.tscn"),
+	
+	preload("res://Zones/Ruins/Ruins.tscn")
 ]
 
 onready var zone_infos = $VBoxContainer/Screen/VBoxContainer/ScrollContainer/ZoneInfos

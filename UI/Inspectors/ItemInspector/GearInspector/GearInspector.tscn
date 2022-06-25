@@ -6,5 +6,5 @@
 [node name="GearInspector" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Label" parent="Panel/VBoxContainer/Equip" index="0"]
-text = "UNEQUIP"
+[node name="Label" parent="Panel/VBoxContainer/Buttons/Equip" index="0"]
+text = "Unequip"

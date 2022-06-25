@@ -1,0 +1,24 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Zones/Zone.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Zones/Ruins/Ruins.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Monster/Bandit/Bandit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://_Resources/backgrounds/Ruins.png" type="Texture" id=4]
+[ext_resource path="res://Modifiers/Strong/Strong.tres" type="Resource" id=5]
+[ext_resource path="res://Quests/Variants/BanditSlayer.tres" type="Resource" id=6]
+[ext_resource path="res://Lootable/MaterialLootable/DesertIron.tres" type="Resource" id=7]
+[ext_resource path="res://Modifiers/Healthy/Healthy.tres" type="Resource" id=8]
+[ext_resource path="res://Lootable/MaterialLootable/ForestOak.tres" type="Resource" id=9]
+[ext_resource path="res://Lootable/MaterialLootable/ForestCopper.tres" type="Resource" id=10]
+[ext_resource path="res://Lootable/MaterialLootable/GlobalResourceLootable/SkillLotuses.tres" type="Resource" id=11]
+
+[node name="Ruins" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+zone_name = "Ruins"
+modifiers = [ ExtResource( 8 ), ExtResource( 5 ) ]
+enemies = [ ExtResource( 3 ) ]
+loot = [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 11 ) ]
+quests = [ ExtResource( 6 ) ]
+texture = ExtResource( 4 )
+min_level = 10
+max_level = 50

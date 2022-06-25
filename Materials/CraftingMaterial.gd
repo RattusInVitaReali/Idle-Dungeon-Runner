@@ -64,7 +64,7 @@ func on_incoming_damage(damage_info : CombatProcessor.DamageInfo, item):
 
 func from_lootable(lootable):
 	set_mat(lootable.material)
-	quantity = lootable.min_quantity + Random.rng.randi() % (lootable.max_quantity - lootable.min_quantity + 1)
+	quantity(lootable.get_quantity())
 	return self
 
 func special_copy(new_slottable):

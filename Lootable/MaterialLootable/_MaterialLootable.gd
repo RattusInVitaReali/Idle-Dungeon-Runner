@@ -16,3 +16,6 @@ func get_loot():
 func set_quantity(level):
 	min_quantity = int(base_min_quantity * (1 + level / 2))
 	max_quantity = int(base_max_quantity * (1 + level / 2))
+
+func get_quantity():
+	return min_quantity + Random.rng.randi() % (max_quantity - min_quantity + 1)

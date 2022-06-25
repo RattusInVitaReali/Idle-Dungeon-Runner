@@ -12,11 +12,15 @@ func _ready():
 	stats["action_time_auto"] = 0.3
 	stats["action_time_manual"] = 0.1
 	# TESTING
-	set_level(3)
+	set_level(1)
 	# /TESTING
 	play("run")
 	ready = true
 	update_stats()
+
+func level_up():
+	.level_up()
+	GlobalResources.SKILL_POINTS += 1 # TEMP
 
 func update_skill_levels():
 	pass
