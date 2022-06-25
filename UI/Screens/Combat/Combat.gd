@@ -14,3 +14,6 @@ func zone_changed(zone):
 
 func player_level_changed():
 	$CombatBottom.update_player_level()
+
+func player_exp_changed():
+	$CombatBottom.update_player_exp()

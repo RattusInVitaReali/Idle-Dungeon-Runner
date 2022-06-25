@@ -5,6 +5,9 @@ const EffectIcon = preload("res://UI/Screens/Combat/EffectIcon/EffectIcon.tscn")
 onready var player_hp_bar = $VBoxContainer/Background/VBoxContainer/Stats/Bars/HPBar
 onready var player_hp_value = $VBoxContainer/Background/VBoxContainer/Stats/Bars/HPBar/HPValue
 onready var player_hp_tween = $VBoxContainer/Background/VBoxContainer/Stats/Bars/HPBar/Tween
+onready var exp_bar = $VBoxContainer/Background/VBoxContainer/Stats/Bars/ExpBar
+onready var exp_value = $VBoxContainer/Background/VBoxContainer/Stats/Bars/ExpBar/ExpValue
+onready var exp_tween = $VBoxContainer/Background/VBoxContainer/Stats/Bars/ExpBar/Tween
 onready var level_label = $VBoxContainer/Background/VBoxContainer/Stats/Level/Control/TextureRect/LevelLabel
 onready var effects = $VBoxContainer/Effects
 
@@ -17,6 +20,7 @@ func update_info(_player):
 	update_player_hp()
 	update_skills()
 	update_player_level()
+	update_player_exp()
 
 func update_player_hp():
 	player_hp_bar.max_value = player.stats.max_hp
@@ -25,7 +29,8 @@ func update_player_hp():
 		"value", 
 		player_hp_bar.value, 
 		player.stats.hp,
-		0.2, Tween.TRANS_LINEAR, 
+		0.2,
+		Tween.TRANS_LINEAR, 
 		Tween.EASE_OUT
 	)
 	player_hp_tween.start()
@@ -42,6 +47,20 @@ func update_skills():
 
 func update_player_level():
 	level_label.text = str(player.level)
+
+func update_player_exp():
+	exp_bar.max_value = player.next_level_exp_required()
+	exp_tween.interpolate_property(
+		exp_bar,
+		"value",
+		exp_bar.value,
+		player.current_level_exp(),
+		0.2,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_OUT
+	)
+	exp_tween.start()
+	exp_value.text = str(int(player.current_level_exp())) + " / " + str(int(player.next_level_exp_required()))
 
 func apply_effect(effect):
 	var new_effect = EffectIcon.instance()

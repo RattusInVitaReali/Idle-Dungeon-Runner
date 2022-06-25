@@ -71,6 +71,9 @@ func die():
 	.die()
 	drop_loot()
 
+func power_level():
+	return level + modifiers.size() * (modifiers.size() + 1) / 2
+
 func add_loot(_loot):
 	for lootable in _loot:
 		loot.append(lootable)
@@ -80,10 +83,13 @@ func drop_loot():
 	set_material_quantity()
 	emit_signal("loot", loot)
 
+func get_exp_value():
+	return power_level() * 5
+
 func set_material_quantity():
 	for lootable in loot:
 		if lootable is MaterialLootable:
-			lootable.set_quantity(level)
+			lootable.set_quantity(power_level())
 
 func _on_Entity_animation_finished():
 	._on_Entity_animation_finished()

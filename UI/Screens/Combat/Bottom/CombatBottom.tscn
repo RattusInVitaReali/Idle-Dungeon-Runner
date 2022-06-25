@@ -145,7 +145,7 @@ margin_right = 662.0
 margin_bottom = 121.0
 rect_min_size = Vector2( 0, 15 )
 
-[node name="EssenceBar" type="ProgressBar" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars"]
+[node name="ExpBar" type="ProgressBar" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars"]
 margin_top = 125.0
 margin_right = 662.0
 margin_bottom = 180.0
@@ -155,18 +155,15 @@ custom_styles/fg = SubResource( 4 )
 custom_styles/bg = ExtResource( 6 )
 percent_visible = false
 
-[node name="EssenceValue" type="Label" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars/EssenceBar"]
+[node name="ExpValue" type="Label" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars/ExpBar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 5 )
 text = "0"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Tween" type="Tween" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars/EssenceBar"]
+[node name="Tween" type="Tween" parent="VBoxContainer/Background/VBoxContainer/Stats/Bars/ExpBar"]
 
 [node name="Level" type="VBoxContainer" parent="VBoxContainer/Background/VBoxContainer/Stats"]
 margin_left = 860.0

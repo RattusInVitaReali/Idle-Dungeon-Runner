@@ -2,21 +2,42 @@ extends Entity
 class_name Player
 
 signal items_changed
+signal exp_changed
+
+var experience = 0 setget set_exp
 
 func _ready():
 	._ready()
 	CombatProcessor.connect("entered_auto_combat", self, "_on_enter_auto_combat")
 	CombatProcessor.connect("entered_manual_combat", self, "_on_enter_manual_combat")
+	CombatProcessor.connect("monster_died", self, "_on_monster_died")
 	base_stats["action_time_auto"] = 0.3
 	base_stats["action_time_manual"] = 0.1
 	stats["action_time_auto"] = 0.3
 	stats["action_time_manual"] = 0.1
-	# TESTING
-	set_level(1)
-	# /TESTING
+	set_level(0)
 	play("run")
 	ready = true
 	update_stats()
+
+func set_exp(value):
+	experience = value
+	check_experience()
+	emit_signal("exp_changed")
+
+func check_experience():
+	if experience >= total_exp_required():
+		level_up()
+		check_experience()
+
+func total_exp_required(_level = level + 1):
+	return int(5 * pow(_level, 2.5))
+
+func next_level_exp_required():
+	return total_exp_required(level + 1) - total_exp_required(level)
+
+func current_level_exp():
+	return experience - total_exp_required(level)
 
 func level_up():
 	.level_up()
@@ -41,7 +62,6 @@ func enter_combat():
 		next_action_ready = true
 
 func exit_combat():
-	level_up()
 	if !dead:
 		speed_scale = 1
 		play_animation("run")
@@ -65,6 +85,9 @@ func _on_enter_auto_combat():
 	if $ActionTimer.time_left == 0:
 		start_action_timer()
 	calculate_anim_speed()
+
+func _on_monster_died(monster):
+	self.experience += monster.get_exp_value()
 
 func _on_Entity_animation_finished():
 	._on_Entity_animation_finished()

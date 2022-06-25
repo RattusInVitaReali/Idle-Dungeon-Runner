@@ -49,6 +49,7 @@ func spawn_player():
 	add_child(player)
 	player.connect("despawned", self, "_on_player_despawned")
 	player.connect("level_changed", self, "_on_player_level_changed")
+	player.connect("exp_changed", self, "_on_player_exp_changed")
 	player.position = Vector2(screen_center_x, player_spawn_pos_x)
 	player.scale = Vector2(0.25, 0.25)
 	$Combat.player_spawned(player)
@@ -56,6 +57,9 @@ func spawn_player():
 
 func _on_player_level_changed():
 	$Combat.player_level_changed()
+
+func _on_player_exp_changed():
+	$Combat.player_exp_changed()
 
 func spawn_monster():
 	var _monster = zone.make_zone_monster()
@@ -155,7 +159,6 @@ func move_map(delta):
 			f2_on_top = true
 			f1_on_top = false
 
-# emit_signal("monster_arrived"), CombatProcessor starts the combat
 func move_monster(delta):
 	if monster != null:
 		if monster.position != Vector2(screen_center_x, padding_top):
