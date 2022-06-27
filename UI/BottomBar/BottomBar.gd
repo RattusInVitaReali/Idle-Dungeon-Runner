@@ -1,4 +1,5 @@
 extends Control
+class_name BottomBar
 
 signal change_screen
 

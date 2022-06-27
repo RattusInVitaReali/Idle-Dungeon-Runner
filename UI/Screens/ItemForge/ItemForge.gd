@@ -1,4 +1,5 @@
 extends Screen
+class_name ItemForgeUI
 
 signal creation_finished
 

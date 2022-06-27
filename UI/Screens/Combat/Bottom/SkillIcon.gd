@@ -1,4 +1,5 @@
 extends TextureRect
+class_name SkillIcon
 
 const lock = preload("res://_Resources/skill_icons/lock.png")
 
@@ -46,7 +47,6 @@ func update_skill():
 	elif skill.equipped and !skill.locked:
 		$SkillIcon.texture_normal = skill.icon
 		$SkillIcon.disabled = false
-		skill.connect("tree_exited", self, "update_skill")
 	else:
 		$SkillIcon.texture_normal = lock
 		$SkillIcon.disabled = true

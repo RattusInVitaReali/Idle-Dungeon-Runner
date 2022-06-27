@@ -1,4 +1,5 @@
 extends Screen
+class_name PartForgeUI
 
 signal creation_finished
 

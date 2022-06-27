@@ -1,4 +1,5 @@
 extends Control
+class_name CombatModeButton
 
 onready var label = $Background/Label
 

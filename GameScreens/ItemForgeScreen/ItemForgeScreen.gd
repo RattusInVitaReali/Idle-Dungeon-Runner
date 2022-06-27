@@ -1,4 +1,5 @@
 extends GameScreen
+class_name ItemForgeScreen
 
 func _ready():
 	LootManager.connect("item_acquired", self, "_on_item_acquired")

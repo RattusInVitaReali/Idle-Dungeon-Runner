@@ -1,4 +1,5 @@
 extends Control
+class_name CombatUI
 
 func player_spawned(player):
 	$CombatBottom.update_info(player)

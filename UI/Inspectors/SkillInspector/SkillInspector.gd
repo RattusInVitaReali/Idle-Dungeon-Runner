@@ -1,4 +1,5 @@
 extends Inspector
+class_name SkillInspector
 
 const BorderTexture1 = preload("res://_Resources/skill_borders/Border3.png")
 const BorderTexture2 = preload("res://_Resources/skill_borders/Border4.png")

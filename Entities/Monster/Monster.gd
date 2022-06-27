@@ -18,9 +18,7 @@ var prefixes = []
 var suffixes = []
 
 func _ready():
-	._ready()
 	connect("died", CombatProcessor, "_on_monster_died")
-	connect("monster_despawned", CombatProcessor, "_on_monster_despawned")
 	connect("loot", LootManager, "_on_loot")
 	update_skill_cooldowns(true)
 	make_name()
@@ -35,8 +33,8 @@ func enter_combat():
 	start_action_timer()
 
 # ZoneInfo calls this
-func add_modifiers(modifiers):
-	for modifier in modifiers:
+func add_modifiers(_modifiers):
+	for modifier in _modifiers:
 		add_modifier(modifier)
 	return self
 
@@ -72,7 +70,7 @@ func die():
 	drop_loot()
 
 func power_level():
-	return level + modifiers.size() * (modifiers.size() + 1) / 2
+	return int(level + modifiers.size() * (modifiers.size() + 1) / 2) * (1 + modifiers.size() * 0.1)
 
 func add_loot(_loot):
 	for lootable in _loot:
@@ -84,7 +82,10 @@ func drop_loot():
 	emit_signal("loot", loot)
 
 func get_exp_value():
-	return power_level() * 5
+	var pl = power_level()
+	if level <= 20:
+		return pl * 5
+	return int(12.5 * (pow(pl + 1, 2.5) - pow(pl, 2.5)) / pow(pl, 1.1)) + 5
 
 func set_material_quantity():
 	for lootable in loot:

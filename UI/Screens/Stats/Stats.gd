@@ -1,4 +1,5 @@
 extends Screen
+class_name StatsUI
 
 const Stat = preload("res://UI/Screens/Stats/Stat/Stat.tscn")
 

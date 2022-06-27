@@ -1,4 +1,5 @@
 extends TextureRect
+class_name EffectIcon
 
 var effect
 var duration

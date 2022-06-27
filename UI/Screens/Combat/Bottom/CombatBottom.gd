@@ -1,4 +1,5 @@
 extends Control
+class_name CombatBottom
 
 const EffectIcon = preload("res://UI/Screens/Combat/EffectIcon/EffectIcon.tscn")
 
@@ -60,7 +61,7 @@ func update_player_exp():
 		Tween.EASE_OUT
 	)
 	exp_tween.start()
-	exp_value.text = str(int(player.current_level_exp())) + " / " + str(int(player.next_level_exp_required()))
+	exp_value.text = str(int(player.current_level_exp())) + " / " + str(int(player.next_level_exp_required())) + " Exp"
 
 func apply_effect(effect):
 	var new_effect = EffectIcon.instance()

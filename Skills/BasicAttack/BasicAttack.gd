@@ -1,4 +1,5 @@
 extends Skill
+class_name BasicAttack
 
 var base_damage = 15
 var level_damage = 5

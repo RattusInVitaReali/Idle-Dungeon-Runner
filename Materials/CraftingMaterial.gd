@@ -33,7 +33,7 @@ func set_tier(_tier):
 	var i = tier
 	while i > 0:
 		for stat in stats:
-			stats[stat] = 2 * stats[stat]
+			stats[stat] = 1.5 * stats[stat]
 		i -= 1
 
 func quantity(quant):
@@ -71,10 +71,10 @@ func special_copy(new_slottable):
 	new_slottable.stats = stats.duplicate()
 
 func try_to_merge():
-	if quantity < 3:
+	if quantity < 5:
 		return null
-	var new_quantity = int(quantity / 3)
+	var new_quantity = int(quantity / 5)
 	var new_mat = duplicate()
 	new_mat.set_mat(mat, tier + 1, new_quantity)
-	quantity(quantity % 3)
+	quantity(quantity % 5)
 	return new_mat

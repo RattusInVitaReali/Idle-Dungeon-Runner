@@ -1,4 +1,5 @@
 extends GameScreen
+class_name SkillsScreen
 
 var player
 

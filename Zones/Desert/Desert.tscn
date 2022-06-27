@@ -11,6 +11,7 @@
 [node name="Desert" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
 zone_name = "Desert"
+unlock_signal = "bandit_boss_defeated"
 modifiers = [ ExtResource( 2 ) ]
 enemies = [ ExtResource( 3 ) ]
 loot = [ ExtResource( 7 ) ]

@@ -1,4 +1,5 @@
 extends Modifier
+class_name Strong
 
 var base = 5
 var level_multi = 2

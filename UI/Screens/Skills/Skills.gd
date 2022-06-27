@@ -1,4 +1,5 @@
 extends Screen
+class_name SkillsUI
 
 onready var skills = $VBoxContainer/Screen/VBoxContainer/SkillsInventory
 

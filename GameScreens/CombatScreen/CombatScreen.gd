@@ -1,4 +1,5 @@
 extends GameScreen
+class_name CombatScreen
 
 const Player = preload("res://Entities/Player/Player.tscn")
 
@@ -67,7 +68,8 @@ func spawn_monster():
 	_monster.connect("despawned", self, "_on_monster_despawned")
 	monster = _monster
 	monster.position = Vector2(screen_center_x, monster_spawn_pos_x)
-	monster.scale = Vector2(0.25, 0.25)
+	monster.scale.x /= 4
+	monster.scale.y /= 4
 	$Combat.monster_spawned(monster)
 	emit_signal("monster_spawned", monster)
 

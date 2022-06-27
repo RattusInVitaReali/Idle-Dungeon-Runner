@@ -1,10 +1,12 @@
 extends Node2D
 class_name Zone
 
+signal unlocked
 signal zone_updated
 signal quest_changed
 
 export var zone_name = ""
+export var unlock_signal = ""
 export (Array, Resource) var modifiers = []
 export (Array, PackedScene) var enemies = []
 export (Array, Resource) var loot = []
@@ -18,9 +20,19 @@ export (int) var max_level
 var zone_floor = 0
 var quest = null
 
+var locked = false
+
 func _ready():
+	if unlock_signal != "":
+		locked = true
+		Progression.connect(unlock_signal, self, "unlock")
 	level = min_level
 	new_quest()
+
+func unlock():
+	locked = false
+	emit_signal("unlocked")
+	Progression.disconnect(unlock_signal, self, "unlock")
 
 func modifier(_modifier):
 	modifiers.append(_modifier)

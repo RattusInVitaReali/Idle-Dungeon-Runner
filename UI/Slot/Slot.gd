@@ -2,7 +2,6 @@ extends TextureRect
 class_name Slot
 
 signal inspector
-signal test
 
 const TierStar = preload("res://UI/Slot/TierStar.tscn")
 

@@ -7,7 +7,6 @@ signal exp_changed
 var experience = 0 setget set_exp
 
 func _ready():
-	._ready()
 	CombatProcessor.connect("entered_auto_combat", self, "_on_enter_auto_combat")
 	CombatProcessor.connect("entered_manual_combat", self, "_on_enter_manual_combat")
 	CombatProcessor.connect("monster_died", self, "_on_monster_died")
@@ -15,7 +14,7 @@ func _ready():
 	base_stats["action_time_manual"] = 0.1
 	stats["action_time_auto"] = 0.3
 	stats["action_time_manual"] = 0.1
-	set_level(0)
+	set_level(30)
 	play("run")
 	ready = true
 	update_stats()

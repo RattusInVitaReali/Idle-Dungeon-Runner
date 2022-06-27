@@ -53,10 +53,17 @@ func actually_forge_part(part, material):
 func forge_item(item, parts):
 	if item.can_create(parts):
 		var new_item = item.duplicate()
-		var parent = parts[0].get_parent()
 		var new_parts = []
-		for part in parts:
-			new_parts.append(part.split(1))
+		for req_part in item.required_parts:
+			for part in parts:
+				if part.type == req_part:
+					new_parts.append(part.split(1))
+					break
+		for opt_part in item.optional_parts:
+			for part in parts:
+				if part.type == opt_part:
+					new_parts.append(part.split(1))
+					break
 		new_item.create(new_parts)
 		return new_item
 	return null

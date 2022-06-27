@@ -1,4 +1,5 @@
 extends Modifier
+class_name Healthy
 
 var base = 15
 var level_multi = 7

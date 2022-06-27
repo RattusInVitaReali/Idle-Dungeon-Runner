@@ -1,4 +1,5 @@
 extends Skill
+class_name Lacerate
 
 var level_damage = 5
 var base_damage = 15

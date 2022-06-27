@@ -1,4 +1,5 @@
 extends MaterialResource
+class_name Bloodsteel
 
 func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo, item : Item):
 	if item.type == CraftingManager.ITEM_TYPE.WEAPON:

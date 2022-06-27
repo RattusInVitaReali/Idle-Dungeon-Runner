@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Zones/Forest/Forest.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Monster/Bandit/BanditBoss/BanditBoss.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Modifiers/Healthy/Healthy.tres" type="Resource" id=3]
+[ext_resource path="res://Modifiers/Strong/Strong.tres" type="Resource" id=4]
+
+[node name="BanditBossForest" instance=ExtResource( 1 )]
+zone_name = "Bandit Boss Forest"
+modifiers = [ ExtResource( 3 ), ExtResource( 4 ) ]
+enemies = [ ExtResource( 2 ) ]
+min_level = 5
+max_level = 5

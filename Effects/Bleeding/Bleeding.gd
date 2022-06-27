@@ -1,4 +1,5 @@
 extends Effect
+class_name Bleeding
 
 var tick_damage = 0.0
 

@@ -1,4 +1,5 @@
 extends VBoxContainer
+class_name Line
 
 signal inspector
 
@@ -10,7 +11,7 @@ onready var slots = []
 
 func init(slot_count = 6, slot_scene = Slot):
 	var last_margin = null
-	for i in range(slot_count):
+	for _i in range(slot_count):
 		var new_slot = slot_scene.instance()
 		var new_margin = Margin.instance()
 		last_margin = new_margin

@@ -1,4 +1,5 @@
 extends Control
+class_name CombatTop
 
 const EffectIcon = preload("res://UI/Screens/Combat/EffectIcon/EffectIcon.tscn")
 

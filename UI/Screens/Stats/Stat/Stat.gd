@@ -1,4 +1,5 @@
 extends VBoxContainer
+class_name Stat
 
 onready var stat_name = $HBoxContainer/Name
 onready var value = $HBoxContainer/Value

@@ -1,4 +1,5 @@
 extends Label
+class_name DamageNumberLabel
 
 func set_params(value, color, crit_color, travel, duration, spread, crit = false):
 	rect_position.y -= 250

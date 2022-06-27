@@ -1,4 +1,5 @@
 extends Node2D
+class_name DamageNumberManager
 
 var DamageNumberLabel = preload("res://UI/DamageNumbers/DamageNumberLabel/DamageNumberLabel.tscn")
 

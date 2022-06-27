@@ -23,6 +23,7 @@ func add_slottable(_slottable):
 		$Items.add_child(_slottable)
 	update_inventory()
 
+# DOESN'T DELETE THE ITEM!
 func remove_slottable(slottable, quantity = 1):
 	if slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL or slottable.slottable_type == Slottable.SLOTTABLE_TYPE.ITEM_PART:
 		slottable.quantity -= quantity

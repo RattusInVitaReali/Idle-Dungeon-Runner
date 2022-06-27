@@ -37,6 +37,7 @@ func can_use_material(mat : CraftingMaterial):
 func set_mat(_mat : CraftingMaterial):
 	for child in get_children():
 		remove_child(child)
+		child.queue_free()
 	if _mat.type in allowed_material_types:
 		mat = _mat
 		add_child(mat)
@@ -105,13 +106,14 @@ func same_as(item_part):
 	return mat.same_as(item_part.mat) and tier == item_part.tier and type == item_part.type
 
 func try_to_merge():
-	if quantity < 3:
+	if quantity < 5:
 		return null
-	var new_quantity = int(quantity / 3)
+	var new_quantity = int(quantity / 5)
 	var new_part = duplicate()
 	for mat in get_children():
-		mat.quantity(mat.quantity + 3)
+		mat.quantity(mat.quantity + 5)
 		var new_mat = mat.try_to_merge()
 		new_part.set_mat(new_mat)
-	quantity(quantity % 3)
+	new_part.quantity(new_quantity)
+	quantity(quantity % 5)
 	return new_part

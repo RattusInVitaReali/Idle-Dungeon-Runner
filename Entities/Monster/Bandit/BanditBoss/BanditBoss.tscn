@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Entities/Monster/Bandit/Bandit.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Monster/Bandit/BanditBoss/BanditBoss.gd" type="Script" id=2]
+
+[node name="BanditBoss" instance=ExtResource( 1 )]
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 2 )
+base_stats = {
+"action_time": 0.3,
+"crit_chance": 0.05,
+"crit_multi": 1.5,
+"hp": 200,
+"magic_damage": 0,
+"magic_protection": 30,
+"manual_cd_multi": 0.33,
+"max_hp": 200,
+"phys_damage": 15,
+"phys_protection": 30
+}
+per_level = {
+"magic_damage": 0,
+"magic_protection": 3,
+"max_hp": 20,
+"phys_damage": 2,
+"phys_protection": 3
+}
+base_name = "Bandit Boss"

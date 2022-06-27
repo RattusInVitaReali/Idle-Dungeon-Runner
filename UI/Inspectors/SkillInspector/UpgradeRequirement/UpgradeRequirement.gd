@@ -1,4 +1,5 @@
 extends TextureRect
+class_name UpgradeRequirement
 
 const type_icons = {
 	Skill.UPGRADE_REQS.LOTUS : preload("res://_Resources/lotus.png"),

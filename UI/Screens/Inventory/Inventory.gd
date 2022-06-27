@@ -1,5 +1,5 @@
 extends Screen
-class_name Inventory
+class_name InventoryUI
 
 onready var items = $VBoxContainer/Screen/VBoxContainer/SlottableInventory
 onready var weapon1 = $VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4/Weapon1
