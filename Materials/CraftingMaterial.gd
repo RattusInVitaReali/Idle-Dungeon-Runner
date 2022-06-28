@@ -33,7 +33,7 @@ func set_tier(_tier):
 	var i = tier
 	while i > 0:
 		for stat in stats:
-			stats[stat] = 1.5 * stats[stat]
+			stats[stat] = stepify(1.5 * stats[stat], 0.01)
 		i -= 1
 
 func quantity(quant):

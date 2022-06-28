@@ -53,7 +53,7 @@ func set_mat(_mat : CraftingMaterial):
 
 func calculate_stats():
 	for stat in mat.stats:
-		stats[stat] = base_stats[stat] + mat.stats[stat] * stat_multipliers[stat]
+		stats[stat] = base_stats[stat] + stepify(mat.stats[stat] * stat_multipliers[stat], 0.01)
 
 func calculate_durability():
 	durability = base_durability + mat.durability * durability_multi

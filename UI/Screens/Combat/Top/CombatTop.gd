@@ -72,18 +72,24 @@ func change_quest(_quest):
 	if quest != null:
 		quest.disconnect("quest_updated", self, "update_quest")
 	quest = _quest
-	quest.connect("quest_updated", self, "update_quest")
+	if quest != null:
+		quest.connect("quest_updated", self, "update_quest")
 	update_quest()
 
 func update_quest():
-	quest_bar.max_value = quest.required_kills * 10
-	quest_bar_tween.interpolate_property(
-		quest_bar, 
-		"value", 
-		quest_bar.value, 
-		quest.kill_count * 10, 
-		0.2, Tween.TRANS_LINEAR, 
-		Tween.EASE_OUT
-	)
-	quest_bar_tween.start()
-	quest_info.text = quest.quest_info()
+	if quest != null:
+		quest_bar.max_value = quest.required_kills * 10
+		quest_bar_tween.interpolate_property(
+			quest_bar, 
+			"value", 
+			quest_bar.value, 
+			quest.kill_count * 10, 
+			0.2, Tween.TRANS_LINEAR, 
+			Tween.EASE_OUT
+		)
+		quest_bar_tween.start()
+		quest_info.text = quest.quest_info()
+	else:
+		quest_bar.max_value = 1
+		quest_bar.value = 0
+		quest_info.text = ""

@@ -88,7 +88,7 @@ func calculate_stats():
 		stats[stat] = base_stats[stat]
 	for child_part in get_children():
 		for stat in child_part.stats:
-			stats[stat] += child_part.stats[stat]
+			stats[stat] += stepify(child_part.stats[stat], 0.01)
 
 func calculate_durability():
 	durability = 0

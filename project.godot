@@ -197,7 +197,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Main",
 "language": "GDScript",
-"path": "res://Main/main.gd"
+"path": "res://Main/Main.gd"
 }, {
 "base": "Inspector",
 "class": "MaterialInspector",

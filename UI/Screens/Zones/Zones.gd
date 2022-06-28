@@ -10,7 +10,7 @@ const zones = [
 	preload("res://Zones/Forest/Variants/ForestMedium.tscn"),
 	preload("res://Zones/Forest/Variants/ForestHard.tscn"),
 
-	preload("res://Zones/Forest/Variants/BanditBossForest.tscn"),
+	preload("res://Zones/BanditBossDungeon/BanditBossDungeon.tscn"),
 
 	preload("res://Zones/Desert/Variants/DesertEasy.tscn"),
 	preload("res://Zones/Desert/Variants/DesertMedium.tscn"),

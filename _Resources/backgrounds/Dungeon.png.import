@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Dungeon.png-e0e09e3e1685128f52529fe5e4bb39db.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://_Resources/backgrounds/Dungeon.png"
+dest_files=[ "res://.import/Dungeon.png-e0e09e3e1685128f52529fe5e4bb39db.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
