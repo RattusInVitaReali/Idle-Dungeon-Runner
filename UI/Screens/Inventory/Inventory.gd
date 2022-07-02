@@ -1,13 +1,17 @@
 extends Screen
 class_name InventoryUI
 
+const Attribute = preload("res://UI/Screens/Inventory/Attribute/Attribute.tscn")
+
 onready var items = $VBoxContainer/Screen/VBoxContainer/SlottableInventory
 onready var weapon1 = $VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4/Weapon1
 onready var weapon2 = $VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4/Weapon2
+onready var attributes_container = $VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/AttributesBackground/ScrollContainer/AttributeContainer
 
 onready var gear_slots = [weapon1, weapon2]
 
 var player = null
+var attributes_init = false
 
 func _ready():
 	for slot in gear_slots:
@@ -19,6 +23,8 @@ func _ready():
 func _on_player_spawned(_player):
 	player = _player
 	player.connect("items_changed", self, "update_equipped")
+	player.connect("stats_updated", self, "update_attributes")
+	update_attributes()
 
 func add_item(item):
 	items.add_slottable(item)
@@ -56,3 +62,15 @@ func update_equipped():
 					CraftingManager.ITEM_SUBTYPE.BODY_ARMOR:
 						pass
 					# etc.
+
+func update_attributes():
+	var _attributes = player.attributes
+	if !attributes_init:
+		for _at in _attributes:
+			attributes_container.add_child(Attribute.instance())
+		attributes_init = true
+	var attribute_lines = attributes_container.get_children()
+	var i = 0
+	for at in _attributes:
+		attribute_lines[i].init(at.capitalize(), str(_attributes[at]))
+		i += 1

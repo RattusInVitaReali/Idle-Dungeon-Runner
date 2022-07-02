@@ -28,7 +28,7 @@ export var per_level = {
 	"potency": 0, 
 	"dexterity": 0, 
 	"precision": 5, 
-	"ferocity": 5, 
+	"ferocity": 0, 
 	"mastery": 0, 
 	"expertise": 0, 
 	"armor": 5, 

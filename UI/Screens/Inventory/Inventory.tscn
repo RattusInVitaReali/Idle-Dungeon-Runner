@@ -39,13 +39,27 @@ margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
 
-[node name="StatsBackground" type="TextureRect" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer" index="0"]
+[node name="AttributesBackground" type="TextureRect" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer" index="0"]
 margin_right = 518.0
 margin_bottom = 710.0
 rect_min_size = Vector2( 500, 0 )
 size_flags_horizontal = 3
 texture = ExtResource( 7 )
 expand = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/AttributesBackground" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -40.0
+
+[node name="AttributeContainer" type="VBoxContainer" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/AttributesBackground/ScrollContainer" index="0"]
+margin_right = 448.0
+margin_bottom = 640.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="EquipmentBackground" type="NinePatchRect" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer" index="1"]
 margin_left = 522.0

@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "VBoxContainer",
+"class": "Attribute",
+"language": "GDScript",
+"path": "res://UI/Screens/Inventory/Attribute/Attribute.gd"
+}, {
 "base": "Monster",
 "class": "Bandit",
 "language": "GDScript",
@@ -390,6 +395,7 @@ _global_script_classes=[ {
 "path": "res://UI/Screens/Zones/Zones.gd"
 } ]
 _global_script_class_icons={
+"Attribute": "",
 "Bandit": "",
 "BanditBoss": "",
 "BasicAttack": "",
