@@ -14,14 +14,39 @@ export (float) var durability_multi
 export (Array, CraftingManager.MATERIAL_TYPE) var allowed_material_types
 export (String) var description
 
-export var stat_multipliers = { "phys_damage": 0.0, "magic_damage": 0.0, "phys_protection": 0.0, "magic_protection": 0.0, 
-								"max_hp": 0.0, "crit_chance": 0.0, "crit_multi": 0.0 }
+export var stat_multipliers = {
+	"power": 0.0, 
+	"potency": 0.0, 
+	"dexterity": 0.0, 
+	"precision": 0.0, 
+	"ferocity": 0.0, 
+	"mastery": 0.0, 
+	"expertise": 0.0, 
+	"armor": 0.0, 
+	"occult_aversion": 0.0, 
+	"vitality": 0.0, 
+	"toughess": 0.0, 
+	"penetration": 0.0, 
+	"magic_penetration": 0.0, 
+}
 
-export var base_stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.0,
-			 "crit_multi": 0.0, "action_time" : 0 }
+export var base_stats = {
+	"power": 0, 
+	"potency": 0, 
+	"dexterity": 0, 
+	"precision": 0, 
+	"ferocity": 0, 
+	"mastery": 0, 
+	"expertise": 0, 
+	"armor": 0, 
+	"occult_aversion": 0, 
+	"vitality": 0, 
+	"toughess": 0, 
+	"penetration": 0, 
+	"magic_penetration": 0, 
+}
 
-var stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.0,
-			 "crit_multi": 0.0, "action_time" : 0 }
+var stats = base_stats.duplicate()
 
 var durability
 var mat
@@ -53,7 +78,7 @@ func set_mat(_mat : CraftingMaterial):
 
 func calculate_stats():
 	for stat in mat.stats:
-		stats[stat] = base_stats[stat] + stepify(mat.stats[stat] * stat_multipliers[stat], 0.01)
+		stats[stat] = base_stats[stat] + round(mat.stats[stat] * stat_multipliers[stat])
 
 func calculate_durability():
 	durability = base_durability + mat.durability * durability_multi

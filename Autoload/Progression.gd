@@ -7,4 +7,4 @@ func _ready():
 
 func check_unlocks(monster):
 	if monster is BanditBoss:
-		emit_signal("bandit_boss_defeated")
+		emit_signal("bandit_boss_defeated", monster.level)

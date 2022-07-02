@@ -13,11 +13,17 @@ durability_multi = 0.2
 allowed_material_types = [ 0, 1, 2 ]
 description = "A decorative part that goes under the handle."
 stat_multipliers = {
-"crit_chance": 1.0,
-"crit_multi": 0.0,
-"magic_damage": 0.5,
-"magic_protection": 0.0,
-"max_hp": 0.0,
-"phys_damage": 0.5,
-"phys_protection": 0.0
+"armor": 0.0,
+"dexterity": 0.0,
+"expertise": 0.0,
+"ferocity": 0.5,
+"magic_penetration": 1.0,
+"mastery": 0.0,
+"occult_aversion": 0.0,
+"penetration": 1.0,
+"potency": 0.5,
+"power": 0.5,
+"precision": 0.5,
+"toughess": 0.0,
+"vitality": 0.0
 }

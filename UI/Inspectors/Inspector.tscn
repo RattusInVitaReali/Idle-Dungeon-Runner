@@ -81,10 +81,58 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="Line1" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="Line6" type="HBoxContainer" parent="Panel/VBoxContainer"]
 margin_top = 128.0
 margin_right = 840.0
 margin_bottom = 143.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line6"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line6"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line6"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TierStars" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 147.0
+margin_right = 840.0
+margin_bottom = 161.0
+
+[node name="Margin1" type="Label" parent="Panel/VBoxContainer/TierStars"]
+margin_right = 416.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="TierStarsContainer" type="HBoxContainer" parent="Panel/VBoxContainer/TierStars"]
+margin_left = 420.0
+margin_right = 420.0
+margin_bottom = 14.0
+
+[node name="Margin2" type="Label" parent="Panel/VBoxContainer/TierStars"]
+margin_left = 424.0
+margin_right = 840.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="Line1" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 165.0
+margin_right = 840.0
+margin_bottom = 180.0
 
 [node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line1"]
 margin_right = 100.0
@@ -109,9 +157,9 @@ rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 3
 
 [node name="Image" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_top = 147.0
+margin_top = 184.0
 margin_right = 840.0
-margin_bottom = 547.0
+margin_bottom = 584.0
 rect_min_size = Vector2( 0, 400 )
 
 [node name="Icon" type="TextureRect" parent="Panel/VBoxContainer/Image"]
@@ -125,9 +173,9 @@ expand = true
 stretch_mode = 6
 
 [node name="Line3" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_top = 551.0
+margin_top = 588.0
 margin_right = 840.0
-margin_bottom = 566.0
+margin_bottom = 603.0
 
 [node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line3"]
 margin_right = 100.0
@@ -152,7 +200,7 @@ rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 3
 
 [node name="Stats" type="ScrollContainer" parent="Panel/VBoxContainer"]
-margin_top = 570.0
+margin_top = 607.0
 margin_right = 840.0
 margin_bottom = 1327.0
 size_flags_horizontal = 3
@@ -160,7 +208,7 @@ size_flags_vertical = 3
 
 [node name="StatsContainer" type="VBoxContainer" parent="Panel/VBoxContainer/Stats"]
 margin_right = 840.0
-margin_bottom = 757.0
+margin_bottom = 720.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 

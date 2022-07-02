@@ -13,11 +13,17 @@ durability_multi = 0.3
 allowed_material_types = [ 1, 2 ]
 description = "A simple handle for swords weapons."
 stat_multipliers = {
-"crit_chance": 0.5,
-"crit_multi": 1.0,
-"magic_damage": 1.0,
-"magic_protection": 0.0,
-"max_hp": 0.0,
-"phys_damage": 1.0,
-"phys_protection": 0.0
+"armor": 0.0,
+"dexterity": 0.0,
+"expertise": 0.0,
+"ferocity": 0.5,
+"magic_penetration": 1.0,
+"mastery": 0.0,
+"occult_aversion": 0.0,
+"penetration": 1.0,
+"potency": 1.0,
+"power": 1.0,
+"precision": 1.0,
+"toughess": 0.0,
+"vitality": 0.0
 }

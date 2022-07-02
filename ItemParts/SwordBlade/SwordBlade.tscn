@@ -12,11 +12,17 @@ durability_multi = 0.7
 allowed_material_types = [ 1, 2 ]
 description = "A blade used for forging different sword-like weapons."
 stat_multipliers = {
-"crit_chance": 0.75,
-"crit_multi": 1.0,
-"magic_damage": 2.5,
-"magic_protection": 0.0,
-"max_hp": 0.0,
-"phys_damage": 2.5,
-"phys_protection": 0.0
+"armor": 0.0,
+"dexterity": 0.0,
+"expertise": 0.0,
+"ferocity": 1.0,
+"magic_penetration": 4.0,
+"mastery": 0.0,
+"occult_aversion": 0.0,
+"penetration": 4.0,
+"potency": 2.5,
+"power": 2.5,
+"precision": 0.75,
+"toughess": 0.0,
+"vitality": 0.0
 }

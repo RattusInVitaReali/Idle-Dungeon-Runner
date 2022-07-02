@@ -18,11 +18,12 @@ base_stats = {
 "phys_damage": 15,
 "phys_protection": 30
 }
-per_level = {
-"magic_damage": 0,
-"magic_protection": 3,
-"max_hp": 20,
-"phys_damage": 2,
-"phys_protection": 3
-}
 base_name = "Bandit Boss"
+base_loot = [  ]
+
+[node name="LargeShadow" parent="." index="3"]
+position = Vector2( -9.53674e-07, 256 )
+scale = Vector2( 12.5216, 10.65 )
+z_index = -1
+
+[connection signal="timeout" from="ActionTimer" to="." method="_on_ActionTimer_timeout"]

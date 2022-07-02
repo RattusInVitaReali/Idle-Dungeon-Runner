@@ -4,4 +4,5 @@
 
 [node name="DesertEasy" instance=ExtResource( 1 )]
 zone_name = "Easy Desert"
+unlock_signal_level = 5
 max_level = 10

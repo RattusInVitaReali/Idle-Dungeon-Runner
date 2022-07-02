@@ -13,11 +13,23 @@ export (float) var durability_multi
 
 export (String) var description
 
-export var base_stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.0,
-			 "crit_multi": 0.0, "action_time" : 0 }
+export var base_stats = {
+	"power": 0, 
+	"potency": 0, 
+	"dexterity": 0, 
+	"precision": 0, 
+	"ferocity": 0, 
+	"mastery": 0, 
+	"expertise": 0, 
+	"armor": 0, 
+	"occult_aversion": 0, 
+	"vitality": 0, 
+	"toughess": 0, 
+	"penetration": 0, 
+	"magic_penetration": 0, 
+}
 
-var stats = { "max_hp": 0, "phys_damage": 0, "magic_damage": 0, "phys_protection": 0, "magic_protection": 0, "crit_chance": 0.0,
-			 "crit_multi": 0.0, "action_time" : 0 }
+var stats = base_stats.duplicate()
 
 var durability
 
@@ -88,7 +100,7 @@ func calculate_stats():
 		stats[stat] = base_stats[stat]
 	for child_part in get_children():
 		for stat in child_part.stats:
-			stats[stat] += stepify(child_part.stats[stat], 0.01)
+			stats[stat] += child_part.stats[stat]
 
 func calculate_durability():
 	durability = 0
@@ -102,7 +114,7 @@ func update_special():
 			special += '\n'
 		special += part.special
 
-func apply_stats(_stats):
+func apply_attributes(_stats):
 	for stat in stats:
 		_stats[stat] += stats[stat]
 

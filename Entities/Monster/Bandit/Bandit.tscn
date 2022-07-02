@@ -25,13 +25,6 @@ base_stats = {
 "phys_damage": 10,
 "phys_protection": 20
 }
-per_level = {
-"magic_damage": 0,
-"magic_protection": 2,
-"max_hp": 10,
-"phys_damage": 1,
-"phys_protection": 2
-}
 base_name = "Bandit"
 base_loot = [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ]
 monster_types = [ 0 ]

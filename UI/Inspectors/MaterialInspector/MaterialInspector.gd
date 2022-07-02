@@ -3,19 +3,6 @@ class_name MaterialInspector
 
 signal merge
 
-const TierStar = preload("res://UI/Inspectors/TierStar.tscn")
-
-onready var tier_stars = $Panel/VBoxContainer/HBoxContainer/TierStarsContainer
-
-func set_slottable(_slottable):
-	.set_slottable(_slottable)
-	update_tier_stars()
-
-func update_tier_stars():
-	var i = slottable.tier;
-	while i > 0:
-		tier_stars.add_child(TierStar.instance())
-		i -= 1
 
 func update_special():
 	if slottable.special_weapon and slottable.special_armor:

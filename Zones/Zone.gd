@@ -7,13 +7,14 @@ signal quest_changed
 
 export var zone_name = ""
 export var unlock_signal = ""
+export var unlock_signal_level = 0
 export (Array, Resource) var modifiers = []
 export (Array, PackedScene) var enemies = []
 export (Array, Resource) var loot = []
 export (Array, Resource) var quests = []
 export (Texture) var texture
 
-var level = 1
+var level = 1 setget set_level
 export (int) var min_level
 export (int) var max_level
 
@@ -29,10 +30,15 @@ func _ready():
 	level = min_level
 	new_quest()
 
-func unlock():
-	locked = false
-	emit_signal("unlocked")
-	Progression.disconnect(unlock_signal, self, "unlock")
+func set_level(_level):
+	level = _level
+	emit_signal("zone_updated")
+
+func unlock(var level):
+	if level >= unlock_signal_level:
+		locked = false
+		emit_signal("unlocked")
+		Progression.disconnect(unlock_signal, self, "unlock")
 
 func modifier(_modifier):
 	modifiers.append(_modifier)
@@ -49,10 +55,10 @@ func make_zone_monster():
 	return new_monster
 
 func level_up():
-	level = min(level + 1, max_level)
+	self.level = min(level + 1, max_level)
 
 func level_down():
-	level = max(level - 1, min_level)
+	self.level = max(level - 1, min_level)
 
 func activate_quest(value):
 	if quest != null:

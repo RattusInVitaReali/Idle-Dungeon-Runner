@@ -16,11 +16,17 @@ weight = 1
 tier = 0
 durability = 100
 stats = {
-"crit_chance": 0.02,
-"crit_multi": 0.1,
-"magic_damage": 0.0,
-"magic_protection": 0.0,
-"max_hp": 0,
-"phys_damage": 1.0,
-"phys_protection": 1.0
+"armor": 2,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 2,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 2,
+"penetration": 0,
+"potency": 0,
+"power": 2,
+"precision": 2,
+"toughess": 0,
+"vitality": 5
 }

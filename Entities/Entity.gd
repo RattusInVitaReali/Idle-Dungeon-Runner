@@ -12,12 +12,51 @@ signal effect_applied
 signal died
 signal despawned
 
-export var base_stats = { "hp": 100, "max_hp": 100, "phys_damage": 10, "magic_damage": 0, "phys_protection": 20, "magic_protection": 20, "crit_chance": 0.05,
-			 "crit_multi": 1.5, "action_time": 0.3, "manual_cd_multi": 0.33 }
+export var base_stats = { 
+	"hp": 100.0, "max_hp": 100.0, 
+	"phys_damage": 10.0, "magic_damage": 0.0,
+	"phys_protection": 20.0, 
+	"magic_protection": 20.0, 
+	"crit_chance": 0.05, 
+	"crit_multi": 1.5, 
+	"action_time": 0.3, 
+	"manual_cd_multi": 0.33 
+}
 
-export var per_level = { "max_hp": 10, "phys_damage": 1, "magic_damage": 0, "phys_protection": 2, "magic_protection": 2 }
+export var per_level = { 
+	"power": 5, 
+	"potency": 0, 
+	"dexterity": 0, 
+	"precision": 5, 
+	"ferocity": 5, 
+	"mastery": 0, 
+	"expertise": 0, 
+	"armor": 5, 
+	"occult_aversion": 5, 
+	"vitality": 10, 
+	"toughess": 0, 
+	"penetration": 0, 
+	"magic_penetration": 0, 
+}
+
+export var base_attributes = {
+	"power": 0, 
+	"potency": 0, 
+	"dexterity": 0, 
+	"precision": 0, 
+	"ferocity": 0, 
+	"mastery": 0, 
+	"expertise": 0, 
+	"armor": 0, 
+	"occult_aversion": 0, 
+	"vitality": 0, 
+	"toughess": 0, 
+	"penetration": 0, 
+	"magic_penetration": 0, 
+}
 
 var stats = base_stats.duplicate()
+var attributes = base_attributes.duplicate()
 
 var dead = false
 var can_be_attacked = true
@@ -88,8 +127,9 @@ func update_skill_cooldowns(auto_combat):
 func update_stats():
 	if ready: # No idea why you cant yield(ready), but this works
 		reset_stats()
-		apply_level_stats()
+		apply_level_attributes()
 		apply_item_stats()
+		apply_attribute_stats()
 		update_skill_levels()
 		if !CombatProcessor.in_combat:
 			stats.hp = stats.max_hp
@@ -98,14 +138,25 @@ func update_stats():
 func reset_stats():
 	for stat in stats:
 		stats[stat] = base_stats[stat]
+	for at in attributes:
+		attributes[at] = base_attributes[at]
 
-func apply_level_stats():
+func apply_level_attributes():
 	for key in per_level.keys():
-		stats[key] += per_level[key] * level
+		attributes[key] += per_level[key] * level
 
 func apply_item_stats():
 	for item in get_items():
-		item.apply_stats(stats)
+		item.apply_attributes(attributes)
+
+func apply_attribute_stats():
+	stats["phys_damage"] += attributes["power"]
+	stats["magic_damage"] += attributes["potency"]
+	stats["crit_chance"] += attributes["precision"] * 0.002
+	stats["crit_multi"] += attributes["ferocity"] * 0.0015
+	stats["phys_protection"] += attributes["armor"]
+	stats["magic_protection"] += attributes["occult_aversion"]
+	stats["max_hp"] += attributes["vitality"]
 
 func play_animation(animation):
 	stop()

@@ -13,9 +13,6 @@ onready var Pommel = load("res://ItemParts/Pommel/Pommel.tscn")
 
 onready var Sword = load("res://Items/Sword/Sword.tscn")
 
-onready var TestSwordBlade = load("res://ItemParts/SwordBlade/TestSwordBlade/TestSwordBlade.tscn")
-onready var TestSword = load("res://Items/Sword/TestSword/TestSword.tscn")
-
 enum RARITY { BASIC, COMMON, UNCOMMON, RARE, EPIC }
 
 enum MATERIAL_TYPE { GEM, METAL, WOOD, FABRIC }

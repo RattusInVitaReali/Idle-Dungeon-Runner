@@ -17,10 +17,3 @@ base_stats = {
 "phys_damage": 10,
 "phys_protection": 20
 }
-per_level = {
-"magic_damage": 0,
-"magic_protection": 2,
-"max_hp": 10,
-"phys_damage": 1,
-"phys_protection": 2
-}

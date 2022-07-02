@@ -2,12 +2,15 @@ extends Control
 class_name Inspector
 
 const StatLabel = preload("res://UI/Inspectors/StatLabel.tscn")
+const TierStar = preload("res://UI/Inspectors/TierStar.tscn")
+
 
 onready var slottable_name = $Panel/VBoxContainer/Name
 onready var rarity = $Panel/VBoxContainer/Rarity
 onready var icon = $Panel/VBoxContainer/Image/Icon
 onready var stats_container = $Panel/VBoxContainer/Stats/StatsContainer
 onready var special = $Panel/VBoxContainer/Special
+onready var tier_stars = $Panel/VBoxContainer/TierStars/TierStarsContainer
 
 var slottable
 
@@ -18,6 +21,7 @@ func set_slottable(_slottable):
 	update_icon()
 	update_stats()
 	update_special()
+	update_tier_stars()
 
 func update_name():
 	slottable_name.text = slottable.slottable_name
@@ -49,6 +53,12 @@ func update_stats():
 
 func update_special():
 	special.text = slottable.special
+
+func update_tier_stars():
+	var i = slottable.tier;
+	while i > 0:
+		tier_stars.add_child(TierStar.instance())
+		i -= 1
 
 func _on_TextureButton_pressed():
 	queue_free()

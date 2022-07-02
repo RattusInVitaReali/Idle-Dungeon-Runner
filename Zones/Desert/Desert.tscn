@@ -6,12 +6,13 @@
 [ext_resource path="res://Zones/Desert/Desert.gd" type="Script" id=4]
 [ext_resource path="res://_Resources/backgrounds/desert.png" type="Texture" id=5]
 [ext_resource path="res://Quests/Variants/BanditHunter.tres" type="Resource" id=6]
-[ext_resource path="res://Lootable/MaterialLootable/DesertIron.tres" type="Resource" id=7]
+[ext_resource path="res://Lootable/MaterialLootable/Zones/Desert/DesertIron.tres" type="Resource" id=7]
 
 [node name="Desert" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
 zone_name = "Desert"
 unlock_signal = "bandit_boss_defeated"
+unlock_signal_level = 5
 modifiers = [ ExtResource( 2 ) ]
 enemies = [ ExtResource( 3 ) ]
 loot = [ ExtResource( 7 ) ]

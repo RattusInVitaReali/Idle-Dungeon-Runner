@@ -54,33 +54,33 @@ margin_bottom = 15.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 3
 
-[node name="Image" parent="Panel/VBoxContainer" index="5"]
+[node name="TierStars" parent="Panel/VBoxContainer" index="5"]
 margin_top = 269.0
-margin_bottom = 669.0
+margin_bottom = 283.0
 
-[node name="Line3" parent="Panel/VBoxContainer" index="6"]
-margin_top = 673.0
-margin_bottom = 688.0
+[node name="Line1" parent="Panel/VBoxContainer" index="6"]
+margin_top = 287.0
+margin_bottom = 302.0
 
-[node name="Stats" parent="Panel/VBoxContainer" index="7"]
-margin_top = 692.0
+[node name="Image" parent="Panel/VBoxContainer" index="7"]
+margin_top = 306.0
+margin_bottom = 706.0
+
+[node name="Line3" parent="Panel/VBoxContainer" index="8"]
+margin_top = 710.0
+margin_bottom = 725.0
+
+[node name="Stats" parent="Panel/VBoxContainer" index="9"]
+margin_top = 729.0
 margin_bottom = 1084.0
 
 [node name="StatsContainer" parent="Panel/VBoxContainer/Stats" index="0"]
-margin_bottom = 392.0
-
-[node name="Line4" parent="Panel/VBoxContainer" index="8"]
-margin_top = 1088.0
-margin_bottom = 1103.0
-
-[node name="Special" parent="Panel/VBoxContainer" index="9"]
-margin_top = 1107.0
-margin_bottom = 1167.0
+margin_bottom = 355.0
 
 [node name="Line5" type="HBoxContainer" parent="Panel/VBoxContainer" index="10"]
-margin_top = 1171.0
+margin_top = 1088.0
 margin_right = 840.0
-margin_bottom = 1186.0
+margin_bottom = 1103.0
 
 [node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line5" index="0"]
 margin_right = 100.0
@@ -105,9 +105,9 @@ rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 3
 
 [node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer" index="11"]
-margin_top = 1190.0
+margin_top = 1107.0
 margin_right = 840.0
-margin_bottom = 1410.0
+margin_bottom = 1327.0
 rect_min_size = Vector2( 0, 220 )
 
 [node name="Equip" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="0"]

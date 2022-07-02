@@ -18,15 +18,14 @@ func set_zone(zone_scene : PackedScene):
 	zone = zone_scene.instance()
 	add_child(zone)
 	zone.connect("unlocked", self, "update_zone")
+	zone.connect("zone_updated", self, "update_zone")
 	update_zone()
 
 func _on_LevelUp_pressed():
 	zone.level_up()
-	update_level()
 
 func _on_LevelDown_pressed():
 	zone.level_down()
-	update_level()
 
 func _on_Play_pressed():
 	play_zone()

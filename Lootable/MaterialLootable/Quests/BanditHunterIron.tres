@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Materials/Common/Iron.tres" type="Resource" id=1]
+[ext_resource path="res://Lootable/MaterialLootable/_MaterialLootable.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+chance = 1.0
+material = ExtResource( 1 )
+base_min_quantity = 15
+base_max_quantity = 25

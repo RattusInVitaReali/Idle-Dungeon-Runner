@@ -6,10 +6,10 @@
 [ext_resource path="res://_Resources/backgrounds/Ruins.png" type="Texture" id=4]
 [ext_resource path="res://Modifiers/Strong/Strong.tres" type="Resource" id=5]
 [ext_resource path="res://Quests/Variants/BanditSlayer.tres" type="Resource" id=6]
-[ext_resource path="res://Lootable/MaterialLootable/DesertIron.tres" type="Resource" id=7]
+[ext_resource path="res://Lootable/MaterialLootable/Zones/Desert/DesertIron.tres" type="Resource" id=7]
 [ext_resource path="res://Modifiers/Healthy/Healthy.tres" type="Resource" id=8]
-[ext_resource path="res://Lootable/MaterialLootable/ForestOak.tres" type="Resource" id=9]
-[ext_resource path="res://Lootable/MaterialLootable/ForestCopper.tres" type="Resource" id=10]
+[ext_resource path="res://Lootable/MaterialLootable/Zones/Forest/ForestOak.tres" type="Resource" id=9]
+[ext_resource path="res://Lootable/MaterialLootable/Zones/Forest/ForestCopper.tres" type="Resource" id=10]
 [ext_resource path="res://Lootable/MaterialLootable/GlobalResourceLootable/SkillLotuses.tres" type="Resource" id=11]
 
 [node name="Ruins" instance=ExtResource( 1 )]
