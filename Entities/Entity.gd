@@ -13,8 +13,10 @@ signal died
 signal despawned
 
 export var base_stats = { 
-	"hp": 100.0, "max_hp": 100.0, 
-	"phys_damage": 10.0, "magic_damage": 0.0,
+	"hp": 100.0, 
+	"max_hp": 100.0, 
+	"phys_damage": 10.0, 
+	"magic_damage": 0.0,
 	"phys_protection": 20.0, 
 	"magic_protection": 20.0, 
 	"crit_chance": 0.05, 

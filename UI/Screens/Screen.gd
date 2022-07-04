@@ -9,9 +9,14 @@ const SkillInspector = preload("res://UI/Inspectors/SkillInspector/SkillInspecto
 const GEAR_FLAG = 1
 const MERGE_FLAG = 2
 
+var inspector = null
+
+func _ready():
+	get_parent().connect("lost_focus", self, "_on_lost_focus")
+
 func _on_inspector(slot, flags):
 	var slottable = slot.slottable
-	var inspector = null
+	inspector = null
 	if slottable != null:
 		match slottable.slottable_type:
 			Slottable.SLOTTABLE_TYPE.MATERIAL:
@@ -28,3 +33,7 @@ func _on_inspector(slot, flags):
 			add_child(inspector)
 			inspector.set_slottable(slottable)
 	return inspector
+
+func _on_lost_focus():
+	if inspector != null and weakref(inspector).get_ref():
+		inspector.queue_free()

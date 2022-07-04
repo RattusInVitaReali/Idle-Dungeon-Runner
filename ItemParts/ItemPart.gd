@@ -56,8 +56,8 @@ func _ready():
 	# Temp
 	icon = base_icon
 
-func can_use_material(mat : CraftingMaterial):
-	return mat.type in allowed_material_types and mat.quantity >= cost
+func can_use_material(_mat : CraftingMaterial):
+	return _mat.type in allowed_material_types and _mat.quantity >= cost
 
 func set_mat(_mat : CraftingMaterial):
 	for child in get_children():
@@ -104,24 +104,21 @@ func print_part():
 	print()
 
 func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo, item):
-	for mat in get_children():
-		mat.on_outgoing_damage(damage_info, item)
+	mat.on_outgoing_damage(damage_info, item)
 
 func on_incoming_damage(damage_info : CombatProcessor.DamageInfo, item):
-	for mat in get_children():
-		mat.on_incoming_damage(damage_info, item)
+	mat.on_incoming_damage(damage_info, item)
 
 func from_lootable(lootable):
-	var mat = CraftingMaterial.instance().set_mat(lootable.material)
-	set_mat(mat)
+	var _mat = CraftingMaterial.instance().set_mat(lootable.material)
+	set_mat(_mat)
 	return self
 
 func special_copy(new_slottable):
 	new_slottable.stats = stats.duplicate()
-	for mat in get_children():
-		mat.quantity(mat.quantity + 1)
-		var new_mat = mat.split(1)
-		new_slottable.set_mat(new_mat)
+	mat.quantity(mat.quantity + 1)
+	var new_mat = mat.split(1)
+	new_slottable.set_mat(new_mat)
 
 func same_as(item_part):
 	if item_part == null:
@@ -135,10 +132,9 @@ func try_to_merge():
 		return null
 	var new_quantity = int(quantity / 5)
 	var new_part = duplicate()
-	for mat in get_children():
-		mat.quantity(mat.quantity + 5)
-		var new_mat = mat.try_to_merge()
-		new_part.set_mat(new_mat)
+	mat.quantity(mat.quantity + 5)
+	var new_mat = mat.try_to_merge()
+	new_part.set_mat(new_mat)
 	new_part.quantity(new_quantity)
 	quantity(quantity % 5)
 	return new_part

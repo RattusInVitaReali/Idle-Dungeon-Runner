@@ -7,6 +7,8 @@ onready var bottom_bar = $UI/BottomBar
 onready var tween = $UI/Tween
 onready var dimm = $UI/DimmControl
 
+onready var screen = $CombatScreen
+
 onready var screens = {
 	SCREEN.COMBAT: $CombatScreen,
 	SCREEN.INVENTORY: $InventoryScreen,
@@ -22,14 +24,16 @@ var curr_screen = 0
 func _ready():
 	bottom_bar.connect("change_screen", self, "change_screen")
 	CombatProcessor.connect("zone_changed", self, "_on_zone_changed")
+	$InventoryScreen.connect("upgrade", self, "start_upgrade_process")
 
-func move_camera(screen):
+func move_camera():
 	$Camera2D.position = screen.position
 
 func change_screen(screen_enum):
-	var screen = screens[screen_enum]
+	screen.on_lost_focus()
+	screen = screens[screen_enum]
 	screen.on_focused()
-	move_camera(screen)
+	move_camera()
 
 func _on_zone_changed(_zone):
 	tween.interpolate_property(
@@ -53,3 +57,7 @@ func _on_zone_changed(_zone):
 		Tween.TRANS_CUBIC, 
 		Tween.EASE_IN
 	)
+
+func start_upgrade_process(var item):
+	change_screen(SCREEN.ITEM_FORGE)
+	$ItemForgeScreen.start_upgrade_process(item)

@@ -34,8 +34,8 @@ func set_level(_level):
 	level = _level
 	emit_signal("zone_updated")
 
-func unlock(var level):
-	if level >= unlock_signal_level:
+func unlock(var _level):
+	if _level >= unlock_signal_level:
 		locked = false
 		emit_signal("unlocked")
 		Progression.disconnect(unlock_signal, self, "unlock")

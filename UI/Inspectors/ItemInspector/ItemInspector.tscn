@@ -111,7 +111,7 @@ margin_bottom = 1327.0
 rect_min_size = Vector2( 0, 220 )
 
 [node name="Equip" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="0"]
-margin_right = 840.0
+margin_right = 418.0
 margin_bottom = 220.0
 rect_min_size = Vector2( 0, 175 )
 size_flags_horizontal = 3
@@ -128,4 +128,24 @@ text = "Equip"
 align = 1
 valign = 1
 
+[node name="Upgrade" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="1"]
+margin_left = 422.0
+margin_right = 840.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 0, 175 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Buttons/Upgrade" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Upgrade"
+align = 1
+valign = 1
+
 [connection signal="pressed" from="Panel/VBoxContainer/Buttons/Equip" to="." method="_on_Equip_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Upgrade" to="." method="_on_Upgrade_pressed"]

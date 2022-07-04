@@ -25,13 +25,14 @@ func add_slottable(_slottable):
 
 # DOESN'T DELETE THE ITEM!
 func remove_slottable(slottable, quantity = 1):
+	var ret = null
 	if slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL or slottable.slottable_type == Slottable.SLOTTABLE_TYPE.ITEM_PART:
-		slottable.quantity -= quantity
-		if slottable.quantity == 0:
-			$Items.remove_child(slottable)
+		ret = slottable.split(quantity)
 	else:
 		$Items.remove_child(slottable)
+		ret = slottable
 	update_inventory()
+	return ret
 
 static func _sort_rarity(a, b):
 	if a == null or b == null:

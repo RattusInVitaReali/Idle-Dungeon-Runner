@@ -3,6 +3,7 @@ class_name ItemInspector
 
 signal equip
 signal unequip
+signal upgrade
 
 onready var parts = $Panel/VBoxContainer/Parts
 onready var button_label = $Panel/VBoxContainer/Buttons/Equip/Label
@@ -28,4 +29,9 @@ func gear_variant():
 
 func _on_Equip_pressed():
 	emit_signal(signal_name, slottable)
+	queue_free()
+
+
+func _on_Upgrade_pressed():
+	emit_signal("upgrade", slottable)
 	queue_free()

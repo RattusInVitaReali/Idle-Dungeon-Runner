@@ -4,7 +4,6 @@ class_name Inspector
 const StatLabel = preload("res://UI/Inspectors/StatLabel.tscn")
 const TierStar = preload("res://UI/Inspectors/TierStar.tscn")
 
-
 onready var slottable_name = $Panel/VBoxContainer/Name
 onready var rarity = $Panel/VBoxContainer/Rarity
 onready var icon = $Panel/VBoxContainer/Image/Icon

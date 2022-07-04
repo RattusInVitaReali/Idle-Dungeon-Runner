@@ -62,7 +62,7 @@ func update_part_info(part : ItemPart = null):
 
 func _on_inspector(slot, flags):
 	if !creating:
-		var inspector = ._on_inspector(slot, flags)
+		._on_inspector(slot, flags)
 		inspector.connect("merge", self, "_on_merge")
 	elif selecting_material:
 		var slottable = slot.slottable
@@ -83,7 +83,7 @@ func _on_merge(slottable):
 		LootManager.get_item(new_item)
 
 func part_confirm_inspector(part):
-	var inspector = PartConfirmInspector.instance()
+	inspector = PartConfirmInspector.instance()
 	add_child(inspector)
 	inspector.set_slottable(part)
 	return inspector
@@ -134,3 +134,7 @@ func start_material_selection():
 	selecting_material = true
 	parts_dimm.show()
 	materials_dimm.hide()
+
+func _on_lost_focus():
+	._on_lost_focus()
+	end_creation()

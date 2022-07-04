@@ -2,14 +2,16 @@ extends Screen
 class_name ItemForgeUI
 
 signal creation_finished
+signal upgrade_finished
 
 const ItemConfirmInspector = preload("res://UI/Inspectors/ItemInspector/ItemConfirmInspector/ItemConfirmInspector.tscn")
+const ItemCompareInspector = preload("res://UI/Inspectors/PartInspector/PartConfirmInspector/PartCompareInspector/PartCompareInspector.tscn")
 
 onready var parts = $VBoxContainer/Screen/VBoxContainer/SlottableInventory
-onready var item_selection = $VBoxContainer/Screen/VBoxContainer/Image/ItemCreation/ItemSelectionInventory
+onready var forge = $VBoxContainer/Screen/VBoxContainer/Image/ForgeImage
 
 onready var item_creation = $VBoxContainer/Screen/VBoxContainer/Image/ItemCreation
-onready var forge = $VBoxContainer/Screen/VBoxContainer/Image/ForgeImage
+onready var item_selection = $VBoxContainer/Screen/VBoxContainer/Image/ItemCreation/ItemSelectionInventory
 onready var parts_dimm = $VBoxContainer/Screen/VBoxContainer/SlottableInventory/PartsDimm
 onready var items_dimm = $VBoxContainer/Screen/VBoxContainer/Image/ItemCreation/ItemSelectionInventory/ItemSelectionDimm
 
@@ -17,12 +19,19 @@ onready var item_type = $VBoxContainer/Screen/VBoxContainer/Image/ItemCreation/I
 onready var item_parts = $VBoxContainer/Screen/VBoxContainer/Image/ItemCreation/ItemInfoBackground/VBoxContainer/ItemParts
 onready var item_description = $VBoxContainer/Screen/VBoxContainer/Image/ItemCreation/ItemInfoBackground/VBoxContainer/ItemDescription
 
+onready var item_upgrade = $VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade
+onready var item_preview = $VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/ItemPreviewInventory
+onready var item_slot = $VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/VBoxContainer/ItemSlot
+onready var item_name = $VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/VBoxContainer/TextureRect/ItemName
+
 onready var button_left = $VBoxContainer/Screen/VBoxContainer/Buttons/ButtonLeft/Label
 onready var button_right = $VBoxContainer/Screen/VBoxContainer/Buttons/ButtonRight/Label
 
 var creating = false
+var upgrading = false
 var selecting_parts = false
 var selected_item = null
+var item_to_upgrade = null
 var selected_parts = []
 
 var selected_item_slot = null
@@ -31,10 +40,14 @@ var selected_part_slots = []
 func _ready():
 	parts.connect("inspector", self, "_on_inspector")
 	item_selection.connect("item_type_selected", self, "_on_item_type_selected")
+	item_preview.connect("inspector", self, "_on_inspector")
+	item_slot.connect("inspector", self, "_on_inspector")
 
 func add_part(part):
 	if creating:
 		yield(self, "creation_finished")
+	if upgrading:
+		yield(self, "upgrade_finished")
 	parts.add_slottable(part)
 
 func _on_item_type_selected(slot):
@@ -67,9 +80,21 @@ func update_item_info(item : Item = null):
 		item_description.text = ""
 
 func _on_inspector(slot, flags):
-	if !creating:
+	if (!creating and !upgrading) or (upgrading and slot.slottable.get_parent() is Item) or slot.slottable is Item:
 		var inspector = ._on_inspector(slot, flags)
-		inspector.connect("merge", self, "_on_merge")
+		if !(slot.slottable is Item):
+			inspector.connect("merge", self, "_on_merge")
+	elif upgrading:
+		var compare_to = null
+		for part in item_preview.get_items_container():
+			if part.type == slot.slottable.type:
+				compare_to = part
+				break
+		var inspector = item_compare_inspector(slot.slottable, compare_to)
+		var response = yield(inspector, "confirmed")
+		if response:
+			replace_part(slot.slottable)
+			start_upgrade(item_to_upgrade)
 	elif selecting_parts:
 		if slot in selected_part_slots:
 			slot.deselect()
@@ -101,7 +126,16 @@ func item_confirm_inspector(part):
 	inspector.set_slottable(part)
 	return inspector
 
+func item_compare_inspector(part1, part2):
+	var inspector = ItemCompareInspector.instance()
+	add_child(inspector)
+	inspector.set_slottable(part1)
+	inspector.set_compare_to(part2)
+	return inspector
+
 func _on_ButtonLeft_pressed():
+	if upgrading:
+		return
 	update_item_info()
 	if !creating:
 		start_creation()
@@ -109,6 +143,8 @@ func _on_ButtonLeft_pressed():
 		end_creation()
 
 func _on_ButtonRight_pressed():
+	if upgrading:
+		end_upgrade()
 	if !creating or (creating and selected_item == null):
 		return
 	elif !selecting_parts: 
@@ -171,3 +207,38 @@ func create_item():
 				new_item.remove_child(part)
 				LootManager.get_item(part)
 			new_item.queue_free()
+
+func start_upgrade(var item):
+	upgrading = true
+	item_to_upgrade = item
+	forge.hide()
+	item_preview.set_item(item)
+	item_upgrade.show()
+	item_slot.set_slottable(item)
+	item_name.text = item.slottable_name
+	button_left.text = ""
+	button_right.text = "Cancel"
+
+func end_upgrade():
+	upgrading = false
+	item_to_upgrade = null
+	forge.show()
+	item_preview.set_item(null)
+	item_upgrade.hide()
+	item_slot.set_slottable(null)
+	item_name.text = ""
+	button_left.text = "New Item"
+	button_right.text = ""
+	emit_signal("upgrade_finished")
+
+func replace_part(var part):
+	var split_part = parts.remove_slottable(part)
+	item_to_upgrade.add_part(split_part)
+
+func _on_lost_focus():
+	._on_lost_focus()
+	if creating:
+		end_creation()
+	if upgrading:
+		end_upgrade()
+

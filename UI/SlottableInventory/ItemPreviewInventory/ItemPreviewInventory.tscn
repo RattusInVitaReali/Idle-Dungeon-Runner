@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/SlottableInventory/SlottableInventory.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/SlottableInventory/ItemPreviewInventory/ItemPreviewInventory.gd" type="Script" id=2]
+
+[node name="ItemPreviewInventory" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+line_size = 4

@@ -64,7 +64,7 @@ func get_parts():
 func add_part(part):
 	for child_part in get_children():
 		if part.type == child_part.type:
-			return false
+			remove_child(child_part)
 	add_child(part)
 	update_rarity(part)
 	set_slottable_name()
@@ -73,7 +73,9 @@ func add_part(part):
 	update_special()
 
 func update_rarity(part):
-	rarity = max(rarity, part.rarity)
+	rarity = CraftingManager.RARITY.BASIC
+	for child_part in get_children():
+		rarity = max(rarity, child_part.rarity)
 
 func custom_name(_name):
 	custom_name = _name

@@ -1,4 +1,4 @@
-extends Control
+extends Screen
 class_name CombatUI
 
 func player_spawned(player):
@@ -18,3 +18,8 @@ func player_level_changed():
 
 func player_exp_changed():
 	$CombatBottom.update_player_exp()
+
+func _on_lost_focus():
+	._on_lost_focus()
+	if !CombatProcessor.auto_combat:
+		$CombatModeButton.force_auto_combat()

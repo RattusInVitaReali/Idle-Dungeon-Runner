@@ -7,3 +7,6 @@ func _ready():
 func _on_item_acquired(item):
 	if item.slottable_type == Slottable.SLOTTABLE_TYPE.ITEM_PART:
 		$ItemForge.add_part(item)
+
+func start_upgrade_process(var item):
+	$ItemForge.start_upgrade(item)

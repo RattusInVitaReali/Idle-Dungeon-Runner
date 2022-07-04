@@ -12,9 +12,6 @@ font_data = ExtResource( 4 )
 [node name="ItemConfirmInspector" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Equip" parent="Panel/VBoxContainer/Buttons" index="0"]
-margin_right = 418.0
-
 [node name="Label" parent="Panel/VBoxContainer/Buttons/Equip" index="0"]
 text = "Confirm"
 
@@ -36,5 +33,9 @@ custom_fonts/font = SubResource( 1 )
 text = "Cancel"
 align = 1
 valign = 1
+
+[node name="Upgrade" parent="Panel/VBoxContainer/Buttons" index="2"]
+visible = false
+margin_left = 562.0
 
 [connection signal="pressed" from="Panel/VBoxContainer/Buttons/Cancel" to="." method="_on_Cancel_pressed"]

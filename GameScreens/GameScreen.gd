@@ -1,8 +1,10 @@
 extends Node2D
 class_name GameScreen
 
-func on_focused():
-	update_screen()
+signal lost_focus
 
-func update_screen():
+func on_focused():
 	pass
+
+func on_lost_focus():
+	emit_signal("lost_focus")

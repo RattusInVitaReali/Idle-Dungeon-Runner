@@ -1,6 +1,8 @@
 extends Screen
 class_name InventoryUI
 
+signal upgrade
+
 const Attribute = preload("res://UI/Screens/Inventory/Attribute/Attribute.tscn")
 
 onready var items = $VBoxContainer/Screen/VBoxContainer/SlottableInventory
@@ -34,6 +36,7 @@ func _on_inspector(slottable, flags):
 	if inspector != null:
 		inspector.connect("equip", self, "_on_equip")
 		inspector.connect("unequip", self, "_on_unequip")
+		inspector.connect("upgrade", self, "_on_upgrade")
 
 func _on_equip(item):
 	items.remove_slottable(item)
@@ -41,6 +44,9 @@ func _on_equip(item):
 
 func _on_unequip(item):
 	CombatProcessor.Player.unequip_item(item)
+
+func _on_upgrade(item):
+	emit_signal("upgrade", item)
 
 func _on_items_changed():
 	update_equipped()

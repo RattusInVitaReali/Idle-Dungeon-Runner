@@ -6,6 +6,6 @@
 
 [resource]
 script = ExtResource( 3 )
-chance = 0.1
+chance = 1.0
 part_type = ExtResource( 2 )
 material = ExtResource( 1 )

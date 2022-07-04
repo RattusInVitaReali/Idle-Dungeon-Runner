@@ -64,7 +64,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/Screens/Combat/Top/CombatTop.gd"
 }, {
-"base": "Control",
+"base": "Screen",
 "class": "CombatUI",
 "language": "GDScript",
 "path": "res://UI/Screens/Combat/Combat.gd"
@@ -180,6 +180,11 @@ _global_script_classes=[ {
 "path": "res://Lootable/ItemPartLootable/_ItemPartLootable.gd"
 }, {
 "base": "SlottableInventory",
+"class": "ItemPreviewInventory",
+"language": "GDScript",
+"path": "res://UI/SlottableInventory/ItemPreviewInventory/ItemPreviewInventory.gd"
+}, {
+"base": "SlottableInventory",
 "class": "ItemSelectionInventory",
 "language": "GDScript",
 "path": "res://UI/SlottableInventory/ItemSelectionInventory/ItemSelectionInventory.gd"
@@ -228,6 +233,11 @@ _global_script_classes=[ {
 "class": "Monster",
 "language": "GDScript",
 "path": "res://Entities/Monster/Monster.gd"
+}, {
+"base": "PartConfirmInspector",
+"class": "PartCompareInspector",
+"language": "GDScript",
+"path": "res://UI/Inspectors/PartInspector/PartConfirmInspector/PartCompareInspector/PartCompareInspector.gd"
 }, {
 "base": "PartInspector",
 "class": "PartConfirmInspector",
@@ -429,6 +439,7 @@ _global_script_class_icons={
 "ItemLootable": "",
 "ItemPart": "",
 "ItemPartLootable": "",
+"ItemPreviewInventory": "",
 "ItemSelectionInventory": "",
 "Lacerate": "",
 "Line": "",
@@ -439,6 +450,7 @@ _global_script_class_icons={
 "MaterialResource": "",
 "Modifier": "",
 "Monster": "",
+"PartCompareInspector": "",
 "PartConfirmInspector": "",
 "PartForgeScreen": "",
 "PartForgeUI": "",
