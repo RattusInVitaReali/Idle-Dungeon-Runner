@@ -9,7 +9,4 @@ func add_slottable(_slottable):
 	if _slottable.slottable_type != Slottable.SLOTTABLE_TYPE.SKILL:
 		return
 	skills.append(_slottable)
-	update_inventory()
-
-func get_items_container():
-	return skills
+	update_inventory(false)

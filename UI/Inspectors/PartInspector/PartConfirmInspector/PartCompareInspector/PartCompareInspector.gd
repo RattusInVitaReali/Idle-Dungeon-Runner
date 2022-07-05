@@ -17,11 +17,14 @@ const null_stats = {
 	"magic_penetration": 0, 
 }
 
+onready var lost_special = $Panel/VBoxContainer/LostSpecial
+
 var compare_to = null
 
 func set_compare_to(var part):
 	compare_to = part
 	update_compare_stats()
+	update_compare_special()
 
 func update_compare_stats():
 	for stat in stats_container.get_children():
@@ -39,3 +42,16 @@ func update_compare_stats():
 			elif slottable.stats[stat] < compare_to_stats[stat]:
 				new_label.add_color_override("font_color", Color(1, 0, 0, 1))
 			stats_container.add_child(new_label)
+
+func update_compare_special():
+	if compare_to == null:
+		lost_special.hide()
+		special.add_color_override("font_color", Color(0, 1, 0, 1))
+		return
+	if slottable.special == compare_to.special and slottable.special != "":
+		return
+	special.add_color_override("font_color", Color(0, 1, 0, 1))
+	if compare_to.special == "":
+		lost_special.hide()
+	else:
+		lost_special.text = compare_to.special

@@ -61,18 +61,41 @@ func create(parts : Array):
 func get_parts():
 	return get_children()
 
-func add_part(part):
+func reorder_parts():
+	var parts = get_children()
+	parts.sort_custom(self, "_sort_type")
+	for part in get_children():
+		remove_child(part)
+	for part in parts:
+		add_child(part)
+
+static func _sort_type(a, b):
+	if a == null or b == null:
+		return false
+	if a.type == null or b.type == null:
+		return false
+	if a.type > b.type:
+		return true
+	return false
+
+func add_part(part : ItemPart):
 	for child_part in get_children():
 		if part.type == child_part.type:
+			tier -= child_part.tier
 			remove_child(child_part)
+			child_part.queue_free()
+			break
 	add_child(part)
-	update_rarity(part)
+	update_rarity()
 	set_slottable_name()
 	calculate_stats()
 	calculate_durability()
 	update_special()
+	reorder_parts()
+	tier += part.tier
+	emit_signal("slottable_updated")
 
-func update_rarity(part):
+func update_rarity():
 	rarity = CraftingManager.RARITY.BASIC
 	for child_part in get_children():
 		rarity = max(rarity, child_part.rarity)
@@ -127,6 +150,34 @@ func print_item():
 		if stats[stat] != 0:
 			print("- %s : %s" % [stat.capitalize(), stats[stat]])
 	print()
+
+func same_as(item : Slottable):
+	if item == null:
+		return false
+	var properties_to_compare = [
+		"slottable_name",
+		"durability",
+		"type",
+		"subtype"
+	]
+	for prop in properties_to_compare:
+		if get(prop) != item.get(prop):
+			return false
+	if get_child_count() != item.get_child_count():
+		return false
+	var i = 0
+	while i < get_child_count():
+		if !get_child(i).same_as(item.get_child(i)):
+			return false
+		i += 1
+	return true
+
+func special_copy(var new_item : Item):
+	new_item.custom_name = custom_name
+	for part in get_children():
+		part.quantity(part.quantity + 1)
+		var new_part = part.split(1)
+		new_item.add_part(new_part)
 
 func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	for part in get_children():

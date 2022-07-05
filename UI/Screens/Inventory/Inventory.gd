@@ -39,8 +39,8 @@ func _on_inspector(slottable, flags):
 		inspector.connect("upgrade", self, "_on_upgrade")
 
 func _on_equip(item):
-	items.remove_slottable(item)
-	CombatProcessor.Player.equip_item(item)
+	var item_to_equip = items.remove_slottable(item, 1)
+	CombatProcessor.Player.equip_item(item_to_equip)
 
 func _on_unequip(item):
 	CombatProcessor.Player.unequip_item(item)

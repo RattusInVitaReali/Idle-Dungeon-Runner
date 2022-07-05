@@ -10,7 +10,6 @@ const req_type_vars = {
 }
 
 signal play_animation
-signal skill_updated
 
 var attacker setget set_attacker
 var target
@@ -22,7 +21,7 @@ export (Texture) var skill_icon
 # Tags
 export (Array, SKILL_TAGS) var tags
 
-var level = 1
+var level = 1 setget set_level
 var cooldown
 var auto_cooldown
 var manual_cooldown
@@ -41,11 +40,11 @@ func _ready():
 func set_attacker(new_value):
 	attacker = new_value
 	if attacker != null:
-		attacker.connect("level_changed", self, "check_level")
+		attacker.connect("level_changed", self, "check_unlock_level")
 		connect("play_animation", attacker, "play_animation")
 		if cast_on_self():
 			target = attacker
-	check_level()
+	check_unlock_level()
 
 func description():
 	pass
@@ -84,13 +83,12 @@ func try_to_upgrade():
 
 func set_level(_level):
 	level = _level
-	emit_signal("skill_updated")
+	emit_signal("slottable_updated")
 
 func level_up():
-	level += 1
-	emit_signal("skill_updated")
+	self.level += 1
 
-func check_level():
+func check_unlock_level():
 	if attacker == null:
 		return
 	if attacker.level >= level_required:
@@ -99,7 +97,7 @@ func check_level():
 	else:
 		lock()
 		unequip()
-	emit_signal("skill_updated")
+	emit_signal("slottable_updated")
 
 func equip():
 	equipped = true

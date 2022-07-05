@@ -50,12 +50,6 @@ func set_tier(_tier):
 	for stat in stats:
 		stats[stat] = round(stats[stat])
 
-func quantity(quant):
-	quantity = quant;
-	if quantity == 0:
-		queue_free()
-	return self
-
 func print_material():
 	print("Material : %s (%s)" % [slottable_name, CraftingManager.RARITY.keys()[rarity]])
 	print("- Durability : %s" % durability)
@@ -64,7 +58,9 @@ func print_material():
 			print("- %s : %s" % [stat.capitalize(), stats[stat]])
 	print()
 
-func same_as(_mat):
+func same_as(_mat : Slottable):
+	if _mat == null:
+		return false
 	return slottable_name == _mat.slottable_name and mat == _mat.mat and stats.hash() == _mat.stats.hash()
 
 func add_quantity(amount):
@@ -81,8 +77,8 @@ func from_lootable(lootable):
 	quantity(lootable.get_quantity())
 	return self
 
-func special_copy(new_slottable):
-	new_slottable.stats = stats.duplicate()
+func special_copy(new_material : CraftingMaterial):
+	new_material.set_mat(mat, tier, quantity)
 
 func try_to_merge():
 	if quantity < 5:

@@ -10,28 +10,22 @@ onready var lines_container = $ScrollContainer/VBoxContainer
 
 export var line_size = 6
 
-func add_slottable(_slottable):
+func add_slottable(slottable : Slottable):
 	var added = false
-	if _slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL or _slottable.slottable_type == Slottable.SLOTTABLE_TYPE.ITEM_PART:
-		for slottable in $Items.get_children():
-			if slottable.slottable_type == _slottable.slottable_type:
-				if slottable.same_as(_slottable):
-					slottable.add_quantity(_slottable.quantity)
-					added = true
-					break
+	for _slottable in get_items_container().get_children():
+		if _slottable.slottable_type == slottable.slottable_type:
+			if _slottable.same_as(slottable):
+				_slottable.add_quantity(slottable.quantity)
+				added = true
+				break
 	if !added:
-		$Items.add_child(_slottable)
+		get_items_container().add_child(slottable)
+		slottable.connect("tree_exited", self, "update_inventory")
 	update_inventory()
 
 # DOESN'T DELETE THE ITEM!
-func remove_slottable(slottable, quantity = 1):
-	var ret = null
-	if slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL or slottable.slottable_type == Slottable.SLOTTABLE_TYPE.ITEM_PART:
-		ret = slottable.split(quantity)
-	else:
-		$Items.remove_child(slottable)
-		ret = slottable
-	update_inventory()
+func remove_slottable(slottable : Slottable, quantity = 1):
+	var ret = slottable.split(quantity)
 	return ret
 
 static func _sort_rarity(a, b):
@@ -62,27 +56,27 @@ static func _sort_tier(a, b):
 	return false
 
 func reorder_items():
-	var items = $Items.get_children()
+	var items = get_items_container().get_children()
 	items.sort_custom(self, "_sort_tier")
 	items.sort_custom(self, "_sort_name")
 	items.sort_custom(self, "_sort_rarity")
-	for item in $Items.get_children():
-		$Items.remove_child(item)
+	for item in get_items_container().get_children():
+		get_items_container().remove_child(item)
 	for item in items:
-		$Items.add_child(item)
+		get_items_container().add_child(item)
 
-func update_inventory():
-	reorder_items()
+func update_inventory(var reorder = false):
+	if reorder:
+		reorder_items()
 	for line in lines_container.get_children():
 		lines_container.remove_child(line)
 		line.queue_free()
 	var lines = []
 	var line = []
 	var i = 0
-	for slottable in get_items_container():
-		if slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL or slottable.slottable_type == Slottable.SLOTTABLE_TYPE.ITEM_PART:
-			if slottable.quantity == 0:
-				continue
+	for slottable in get_items_container().get_children():
+		if slottable.quantity == 0: # In case something gets freed next frame
+			continue
 		line.append(slottable)
 		i += 1
 		if i == line_size:
@@ -99,7 +93,7 @@ func update_inventory():
 		new_line.update_line(slottable_list)
 
 func get_items_container():
-	return $Items.get_children()
+	return $Items
 
 func _on_inspector(slot, flags):
 	emit_signal("inspector", slot, flags)

@@ -37,7 +37,7 @@ func set_skill(_skill = null):
 	skill = _skill
 	if skill != null:
 		skill.connect("tree_exited", self, "update_skill")
-		skill.connect("skill_updated", self, "update_skill")
+		skill.connect("slottable_updated", self, "update_skill")
 	update_skill()
 
 func update_skill():

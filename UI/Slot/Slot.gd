@@ -23,11 +23,21 @@ func try_to_add_slottable(_slottable):
 	return null
 
 func set_slottable(_slottable):
+	if slottable != null:
+		slottable.disconnect("slottable_updated", self, "update_slot")
 	slottable = _slottable
-	if _slottable == null:
+	if slottable != null:
+		slottable.connect("slottable_updated", self, "update_slot")
+	update_slot()
+
+func update_slot():
+	if slottable == null:
 		texture = Frame
 		$Icon.texture_normal = null
 		$Quantity.visible = false
+		for tier_star in $TierStars.get_children():
+			$TierStars.remove_child(tier_star)
+			tier_star.queue_free()
 	else:
 		match slottable.rarity:
 			CraftingManager.RARITY.BASIC:
@@ -41,20 +51,17 @@ func set_slottable(_slottable):
 			CraftingManager.RARITY.EPIC:
 				texture = FrameEpic
 		$Icon.texture_normal = slottable.icon
-		if (slottable.slottable_type == Slottable.SLOTTABLE_TYPE.MATERIAL or slottable.slottable_type == Slottable.SLOTTABLE_TYPE.ITEM_PART):
+		if !gear:
 			$Quantity.text = str(slottable.quantity)
 			$Quantity.visible = true
-			for tier_star in $TierStars.get_children():
-				$TierStars.remove_child(tier_star)
-				tier_star.queue_free()
-			var i = slottable.tier
-			while i > 0:
-				$TierStars.add_child(TierStar.instance())
-				i -= 1
-			$TierStars.visible = true
-		else:
-			$Quantity.visible = false
-			$TierStars.visible = false
+		for tier_star in $TierStars.get_children():
+			$TierStars.remove_child(tier_star)
+			tier_star.queue_free()
+		var i = slottable.tier
+		while i > 0:
+			$TierStars.add_child(TierStar.instance())
+			i -= 1
+		$TierStars.visible = true
 
 func _on_Icon_pressed():
 	if slottable != null:

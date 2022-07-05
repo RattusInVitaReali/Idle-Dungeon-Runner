@@ -115,12 +115,11 @@ func from_lootable(lootable):
 	return self
 
 func special_copy(new_slottable):
-	new_slottable.stats = stats.duplicate()
 	mat.quantity(mat.quantity + 1)
 	var new_mat = mat.split(1)
 	new_slottable.set_mat(new_mat)
 
-func same_as(item_part):
+func same_as(item_part : Slottable):
 	if item_part == null:
 		return false
 	if mat == null or item_part.mat == null:

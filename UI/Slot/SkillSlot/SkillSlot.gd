@@ -13,7 +13,7 @@ onready var skill_name = $NameBackground/Name
 func set_slottable(_slottable):
 	slottable = _slottable
 	if slottable != null:
-		slottable.connect("skill_updated", self, "update_skill")
+		slottable.connect("slottable_updated", self, "update_skill")
 	update_skill()
 
 func set_border():

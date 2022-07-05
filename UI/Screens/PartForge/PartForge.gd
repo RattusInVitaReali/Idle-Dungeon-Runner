@@ -73,7 +73,6 @@ func _on_inspector(slot, flags):
 			if response:
 				LootManager.get_item(CraftingManager.actually_forge_part(selected_part, slottable))
 				new_part.queue_free()
-				materials.update_inventory()
 				end_creation()
 			new_part.queue_free()
 

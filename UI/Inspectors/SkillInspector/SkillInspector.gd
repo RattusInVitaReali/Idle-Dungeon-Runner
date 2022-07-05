@@ -17,7 +17,7 @@ onready var upgrade_req_container = $Panel/VBoxContainer/HBoxContainer/UpgradeRe
 
 func set_slottable(_slottable):
 	.set_slottable(_slottable)
-	slottable.connect("skill_updated", self, "update_skill")
+	slottable.connect("slottable_updated", self, "update_skill")
 	update_tags()
 	update_description()
 	update_skill()

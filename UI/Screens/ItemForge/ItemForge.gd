@@ -86,7 +86,7 @@ func _on_inspector(slot, flags):
 			inspector.connect("merge", self, "_on_merge")
 	elif upgrading:
 		var compare_to = null
-		for part in item_preview.get_items_container():
+		for part in item_preview.get_items_container().get_children():
 			if part.type == slot.slottable.type:
 				compare_to = part
 				break
@@ -200,7 +200,6 @@ func create_item():
 		var response = yield(insp, "confirmed")
 		if response:
 			LootManager.get_item(new_item)
-			parts.update_inventory()
 			end_creation()
 		else:
 			for part in new_item.get_children():
@@ -217,7 +216,7 @@ func start_upgrade(var item):
 	item_slot.set_slottable(item)
 	item_name.text = item.slottable_name
 	button_left.text = ""
-	button_right.text = "Cancel"
+	button_right.text = "Finish"
 
 func end_upgrade():
 	upgrading = false

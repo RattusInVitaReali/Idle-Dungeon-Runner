@@ -8,6 +8,4 @@ func set_item(_item):
 	update_inventory()
 
 func get_items_container():
-	if item != null:
-		return item.get_children()
-	return []
+	return item

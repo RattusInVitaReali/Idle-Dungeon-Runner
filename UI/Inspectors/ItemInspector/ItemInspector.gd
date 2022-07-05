@@ -18,6 +18,8 @@ func update_parts():
 	var p = ""
 	for part in slottable.get_parts():
 		p += part.slottable_name
+		if part.tier > 0:
+			p+= " (" + str(part.tier) + "*)"
 		p += " - "
 	p.erase(p.length() - 3, 3)
 	parts.text = p
@@ -33,5 +35,5 @@ func _on_Equip_pressed():
 
 
 func _on_Upgrade_pressed():
-	emit_signal("upgrade", slottable)
+	emit_signal("upgrade", slottable.split(1))
 	queue_free()
