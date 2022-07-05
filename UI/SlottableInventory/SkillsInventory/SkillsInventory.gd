@@ -3,10 +3,16 @@ class_name SkillsInventory
 
 const SkillSlot = preload("res://UI/Slot/SkillSlot/SkillSlot.tscn")
 
-var skills = []
+var skills = null
 
-func add_slottable(_slottable):
-	if _slottable.slottable_type != Slottable.SLOTTABLE_TYPE.SKILL:
-		return
-	skills.append(_slottable)
-	update_inventory(false)
+func update_inventory(var reorder = true):
+	.update_inventory(false)
+
+func set_items_container(var container):
+	skills = container
+	update_inventory()
+
+func get_items_container():
+	if skills != null:
+		return skills
+	return $Items

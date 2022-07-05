@@ -73,6 +73,9 @@ func unequip_item(item : Item):
 	.unequip_item(item)
 	emit_signal("items_changed")
 
+func get_skills_container():
+	return $Skills
+
 func _on_enter_manual_combat():
 	update_skill_cooldowns(CombatProcessor.auto_combat)
 	stats.action_time = stats.action_time_manual

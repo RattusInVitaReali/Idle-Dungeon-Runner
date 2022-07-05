@@ -36,9 +36,6 @@ var durability
 var special = ""
 var custom_name = ""
 
-func _ready():
-	icon = base_icon
-
 func can_create(parts : Array):
 	for req_part_type in required_parts:
 		var found = false
@@ -54,7 +51,6 @@ func create(parts : Array):
 	if can_create(parts):
 		for part in parts:
 			add_part(part)
-		icon = base_icon # Temp
 		return true
 	return false
 
@@ -91,6 +87,7 @@ func add_part(part : ItemPart):
 	calculate_stats()
 	calculate_durability()
 	update_special()
+	update_icon()
 	reorder_parts()
 	tier += part.tier
 	emit_signal("slottable_updated")
@@ -138,6 +135,9 @@ func update_special():
 		if special != "":
 			special += '\n'
 		special += part.special
+
+func update_icon():
+	icon = base_icon # Temp
 
 func apply_attributes(_stats):
 	for stat in stats:

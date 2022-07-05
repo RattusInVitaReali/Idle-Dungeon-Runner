@@ -65,7 +65,7 @@ func reorder_items():
 	for item in items:
 		get_items_container().add_child(item)
 
-func update_inventory(var reorder = false):
+func update_inventory(var reorder = true):
 	if reorder:
 		reorder_items()
 	for line in lines_container.get_children():
