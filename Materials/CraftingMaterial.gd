@@ -37,6 +37,7 @@ func set_mat(_mat : MaterialResource, _tier = 0, _quantity = 1):
 			set(property.name, mat.get(property.name))
 	set_tier(_tier)
 	quantity(_quantity)
+	set_icon()
 	return self
 
 func set_tier(_tier):
@@ -49,6 +50,10 @@ func set_tier(_tier):
 		i -= 1
 	for stat in stats:
 		stats[stat] = round(stats[stat])
+
+func set_icon():
+	icon = mat.get_icon()
+	icon_color = mat.icon_color
 
 func print_material():
 	print("Material : %s (%s)" % [slottable_name, CraftingManager.RARITY.keys()[rarity]])
@@ -87,4 +92,5 @@ func try_to_merge():
 	var new_mat = duplicate()
 	new_mat.set_mat(mat, tier + 1, new_quantity)
 	quantity(quantity % 5)
+	emit_signal("slottable_updated")
 	return new_mat

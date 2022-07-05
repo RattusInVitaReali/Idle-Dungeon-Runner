@@ -51,6 +51,7 @@ func update_slot():
 			CraftingManager.RARITY.EPIC:
 				texture = FrameEpic
 		$Icon.texture_normal = slottable.icon
+		$Icon.modulate = slottable.icon_color
 		if !gear:
 			$Quantity.text = str(slottable.quantity)
 			$Quantity.visible = true

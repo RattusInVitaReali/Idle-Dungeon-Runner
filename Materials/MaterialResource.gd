@@ -1,7 +1,15 @@
 extends Resource
 class_name MaterialResource
 
-export (Texture) var icon
+enum ICON_TEXTURE { INGOT, LOG }
+
+const icon_texture_dict = {
+	ICON_TEXTURE.INGOT: preload("res://_Resources/Materials/Ingot.png"),
+	ICON_TEXTURE.LOG: preload("res://_Resources/Materials/Log.png")
+}
+
+export (ICON_TEXTURE) var icon_texture
+export (Color) var icon_color
 
 export (String) var slottable_name
 export (String) var prefix
@@ -29,6 +37,9 @@ export var stats = {
 	"penetration": 0, 
 	"magic_penetration": 0, 
 }
+
+func get_icon():
+	return icon_texture_dict[icon_texture]
 
 func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo, item):
 	pass

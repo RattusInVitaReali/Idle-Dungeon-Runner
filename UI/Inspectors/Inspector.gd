@@ -39,6 +39,7 @@ func update_rarity():
 
 func update_icon():
 	icon.texture = slottable.icon
+	icon.modulate = slottable.icon_color
 
 func update_stats():
 	for stat in stats_container.get_children():

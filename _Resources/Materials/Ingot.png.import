@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/image_part_273.png-11675b0005647a9008692765c0156545.stex"
+path="res://.import/Ingot.png-c16458ae09da0aa5a4fb14f5a2587177.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Resources/icons2/image_part_273.png"
-dest_files=[ "res://.import/image_part_273.png-11675b0005647a9008692765c0156545.stex" ]
+source_file="res://_Resources/Materials/Ingot.png"
+dest_files=[ "res://.import/Ingot.png-c16458ae09da0aa5a4fb14f5a2587177.stex" ]
 
 [params]
 
@@ -24,7 +24,7 @@ flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

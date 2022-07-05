@@ -136,4 +136,5 @@ func try_to_merge():
 	new_part.set_mat(new_mat)
 	new_part.quantity(new_quantity)
 	quantity(quantity % 5)
+	emit_signal("slottable_updated")
 	return new_part

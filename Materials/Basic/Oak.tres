@@ -1,11 +1,11 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=2 format=2]
 
 [ext_resource path="res://Materials/MaterialResource.gd" type="Script" id=1]
-[ext_resource path="res://_Resources/icons2/image_part_273.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
-icon = ExtResource( 2 )
+icon_texture = 1
+icon_color = Color( 0.839216, 0.572549, 0.419608, 1 )
 slottable_name = "Oak"
 prefix = "Oak"
 special_weapon = ""

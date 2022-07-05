@@ -8,6 +8,8 @@ signal upgrade
 onready var parts = $Panel/VBoxContainer/Parts
 onready var button_label = $Panel/VBoxContainer/Buttons/Equip/Label
 
+var gear = false
+
 var signal_name = "equip"
 
 func set_slottable(_slottable):
@@ -25,6 +27,7 @@ func update_parts():
 	parts.text = p
 
 func gear_variant():
+	gear = true
 	signal_name = "unequip"
 	yield(self, "ready")
 	button_label.text = "Unequip"
@@ -35,5 +38,8 @@ func _on_Equip_pressed():
 
 
 func _on_Upgrade_pressed():
-	emit_signal("upgrade", slottable.split(1))
+	if gear:
+		emit_signal("upgrade", slottable)
+	else:
+		emit_signal("upgrade", slottable.split(1))
 	queue_free()

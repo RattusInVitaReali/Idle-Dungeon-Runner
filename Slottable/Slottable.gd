@@ -8,6 +8,7 @@ signal slottable_updated
 var Slottable
 
 var icon
+var icon_color = Color(1, 1, 1, 1)
 var slottable_name
 var quantity = 1
 export (SLOTTABLE_TYPE) var slottable_type
@@ -23,6 +24,7 @@ func from_lootable(lootable):
 
 func quantity(quant):
 	quantity = quant;
+	emit_signal("slottable_updated")
 	if quantity == 0:
 		queue_free()
 	return self
