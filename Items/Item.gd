@@ -36,6 +36,9 @@ var durability
 var special = ""
 var custom_name = ""
 
+func _ready():
+	icon = base_icon
+
 func can_create(parts : Array):
 	for req_part_type in required_parts:
 		var found = false
