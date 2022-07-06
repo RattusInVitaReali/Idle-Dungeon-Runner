@@ -177,18 +177,37 @@ margin_right = 1040.0
 margin_bottom = 460.0
 size_flags_horizontal = 3
 
-[node name="ItemSlot" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/VBoxContainer" index="0" instance=ExtResource( 14 )]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/VBoxContainer" index="0"]
 margin_right = 317.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 200, 200 )
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 250 )
+
+[node name="Left" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/VBoxContainer/HBoxContainer" index="0"]
+margin_top = 118.0
+margin_right = 29.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+
+[node name="ItemSlot" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/VBoxContainer/HBoxContainer" index="1" instance=ExtResource( 14 )]
+margin_left = 33.0
+margin_right = 283.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 250, 250 )
 size_flags_vertical = 3
 expand = true
 stretch_mode = 6
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/VBoxContainer" index="1"]
-margin_top = 260.0
+[node name="Right" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/VBoxContainer/HBoxContainer" index="2"]
+margin_left = 287.0
+margin_top = 118.0
 margin_right = 317.0
-margin_bottom = 460.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/VBoxContainer" index="1"]
+margin_top = 254.0
+margin_right = 317.0
+margin_bottom = 454.0
 rect_min_size = Vector2( 0, 200 )
 texture = ExtResource( 13 )
 expand = true

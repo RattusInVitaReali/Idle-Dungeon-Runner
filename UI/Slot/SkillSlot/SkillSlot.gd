@@ -29,14 +29,12 @@ func set_border():
 		texture = BorderTexture4
 
 func set_icon():
+	$SlottableIcon.set_slottable(slottable)
 	if slottable == null:
-		$Icon.texture_normal = null
 		skill_name.text = ""
 	elif !slottable.locked:
-		$Icon.texture_normal = slottable.icon
 		skill_name.text = slottable.skill_name
 	else:
-		$Icon.texture_normal = Lock
 		skill_name.text = "Locked"
 
 func update_skill():

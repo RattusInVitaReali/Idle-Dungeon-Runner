@@ -38,8 +38,7 @@ func update_rarity():
 			rarity.text += "Skill"
 
 func update_icon():
-	icon.texture = slottable.icon
-	icon.modulate = slottable.icon_color
+	icon.set_slottable(slottable)
 
 func update_stats():
 	for stat in stats_container.get_children():

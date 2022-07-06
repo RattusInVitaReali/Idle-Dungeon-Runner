@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/SlottableIcon/SlottableIcon.gd" type="Script" id=1]
+
+[node name="SlottableIcon" type="TextureRect"]
+anchor_right = 0.12
+anchor_bottom = 0.068
+margin_right = 0.399994
+margin_bottom = -0.560013
+expand = true
+script = ExtResource( 1 )

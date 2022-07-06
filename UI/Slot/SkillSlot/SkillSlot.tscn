@@ -16,13 +16,9 @@ texture = ExtResource( 3 )
 expand = true
 script = ExtResource( 2 )
 
-[node name="Icon" parent="." index="0"]
+[node name="SlottableIcon" parent="." index="0"]
 show_behind_parent = true
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
-stretch_mode = 4
+stretch_mode = 5
 
 [node name="NameBackground" type="TextureRect" parent="." index="3"]
 anchor_top = 1.0

@@ -38,10 +38,6 @@ func update_skill():
 	update_icon()
 	update_upgrade_reqs()
 
-func update_icon():
-	icon.texture = get_border_texture()
-	actual_icon.texture = slottable.icon
-
 func update_tags():
 	var text = ""
 	for tag in slottable.tags:

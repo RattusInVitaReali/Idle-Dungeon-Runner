@@ -4,6 +4,7 @@ class_name ItemPart
 const CraftingMaterial = preload("res://Materials/CraftingMaterial.tscn")
 
 export (Texture) var base_icon
+export (Texture) var item_icon
 
 export (CraftingManager.PART_TYPE) var type
 export (CraftingManager.ITEM_TYPE) var used_for
@@ -49,7 +50,7 @@ export var base_stats = {
 var stats = base_stats.duplicate()
 
 var durability
-var mat
+var mat : CraftingMaterial
 var special = ""
 
 func _ready():
@@ -72,7 +73,8 @@ func set_mat(_mat : CraftingMaterial):
 		set_special()
 		tier = mat.tier
 		rarity = mat.rarity
-		icon = base_icon # Temp
+		icon = base_icon
+		icon_color = mat.icon_color
 		return self
 	return null
 

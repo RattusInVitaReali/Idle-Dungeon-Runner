@@ -7,3 +7,4 @@
 script = ExtResource( 1 )
 slottable_type = 1
 base_icon = ExtResource( 2 )
+item_icon = ExtResource( 2 )

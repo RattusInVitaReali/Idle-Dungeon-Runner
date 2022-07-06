@@ -3,11 +3,9 @@ class_name Line
 
 signal inspector
 
-const Slot = preload("res://UI/Slot/Slot.tscn")
 const Margin = preload("res://UI/SlottableInventory/Line/LineMargin.tscn")
 
 onready var slots = []
-
 
 func init(slot_count = 6, slot_scene = Slot):
 	var last_margin = null

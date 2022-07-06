@@ -137,7 +137,7 @@ func update_special():
 	for part in get_children():
 		if special != "":
 			special += '\n'
-		special += part.special
+			special += part.special
 
 func update_icon():
 	icon = base_icon # Temp

@@ -7,7 +7,7 @@ func set_item(_item):
 	item = _item
 	update_inventory()
 
-func update_inventory(var reorder = true):
+func update_inventory(var reorder = false):
 	for line in lines_container.get_children():
 		lines_container.remove_child(line)
 		line.queue_free()

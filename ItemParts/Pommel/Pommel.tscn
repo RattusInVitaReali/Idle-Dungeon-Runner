@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ItemParts/Pommel/Pommel.gd" type="Script" id=2]
 [ext_resource path="res://_Resources/ItemParts/Pommel.png" type="Texture" id=3]
+[ext_resource path="res://_Resources/Items/PommelItem.png" type="Texture" id=4]
 
 [node name="Pommel" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 base_icon = ExtResource( 3 )
+item_icon = ExtResource( 4 )
 type = 2
 cost = 10
 durability_multi = 0.2

@@ -3,7 +3,7 @@
 [ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/Inspectors/Inspector.gd" type="Script" id=2]
 [ext_resource path="res://_Resources/gui_images/Division line.png" type="Texture" id=3]
-[ext_resource path="res://_Resources/icons2/image_part_083.png" type="Texture" id=4]
+[ext_resource path="res://UI/SlottableIcon/SlottableIcon.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.317647, 0.317647, 0.317647, 1 )
@@ -162,15 +162,26 @@ margin_right = 840.0
 margin_bottom = 584.0
 rect_min_size = Vector2( 0, 400 )
 
-[node name="Icon" type="TextureRect" parent="Panel/VBoxContainer/Image"]
-margin_right = 840.0
-margin_bottom = 400.0
-rect_min_size = Vector2( 400, 15 )
+[node name="Left" type="Label" parent="Panel/VBoxContainer/Image"]
+margin_top = 193.0
+margin_right = 216.0
+margin_bottom = 207.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 6
+
+[node name="Icon" parent="Panel/VBoxContainer/Image" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 220.0
+margin_right = 620.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 400, 0 )
+
+[node name="Right" type="Label" parent="Panel/VBoxContainer/Image"]
+margin_left = 624.0
+margin_top = 193.0
+margin_right = 840.0
+margin_bottom = 207.0
+size_flags_horizontal = 3
 
 [node name="Line3" type="HBoxContainer" parent="Panel/VBoxContainer"]
 margin_top = 588.0

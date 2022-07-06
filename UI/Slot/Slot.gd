@@ -31,9 +31,9 @@ func set_slottable(_slottable):
 	update_slot()
 
 func update_slot():
+	$SlottableIcon.set_slottable(slottable)
 	if slottable == null:
 		texture = Frame
-		$Icon.texture_normal = null
 		$Quantity.visible = false
 		for tier_star in $TierStars.get_children():
 			$TierStars.remove_child(tier_star)
@@ -50,8 +50,6 @@ func update_slot():
 				texture = FrameRare
 			CraftingManager.RARITY.EPIC:
 				texture = FrameEpic
-		$Icon.texture_normal = slottable.icon
-		$Icon.modulate = slottable.icon_color
 		if !gear:
 			$Quantity.text = str(slottable.quantity)
 			$Quantity.visible = true
@@ -64,7 +62,7 @@ func update_slot():
 			i -= 1
 		$TierStars.visible = true
 
-func _on_Icon_pressed():
+func _on_Button_pressed():
 	if slottable != null:
 		inspector()
 

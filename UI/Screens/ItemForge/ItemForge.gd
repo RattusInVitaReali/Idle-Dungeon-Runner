@@ -21,7 +21,7 @@ onready var item_description = $VBoxContainer/Screen/VBoxContainer/Image/ItemCre
 
 onready var item_upgrade = $VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade
 onready var item_preview = $VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/ItemPreviewInventory
-onready var item_slot = $VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/VBoxContainer/ItemSlot
+onready var item_slot = $VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/VBoxContainer/HBoxContainer/ItemSlot
 onready var item_name = $VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/VBoxContainer/TextureRect/ItemName
 
 onready var button_left = $VBoxContainer/Screen/VBoxContainer/Buttons/ButtonLeft/Label
