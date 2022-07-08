@@ -6,3 +6,4 @@
 [node name="PartSelectionInventory" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 line_size = 3
+allow_sorting = false

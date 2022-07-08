@@ -21,7 +21,7 @@ onready var amount_label = $HBoxContainer/Amount
 func set_requirement(_type, _required):
 	type = _type
 	required = _required
-	GlobalResources.connect(type_signals[type], self, "update_amount")
+	GlobalResources.connect(type_signals[type], self, "update_text")
 	icon.texture = type_icons[type]
 	update_text()
 

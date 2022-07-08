@@ -131,7 +131,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GearSlot2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line2" index="2" instance=ExtResource( 4 )]
+[node name="BodyArmor" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line2" index="2" instance=ExtResource( 4 )]
 margin_left = 172.0
 margin_right = 322.0
 

@@ -92,7 +92,7 @@ func set_special():
 	match used_for:
 		CraftingManager.ITEM_TYPE.WEAPON:
 			special = mat.special_weapon
-		CraftingManager.TYPE.ARMOR:
+		CraftingManager.ITEM_TYPE.ARMOR:
 			special = mat.special_armor
 		CraftingManager.ITEM_TYPE.ANY:
 			special = "Weapon: " + mat.special_weapon + "Armor: " + mat.special_armor

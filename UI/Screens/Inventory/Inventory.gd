@@ -6,17 +6,28 @@ signal upgrade
 const Attribute = preload("res://UI/Screens/Inventory/Attribute/Attribute.tscn")
 
 onready var items = $VBoxContainer/Screen/VBoxContainer/SlottableInventory
-onready var weapon1 = $VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4/Weapon1
-onready var weapon2 = $VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4/Weapon2
 onready var attributes_container = $VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/AttributesBackground/ScrollContainer/AttributeContainer
 
-onready var gear_slots = [weapon1, weapon2]
+onready var weapon_slots = [
+	$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4/Weapon1,
+	$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4/Weapon2
+]
+
+onready var armor_slots = {
+	CraftingManager.ITEM_SUBTYPE.BODY_ARMOR: $VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line2/BodyArmor
+}
+
+onready var all_slots
 
 var player = null
 var attributes_init = false
 
 func _ready():
-	for slot in gear_slots:
+	print_stray_nodes()
+	all_slots = weapon_slots.duplicate()
+	for type in armor_slots:
+		all_slots.append(armor_slots[type])
+	for slot in all_slots:
 		slot.connect("inspector", self, "_on_inspector")
 		slot.gear = true;
 	CombatProcessor.connect("player_spawned", self, "_on_player_spawned")
@@ -24,7 +35,7 @@ func _ready():
 
 func _on_player_spawned(_player):
 	player = _player
-	player.connect("items_changed", self, "update_equipped")
+	player.connect("items_changed", self, "_on_items_changed")
 	player.connect("stats_updated", self, "update_attributes")
 	update_attributes()
 
@@ -52,22 +63,16 @@ func _on_items_changed():
 	update_equipped()
 
 func update_equipped():
-	for slot in gear_slots:
+	for slot in all_slots:
 		slot.set_slottable(null)
 	var weapon_count = 0
 	for item in CombatProcessor.Player.get_items():
 		match item.type:
 			CraftingManager.ITEM_TYPE.WEAPON:
+				weapon_slots[weapon_count].set_slottable(item)
 				weapon_count += 1
-				if weapon_count == 1:
-					weapon1.set_slottable(item)
-				else:
-					weapon2.set_slottable(item)
 			CraftingManager.ITEM_TYPE.ARMOR:
-				match item.subtype:
-					CraftingManager.ITEM_SUBTYPE.BODY_ARMOR:
-						pass
-					# etc.
+				armor_slots[item.subtype].set_slottable(item)
 
 func update_attributes():
 	var _attributes = player.attributes

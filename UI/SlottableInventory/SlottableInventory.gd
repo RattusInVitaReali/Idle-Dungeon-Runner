@@ -9,8 +9,7 @@ export var Slot = preload("res://UI/Slot/Slot.tscn")
 onready var lines_container = $ScrollContainer/VBoxContainer
 
 export var line_size = 6
-
-var sorting = false
+export var allow_sorting = true
 
 func add_slottable(slottable : Slottable):
 	var added = false
@@ -71,8 +70,9 @@ func reorder_items():
 	for item in items:
 		item.connect("tree_exited", self, "update_inventory")
 
-func update_inventory(var reorder = true):
-	if reorder:
+
+func update_inventory(var reorder = false):
+	if reorder and allow_sorting:
 		reorder_items()
 	for line in lines_container.get_children():
 		lines_container.remove_child(line)
@@ -86,7 +86,7 @@ func update_inventory(var reorder = true):
 		line.append(slottable)
 		i += 1
 		if i == line_size:
-			lines.append(line)
+			lines.append(line.duplicate())
 			line = []
 			i = 0
 	if i != 0:

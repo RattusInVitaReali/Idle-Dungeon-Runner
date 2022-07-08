@@ -1,27 +1,34 @@
 extends Node
 
-onready var Oak = load("res://Materials/Basic/Oak.tres")
-onready var Copper = load("res://Materials/Basic/Copper.tres")
-onready var Iron = load("res://Materials/Common/Iron.tres")
-onready var Bloodsteel = load("res://Materials/Rare/Bloodsteel.tres")
-
-onready var CraftingMaterial = load("res://Materials/CraftingMaterial.tscn")
-
-onready var SwordBlade = load("res://ItemParts/SwordBlade/SwordBlade.tscn")
-onready var SwordHandle = load("res://ItemParts/SwordHandle/SwordHandle.tscn")
-onready var Pommel = load("res://ItemParts/Pommel/Pommel.tscn")
-
-onready var Sword = load("res://Items/Sword/Sword.tscn")
+var debug = true
 
 enum RARITY { BASIC, COMMON, UNCOMMON, RARE, EPIC }
 
 enum MATERIAL_TYPE { GEM, METAL, WOOD, FABRIC }
 enum MATERIAL_WEIGHT { VERY_LIGHT, LIGHT, MEDIUM, HEAVY, VERY_HEAVY }
 
-enum PART_TYPE { SWORD_BLADE, SWORD_HANDLE, POMMEL }
+enum PART_TYPE { SWORD_BLADE, SWORD_HANDLE, SWORD_GUARD, POMMEL, TUNIC, CHESTPLATE, SHOULDERS, ARMS }
 
 enum ITEM_TYPE { WEAPON, ARMOR, ANY }
 enum ITEM_SUBTYPE { SWORD, AXE, BODY_ARMOR, BOOTS, HELMET } 
+
+onready var CraftingMaterial = load("res://Materials/CraftingMaterial.tscn")
+
+onready var part_scenes = {
+	PART_TYPE.SWORD_BLADE : load("res://ItemParts/Weapon/_Sword/SwordBlade/SwordBlade.tscn"),
+	PART_TYPE.SWORD_HANDLE : load("res://ItemParts/Weapon/_Sword/SwordHandle/SwordHandle.tscn"),
+	PART_TYPE.SWORD_GUARD : load("res://ItemParts/Weapon/_Sword/SwordGuard/SwordGuard.tscn"),
+	PART_TYPE.POMMEL : load("res://ItemParts/Weapon/Pommel/Pommel.tscn"),
+	PART_TYPE.TUNIC : load("res://ItemParts/Armor/_BodyArmor/Tunic/Tunic.tscn"),
+	PART_TYPE.CHESTPLATE : load("res://ItemParts/Armor/_BodyArmor/Chestplate/Chestplate.tscn"),
+	PART_TYPE.SHOULDERS : load("res://ItemParts/Armor/_BodyArmor/Shoulders/Shoulders.tscn"),
+	PART_TYPE.ARMS : load("res://ItemParts/Armor/_BodyArmor/Arms/Arms.tscn")
+}
+
+onready var item_scenes = {
+	ITEM_SUBTYPE.SWORD : "res://Items/Weapon/Sword/Sword.tscn",
+	ITEM_SUBTYPE.BODY_ARMOR : "res://Items/Armor/BodyArmor/BodyArmor.tscn"
+}
 
 func new_material(base = null, quantity = 1):
 	return CraftingMaterial.instance().set_mat(base).quantity(quantity)

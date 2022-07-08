@@ -61,8 +61,14 @@ func get_parts():
 	return get_children()
 
 func reorder_parts():
-	var parts = get_children()
-	parts.sort_custom(self, "_sort_type")
+	var parts = []
+	var part_types = required_parts.duplicate()
+	part_types.append_array(optional_parts.duplicate())
+	for part_type in part_types:
+		for part in get_children():
+			if part.type == part_type:
+				parts.append(part)
+				break;
 	for part in get_children():
 		remove_child(part)
 	for part in parts:
@@ -90,7 +96,6 @@ func add_part(part : ItemPart):
 	calculate_stats()
 	calculate_durability()
 	update_special()
-	update_icon()
 	reorder_parts()
 	tier += part.tier
 	emit_signal("slottable_updated")
@@ -135,12 +140,10 @@ func calculate_durability():
 func update_special():
 	special = ""
 	for part in get_children():
-		if special != "":
-			special += '\n'
+		if part.special != "":
+			if special != "":
+				special += '\n'
 			special += part.special
-
-func update_icon():
-	icon = base_icon # Temp
 
 func apply_attributes(_stats):
 	for stat in stats:

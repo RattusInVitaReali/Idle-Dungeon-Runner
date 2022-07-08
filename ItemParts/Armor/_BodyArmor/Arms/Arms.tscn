@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ItemParts/Armor/_BodyArmor/Arms/Arms.gd" type="Script" id=2]
+[ext_resource path="res://_Resources/ItemParts/Armor/BodyArmor/Arms.png" type="Texture" id=3]
+[ext_resource path="res://_Resources/Items/Armor/BodyArmor/ItemArms.png" type="Texture" id=4]
+
+[node name="Arms" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+base_icon = ExtResource( 3 )
+item_icon = ExtResource( 4 )
+type = 7
+used_for = 1
+cost = 10
+durability_multi = 0.5
+allowed_material_types = [ 1, 2 ]
+description = "Protection for your arms."
+stat_multipliers = {
+"armor": 0.5,
+"dexterity": 0.0,
+"expertise": 0.0,
+"ferocity": 1.0,
+"magic_penetration": 0.0,
+"mastery": 0.0,
+"occult_aversion": 0.5,
+"penetration": 0.0,
+"potency": 1.0,
+"power": 1.0,
+"precision": 1.0,
+"toughess": 1.0,
+"vitality": 1.0
+}
+base_stats = {
+"armor": 0,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 0,
+"penetration": 0,
+"potency": 0,
+"power": 0,
+"precision": 0,
+"toughess": 0,
+"vitality": 0
+}

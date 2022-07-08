@@ -220,8 +220,8 @@ func start_upgrade(var item):
 
 func end_upgrade():
 	upgrading = false
-#	if item_to_upgrade.get_parent() == null:
-#		LootManager.get_item(item_to_upgrade)
+	if item_to_upgrade.get_parent() == null:
+		LootManager.get_item(item_to_upgrade)
 	item_to_upgrade = null
 	forge.show()
 	item_preview.set_item(null)

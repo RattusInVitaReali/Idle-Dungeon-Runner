@@ -27,6 +27,7 @@ var deaths = 0
 var timeout = 0
 const timeout_per_death = 2
 
+var player = null
 var monster = null
 var zone = null
 
@@ -46,7 +47,7 @@ func _ready():
 	spawn_player()
 
 func spawn_player():
-	var player = Player.instance()
+	player = Player.instance()
 	add_child(player)
 	player.connect("despawned", self, "_on_player_despawned")
 	player.connect("level_changed", self, "_on_player_level_changed")
@@ -119,7 +120,7 @@ func _on_monster_despawned():
 func respawn_player():
 	yield(get_tree().create_timer(timeout), "timeout")
 	CombatProcessor.Player.fake_respawn()
-	emit_signal("player_spawned")
+	emit_signal("player_spawned", player)
 
 func new_combat():
 	reset_timeout()

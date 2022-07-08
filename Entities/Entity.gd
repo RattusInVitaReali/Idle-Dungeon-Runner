@@ -101,10 +101,10 @@ func set_skills_attacker():
 # Add check for 2 weapons, signal for equipping / unequipping items
 func equip_item(item : Item):
 	var weapon_count = 0
-	for item in get_items():
-		if item.type == CraftingManager.ITEM_TYPE.WEAPON:
+	for _item in get_items():
+		if _item.type == CraftingManager.ITEM_TYPE.WEAPON:
 			weapon_count += 1
-		if item.type == item.type:
+		if item.type == _item.type:
 			if item.type == CraftingManager.ITEM_TYPE.WEAPON and weapon_count < 2:
 				continue
 			unequip_item(item)

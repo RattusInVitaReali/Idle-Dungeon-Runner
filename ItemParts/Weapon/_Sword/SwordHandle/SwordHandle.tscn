@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://_Resources/Items/Weapon/Sword/ItemSwordHandle.png" type="Texture" id=2]
+[ext_resource path="res://_Resources/ItemParts/Weapon/Sword/SwordHandle.png" type="Texture" id=3]
+[ext_resource path="res://ItemParts/Weapon/_Sword/SwordHandle/SwordHandle.gd" type="Script" id=4]
+
+[node name="SwordHandle" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+base_icon = ExtResource( 3 )
+item_icon = ExtResource( 2 )
+type = 1
+used_for = 0
+cost = 10
+base_durability = 0
+durability_multi = 0.3
+allowed_material_types = [ 1, 2 ]
+description = "A simple handle for swords."
+stat_multipliers = {
+"armor": 0.0,
+"dexterity": 0.0,
+"expertise": 0.0,
+"ferocity": 0.5,
+"magic_penetration": 1.0,
+"mastery": 0.0,
+"occult_aversion": 0.0,
+"penetration": 1.0,
+"potency": 1.0,
+"power": 1.0,
+"precision": 1.0,
+"toughess": 0.0,
+"vitality": 0.0
+}
+base_stats = {
+"armor": 0,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 0,
+"penetration": 0,
+"potency": 0,
+"power": 0,
+"precision": 0,
+"toughess": 0,
+"vitality": 0
+}

@@ -11,8 +11,11 @@ func set_slottable(var slottable : Slottable):
 		return
 	match slottable.slottable_type:
 		Slottable.SLOTTABLE_TYPE.ITEM:
-			texture = null
 			modulate = Color(1, 1, 1, 1)
+			if slottable.get_child_count() == 0:
+				texture = slottable.icon
+			else:
+				texture = null
 			for part in slottable.get_children():
 				var new_texture = TextureRect.new()
 				new_texture.texture = part.item_icon

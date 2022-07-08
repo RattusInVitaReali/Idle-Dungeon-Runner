@@ -8,3 +8,4 @@
 script = ExtResource( 2 )
 Slot = ExtResource( 3 )
 line_size = 4
+allow_sorting = false

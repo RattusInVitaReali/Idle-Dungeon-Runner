@@ -6,3 +6,4 @@
 [node name="ItemPreviewInventory" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 line_size = 4
+allow_sorting = false
