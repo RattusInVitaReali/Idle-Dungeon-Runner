@@ -11,7 +11,7 @@ onready var lines_container = $ScrollContainer/VBoxContainer
 export var line_size = 6
 export var allow_sorting = true
 
-func add_slottable(slottable : Slottable):
+func add_slottable(slottable : Slottable, update = true):
 	var added = false
 	for _slottable in get_items_container().get_children():
 		if _slottable.slottable_type == slottable.slottable_type:
@@ -22,7 +22,8 @@ func add_slottable(slottable : Slottable):
 	if !added:
 		get_items_container().add_child(slottable)
 		slottable.connect("tree_exited", self, "update_inventory")
-		update_inventory()
+		if update:
+			update_inventory()
 
 # DOESN'T DELETE THE ITEM!
 func remove_slottable(slottable : Slottable, quantity = 1):
@@ -94,9 +95,8 @@ func update_inventory(var reorder = false):
 	for slottable_list in lines:
 		var new_line = Line.instance()
 		lines_container.add_child(new_line)
-		new_line.init(line_size, Slot)
+		new_line.init(slottable_list, line_size, Slot)
 		new_line.connect("inspector", self, "_on_inspector")
-		new_line.update_line(slottable_list)
 
 func get_items_container():
 	return $Items

@@ -26,8 +26,8 @@ onready var part_scenes = {
 }
 
 onready var item_scenes = {
-	ITEM_SUBTYPE.SWORD : "res://Items/Weapon/Sword/Sword.tscn",
-	ITEM_SUBTYPE.BODY_ARMOR : "res://Items/Armor/BodyArmor/BodyArmor.tscn"
+	ITEM_SUBTYPE.SWORD : load("res://Items/Weapon/Sword/Sword.tscn"),
+	ITEM_SUBTYPE.BODY_ARMOR : load("res://Items/Armor/BodyArmor/BodyArmor.tscn")
 }
 
 func new_material(base = null, quantity = 1):

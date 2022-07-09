@@ -73,7 +73,7 @@ margin_right = -20.0
 margin_bottom = -20.0
 
 [node name="ItemSelectionInventory" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemCreation" index="0" instance=ExtResource( 9 )]
-margin_right = 508.0
+margin_right = 537.0
 margin_bottom = 460.0
 
 [node name="ItemSelectionDimm" type="Panel" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemCreation/ItemSelectionInventory" index="2"]
@@ -87,8 +87,8 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemCreation" index="1"]
-margin_left = 512.0
-margin_right = 527.0
+margin_left = 541.0
+margin_right = 556.0
 margin_bottom = 460.0
 rect_min_size = Vector2( 15, 0 )
 texture = ExtResource( 11 )
@@ -96,10 +96,10 @@ expand = true
 stretch_mode = 1
 
 [node name="ItemInfoBackground" type="TextureRect" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemCreation" index="2"]
-margin_left = 531.0
+margin_left = 560.0
 margin_right = 1040.0
 margin_bottom = 460.0
-size_flags_horizontal = 3
+rect_min_size = Vector2( 480, 0 )
 size_flags_vertical = 5
 texture = ExtResource( 10 )
 expand = true
@@ -113,7 +113,7 @@ margin_right = -20.0
 margin_bottom = -20.0
 
 [node name="ItemType" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemCreation/ItemInfoBackground/VBoxContainer" index="0"]
-margin_right = 469.0
+margin_right = 440.0
 margin_bottom = 137.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -125,7 +125,7 @@ autowrap = true
 
 [node name="ItemParts" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemCreation/ItemInfoBackground/VBoxContainer" index="1"]
 margin_top = 141.0
-margin_right = 469.0
+margin_right = 440.0
 margin_bottom = 278.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -137,7 +137,7 @@ autowrap = true
 
 [node name="ItemDescription" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemCreation/ItemInfoBackground/VBoxContainer" index="2"]
 margin_top = 282.0
-margin_right = 469.0
+margin_right = 440.0
 margin_bottom = 420.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
