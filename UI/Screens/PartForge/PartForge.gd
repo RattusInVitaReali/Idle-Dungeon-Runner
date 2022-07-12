@@ -1,7 +1,7 @@
 extends Screen
 class_name PartForgeUI
 
-signal creation_finished
+signal get_materials
 
 const PartConfirmInspector = preload("res://UI/Inspectors/PartInspector/PartConfirmInspector/PartConfirmInspector.tscn")
 
@@ -33,7 +33,7 @@ func _ready():
 
 func add_material(mat):
 	if creating:
-		yield(self, "creation_finished")
+		yield(self, "get_materials")
 	materials.add_slottable(mat)
 
 func _on_part_type_selected(slot):
@@ -127,7 +127,7 @@ func end_creation():
 	button_right.text = ""
 	if selected_part_slot != null:
 		selected_part_slot.deselect()
-	emit_signal("creation_finished")
+	emit_signal("get_materials")
 
 func start_material_selection():
 	selecting_material = true

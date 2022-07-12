@@ -1,11 +1,10 @@
 extends Screen
 class_name ItemForgeUI
 
-signal creation_finished
-signal upgrade_finished
+signal get_parts
 
 const ItemConfirmInspector = preload("res://UI/Inspectors/ItemInspector/ItemConfirmInspector/ItemConfirmInspector.tscn")
-const ItemCompareInspector = preload("res://UI/Inspectors/PartInspector/PartConfirmInspector/PartCompareInspector/PartCompareInspector.tscn")
+const PartCompareInspector = preload("res://UI/Inspectors/PartInspector/PartConfirmInspector/PartCompareInspector/PartCompareInspector.tscn")
 
 onready var parts = $VBoxContainer/Screen/VBoxContainer/SlottableInventory
 onready var forge = $VBoxContainer/Screen/VBoxContainer/Image/ForgeImage
@@ -44,10 +43,8 @@ func _ready():
 	item_slot.connect("inspector", self, "_on_inspector")
 
 func add_part(part):
-	if creating:
-		yield(self, "creation_finished")
-	if upgrading:
-		yield(self, "upgrade_finished")
+	if creating or upgrading:
+		yield(self, "get_parts")
 	parts.add_slottable(part)
 
 func _on_item_type_selected(slot):
@@ -127,7 +124,7 @@ func item_confirm_inspector(part):
 	return inspector
 
 func item_compare_inspector(part1, part2):
-	var inspector = ItemCompareInspector.instance()
+	var inspector = PartCompareInspector.instance()
 	add_child(inspector)
 	inspector.set_slottable(part1)
 	inspector.set_compare_to(part2)
@@ -147,7 +144,8 @@ func _on_ButtonRight_pressed():
 		end_upgrade()
 	if !creating or (creating and selected_item == null):
 		return
-	elif !selecting_parts: 
+	elif !selecting_parts:
+		reset_part_selection()
 		start_part_selection()
 	else:
 		create_item()
@@ -185,17 +183,23 @@ func end_creation():
 	for part_slot in selected_part_slots:
 		part_slot.deselect()
 	selected_part_slots = []
-	emit_signal("creation_finished")
+	emit_signal("get_parts")
 
 func start_part_selection():
 	selecting_parts = true
 	items_dimm.show()
 	parts_dimm.hide()
 
+func reset_part_selection():
+	for slot in selected_part_slots:
+		slot.deselect()
+	selected_parts = []
+	selected_part_slots = []
+
 func create_item():
 	var new_item = CraftingManager.forge_item(selected_item, selected_parts)
 	if new_item != null:
-		selected_part_slots = []
+		reset_part_selection()
 		var insp = item_confirm_inspector(new_item)
 		var response = yield(insp, "confirmed")
 		if response:
@@ -206,6 +210,7 @@ func create_item():
 				new_item.remove_child(part)
 				LootManager.get_item(part)
 			new_item.queue_free()
+			emit_signal("get_parts")
 
 func start_upgrade(var item):
 	upgrading = true

@@ -107,7 +107,7 @@ func equip_item(item : Item):
 		if item.type == _item.type:
 			if item.type == CraftingManager.ITEM_TYPE.WEAPON and weapon_count < 2:
 				continue
-			unequip_item(item)
+			unequip_item(_item)
 			break
 	$Items.add_child(item)
 	item.connect("slottable_updated", self, "update_stats")

@@ -81,6 +81,8 @@ func update_inventory(var reorder = false):
 	var lines = []
 	var line = []
 	var i = 0
+	if get_items_container() == null:
+		return
 	for slottable in get_items_container().get_children():
 		if slottable.quantity == 0: # In case something gets freed next frame
 			continue
