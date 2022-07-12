@@ -12,7 +12,8 @@ const FrameUncommon = preload("res://_Resources/gui_images/Frame_Uncommon.png")
 const FrameRare = preload("res://_Resources/gui_images/Frame_Rare.png")
 const FrameEpic = preload("res://_Resources/gui_images/Frame_Epic.png")
 
-var gear = false
+export var gear = false
+export var upgrade = false
 
 var slottable = null
 
@@ -50,7 +51,7 @@ func update_slot():
 				texture = FrameRare
 			CraftingManager.RARITY.EPIC:
 				texture = FrameEpic
-		if !gear:
+		if !(gear or upgrade):
 			$Quantity.text = str(slottable.quantity)
 			$Quantity.visible = true
 		for tier_star in $TierStars.get_children():
@@ -67,10 +68,7 @@ func _on_Button_pressed():
 		inspector()
 
 func inspector():
-	var flags = 0
-	if gear:
-		flags |= Screen.GEAR_FLAG
-	emit_signal("inspector", self, flags)
+	emit_signal("inspector", self)
 
 func select():
 	$Selection.show()

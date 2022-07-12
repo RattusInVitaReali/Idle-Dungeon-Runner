@@ -7,8 +7,7 @@ signal upgrade
 
 onready var parts = $Panel/VBoxContainer/Parts
 onready var button_label = $Panel/VBoxContainer/Buttons/Equip/Label
-
-var gear = false
+onready var buttons_container = $Panel/VBoxContainer/Buttons
 
 var signal_name = "equip"
 
@@ -27,10 +26,13 @@ func update_parts():
 	parts.text = p
 
 func gear_variant():
-	gear = true
+	.gear_variant()
 	signal_name = "unequip"
-	yield(self, "ready")
 	button_label.text = "Unequip"
+
+func upgrade_variant():
+	.upgrade_variant()
+	buttons_container.hide()
 
 func _on_Equip_pressed():
 	emit_signal(signal_name, slottable)

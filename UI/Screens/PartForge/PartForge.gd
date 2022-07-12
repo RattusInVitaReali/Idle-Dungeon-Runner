@@ -60,16 +60,16 @@ func update_part_info(part : ItemPart = null):
 		part_materials.text = ""
 		part_description.text = ""
 
-func _on_inspector(slot, flags):
+func _on_inspector(slot):
 	if !creating:
-		._on_inspector(slot, flags)
+		._on_inspector(slot)
 		inspector.connect("merge", self, "_on_merge")
 	elif selecting_material:
 		var slottable = slot.slottable
 		var new_part = CraftingManager.try_to_forge_part(selected_part, slottable)
 		if new_part != null:
-			var insp = part_confirm_inspector(new_part)
-			var response = yield(insp, "confirmed")
+			var inspector = part_confirm_inspector(new_part)
+			var response = yield(inspector, "confirmed")
 			if response:
 				LootManager.get_item(CraftingManager.actually_forge_part(selected_part, slottable))
 				new_part.queue_free()

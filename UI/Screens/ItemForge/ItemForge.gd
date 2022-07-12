@@ -76,9 +76,9 @@ func update_item_info(item : Item = null):
 		item_parts.text = ""
 		item_description.text = ""
 
-func _on_inspector(slot, flags):
+func _on_inspector(slot):
 	if (!creating and !upgrading) or (upgrading and slot.slottable.get_parent() is Item) or slot.slottable is Item:
-		var inspector = ._on_inspector(slot, flags)
+		var inspector = ._on_inspector(slot)
 		if !(slot.slottable is Item):
 			inspector.connect("merge", self, "_on_merge")
 	elif upgrading:
@@ -200,8 +200,8 @@ func create_item():
 	var new_item = CraftingManager.forge_item(selected_item, selected_parts)
 	if new_item != null:
 		reset_part_selection()
-		var insp = item_confirm_inspector(new_item)
-		var response = yield(insp, "confirmed")
+		var inspector = item_confirm_inspector(new_item)
+		var response = yield(inspector, "confirmed")
 		if response:
 			LootManager.get_item(new_item)
 			end_creation()
@@ -235,7 +235,7 @@ func end_upgrade():
 	item_name.text = ""
 	button_left.text = "New Item"
 	button_right.text = ""
-	emit_signal("upgrade_finished")
+	emit_signal("get_parts")
 
 func replace_part(var part):
 	var split_part = parts.remove_slottable(part)

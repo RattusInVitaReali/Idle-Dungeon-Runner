@@ -103,5 +103,5 @@ func update_inventory(var reorder = false):
 func get_items_container():
 	return $Items
 
-func _on_inspector(slot, flags):
-	emit_signal("inspector", slot, flags)
+func _on_inspector(slot):
+	emit_signal("inspector", slot)

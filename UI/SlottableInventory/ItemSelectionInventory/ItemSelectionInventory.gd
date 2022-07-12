@@ -8,5 +8,5 @@ func _ready():
 		add_slottable(CraftingManager.item_scenes[item].instance(), false)
 	update_inventory()
 
-func _on_inspector(slot, _flags):
+func _on_inspector(slot):
 	emit_signal("item_type_selected", slot)

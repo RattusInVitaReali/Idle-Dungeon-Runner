@@ -8,7 +8,6 @@ const BorderTexture4 = preload("res://_Resources/skill_borders/Border6.png")
 
 const UpgradeRequirement = preload("res://UI/Inspectors/SkillInspector/UpgradeRequirement/UpgradeRequirement.tscn")
 
-onready var actual_icon = $Panel/VBoxContainer/Image/Icon/ActualIcon
 onready var skill_tags = $Panel/VBoxContainer/SkillTags
 onready var skill_level = $Panel/VBoxContainer/SkillLevel
 onready var skill_description = $Panel/VBoxContainer/Stats/StatsContainer/SkillDescription
@@ -66,7 +65,7 @@ func _on_Upgrade_pressed():
 	slottable.try_to_upgrade()
 
 func _on_Equip_pressed():
-	pass # Replace with function body.
+	pass
 
 func update_stats():
 	pass
