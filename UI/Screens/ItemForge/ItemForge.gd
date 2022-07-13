@@ -2,6 +2,7 @@ extends Screen
 class_name ItemForgeUI
 
 signal get_parts
+signal upgrade_finished
 
 const ItemConfirmInspector = preload("res://UI/Inspectors/ItemInspector/ItemConfirmInspector/ItemConfirmInspector.tscn")
 const PartCompareInspector = preload("res://UI/Inspectors/PartInspector/PartConfirmInspector/PartCompareInspector/PartCompareInspector.tscn")
@@ -142,6 +143,7 @@ func _on_ButtonLeft_pressed():
 func _on_ButtonRight_pressed():
 	if upgrading:
 		end_upgrade()
+		emit_signal("upgrade_finished")
 	if !creating or (creating and selected_item == null):
 		return
 	elif !selecting_parts:
@@ -236,6 +238,7 @@ func end_upgrade():
 	button_left.text = "New Item"
 	button_right.text = ""
 	emit_signal("get_parts")
+	emit_signal("upgrade_finished")
 
 func replace_part(var part):
 	var split_part = parts.remove_slottable(part)

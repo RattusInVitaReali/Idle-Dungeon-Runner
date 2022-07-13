@@ -25,6 +25,7 @@ func _ready():
 	bottom_bar.connect("change_screen", self, "change_screen")
 	CombatProcessor.connect("zone_changed", self, "_on_zone_changed")
 	$InventoryScreen.connect("upgrade", self, "start_upgrade_process")
+	$ItemForgeScreen.connect("upgrade_finished", self, "end_upgrade_process")
 
 func move_camera():
 	$Camera2D.position = screen.position
@@ -61,3 +62,6 @@ func _on_zone_changed(_zone):
 func start_upgrade_process(var item):
 	change_screen(SCREEN.ITEM_FORGE)
 	$ItemForgeScreen.start_upgrade_process(item)
+
+func end_upgrade_process():
+	change_screen(SCREEN.INVENTORY)
