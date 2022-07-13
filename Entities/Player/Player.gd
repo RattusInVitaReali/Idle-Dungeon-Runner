@@ -14,7 +14,7 @@ func _ready():
 	base_stats["action_time_manual"] = 0.1
 	stats["action_time_auto"] = 0.3
 	stats["action_time_manual"] = 0.1
-	set_level(30)
+	set_level(0)
 	play("run")
 	ready = true
 	update_stats()
@@ -103,6 +103,7 @@ func fake_respawn():
 	dead = false
 	can_be_attacked = true
 	visible = true
+	set_hp(stats["max_hp"])
 	if CombatProcessor.in_combat:
 		play("idle")
 	else:

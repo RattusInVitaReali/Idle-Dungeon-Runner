@@ -22,6 +22,8 @@ var in_combat = false
 
 var auto_combat = true
 
+var breakthrough = true
+
 class DamageInfo:
 	
 	var attacker = null

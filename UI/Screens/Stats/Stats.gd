@@ -11,10 +11,11 @@ func _ready():
 	CombatProcessor.connect("player_spawned", self, "_on_player_spawned")
 
 func _on_player_spawned(_player):
-	player = _player
-	player.connect("stats_updated", self, "update_stats")
-	player.connect("hp_updated", self, "update_hp")
-	update_stats()
+	if _player != player:
+		player = _player
+		player.connect("stats_updated", self, "update_stats")
+		player.connect("hp_updated", self, "update_hp")
+		update_stats()
 
 func update_stats():
 	var stats = player.stats

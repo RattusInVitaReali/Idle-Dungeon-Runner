@@ -66,6 +66,11 @@ var next_action_ready = false
 var enemy = null
 var level = 0
 
+var yeeting = false
+var yeet_x = 15
+var yeet_y = -15
+const yeet_dist = 20
+const yeet_spread = PI
 
 func _ready():
 	connect("damage_enemy", CombatProcessor, "damage_enemy")
@@ -77,6 +82,10 @@ func _ready():
 
 func _process(delta):
 	next_action()
+	if yeeting:
+		position.x += yeet_x
+		position.y += yeet_y
+		rotate(0.5)
 
 func set_hp(hp):
 	stats.hp = hp
@@ -306,3 +315,8 @@ func _on_Entity_animation_finished():
 		play("idle")
 	elif animation == "die":
 		emit_signal("despawned")
+
+func yeet():
+	yeet_x = sin(Random.rng.randf_range(- yeet_spread / 2, yeet_spread / 2)) * yeet_dist
+	yeet_y = - cos(Random.rng.randf_range(- yeet_spread / 2, yeet_spread / 2)) * yeet_dist
+	yeeting = true
