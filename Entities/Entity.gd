@@ -88,7 +88,7 @@ func _process(delta):
 		rotate(0.5)
 
 func set_hp(hp):
-	stats.hp = hp
+	stats.hp = round(hp)
 	emit_signal("hp_updated")
 
 # On creation
@@ -274,6 +274,7 @@ func take_damage_info(damage_info : CombatProcessor.DamageInfo):
 	$DamageNumberManager.new_damage_number(damage_info)
 
 func take_damage(damage):
+	damage = round(damage)
 	if damage <= 0:
 		return
 	if stats.hp - damage > 0:
