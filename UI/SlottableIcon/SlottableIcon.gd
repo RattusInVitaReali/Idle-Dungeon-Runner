@@ -27,11 +27,21 @@ func set_slottable(var slottable : Slottable):
 				new_texture.rect_size = rect_size
 				add_child(new_texture)
 		Slottable.SLOTTABLE_TYPE.SKILL:
+			texture = slottable.border_texture
+			var new_texture = TextureRect.new()
+			new_texture.expand = true
+			new_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+			new_texture.show_behind_parent = true
+			new_texture.margin_left = 15
+			new_texture.margin_right = -15
+			new_texture.margin_top = 15
+			new_texture.margin_bottom = -15
+			new_texture.rect_size = Vector2(rect_size.x - 30, rect_size.y - 30)
 			if slottable.locked:
-				texture = Locked
-				modulate = slottable.icon_color
+				new_texture.texture = Locked
 			else:
-				continue
+				new_texture.texture = slottable.icon
+			add_child(new_texture)
 		_:
 			texture = slottable.icon
 			modulate = slottable.icon_color

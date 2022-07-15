@@ -9,7 +9,9 @@ onready var rarity = $Panel/VBoxContainer/Rarity
 onready var icon = $Panel/VBoxContainer/Image/Icon
 onready var stats_container = $Panel/VBoxContainer/Stats/StatsContainer
 onready var special = $Panel/VBoxContainer/Special
+onready var special_line = $Panel/VBoxContainer/Line4
 onready var tier_stars = $Panel/VBoxContainer/TierStars/TierStarsContainer
+onready var tier_line = $Panel/VBoxContainer/Line1
 
 var slot : Slot
 var slottable : Slottable
@@ -72,13 +74,21 @@ func update_stats():
 			stats_container.add_child(new_label)
 
 func update_special():
-	special.text = slottable.special
+	if slottable.special != "":
+		special.text = slottable.special
+	else:
+		special.hide()
+		special_line.hide()
 
 func update_tier_stars():
-	var i = slottable.tier;
-	while i > 0:
-		tier_stars.add_child(TierStar.instance())
-		i -= 1
+	if slottable.tier > 0:
+		var i = slottable.tier;
+		while i > 0:
+			tier_stars.add_child(TierStar.instance())
+			i -= 1
+	else:
+		tier_stars.hide()
+		tier_line.hide()
 
 func _on_TextureButton_pressed():
 	queue_free()

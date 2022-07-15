@@ -4,6 +4,12 @@ class_name Skill
 enum SKILL_TAGS { PHYSICAL, MAGIC, ATTACK, CAST_ON_SELF }
 enum UPGRADE_REQS { LOTUS, SKILL_POINT }
 
+
+const BorderTexture1 = preload("res://_Resources/skill_borders/Border3.png")
+const BorderTexture2 = preload("res://_Resources/skill_borders/Border4.png")
+const BorderTexture3 = preload("res://_Resources/skill_borders/Border5.png")
+const BorderTexture4 = preload("res://_Resources/skill_borders/Border6.png")
+
 const req_type_vars = {
 	UPGRADE_REQS.LOTUS : "SKILL_LOTUSES",
 	UPGRADE_REQS.SKILL_POINT : "SKILL_POINTS"
@@ -20,6 +26,8 @@ export (Texture) var skill_icon
 
 # Tags
 export (Array, SKILL_TAGS) var tags
+
+var border_texture = BorderTexture1
 
 var level = 1 setget set_level
 var cooldown
@@ -83,6 +91,7 @@ func try_to_upgrade():
 
 func set_level(_level):
 	level = _level
+	update_border()
 	emit_signal("slottable_updated")
 
 func level_up():
@@ -121,6 +130,18 @@ func update_cooldowns(auto_combat):
 			cooldown = auto_cooldown
 		else:
 			cooldown = manual_cooldown
+
+func update_border():
+	if level <= 5:
+		border_texture = BorderTexture1
+	elif level <= 10:
+		border_texture = BorderTexture2
+	elif level <= 15:
+		border_texture = BorderTexture3
+	else:
+		border_texture = BorderTexture4
+		
+
 
 func use_skill():
 	do_skill()

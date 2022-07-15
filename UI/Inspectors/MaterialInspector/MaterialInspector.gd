@@ -12,7 +12,8 @@ func update_special():
 	elif slottable.special_armor:
 		special.text = "Armor: " + slottable.special_armor
 	else:
-		special.text = ""
+		special.hide()
+		special_line.hide()
 
 func _on_Button1_pressed():
 	emit_signal("merge", slottable)
