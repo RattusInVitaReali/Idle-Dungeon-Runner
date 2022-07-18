@@ -12,7 +12,7 @@ onready var exp_tween = $VBoxContainer/Background/VBoxContainer/Stats/Bars/ExpBa
 onready var level_label = $VBoxContainer/Background/VBoxContainer/Stats/Level/Control/TextureRect/LevelLabel
 onready var effects = $VBoxContainer/Effects
 
-var player
+var player : Player
 
 func update_info(_player):
 	player = _player
@@ -22,6 +22,7 @@ func update_info(_player):
 	update_skills()
 	update_player_level()
 	update_player_exp()
+	connect_skills()
 
 func update_player_hp():
 	player_hp_bar.max_value = player.stats.max_hp
@@ -38,13 +39,19 @@ func update_player_hp():
 	player_hp_value.text = str(int(player.stats.hp)) + " HP"
 
 func update_skills():
-	for skill_icon in get_tree().get_nodes_in_group("skills"):
-		skill_icon.set_skill(null)
+	var skills = []
+	var i = 0;
 	for skill in player.get_skills():
-		for skill_icon in get_tree().get_nodes_in_group("skills"):
-			if skill_icon.skill == null:
-				skill_icon.set_skill(skill)
-				break
+		if skill.equipped and !skill.locked:
+			skills.append(skill)
+			i += 1
+	while i < 6:
+		skills.append(null)
+		i += 1
+	i = 0
+	for skill_icon in get_tree().get_nodes_in_group("skills"):
+		skill_icon.set_skill(skills[i])
+		i += 1
 
 func update_player_level():
 	level_label.text = str(player.level)
@@ -62,6 +69,10 @@ func update_player_exp():
 	)
 	exp_tween.start()
 	exp_value.text = str(int(player.current_level_exp())) + " / " + str(int(player.next_level_exp_required())) + " Exp"
+
+func connect_skills():
+	for skill in player.get_skills():
+		skill.connect("slottable_updated", self, "update_skills")
 
 func apply_effect(effect):
 	var new_effect = EffectIcon.instance()

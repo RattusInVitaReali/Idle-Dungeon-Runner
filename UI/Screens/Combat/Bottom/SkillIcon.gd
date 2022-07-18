@@ -38,13 +38,16 @@ func set_skill(_skill = null):
 	if skill != null:
 		skill.connect("tree_exited", self, "update_skill")
 		skill.connect("slottable_updated", self, "update_skill")
+	else:
+		$CooldownValue.visible = false
+		$CooldownTexture.value = 0
 	update_skill()
 
 func update_skill():
 	if skill == null:
 		$SkillIcon.texture_normal = lock
 		$SkillIcon.disabled = true
-	elif skill.equipped and !skill.locked:
+	elif !skill.locked:
 		$SkillIcon.texture_normal = skill.icon
 		$SkillIcon.disabled = false
 	else:

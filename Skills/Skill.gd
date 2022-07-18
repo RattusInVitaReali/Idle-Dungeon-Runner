@@ -4,7 +4,6 @@ class_name Skill
 enum SKILL_TAGS { PHYSICAL, MAGIC, ATTACK, CAST_ON_SELF }
 enum UPGRADE_REQS { LOTUS, SKILL_POINT }
 
-
 const BorderTexture1 = preload("res://_Resources/skill_borders/Border3.png")
 const BorderTexture2 = preload("res://_Resources/skill_borders/Border4.png")
 const BorderTexture3 = preload("res://_Resources/skill_borders/Border5.png")
@@ -35,8 +34,8 @@ var auto_cooldown
 var manual_cooldown
 var on_cd = false
 
-var locked = false
-var equipped = true
+var locked = true
+var equipped = false
 export var level_required = 0
 
 func _ready():
@@ -98,28 +97,20 @@ func level_up():
 	self.level += 1
 
 func check_unlock_level():
-	if attacker == null:
+	if attacker == null or !locked:
 		return
 	if attacker.level >= level_required:
-		unlock()
-		equip()
-	else:
-		lock()
-		unequip()
+		lock(false)
+		equip(true)
+		disconnect("level_changed", attacker, "check_unlock_level")
+
+func equip(var value):
+	equipped = value
 	emit_signal("slottable_updated")
 
-func equip():
-	equipped = true
-
-func unequip():
-	equipped = false
-
-func lock():
-	equipped = false
-	locked = true;
-
-func unlock():
-	locked = false
+func lock(var value):
+	locked = value
+	emit_signal("slottable_updated")
 
 func update_cooldowns(auto_combat):
 	# Apply cdr stat in the future

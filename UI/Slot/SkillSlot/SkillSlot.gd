@@ -1,7 +1,6 @@
 extends Slot
 class_name SkillSlot
 
-# Probably move this stuff to Skill
 const LockedBorder = preload("res://_Resources/skill_borders/Border3.png")
 const Lock = preload("res://_Resources/skill_icons/lock.png")
 
