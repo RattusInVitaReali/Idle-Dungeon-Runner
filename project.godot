@@ -54,6 +54,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/BottomBar/BottomBar.gd"
 }, {
+"base": "Control",
+"class": "BreakthroughButton",
+"language": "GDScript",
+"path": "res://UI/Screens/Combat/BreakthroughButton/BreakthroughButton.gd"
+}, {
 "base": "ItemPart",
 "class": "Chestplate",
 "language": "GDScript",
@@ -454,6 +459,7 @@ _global_script_class_icons={
 "Bloodsteel": "",
 "BodyArmor": "",
 "BottomBar": "",
+"BreakthroughButton": "",
 "Chestplate": "",
 "CombatBottom": "",
 "CombatModeButton": "",
