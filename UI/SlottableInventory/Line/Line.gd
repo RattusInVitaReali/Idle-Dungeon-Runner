@@ -21,5 +21,5 @@ func init(slottables : Array, slot_count = 6, slot_scene : PackedScene = Slot):
 		i += 1
 		slot.connect("inspector", self, "_on_inspector")
 
-func _on_inspector(slot, flags):
-	emit_signal("inspector", slot, flags)
+func _on_inspector(slot):
+	emit_signal("inspector", slot)

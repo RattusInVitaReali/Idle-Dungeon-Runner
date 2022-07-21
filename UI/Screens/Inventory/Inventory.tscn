@@ -197,6 +197,7 @@ margin_bottom = 688.0
 rect_min_size = Vector2( 0, 150 )
 
 [node name="Weapon1" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4" index="0" instance=ExtResource( 4 )]
+gear = true
 
 [node name="Margin1" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4" index="1"]
 margin_left = 154.0
@@ -208,6 +209,7 @@ size_flags_vertical = 3
 [node name="GearSlot2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4" index="2" instance=ExtResource( 4 )]
 margin_left = 172.0
 margin_right = 322.0
+gear = true
 
 [node name="Margin2" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4" index="3"]
 margin_left = 326.0
@@ -219,6 +221,7 @@ size_flags_vertical = 3
 [node name="Weapon2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4" index="4" instance=ExtResource( 4 )]
 margin_left = 344.0
 margin_right = 494.0
+gear = true
 
 [node name="SlottableInventory" parent="VBoxContainer/Screen/VBoxContainer" index="1" instance=ExtResource( 2 )]
 margin_top = 754.0

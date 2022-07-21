@@ -1,7 +1,7 @@
 extends Screen
 class_name PartForgeUI
 
-signal creation_finished
+signal get_materials
 
 const PartConfirmInspector = preload("res://UI/Inspectors/PartInspector/PartConfirmInspector/PartConfirmInspector.tscn")
 
@@ -33,7 +33,7 @@ func _ready():
 
 func add_material(mat):
 	if creating:
-		yield(self, "creation_finished")
+		yield(self, "get_materials")
 	materials.add_slottable(mat)
 
 func _on_part_type_selected(slot):
@@ -60,16 +60,16 @@ func update_part_info(part : ItemPart = null):
 		part_materials.text = ""
 		part_description.text = ""
 
-func _on_inspector(slot, flags):
+func _on_inspector(slot):
 	if !creating:
-		._on_inspector(slot, flags)
+		._on_inspector(slot)
 		inspector.connect("merge", self, "_on_merge")
 	elif selecting_material:
 		var slottable = slot.slottable
 		var new_part = CraftingManager.try_to_forge_part(selected_part, slottable)
 		if new_part != null:
-			var insp = part_confirm_inspector(new_part)
-			var response = yield(insp, "confirmed")
+			var inspector = part_confirm_inspector(new_part)
+			var response = yield(inspector, "confirmed")
 			if response:
 				LootManager.get_item(CraftingManager.actually_forge_part(selected_part, slottable))
 				new_part.queue_free()
@@ -127,7 +127,7 @@ func end_creation():
 	button_right.text = ""
 	if selected_part_slot != null:
 		selected_part_slot.deselect()
-	emit_signal("creation_finished")
+	emit_signal("get_materials")
 
 func start_material_selection():
 	selecting_material = true

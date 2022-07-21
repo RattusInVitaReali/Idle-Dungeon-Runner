@@ -103,6 +103,7 @@ func fake_respawn():
 	dead = false
 	can_be_attacked = true
 	visible = true
+	set_hp(stats["max_hp"])
 	if CombatProcessor.in_combat:
 		play("idle")
 	else:

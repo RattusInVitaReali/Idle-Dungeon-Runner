@@ -81,6 +81,8 @@ func update_inventory(var reorder = false):
 	var lines = []
 	var line = []
 	var i = 0
+	if get_items_container() == null:
+		return
 	for slottable in get_items_container().get_children():
 		if slottable.quantity == 0: # In case something gets freed next frame
 			continue
@@ -101,5 +103,5 @@ func update_inventory(var reorder = false):
 func get_items_container():
 	return $Items
 
-func _on_inspector(slot, flags):
-	emit_signal("inspector", slot, flags)
+func _on_inspector(slot):
+	emit_signal("inspector", slot)

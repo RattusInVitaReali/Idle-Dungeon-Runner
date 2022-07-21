@@ -8,6 +8,8 @@ signal exited_combat
 signal entered_auto_combat
 signal entered_manual_combat
 
+signal breakthrough_updated
+
 signal monster_spawned
 signal monster_died
 
@@ -21,6 +23,8 @@ var Player
 var in_combat = false
 
 var auto_combat = true
+
+var breakthrough = true setget set_breakthrough
 
 class DamageInfo:
 	
@@ -119,3 +123,7 @@ func enter_auto_combat():
 
 func change_zone(zone):
 	emit_signal("zone_changed", zone)
+
+func set_breakthrough(br):
+	breakthrough = br
+	emit_signal("breakthrough_updated")

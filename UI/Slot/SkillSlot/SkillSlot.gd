@@ -1,11 +1,7 @@
 extends Slot
 class_name SkillSlot
 
-const BorderTexture1 = preload("res://_Resources/skill_borders/Border3.png")
-const BorderTexture2 = preload("res://_Resources/skill_borders/Border4.png")
-const BorderTexture3 = preload("res://_Resources/skill_borders/Border5.png")
-const BorderTexture4 = preload("res://_Resources/skill_borders/Border6.png")
-const SkillFrame = preload("res://_Resources/skill_borders/Border3.png")
+const LockedBorder = preload("res://_Resources/skill_borders/Border3.png")
 const Lock = preload("res://_Resources/skill_icons/lock.png")
 
 onready var skill_name = $NameBackground/Name
@@ -16,18 +12,6 @@ func set_slottable(_slottable):
 		slottable.connect("slottable_updated", self, "update_skill")
 	update_skill()
 
-func set_border():
-	if slottable == null:
-		texture = BorderTexture1
-	elif slottable.level <= 5:
-		texture = BorderTexture1
-	elif slottable.level <= 10:
-		texture = BorderTexture2
-	elif slottable.level <= 15:
-		texture = BorderTexture3
-	else:
-		texture = BorderTexture4
-
 func set_icon():
 	$SlottableIcon.set_slottable(slottable)
 	if slottable == null:
@@ -37,11 +21,17 @@ func set_icon():
 	else:
 		skill_name.text = "Locked"
 
-func update_skill():
-	set_border()
-	set_icon()
+func set_equipped():
+	if slottable != null:
+		$Equipped.visible = slottable.equipped
+	else:
+		$Equipped.hide()
 
-func _on_Icon_pressed():
+func update_skill():
+	set_icon()
+	set_equipped()
+
+func _on_Button_pressed():
 	if slottable != null:
 		if !slottable.locked:
 			inspector()

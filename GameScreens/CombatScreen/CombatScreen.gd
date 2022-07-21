@@ -23,13 +23,11 @@ var global_speed = 300
 var monster_spawn_pos_x = -500
 var player_spawn_pos_x = 1020
 
-var deaths = 0
-var timeout = 0
-const timeout_per_death = 2
+var timeout = 2
 
-var player = null
-var monster = null
-var zone = null
+var player : Player = null
+var monster : Monster = null
+var zone : Zone = null
 
 onready var image_1 = $Map/Image1
 onready var image_2 = $Map/Image2
@@ -77,21 +75,29 @@ func spawn_monster():
 func change_zone(new_zone):
 	if (CombatProcessor.in_combat):
 		CombatProcessor.exit_combat()
-	if CombatProcessor.Monster != null:
-		CombatProcessor.Monster.queue_free()
+	if monster != null:
+		yeet_monster()
 	if zone != null:
-		disconnect("monster_despawned", zone, "_on_monster_despawned")
 		zone.disconnect("quest_changed", self, "_on_quest_changed")
+		disconnect("player_despawned", zone, "_on_player_died")
 		zone.activate_quest(false)
 	zone = new_zone
-	connect("monster_despawned", zone, "_on_monster_despawned")
 	zone.connect("quest_changed", self, "_on_quest_changed")
+	connect("player_despawned", zone, "_on_player_died")
 	load_images()
 	$Combat.zone_changed(zone)
 	zone.activate_quest(true)
 	update_quest(zone.quest)
 	emit_signal("zone_changed")
 	new_combat()
+
+func yeet_monster():
+	if monster != null:
+		yield(get_tree().create_timer(timeout / 2), "timeout")
+		monster.yeet()
+		yield(self, "player_spawned")
+		monster.queue_free()
+		monster = null
 
 func _on_quest_changed(quest):
 	quest.active = true
@@ -100,30 +106,24 @@ func _on_quest_changed(quest):
 func update_quest(quest):
 	$Combat.quest_changed(quest)
 
-func increment_timeout():
-	deaths += 1
-	timeout += timeout_per_death
-
-func reset_timeout():
-	deaths = 0
-	timeout = 0
-
 func _on_player_despawned():
 	emit_signal("player_despawned")
-	increment_timeout()
+	yeet_monster()
 	respawn_player()
 
 func _on_monster_despawned():
+	yield(zone, "zone_updated") # Hack to force zone to process the signal first
 	emit_signal("monster_despawned")
+	monster = null
 	new_combat()
 
 func respawn_player():
 	yield(get_tree().create_timer(timeout), "timeout")
-	CombatProcessor.Player.fake_respawn()
+	player.fake_respawn()
 	emit_signal("player_spawned", player)
+	new_combat()
 
 func new_combat():
-	reset_timeout()
 	spawn_monster()
 
 func load_images():
@@ -141,9 +141,9 @@ var f2_on_top = true
 var f1_on_top = false
 
 func _process(delta):
-	if not CombatProcessor.in_combat and !CombatProcessor.Player.dead:
+	if not CombatProcessor.in_combat and !player.dead:
 		move_monster(delta)
-	if not CombatProcessor.in_combat and !CombatProcessor.Player.dead:
+	if not CombatProcessor.in_combat and !player.dead:
 		move_map(delta)
 
 func move_map(delta):

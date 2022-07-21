@@ -8,7 +8,7 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource( 1 )
-chance = 0.075
+chance = 1.0
 item_type = ExtResource( 4 )
 parts = [ ExtResource( 2 ), ExtResource( 3 ) ]
 custom_name = "Bandit Sword"

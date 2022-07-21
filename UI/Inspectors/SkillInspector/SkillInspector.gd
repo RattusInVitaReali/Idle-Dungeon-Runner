@@ -1,17 +1,12 @@
 extends Inspector
 class_name SkillInspector
 
-const BorderTexture1 = preload("res://_Resources/skill_borders/Border3.png")
-const BorderTexture2 = preload("res://_Resources/skill_borders/Border4.png")
-const BorderTexture3 = preload("res://_Resources/skill_borders/Border5.png")
-const BorderTexture4 = preload("res://_Resources/skill_borders/Border6.png")
-
 const UpgradeRequirement = preload("res://UI/Inspectors/SkillInspector/UpgradeRequirement/UpgradeRequirement.tscn")
 
-onready var actual_icon = $Panel/VBoxContainer/Image/Icon/ActualIcon
 onready var skill_tags = $Panel/VBoxContainer/SkillTags
 onready var skill_level = $Panel/VBoxContainer/SkillLevel
 onready var skill_description = $Panel/VBoxContainer/Stats/StatsContainer/SkillDescription
+onready var equip_button = $Panel/VBoxContainer/Buttons/Equip/Label
 onready var upgrade_req_container = $Panel/VBoxContainer/HBoxContainer/UpgradeReqContainter
 
 
@@ -22,21 +17,12 @@ func set_slottable(_slottable):
 	update_description()
 	update_skill()
 
-func get_border_texture():
-	if slottable.level <= 5:
-		return BorderTexture1
-	elif slottable.level <= 10:
-		return BorderTexture2
-	elif slottable.level <= 15:
-		return BorderTexture3
-	else:
-		return BorderTexture4
-
 func update_skill():
 	update_level()
 	update_description()
 	update_icon()
 	update_upgrade_reqs()
+	update_button()
 
 func update_tags():
 	var text = ""
@@ -62,11 +48,18 @@ func update_upgrade_reqs():
 			upgrade_req_container.add_child(new_req)
 			new_req.set_requirement(req, reqs[req])
 
+func update_button():
+	if slottable.equipped:
+		equip_button.text = "Unequip"
+	else:
+		equip_button.text = "Equip"
+
 func _on_Upgrade_pressed():
 	slottable.try_to_upgrade()
 
 func _on_Equip_pressed():
-	pass # Replace with function body.
+	slottable.equip(!slottable.equipped)
+	._on_TextureButton_pressed()
 
 func update_stats():
 	pass

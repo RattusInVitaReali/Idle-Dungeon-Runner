@@ -66,6 +66,11 @@ var next_action_ready = false
 var enemy = null
 var level = 0
 
+var yeeting = false
+var yeet_x = 15
+var yeet_y = -15
+const yeet_dist = 20
+const yeet_spread = PI
 
 func _ready():
 	connect("damage_enemy", CombatProcessor, "damage_enemy")
@@ -77,9 +82,13 @@ func _ready():
 
 func _process(delta):
 	next_action()
+	if yeeting:
+		position.x += yeet_x
+		position.y += yeet_y
+		rotate(0.5)
 
 func set_hp(hp):
-	stats.hp = hp
+	stats.hp = round(hp)
 	emit_signal("hp_updated")
 
 # On creation
@@ -107,7 +116,7 @@ func equip_item(item : Item):
 		if item.type == _item.type:
 			if item.type == CraftingManager.ITEM_TYPE.WEAPON and weapon_count < 2:
 				continue
-			unequip_item(item)
+			unequip_item(_item)
 			break
 	$Items.add_child(item)
 	item.connect("slottable_updated", self, "update_stats")
@@ -265,6 +274,7 @@ func take_damage_info(damage_info : CombatProcessor.DamageInfo):
 	$DamageNumberManager.new_damage_number(damage_info)
 
 func take_damage(damage):
+	damage = round(damage)
 	if damage <= 0:
 		return
 	if stats.hp - damage > 0:
@@ -306,3 +316,8 @@ func _on_Entity_animation_finished():
 		play("idle")
 	elif animation == "die":
 		emit_signal("despawned")
+
+func yeet():
+	yeet_x = sin(Random.rng.randf_range(- yeet_spread / 2, yeet_spread / 2)) * yeet_dist
+	yeet_y = - cos(Random.rng.randf_range(- yeet_spread / 2, yeet_spread / 2)) * yeet_dist
+	yeeting = true

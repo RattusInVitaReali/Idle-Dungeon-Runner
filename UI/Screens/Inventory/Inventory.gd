@@ -23,27 +23,26 @@ var player = null
 var attributes_init = false
 
 func _ready():
-	print_stray_nodes()
 	all_slots = weapon_slots.duplicate()
 	for type in armor_slots:
 		all_slots.append(armor_slots[type])
 	for slot in all_slots:
 		slot.connect("inspector", self, "_on_inspector")
-		slot.gear = true;
 	CombatProcessor.connect("player_spawned", self, "_on_player_spawned")
 	items.connect("inspector", self, "_on_inspector")
 
 func _on_player_spawned(_player):
-	player = _player
-	player.connect("items_changed", self, "_on_items_changed")
-	player.connect("stats_updated", self, "update_attributes")
-	update_attributes()
+	if _player != player:
+		player = _player
+		player.connect("items_changed", self, "_on_items_changed")
+		player.connect("stats_updated", self, "update_attributes")
+		update_attributes()
 
 func add_item(item):
 	items.add_slottable(item)
 
-func _on_inspector(slottable, flags):
-	var inspector = ._on_inspector(slottable, flags)
+func _on_inspector(slottable):
+	var inspector = ._on_inspector(slottable)
 	if inspector != null:
 		inspector.connect("equip", self, "_on_equip")
 		inspector.connect("unequip", self, "_on_unequip")
