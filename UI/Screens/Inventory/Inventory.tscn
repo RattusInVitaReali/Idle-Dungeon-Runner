@@ -86,7 +86,6 @@ columns = 3
 [node name="Slot" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="0" instance=ExtResource( 4 )]
 margin_right = 159.0
 margin_bottom = 165.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 gear = true
 
@@ -94,7 +93,6 @@ gear = true
 margin_left = 169.0
 margin_right = 328.0
 margin_bottom = 165.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 gear = true
 
@@ -102,7 +100,6 @@ gear = true
 margin_left = 338.0
 margin_right = 497.0
 margin_bottom = 165.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 gear = true
 
@@ -110,7 +107,6 @@ gear = true
 margin_top = 175.0
 margin_right = 159.0
 margin_bottom = 340.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 gear = true
 
@@ -119,7 +115,6 @@ margin_left = 169.0
 margin_top = 175.0
 margin_right = 328.0
 margin_bottom = 340.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 gear = true
 
@@ -128,7 +123,6 @@ margin_left = 338.0
 margin_top = 175.0
 margin_right = 497.0
 margin_bottom = 340.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 gear = true
 
@@ -136,7 +130,6 @@ gear = true
 margin_top = 350.0
 margin_right = 159.0
 margin_bottom = 515.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 gear = true
 
@@ -145,7 +138,6 @@ margin_left = 169.0
 margin_top = 350.0
 margin_right = 328.0
 margin_bottom = 515.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 gear = true
 
@@ -154,7 +146,6 @@ margin_left = 338.0
 margin_top = 350.0
 margin_right = 497.0
 margin_bottom = 515.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 gear = true
 
@@ -162,7 +153,6 @@ gear = true
 margin_top = 525.0
 margin_right = 159.0
 margin_bottom = 690.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 gear = true
 
@@ -171,7 +161,6 @@ margin_left = 169.0
 margin_top = 525.0
 margin_right = 328.0
 margin_bottom = 690.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 gear = true
 
@@ -180,7 +169,6 @@ margin_left = 338.0
 margin_top = 525.0
 margin_right = 497.0
 margin_bottom = 690.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 gear = true
 

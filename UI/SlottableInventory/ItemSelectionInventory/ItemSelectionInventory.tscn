@@ -5,5 +5,5 @@
 
 [node name="ItemSelectionInventory" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-line_size = 3
+columns = 3
 allow_sorting = false

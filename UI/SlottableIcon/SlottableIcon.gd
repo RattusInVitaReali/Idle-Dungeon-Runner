@@ -23,7 +23,7 @@ func set_slottable(var slottable : Slottable):
 				new_texture.texture = part.item_icon
 				new_texture.modulate = part.icon_color
 				new_texture.expand = true
-				new_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+				new_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 				new_texture.rect_size = rect_size
 				add_child(new_texture)
 		Slottable.SLOTTABLE_TYPE.SKILL:

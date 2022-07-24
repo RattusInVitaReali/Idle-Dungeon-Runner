@@ -3,13 +3,15 @@ class_name SlottableInventory
 
 signal inspector
 
-const Line = preload("res://UI/SlottableInventory/Line/Line.tscn")
-export var Slot = preload("res://UI/Slot/Slot.tscn")
+export var SlotScene = preload("res://UI/Slot/Slot.tscn")
 
-onready var lines_container = $ScrollContainer/VBoxContainer
-
-export var line_size = 6
+export var columns = 6
 export var allow_sorting = true
+
+onready var container = $ScrollContainer/GridContainer
+
+func _ready():
+	container.columns = columns
 
 func add_slottable(slottable : Slottable, update = true):
 	var added = false
@@ -73,32 +75,19 @@ func reorder_items():
 
 
 func update_inventory(var reorder = false):
-	if reorder and allow_sorting:
+	if allow_sorting and reorder:
 		reorder_items()
-	for line in lines_container.get_children():
-		lines_container.remove_child(line)
-		line.queue_free()
-	var lines = []
-	var line = []
-	var i = 0
+	for slot in container.get_children():
+		slot.queue_free()
 	if get_items_container() == null:
 		return
 	for slottable in get_items_container().get_children():
 		if slottable.quantity == 0: # In case something gets freed next frame
 			continue
-		line.append(slottable)
-		i += 1
-		if i == line_size:
-			lines.append(line.duplicate())
-			line = []
-			i = 0
-	if i != 0:
-		lines.append(line)
-	for slottable_list in lines:
-		var new_line = Line.instance()
-		lines_container.add_child(new_line)
-		new_line.init(slottable_list, line_size, Slot)
-		new_line.connect("inspector", self, "_on_inspector")
+		var slot = SlotScene.instance()
+		container.add_child(slot)
+		slot.set_slottable(slottable)
+		slot.connect("inspector", self, "_on_inspector")
 
 func get_items_container():
 	return $Items

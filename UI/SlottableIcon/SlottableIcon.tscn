@@ -8,4 +8,5 @@ anchor_bottom = 0.068
 margin_right = 0.399994
 margin_bottom = -0.560013
 expand = true
+stretch_mode = 6
 script = ExtResource( 1 )
