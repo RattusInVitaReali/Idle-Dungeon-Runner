@@ -9,12 +9,13 @@ onready var items = $VBoxContainer/Screen/VBoxContainer/SlottableInventory
 onready var attributes_container = $VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/AttributesBackground/ScrollContainer/AttributeContainer
 
 onready var weapon_slots = [
-	$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4/Weapon1,
-	$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line4/Weapon2
+	$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Weapon1,
+	$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Weapon2
 ]
 
 onready var armor_slots = {
-	CraftingManager.ITEM_SUBTYPE.BODY_ARMOR: $VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/VBoxContainer/Line2/BodyArmor
+	CraftingManager.ITEM_SUBTYPE.BODY_ARMOR: 
+		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/BodyArmor
 }
 
 onready var all_slots
