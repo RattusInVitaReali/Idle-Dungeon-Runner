@@ -102,7 +102,7 @@ func check_unlock_level():
 	if attacker.level >= level_required:
 		lock(false)
 		equip(true)
-		disconnect("level_changed", attacker, "check_unlock_level")
+		attacker.disconnect("level_changed", self, "check_unlock_level")
 
 func equip(var value):
 	equipped = value

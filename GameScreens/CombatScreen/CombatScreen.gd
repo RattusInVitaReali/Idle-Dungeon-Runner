@@ -76,7 +76,7 @@ func change_zone(new_zone):
 	if (CombatProcessor.in_combat):
 		CombatProcessor.exit_combat()
 	if monster != null:
-		yeet_monster()
+		monster.queue_free()
 	if zone != null:
 		zone.disconnect("quest_changed", self, "_on_quest_changed")
 		disconnect("player_despawned", zone, "_on_player_died")
