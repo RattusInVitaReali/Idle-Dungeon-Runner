@@ -4,17 +4,17 @@ class_name Player
 signal items_changed
 signal exp_changed
 
-var experience = 0 setget set_exp
+const save_path = "user://player.tscn"
+
+export var experience = 0 setget set_exp
 
 func _ready():
+	if save_path != "":
+		Saver.save(self)
 	CombatProcessor.connect("entered_auto_combat", self, "_on_enter_auto_combat")
 	CombatProcessor.connect("entered_manual_combat", self, "_on_enter_manual_combat")
 	CombatProcessor.connect("monster_died", self, "_on_monster_died")
-	base_stats["action_time_auto"] = 0.3
-	base_stats["action_time_manual"] = 0.1
-	stats["action_time_auto"] = 0.3
-	stats["action_time_manual"] = 0.1
-	set_level(0)
+	set_level(level)
 	play("run")
 	ready = true
 	update_stats()
@@ -108,3 +108,15 @@ func fake_respawn():
 		play("idle")
 	else:
 		play("run")
+
+func load():
+	for item in $Items.get_children():
+		item.load()
+	update_stats()
+
+func save_and_exit():
+	var packed_scene = PackedScene.new()
+	for item in Saver.get_all_children($Items):
+		item.owner = self
+	packed_scene.pack(self)
+	ResourceSaver.save(save_path, packed_scene)

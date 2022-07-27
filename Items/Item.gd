@@ -12,6 +12,7 @@ export (int) var base_durability
 export (float) var durability_multi
 
 export (String) var description
+export (String) var custom_name
 
 export var base_stats = {
 	"power": 0, 
@@ -34,7 +35,6 @@ var stats = base_stats.duplicate()
 var durability
 
 var special = ""
-var custom_name = ""
 
 func _ready():
 	icon = base_icon
@@ -83,7 +83,7 @@ static func _sort_type(a, b):
 		return true
 	return false
 
-func add_part(part : ItemPart):
+func add_part(part):
 	for child_part in get_children():
 		if part.type == child_part.type:
 			tier -= child_part.tier
@@ -200,3 +200,12 @@ func from_lootable(lootable):
 	create(_parts)
 	custom_name(lootable.custom_name)
 	return self
+
+func load():
+	var parts = []
+	for part in get_children():
+		remove_child(part)
+		parts.append(part)
+	for part in parts:
+		part.load()
+		add_part(part)

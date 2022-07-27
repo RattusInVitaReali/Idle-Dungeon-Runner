@@ -7,14 +7,14 @@ signal slottable_updated
 
 var Slottable
 
-var icon
-var icon_color = Color(1, 1, 1, 1)
-var slottable_name
-var quantity = 1
+export (Texture) var icon
+export (Color) var icon_color = Color(1, 1, 1, 1)
+export (String) var slottable_name
+export (int) var quantity = 1
 export (SLOTTABLE_TYPE) var slottable_type
 
-var rarity = CraftingManager.RARITY.BASIC
-var tier = 0
+export (CraftingManager.RARITY) var rarity = CraftingManager.RARITY.BASIC
+export (int) var tier = 0
 
 func _ready():
 	Slottable = load("res://Slottable/Slottable.tscn")
@@ -47,3 +47,6 @@ func special_copy(new_slottable):
 
 func same_as(slottable : Slottable):
 	return false
+
+func load():
+	pass

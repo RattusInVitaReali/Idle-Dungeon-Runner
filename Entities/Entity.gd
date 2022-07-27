@@ -22,6 +22,8 @@ export var base_stats = {
 	"crit_chance": 0.05, 
 	"crit_multi": 1.5, 
 	"action_time": 0.3, 
+	"action_time_manual": 0.1,
+	"action_time_auto": 0.3,
 	"manual_cd_multi": 0.33 
 }
 
@@ -57,6 +59,8 @@ export var base_attributes = {
 	"magic_penetration": 0, 
 }
 
+export var level = 0
+
 var stats = base_stats.duplicate()
 var attributes = base_attributes.duplicate()
 
@@ -64,7 +68,6 @@ var dead = false
 var can_be_attacked = true
 var next_action_ready = false
 var enemy = null
-var level = 0
 
 var yeeting = false
 var yeet_x = 15
@@ -138,7 +141,7 @@ func update_skill_cooldowns(auto_combat):
 		skill.update_cooldowns(auto_combat)
 
 func update_stats():
-	if ready: # No idea why you cant yield(ready), but this works
+	if ready:
 		reset_stats()
 		apply_level_attributes()
 		apply_item_stats()

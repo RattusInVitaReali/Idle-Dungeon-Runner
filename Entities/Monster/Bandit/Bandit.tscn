@@ -10,18 +10,6 @@
 [node name="Bandit" instance=ExtResource( 2 )]
 frames = ExtResource( 1 )
 animation = "idle"
-base_stats = {
-"action_time": 0.3,
-"crit_chance": 0.05,
-"crit_multi": 1.5,
-"hp": 100,
-"magic_damage": 0,
-"magic_protection": 20,
-"manual_cd_multi": 0.33,
-"max_hp": 100,
-"phys_damage": 10,
-"phys_protection": 20
-}
 base_name = "Bandit"
 base_loot = [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ]
 monster_types = [ 0 ]

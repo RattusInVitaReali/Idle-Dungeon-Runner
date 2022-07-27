@@ -554,6 +554,7 @@ LootManager="*res://Autoload/LootManager.gd"
 Random="*res://Autoload/Random.gd"
 GlobalResources="*res://Autoload/GlobalResources.gd"
 Progression="*res://Autoload/Progression.gd"
+Saver="*res://Autoload/Saver.gd"
 
 [debug]
 

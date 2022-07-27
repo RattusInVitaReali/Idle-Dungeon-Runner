@@ -143,6 +143,7 @@ autowrap = true
 [node name="SlottableInventory" parent="VBoxContainer/Screen/VBoxContainer" index="1" instance=ExtResource( 3 )]
 margin_top = 504.0
 margin_bottom = 1168.0
+save_path = "user://part_forge.tscn"
 
 [node name="MaterialsDimm" type="Panel" parent="VBoxContainer/Screen/VBoxContainer/SlottableInventory" index="2"]
 visible = false

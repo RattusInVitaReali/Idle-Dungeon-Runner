@@ -5,15 +5,3 @@
 
 [node name="Monster" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
-base_stats = {
-"action_time": 0.3,
-"crit_chance": 0.05,
-"crit_multi": 1.5,
-"hp": 100,
-"magic_damage": 0,
-"magic_protection": 20,
-"manual_cd_multi": 0.33,
-"max_hp": 100,
-"phys_damage": 10,
-"phys_protection": 20
-}

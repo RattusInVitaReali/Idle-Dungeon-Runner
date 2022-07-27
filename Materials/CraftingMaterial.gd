@@ -4,7 +4,7 @@ class_name CraftingMaterial
 enum MATERIAL_TYPE { GEM, METAL, WOOD, FABRIC }
 enum MATERIAL_WEIGHT { VERY_LIGHT, LIGHT, MEDIUM, HEAVY, VERY_HEAVY }
 
-var mat
+export (Resource) var mat
 
 var prefix
 var special_weapon
@@ -94,3 +94,6 @@ func try_to_merge():
 	quantity(quantity % 5)
 	emit_signal("slottable_updated")
 	return new_mat
+
+func load():
+	set_mat(mat, tier, quantity)

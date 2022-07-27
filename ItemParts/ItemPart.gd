@@ -50,7 +50,7 @@ export var base_stats = {
 var stats = base_stats.duplicate()
 
 var durability
-var mat : CraftingMaterial
+var mat
 var special = ""
 
 func _ready():
@@ -140,3 +140,9 @@ func try_to_merge():
 	quantity(quantity % 5)
 	emit_signal("slottable_updated")
 	return new_part
+
+func load():
+	for child in get_children():
+		remove_child(child)
+		child.load()
+		set_mat(child)

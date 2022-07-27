@@ -1,7 +1,7 @@
 extends GameScreen
 class_name CombatScreen
 
-const Player = preload("res://Entities/Player/Player.tscn")
+const PlayerScene = preload("res://Entities/Player/Player.tscn")
 
 signal monster_spawned
 signal monster_arrived
@@ -45,7 +45,12 @@ func _ready():
 	spawn_player()
 
 func spawn_player():
-	player = Player.instance()
+	player = PlayerScene.instance()
+	if Player.save_path != "":
+		if ResourceLoader.exists(Player.save_path):
+			player.queue_free()
+			player = load(Player.save_path).instance()
+			player.load()
 	add_child(player)
 	player.connect("despawned", self, "_on_player_despawned")
 	player.connect("level_changed", self, "_on_player_level_changed")

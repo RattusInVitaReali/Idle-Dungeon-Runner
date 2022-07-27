@@ -8,10 +8,18 @@ export var SlotScene = preload("res://UI/Slot/Slot.tscn")
 export var columns = 6
 export var allow_sorting = true
 
+export var save_path = ""
+
 onready var container = $ScrollContainer/GridContainer
 
+var ready = false
+
 func _ready():
+	if save_path != "":
+		Saver.save(self)
 	container.columns = columns
+	load_items()
+	ready = true
 
 func add_slottable(slottable : Slottable, update = true):
 	var added = false
@@ -60,21 +68,22 @@ static func _sort_tier(a, b):
 	return false
 
 func reorder_items():
+	if !ready:
+		return
 	var items = get_items_container().get_children()
 	for item in items:
 		item.disconnect("tree_exited", self, "update_inventory")
+	for item in get_items_container().get_children():
+		get_items_container().remove_child(item)
 	items.sort_custom(self, "_sort_tier")
 	items.sort_custom(self, "_sort_name")
 	items.sort_custom(self, "_sort_rarity")
-	for item in get_items_container().get_children():
-		get_items_container().remove_child(item)
 	for item in items:
 		get_items_container().add_child(item)
 	for item in items:
 		item.connect("tree_exited", self, "update_inventory")
 
-
-func update_inventory(var reorder = false):
+func update_inventory(var reorder = true):
 	if allow_sorting and reorder:
 		reorder_items()
 	for slot in container.get_children():
@@ -94,3 +103,26 @@ func get_items_container():
 
 func _on_inspector(slot):
 	emit_signal("inspector", slot)
+
+func load_items():
+	if save_path != "":
+		if ResourceLoader.exists(save_path):
+			var items_scene = load(save_path)
+			var items = items_scene.instance()
+			for item in items.get_children():
+				items.remove_child(item)
+				$Items.add_child(item)
+				item.load()
+				item.connect("tree_exited", self, "update_inventory")
+			update_inventory()
+
+func save_and_exit():
+	for item in get_items_container().get_children():
+		item.disconnect("tree_exited", self, "update_inventory")
+	if $Items.get_child_count() != 0 and save_path != "":
+		for child in Saver.get_all_children($Items):
+			if child != $Items:
+				child.owner = $Items
+		var packed_scene = PackedScene.new()
+		packed_scene.pack($Items)
+		ResourceSaver.save(save_path, packed_scene)

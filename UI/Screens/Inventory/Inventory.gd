@@ -37,6 +37,7 @@ func _on_player_spawned(_player):
 		player = _player
 		player.connect("items_changed", self, "_on_items_changed")
 		player.connect("stats_updated", self, "update_attributes")
+		update_equipped()
 		update_attributes()
 
 func add_item(item):

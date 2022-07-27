@@ -13,7 +13,6 @@ special_armor = "Bleeding against you is half as effective."
 type = 1
 rarity = 3
 weight = 2
-tier = 0
 durability = 400
 stats = {
 "armor": 5,

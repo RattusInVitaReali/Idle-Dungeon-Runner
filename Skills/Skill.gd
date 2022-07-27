@@ -28,14 +28,15 @@ export (Array, SKILL_TAGS) var tags
 
 var border_texture = BorderTexture1
 
-var level = 1 setget set_level
+export var level = 1 setget set_level
+
 var cooldown
 var auto_cooldown
 var manual_cooldown
 var on_cd = false
 
-var locked = true
-var equipped = false
+export var locked = true
+export var equipped = false
 export var level_required = 0
 
 func _ready():
