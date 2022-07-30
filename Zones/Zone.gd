@@ -28,9 +28,12 @@ var player : Player = null
 export var locked = false
 
 func _ready():
-	set_level(save_level)
+	max_level_reached = max(max_level_reached, min_level)
+	set_level(max(save_level, min_level))
 	if unlock_signal != "" and locked:
 		Progression.connect(unlock_signal, self, "unlock")
+	else:
+		locked = false
 	load_quest()
 
 func set_level(_level):

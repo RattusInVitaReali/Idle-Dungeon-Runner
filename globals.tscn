@@ -5,4 +5,3 @@
 [node name="GlobalResources" type="Node"]
 script = ExtResource( 1 )
 SKILL_LOTUSES = 4
-SKILL_POINTS = 0

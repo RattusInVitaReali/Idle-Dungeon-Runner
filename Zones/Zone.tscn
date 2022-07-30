@@ -4,3 +4,4 @@
 
 [node name="Zone" type="Node2D"]
 script = ExtResource( 1 )
+locked = true

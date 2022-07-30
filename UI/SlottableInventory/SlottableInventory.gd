@@ -16,9 +16,9 @@ var ready = false
 
 func _ready():
 	if save_path != "":
-		Saver.save(self)
+		Saver.save_on_exit(self)
 	container.columns = columns
-	load_items()
+	self.load()
 	ready = true
 
 func add_slottable(slottable : Slottable, update = true):
@@ -27,6 +27,7 @@ func add_slottable(slottable : Slottable, update = true):
 		if _slottable.slottable_type == slottable.slottable_type:
 			if _slottable.same_as(slottable):
 				_slottable.add_quantity(slottable.quantity)
+				slottable.queue_free()
 				added = true
 				break
 	if !added:
@@ -104,7 +105,7 @@ func get_items_container():
 func _on_inspector(slot):
 	emit_signal("inspector", slot)
 
-func load_items():
+func load():
 	if save_path != "" and ResourceLoader.exists(save_path):
 		var items_scene = load(save_path)
 		var items = items_scene.instance()

@@ -202,6 +202,7 @@ func from_lootable(lootable):
 	return self
 
 func load():
+	tier = 0
 	var parts = []
 	for part in get_children():
 		remove_child(part)

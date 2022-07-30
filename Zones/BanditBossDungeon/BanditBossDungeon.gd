@@ -1,7 +1,11 @@
 extends Zone
 
+# Kinda hacky but works for now - doesn't call the overriden function which is bad, fix sometime
 func _on_monster_despawned():
-	._on_monster_despawned()
+	print("Wtf")
+	zone_floor += 1
 	max_level = level + 5
 	min_level = max_level
-	self.level = min_level
+	max_level_reached = max_level
+	set_level(min_level)
+	emit_signal("zone_updated")

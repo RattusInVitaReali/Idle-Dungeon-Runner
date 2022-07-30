@@ -24,7 +24,7 @@ const zones = [
 onready var zone_infos = $VBoxContainer/Screen/VBoxContainer/ScrollContainer/ZoneInfos
 
 func _ready():
-	Saver.save(self)
+	Saver.save_on_exit(self)
 	self.load()
 	yield(get_parent(), "ready")
 	starter_zone()

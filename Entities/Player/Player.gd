@@ -9,8 +9,7 @@ const save_path = "user://player.tscn"
 export var experience = 0 setget set_exp
 
 func _ready():
-	if save_path != "":
-		Saver.save(self)
+	Saver.save_on_exit(self)
 	CombatProcessor.connect("entered_auto_combat", self, "_on_enter_auto_combat")
 	CombatProcessor.connect("entered_manual_combat", self, "_on_enter_manual_combat")
 	CombatProcessor.connect("monster_died", self, "_on_monster_died")
@@ -111,16 +110,17 @@ func fake_respawn():
 
 func load():
 	for effect in $Effects.get_children():
-		effect.queue_free()
+		effect.expire()
 	for dn in $DamageNumberManager.get_children():
 		dn.queue_free()
 	for item in $Items.get_children():
 		item.load()
+		item.connect("slottable_updated", self, "update_stats")
 	update_stats()
 
 func save_and_exit():
 	for effect in $Effects.get_children():
-		effect.queue_free()
+		effect.expire()
 	for dn in $DamageNumberManager.get_children():
 		dn.queue_free()
 	Saver.save_scene(self, save_path)

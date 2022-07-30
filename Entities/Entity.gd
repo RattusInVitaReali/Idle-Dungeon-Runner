@@ -189,6 +189,11 @@ func set_target(target):
 	for skill in get_skills():
 		if !skill.cast_on_self():
 			skill.target = enemy
+	if enemy != null:
+		enemy.connect("died", self, "_on_enemy_died")
+
+func _on_enemy_died():
+	set_target(null)
 
 func get_action_timer():
 	return $ActionTimer
@@ -204,7 +209,7 @@ func get_items():
 
 func next_action():
 	var _skill = null
-	if (CombatProcessor.in_combat):
+	if CombatProcessor.in_combat:
 		if !dead and enemy != null and enemy.can_be_attacked and next_action_ready:
 			for skill in get_skills():
 				_skill = try_to_use_skill(skill)
