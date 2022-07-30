@@ -19,3 +19,11 @@ func get_all_children(in_node, arr:=[]):
 	for child in in_node.get_children():
 		arr = get_all_children(child,arr)
 	return arr
+
+func save_scene(node, path):
+	for child in get_all_children(node):
+		if child != node and child.owner != null:
+			child.owner = node
+	var packed_scene = PackedScene.new()
+	packed_scene.pack(node)
+	ResourceSaver.save(path, packed_scene)

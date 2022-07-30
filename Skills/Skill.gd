@@ -132,8 +132,6 @@ func update_border():
 		border_texture = BorderTexture3
 	else:
 		border_texture = BorderTexture4
-		
-
 
 func use_skill():
 	do_skill()

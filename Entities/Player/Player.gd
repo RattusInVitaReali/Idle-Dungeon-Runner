@@ -110,13 +110,17 @@ func fake_respawn():
 		play("run")
 
 func load():
+	for effect in $Effects.get_children():
+		effect.queue_free()
+	for dn in $DamageNumberManager.get_children():
+		dn.queue_free()
 	for item in $Items.get_children():
 		item.load()
 	update_stats()
 
 func save_and_exit():
-	var packed_scene = PackedScene.new()
-	for item in Saver.get_all_children($Items):
-		item.owner = self
-	packed_scene.pack(self)
-	ResourceSaver.save(save_path, packed_scene)
+	for effect in $Effects.get_children():
+		effect.queue_free()
+	for dn in $DamageNumberManager.get_children():
+		dn.queue_free()
+	Saver.save_scene(self, save_path)

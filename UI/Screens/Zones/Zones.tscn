@@ -7,6 +7,8 @@
 [node name="Zones" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
+[node name="Zones" type="Node2D" parent="." index="0"]
+
 [node name="LeftMargin" parent="VBoxContainer/Upper/VBoxContainer/Name" index="0"]
 texture = ExtResource( 2 )
 

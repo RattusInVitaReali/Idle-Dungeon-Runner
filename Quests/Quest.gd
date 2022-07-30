@@ -10,16 +10,19 @@ var required_kills = 0
 var required_types
 var reward
 
-var kill_count = 0
-var total_levels = 0
+export (Resource) var quest_resource = null
 
-var active = false
+export (int) var kill_count = 0
+export (int) var total_levels = 0
+
+export var active = false
 
 func _ready():
 	connect("loot", LootManager, "_on_loot")
 	CombatProcessor.connect("monster_died", self, "_on_monster_died")
 
 func from_resource(resource):
+	quest_resource = resource
 	quest_name = resource.quest_name
 	required_kills = resource.required_kills
 	required_types = resource.required_types.duplicate()
@@ -55,3 +58,6 @@ func complete():
 
 func quest_info():
 	return quest_name + " : " + str(kill_count) + " / " + str(required_kills)
+
+func load():
+	from_resource(quest_resource)

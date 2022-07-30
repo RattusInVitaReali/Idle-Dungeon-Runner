@@ -14,9 +14,8 @@ onready var buttons = [
 
 var zone : Zone = null;
 
-func set_zone(zone_scene : PackedScene):
-	zone = zone_scene.instance()
-	add_child(zone)
+func set_zone(_zone):
+	zone = _zone
 	zone.connect("unlocked", self, "update_zone")
 	zone.connect("zone_updated", self, "update_zone")
 	update_zone()

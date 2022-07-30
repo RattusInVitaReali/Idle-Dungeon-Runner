@@ -105,24 +105,19 @@ func _on_inspector(slot):
 	emit_signal("inspector", slot)
 
 func load_items():
-	if save_path != "":
-		if ResourceLoader.exists(save_path):
-			var items_scene = load(save_path)
-			var items = items_scene.instance()
-			for item in items.get_children():
-				items.remove_child(item)
-				$Items.add_child(item)
-				item.load()
-				item.connect("tree_exited", self, "update_inventory")
-			update_inventory()
+	if save_path != "" and ResourceLoader.exists(save_path):
+		var items_scene = load(save_path)
+		var items = items_scene.instance()
+		for item in items.get_children():
+			items.remove_child(item)
+			$Items.add_child(item)
+			item.load()
+			item.connect("tree_exited", self, "update_inventory")
+		items.queue_free()
+		update_inventory()
 
 func save_and_exit():
 	for item in get_items_container().get_children():
 		item.disconnect("tree_exited", self, "update_inventory")
 	if $Items.get_child_count() != 0 and save_path != "":
-		for child in Saver.get_all_children($Items):
-			if child != $Items:
-				child.owner = $Items
-		var packed_scene = PackedScene.new()
-		packed_scene.pack($Items)
-		ResourceSaver.save(save_path, packed_scene)
+		Saver.save_scene($Items, save_path)
