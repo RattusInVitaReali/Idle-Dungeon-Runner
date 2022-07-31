@@ -2,6 +2,9 @@ extends GameScreen
 class_name CombatScreen
 
 const PlayerScene = preload("res://Entities/Player/Player.tscn")
+const IdleReward = preload("res://UI/IdleReward/IdleReward.tscn")
+
+const save_path = "user://idle_data.tres"
 
 signal monster_spawned
 signal monster_arrived
@@ -29,10 +32,13 @@ var player : Player = null
 var monster : Monster = null
 var zone : Zone = null
 
+var got_idle_rewards = false
+
 onready var image_1 = $Map/Image1
 onready var image_2 = $Map/Image2
 
 func _ready():
+	Saver.save_on_exit(self)
 	CombatProcessor.connect("zone_changed", self, "change_zone")
 	connect("player_spawned", CombatProcessor, "_on_player_spawned")
 	connect("player_despawned", CombatProcessor, "_on_player_despawned")
@@ -51,7 +57,7 @@ func spawn_player():
 			player.queue_free()
 			player = load(Player.save_path).instance()
 			player.load()
-	add_child(player)
+	add_child_below_node($Map, player)
 	player.connect("despawned", self, "_on_player_despawned")
 	player.connect("level_changed", self, "_on_player_level_changed")
 	player.connect("exp_changed", self, "_on_player_exp_changed")
@@ -95,6 +101,9 @@ func change_zone(new_zone):
 	update_quest(zone.quest)
 	emit_signal("zone_changed")
 	new_combat()
+	if !got_idle_rewards:
+		get_idle_rewards()
+		got_idle_rewards = true
 
 func yeet_monster():
 	if monster != null:
@@ -173,3 +182,23 @@ func move_monster(delta):
 			monster.position = monster.position.move_toward(Vector2(screen_center_x, padding_top), global_speed * delta)
 		else:
 			emit_signal("monster_arrived")
+
+func get_idle_rewards():
+	if ResourceLoader.exists(save_path):
+		var idle_reward = IdleReward.instance()
+		$Combat.add_child(idle_reward)
+		var elapsed_time = OS.get_unix_time() - load(save_path).idle_time
+		var monsters = zone.get_monster_instances()
+		for _monster in monsters:
+			add_child(_monster)
+		var iterations = int(elapsed_time / 60)
+		for i in range(iterations):
+			for lootable in monsters[i % monsters.size()]._get_loot():
+				idle_reward.add_lootable(lootable)
+		for _monster in monsters:
+			_monster.queue_free()
+
+func save_and_exit():
+	var resource = IdleData.new()
+	resource.idle_time = OS.get_unix_time()
+	ResourceSaver.save(save_path, resource)

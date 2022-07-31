@@ -64,6 +64,16 @@ func make_zone_monster():
 	new_monster.connect("despawned", self, "_on_monster_despawned")
 	return new_monster
 
+func get_monster_instances():
+	var monsters = []
+	for monster_scene in enemies:
+		var new_monster = monster_scene.instance() \
+		.set_level(level) \
+		.add_modifiers(modifiers) \
+		.add_loot(loot)
+		monsters.append(new_monster)
+	return monsters
+
 func level_up():
 	self.level = min(level + 1, max_level)
 

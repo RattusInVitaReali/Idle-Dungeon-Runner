@@ -81,6 +81,10 @@ func drop_loot():
 	set_material_quantity()
 	emit_signal("loot", loot)
 
+func _get_loot():
+	set_material_quantity()
+	return LootManager.roll_loot(loot)
+
 func get_exp_value():
 	var pl = power_level()
 	if level <= 20:

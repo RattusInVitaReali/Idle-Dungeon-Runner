@@ -7,5 +7,11 @@ func get_item(item):
 		emit_signal("item_acquired", item)
 
 func _on_loot(loot):
-	for lootable in loot:
-		get_item(lootable.roll_loot())
+	for item in roll_loot(loot):
+		get_item(item)
+
+func roll_loot(_loot):
+	var loot = []
+	for lootable in _loot:
+		loot.append(lootable.roll_loot())
+	return loot

@@ -149,6 +149,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Modifiers/Healthy/Healthy.gd"
 }, {
+"base": "Resource",
+"class": "IdleData",
+"language": "GDScript",
+"path": "res://GameScreens/CombatScreen/IdleData.gd"
+}, {
+"base": "Control",
+"class": "IdleReward",
+"language": "GDScript",
+"path": "res://UI/IdleReward/IdleReward.gd"
+}, {
 "base": "Control",
 "class": "Inspector",
 "language": "GDScript",
@@ -478,6 +488,8 @@ _global_script_class_icons={
 "GitAPI": "",
 "GlobalResourceLootable": "",
 "Healthy": "",
+"IdleData": "",
+"IdleReward": "",
 "Inspector": "",
 "InventoryScreen": "",
 "InventoryUI": "",

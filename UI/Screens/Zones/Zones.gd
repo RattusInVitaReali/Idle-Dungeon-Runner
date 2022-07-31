@@ -59,5 +59,5 @@ func load():
 		zone_info.connect("play_zone", self, "_on_play_zone")
 
 func save_and_exit():
-	if save_path != "" and $Zones.get_child_count() != 0:
+	if $Zones.get_child_count() != 0:
 		Saver.save_scene($Zones, save_path)

@@ -9,18 +9,22 @@ export var columns = 6
 export var allow_sorting = true
 
 export var save_path = ""
+export var force_block_save = false
 
 onready var container = $ScrollContainer/GridContainer
 
 var ready = false
 
 func _ready():
-	Saver.save_on_exit(self)
+	if !force_block_save:
+		Saver.save_on_exit(self)
 	container.columns = columns
 	self.load()
 	ready = true
 
 func add_slottable(slottable : Slottable, update = true):
+	if slottable == null:
+		return
 	var added = false
 	for _slottable in get_items_container().get_children():
 		if _slottable.slottable_type == slottable.slottable_type:
@@ -68,6 +72,7 @@ static func _sort_tier(a, b):
 	return false
 
 func reorder_items():
+	print("Reordering" + " " + owner.name)
 	if !ready:
 		return
 	var items = get_items_container().get_children()
@@ -75,16 +80,16 @@ func reorder_items():
 		item.disconnect("tree_exited", self, "update_inventory")
 	for item in get_items_container().get_children():
 		get_items_container().remove_child(item)
-	items.sort_custom(self, "_sort_tier")
 	items.sort_custom(self, "_sort_name")
-	items.sort_custom(self, "_sort_rarity")
+	#items.sort_custom(self, "_sort_rarity")
+	items.sort_custom(self, "_sort_tier")
 	for item in items:
 		get_items_container().add_child(item)
 	for item in items:
 		item.connect("tree_exited", self, "update_inventory")
 
-func update_inventory(var reorder = true):
-	if allow_sorting and reorder:
+func update_inventory():
+	if allow_sorting:
 		reorder_items()
 	for slot in container.get_children():
 		slot.queue_free()
