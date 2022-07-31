@@ -1,4 +1,4 @@
-extends TextureRect
+extends HBoxContainer
 class_name Slot
 
 signal inspector
@@ -17,6 +17,12 @@ export var upgrade = false
 
 var slottable = null
 
+onready var icon = $Background/SlottableIcon
+onready var quantity = $Background/Quantity
+onready var selection = $Background/Selection
+onready var tier_stars = $Background/TierStars
+onready var button = $Background/Button
+
 func try_to_add_slottable(_slottable):
 	if slottable == null:
 		set_slottable(_slottable)
@@ -32,36 +38,36 @@ func set_slottable(_slottable):
 	update_slot()
 
 func update_slot():
-	$SlottableIcon.set_slottable(slottable)
+	icon.set_slottable(slottable)
 	if slottable == null:
-		texture = Frame
-		$Quantity.visible = false
-		for tier_star in $TierStars.get_children():
-			$TierStars.remove_child(tier_star)
+		$Background.texture = Frame
+		quantity.visible = false
+		for tier_star in tier_stars.get_children():
+			tier_stars.remove_child(tier_star)
 			tier_star.queue_free()
 	else:
 		match slottable.rarity:
 			CraftingManager.RARITY.BASIC:
-				texture = FrameBasic
+				$Background.texture = FrameBasic
 			CraftingManager.RARITY.COMMON:
-				texture = FrameCommon
+				$Background.texture = FrameCommon
 			CraftingManager.RARITY.UNCOMMON:
-				texture = FrameUncommon
+				$Background.texture = FrameUncommon
 			CraftingManager.RARITY.RARE:
-				texture = FrameRare
+				$Background.texture = FrameRare
 			CraftingManager.RARITY.EPIC:
-				texture = FrameEpic
+				$Background.texture = FrameEpic
 		if !(gear or upgrade):
-			$Quantity.text = str(slottable.quantity)
-			$Quantity.visible = true
-		for tier_star in $TierStars.get_children():
-			$TierStars.remove_child(tier_star)
+			quantity.text = str(slottable.quantity)
+			quantity.visible = true
+		for tier_star in tier_stars.get_children():
+			tier_stars.remove_child(tier_star)
 			tier_star.queue_free()
 		var i = slottable.tier
 		while i > 0:
-			$TierStars.add_child(TierStar.instance())
+			tier_stars.add_child(TierStar.instance())
 			i -= 1
-		$TierStars.visible = true
+		tier_stars.visible = true
 
 func _on_Button_pressed():
 	if slottable != null:
@@ -71,13 +77,13 @@ func inspector():
 	emit_signal("inspector", self)
 
 func select():
-	$Selection.show()
+	selection.show()
 
 func deselect():
-	$Selection.hide()
+	selection.hide()
 
 func toggle_selection():
-	if $Selection.visible:
+	if selection.visible:
 		deselect()
 	else:
 		select()

@@ -20,19 +20,19 @@ script = ExtResource( 1 )
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
+margin_left = 25.0
 margin_top = 30.0
-margin_right = -10.0
+margin_right = -25.0
 margin_bottom = -30.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
-margin_right = 1060.0
+margin_right = 1030.0
 margin_bottom = 1332.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/vseparation = 15
+custom_constants/vseparation = 20
 custom_constants/hseparation = 15
 columns = 6

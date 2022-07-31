@@ -15,32 +15,31 @@ size = 45
 font_data = ExtResource( 4 )
 
 [node name="SkillSlot" instance=ExtResource( 1 )]
+margin_right = 250.0
+margin_bottom = 375.0
 rect_min_size = Vector2( 250, 375 )
-texture = null
-expand = true
 script = ExtResource( 2 )
 
-[node name="SlottableIcon" parent="." index="0"]
-show_behind_parent = true
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 0.0
-margin_bottom = 0.0
+[node name="Left" parent="." index="0"]
+margin_top = 180.0
+margin_bottom = 194.0
+
+[node name="Background" parent="." index="1"]
+margin_right = 250.0
+margin_bottom = 375.0
+rect_min_size = Vector2( 250, 150 )
+texture = null
 stretch_mode = 5
 
-[node name="NameBackground" type="TextureRect" parent="." index="3"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = -120.0
-margin_right = -10.0
-margin_bottom = -10.0
+[node name="NameBackground" type="TextureRect" parent="Background" index="5"]
+margin_top = 250.0
+margin_right = 250.0
+margin_bottom = 375.0
 texture = ExtResource( 5 )
 expand = true
 stretch_mode = 1
 
-[node name="Name" type="Label" parent="NameBackground" index="0"]
+[node name="Name" type="Label" parent="Background/NameBackground" index="0"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -55,16 +54,16 @@ valign = 1
 autowrap = true
 clip_text = true
 
-[node name="Equipped" type="TextureRect" parent="." index="6"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 50.0
-margin_bottom = 50.0
+[node name="Equipped" type="TextureRect" parent="Background" index="6"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 85.0
+margin_bottom = 85.0
 rect_min_size = Vector2( 60, 60 )
 texture = ExtResource( 6 )
 expand = true
 
-[node name="Label" type="Label" parent="Equipped" index="0"]
+[node name="Label" type="Label" parent="Background/Equipped" index="0"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 2 )
@@ -73,3 +72,9 @@ align = 1
 valign = 1
 autowrap = true
 clip_text = true
+
+[node name="Right" parent="." index="2"]
+margin_left = 250.0
+margin_top = 180.0
+margin_right = 250.0
+margin_bottom = 194.0

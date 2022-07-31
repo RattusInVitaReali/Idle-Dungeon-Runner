@@ -83,6 +83,15 @@ func _on_inspector(slot):
 		if !(slot.slottable is Item):
 			inspector.connect("merge", self, "_on_merge")
 	elif upgrading:
+		var valid_types = item_to_upgrade.required_parts.duplicate()
+		valid_types.append_array(item_to_upgrade.optional_parts)
+		var valid = false
+		for part_type in valid_types:
+			if slot.slottable.type == part_type:
+				valid = true
+				break
+		if !valid:
+			return
 		var compare_to = null
 		for part in item_preview.get_items_container().get_children():
 			if part.type == slot.slottable.type:
@@ -94,6 +103,15 @@ func _on_inspector(slot):
 			replace_part(slot.slottable)
 			start_upgrade(item_to_upgrade)
 	elif selecting_parts:
+		var valid_types = selected_item.required_parts.duplicate()
+		valid_types.append_array(selected_item.optional_parts)
+		var valid = false
+		for part_type in valid_types:
+			if slot.slottable.type == part_type:
+				valid = true
+				break
+		if !valid:
+			return
 		if slot in selected_part_slots:
 			slot.deselect()
 			selected_parts.erase(slot.slottable)

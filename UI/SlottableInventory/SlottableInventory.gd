@@ -15,8 +15,7 @@ onready var container = $ScrollContainer/GridContainer
 var ready = false
 
 func _ready():
-	if save_path != "":
-		Saver.save_on_exit(self)
+	Saver.save_on_exit(self)
 	container.columns = columns
 	self.load()
 	ready = true
@@ -118,7 +117,10 @@ func load():
 		update_inventory()
 
 func save_and_exit():
+	if get_items_container() == null:
+		return
 	for item in get_items_container().get_children():
-		item.disconnect("tree_exited", self, "update_inventory")
+		if item.is_connected("tree_exited", self, "update_inventory"):
+			item.disconnect("tree_exited", self, "update_inventory")
 	if $Items.get_child_count() != 0 and save_path != "":
 		Saver.save_scene($Items, save_path)

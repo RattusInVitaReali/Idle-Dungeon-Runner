@@ -10,16 +10,28 @@
 size = 40
 font_data = ExtResource( 3 )
 
-[node name="Slot" type="TextureRect"]
+[node name="Slot" type="HBoxContainer"]
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+size_flags_horizontal = 3
+custom_constants/separation = 0
+script = ExtResource( 2 )
+
+[node name="Left" type="Label" parent="."]
+margin_top = 68.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+
+[node name="Background" type="TextureRect" parent="."]
 margin_right = 150.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 3
 texture = ExtResource( 1 )
 stretch_mode = 6
-script = ExtResource( 2 )
 
-[node name="SlottableIcon" parent="." instance=ExtResource( 5 )]
+[node name="SlottableIcon" parent="Background" instance=ExtResource( 5 )]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -27,7 +39,7 @@ margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
 
-[node name="Quantity" type="Label" parent="."]
+[node name="Quantity" type="Label" parent="Background"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -40,7 +52,7 @@ text = "12"
 align = 2
 valign = 2
 
-[node name="Selection" type="TextureRect" parent="."]
+[node name="Selection" type="TextureRect" parent="Background"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -49,14 +61,14 @@ texture = ExtResource( 4 )
 expand = true
 stretch_mode = 1
 
-[node name="TierStars" type="HBoxContainer" parent="."]
+[node name="TierStars" type="HBoxContainer" parent="Background"]
 anchor_right = 1.0
 margin_left = 5.0
-margin_top = 5.0
+margin_top = 10.0
 margin_right = -5.0
 margin_bottom = 5.0
 
-[node name="Button" type="TextureButton" parent="."]
+[node name="Button" type="TextureButton" parent="Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -66,4 +78,11 @@ margin_bottom = -10.0
 expand = true
 stretch_mode = 5
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[node name="Right" type="Label" parent="."]
+margin_left = 150.0
+margin_top = 68.0
+margin_right = 150.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="Background/Button" to="." method="_on_Button_pressed"]

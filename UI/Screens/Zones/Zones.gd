@@ -30,9 +30,16 @@ func _ready():
 	starter_zone()
 
 func _on_play_zone(zone):
+	for _zone in $Zones.get_children():
+		_zone.active = false
+	zone.active = true
 	emit_signal("play_zone", zone)
 
 func starter_zone():
+	for zone_info in zone_infos.get_children():
+		if zone_info.zone.active:
+			zone_info.play_zone()
+			return
 	var starter = zone_infos.get_child(0)
 	starter.play_zone()
 
@@ -50,7 +57,6 @@ func load():
 		zone_infos.add_child(zone_info)
 		zone_info.set_zone(zone)
 		zone_info.connect("play_zone", self, "_on_play_zone")
-		
 
 func save_and_exit():
 	if save_path != "" and $Zones.get_child_count() != 0:

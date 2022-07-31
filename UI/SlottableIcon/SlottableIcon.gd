@@ -28,6 +28,7 @@ func set_slottable(var slottable : Slottable):
 				add_child(new_texture)
 		Slottable.SLOTTABLE_TYPE.SKILL:
 			texture = slottable.border_texture
+			stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
 			var new_texture = TextureRect.new()
 			new_texture.expand = true
 			new_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT

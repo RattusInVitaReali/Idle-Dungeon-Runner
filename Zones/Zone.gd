@@ -18,10 +18,11 @@ export (int) var level setget set_level
 export (int) var save_level
 export (int) var min_level
 export (int) var max_level
-
 export (int) var max_level_reached
-
 export (int) var zone_floor = 0
+
+export (bool) var active = false
+
 var quest = null
 var player : Player = null
 

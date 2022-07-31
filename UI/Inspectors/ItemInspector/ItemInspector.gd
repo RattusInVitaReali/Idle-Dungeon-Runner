@@ -1,7 +1,9 @@
 extends Inspector
 class_name ItemInspector
 
+# warning-ignore:unused_signal
 signal equip
+# warning-ignore:unused_signal
 signal unequip
 signal upgrade
 

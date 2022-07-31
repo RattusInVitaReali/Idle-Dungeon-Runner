@@ -4,7 +4,8 @@ class_name SkillSlot
 const LockedBorder = preload("res://_Resources/skill_borders/Border3.png")
 const Lock = preload("res://_Resources/skill_icons/lock.png")
 
-onready var skill_name = $NameBackground/Name
+onready var skill_name = $Background/NameBackground/Name
+onready var equipped = $Background/Equipped
 
 func set_slottable(_slottable):
 	slottable = _slottable
@@ -13,7 +14,7 @@ func set_slottable(_slottable):
 	update_skill()
 
 func set_icon():
-	$SlottableIcon.set_slottable(slottable)
+	icon.set_slottable(slottable)
 	if slottable == null:
 		skill_name.text = ""
 	elif !slottable.locked:
@@ -23,9 +24,9 @@ func set_icon():
 
 func set_equipped():
 	if slottable != null:
-		$Equipped.visible = slottable.equipped
+		equipped.visible = slottable.equipped
 	else:
-		$Equipped.hide()
+		equipped.hide()
 
 func update_skill():
 	set_icon()

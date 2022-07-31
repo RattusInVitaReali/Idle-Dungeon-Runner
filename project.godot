@@ -359,7 +359,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/Screens/Skills/Skills.gd"
 }, {
-"base": "TextureRect",
+"base": "HBoxContainer",
 "class": "Slot",
 "language": "GDScript",
 "path": "res://UI/Slot/Slot.gd"
@@ -567,6 +567,7 @@ gdscript/warnings/return_value_discarded=false
 
 window/size/width=1080
 window/size/height=1920
+window/vsync/use_vsync=false
 window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
@@ -579,6 +580,7 @@ singletons=[ "res://Addons/godot-git-plugin/git_api.gdnlib" ]
 
 autoload=false
 CombatProcessor=NodePath("")
+vsyn=false
 
 [importer_defaults]
 
