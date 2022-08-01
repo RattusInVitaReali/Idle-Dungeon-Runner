@@ -188,6 +188,7 @@ func get_idle_rewards():
 		var idle_reward = IdleReward.instance()
 		$Combat.add_child(idle_reward)
 		var elapsed_time = OS.get_unix_time() - load(save_path).idle_time
+		idle_reward.set_time(elapsed_time)
 		var monsters = zone.get_monster_instances()
 		for _monster in monsters:
 			add_child(_monster)

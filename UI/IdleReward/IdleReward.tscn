@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/IdleReward/IdleReward.gd" type="Script" id=1]
 [ext_resource path="res://_Resources/gui_images/UI board Small  parchment.png" type="Texture" id=2]
@@ -22,6 +22,10 @@ corner_radius_bottom_left = 10
 size = 60
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 3 )
+
 [node name="IdleReward" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -39,9 +43,9 @@ anchor_bottom = 1.0
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 100.0
+margin_left = 80.0
 margin_top = 200.0
-margin_right = -100.0
+margin_right = -80.0
 margin_bottom = -250.0
 custom_styles/panel = SubResource( 1 )
 
@@ -54,7 +58,7 @@ margin_right = -20.0
 margin_bottom = -20.0
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer"]
-margin_right = 840.0
+margin_right = 880.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 0, 200 )
 texture = ExtResource( 2 )
@@ -71,37 +75,74 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="Line6" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="Line" type="HBoxContainer" parent="Panel/VBoxContainer"]
 margin_top = 204.0
-margin_right = 840.0
+margin_right = 880.0
 margin_bottom = 219.0
 
-[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line6"]
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line"]
 margin_right = 100.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line6"]
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line"]
 margin_left = 104.0
-margin_right = 736.0
+margin_right = 776.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 0, 15 )
 size_flags_horizontal = 3
 texture = ExtResource( 5 )
 expand = true
 
-[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line6"]
-margin_left = 740.0
-margin_right = 840.0
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line"]
+margin_left = 780.0
+margin_right = 880.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Time" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 223.0
+margin_right = 880.0
+margin_bottom = 283.0
+custom_fonts/font = SubResource( 3 )
+text = "9h 34m"
+align = 1
+valign = 1
+
+[node name="Line2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 287.0
+margin_right = 880.0
+margin_bottom = 302.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line2"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line2"]
+margin_left = 104.0
+margin_right = 776.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 5 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line2"]
+margin_left = 780.0
+margin_right = 880.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 3
 
 [node name="SlottableInventory" parent="Panel/VBoxContainer" instance=ExtResource( 4 )]
-margin_top = 223.0
-margin_right = 840.0
+margin_top = 306.0
+margin_right = 880.0
 margin_bottom = 1430.0
+columns = 5
 force_block_save = true
 
 [connection signal="pressed" from="BackgroundDim/TextureButton" to="." method="_on_TextureButton_pressed"]

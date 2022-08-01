@@ -44,12 +44,17 @@ func remove_slottable(slottable : Slottable, quantity = 1):
 	var ret = slottable.split(quantity)
 	return ret
 
+func disconnect_all():
+	for item in get_items_container().get_children():
+		if item.is_connected("tree_exited", self, "update_inventory"):
+			item.disconnect("tree_exited", self, "update_inventory")
+
 static func _sort_rarity(a, b):
 	if a == null or b == null:
 		return false
 	if a.rarity == null or b.rarity == null:
 		return false
-	if a.rarity > b.rarity:
+	if a.rarity < b.rarity:
 		return true
 	return false
 
@@ -58,7 +63,7 @@ static func _sort_name(a, b):
 		return false
 	if a.slottable_name == null or b.slottable_name == null:
 		return false
-	if a.slottable_name < b.slottable_name:
+	if a.slottable_name > b.slottable_name:
 		return true
 	return false
 
@@ -67,22 +72,46 @@ static func _sort_tier(a, b):
 		return false
 	if a.tier == null or b.tier == null:
 		return false
-	if a.tier > b.tier:
+	if a.tier < b.tier:
 		return true
 	return false
 
+static func _sort_type(a, b):
+	if a == null or b == null:
+		return false
+	if a.type == null or b.type == null:
+		return false
+	if a.slottable_type < b.slottable_type:
+		return true
+	return false
+
+func sort(array, func_name):
+	var func_ref = FuncRef.new()
+	func_ref.set_instance(self)
+	func_ref.set_function(func_name)
+	var swapped = true
+	while swapped:
+		var i = 0
+		swapped = false
+		while i < array.size() - 1:
+			if func_ref.call_func(array[i], array[i + 1]):
+				var temp = array[i]
+				array[i] = array[i + 1]
+				array[i + 1] = temp
+				swapped = true
+			i += 1
+
 func reorder_items():
-	print("Reordering" + " " + owner.name)
 	if !ready:
 		return
+	disconnect_all()
 	var items = get_items_container().get_children()
 	for item in items:
-		item.disconnect("tree_exited", self, "update_inventory")
-	for item in get_items_container().get_children():
 		get_items_container().remove_child(item)
-	items.sort_custom(self, "_sort_name")
-	#items.sort_custom(self, "_sort_rarity")
-	items.sort_custom(self, "_sort_tier")
+	sort(items, "_sort_tier")
+	sort(items, "_sort_name")
+	sort(items, "_sort_rarity")
+	sort(items, "_sort_type")
 	for item in items:
 		get_items_container().add_child(item)
 	for item in items:
@@ -124,8 +153,6 @@ func load():
 func save_and_exit():
 	if get_items_container() == null:
 		return
-	for item in get_items_container().get_children():
-		if item.is_connected("tree_exited", self, "update_inventory"):
-			item.disconnect("tree_exited", self, "update_inventory")
+	disconnect_all()
 	if $Items.get_child_count() != 0 and save_path != "":
 		Saver.save_scene($Items, save_path)
