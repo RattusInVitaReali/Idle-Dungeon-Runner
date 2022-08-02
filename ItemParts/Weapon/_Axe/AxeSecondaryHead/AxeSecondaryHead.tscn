@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ItemParts/Weapon/_Axe/AxeSecondaryHead/AxeSecondaryHead.gd" type="Script" id=2]
+[ext_resource path="res://_Resources/Items/Weapon/Axe/ItemAxeSecondaryHead.png" type="Texture" id=3]
+[ext_resource path="res://_Resources/ItemParts/Weapon/Axe/AxeSecondaryHead.png" type="Texture" id=4]
+
+[node name="AxeSecondaryHead" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+base_icon = ExtResource( 4 )
+item_icon = ExtResource( 3 )
+type = 10
+cost = 15
+durability_multi = 0.5
+allowed_material_types = [ 1, 2 ]
+description = "An optional, secondary head for battle axes."
+stat_multipliers = {
+"armor": 0.0,
+"dexterity": 0.0,
+"expertise": 0.0,
+"ferocity": 0.75,
+"magic_penetration": 1.0,
+"mastery": 0.0,
+"occult_aversion": 0.0,
+"penetration": 1.0,
+"potency": 2.0,
+"power": 2.0,
+"precision": 0.75,
+"toughess": 0.0,
+"vitality": 0.0
+}

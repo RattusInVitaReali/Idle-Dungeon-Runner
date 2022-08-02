@@ -19,6 +19,26 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/Screens/Inventory/Attribute/Attribute.gd"
 }, {
+"base": "Item",
+"class": "Axe",
+"language": "GDScript",
+"path": "res://Items/Weapon/Axe/Axe.gd"
+}, {
+"base": "ItemPart",
+"class": "AxeHandle",
+"language": "GDScript",
+"path": "res://ItemParts/Weapon/_Axe/AxeHandle/AxeHandle.gd"
+}, {
+"base": "ItemPart",
+"class": "AxeHead",
+"language": "GDScript",
+"path": "res://ItemParts/Weapon/_Axe/AxeHead/AxeHead.gd"
+}, {
+"base": "ItemPart",
+"class": "AxeSecondaryHead",
+"language": "GDScript",
+"path": "res://ItemParts/Weapon/_Axe/AxeSecondaryHead/AxeSecondaryHead.gd"
+}, {
 "base": "Monster",
 "class": "Bandit",
 "language": "GDScript",
@@ -462,6 +482,10 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Arms": "",
 "Attribute": "",
+"Axe": "",
+"AxeHandle": "",
+"AxeHead": "",
+"AxeSecondaryHead": "",
 "Bandit": "",
 "BanditBoss": "",
 "BasicAttack": "",

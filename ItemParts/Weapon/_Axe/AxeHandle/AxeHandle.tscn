@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ItemParts/Weapon/_Axe/AxeHandle/AxeHandle.gd" type="Script" id=2]
+[ext_resource path="res://_Resources/ItemParts/Weapon/Axe/AxeHandle.png" type="Texture" id=3]
+[ext_resource path="res://_Resources/Items/Weapon/Axe/ItemAxeHandle.png" type="Texture" id=4]
+
+[node name="AxeHandle" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+base_icon = ExtResource( 3 )
+item_icon = ExtResource( 4 )
+type = 9
+cost = 15
+durability_multi = 0.3
+allowed_material_types = [ 1, 2 ]
+description = "Handle for battle axes."
+stat_multipliers = {
+"armor": 0.0,
+"dexterity": 1.0,
+"expertise": 0.0,
+"ferocity": 1.0,
+"magic_penetration": 0.0,
+"mastery": 0.0,
+"occult_aversion": 0.0,
+"penetration": 0.0,
+"potency": 0.5,
+"power": 0.5,
+"precision": 1.0,
+"toughess": 0.0,
+"vitality": 0.0
+}

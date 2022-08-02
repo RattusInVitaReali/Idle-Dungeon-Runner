@@ -4,10 +4,10 @@ var debug = true
 
 enum RARITY { BASIC, COMMON, UNCOMMON, RARE, EPIC }
 
-enum MATERIAL_TYPE { GEM, METAL, WOOD, FABRIC }
+enum MATERIAL_TYPE { GEM, METAL, WOOD, FABRIC, LEATHER }
 enum MATERIAL_WEIGHT { VERY_LIGHT, LIGHT, MEDIUM, HEAVY, VERY_HEAVY }
 
-enum PART_TYPE { SWORD_BLADE, SWORD_HANDLE, SWORD_GUARD, POMMEL, TUNIC, CHESTPLATE, SHOULDERS, ARMS }
+enum PART_TYPE { SWORD_BLADE, SWORD_HANDLE, SWORD_GUARD, POMMEL, TUNIC, CHESTPLATE, SHOULDERS, ARMS, AXE_HEAD, AXE_HANDLE, AXE_SECONDARY_HEAD }
 
 enum ITEM_TYPE { WEAPON, ARMOR, ANY }
 enum ITEM_SUBTYPE { SWORD, AXE, BODY_ARMOR, BOOTS, HELMET } 
@@ -19,6 +19,9 @@ onready var part_scenes = {
 	PART_TYPE.SWORD_HANDLE : load("res://ItemParts/Weapon/_Sword/SwordHandle/SwordHandle.tscn"),
 	PART_TYPE.SWORD_GUARD : load("res://ItemParts/Weapon/_Sword/SwordGuard/SwordGuard.tscn"),
 	PART_TYPE.POMMEL : load("res://ItemParts/Weapon/Pommel/Pommel.tscn"),
+	PART_TYPE.AXE_HEAD : load("res://ItemParts/Weapon/_Axe/AxeHead/AxeHead.tscn"),
+	PART_TYPE.AXE_HANDLE : load("res://ItemParts/Weapon/_Axe/AxeHandle/AxeHandle.tscn"),
+	PART_TYPE.AXE_SECONDARY_HEAD : load("res://ItemParts/Weapon/_Axe/AxeSecondaryHead/AxeSecondaryHead.tscn"),
 	PART_TYPE.TUNIC : load("res://ItemParts/Armor/_BodyArmor/Tunic/Tunic.tscn"),
 	PART_TYPE.CHESTPLATE : load("res://ItemParts/Armor/_BodyArmor/Chestplate/Chestplate.tscn"),
 	PART_TYPE.SHOULDERS : load("res://ItemParts/Armor/_BodyArmor/Shoulders/Shoulders.tscn"),
@@ -27,6 +30,7 @@ onready var part_scenes = {
 
 onready var item_scenes = {
 	ITEM_SUBTYPE.SWORD : load("res://Items/Weapon/Sword/Sword.tscn"),
+	ITEM_SUBTYPE.AXE : load("res://Items/Weapon/Axe/Axe.tscn"),
 	ITEM_SUBTYPE.BODY_ARMOR : load("res://Items/Armor/BodyArmor/BodyArmor.tscn")
 }
 
