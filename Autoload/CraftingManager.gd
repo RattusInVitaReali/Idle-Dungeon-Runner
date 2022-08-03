@@ -7,10 +7,14 @@ enum RARITY { BASIC, COMMON, UNCOMMON, RARE, EPIC }
 enum MATERIAL_TYPE { GEM, METAL, WOOD, FABRIC, LEATHER }
 enum MATERIAL_WEIGHT { VERY_LIGHT, LIGHT, MEDIUM, HEAVY, VERY_HEAVY }
 
-enum PART_TYPE { SWORD_BLADE, SWORD_HANDLE, SWORD_GUARD, POMMEL, TUNIC, CHESTPLATE, SHOULDERS, ARMS, AXE_HEAD, AXE_HANDLE, AXE_SECONDARY_HEAD }
+enum PART_TYPE { SWORD_BLADE, SWORD_HANDLE, SWORD_GUARD, POMMEL,
+				 TUNIC, CHESTPLATE, SHOULDERS, ARMS,
+				 AXE_HEAD, AXE_HANDLE, AXE_SECONDARY_HEAD,
+				 AMULET_CHAIN, AMULET_PENDANT, FOCUS,
+				 RING_BAND, RING_BEADS }
 
-enum ITEM_TYPE { WEAPON, ARMOR, ANY }
-enum ITEM_SUBTYPE { SWORD, AXE, BODY_ARMOR, BOOTS, HELMET } 
+enum ITEM_TYPE { WEAPON, ARMOR, ACCESSORY, ANY }
+enum ITEM_SUBTYPE { SWORD, AXE, BODY_ARMOR, BOOTS, HELMET, PANTS, WRIST, GLOVES, RING, AMULET } 
 
 onready var CraftingMaterial = load("res://Materials/CraftingMaterial.tscn")
 
@@ -25,13 +29,20 @@ onready var part_scenes = {
 	PART_TYPE.TUNIC : load("res://ItemParts/Armor/_BodyArmor/Tunic/Tunic.tscn"),
 	PART_TYPE.CHESTPLATE : load("res://ItemParts/Armor/_BodyArmor/Chestplate/Chestplate.tscn"),
 	PART_TYPE.SHOULDERS : load("res://ItemParts/Armor/_BodyArmor/Shoulders/Shoulders.tscn"),
-	PART_TYPE.ARMS : load("res://ItemParts/Armor/_BodyArmor/Arms/Arms.tscn")
+	PART_TYPE.ARMS : load("res://ItemParts/Armor/_BodyArmor/Arms/Arms.tscn"), 
+	PART_TYPE.AMULET_CHAIN : load("res://ItemParts/Accessory/_Amulet/AmuletChain/AmuletChain.tscn"), 
+	PART_TYPE.AMULET_PENDANT : load("res://ItemParts/Accessory/_Amulet/AmuletPendant/AmuletPendant.tscn"), 
+	PART_TYPE.FOCUS : load("res://ItemParts/Accessory/Focus/Focus.tscn"), 
+	PART_TYPE.RING_BAND : load("res://ItemParts/Accessory/_Ring/RingBand/RingBand.tscn"), 
+	PART_TYPE.RING_BEADS : load("res://ItemParts/Accessory/_Ring/RingBeads/RingBeads.tscn")
 }
 
 onready var item_scenes = {
 	ITEM_SUBTYPE.SWORD : load("res://Items/Weapon/Sword/Sword.tscn"),
 	ITEM_SUBTYPE.AXE : load("res://Items/Weapon/Axe/Axe.tscn"),
-	ITEM_SUBTYPE.BODY_ARMOR : load("res://Items/Armor/BodyArmor/BodyArmor.tscn")
+	ITEM_SUBTYPE.BODY_ARMOR : load("res://Items/Armor/BodyArmor/BodyArmor.tscn"),
+	ITEM_SUBTYPE.AMULET : load("res://Items/Accessory/Amulet/Amulet.tscn"),
+	ITEM_SUBTYPE.RING : load("res://Items/Accessory/Ring/Ring.tscn")
 }
 
 func new_material(base = null, quantity = 1):
