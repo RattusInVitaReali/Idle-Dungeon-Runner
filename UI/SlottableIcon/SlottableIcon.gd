@@ -20,23 +20,7 @@ func set_slottable(var slottable : Slottable):
 				texture = null
 			for part in slottable.get_children():
 				var new_texture = TextureRect.new()
-				
-				# !!! HACK ALERT !!!
-				
-				if part is Focus:
-					if slottable is Amulet:
-						new_texture.texture = part.amulet_icon
-					elif slottable is Ring:
-						new_texture.texture = part.ring_icon
-				else:
-					new_texture.texture = part.item_icon
-				
-				# Note for future me:
-				# Replace this garbage with a get_item_icon(slottable) func
-				# in ItemPart, then overload in derived classes which use different
-				# item icons for different parts. This can also be used for texture
-				# differentiation based on material type of part 
-				
+				new_texture.texture = part.get_item_icon(slottable)
 				new_texture.modulate = part.icon_color
 				new_texture.expand = true
 				new_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
@@ -59,6 +43,9 @@ func set_slottable(var slottable : Slottable):
 			else:
 				new_texture.texture = slottable.icon
 			add_child(new_texture)
+		Slottable.SLOTTABLE_TYPE.ITEM_PART:
+			texture = slottable.get_part_icon()
+			modulate = slottable.icon_color
 		_:
 			texture = slottable.icon
 			modulate = slottable.icon_color

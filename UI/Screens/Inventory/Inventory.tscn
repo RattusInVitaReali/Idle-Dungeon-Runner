@@ -83,27 +83,27 @@ custom_constants/vseparation = 10
 custom_constants/hseparation = 10
 columns = 3
 
-[node name="Slot" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="0" instance=ExtResource( 4 )]
+[node name="Amulet" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="0" instance=ExtResource( 4 )]
 margin_right = 159.0
 margin_bottom = 165.0
 size_flags_vertical = 3
 gear = true
 
-[node name="Slot2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="1" instance=ExtResource( 4 )]
+[node name="Helmet" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="1" instance=ExtResource( 4 )]
 margin_left = 169.0
 margin_right = 328.0
 margin_bottom = 165.0
 size_flags_vertical = 3
 gear = true
 
-[node name="Slot3" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="2" instance=ExtResource( 4 )]
+[node name="Ring1" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="2" instance=ExtResource( 4 )]
 margin_left = 338.0
 margin_right = 497.0
 margin_bottom = 165.0
 size_flags_vertical = 3
 gear = true
 
-[node name="Slot4" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="3" instance=ExtResource( 4 )]
+[node name="Bracers" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="3" instance=ExtResource( 4 )]
 margin_top = 175.0
 margin_right = 159.0
 margin_bottom = 340.0
@@ -118,7 +118,7 @@ margin_bottom = 340.0
 size_flags_vertical = 3
 gear = true
 
-[node name="Slot6" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="5" instance=ExtResource( 4 )]
+[node name="Ring2" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="5" instance=ExtResource( 4 )]
 margin_left = 338.0
 margin_top = 175.0
 margin_right = 497.0
@@ -156,7 +156,7 @@ margin_bottom = 690.0
 size_flags_vertical = 3
 gear = true
 
-[node name="Slot11" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="10" instance=ExtResource( 4 )]
+[node name="Boots" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="10" instance=ExtResource( 4 )]
 margin_left = 169.0
 margin_top = 525.0
 margin_right = 328.0

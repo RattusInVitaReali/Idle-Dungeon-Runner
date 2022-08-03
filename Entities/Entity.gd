@@ -110,17 +110,28 @@ func set_skills_attacker():
 		skill.attacker = self
 	return self
 
-# Add check for 2 weapons, signal for equipping / unequipping items
 func equip_item(item : Item):
-	var weapon_count = 0
-	for _item in get_items():
-		if _item.type == CraftingManager.ITEM_TYPE.WEAPON:
-			weapon_count += 1
-		if item.type == _item.type:
-			if item.type == CraftingManager.ITEM_TYPE.WEAPON and weapon_count < 2:
-				continue
-			unequip_item(_item)
-			break
+	if item.type == CraftingManager.ITEM_TYPE.WEAPON:
+		var weapon_counter = 0
+		for _item in get_items():
+			if _item.type == CraftingManager.ITEM_TYPE.WEAPON:
+				weapon_counter += 1
+			if weapon_counter == 2:
+				unequip_item(_item)
+				break
+	elif item.subtype == CraftingManager.ITEM_SUBTYPE.RING:
+		var ring_counter = 0
+		for _item in get_items():
+			if _item.subtype == CraftingManager.ITEM_SUBTYPE.RING:
+				ring_counter += 1
+			if ring_counter == 2:
+				unequip_item(_item)
+				break
+	else:
+		for _item in get_items():
+			if _item.subtype == item.subtype:
+				unequip_item(_item)
+				break
 	$Items.add_child(item)
 	item.connect("slottable_updated", self, "update_stats")
 	update_stats()

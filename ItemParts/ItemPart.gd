@@ -50,7 +50,7 @@ export var base_stats = {
 var stats = base_stats.duplicate()
 
 var durability
-var mat
+var mat : CraftingMaterial
 var special = ""
 
 func _ready():
@@ -104,6 +104,12 @@ func print_part():
 		if stats[stat] != 0:
 			print("- %s : %s" % [stat.capitalize(), stats[stat]])
 	print()
+
+func get_part_icon():
+	return icon
+
+func get_item_icon(item):
+	return item_icon
 
 func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo, item):
 	mat.on_outgoing_damage(damage_info, item)

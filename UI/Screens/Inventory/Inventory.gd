@@ -15,7 +15,19 @@ onready var weapon_slots = [
 
 onready var armor_slots = {
 	CraftingManager.ITEM_SUBTYPE.BODY_ARMOR: 
-		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/BodyArmor
+		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/BodyArmor,
+	CraftingManager.ITEM_SUBTYPE.HELMET:
+		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Helmet
+}
+
+onready var ring_slots = [
+	$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Ring1,
+	$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Ring2
+]
+
+onready var accessory_slots = {
+	CraftingManager.ITEM_SUBTYPE.AMULET:
+		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Amulet
 }
 
 onready var all_slots
@@ -67,6 +79,7 @@ func update_equipped():
 	for slot in all_slots:
 		slot.set_slottable(null)
 	var weapon_count = 0
+	var ring_count = 0
 	for item in CombatProcessor.Player.get_items():
 		match item.type:
 			CraftingManager.ITEM_TYPE.WEAPON:
@@ -74,6 +87,13 @@ func update_equipped():
 				weapon_count += 1
 			CraftingManager.ITEM_TYPE.ARMOR:
 				armor_slots[item.subtype].set_slottable(item)
+			CraftingManager.ITEM_TYPE.ACCESSORY:
+				match item.subtype:
+					CraftingManager.ITEM_SUBTYPE.RING:
+						ring_slots[ring_count].set_slottable(item)
+						ring_count += 1
+					_:
+						accessory_slots[item.subtype].set_slottable(item)
 
 func update_attributes():
 	var _attributes = player.attributes

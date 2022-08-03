@@ -7,7 +7,7 @@
 [node name="BodyArmor" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 base_icon = ExtResource( 3 )
-required_parts = [ 4, 5 ]
+required_parts = [ 5, 4 ]
 optional_parts = [ 7, 6 ]
 type = 1
 subtype = 2

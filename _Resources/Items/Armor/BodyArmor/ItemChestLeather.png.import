@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ItemChest.png-c385986537460298d05c8ce51b47f0a8.stex"
+path="res://.import/ItemChestLeather.png-8d3eeb25f94512dc4056753bcd3c51b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Resources/Items/Armor/BodyArmor/ItemChest.png"
-dest_files=[ "res://.import/ItemChest.png-c385986537460298d05c8ce51b47f0a8.stex" ]
+source_file="res://_Resources/Items/Armor/BodyArmor/ItemChestLeather.png"
+dest_files=[ "res://.import/ItemChestLeather.png-8d3eeb25f94512dc4056753bcd3c51b8.stex" ]
 
 [params]
 
