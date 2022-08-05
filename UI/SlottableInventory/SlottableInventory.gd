@@ -35,7 +35,6 @@ func add_slottable(slottable : Slottable, update = true):
 				break
 	if !added:
 		get_items_container().add_child(slottable)
-		slottable.connect("tree_exited", self, "update_inventory")
 		if update:
 			update_inventory()
 
@@ -43,11 +42,6 @@ func add_slottable(slottable : Slottable, update = true):
 func remove_slottable(slottable : Slottable, quantity = 1):
 	var ret = slottable.split(quantity)
 	return ret
-
-func disconnect_all():
-	for item in get_items_container().get_children():
-		if item.is_connected("tree_exited", self, "update_inventory"):
-			item.disconnect("tree_exited", self, "update_inventory")
 
 static func _sort_rarity(a, b):
 	if a == null or b == null:
@@ -104,7 +98,6 @@ func sort(array, func_name):
 func reorder_items():
 	if !ready:
 		return
-	disconnect_all()
 	var items = get_items_container().get_children()
 	for item in items:
 		get_items_container().remove_child(item)
@@ -114,8 +107,6 @@ func reorder_items():
 	sort(items, "_sort_type")
 	for item in items:
 		get_items_container().add_child(item)
-	for item in items:
-		item.connect("tree_exited", self, "update_inventory")
 
 func update_inventory():
 	if allow_sorting:
@@ -135,6 +126,9 @@ func update_inventory():
 func get_items_container():
 	return $Items
 
+func get_slots():
+	return container.get_children()
+
 func _on_inspector(slot):
 	emit_signal("inspector", slot)
 
@@ -146,13 +140,11 @@ func load():
 			items.remove_child(item)
 			$Items.add_child(item)
 			item.load()
-			item.connect("tree_exited", self, "update_inventory")
 		items.queue_free()
 		update_inventory()
 
 func save_and_exit():
 	if get_items_container() == null:
 		return
-	disconnect_all()
 	if $Items.get_child_count() != 0 and save_path != "":
 		Saver.save_scene($Items, save_path)

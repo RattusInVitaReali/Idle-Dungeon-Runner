@@ -1,2 +1,0 @@
-extends ItemPart
-class_name AmuletPendant

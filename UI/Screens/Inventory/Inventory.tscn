@@ -133,7 +133,7 @@ margin_bottom = 515.0
 size_flags_vertical = 3
 gear = true
 
-[node name="Slot8" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="7" instance=ExtResource( 4 )]
+[node name="Pants" parent="VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer" index="7" instance=ExtResource( 4 )]
 margin_left = 169.0
 margin_top = 350.0
 margin_right = 328.0

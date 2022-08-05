@@ -1,0 +1,2 @@
+extends ItemPart
+class_name HelmetLining

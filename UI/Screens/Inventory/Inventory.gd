@@ -17,7 +17,11 @@ onready var armor_slots = {
 	CraftingManager.ITEM_SUBTYPE.BODY_ARMOR: 
 		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/BodyArmor,
 	CraftingManager.ITEM_SUBTYPE.HELMET:
-		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Helmet
+		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Helmet,
+	CraftingManager.ITEM_SUBTYPE.BOOTS:
+		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Boots,
+	CraftingManager.ITEM_SUBTYPE.PANTS:
+		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Pants
 }
 
 onready var ring_slots = [

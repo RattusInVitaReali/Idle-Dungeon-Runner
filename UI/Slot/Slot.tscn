@@ -15,19 +15,20 @@ margin_right = 150.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 3
+size_flags_vertical = 0
 custom_constants/separation = 0
 script = ExtResource( 2 )
 
 [node name="Left" type="Label" parent="."]
 margin_top = 68.0
 margin_bottom = 82.0
-size_flags_horizontal = 3
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 150.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 1 )
 stretch_mode = 6
 
@@ -35,9 +36,9 @@ stretch_mode = 6
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
-margin_top = 10.0
+margin_top = 15.0
 margin_right = -10.0
-margin_bottom = -10.0
+margin_bottom = -5.0
 
 [node name="Quantity" type="Label" parent="Background"]
 visible = false
@@ -83,6 +84,5 @@ margin_left = 150.0
 margin_top = 68.0
 margin_right = 150.0
 margin_bottom = 82.0
-size_flags_horizontal = 3
 
 [connection signal="pressed" from="Background/Button" to="." method="_on_Button_pressed"]

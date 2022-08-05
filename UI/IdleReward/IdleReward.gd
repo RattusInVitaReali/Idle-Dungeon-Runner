@@ -5,7 +5,6 @@ onready var inventory = $Panel/VBoxContainer/SlottableInventory
 onready var time = $Panel/VBoxContainer/Time
 
 func _on_TextureButton_pressed():
-	inventory.disconnect_all()
 	for slottable in inventory.get_items_container().get_children():
 		inventory.get_items_container().remove_child(slottable)
 		LootManager.get_item(slottable)

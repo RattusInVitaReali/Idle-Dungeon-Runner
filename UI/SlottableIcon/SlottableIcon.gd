@@ -18,14 +18,17 @@ func set_slottable(var slottable : Slottable):
 				texture = slottable.icon
 			else:
 				texture = null
-			for part in slottable.get_children():
-				var new_texture = TextureRect.new()
-				new_texture.texture = part.get_item_icon(slottable)
-				new_texture.modulate = part.icon_color
-				new_texture.expand = true
-				new_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-				new_texture.rect_size = rect_size
-				add_child(new_texture)
+			for part_type in slottable.get_draw_order():
+				for part in slottable.get_children():
+					if part.type == part_type:
+						var new_texture = TextureRect.new()
+						new_texture.texture = part.get_item_icon(slottable)
+						new_texture.modulate = part.icon_color
+						new_texture.expand = true
+						new_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+						add_child(new_texture)
+						new_texture.rect_size = rect_size
+						break
 		Slottable.SLOTTABLE_TYPE.SKILL:
 			texture = slottable.border_texture
 			stretch_mode = TextureRect.STRETCH_KEEP_ASPECT

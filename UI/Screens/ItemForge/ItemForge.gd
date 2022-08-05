@@ -83,53 +83,59 @@ func _on_inspector(slot):
 		if !(slot.slottable is Item):
 			inspector.connect("merge", self, "_on_merge")
 	elif upgrading:
-		var valid_types = item_to_upgrade.required_parts.duplicate()
-		valid_types.append_array(item_to_upgrade.optional_parts)
-		var valid = false
-		for part_type in valid_types:
-			if slot.slottable.type == part_type:
-				valid = true
-				break
-		if !valid:
-			return
-		var compare_to = null
-		for part in item_preview.get_items_container().get_children():
-			if part.type == slot.slottable.type:
-				compare_to = part
-				break
-		var inspector = item_compare_inspector(slot.slottable, compare_to)
-		var response = yield(inspector, "confirmed")
-		if response:
-			replace_part(slot.slottable)
-			start_upgrade(item_to_upgrade)
+		try_to_upgrade(slot)
 	elif selecting_parts:
-		var valid_types = selected_item.required_parts.duplicate()
-		valid_types.append_array(selected_item.optional_parts)
-		var valid = false
-		for part_type in valid_types:
-			if slot.slottable.type == part_type:
-				valid = true
-				break
-		if !valid:
-			return
-		if slot in selected_part_slots:
-			slot.deselect()
-			selected_parts.erase(slot.slottable)
-			selected_part_slots.erase(slot)
-			return
-		var slottable = slot.slottable
-		slot.select()
-		for part in selected_parts:
-			if part.type == slottable.type:
-				for part_slot in selected_part_slots:
-					if part_slot.slottable == part:
-						part_slot.deselect()
-						selected_part_slots.erase(part_slot)
-						break
-				selected_parts.erase(part)
-				break
-		selected_parts.append(slottable)
-		selected_part_slots.append(slot)
+		try_to_add_part(slot)
+
+func try_to_upgrade(slot):
+	var valid_types = item_to_upgrade.required_parts.duplicate()
+	valid_types.append_array(item_to_upgrade.optional_parts)
+	var valid = false
+	for part_type in valid_types:
+		if slot.slottable.type == part_type:
+			valid = true
+			break
+	if !valid:
+		return
+	var compare_to = null
+	for part in item_preview.get_items_container().get_children():
+		if part.type == slot.slottable.type:
+			compare_to = part
+			break
+	var inspector = item_compare_inspector(slot.slottable, compare_to)
+	var response = yield(inspector, "confirmed")
+	if response:
+		replace_part(slot.slottable)
+		start_upgrade(item_to_upgrade)
+
+func try_to_add_part(slot):
+	var valid_types = selected_item.required_parts.duplicate()
+	valid_types.append_array(selected_item.optional_parts)
+	var valid = false
+	for part_type in valid_types:
+		if slot.slottable.type == part_type:
+			valid = true
+			break
+	if !valid:
+		return
+	if slot in selected_part_slots:
+		slot.deselect()
+		selected_parts.erase(slot.slottable)
+		selected_part_slots.erase(slot)
+		return
+	var slottable = slot.slottable
+	slot.select()
+	for part in selected_parts:
+		if part.type == slottable.type:
+			for part_slot in selected_part_slots:
+				if part_slot.slottable == part:
+					part_slot.deselect()
+					selected_part_slots.erase(part_slot)
+					break
+			selected_parts.erase(part)
+			break
+	selected_parts.append(slottable)
+	selected_part_slots.append(slot)
 
 func _on_merge(slottable):
 	var new_item = slottable.try_to_merge()
@@ -170,6 +176,16 @@ func _on_ButtonRight_pressed():
 	else:
 		create_item()
 
+func hide_other_parts(item):
+	for slot in parts.get_slots():
+		if not (slot.slottable.type in item.required_parts or slot.slottable.type in item.optional_parts):
+			slot.hide()
+
+func show_all_parts():
+	print("Showing all")
+	for slot in parts.get_slots():
+		slot.show()
+
 func start_creation():
 	creating = true
 	selecting_parts = false
@@ -188,6 +204,7 @@ func start_creation():
 	selected_part_slots = []
 
 func end_creation():
+	show_all_parts()
 	creating = false
 	selecting_parts = false
 	selected_item = null
@@ -206,6 +223,7 @@ func end_creation():
 	emit_signal("get_parts")
 
 func start_part_selection():
+	hide_other_parts(selected_item)
 	selecting_parts = true
 	items_dimm.show()
 	parts_dimm.hide()
@@ -235,6 +253,7 @@ func create_item():
 func start_upgrade(var item):
 	upgrading = true
 	item_to_upgrade = item
+	hide_other_parts(item_to_upgrade)
 	forge.hide()
 	item_preview.set_item(item)
 	item_upgrade.show()
@@ -248,6 +267,7 @@ func end_upgrade():
 	if item_to_upgrade.get_parent() == null:
 		LootManager.get_item(item_to_upgrade)
 	item_to_upgrade = null
+	show_all_parts()
 	forge.show()
 	item_preview.set_item(null)
 	item_upgrade.hide()

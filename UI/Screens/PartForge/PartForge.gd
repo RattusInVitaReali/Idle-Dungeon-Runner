@@ -115,6 +115,7 @@ func start_creation():
 		selected_part_slot.deselect()
 
 func end_creation():
+	show_all_mats()
 	creating = false
 	selecting_material = false
 	selected_part = null
@@ -129,8 +130,18 @@ func end_creation():
 		selected_part_slot.deselect()
 	emit_signal("get_materials")
 
+func hide_other_mats():
+	for slot in materials.get_slots():
+		if not slot.slottable.type in selected_part.allowed_material_types:
+			slot.hide()
+
+func show_all_mats():
+	for slot in materials.get_slots():
+		slot.show()
+
 func start_material_selection():
 	selecting_material = true
+	hide_other_mats()
 	parts_dimm.show()
 	materials_dimm.hide()
 

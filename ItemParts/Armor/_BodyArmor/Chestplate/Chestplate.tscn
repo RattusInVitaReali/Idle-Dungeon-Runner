@@ -18,13 +18,13 @@ durability_multi = 0.7
 allowed_material_types = [ 1, 2, 3, 4 ]
 description = "Main body armor protective layer."
 stat_multipliers = {
-"armor": 1.0,
+"armor": 2.0,
 "dexterity": 0.0,
 "expertise": 0.0,
 "ferocity": 0.0,
 "magic_penetration": 0.0,
 "mastery": 0.0,
-"occult_aversion": 1.0,
+"occult_aversion": 2.0,
 "penetration": 0.0,
 "potency": 1.0,
 "power": 1.0,

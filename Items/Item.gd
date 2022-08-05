@@ -157,6 +157,11 @@ func print_item():
 			print("- %s : %s" % [stat.capitalize(), stats[stat]])
 	print()
 
+func get_draw_order():
+	var order = required_parts.duplicate()
+	order.append_array(optional_parts)
+	return order
+
 func same_as(item : Slottable):
 	if item == null:
 		return false

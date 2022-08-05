@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Items/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Items/Armor/Pants/Pants.gd" type="Script" id=2]
+[ext_resource path="res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC210.png" type="Texture" id=3]
+
+[node name="Pants" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+base_icon = ExtResource( 3 )
+required_parts = [ 25, 26 ]
+optional_parts = [ 27, 28, 29 ]
+type = 1
+subtype = 5
+description = "Leg protection."

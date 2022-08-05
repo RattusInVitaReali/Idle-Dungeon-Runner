@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ItemParts/Accessory/_Amulet/Pendant/Pendant.gd" type="Script" id=1]
+[ext_resource path="res://_Resources/Items/Accessory/Amulet/ItemAmuletPendant.png" type="Texture" id=2]
+[ext_resource path="res://_Resources/ItemParts/Accessory/Amulet/AmuletPendant.png" type="Texture" id=3]
+[ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=4]
+
+[node name="AmuletPendant" instance=ExtResource( 4 )]
+script = ExtResource( 1 )
+icon = null
+icon_color = Color( 1, 1, 1, 1 )
+slottable_name = ""
+quantity = 1
+rarity = 0
+tier = 0
+base_icon = ExtResource( 3 )
+item_icon = ExtResource( 2 )
+type = 12
+used_for = 2
+cost = 10
+base_durability = 0
+durability_multi = 0.5
+allowed_material_types = [ 1, 2 ]
+description = "A casing for a focus."
+stat_multipliers = {
+"armor": 0.0,
+"dexterity": 0.0,
+"expertise": 0.0,
+"ferocity": 2.0,
+"magic_penetration": 0.0,
+"mastery": 0.0,
+"occult_aversion": 0.0,
+"penetration": 0.0,
+"potency": 2.0,
+"power": 2.0,
+"precision": 2.0,
+"toughess": 0.0,
+"vitality": 0.0
+}
+base_stats = {
+"armor": 0,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 0,
+"penetration": 0,
+"potency": 0,
+"power": 0,
+"precision": 0,
+"toughess": 0,
+"vitality": 0
+}

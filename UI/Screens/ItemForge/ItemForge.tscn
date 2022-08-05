@@ -193,7 +193,6 @@ margin_left = 33.0
 margin_right = 283.0
 margin_bottom = 250.0
 rect_min_size = Vector2( 250, 250 )
-size_flags_vertical = 3
 upgrade = true
 
 [node name="Right" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Image/ItemUpgrade/VBoxContainer/HBoxContainer" index="2"]

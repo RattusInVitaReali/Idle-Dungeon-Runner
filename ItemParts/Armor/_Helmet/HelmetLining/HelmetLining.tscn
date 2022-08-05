@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ItemParts/Armor/_Helmet/HelmetLining/HelmetLining.gd" type="Script" id=2]
+[ext_resource path="res://_Resources/ItemParts/Armor/Helmet/Padding.png" type="Texture" id=3]
+[ext_resource path="res://_Resources/Items/Armor/Helmet/ItemPadding.png" type="Texture" id=4]
+
+[node name="Padding" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+base_icon = ExtResource( 3 )
+item_icon = ExtResource( 4 )
+type = 16
+used_for = 1
+cost = 15
+durability_multi = 0.7
+allowed_material_types = [ 2, 3, 4, 1 ]
+description = "Inner helmet layer."
+stat_multipliers = {
+"armor": 1.0,
+"dexterity": 0.0,
+"expertise": 0.0,
+"ferocity": 0.0,
+"magic_penetration": 0.0,
+"mastery": 0.0,
+"occult_aversion": 1.0,
+"penetration": 0.0,
+"potency": 0.0,
+"power": 0.0,
+"precision": 0.0,
+"toughess": 1.0,
+"vitality": 1.5
+}

@@ -32,12 +32,18 @@ func try_to_add_slottable(_slottable):
 func set_slottable(_slottable):
 	if slottable != null:
 		slottable.disconnect("slottable_updated", self, "update_slot")
+		if !gear and !upgrade:
+			slottable.disconnect("slottable_exited", self, "queue_free")
 	slottable = _slottable
 	if slottable != null:
 		slottable.connect("slottable_updated", self, "update_slot")
+		if !gear and !upgrade:
+			slottable.connect("tree_exited", self, "queue_free")
 	update_slot()
 
 func update_slot():
+	if icon == null:
+		return
 	icon.set_slottable(slottable)
 	if slottable == null:
 		$Background.texture = Frame
