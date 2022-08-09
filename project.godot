@@ -214,6 +214,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Lootable/GlobalResourceLootable/_GlobalResourceLootable.gd"
 }, {
+"base": "Slottable",
+"class": "GlobalResourceSlottable",
+"language": "GDScript",
+"path": "res://Slottable/GlobalResourceSlottable/GlobalResourceSlottable.gd"
+}, {
+"base": "Node",
+"class": "GlobalResourcesScript",
+"language": "GDScript",
+"path": "res://Autoload/GlobalResources.gd"
+}, {
 "base": "Modifier",
 "class": "Healthy",
 "language": "GDScript",
@@ -651,6 +661,8 @@ _global_script_class_icons={
 "GameScreen": "",
 "GitAPI": "",
 "GlobalResourceLootable": "",
+"GlobalResourceSlottable": "",
+"GlobalResourcesScript": "",
 "Healthy": "",
 "Helmet": "",
 "HelmetLining": "",

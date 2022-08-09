@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Slottable/Slottable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Slottable/GlobalResourceSlottable/GlobalResourceSlottable.gd" type="Script" id=2]
+
+[node name="GlobalResourceSlottable" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+slottable_type = 5
+rarity = 1
+global_resource = 0

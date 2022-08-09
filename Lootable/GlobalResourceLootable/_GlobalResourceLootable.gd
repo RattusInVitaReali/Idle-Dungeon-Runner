@@ -1,7 +1,9 @@
 extends Lootable
 class_name GlobalResourceLootable
 
-export (String) var global_resource_name
+const GlobalResourceSlottable = preload("res://Slottable/GlobalResourceSlottable/GlobalResourceSlottable.tscn")
+
+export (GlobalResourcesScript.GLOBAL_RESOURCES) var global_resource
 export (int) var base_min_quantity = 1
 export (int) var base_max_quantity = 1
 
@@ -9,8 +11,7 @@ var min_quantity = base_min_quantity
 var max_quantity = base_max_quantity
 
 func get_loot():
-	GlobalResources.set(global_resource_name, GlobalResources.get(global_resource_name) + get_quantity())
-	return null
+	return GlobalResourceSlottable.instance().from_lootable(self).quantity(get_quantity())
 
 func set_level(level):
 	min_quantity = int(base_min_quantity * (1 + level / 2))

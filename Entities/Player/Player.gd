@@ -12,7 +12,7 @@ func _ready():
 	Saver.save_on_exit(self)
 	CombatProcessor.connect("entered_auto_combat", self, "_on_enter_auto_combat")
 	CombatProcessor.connect("entered_manual_combat", self, "_on_enter_manual_combat")
-	LootManager.connect("get_experience", self, "get_experience")
+	LootManager.connect("item_acquired", self, "_on_item_acquired")
 	set_level(level)
 	play("run")
 	ready = true
@@ -87,6 +87,10 @@ func _on_enter_auto_combat():
 		start_action_timer()
 	calculate_anim_speed()
 
+func _on_item_acquired(item):
+	if item.slottable_type == Slottable.SLOTTABLE_TYPE.EXPERIENCE:
+		get_experience(item.quantity)
+		item.queue_free()
 func get_experience(_exp):
 	self.experience += _exp
 
