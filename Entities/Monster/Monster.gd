@@ -1,7 +1,7 @@
 extends Entity
 class_name Monster
 
-enum MONSTER_TYPE { BANDIT, WOLF }
+enum MONSTER_TYPE { BANDIT, WOLF, ORC }
 
 signal loot
 

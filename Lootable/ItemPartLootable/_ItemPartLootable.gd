@@ -7,7 +7,7 @@ export (Resource) var material
 var tier = 0
 
 func set_level(level):
-	tier = floor(level / 5)
+	tier = max(0, floor(sqrt(level / 2 - 1)))
 
 func get_loot():
 	return part_type.instance().from_lootable(self)

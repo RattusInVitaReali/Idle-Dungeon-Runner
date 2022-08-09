@@ -91,6 +91,7 @@ func _on_item_acquired(item):
 	if item.slottable_type == Slottable.SLOTTABLE_TYPE.EXPERIENCE:
 		get_experience(item.quantity)
 		item.queue_free()
+
 func get_experience(_exp):
 	self.experience += _exp
 

@@ -82,9 +82,13 @@ func update_special():
 
 func update_tier_stars():
 	if slottable.tier > 0:
-		var i = slottable.tier;
+		var i = floor(slottable.tier / 5)
 		while i > 0:
-			tier_stars.add_child(TierStar.instance())
+			tier_stars.add_child(TierStar.instance().set_tier(1))
+			i -= 1
+		i = int(slottable.tier) % 5
+		while i > 0:
+			tier_stars.add_child(TierStar.instance().set_tier(0))
 			i -= 1
 	else:
 		tier_stars.hide()

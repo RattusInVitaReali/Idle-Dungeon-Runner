@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Slot/SlotTierStar/SlotTierStar.gd" type="Script" id=1]
+[ext_resource path="res://UI/Inspectors/TierStar.tscn" type="PackedScene" id=2]
+
+[node name="SlotTierStar" type="Control"]
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 16, 16 )
+script = ExtResource( 1 )
+
+[node name="TierStar" parent="." instance=ExtResource( 2 )]
+rect_scale = Vector2( 0.75, 0.75 )

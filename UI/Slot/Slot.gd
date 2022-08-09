@@ -3,7 +3,7 @@ class_name Slot
 
 signal inspector
 
-const TierStar = preload("res://UI/Slot/TierStar.tscn")
+const TierStar = preload("res://UI/Slot/SlotTierStar/SlotTierStar.tscn")
 
 const Frame = preload("res://_Resources/gui_images/Frame.png")
 const FrameBasic = preload("res://_Resources/gui_images/Frame_Basic.png")
@@ -69,9 +69,13 @@ func update_slot():
 		for tier_star in tier_stars.get_children():
 			tier_stars.remove_child(tier_star)
 			tier_star.queue_free()
-		var i = slottable.tier
+		var i = floor(slottable.tier / 5)
 		while i > 0:
-			tier_stars.add_child(TierStar.instance())
+			tier_stars.add_child(TierStar.instance().set_tier(1))
+			i -= 1
+		i = int(slottable.tier) % 5
+		while i > 0:
+			tier_stars.add_child(TierStar.instance().set_tier(0))
 			i -= 1
 		tier_stars.visible = true
 

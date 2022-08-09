@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Entities/Monster/Monster.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Monster/Orc/Orc.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Monster/Orc/OrcAnimations.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Lootable/ExperienceLootable/Experience.tres" type="Resource" id=4]
+[ext_resource path="res://Lootable/ItemPartLootable/IronAxeHead.tres" type="Resource" id=5]
+[ext_resource path="res://Lootable/ItemPartLootable/OakAxeHandle.tres" type="Resource" id=6]
+[ext_resource path="res://Lootable/ItemLootable/OrcAxe.tres" type="Resource" id=7]
+[ext_resource path="res://Skills/BasicAttack/BasicAttack.tscn" type="PackedScene" id=48]
+
+[node name="Orc" instance=ExtResource( 1 )]
+frames = ExtResource( 3 )
+animation = "die"
+script = ExtResource( 2 )
+per_level = {
+"armor": 5,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 5,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 5,
+"penetration": 0,
+"potency": 0,
+"power": 7,
+"precision": 5,
+"toughess": 0,
+"vitality": 15
+}
+base_name = "Orc"
+base_loot = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
+monster_types = [ 2 ]
+
+[node name="BasicAttack" parent="Skills" index="0" instance=ExtResource( 48 )]
