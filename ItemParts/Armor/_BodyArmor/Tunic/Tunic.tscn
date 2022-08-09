@@ -13,7 +13,7 @@ type = 4
 used_for = 1
 cost = 15
 durability_multi = 0.4
-allowed_material_types = [ 1, 3 ]
+allowed_material_types = [ 3, 4 ]
 description = "Base body armor layer."
 stat_multipliers = {
 "armor": 0.7,

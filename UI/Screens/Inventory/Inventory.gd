@@ -43,6 +43,10 @@ func _ready():
 	all_slots = weapon_slots.duplicate()
 	for type in armor_slots:
 		all_slots.append(armor_slots[type])
+	for type in accessory_slots:
+		all_slots.append(accessory_slots[type])
+	for ring in ring_slots:
+		all_slots.append(ring)
 	for slot in all_slots:
 		slot.connect("inspector", self, "_on_inspector")
 	CombatProcessor.connect("player_spawned", self, "_on_player_spawned")

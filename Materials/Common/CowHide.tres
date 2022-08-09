@@ -1,0 +1,31 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Materials/MaterialResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+icon_texture = 3
+icon_color = Color( 0.964706, 0.607843, 0.14902, 1 )
+slottable_name = "Cow Hide"
+prefix = "Cow Hide"
+special_weapon = ""
+special_armor = ""
+type = 4
+rarity = 1
+weight = 2
+durability = 100
+stats = {
+"armor": 10,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 10,
+"penetration": 0,
+"potency": 0,
+"power": 7,
+"precision": 0,
+"toughess": 0,
+"vitality": 25
+}

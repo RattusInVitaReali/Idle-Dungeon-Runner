@@ -13,7 +13,7 @@ type = 21
 used_for = 1
 cost = 10
 durability_multi = 0.5
-allowed_material_types = [ 3, 4, 2 ]
+allowed_material_types = [ 3, 4 ]
 description = "Base boot layer."
 stat_multipliers = {
 "armor": 0.5,

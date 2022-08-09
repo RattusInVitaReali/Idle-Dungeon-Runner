@@ -5,7 +5,7 @@
 [ext_resource path="res://_Resources/ItemParts/Armor/Helmet/Padding.png" type="Texture" id=3]
 [ext_resource path="res://_Resources/Items/Armor/Helmet/ItemPadding.png" type="Texture" id=4]
 
-[node name="Padding" instance=ExtResource( 1 )]
+[node name="HelmetLining" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 base_icon = ExtResource( 3 )
 item_icon = ExtResource( 4 )
@@ -13,7 +13,7 @@ type = 16
 used_for = 1
 cost = 15
 durability_multi = 0.7
-allowed_material_types = [ 2, 3, 4, 1 ]
+allowed_material_types = [ 3, 4 ]
 description = "Inner helmet layer."
 stat_multipliers = {
 "armor": 1.0,

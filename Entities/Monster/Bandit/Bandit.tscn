@@ -1,17 +1,19 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Entities/Monster/Bandit/BanditAnimations.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Entities/Monster/Monster.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Skills/Lacerate/Lacerate.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Lootable/ItemPartLootable/OakSwordHandle.tres" type="Resource" id=4]
+[ext_resource path="res://Entities/Monster/Bandit/Bandit.gd" type="Script" id=4]
 [ext_resource path="res://Lootable/ItemPartLootable/CopperSwordBlade.tres" type="Resource" id=5]
 [ext_resource path="res://Lootable/ItemLootable/BanditSword.tres" type="Resource" id=6]
+[ext_resource path="res://Lootable/ItemPartLootable/OakSwordHandle.tres" type="Resource" id=7]
 
 [node name="Bandit" instance=ExtResource( 2 )]
 frames = ExtResource( 1 )
 animation = "idle"
+script = ExtResource( 4 )
 base_name = "Bandit"
-base_loot = [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ]
+base_loot = [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ) ]
 monster_types = [ 0 ]
 
 [node name="Lacerate" parent="Skills" index="0" instance=ExtResource( 3 )]

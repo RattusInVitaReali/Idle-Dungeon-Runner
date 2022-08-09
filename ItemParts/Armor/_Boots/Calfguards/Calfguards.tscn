@@ -13,7 +13,7 @@ type = 23
 used_for = 1
 cost = 10
 durability_multi = 0.5
-allowed_material_types = [ 1, 2, 3, 4 ]
+allowed_material_types = [ 1, 2, 4 ]
 description = "Back lower leg protection."
 stat_multipliers = {
 "armor": 0.75,

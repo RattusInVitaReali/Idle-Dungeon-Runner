@@ -25,6 +25,7 @@ per_level = {
 "toughess": 0,
 "vitality": 10
 }
+experience = 0
 
 [node name="BasicAttack" parent="Skills" index="0" instance=ExtResource( 2 )]
 

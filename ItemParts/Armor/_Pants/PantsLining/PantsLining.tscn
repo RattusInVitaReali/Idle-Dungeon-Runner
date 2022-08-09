@@ -13,7 +13,7 @@ type = 25
 used_for = 1
 cost = 15
 durability_multi = 0.7
-allowed_material_types = [ 3, 4, 2, 1 ]
+allowed_material_types = [ 3, 4 ]
 description = "Base pants layer."
 stat_multipliers = {
 "armor": 0.75,

@@ -4,9 +4,36 @@
 [ext_resource path="res://Entities/Monster/Bandit/BanditBoss/BanditBoss.gd" type="Script" id=2]
 
 [node name="BanditBoss" instance=ExtResource( 1 )]
-scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
+per_level = {
+"armor": 15,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 15,
+"penetration": 0,
+"potency": 0,
+"power": 10,
+"precision": 10,
+"toughess": 0,
+"vitality": 30
+}
+base_attributes = {
+"armor": 30,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 30,
+"penetration": 0,
+"potency": 0,
+"power": 15,
+"precision": 0,
+"toughess": 0,
+"vitality": 100
+}
 base_name = "Bandit Boss"
 base_loot = [  ]
-
-[connection signal="timeout" from="ActionTimer" to="." method="_on_ActionTimer_timeout"]

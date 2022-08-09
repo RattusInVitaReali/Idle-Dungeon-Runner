@@ -1,2 +1,2 @@
-extends Monster
+extends Bandit
 class_name BanditBoss

@@ -15,17 +15,17 @@ rarity = 0
 weight = 1
 durability = 100
 stats = {
-"armor": 2,
+"armor": 3,
 "dexterity": 0,
 "expertise": 0,
-"ferocity": 2,
+"ferocity": 3,
 "magic_penetration": 0,
 "mastery": 0,
-"occult_aversion": 2,
+"occult_aversion": 3,
 "penetration": 0,
 "potency": 0,
-"power": 2,
-"precision": 2,
+"power": 3,
+"precision": 3,
 "toughess": 0,
-"vitality": 5
+"vitality": 10
 }

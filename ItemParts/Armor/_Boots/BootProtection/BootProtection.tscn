@@ -13,7 +13,7 @@ type = 22
 used_for = 1
 cost = 15
 durability_multi = 0.7
-allowed_material_types = [ 1, 2, 3, 4 ]
+allowed_material_types = [ 1, 2, 4 ]
 description = "Main boot protective layer."
 stat_multipliers = {
 "armor": 1.0,

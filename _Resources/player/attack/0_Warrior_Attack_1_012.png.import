@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/0_Warrior_Attack_1_012.png-73f91a867c2cd74ae915c48a12928f44.stex"
+path="res://.import/0_Warrior_Attack_1_012.png-8d1ea8c6b3c965037d5faac78e6412b5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Resources/player/attack/0_Warrior_Attack_1_012.png"
-dest_files=[ "res://.import/0_Warrior_Attack_1_012.png-73f91a867c2cd74ae915c48a12928f44.stex" ]
+source_file="res://_Resources/Player/Attack/0_Warrior_Attack_1_012.png"
+dest_files=[ "res://.import/0_Warrior_Attack_1_012.png-8d1ea8c6b3c965037d5faac78e6412b5.stex" ]
 
 [params]
 

@@ -14,7 +14,7 @@ item_icon = null
 type = 17
 cost = 20
 durability_multi = 0.7
-allowed_material_types = [ 1, 3, 4, 2 ]
+allowed_material_types = [ 1, 2, 4 ]
 description = "Main helmet protctive part."
 stat_multipliers = {
 "armor": 1.5,

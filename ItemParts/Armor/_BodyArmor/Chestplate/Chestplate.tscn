@@ -15,7 +15,7 @@ type = 5
 used_for = 1
 cost = 25
 durability_multi = 0.7
-allowed_material_types = [ 1, 2, 3, 4 ]
+allowed_material_types = [ 1, 2, 4 ]
 description = "Main body armor protective layer."
 stat_multipliers = {
 "armor": 2.0,

@@ -182,7 +182,6 @@ func hide_other_parts(item):
 			slot.hide()
 
 func show_all_parts():
-	print("Showing all")
 	for slot in parts.get_slots():
 		slot.show()
 

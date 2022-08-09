@@ -13,7 +13,7 @@ type = 6
 used_for = 1
 cost = 20
 durability_multi = 0.6
-allowed_material_types = [ 1, 2 ]
+allowed_material_types = [ 1, 2, 4 ]
 description = "Protection for your shoulders."
 stat_multipliers = {
 "armor": 0.7,

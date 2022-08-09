@@ -18,14 +18,14 @@ stats = {
 "armor": 5,
 "dexterity": 0,
 "expertise": 0,
-"ferocity": 10,
+"ferocity": 20,
 "magic_penetration": 0,
 "mastery": 0,
-"occult_aversion": 15,
+"occult_aversion": 5,
 "penetration": 0,
-"potency": 15,
+"potency": 0,
 "power": 15,
-"precision": 10,
+"precision": 20,
 "toughess": 0,
-"vitality": 30
+"vitality": 20
 }

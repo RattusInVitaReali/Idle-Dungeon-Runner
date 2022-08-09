@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/0_Warrior_Run_014.png-cf15d7c45667657ffb3e1dfba48425ff.stex"
+path="res://.import/0_Warrior_Run_014.png-27b363f06f150f7e9706a139d72e0990.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Resources/player/run/0_Warrior_Run_014.png"
-dest_files=[ "res://.import/0_Warrior_Run_014.png-cf15d7c45667657ffb3e1dfba48425ff.stex" ]
+source_file="res://_Resources/Player/Run/0_Warrior_Run_014.png"
+dest_files=[ "res://.import/0_Warrior_Run_014.png-27b363f06f150f7e9706a139d72e0990.stex" ]
 
 [params]
 
