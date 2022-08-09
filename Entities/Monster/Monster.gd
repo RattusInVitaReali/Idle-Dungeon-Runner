@@ -78,23 +78,16 @@ func add_loot(_loot):
 	return self
 
 func drop_loot():
-	set_material_quantity()
+	set_lootable_level()
 	emit_signal("loot", loot)
 
 func _get_loot():
-	set_material_quantity()
+	set_lootable_level()
 	return LootManager.roll_loot(loot)
 
-func get_exp_value():
-	var pl = power_level()
-	if level <= 20:
-		return pl * 5
-	return int(12.5 * (pow(pl + 1, 2.5) - pow(pl, 2.5)) / pow(pl, 1.1)) + 5
-
-func set_material_quantity():
+func set_lootable_level():
 	for lootable in loot:
-		if lootable is MaterialLootable:
-			lootable.set_quantity(power_level())
+		lootable.set_level(power_level())
 
 func _on_Entity_animation_finished():
 	._on_Entity_animation_finished()

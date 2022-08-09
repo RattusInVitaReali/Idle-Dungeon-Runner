@@ -1,6 +1,7 @@
 extends Node
 
 signal item_acquired
+signal get_experience
 
 func get_item(item):
 	if item != null:
@@ -15,3 +16,6 @@ func roll_loot(_loot):
 	for lootable in _loot:
 		loot.append(lootable.roll_loot())
 	return loot
+
+func _on_get_experience(experience):
+	emit_signal("get_experience", experience)

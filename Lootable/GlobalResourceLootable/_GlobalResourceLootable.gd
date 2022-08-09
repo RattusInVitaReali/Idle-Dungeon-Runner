@@ -1,9 +1,7 @@
 extends Lootable
-class_name MaterialLootable
+class_name GlobalResourceLootable
 
-const CraftingMaterial = preload("res://Materials/CraftingMaterial.tscn")
-
-export (Resource) var material
+export (String) var global_resource_name
 export (int) var base_min_quantity = 1
 export (int) var base_max_quantity = 1
 
@@ -11,12 +9,10 @@ var min_quantity = base_min_quantity
 var max_quantity = base_max_quantity
 
 func get_loot():
-	return CraftingMaterial.instance().from_lootable(self)
+	GlobalResources.set(global_resource_name, GlobalResources.get(global_resource_name) + get_quantity())
+	return null
 
 func set_level(level):
-	set_quantity(level)
-
-func set_quantity(level):
 	min_quantity = int(base_min_quantity * (1 + level / 2))
 	max_quantity = int(base_max_quantity * (1 + level / 2))
 

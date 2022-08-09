@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Entities/Monster/Monster.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Entity.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Lootable/ExperienceLootable/Experience.tres" type="Resource" id=3]
 
 [node name="Monster" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
+base_name = "Monster"
+base_loot = [ ExtResource( 3 ) ]
+monster_types = [  ]

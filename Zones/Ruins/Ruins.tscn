@@ -10,7 +10,7 @@
 [ext_resource path="res://Modifiers/Healthy/Healthy.tres" type="Resource" id=8]
 [ext_resource path="res://Lootable/MaterialLootable/Zones/Forest/ForestOak.tres" type="Resource" id=9]
 [ext_resource path="res://Lootable/MaterialLootable/Zones/Forest/ForestCopper.tres" type="Resource" id=10]
-[ext_resource path="res://Lootable/MaterialLootable/GlobalResourceLootable/SkillLotuses.tres" type="Resource" id=11]
+[ext_resource path="res://Lootable/GlobalResourceLootable/SkillLotuses.tres" type="Resource" id=11]
 
 [node name="Ruins" instance=ExtResource( 1 )]
 script = ExtResource( 2 )

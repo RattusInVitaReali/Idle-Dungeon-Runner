@@ -12,7 +12,7 @@ func _ready():
 	Saver.save_on_exit(self)
 	CombatProcessor.connect("entered_auto_combat", self, "_on_enter_auto_combat")
 	CombatProcessor.connect("entered_manual_combat", self, "_on_enter_manual_combat")
-	CombatProcessor.connect("monster_died", self, "_on_monster_died")
+	LootManager.connect("get_experience", self, "get_experience")
 	set_level(level)
 	play("run")
 	ready = true
@@ -87,8 +87,8 @@ func _on_enter_auto_combat():
 		start_action_timer()
 	calculate_anim_speed()
 
-func _on_monster_died(monster):
-	self.experience += monster.get_exp_value()
+func get_experience(_exp):
+	self.experience += _exp
 
 func _on_Entity_animation_finished():
 	._on_Entity_animation_finished()

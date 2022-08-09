@@ -73,7 +73,7 @@ static func _sort_tier(a, b):
 static func _sort_type(a, b):
 	if a == null or b == null:
 		return false
-	if a.type == null or b.type == null:
+	if a.slottable_type == null or b.slottable_type == null:
 		return false
 	if a.slottable_type < b.slottable_type:
 		return true

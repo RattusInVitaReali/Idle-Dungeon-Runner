@@ -118,7 +118,7 @@ func on_incoming_damage(damage_info : CombatProcessor.DamageInfo, item):
 	mat.on_incoming_damage(damage_info, item)
 
 func from_lootable(lootable):
-	var _mat = CraftingMaterial.instance().set_mat(lootable.material)
+	var _mat = CraftingMaterial.instance().set_mat(lootable.material, lootable.tier, cost)
 	set_mat(_mat)
 	return self
 

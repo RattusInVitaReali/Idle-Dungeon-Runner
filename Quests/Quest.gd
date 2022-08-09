@@ -45,13 +45,12 @@ func add_kills(count):
 	if kill_count == required_kills:
 		complete()
 
-func set_material_levels():
+func set_lootable_level():
 	for lootable in reward:
-		if lootable is MaterialLootable:
-			lootable.set_quantity(total_levels / kill_count)
+		lootable.set_level(total_levels / kill_count)
 
 func complete():
-	set_material_levels()
+	set_lootable_level()
 	emit_signal("quest_completed")
 	emit_signal("loot", reward)
 	queue_free()

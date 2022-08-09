@@ -1,10 +1,9 @@
 [gd_resource type="Resource" load_steps=2 format=2]
 
-[ext_resource path="res://Lootable/MaterialLootable/GlobalResourceLootable/_GlobalResourceLootable.gd" type="Script" id=1]
+[ext_resource path="res://Lootable/GlobalResourceLootable/_GlobalResourceLootable.gd" type="Script" id=1]
 
 [resource]
 script = ExtResource( 1 )
 chance = 0.4
-base_min_quantity = 1
 base_max_quantity = 2
 global_resource_name = "SKILL_LOTUSES"
