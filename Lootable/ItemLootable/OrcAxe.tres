@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource( 1 )
-chance = 1.0
+chance = 0.07
 item_type = ExtResource( 2 )
 parts = [ ExtResource( 3 ), ExtResource( 4 ) ]
 custom_name = "Orc Axe"
