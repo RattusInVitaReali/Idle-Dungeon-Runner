@@ -3,41 +3,27 @@
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_026.png" type="Texture" id=1]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_020.png" type="Texture" id=2]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_012.png" type="Texture" id=3]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_002.png" type="Texture" id=4]
 [ext_resource path="res://_Resources/player/run/0_Warrior_Run_014.png" type="Texture" id=5]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_003.png" type="Texture" id=6]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_013.png" type="Texture" id=7]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_014.png" type="Texture" id=8]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_010.png" type="Texture" id=9]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_000.png" type="Texture" id=10]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_004.png" type="Texture" id=11]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_029.png" type="Texture" id=12]
 [ext_resource path="res://_Resources/player/attack/0_Warrior_Attack_1_007.png" type="Texture" id=13]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_015.png" type="Texture" id=14]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_007.png" type="Texture" id=15]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_012.png" type="Texture" id=16]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_005.png" type="Texture" id=17]
 [ext_resource path="res://_Resources/player/run/0_Warrior_Run_000.png" type="Texture" id=18]
 [ext_resource path="res://_Resources/player/run/0_Warrior_Run_010.png" type="Texture" id=19]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_024.png" type="Texture" id=20]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_025.png" type="Texture" id=21]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_010.png" type="Texture" id=22]
 [ext_resource path="res://_Resources/player/run/0_Warrior_Run_001.png" type="Texture" id=23]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_006.png" type="Texture" id=24]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_019.png" type="Texture" id=25]
 [ext_resource path="res://_Resources/player/attack/0_Warrior_Attack_1_008.png" type="Texture" id=26]
 [ext_resource path="res://_Resources/player/attack/0_Warrior_Attack_1_003.png" type="Texture" id=27]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_008.png" type="Texture" id=28]
 [ext_resource path="res://_Resources/player/attack/0_Warrior_Attack_1_009.png" type="Texture" id=29]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_013.png" type="Texture" id=30]
 [ext_resource path="res://_Resources/player/run/0_Warrior_Run_006.png" type="Texture" id=31]
 [ext_resource path="res://_Resources/player/run/0_Warrior_Run_012.png" type="Texture" id=32]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_009.png" type="Texture" id=33]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_021.png" type="Texture" id=34]
 [ext_resource path="res://_Resources/player/attack/0_Warrior_Attack_1_012.png" type="Texture" id=35]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_011.png" type="Texture" id=36]
 [ext_resource path="res://_Resources/player/attack/0_Warrior_Attack_1_013.png" type="Texture" id=37]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_001.png" type="Texture" id=38]
 [ext_resource path="res://_Resources/player/attack/0_Warrior_Attack_1_005.png" type="Texture" id=39]
 [ext_resource path="res://_Resources/player/attack/0_Warrior_Attack_1_011.png" type="Texture" id=40]
 [ext_resource path="res://_Resources/player/run/0_Warrior_Run_004.png" type="Texture" id=41]
@@ -65,7 +51,6 @@
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_017.png" type="Texture" id=63]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_007.png" type="Texture" id=64]
 [ext_resource path="res://_Resources/player/run/0_Warrior_Run_003.png" type="Texture" id=65]
-[ext_resource path="res://_Resources/player/attack_alt/0_Warrior_Attack_2_014.png" type="Texture" id=66]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_027.png" type="Texture" id=67]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_028.png" type="Texture" id=68]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_011.png" type="Texture" id=69]
@@ -75,61 +60,76 @@
 [ext_resource path="res://_Resources/player/attack/0_Warrior_Attack_1_002.png" type="Texture" id=73]
 [ext_resource path="res://_Resources/player/idle/0_Warrior_Idle_018.png" type="Texture" id=74]
 [ext_resource path="res://_Resources/player/run/0_Warrior_Run_013.png" type="Texture" id=75]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_015.png" type="Texture" id=76]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_019.png" type="Texture" id=77]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_003.png" type="Texture" id=78]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_002.png" type="Texture" id=79]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_011.png" type="Texture" id=80]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_004.png" type="Texture" id=81]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_005.png" type="Texture" id=82]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_016.png" type="Texture" id=83]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_014.png" type="Texture" id=84]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_006.png" type="Texture" id=85]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_008.png" type="Texture" id=86]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_009.png" type="Texture" id=87]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_000.png" type="Texture" id=88]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_012.png" type="Texture" id=89]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_020.png" type="Texture" id=90]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_025.png" type="Texture" id=91]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_013.png" type="Texture" id=92]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_007.png" type="Texture" id=93]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_018.png" type="Texture" id=94]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_021.png" type="Texture" id=95]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_010.png" type="Texture" id=96]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_029.png" type="Texture" id=97]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_028.png" type="Texture" id=98]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_023.png" type="Texture" id=99]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_017.png" type="Texture" id=100]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_022.png" type="Texture" id=101]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_027.png" type="Texture" id=102]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_024.png" type="Texture" id=103]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_001.png" type="Texture" id=104]
-[ext_resource path="res://_Resources/monsters/bandit/die/0_Warrior_Died_026.png" type="Texture" id=105]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_029.png" type="Texture" id=76]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_023.png" type="Texture" id=77]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_024.png" type="Texture" id=78]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_025.png" type="Texture" id=79]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_026.png" type="Texture" id=80]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_027.png" type="Texture" id=81]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_028.png" type="Texture" id=82]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_005.png" type="Texture" id=83]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_006.png" type="Texture" id=84]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_012.png" type="Texture" id=85]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_013.png" type="Texture" id=86]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_014.png" type="Texture" id=87]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_007.png" type="Texture" id=88]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_003.png" type="Texture" id=89]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_008.png" type="Texture" id=90]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_010.png" type="Texture" id=91]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_011.png" type="Texture" id=92]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_000.png" type="Texture" id=93]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_001.png" type="Texture" id=94]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_009.png" type="Texture" id=95]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_002.png" type="Texture" id=96]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_004.png" type="Texture" id=97]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_005.png" type="Texture" id=98]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_006.png" type="Texture" id=99]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_007.png" type="Texture" id=100]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_008.png" type="Texture" id=101]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_009.png" type="Texture" id=102]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_004.png" type="Texture" id=103]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_016.png" type="Texture" id=104]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_010.png" type="Texture" id=105]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_015.png" type="Texture" id=106]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_021.png" type="Texture" id=107]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_022.png" type="Texture" id=108]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_012.png" type="Texture" id=109]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_013.png" type="Texture" id=110]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_014.png" type="Texture" id=111]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_017.png" type="Texture" id=112]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_019.png" type="Texture" id=113]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_020.png" type="Texture" id=114]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_011.png" type="Texture" id=115]
+[ext_resource path="res://_Resources/Player/Die/0_Warrior_Died_018.png" type="Texture" id=116]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_002.png" type="Texture" id=117]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_000.png" type="Texture" id=118]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_001.png" type="Texture" id=119]
+[ext_resource path="res://_Resources/Player/Hurt/0_Warrior_Hurt_003.png" type="Texture" id=120]
 
 [resource]
 animations = [ {
+"frames": [ ExtResource( 47 ), ExtResource( 51 ), ExtResource( 73 ), ExtResource( 27 ), ExtResource( 56 ), ExtResource( 39 ), ExtResource( 57 ), ExtResource( 13 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 70 ), ExtResource( 40 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 72 ), ExtResource( 72 ) ],
+"loop": true,
+"name": "attack",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 93 ), ExtResource( 94 ), ExtResource( 96 ), ExtResource( 89 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 105 ), ExtResource( 115 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 106 ), ExtResource( 104 ), ExtResource( 112 ), ExtResource( 116 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ), ExtResource( 76 ) ],
+"loop": false,
+"name": "die",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 118 ), ExtResource( 119 ), ExtResource( 117 ), ExtResource( 120 ), ExtResource( 103 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 88 ), ExtResource( 90 ), ExtResource( 95 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ) ],
+"loop": false,
+"name": "hurt",
+"speed": 60.0
+}, {
 "frames": [ ExtResource( 58 ), ExtResource( 48 ), ExtResource( 61 ), ExtResource( 53 ), ExtResource( 62 ), ExtResource( 50 ), ExtResource( 46 ), ExtResource( 64 ), ExtResource( 60 ), ExtResource( 42 ), ExtResource( 9 ), ExtResource( 69 ), ExtResource( 3 ), ExtResource( 30 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 52 ), ExtResource( 63 ), ExtResource( 74 ), ExtResource( 25 ), ExtResource( 2 ), ExtResource( 34 ), ExtResource( 55 ), ExtResource( 71 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 1 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "idle",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 88 ), ExtResource( 104 ), ExtResource( 79 ), ExtResource( 78 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 85 ), ExtResource( 93 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 96 ), ExtResource( 80 ), ExtResource( 89 ), ExtResource( 92 ), ExtResource( 84 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 100 ), ExtResource( 94 ), ExtResource( 77 ), ExtResource( 90 ), ExtResource( 95 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 103 ), ExtResource( 91 ), ExtResource( 105 ), ExtResource( 102 ), ExtResource( 98 ), ExtResource( 97 ) ],
-"loop": false,
-"name": "die",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 47 ), ExtResource( 51 ), ExtResource( 73 ), ExtResource( 27 ), ExtResource( 56 ), ExtResource( 39 ), ExtResource( 57 ), ExtResource( 13 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 70 ), ExtResource( 40 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 72 ) ],
-"loop": true,
-"name": "attack",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 38 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 15 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 22 ), ExtResource( 36 ), ExtResource( 16 ), ExtResource( 7 ), ExtResource( 66 ) ],
-"loop": true,
-"name": "attack_alt",
-"speed": 30.0
+"speed": 60.0
 }, {
 "frames": [ ExtResource( 18 ), ExtResource( 23 ), ExtResource( 54 ), ExtResource( 65 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 31 ), ExtResource( 45 ), ExtResource( 43 ), ExtResource( 49 ), ExtResource( 19 ), ExtResource( 59 ), ExtResource( 32 ), ExtResource( 75 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "run",
-"speed": 30.0
+"speed": 60.0
 } ]

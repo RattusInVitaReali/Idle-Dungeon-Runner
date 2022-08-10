@@ -13,7 +13,7 @@ type = 15
 used_for = 2
 cost = 10
 durability_multi = 0.5
-allowed_material_types = [ 0, 1 ]
+allowed_material_types = [ 0 ]
 description = "Decorative beads for a ring."
 stat_multipliers = {
 "armor": 1.0,

@@ -10,7 +10,7 @@ enum MATERIAL_WEIGHT { VERY_LIGHT, LIGHT, MEDIUM, HEAVY, VERY_HEAVY }
 enum PART_TYPE { SWORD_BLADE, SWORD_HANDLE, SWORD_GUARD, POMMEL,
 				 TUNIC, CHESTPLATE, SHOULDERS, ARMS,
 				 AXE_HEAD, AXE_HANDLE, SECONDARY_AXE_HEAD,
-				 CHAIN, PENDANT, FOCUS,
+				 CHAIN, CROWN, FOCUS,
 				 RING_BAND, RING_BEADS,
 				 HELMET_LINING, HELMET_PROTECTION, ORNAMENT, VISOR, NECKGUARD,
 				 BOOT_LINING, BOOT_PROTECTION, CALFGUARDS, BOOT_COLLARS,
@@ -54,8 +54,8 @@ onready var part_scenes = {
 	PART_TYPE.BOOT_COLLARS : load("res://ItemParts/Armor/_Boots/BootCollars/BootCollars.tscn"),
 	
 	PART_TYPE.CHAIN : load("res://ItemParts/Accessory/_Amulet/Chain/Chain.tscn"), 
-	PART_TYPE.PENDANT : load("res://ItemParts/Accessory/_Amulet/Pendant/Pendant.tscn"), 
 	PART_TYPE.FOCUS : load("res://ItemParts/Accessory/Focus/Focus.tscn"), 
+	PART_TYPE.CROWN : load("res://ItemParts/Accessory/Crown/Crown.tscn"), 
 	
 	PART_TYPE.RING_BAND : load("res://ItemParts/Accessory/_Ring/RingBand/RingBand.tscn"), 
 	PART_TYPE.RING_BEADS : load("res://ItemParts/Accessory/_Ring/RingBeads/RingBeads.tscn")

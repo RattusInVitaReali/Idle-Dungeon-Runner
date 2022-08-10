@@ -14,19 +14,19 @@ frames = ExtResource( 3 )
 animation = "die"
 script = ExtResource( 2 )
 per_level = {
-"armor": 5,
+"armor": 15,
 "dexterity": 0,
 "expertise": 0,
-"ferocity": 5,
+"ferocity": 0,
 "magic_penetration": 0,
 "mastery": 0,
-"occult_aversion": 5,
+"occult_aversion": 15,
 "penetration": 0,
 "potency": 0,
-"power": 7,
+"power": 12,
 "precision": 5,
 "toughess": 0,
-"vitality": 15
+"vitality": 35
 }
 base_name = "Orc"
 base_loot = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]

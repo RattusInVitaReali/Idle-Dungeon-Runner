@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Entities/Monster/Golem/Golem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Monster/Golem/GolemIce/GolemIce.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Monster/Golem/GolemIce/GolemIceAnimations.tres" type="SpriteFrames" id=3]
+
+[node name="GolemIce" instance=ExtResource( 1 )]
+frames = ExtResource( 3 )
+script = ExtResource( 2 )
+per_level = {
+"armor": 35,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 35,
+"penetration": 0,
+"potency": 0,
+"power": 30,
+"precision": 5,
+"toughess": 0,
+"vitality": 75
+}
+base_name = "Ice Golem"

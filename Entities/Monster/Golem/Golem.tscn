@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Entities/Monster/Monster.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Monster/Golem/Golem.gd" type="Script" id=2]
+[ext_resource path="res://Skills/BasicAttack/BasicAttack.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Skills/Lacerate/Lacerate.tscn" type="PackedScene" id=4]
+
+[node name="Golem" instance=ExtResource( 1 )]
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 2 )
+per_level = {
+"armor": 25,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 25,
+"penetration": 0,
+"potency": 0,
+"power": 30,
+"precision": 5,
+"toughess": 0,
+"vitality": 75
+}
+base_attributes = {
+"armor": 50,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 0,
+"penetration": 0,
+"potency": 0,
+"power": 30,
+"precision": 0,
+"toughess": 0,
+"vitality": 150
+}
+base_name = "Golem"
+monster_types = [ 3 ]
+
+[node name="BasicAttack" parent="Skills" index="0" instance=ExtResource( 3 )]
+
+[node name="Lacerate" parent="Skills" index="1" instance=ExtResource( 4 )]

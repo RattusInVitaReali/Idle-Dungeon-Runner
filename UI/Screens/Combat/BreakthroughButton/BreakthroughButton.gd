@@ -1,7 +1,7 @@
 extends Control
 class_name BreakthroughButton
 
-const BreakthroughFrame = preload("res://_Resources/gui_images/Frame_Common.png")
+const BreakthroughFrame = preload("res://_Resources/gui_images/Frame_Legendary.png")
 const RepeatFrame = preload("res://_Resources/gui_images/Frame_Uncommon.png")
 const Infinity = preload("res://_Resources/infinity.png")
 const UpArrow = preload("res://_Resources/gui_images/UpArrow.png")

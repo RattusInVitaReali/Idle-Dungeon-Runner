@@ -70,12 +70,13 @@ var next_action_ready = false
 var enemy = null
 
 var yeeting = false
-var yeet_x = 15
-var yeet_y = -15
-const yeet_dist = 20
+var yeet_x = 1500
+var yeet_y = -1500
+const yeet_dist = 2000
 const yeet_spread = PI
 
 func _ready():
+	visible = true
 	connect("damage_enemy", CombatProcessor, "damage_enemy")
 	connect("apply_effect", CombatProcessor, "apply_effect")
 	CombatProcessor.connect("entered_combat", self, "enter_combat")
@@ -86,9 +87,9 @@ func _ready():
 func _process(delta):
 	next_action()
 	if yeeting:
-		position.x += yeet_x
-		position.y += yeet_y
-		rotate(0.5)
+		position.x += yeet_x * delta
+		position.y += yeet_y * delta
+		rotate(50 * delta)
 
 func set_hp(hp):
 	stats.hp = round(hp)
@@ -179,16 +180,21 @@ func apply_item_stats():
 func apply_attribute_stats():
 	stats["phys_damage"] += attributes["power"]
 	stats["magic_damage"] += attributes["potency"]
-	stats["crit_chance"] += attributes["precision"] * 0.002
-	stats["crit_multi"] += attributes["ferocity"] * 0.0015
+	if attributes["precision"] < 75:
+		stats["crit_chance"] += attributes["precision"] * 0.002
+	else:
+		stats["crit_chance"] += sqrt(attributes["precision"] / 3300)
+	stats["crit_multi"] += attributes["ferocity"] * 0.002
 	stats["phys_protection"] += attributes["armor"]
 	stats["magic_protection"] += attributes["occult_aversion"]
 	stats["max_hp"] += attributes["vitality"]
 
-func play_animation(animation):
+func play_animation(_animation):
+	if (_animation == "hurt" and animation == "attack"):
+		return
 	stop()
 	frame = 0
-	play(animation)
+	play(_animation)
 
 func enter_combat():
 	next_action_ready = false
@@ -288,6 +294,7 @@ func stats_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 	damage_info.magic_damage = damage_info.magic_damage * 100 / (100 + stats.magic_protection)
 
 func take_damage_info(damage_info : CombatProcessor.DamageInfo):
+	play_animation("hurt")
 	take_damage(damage_info.phys_damage)
 	take_damage(damage_info.magic_damage)
 	$DamageNumberManager.new_damage_number(damage_info)
@@ -331,7 +338,7 @@ func _on_ActionTimer_timeout():
 	next_action_ready = true
 
 func _on_Entity_animation_finished():
-	if animation == "attack" or animation == "attack_alt":
+	if animation == "attack" or animation == "attack_alt" or animation == "hurt":
 		play("idle")
 	elif animation == "die":
 		emit_signal("despawned")

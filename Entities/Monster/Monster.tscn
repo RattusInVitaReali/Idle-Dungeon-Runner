@@ -6,6 +6,21 @@
 
 [node name="Monster" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
+per_level = {
+"armor": 10,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 10,
+"penetration": 0,
+"potency": 0,
+"power": 10,
+"precision": 5,
+"toughess": 0,
+"vitality": 25
+}
 base_name = "Monster"
 base_loot = [ ExtResource( 3 ) ]
 monster_types = [  ]

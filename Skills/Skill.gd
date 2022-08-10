@@ -67,7 +67,7 @@ func get_cooldown_timer():
 	return $Cooldown
 
 func get_upgrade_reqs():
-	var skill_points = int(level / 3) + 1
+	var skill_points = 1
 	var lotuses = 0
 	if level >= 10:
 		lotuses = level * 6

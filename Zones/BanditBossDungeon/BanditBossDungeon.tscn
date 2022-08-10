@@ -5,7 +5,7 @@
 [ext_resource path="res://Zones/Zone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Zones/BanditBossDungeon/BanditBossDungeon.gd" type="Script" id=4]
 [ext_resource path="res://Entities/Monster/Bandit/BanditBoss/BanditBoss.tscn" type="PackedScene" id=5]
-[ext_resource path="res://_Resources/backgrounds/Dungeon.png" type="Texture" id=6]
+[ext_resource path="res://_Resources/ZoneBackgrounds/Dungeon.png" type="Texture" id=6]
 [ext_resource path="res://Lootable/MaterialLootable/Zones/BanditBossDungeon/BanditBossDungeonRuby.tres" type="Resource" id=7]
 
 [node name="BanditBossDungeon" instance=ExtResource( 3 )]

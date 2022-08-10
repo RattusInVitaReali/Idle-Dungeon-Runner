@@ -6,19 +6,19 @@
 [node name="BanditBoss" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 per_level = {
-"armor": 15,
+"armor": 25,
 "dexterity": 0,
 "expertise": 0,
 "ferocity": 0,
 "magic_penetration": 0,
 "mastery": 0,
-"occult_aversion": 15,
+"occult_aversion": 25,
 "penetration": 0,
 "potency": 0,
-"power": 10,
-"precision": 10,
+"power": 20,
+"precision": 5,
 "toughess": 0,
-"vitality": 30
+"vitality": 50
 }
 base_attributes = {
 "armor": 30,

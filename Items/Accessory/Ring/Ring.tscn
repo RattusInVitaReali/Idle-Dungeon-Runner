@@ -8,7 +8,7 @@
 script = ExtResource( 2 )
 base_icon = ExtResource( 3 )
 required_parts = [ 14, 13 ]
-optional_parts = [ 15 ]
+optional_parts = [ 12, 15 ]
 type = 2
 subtype = 8
 description = "A ring with a focus."

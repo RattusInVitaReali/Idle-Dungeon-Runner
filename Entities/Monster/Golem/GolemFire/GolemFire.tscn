@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Entities/Monster/Golem/GolemFire/GolemFire.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Monster/Golem/Golem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/Monster/Golem/GolemFire/GolemFireAnimations.tres" type="SpriteFrames" id=3]
+
+[node name="GolemFire" instance=ExtResource( 2 )]
+frames = ExtResource( 3 )
+script = ExtResource( 1 )
+per_level = {
+"armor": 25,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 25,
+"penetration": 0,
+"potency": 0,
+"power": 40,
+"precision": 5,
+"toughess": 0,
+"vitality": 75
+}
+base_name = "Fire Golem"
