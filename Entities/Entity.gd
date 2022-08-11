@@ -69,6 +69,8 @@ var can_be_attacked = true
 var next_action_ready = false
 var enemy = null
 
+var combat_pos = Vector2(0, 0)
+
 var yeeting = false
 var yeet_x = 1500
 var yeet_y = -1500
@@ -190,14 +192,47 @@ func apply_attribute_stats():
 	stats["max_hp"] += attributes["vitality"]
 
 func play_animation(_animation):
+	if (_animation == "melee" and enemy != null):
+		go_to_enemy()
+		return
 	if (_animation == "hurt" and animation == "attack"):
 		return
 	stop()
 	frame = 0
 	play(_animation)
 
+func go_to_enemy():
+	var enemy_pos = enemy.combat_pos
+	if enemy.combat_pos.y > combat_pos.y:
+		enemy_pos += Vector2(0, -70)
+	else:
+		enemy_pos += Vector2(0, 70)
+	$Tween.interpolate_property(
+		self,
+		"position",
+		combat_pos,
+		enemy_pos,
+		0.2,
+		Tween.TRANS_CIRC,
+		Tween.EASE_OUT
+	)
+	$Tween.start()
+
+func go_to_combat_pos():
+	$Tween.interpolate_property(
+		self,
+		"position",
+		position,
+		combat_pos,
+		0.2,
+		Tween.TRANS_CIRC,
+		Tween.EASE_OUT
+	)
+	$Tween.start()
+
 func enter_combat():
 	next_action_ready = false
+	combat_pos = position
 	calculate_anim_speed()
 	play_animation("idle")
 
@@ -338,7 +373,10 @@ func _on_ActionTimer_timeout():
 	next_action_ready = true
 
 func _on_Entity_animation_finished():
-	if animation == "attack" or animation == "attack_alt" or animation == "hurt":
+	if animation == "attack" or animation == "attack_alt":
+		go_to_combat_pos()
+		play("idle")
+	elif animation == "hurt":
 		play("idle")
 	elif animation == "die":
 		emit_signal("despawned")

@@ -14,7 +14,8 @@ enum PART_TYPE { SWORD_BLADE, SWORD_HANDLE, SWORD_GUARD, POMMEL,
 				 RING_BAND, RING_BEADS,
 				 HELMET_LINING, HELMET_PROTECTION, ORNAMENT, VISOR, NECKGUARD,
 				 BOOT_LINING, BOOT_PROTECTION, CALFGUARDS, BOOT_COLLARS,
-				 PANTS_LINING, SIDEGUARDS, SHINGUARDS, KNEEPADS, OVERPANTS }
+				 PANTS_LINING, SIDEGUARDS, SHINGUARDS, KNEEPADS, OVERPANTS,
+				 GLOVE_LINING, HAND_PROTECTION, FOREARM_PROTECTION }
 
 enum ITEM_TYPE { WEAPON, ARMOR, ACCESSORY, ANY }
 enum ITEM_SUBTYPE { SWORD, AXE, BODY_ARMOR, BOOTS, HELMET, PANTS, WRIST, GLOVES, RING, AMULET } 
@@ -53,6 +54,10 @@ onready var part_scenes = {
 	PART_TYPE.CALFGUARDS : load("res://ItemParts/Armor/_Boots/Calfguards/Calfguards.tscn"),
 	PART_TYPE.BOOT_COLLARS : load("res://ItemParts/Armor/_Boots/BootCollars/BootCollars.tscn"),
 	
+	PART_TYPE.GLOVE_LINING : load("res://ItemParts/Armor/_Gloves/GloveLining/GloveLining.tscn"), 
+	PART_TYPE.HAND_PROTECTION : load("res://ItemParts/Armor/_Gloves/HandProtection/HandProtection.tscn"), 
+	PART_TYPE.FOREARM_PROTECTION : load("res://ItemParts/Armor/_Gloves/ForearmProtection/ForearmProtection.tscn"), 
+	
 	PART_TYPE.CHAIN : load("res://ItemParts/Accessory/_Amulet/Chain/Chain.tscn"), 
 	PART_TYPE.FOCUS : load("res://ItemParts/Accessory/Focus/Focus.tscn"), 
 	PART_TYPE.CROWN : load("res://ItemParts/Accessory/Crown/Crown.tscn"), 
@@ -68,6 +73,7 @@ onready var item_scenes = {
 	ITEM_SUBTYPE.PANTS : load("res://Items/Armor/Pants/Pants.tscn"),
 	ITEM_SUBTYPE.HELMET : load("res://Items/Armor/Helmet/Helmet.tscn"),
 	ITEM_SUBTYPE.BOOTS : load("res://Items/Armor/Boots/Boots.tscn"),
+	ITEM_SUBTYPE.GLOVES : load("res://Items/Armor/Gloves/Gloves.tscn"),
 	ITEM_SUBTYPE.AMULET : load("res://Items/Accessory/Amulet/Amulet.tscn"),
 	ITEM_SUBTYPE.RING : load("res://Items/Accessory/Ring/Ring.tscn")
 }

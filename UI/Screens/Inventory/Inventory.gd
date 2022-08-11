@@ -21,7 +21,9 @@ onready var armor_slots = {
 	CraftingManager.ITEM_SUBTYPE.BOOTS:
 		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Boots,
 	CraftingManager.ITEM_SUBTYPE.PANTS:
-		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Pants
+		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Pants,
+	CraftingManager.ITEM_SUBTYPE.GLOVES:
+		$VBoxContainer/Screen/VBoxContainer/Center/HBoxContainer/EquipmentBackground/GridContainer/Gloves
 }
 
 onready var ring_slots = [

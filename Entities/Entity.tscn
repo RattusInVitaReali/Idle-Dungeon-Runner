@@ -30,5 +30,7 @@ phys_color = Color( 0.992157, 0.4, 0.4, 1 )
 magic_crit_color = Color( 0.545098, 0, 1, 1 )
 phys_crit_color = Color( 0.866667, 0, 0, 1 )
 
+[node name="Tween" type="Tween" parent="."]
+
 [connection signal="animation_finished" from="." to="." method="_on_Entity_animation_finished"]
 [connection signal="timeout" from="ActionTimer" to="." method="_on_ActionTimer_timeout"]

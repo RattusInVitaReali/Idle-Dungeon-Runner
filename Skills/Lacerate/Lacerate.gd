@@ -19,6 +19,7 @@ func calculate_bleed_damage(damage):
 	return damage / 5
 
 func do_skill():
+	play_animation("melee")
 	play_animation("attack")
 	var damage = calculate_damage()
 	var bleed_damage = calculate_bleed_damage(damage)

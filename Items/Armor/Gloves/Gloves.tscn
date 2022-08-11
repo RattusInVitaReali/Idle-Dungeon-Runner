@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Items/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Items/Armor/Gloves/Gloves.gd" type="Script" id=2]
+[ext_resource path="res://_Resources/icons2/image_part_130.png" type="Texture" id=3]
+
+[node name="Gloves" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+base_icon = ExtResource( 3 )
+required_parts = [ 30, 31 ]
+optional_parts = [ 32 ]
+type = 1
+subtype = 7
+description = "Protection for your hands and forearms."

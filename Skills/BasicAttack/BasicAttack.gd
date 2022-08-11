@@ -16,6 +16,7 @@ func calculate_damage():
 	return base_damage() + attacker.stats.phys_damage * multiplier()
 
 func do_skill():
+	play_animation("melee")
 	play_animation("attack")
 	var damage = calculate_damage()
 	# DAMAGE INFO

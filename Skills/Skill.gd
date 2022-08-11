@@ -23,6 +23,8 @@ export (float) var base_cooldown
 export (String) var skill_name
 export (Texture) var skill_icon
 
+export (bool) var melee = false
+
 # Tags
 export (Array, SKILL_TAGS) var tags
 
