@@ -25,7 +25,7 @@ func initialize(_attacker, _target):
 	return self
 
 func duration(_duration):
-	duration = _duration
+	duration = _duration * attacker.stats["effect_duration_multi"]
 	$EffectTime.wait_time = duration
 	return self
 

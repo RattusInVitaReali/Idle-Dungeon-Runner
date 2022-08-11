@@ -8,8 +8,8 @@ icon_texture = 0
 icon_color = Color( 0.768627, 0.301961, 0.301961, 1 )
 slottable_name = "Bloodsteel"
 prefix = "Bloodsteel"
-special_weapon = "Bleeding deals double damage."
-special_armor = "Bleeding against you is half as effective."
+special_weapon = "Bleeding you apply deals 20% more damage."
+special_armor = "Bleeding you suffer deals 20% less damage."
 type = 1
 rarity = 3
 weight = 2
@@ -17,13 +17,13 @@ durability = 400
 stats = {
 "armor": 5,
 "dexterity": 0,
-"expertise": 0,
+"expertise": 15,
 "ferocity": 20,
 "magic_penetration": 0,
-"mastery": 0,
+"mastery": 15,
 "occult_aversion": 5,
 "penetration": 0,
-"potency": 0,
+"potency": 15,
 "power": 15,
 "precision": 20,
 "toughess": 0,

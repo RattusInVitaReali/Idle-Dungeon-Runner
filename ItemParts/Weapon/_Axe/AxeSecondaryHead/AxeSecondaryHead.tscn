@@ -17,10 +17,10 @@ description = "An optional, secondary head for battle axes."
 stat_multipliers = {
 "armor": 0.0,
 "dexterity": 0.0,
-"expertise": 0.0,
+"expertise": 0.75,
 "ferocity": 0.75,
 "magic_penetration": 1.0,
-"mastery": 0.0,
+"mastery": 0.75,
 "occult_aversion": 0.0,
 "penetration": 1.0,
 "potency": 2.0,

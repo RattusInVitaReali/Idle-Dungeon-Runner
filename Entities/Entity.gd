@@ -24,7 +24,9 @@ export var base_stats = {
 	"action_time": 0.3, 
 	"action_time_manual": 0.1,
 	"action_time_auto": 0.3,
-	"manual_cd_multi": 0.33 
+	"manual_cd_multi": 0.33,
+	"effect_duration_multi": 1,
+	"effect_effectiveness_multi": 1
 }
 
 export var per_level = { 
@@ -185,11 +187,13 @@ func apply_attribute_stats():
 	if attributes["precision"] < 75:
 		stats["crit_chance"] += attributes["precision"] * 0.002
 	else:
-		stats["crit_chance"] += sqrt(attributes["precision"] / 3300)
+		stats["crit_chance"] += sqrt(attributes["precision"] * 0.0003)
 	stats["crit_multi"] += attributes["ferocity"] * 0.002
 	stats["phys_protection"] += attributes["armor"]
 	stats["magic_protection"] += attributes["occult_aversion"]
 	stats["max_hp"] += attributes["vitality"]
+	stats["effect_duration_multi"] += attributes["mastery"] * 0.002
+	stats["effect_effectiveness_multi"] += attributes["expertise"] * 0.002
 
 func play_animation(_animation):
 	if (_animation == "melee" and enemy != null):
@@ -353,7 +357,8 @@ func heal(amount):
 		set_hp(stats.max_hp)
 
 func exit_combat():
-	pass
+	if position != combat_pos:
+		go_to_combat_pos()
 
 func die():
 	dead = true

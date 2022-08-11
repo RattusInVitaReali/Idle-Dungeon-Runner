@@ -4,7 +4,7 @@ class_name Bleeding
 var tick_damage = 0.0
 
 func tick_damage(_tick_damage):
-	tick_damage = _tick_damage
+	tick_damage = _tick_damage * attacker.stats["effect_effectiveness_multi"]
 	return self
 
 func tick():
