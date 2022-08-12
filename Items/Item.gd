@@ -1,17 +1,12 @@
 extends Slottable
 class_name Item
 
-signal item_broke
-
 export (Texture) var base_icon
 
 export (Array, CraftingManager.PART_TYPE) var required_parts
 export (Array, CraftingManager.PART_TYPE) var optional_parts
 export (CraftingManager.ITEM_TYPE) var type
 export (CraftingManager.ITEM_SUBTYPE) var subtype
-
-export (int) var base_durability
-export (float) var durability_multi
 
 export (String) var description
 export (String) var custom_name
@@ -33,10 +28,6 @@ export var base_stats = {
 }
 
 var stats = base_stats.duplicate()
-
-export (int) var durability = 1 setget set_durability
-export (int) var max_durability = 1
-export (bool) var broken = false
 
 var special = ""
 
@@ -95,25 +86,19 @@ func add_part(part):
 			child_part.queue_free()
 			break
 	add_child(part)
-	part.connect("part_broke", self, "_on_part_broke")
 	update_rarity()
 	set_slottable_name()
 	calculate_stats()
-	calculate_durability()
 	update_special()
 	reorder_parts()
 	tier += part.tier
-	if broken and !check_broken():
-		broken = false
 	emit_signal("slottable_updated")
 
 func remove_part(part):
 	remove_child(part)
-	part.disconnect("part_broke", self, "_on_part_broke")
 	update_rarity()
 	set_slottable_name()
 	calculate_stats()
-	calculate_durability()
 	update_special()
 	reorder_parts()
 	tier -= part.tier
@@ -151,44 +136,6 @@ func calculate_stats():
 		for stat in child_part.stats:
 			stats[stat] += child_part.stats[stat]
 
-func set_durability(_dur):
-	durability = _dur
-	if durability == 0:
-		queue_free()
-
-func calculate_durability():
-	durability = 0
-	max_durability = 0
-	for part in get_children():
-		durability += part.durability
-		max_durability += part.max_durability
-
-func check_broken():
-	for part_type in required_parts:
-		var found = false
-		for part in get_children():
-			if part.type == part_type:
-				found = true
-				break
-		if not found:
-			return true
-	return false
-
-func _on_part_broke(part):
-	remove_part(part)
-	part.queue_free()
-	if check_broken():
-		broken = true
-		emit_signal("item_broke", self)
-
-func _on_skill_used(skill : Skill):
-	match type:
-		CraftingManager.ITEM_TYPE.WEAPON:
-			if Skill.SKILL_TAGS.ATTACK in skill.tags:
-				var part = get_children()[randi() % get_child_count()]
-				part.durability -= 1
-				calculate_durability()
-
 func update_special():
 	special = ""
 	for part in get_children():
@@ -203,7 +150,6 @@ func apply_attributes(_stats):
 
 func print_item():
 	print("Item : %s (%s)" % [slottable_name, CraftingManager.RARITY.keys()[rarity]])
-	print("- Durability : %s" % durability)
 	for stat in stats:
 		if stats[stat] != 0:
 			print("- %s : %s" % [stat.capitalize(), stats[stat]])
@@ -219,7 +165,6 @@ func same_as(item : Slottable):
 		return false
 	var properties_to_compare = [
 		"slottable_name",
-		"durability",
 		"type",
 		"subtype"
 	]

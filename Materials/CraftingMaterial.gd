@@ -12,7 +12,6 @@ var special_armor
 
 var type
 var weight
-var durability
 
 var stats = {
 	"power": 0, 
@@ -57,7 +56,6 @@ func set_icon():
 
 func print_material():
 	print("Material : %s (%s)" % [slottable_name, CraftingManager.RARITY.keys()[rarity]])
-	print("- Durability : %s" % durability)
 	for stat in stats:
 		if stats[stat] != 0:
 			print("- %s : %s" % [stat.capitalize(), stats[stat]])

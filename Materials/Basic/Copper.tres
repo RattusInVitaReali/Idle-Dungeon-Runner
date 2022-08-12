@@ -13,7 +13,6 @@ special_armor = ""
 type = 1
 rarity = 0
 weight = 3
-durability = 75
 stats = {
 "armor": 4,
 "dexterity": 0,

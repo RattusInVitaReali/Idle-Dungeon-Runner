@@ -21,7 +21,6 @@ export (String) var special_armor
 export (CraftingManager.MATERIAL_TYPE) var type
 export (CraftingManager.RARITY) var rarity
 export (CraftingManager.MATERIAL_WEIGHT) var weight
-export (int) var durability
 
 export var stats = {
 	"power": 0, 

@@ -3,16 +3,12 @@ class_name ItemPart
 
 const CraftingMaterial = preload("res://Materials/CraftingMaterial.tscn")
 
-signal part_broke
-
 export (Texture) var base_icon
 export (Texture) var item_icon
 
 export (CraftingManager.PART_TYPE) var type
 export (CraftingManager.ITEM_TYPE) var used_for
 export (int) var cost
-export (int) var base_durability
-export (float) var durability_multi
 
 export (Array, CraftingManager.MATERIAL_TYPE) var allowed_material_types
 export (String) var description
@@ -51,9 +47,6 @@ export var base_stats = {
 
 var stats = base_stats.duplicate()
 
-export (int) var durability setget set_durability
-export (int) var max_durability
-
 var mat : CraftingMaterial
 var special = ""
 
@@ -71,7 +64,6 @@ func set_mat(_mat : CraftingMaterial):
 		mat = _mat
 		add_child(mat)
 		calculate_stats()
-		calculate_durability()
 		set_slottable_name()
 		set_special()
 		tier = mat.tier
@@ -84,15 +76,6 @@ func set_mat(_mat : CraftingMaterial):
 func calculate_stats():
 	for stat in mat.stats:
 		stats[stat] = base_stats[stat] + round(mat.stats[stat] * stat_multipliers[stat])
-
-func set_durability(_dur):
-	durability = _dur
-	if durability == 0:
-		emit_signal("part_broke", self)
-
-func calculate_durability():
-	max_durability = base_durability + mat.durability * durability_multi
-	durability = max_durability
 
 func set_slottable_name():
 	slottable_name = mat.prefix + " " + CraftingManager.PART_TYPE.keys()[type].capitalize()
@@ -108,7 +91,6 @@ func set_special():
 
 func print_part():
 	print("Part : %s (%s)" % [slottable_name, CraftingManager.RARITY.keys()[rarity]])
-	print("- Durability : %s" % durability)
 	for stat in stats:
 		if stats[stat] != 0:
 			print("- %s : %s" % [stat.capitalize(), stats[stat]])
