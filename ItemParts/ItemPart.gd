@@ -3,6 +3,8 @@ class_name ItemPart
 
 const CraftingMaterial = preload("res://Materials/CraftingMaterial.tscn")
 
+signal part_broke
+
 export (Texture) var base_icon
 export (Texture) var item_icon
 
@@ -49,12 +51,13 @@ export var base_stats = {
 
 var stats = base_stats.duplicate()
 
-var durability
+export (int) var durability setget set_durability
+export (int) var max_durability
+
 var mat : CraftingMaterial
 var special = ""
 
 func _ready():
-	# Temp
 	icon = base_icon
 
 func can_use_material(_mat : CraftingMaterial):
@@ -82,8 +85,14 @@ func calculate_stats():
 	for stat in mat.stats:
 		stats[stat] = base_stats[stat] + round(mat.stats[stat] * stat_multipliers[stat])
 
+func set_durability(_dur):
+	durability = _dur
+	if durability == 0:
+		emit_signal("part_broke", self)
+
 func calculate_durability():
-	durability = base_durability + mat.durability * durability_multi
+	max_durability = base_durability + mat.durability * durability_multi
+	durability = max_durability
 
 func set_slottable_name():
 	slottable_name = mat.prefix + " " + CraftingManager.PART_TYPE.keys()[type].capitalize()

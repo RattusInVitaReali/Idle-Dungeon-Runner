@@ -1,6 +1,8 @@
 extends Slottable
 class_name Item
 
+signal item_broke
+
 export (Texture) var base_icon
 
 export (Array, CraftingManager.PART_TYPE) var required_parts
@@ -32,7 +34,9 @@ export var base_stats = {
 
 var stats = base_stats.duplicate()
 
-var durability
+export (int) var durability = 1 setget set_durability
+export (int) var max_durability = 1
+export (bool) var broken = false
 
 var special = ""
 
@@ -91,6 +95,7 @@ func add_part(part):
 			child_part.queue_free()
 			break
 	add_child(part)
+	part.connect("part_broke", self, "_on_part_broke")
 	update_rarity()
 	set_slottable_name()
 	calculate_stats()
@@ -98,6 +103,20 @@ func add_part(part):
 	update_special()
 	reorder_parts()
 	tier += part.tier
+	if broken and !check_broken():
+		broken = false
+	emit_signal("slottable_updated")
+
+func remove_part(part):
+	remove_child(part)
+	part.disconnect("part_broke", self, "_on_part_broke")
+	update_rarity()
+	set_slottable_name()
+	calculate_stats()
+	calculate_durability()
+	update_special()
+	reorder_parts()
+	tier -= part.tier
 	emit_signal("slottable_updated")
 
 func update_rarity():
@@ -132,10 +151,43 @@ func calculate_stats():
 		for stat in child_part.stats:
 			stats[stat] += child_part.stats[stat]
 
+func set_durability(_dur):
+	durability = _dur
+	if durability == 0:
+		queue_free()
+
 func calculate_durability():
 	durability = 0
+	max_durability = 0
 	for part in get_children():
 		durability += part.durability
+		max_durability += part.max_durability
+
+func check_broken():
+	for part_type in required_parts:
+		var found = false
+		for part in get_children():
+			if part.type == part_type:
+				found = true
+				break
+		if not found:
+			return true
+	return false
+
+func _on_part_broke(part):
+	remove_part(part)
+	part.queue_free()
+	if check_broken():
+		broken = true
+		emit_signal("item_broke", self)
+
+func _on_skill_used(skill : Skill):
+	match type:
+		CraftingManager.ITEM_TYPE.WEAPON:
+			if Skill.SKILL_TAGS.ATTACK in skill.tags:
+				var part = get_children()[randi() % get_child_count()]
+				part.durability -= 1
+				calculate_durability()
 
 func update_special():
 	special = ""

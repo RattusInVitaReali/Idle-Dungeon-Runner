@@ -6,6 +6,7 @@ var ready = false
 signal hp_updated
 signal stats_updated
 signal level_changed
+signal skill_used
 signal damage_enemy
 signal apply_effect
 signal effect_applied
@@ -139,13 +140,20 @@ func equip_item(item : Item):
 				break
 	$Items.add_child(item)
 	item.connect("slottable_updated", self, "update_stats")
+	item.connect("item_broke", self, "_on_item_broke")
+	connect("skill_used", item, "_on_skill_used")
 	update_stats()
 
 func unequip_item(item : Item):
 	$Items.remove_child(item)
 	item.disconnect("slottable_updated", self, "update_stats")
+	item.disconnect("item_broke", self, "_on_item_broke")
+	disconnect("skill_used", item, "_on_skill_used")
 	update_stats()
 	LootManager.get_item(item)
+
+func _on_item_broke(item : Item):
+	unequip_item(item)
 
 # Final for Monster, temp for Player
 func update_skill_levels():
@@ -280,6 +288,7 @@ func try_to_use_skill(skill):
 	if next_action_ready and !dead: 
 		_skill = skill.try_to_use_skill()
 		if _skill:
+			emit_signal("skill_used", skill)
 			start_action_timer()
 	return _skill
 
