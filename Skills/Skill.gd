@@ -115,11 +115,10 @@ func lock(var value):
 	locked = value
 	emit_signal("slottable_updated")
 
-func update_cooldowns(auto_combat):
-	# Apply cdr stat in the future
+func update_cooldowns(auto_combat, multi):
 	if attacker != null:
-		auto_cooldown = base_cooldown
-		manual_cooldown = base_cooldown * attacker.stats.manual_cd_multi
+		auto_cooldown = base_cooldown * multi
+		manual_cooldown = base_cooldown * attacker.stats["manual_cd_multi"] * multi
 		if auto_combat:
 			cooldown = auto_cooldown
 		else:

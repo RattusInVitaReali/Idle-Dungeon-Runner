@@ -20,7 +20,6 @@ var suffixes = []
 func _ready():
 	connect("died", CombatProcessor, "_on_monster_died")
 	connect("loot", LootManager, "_on_loot")
-	update_skill_cooldowns(true)
 	make_name()
 	play("idle")
 	loot += base_loot.duplicate()
@@ -55,6 +54,10 @@ func update_stats():
 	.update_stats()
 	apply_modifiers()
 	update_skill_cooldowns(true)
+
+func update_skill_levels():
+	for skill in get_skills():
+		skill.set_level(level)
 
 func make_name():
 	monster_name = base_name

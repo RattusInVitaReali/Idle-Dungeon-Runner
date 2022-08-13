@@ -13,7 +13,6 @@ special_armor = "Bleeding you suffer deals 20% less damage."
 type = 1
 rarity = 3
 weight = 2
-durability = 400
 stats = {
 "armor": 5,
 "dexterity": 0,

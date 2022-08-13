@@ -32,6 +32,8 @@ class DamageInfo:
 	var target = null
 	var phys_damage = 0
 	var magic_damage = 0
+	var phys_pen = 0
+	var magic_pen = 0
 	var can_crit = true
 	var effects = []
 	var dot_tick = false
@@ -50,6 +52,14 @@ class DamageInfo:
 	
 	func magic_damage(_magic_damage):
 		magic_damage = _magic_damage
+		return self
+
+	func phys_pen(_phys_pen):
+		phys_pen = _phys_pen
+		return self
+
+	func magic_pen(_magic_pen):
+		magic_pen = _magic_pen
 		return self
 
 	func can_crit(_can_crit):

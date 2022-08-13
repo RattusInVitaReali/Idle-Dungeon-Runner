@@ -25,7 +25,7 @@ func initialize(_attacker, _target):
 	return self
 
 func duration(_duration):
-	duration = _duration * attacker.stats["effect_duration_multi"]
+	duration = _duration
 	$EffectTime.wait_time = duration
 	return self
 
@@ -33,6 +33,12 @@ func tick_duration(_tick_duration):
 	tick_duration = _tick_duration
 	$TickTime.wait_time = tick_duration
 	return self
+
+func process_duration_multi(dm):
+	duration(duration * dm)
+
+func process_strength_multi(sm):
+	pass
 
 func get_duration_timer():
 	return $EffectTime

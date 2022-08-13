@@ -25,8 +25,13 @@ export var base_stats = {
 	"action_time_manual": 0.1,
 	"action_time_auto": 0.3,
 	"manual_cd_multi": 0.33,
-	"effect_duration_multi": 1,
-	"effect_effectiveness_multi": 1
+	"outgoing_effect_duration_multi": 1.0,
+	"outgoing_effect_strength_multi": 1.0,
+	"incoming_effect_duration_multi": 1.0,
+	"incoming_effect_strength_multi": 1.0,
+	"phys_penetration": 0.0,
+	"magic_penetration": 0.0,
+	"cd_multi": 1.0
 }
 
 export var per_level = { 
@@ -150,14 +155,12 @@ func unequip_item(item : Item):
 func _on_item_broke(item : Item):
 	unequip_item(item)
 
-# Final for Monster, temp for Player
 func update_skill_levels():
-	for skill in get_skills():
-		skill.set_level(level)
+	pass
 
 func update_skill_cooldowns(auto_combat):
 	for skill in get_skills():
-		skill.update_cooldowns(auto_combat)
+		skill.update_cooldowns(auto_combat, stats["cd_multi"])
 
 func update_stats():
 	if ready:
@@ -195,8 +198,12 @@ func apply_attribute_stats():
 	stats["phys_protection"] += attributes["armor"]
 	stats["magic_protection"] += attributes["occult_aversion"]
 	stats["max_hp"] += attributes["vitality"]
-	stats["effect_duration_multi"] += attributes["mastery"] * 0.002
-	stats["effect_effectiveness_multi"] += attributes["expertise"] * 0.002
+	stats["outgoing_effect_duration_multi"] += attributes["mastery"] * 0.002
+	stats["outgoing_effect_strength_multi"] += attributes["expertise"] * 0.002
+	stats["incoming_effect_duration_multi"] += 1000 / (1000 + attributes["toughess"]) - 1
+	stats["phys_penetration"] += attributes["penetration"]
+	stats["magic_penetration"] += attributes["magic_penetration"]
+	stats["cd_multi"] += 1000 / (1000 + attributes["dexterity"]) - 1
 
 func play_animation(_animation):
 	if (_animation == "melee" and enemy != null):
@@ -289,7 +296,10 @@ func try_to_use_skill(skill):
 func process_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	apply_crit(damage_info)
 	items_outgoing_damage(damage_info)
+	stats_outgoing_damage(damage_info)
 	effects_outgoing_damage(damage_info)
+	for effect in damage_info.effects:
+		apply_effect_stats(effect)
 	emit_signal("damage_enemy", damage_info)
 
 func apply_crit(damage_info : CombatProcessor.DamageInfo):
@@ -302,13 +312,21 @@ func items_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	for item in get_items():
 		item.on_outgoing_damage(damage_info)
 
+func stats_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
+	damage_info.phys_pen(stats["phys_penetration"])
+	damage_info.magic_pen(stats["magic_penetration"])
+
 func effects_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	for effect in get_effects():
 		effect.on_outgoing_damage(damage_info)
 
 func process_outgoing_effect(effect : Effect):
-	# Apply effects / items
+	apply_effect_stats(effect)
 	emit_signal("apply_effect", effect)
+
+func apply_effect_stats(effect : Effect):
+	effect.process_duration_multi(stats["outgoing_effect_duration_multi"])
+	effect.process_strength_multi(stats["outgoing_effect_strength_multi"])
 
 func process_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 	items_incoming_damage(damage_info)
@@ -327,13 +345,15 @@ func effects_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 		item.on_incoming_damage(damage_info)
 
 func process_incoming_effect(effect : Effect):
+	effect.process_duration_multi(stats["incoming_effect_duration_multi"])
+	effect.process_strength_multi(stats["incoming_effect_strength_multi"])
 	$Effects.add_child(effect)
 	effect.begin()
 	emit_signal("effect_applied", effect)
 
 func stats_incoming_damage(damage_info : CombatProcessor.DamageInfo):
-	damage_info.phys_damage = damage_info.phys_damage * 100 / (100 + stats.phys_protection)
-	damage_info.magic_damage = damage_info.magic_damage * 100 / (100 + stats.magic_protection)
+	damage_info.phys_damage = damage_info.phys_damage * 100 / (100 + max(0, stats.phys_protection - damage_info.phys_pen))
+	damage_info.magic_damage = damage_info.magic_damage * 100 / (100 + max(0, stats.magic_protection - damage_info.magic_pen))
 
 func take_damage_info(damage_info : CombatProcessor.DamageInfo):
 	play_animation("hurt")

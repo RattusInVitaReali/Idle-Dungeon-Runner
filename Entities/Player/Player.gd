@@ -13,7 +13,7 @@ func _ready():
 	CombatProcessor.connect("entered_auto_combat", self, "_on_enter_auto_combat")
 	CombatProcessor.connect("entered_manual_combat", self, "_on_enter_manual_combat")
 	LootManager.connect("item_acquired", self, "_on_item_acquired")
-	set_level(level)
+	set_level(4)
 	play("run")
 	ready = true
 	update_stats()
@@ -40,9 +40,6 @@ func current_level_exp():
 func level_up():
 	.level_up()
 	GlobalResources.SKILL_POINTS += 1 # TEMP
-
-func update_skill_levels():
-	pass
 
 func update_stats():
 	.update_stats()
