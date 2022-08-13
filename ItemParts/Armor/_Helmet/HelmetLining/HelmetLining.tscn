@@ -12,12 +12,11 @@ item_icon = ExtResource( 4 )
 type = 16
 used_for = 1
 cost = 15
-durability_multi = 0.7
 allowed_material_types = [ 3, 4 ]
 description = "Inner helmet layer."
 stat_multipliers = {
 "armor": 1.0,
-"dexterity": 0.0,
+"dexterity": 0.75,
 "expertise": 0.0,
 "ferocity": 0.0,
 "magic_penetration": 0.0,

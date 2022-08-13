@@ -12,7 +12,6 @@ item_icon = ExtResource( 4 )
 type = 23
 used_for = 1
 cost = 10
-durability_multi = 0.5
 allowed_material_types = [ 1, 2, 4 ]
 description = "Back lower leg protection."
 stat_multipliers = {
@@ -27,6 +26,6 @@ stat_multipliers = {
 "potency": 0.0,
 "power": 0.0,
 "precision": 0.0,
-"toughess": 0.0,
+"toughess": 0.5,
 "vitality": 0.75
 }

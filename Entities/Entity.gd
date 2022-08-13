@@ -203,7 +203,7 @@ func apply_attribute_stats():
 	stats["incoming_effect_duration_multi"] += 1000 / (1000 + attributes["toughess"]) - 1
 	stats["phys_penetration"] += attributes["penetration"]
 	stats["magic_penetration"] += attributes["magic_penetration"]
-	stats["cd_multi"] += 1000 / (1000 + attributes["dexterity"]) - 1
+	stats["cd_multi"] += 1000.0 / (1000 + attributes["dexterity"]) - 1
 
 func play_animation(_animation):
 	if (_animation == "melee" and enemy != null):

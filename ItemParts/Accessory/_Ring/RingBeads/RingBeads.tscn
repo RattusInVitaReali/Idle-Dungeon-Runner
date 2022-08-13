@@ -12,21 +12,20 @@ item_icon = ExtResource( 3 )
 type = 15
 used_for = 2
 cost = 10
-durability_multi = 0.5
 allowed_material_types = [ 0 ]
 description = "Decorative beads for a ring."
 stat_multipliers = {
-"armor": 1.0,
-"dexterity": 1.0,
-"expertise": 1.0,
-"ferocity": 1.0,
-"magic_penetration": 1.0,
-"mastery": 1.0,
-"occult_aversion": 1.0,
-"penetration": 1.0,
-"potency": 1.0,
-"power": 1.0,
-"precision": 1.0,
-"toughess": 1.0,
-"vitality": 1.0
+"armor": 0.75,
+"dexterity": 0.75,
+"expertise": 0.75,
+"ferocity": 0.75,
+"magic_penetration": 0.75,
+"mastery": 0.75,
+"occult_aversion": 0.75,
+"penetration": 0.75,
+"potency": 0.75,
+"power": 0.75,
+"precision": 0.75,
+"toughess": 0.75,
+"vitality": 0.75
 }

@@ -13,7 +13,6 @@ item_icon = null
 type = 12
 used_for = 2
 cost = 10
-durability_multi = 0.5
 allowed_material_types = [ 1, 2 ]
 description = "A casing for a focus."
 stat_multipliers = {
@@ -27,7 +26,7 @@ stat_multipliers = {
 "penetration": 0.0,
 "potency": 1.0,
 "power": 1.0,
-"precision": 2.0,
+"precision": 1.5,
 "toughess": 0.0,
 "vitality": 0.0
 }

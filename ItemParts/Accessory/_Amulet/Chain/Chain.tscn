@@ -12,7 +12,6 @@ item_icon = ExtResource( 3 )
 type = 11
 used_for = 2
 cost = 10
-durability_multi = 0.5
 allowed_material_types = [ 1, 3 ]
 description = "A chain to hang a focus from."
 stat_multipliers = {

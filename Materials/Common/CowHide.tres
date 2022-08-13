@@ -15,7 +15,7 @@ rarity = 1
 weight = 2
 stats = {
 "armor": 10,
-"dexterity": 0,
+"dexterity": 12,
 "expertise": 0,
 "ferocity": 0,
 "magic_penetration": 0,
@@ -25,6 +25,6 @@ stats = {
 "potency": 0,
 "power": 7,
 "precision": 0,
-"toughess": 0,
+"toughess": 7,
 "vitality": 25
 }

@@ -15,13 +15,13 @@ rarity = 1
 weight = 3
 stats = {
 "armor": 10,
-"dexterity": 0,
+"dexterity": 5,
 "expertise": 0,
 "ferocity": 10,
 "magic_penetration": 0,
 "mastery": 0,
 "occult_aversion": 10,
-"penetration": 0,
+"penetration": 10,
 "potency": 0,
 "power": 10,
 "precision": 10,

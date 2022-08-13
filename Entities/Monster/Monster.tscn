@@ -8,7 +8,7 @@
 script = ExtResource( 1 )
 per_level = {
 "armor": 10,
-"dexterity": 0,
+"dexterity": 3,
 "expertise": 0,
 "ferocity": 0,
 "magic_penetration": 0,

@@ -11,12 +11,11 @@ base_icon = ExtResource( 2 )
 item_icon = ExtResource( 4 )
 type = 3
 cost = 10
-durability_multi = 0.2
 allowed_material_types = [ 0 ]
 description = "A decorative part that goes under the handle."
 stat_multipliers = {
 "armor": 0.0,
-"dexterity": 0.0,
+"dexterity": 0.5,
 "expertise": 0.0,
 "ferocity": 0.5,
 "magic_penetration": 1.0,

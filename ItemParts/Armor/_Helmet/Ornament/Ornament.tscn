@@ -12,7 +12,6 @@ item_icon = ExtResource( 3 )
 type = 18
 used_for = 1
 cost = 10
-durability_multi = 0.2
 allowed_material_types = [ 3, 2, 1 ]
 description = "An ornamental piece for a helmet. Boo!"
 stat_multipliers = {

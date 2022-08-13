@@ -12,12 +12,11 @@ item_icon = ExtResource( 4 )
 type = 25
 used_for = 1
 cost = 15
-durability_multi = 0.7
 allowed_material_types = [ 3, 4 ]
 description = "Base pants layer."
 stat_multipliers = {
 "armor": 0.75,
-"dexterity": 0.5,
+"dexterity": 1.0,
 "expertise": 0.0,
 "ferocity": 0.5,
 "magic_penetration": 0.0,

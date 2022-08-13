@@ -12,7 +12,6 @@ item_icon = ExtResource( 3 )
 type = 19
 used_for = 1
 cost = 10
-durability_multi = 0.5
 allowed_material_types = [ 1 ]
 description = "Protection for your face."
 stat_multipliers = {

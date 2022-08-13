@@ -15,7 +15,7 @@ rarity = 0
 weight = 3
 stats = {
 "armor": 4,
-"dexterity": 0,
+"dexterity": 2,
 "expertise": 0,
 "ferocity": 4,
 "magic_penetration": 0,

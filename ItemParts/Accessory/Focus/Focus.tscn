@@ -13,7 +13,6 @@ item_icon = null
 type = 13
 used_for = 2
 cost = 10
-durability_multi = 1.0
 allowed_material_types = [ 0 ]
 description = "Main source of power for accessories."
 stat_multipliers = {

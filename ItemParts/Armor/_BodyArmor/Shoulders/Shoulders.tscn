@@ -12,12 +12,11 @@ item_icon = ExtResource( 3 )
 type = 6
 used_for = 1
 cost = 20
-durability_multi = 0.6
 allowed_material_types = [ 1, 2, 4 ]
 description = "Protection for your shoulders."
 stat_multipliers = {
 "armor": 0.7,
-"dexterity": 0.0,
+"dexterity": 0.5,
 "expertise": 0.0,
 "ferocity": 0.0,
 "magic_penetration": 0.0,

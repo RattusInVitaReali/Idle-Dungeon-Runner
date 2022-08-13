@@ -11,16 +11,15 @@ base_icon = ExtResource( 3 )
 item_icon = ExtResource( 4 )
 type = 9
 cost = 15
-durability_multi = 0.3
 allowed_material_types = [ 1, 2 ]
 description = "Handle for battle axes."
 stat_multipliers = {
 "armor": 0.0,
 "dexterity": 1.0,
-"expertise": 0.0,
+"expertise": 0.5,
 "ferocity": 1.0,
 "magic_penetration": 0.0,
-"mastery": 0.0,
+"mastery": 0.5,
 "occult_aversion": 0.0,
 "penetration": 0.0,
 "potency": 0.5,

@@ -12,21 +12,20 @@ item_icon = ExtResource( 4 )
 type = 22
 used_for = 1
 cost = 15
-durability_multi = 0.7
 allowed_material_types = [ 1, 2, 4 ]
 description = "Main boot protective layer."
 stat_multipliers = {
 "armor": 1.0,
-"dexterity": 1.0,
+"dexterity": 1.5,
 "expertise": 0.0,
 "ferocity": 0.0,
 "magic_penetration": 0.0,
 "mastery": 0.0,
 "occult_aversion": 1.0,
 "penetration": 0.0,
-"potency": 0.0,
+"potency": 1.0,
 "power": 1.0,
 "precision": 1.0,
-"toughess": 0.0,
+"toughess": 1.0,
 "vitality": 1.0
 }

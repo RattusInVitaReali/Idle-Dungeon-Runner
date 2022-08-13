@@ -13,12 +13,11 @@ base_icon = ExtResource( 4 )
 item_icon = null
 type = 17
 cost = 20
-durability_multi = 0.7
 allowed_material_types = [ 1, 2, 4 ]
 description = "Main helmet protctive part."
 stat_multipliers = {
 "armor": 1.5,
-"dexterity": 0.0,
+"dexterity": 1.0,
 "expertise": 0.0,
 "ferocity": 0.0,
 "magic_penetration": 0.0,

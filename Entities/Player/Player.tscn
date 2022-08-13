@@ -10,21 +10,6 @@
 frames = ExtResource( 1 )
 animation = "die"
 script = ExtResource( 5 )
-per_level = {
-"armor": 5,
-"dexterity": 0,
-"expertise": 0,
-"ferocity": 0,
-"magic_penetration": 0,
-"mastery": 0,
-"occult_aversion": 5,
-"penetration": 0,
-"potency": 0,
-"power": 5,
-"precision": 0,
-"toughess": 0,
-"vitality": 10
-}
 experience = 0
 
 [node name="BasicAttack" parent="Skills" index="0" instance=ExtResource( 2 )]

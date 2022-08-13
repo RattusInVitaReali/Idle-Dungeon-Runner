@@ -13,7 +13,7 @@ func _ready():
 	CombatProcessor.connect("entered_auto_combat", self, "_on_enter_auto_combat")
 	CombatProcessor.connect("entered_manual_combat", self, "_on_enter_manual_combat")
 	LootManager.connect("item_acquired", self, "_on_item_acquired")
-	set_level(4)
+	set_level(level)
 	play("run")
 	ready = true
 	update_stats()
