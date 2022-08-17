@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 2
-icon_color = Color( 1, 0, 0, 1 )
+icon_color = Color( 0.760976, 0, 0.0634146, 1 )
 slottable_name = "Ruby"
 prefix = "Ruby"
 special_weapon = ""
@@ -22,7 +22,7 @@ stats = {
 "mastery": 15,
 "occult_aversion": 0,
 "penetration": 0,
-"potency": 0,
+"potency": 20,
 "power": 20,
 "precision": 30,
 "toughess": 0,

@@ -4,27 +4,27 @@
 
 [resource]
 script = ExtResource( 1 )
-icon_texture = 2
-icon_color = Color( 0.35122, 0.77561, 0.921951, 1 )
-slottable_name = "Opal"
-prefix = "Opal"
+icon_texture = 3
+icon_color = Color( 0.2, 0.536585, 0.190244, 1 )
+slottable_name = "Whelp Hide"
+prefix = "Whelp Hide"
 special_weapon = ""
 special_armor = ""
 special_accessory = ""
-type = 0
-rarity = 2
+type = 4
+rarity = 3
 stats = {
-"armor": 0,
-"dexterity": 0,
-"expertise": 30,
+"armor": 10,
+"dexterity": 20,
+"expertise": 10,
 "ferocity": 0,
 "magic_penetration": 0,
-"mastery": 30,
-"occult_aversion": 0,
+"mastery": 20,
+"occult_aversion": 30,
 "penetration": 0,
-"potency": 7,
-"power": 7,
+"potency": 20,
+"power": 5,
 "precision": 0,
-"toughess": 0,
-"vitality": 10
+"toughess": 20,
+"vitality": 50
 }

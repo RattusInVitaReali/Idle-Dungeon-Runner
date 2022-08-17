@@ -5,26 +5,26 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 0
-icon_color = Color( 0.473171, 0.497561, 0.517073, 1 )
-slottable_name = "Iron"
-prefix = "Iron"
+icon_color = Color( 0.4878048780487805, 0.4878048780487805, 0.4878048780487805, 1 )
+slottable_name = "Steel"
+prefix = "Steel"
 special_weapon = ""
 special_armor = ""
 special_accessory = ""
 type = 1
-rarity = 1
+rarity = 2
 stats = {
-"armor": 10,
-"dexterity": 5,
-"expertise": 0,
-"ferocity": 10,
-"magic_penetration": 0,
-"mastery": 0,
-"occult_aversion": 10,
-"penetration": 10,
+"power": 15,
 "potency": 0,
-"power": 10,
-"precision": 10,
-"toughess": 0,
-"vitality": 30
+"dexterity": 5,
+"precision": 15,
+"ferocity": 15,
+"mastery": 0,
+"expertise": 0,
+"armor": 12,
+"occult_aversion": 12,
+"vitality": 50,
+"toughess": 15,
+"penetration": 10,
+"magic_penetration": 0,
 }

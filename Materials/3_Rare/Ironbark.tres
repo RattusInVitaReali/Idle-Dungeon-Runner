@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Materials/MaterialResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+icon_texture = 1
+icon_color = Color( 1.2439024390243902, 0.5024390243902439, 0.16097560975609757, 1 )
+slottable_name = "Ironbark"
+prefix = "Ironbark"
+special_weapon = ""
+special_armor = ""
+special_accessory = ""
+type = 2
+rarity = 3
+stats = {
+"power": 10,
+"potency": 0,
+"dexterity": 5,
+"precision": 0,
+"ferocity": 15,
+"mastery": 0,
+"expertise": 0,
+"armor": 20,
+"occult_aversion": 20,
+"vitality": 50,
+"toughess": 10,
+"penetration": 10,
+"magic_penetration": 0,
+}

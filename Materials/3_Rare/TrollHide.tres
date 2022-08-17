@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Materials/MaterialResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+icon_texture = 3
+icon_color = Color( 0.23414634146341465, 0.4097560975609756, 0.2731707317073171, 1 )
+slottable_name = "Troll Hide"
+prefix = "Troll Hide"
+special_weapon = ""
+special_armor = ""
+special_accessory = ""
+type = 4
+rarity = 3
+stats = {
+"power": 20,
+"potency": 5,
+"dexterity": 0,
+"precision": 0,
+"ferocity": 10,
+"mastery": 0,
+"expertise": 0,
+"armor": 30,
+"occult_aversion": 10,
+"vitality": 80,
+"toughess": 40,
+"penetration": 0,
+"magic_penetration": 0,
+}

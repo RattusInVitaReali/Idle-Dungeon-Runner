@@ -4,27 +4,27 @@
 
 [resource]
 script = ExtResource( 1 )
-icon_texture = 3
-icon_color = Color( 0.209756, 0.141463, 0.097561, 1 )
-slottable_name = "Bear Hide"
-prefix = "Bear Hide"
+icon_texture = 0
+icon_color = Color( 0.278049, 0.22439, 0.287805, 1 )
+slottable_name = "Darksteel"
+prefix = "Darksteel"
 special_weapon = ""
 special_armor = ""
 special_accessory = ""
-type = 4
-rarity = 2
+type = 1
+rarity = 4
 stats = {
 "armor": 15,
-"dexterity": 5,
-"expertise": 0,
-"ferocity": 20,
-"magic_penetration": 0,
-"mastery": 0,
-"occult_aversion": 0,
+"dexterity": 15,
+"expertise": 20,
+"ferocity": 0,
+"magic_penetration": 20,
+"mastery": 15,
+"occult_aversion": 30,
 "penetration": 0,
-"potency": 0,
-"power": 10,
+"potency": 30,
+"power": 15,
 "precision": 0,
 "toughess": 15,
-"vitality": 50
+"vitality": 60
 }

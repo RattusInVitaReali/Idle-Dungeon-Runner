@@ -10,9 +10,9 @@ slottable_name = "Bloodsteel"
 prefix = "Bloodsteel"
 special_weapon = "20% more Bleeding damage."
 special_armor = "20% less Bleeding damage taken."
+special_accessory = ""
 type = 1
 rarity = 3
-weight = 2
 stats = {
 "armor": 5,
 "dexterity": 5,

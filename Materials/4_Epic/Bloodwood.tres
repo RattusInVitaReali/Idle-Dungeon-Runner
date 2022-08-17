@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Materials/MaterialResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+icon_texture = 1
+icon_color = Color( 0.75122, 0.0536585, 0, 1 )
+slottable_name = "Bloodwood"
+prefix = "Bloodwood"
+special_weapon = ""
+special_armor = ""
+special_accessory = ""
+type = 2
+rarity = 4
+stats = {
+"armor": 10,
+"dexterity": 10,
+"expertise": 20,
+"ferocity": 0,
+"magic_penetration": 15,
+"mastery": 10,
+"occult_aversion": 30,
+"penetration": 0,
+"potency": 15,
+"power": 5,
+"precision": 0,
+"toughess": 20,
+"vitality": 50
+}

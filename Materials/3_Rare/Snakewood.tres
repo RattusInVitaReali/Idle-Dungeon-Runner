@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Materials/MaterialResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+icon_texture = 1
+icon_color = Color( 0.6292682926829268, 0.11707317073170732, 0.0, 1 )
+slottable_name = "Snakewood"
+prefix = "Snakewood"
+special_weapon = ""
+special_armor = ""
+special_accessory = ""
+type = 2
+rarity = 3
+stats = {
+"power": 0,
+"potency": 15,
+"dexterity": 15,
+"precision": 15,
+"ferocity": 0,
+"mastery": 15,
+"expertise": 15,
+"armor": 10,
+"occult_aversion": 10,
+"vitality": 30,
+"toughess": 10,
+"penetration": 0,
+"magic_penetration": 10,
+}

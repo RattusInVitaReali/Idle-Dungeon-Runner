@@ -5,26 +5,26 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 3
-icon_color = Color( 0.209756, 0.141463, 0.097561, 1 )
-slottable_name = "Bear Hide"
-prefix = "Bear Hide"
+icon_color = Color( 0.7317073170731707, 0.7317073170731707, 0.7317073170731707, 1 )
+slottable_name = "Wolf Hide"
+prefix = "Wolf Hide"
 special_weapon = ""
 special_armor = ""
 special_accessory = ""
 type = 4
 rarity = 2
 stats = {
-"armor": 15,
-"dexterity": 5,
-"expertise": 0,
-"ferocity": 20,
-"magic_penetration": 0,
-"mastery": 0,
-"occult_aversion": 0,
-"penetration": 0,
+"power": 20,
 "potency": 0,
-"power": 10,
-"precision": 0,
-"toughess": 15,
-"vitality": 50
+"dexterity": 20,
+"precision": 15,
+"ferocity": 15,
+"mastery": 0,
+"expertise": 0,
+"armor": 5,
+"occult_aversion": 0,
+"vitality": 20,
+"toughess": 0,
+"penetration": 15,
+"magic_penetration": 0,
 }
