@@ -10,9 +10,9 @@ slottable_name = "Copper"
 prefix = "Copper"
 special_weapon = ""
 special_armor = ""
+special_accessory = ""
 type = 1
 rarity = 0
-weight = 3
 stats = {
 "armor": 4,
 "dexterity": 2,

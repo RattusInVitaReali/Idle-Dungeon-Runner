@@ -72,7 +72,7 @@ _global_script_classes=[ {
 "base": "MaterialResource",
 "class": "Bloodsteel",
 "language": "GDScript",
-"path": "res://Materials/Rare/Bloodsteel.gd"
+"path": "res://Materials/3_Rare/Bloodsteel.gd"
 }, {
 "base": "Item",
 "class": "BodyArmor",

@@ -17,10 +17,10 @@ export (String) var slottable_name
 export (String) var prefix
 export (String) var special_weapon
 export (String) var special_armor
+export (String) var special_accessory
 
 export (CraftingManager.MATERIAL_TYPE) var type
 export (CraftingManager.RARITY) var rarity
-export (CraftingManager.MATERIAL_WEIGHT) var weight
 
 export var stats = {
 	"power": 0, 

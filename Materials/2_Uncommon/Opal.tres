@@ -5,26 +5,26 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 2
-icon_color = Color( 1, 0, 0, 1 )
-slottable_name = "Ruby"
-prefix = "Ruby"
+icon_color = Color( 0.337255, 0.227451, 0.741176, 1 )
+slottable_name = "Opal"
+prefix = "Opal"
 special_weapon = ""
 special_armor = ""
+special_accessory = ""
 type = 0
-rarity = 3
-weight = 1
+rarity = 2
 stats = {
 "armor": 0,
-"dexterity": 10,
-"expertise": 20,
-"ferocity": 30,
+"dexterity": 0,
+"expertise": 30,
+"ferocity": 0,
 "magic_penetration": 0,
-"mastery": 15,
+"mastery": 30,
 "occult_aversion": 0,
 "penetration": 0,
-"potency": 0,
-"power": 20,
-"precision": 30,
+"potency": 7,
+"power": 7,
+"precision": 0,
 "toughess": 0,
-"vitality": 25
+"vitality": 10
 }
