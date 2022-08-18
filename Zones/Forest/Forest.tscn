@@ -1,20 +1,35 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://_Resources/ZoneBackgrounds/Forest.png" type="Texture" id=1]
 [ext_resource path="res://Zones/Zone.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Entities/Monster/Bandit/Bandit.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Modifiers/Healthy/Healthy.tres" type="Resource" id=4]
-[ext_resource path="res://Lootable/MaterialLootable/Zones/Forest/ForestOak.tres" type="Resource" id=5]
-[ext_resource path="res://Lootable/MaterialLootable/Zones/Forest/ForestCopper.tres" type="Resource" id=6]
+[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=5]
+[ext_resource path="res://Materials/0_Basic/Copper.tres" type="Resource" id=6]
 [ext_resource path="res://Quests/Variants/BanditHunter.tres" type="Resource" id=7]
+[ext_resource path="res://Materials/0_Basic/Oak.tres" type="Resource" id=8]
 [ext_resource path="res://Zones/Forest/Forest.gd" type="Script" id=9]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 5 )
+chance = 0.55
+material = ExtResource( 8 )
+base_min_quantity = 2
+base_max_quantity = 5
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 5 )
+chance = 0.6
+material = ExtResource( 6 )
+base_min_quantity = 1
+base_max_quantity = 4
 
 [node name="Forest" instance=ExtResource( 2 )]
 script = ExtResource( 9 )
 zone_name = "Forest"
 modifiers = [ ExtResource( 4 ) ]
 enemies = [ ExtResource( 3 ) ]
-loot = [ ExtResource( 6 ), ExtResource( 5 ) ]
+loot = [ SubResource( 1 ), SubResource( 2 ) ]
 quests = [ ExtResource( 7 ) ]
 texture = ExtResource( 1 )
 min_level = 1

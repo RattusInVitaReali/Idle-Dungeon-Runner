@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 3
-icon_color = Color( 0.390244, 0.390244, 0.439024, 1 )
+icon_color = Color( 0.3902439024390244, 0.3902439024390244, 0.43902439024390244, 1 )
 slottable_name = "Direwolf Hide"
 prefix = "Direwolf Hide"
 special_weapon = ""
@@ -14,17 +14,17 @@ special_accessory = ""
 type = 4
 rarity = 3
 stats = {
-"armor": 10,
-"dexterity": 30,
-"expertise": 0,
-"ferocity": 25,
-"magic_penetration": 0,
-"mastery": 0,
-"occult_aversion": 0,
-"penetration": 25,
-"potency": 0,
 "power": 30,
+"potency": 0,
+"dexterity": 30,
 "precision": 25,
+"ferocity": 25,
+"mastery": 0,
+"expertise": 0,
+"armor": 10,
+"occult_aversion": 0,
+"vitality": 30,
 "toughess": 0,
-"vitality": 30
+"penetration": 25,
+"magic_penetration": 0,
 }

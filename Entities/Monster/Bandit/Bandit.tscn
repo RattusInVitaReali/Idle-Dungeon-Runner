@@ -4,10 +4,10 @@
 [ext_resource path="res://Entities/Monster/Monster.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Skills/Lacerate/Lacerate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Entities/Monster/Bandit/Bandit.gd" type="Script" id=4]
-[ext_resource path="res://Lootable/ItemPartLootable/CopperSwordBlade.tres" type="Resource" id=5]
-[ext_resource path="res://Lootable/ItemLootable/BanditSword.tres" type="Resource" id=6]
-[ext_resource path="res://Lootable/ItemPartLootable/OakSwordHandle.tres" type="Resource" id=7]
-[ext_resource path="res://Lootable/ExperienceLootable/Experience.tres" type="Resource" id=8]
+[ext_resource path="res://Entities/Monster/Bandit/CopperSwordBlade.tres" type="Resource" id=5]
+[ext_resource path="res://Entities/Monster/Bandit/BanditSword.tres" type="Resource" id=6]
+[ext_resource path="res://Entities/Monster/Bandit/OakSwordHandle.tres" type="Resource" id=7]
+[ext_resource path="res://Lootable/Experience/Experience.tres" type="Resource" id=8]
 
 [node name="Bandit" instance=ExtResource( 2 )]
 frames = ExtResource( 1 )

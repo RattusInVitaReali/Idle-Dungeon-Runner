@@ -1,12 +1,35 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://Quests/QuestResource.gd" type="Script" id=1]
-[ext_resource path="res://Lootable/MaterialLootable/Quests/BanditSlayerBloodsteel.tres" type="Resource" id=2]
-[ext_resource path="res://Lootable/MaterialLootable/Quests/BanditSlayerBearHide.tres" type="Resource" id=3]
+[ext_resource path="res://Materials/3_Rare/Ironbark.tres" type="Resource" id=2]
+[ext_resource path="res://Materials/3_Rare/DirehornHide.tres" type="Resource" id=3]
+[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=4]
+[ext_resource path="res://Materials/2_Uncommon/Steel.tres" type="Resource" id=5]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+chance = 1.0
+material = ExtResource( 2 )
+base_min_quantity = 7
+base_max_quantity = 10
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 4 )
+chance = 1.0
+material = ExtResource( 5 )
+base_min_quantity = 7
+base_max_quantity = 11
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 4 )
+chance = 1.0
+material = ExtResource( 3 )
+base_min_quantity = 7
+base_max_quantity = 12
 
 [resource]
 script = ExtResource( 1 )
 quest_name = "Bandit Slayer"
 required_kills = 5
 required_types = [ 0 ]
-reward = [ ExtResource( 2 ), ExtResource( 3 ) ]
+reward = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]

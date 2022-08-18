@@ -192,7 +192,7 @@ _global_script_classes=[ {
 "base": "Lootable",
 "class": "ExperienceLootable",
 "language": "GDScript",
-"path": "res://Lootable/ExperienceLootable/ExperienceLootable.gd"
+"path": "res://Lootable/Experience/ExperienceLootable.gd"
 }, {
 "base": "Slottable",
 "class": "ExperienceSlottable",
@@ -227,7 +227,7 @@ _global_script_classes=[ {
 "base": "Lootable",
 "class": "GlobalResourceLootable",
 "language": "GDScript",
-"path": "res://Lootable/GlobalResourceLootable/_GlobalResourceLootable.gd"
+"path": "res://Lootable/_GlobalResourceLootable.gd"
 }, {
 "base": "Slottable",
 "class": "GlobalResourceSlottable",
@@ -347,7 +347,7 @@ _global_script_classes=[ {
 "base": "Lootable",
 "class": "ItemLootable",
 "language": "GDScript",
-"path": "res://Lootable/ItemLootable/_ItemLootable.gd"
+"path": "res://Lootable/_ItemLootable.gd"
 }, {
 "base": "Slottable",
 "class": "ItemPart",
@@ -357,7 +357,7 @@ _global_script_classes=[ {
 "base": "Lootable",
 "class": "ItemPartLootable",
 "language": "GDScript",
-"path": "res://Lootable/ItemPartLootable/_ItemPartLootable.gd"
+"path": "res://Lootable/_ItemPartLootable.gd"
 }, {
 "base": "SlottableInventory",
 "class": "ItemPreviewInventory",
@@ -402,7 +402,7 @@ _global_script_classes=[ {
 "base": "Lootable",
 "class": "MaterialLootable",
 "language": "GDScript",
-"path": "res://Lootable/MaterialLootable/_MaterialLootable.gd"
+"path": "res://Lootable/_MaterialLootable.gd"
 }, {
 "base": "Resource",
 "class": "MaterialResource",

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 3
-icon_color = Color( 0.2, 0.536585, 0.190244, 1 )
+icon_color = Color( 0.2, 0.5365853658536586, 0.1902439024390244, 1 )
 slottable_name = "Whelp Hide"
 prefix = "Whelp Hide"
 special_weapon = ""
@@ -14,17 +14,17 @@ special_accessory = ""
 type = 4
 rarity = 3
 stats = {
-"armor": 10,
-"dexterity": 20,
-"expertise": 10,
-"ferocity": 0,
-"magic_penetration": 0,
-"mastery": 20,
-"occult_aversion": 30,
-"penetration": 0,
-"potency": 20,
 "power": 5,
+"potency": 20,
+"dexterity": 20,
 "precision": 0,
+"ferocity": 0,
+"mastery": 20,
+"expertise": 10,
+"armor": 10,
+"occult_aversion": 30,
+"vitality": 50,
 "toughess": 20,
-"vitality": 50
+"penetration": 0,
+"magic_penetration": 0,
 }

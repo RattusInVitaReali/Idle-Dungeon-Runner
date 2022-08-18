@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Modifiers/Strong/Strong.tres" type="Resource" id=1]
 [ext_resource path="res://Modifiers/Healthy/Healthy.tres" type="Resource" id=2]
@@ -6,14 +6,35 @@
 [ext_resource path="res://Zones/BanditBossDungeon/BanditBossDungeon.gd" type="Script" id=4]
 [ext_resource path="res://Entities/Monster/Bandit/BanditBoss/BanditBoss.tscn" type="PackedScene" id=5]
 [ext_resource path="res://_Resources/ZoneBackgrounds/Dungeon.png" type="Texture" id=6]
-[ext_resource path="res://Lootable/MaterialLootable/Zones/BanditBossDungeon/BanditBossDungeonRuby.tres" type="Resource" id=7]
+[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=7]
+[ext_resource path="res://Materials/3_Rare/Ruby.tres" type="Resource" id=8]
+[ext_resource path="res://Materials/3_Rare/Titanium.tres" type="Resource" id=9]
+[ext_resource path="res://Materials/3_Rare/Ironbark.tres" type="Resource" id=10]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 7 )
+material = ExtResource( 8 )
+base_min_quantity = 3
+base_max_quantity = 3
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 7 )
+material = ExtResource( 9 )
+base_min_quantity = 2
+base_max_quantity = 2
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 7 )
+material = ExtResource( 10 )
+base_min_quantity = 2
+base_max_quantity = 2
 
 [node name="BanditBossDungeon" instance=ExtResource( 3 )]
 script = ExtResource( 4 )
 zone_name = "Bandit Boss Dungeon"
 modifiers = [ ExtResource( 2 ), ExtResource( 1 ) ]
 enemies = [ ExtResource( 5 ) ]
-loot = [ ExtResource( 7 ) ]
+loot = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
 texture = ExtResource( 6 )
 min_level = 5
 max_level = 5

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 3
-icon_color = Color( 1.146341463414634, 1.0731707317073171, 1.0292682926829269, 1 )
+icon_color = Color( 1.14634, 1.07317, 1.02927, 1 )
 slottable_name = "Sheep Hide"
 prefix = "Sheep Hide"
 special_weapon = ""
@@ -14,17 +14,17 @@ special_accessory = ""
 type = 4
 rarity = 0
 stats = {
-"power": 0,
-"potency": 0,
-"dexterity": 0,
-"precision": 0,
-"ferocity": 0,
-"mastery": 0,
-"expertise": 0,
 "armor": 7,
-"occult_aversion": 0,
-"vitality": 25,
-"toughess": 0,
-"penetration": 0,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
 "magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 0,
+"penetration": 0,
+"potency": 0,
+"power": 0,
+"precision": 0,
+"toughess": 0,
+"vitality": 25
 }

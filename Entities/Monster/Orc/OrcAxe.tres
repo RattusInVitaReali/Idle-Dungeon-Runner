@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Lootable/_ItemLootable.gd" type="Script" id=1]
+[ext_resource path="res://Items/Weapon/Axe/Axe.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/Monster/Orc/IronAxeHead.tres" type="Resource" id=3]
+[ext_resource path="res://Entities/Monster/Orc/OakAxeHandle.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+chance = 0.07
+item_type = ExtResource( 2 )
+parts = [ ExtResource( 3 ), ExtResource( 4 ) ]
+custom_name = "Orc Axe"

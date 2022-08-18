@@ -50,10 +50,15 @@ func apply_modifiers():
 	for modifier in modifiers:
 		modifier.apply_effect(stats, level)
 
+func apply_level_attributes():
+	for key in per_level.keys():
+		attributes[key] += int(per_level[key] * pow(level, 1.2))
+
 func update_stats():
 	.update_stats()
 	apply_modifiers()
 	update_skill_cooldowns(true)
+	emit_signal("stats_updated")
 
 func update_skill_levels():
 	for skill in get_skills():

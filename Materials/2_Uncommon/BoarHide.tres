@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 3
-icon_color = Color( 0.434146, 0.4, 0.380488, 1 )
+icon_color = Color( 0.43414634146341463, 0.4, 0.3804878048780488, 1 )
 slottable_name = "Boar Hide"
 prefix = "Boar Hide"
 special_weapon = ""
@@ -14,17 +14,17 @@ special_accessory = ""
 type = 4
 rarity = 2
 stats = {
-"armor": 10,
-"dexterity": 10,
-"expertise": 0,
-"ferocity": 10,
-"magic_penetration": 0,
-"mastery": 0,
-"occult_aversion": 0,
-"penetration": 0,
-"potency": 0,
 "power": 15,
+"potency": 0,
+"dexterity": 10,
 "precision": 0,
+"ferocity": 10,
+"mastery": 0,
+"expertise": 0,
+"armor": 10,
+"occult_aversion": 0,
+"vitality": 50,
 "toughess": 30,
-"vitality": 50
+"penetration": 0,
+"magic_penetration": 0,
 }
