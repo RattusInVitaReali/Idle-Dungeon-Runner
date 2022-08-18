@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 2
-icon_color = Color( 0.35122, 0.77561, 0.921951, 1 )
+icon_color = Color( 0.28125, 0.621094, 0.738281, 1 )
 slottable_name = "Opal"
 prefix = "Opal"
 special_weapon = ""

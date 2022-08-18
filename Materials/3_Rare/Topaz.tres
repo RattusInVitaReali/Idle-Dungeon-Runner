@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 2
-icon_color = Color( 0.07317073170731707, 0.5951219512195122, 0.8195121951219512, 1 )
+icon_color = Color( 0.65625, 0.83984375, 0.9375, 1 )
 slottable_name = "Topaz"
 prefix = "Topaz"
 special_weapon = ""

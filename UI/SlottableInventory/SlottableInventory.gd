@@ -43,6 +43,12 @@ func remove_slottable(slottable : Slottable, quantity = 1):
 	var ret = slottable.split(quantity)
 	return ret
 
+func clear_inventory():
+	for slot in container.get_children():
+		slot.queue_free()
+	for item in $Items.get_children():
+		item.queue_free()
+
 static func _sort_rarity(a, b):
 	if a == null or b == null:
 		return false

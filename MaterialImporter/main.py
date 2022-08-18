@@ -53,7 +53,7 @@ def file_from_line(line):
             "script = ExtResource( 1 )\n"
         )
         file.write("icon_texture = " + str(icon_textures[line["type"]]) + "\n")
-        file.write("icon_color = Color( " + str(int(line["r"]) / 205) + ", " + str(int(line["g"]) / 205) + ", " + str(int(line["b"]) / 205) + ", 1 )\n")
+        file.write("icon_color = Color( " + str(int(line["r"]) / 256) + ", " + str(int(line["g"]) / 256) + ", " + str(int(line["b"]) / 256) + ", 1 )\n")
         file.write("slottable_name = \"" + line["slottable_name"] + "\"\n")
         file.write("prefix = \"" + line["slottable_name"] + "\"\n")
         file.write("special_weapon = \"" + line["special_weapon"] + "\"\n")

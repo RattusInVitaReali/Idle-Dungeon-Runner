@@ -58,5 +58,8 @@ func complete():
 func quest_info():
 	return quest_name + " : " + str(kill_count) + " / " + str(required_kills)
 
+func get_lootables():
+	return reward
+
 func load():
 	from_resource(quest_resource)

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 0
-icon_color = Color( 0.541463, 0.570732, 0.595122, 1 )
+icon_color = Color( 0.433594, 0.625, 0.476563, 1 )
 slottable_name = "Chromium"
 prefix = "Chromium"
 special_weapon = ""

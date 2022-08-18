@@ -77,12 +77,6 @@ onready var item_scenes = {
 	ITEM_SUBTYPE.RING : load("res://Items/Accessory/Ring/Ring.tscn")
 }
 
-func new_material(base = null, quantity = 1):
-	return CraftingMaterial.instance().set_mat(base).quantity(quantity)
-
-func new_part(part, material):
-	return part.instance().set_mat(material)
-
 func try_to_forge_part(part, material):
 	if part.can_use_material(material):
 		var new_mat = material.split(0)

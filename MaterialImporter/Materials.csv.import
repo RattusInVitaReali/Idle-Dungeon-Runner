@@ -9,5 +9,5 @@ valid=false
 source_file="res://MaterialImporter/Materials.csv"
 [params]
 
-compress=true
+compress=false
 delimiter=0

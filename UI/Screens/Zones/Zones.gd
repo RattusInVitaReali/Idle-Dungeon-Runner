@@ -59,6 +59,7 @@ func load():
 		zone_infos.add_child(zone_info)
 		zone_info.set_zone(zone)
 		zone_info.connect("play_zone", self, "_on_play_zone")
+		zone_info.connect("inspector", self, "_on_inspector")
 
 func save_and_exit():
 	if $Zones.get_child_count() != 0:

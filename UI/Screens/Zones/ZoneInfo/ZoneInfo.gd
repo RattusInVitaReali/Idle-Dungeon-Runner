@@ -1,10 +1,15 @@
 extends NinePatchRect
 class_name ZoneInfo
 
+const Slot = preload("res://UI/Slot/Slot.tscn")
+
 signal play_zone
+signal inspector
 
 onready var zone_level = $ZoneBackground/HBoxContainer/LevelDisplay/Level
-onready var zone_name = $ZoneBackground/HBoxContainer/ZoneName
+onready var zone_name = $ZoneBackground/HBoxContainer/MidPart/ZoneName
+onready var available_loot = $ZoneBackground/HBoxContainer/MidPart/ScrollContainer/AvailableLoot
+onready var slottables = $ZoneBackground/HBoxContainer/MidPart/ScrollContainer/Slottables
 
 onready var buttons = [
 	$ZoneBackground/HBoxContainer/LevelControl/LevelUp,
@@ -42,7 +47,7 @@ func update_name():
 	if zone.locked:
 		zone_name.text = "LOCKED"
 	else:
-		zone_name.text = zone.zone_name + '\n' + str(zone.min_level) + " - " + str(zone.max_level)
+		zone_name.text = zone.zone_name + " : " + str(zone.min_level) + " - " + str(zone.max_level)
 
 func update_background():
 	if zone.locked:
@@ -60,8 +65,44 @@ func update_buttons():
 		else:
 			button.disabled = false
 
+func update_loot():
+	print("Updating loot")
+	for slot in available_loot.get_children():
+		slot.queue_free()
+	for slottable in slottables.get_children():
+		slottable.queue_free()
+	for monster in zone.get_monster_instances():
+		add_child(monster)
+		for lootable in monster.get_lootables():
+			slottable_from_lootable(lootable)
+		monster.queue_free()
+	for quest in zone.quests:
+		for lootable in quest.get_lootables():
+			slottable_from_lootable(lootable)
+
+func slottable_from_lootable(lootable):
+	var loot = lootable.get_loot()
+	for slot in available_loot.get_children():
+		if slot.slottable.same_as(loot):
+			loot.queue_free()
+			return
+	var new_slot = Slot.instance()
+	available_loot.add_child(new_slot)
+	lootable.set_level(1)
+	slottables.add_child(loot)
+	new_slot.hide_quantity = true
+	new_slot.set_slottable(loot)
+	new_slot.connect("inspector", self, "_on_inspector")
+
+func _on_inspector(slot):
+	emit_signal("inspector", slot)
+
+var loot_set = false
 func update_zone():
 	update_level()
 	update_name()
 	update_background()
 	update_buttons()
+	if not loot_set:
+		loot_set = true
+		update_loot()

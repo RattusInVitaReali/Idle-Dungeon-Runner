@@ -4,6 +4,7 @@ class_name PartForgeUI
 signal get_materials
 
 const PartConfirmInspector = preload("res://UI/Inspectors/PartInspector/PartConfirmInspector/PartConfirmInspector.tscn")
+const CraftingMaterial = preload("res://Materials/CraftingMaterial.tscn")
 
 onready var materials = $VBoxContainer/Screen/VBoxContainer/SlottableInventory
 onready var part_selection = $VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartSelectionInventory
@@ -30,6 +31,33 @@ var selected_part_slot = null
 func _ready():
 	materials.connect("inspector", self, "_on_inspector")
 	part_selection.connect("part_type_selected", self, "_on_part_type_selected")
+
+func _notification(what):
+	if what == NOTIFICATION_READY:
+		if CraftingManager.debug:
+			for res in get_all_files("res://Materials", "tres"):
+				var mat = CraftingMaterial.instance()
+				mat.set_mat(load(res)).quantity(5000)
+				add_material(mat)
+
+func get_all_files(path: String, file_ext := "", files := []):
+	var dir = Directory.new()
+	if dir.open(path) == OK:
+		dir.list_dir_begin(true, true)
+		var file_name = dir.get_next()
+		while file_name != "":
+			if dir.current_is_dir():
+				files = get_all_files(dir.get_current_dir().plus_file(file_name), file_ext, files)
+			else:
+				if file_ext and file_name.get_extension() != file_ext:
+					file_name = dir.get_next()
+					continue
+				files.append(dir.get_current_dir().plus_file(file_name))
+			file_name = dir.get_next()
+	else:
+		print("An error occurred when trying to access %s." % path)
+
+	return files
 
 func add_material(mat):
 	if creating:

@@ -97,6 +97,9 @@ func set_lootable_level():
 	for lootable in loot:
 		lootable.set_level(power_level())
 
+func get_lootables():
+	return loot
+
 func _on_Entity_animation_finished():
 	._on_Entity_animation_finished()
 	if animation == "die":

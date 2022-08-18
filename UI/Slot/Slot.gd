@@ -14,6 +14,7 @@ const FrameEpic = preload("res://_Resources/gui_images/Frame_Epic.png")
 
 export var gear = false
 export var upgrade = false
+export var hide_quantity = false
 
 var slottable = null
 
@@ -63,7 +64,7 @@ func update_slot():
 				$Background.texture = FrameRare
 			CraftingManager.RARITY.EPIC:
 				$Background.texture = FrameEpic
-		if !(gear or upgrade):
+		if !(gear or upgrade or hide_quantity):
 			quantity.text = str(slottable.quantity)
 			quantity.visible = true
 		for tier_star in tier_stars.get_children():

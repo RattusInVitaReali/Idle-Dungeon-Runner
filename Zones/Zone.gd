@@ -74,6 +74,12 @@ func get_monster_instances():
 		monsters.append(new_monster)
 	return monsters
 
+func get_lootables():
+	return loot
+
+func get_monster_scenes():
+	return enemies
+
 func level_up():
 	self.level = min(level + 1, max_level)
 

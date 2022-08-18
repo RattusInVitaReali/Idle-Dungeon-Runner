@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 1
-icon_color = Color( 0.9951219512195122, 0.7463414634146341, 0.4975609756097561, 1 )
+icon_color = Color( 0.796875, 0.597656, 0.398438, 1 )
 slottable_name = "Cedar"
 prefix = "Cedar"
 special_weapon = ""
@@ -14,17 +14,17 @@ special_accessory = ""
 type = 2
 rarity = 0
 stats = {
-"power": 3,
-"potency": 0,
-"dexterity": 5,
-"precision": 0,
-"ferocity": 0,
-"mastery": 0,
-"expertise": 0,
 "armor": 2,
-"occult_aversion": 2,
-"vitality": 7,
-"toughess": 0,
-"penetration": 0,
+"dexterity": 5,
+"expertise": 0,
+"ferocity": 0,
 "magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 2,
+"penetration": 0,
+"potency": 0,
+"power": 3,
+"precision": 0,
+"toughess": 0,
+"vitality": 7
 }

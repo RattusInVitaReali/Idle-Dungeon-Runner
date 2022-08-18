@@ -10,3 +10,6 @@ export (Array, Resource) var reward
 
 func get_quest():
 	return Quest.instance().from_resource(self)
+
+func get_lootables():
+	return reward

@@ -119,6 +119,8 @@ func special_copy(new_slottable):
 	new_slottable.set_mat(new_mat)
 
 func same_as(item_part : Slottable):
+	if item_part.slottable_type != SLOTTABLE_TYPE.ITEM_PART:
+		return false
 	if item_part == null:
 		return false
 	if mat == null or item_part.mat == null:
