@@ -1,0 +1,71 @@
+slottable_name,type,rarity,armor,dexterity,expertise,ferocity,magic_penetration,mastery,occult_aversion,penetration,potency,power,precision,toughess,vitality,TOTAL STATS,special_weapon,special_armor,special_accessory,r,g,b
+Cedar,Wood,Basic,2,5,0,0,0,0,2,0,0,3,0,0,7,19,,,,204,153,102
+Oak,Wood,Basic,3,3,0,3,0,0,3,0,0,3,3,0,10,28,,,,183,125,64
+Ash,Wood,Common,8,3,0,0,0,0,8,0,0,8,0,0,30,57,,,,236,195,155
+Pine,Wood,Common,6,10,0,0,0,0,6,0,0,6,0,0,20,48,,,,226,179,132
+Birch,Wood,Uncommon,6,12,5,0,0,5,6,0,8,0,0,0,25,67,,,,229,200,170
+Ebony,Wood,Uncommon,10,5,0,0,0,0,10,0,0,10,0,0,40,75,,,,81,65,50
+Ironbark,Wood,Rare,20,5,0,15,0,0,20,10,0,10,0,10,50,140,,,,255,103,33
+Snakewood,Wood,Rare,10,15,15,0,10,15,10,0,15,0,15,10,30,145,,,,129,24,0
+Blackwood,Wood,Epic,30,10,0,20,0,0,10,15,5,15,0,20,50,175,,,,38,19,0
+Bloodwood,Wood,Epic,10,10,20,0,15,10,30,0,15,5,0,20,50,185,,,,154,11,0
+Dreadwood,Wood,Legendary,,,,,,,,,,,,,,0,,,,,,
+Hellwood,Wood,Legendary,,,,,,,,,,,,,,0,,,,,,
+Copper,Metal,Basic,4,0,0,4,0,0,4,0,0,4,4,0,15,35,,,,202,64,0
+Tin,Metal,Basic,5,0,0,5,0,0,5,0,0,5,5,0,20,45,,,,223,255,253
+Zinc,Metal,Basic,7,7,0,7,0,0,7,7,0,7,7,0,25,74,,,,0,214,178
+Bronze,Metal,Common,8,0,0,10,0,0,8,8,0,8,10,0,40,92,,,,168,115,0
+Iron,Metal,Common,10,5,0,10,0,0,10,10,0,10,10,0,30,95,,,,97,102,106
+Magnesium,Metal,Common,5,15,0,15,0,0,5,15,0,5,15,0,15,90,,,,106,116,125
+Aluminum,Metal,Uncommon,10,25,0,20,0,0,10,15,0,10,25,0,30,145,,,,177,188,199
+Chromium,Metal,Uncommon,10,15,0,15,0,0,10,15,0,10,15,10,40,140,,,,111,117,122
+Steel,Metal,Uncommon,15,5,0,15,0,0,15,15,0,15,15,0,50,145,,,,100,100,100
+Bloodsteel,Metal,Rare,5,5,15,20,0,15,20,0,15,15,20,0,20,150,20% more Bleeding damage.,20% less Bleeding damage taken.,,122,10,0
+Titanium,Metal,Rare,30,20,0,15,0,0,30,0,0,25,10,20,50,200,,,,150,146,131
+Adamantium,Metal,Epic,40,0,0,20,0,0,25,30,0,35,0,30,75,255,,,,214,214,214
+Darksteel,Metal,Epic,15,15,20,0,20,15,30,0,30,15,0,15,60,235,,,,57,46,59
+Mithril,Metal,Epic,20,40,0,30,0,0,20,25,0,30,20,0,50,235,,,,137,180,199
+Dimeritium,Metal,Legendary,,,,,,,,,,,,,,0,,,,,,
+Orichalcum,Metal,Legendary,,,,,,,,,,,,,,0,,,,,,
+Uru,Metal,Legendary,,,,,,,,,,,,,,0,,,,,,
+Goat Hide,Leather,Basic,5,0,0,0,0,0,0,0,0,0,0,0,20,25,,,,150,100,70
+Sheep Hide,Leather,Basic,7,0,0,0,0,0,0,0,0,0,0,0,25,32,,,,235,220,211
+Cow Hide,Leather,Common,9,12,0,0,0,0,0,0,0,10,0,10,30,71,,,,105,61,36
+Elk Hide,Leather,Common,12,10,0,5,0,0,0,0,0,10,0,10,40,87,,,,180,150,132
+Bear Hide,Leather,Uncommon,15,5,0,20,0,0,0,0,0,10,0,15,50,115,,,,43,29,20
+Boar Hide,Leather,Uncommon,10,10,0,10,0,0,0,0,0,15,0,30,50,125,,,,89,82,78
+Wolf Hide,Leather,Uncommon,5,20,0,15,0,0,0,15,0,20,15,0,20,110,,,,150,150,150
+Direhorn Hide,Leather,Rare,20,10,0,25,0,0,0,0,0,20,0,20,80,175,,,,59,65,117
+Direwolf Hide,Leather,Rare,10,30,0,25,0,0,0,25,0,30,25,0,30,175,,,,80,80,90
+Troll Hide,Leather,Rare,30,0,0,10,0,0,10,0,5,20,0,40,80,195,,,,48,84,56
+Whelp Hide,Leather,Rare,10,20,10,0,0,20,30,0,20,5,0,20,50,185,,,,41,110,39
+Chort Hide,Leather,Epic,35,10,0,30,0,0,15,0,0,35,0,25,110,260,,,,77,27,24
+Drake Hide,Leather,Epic,15,20,25,0,20,25,35,0,20,5,0,30,70,265,,,,112,92,0
+Dragon Hide,Leather,Legendary,,,,,,,,,,,,,,0,,,,,,
+Leviathan Hide,Leather,Legendary,,,,,,,,,,,,,,0,,,,,,
+Alexandrite,Gem,Uncommon,0,0,0,30,0,0,0,0,0,30,0,0,0,60,,,,130,17,150
+Emerald,Gem,Uncommon,0,30,0,0,0,30,0,0,0,0,0,0,0,60,,,,58,189,121
+Jade,Gem,Uncommon,0,0,0,0,0,0,0,30,0,0,30,0,0,60,,,,36,135,27
+Opal,Gem,Uncommon,0,0,30,0,0,30,0,0,0,0,0,0,0,60,,,,72,159,189
+Sapphire,Gem,Uncommon,20,0,0,0,0,0,20,0,0,0,0,0,30,70,,,,15,37,135
+Amber,Gem,Rare,0,0,30,0,0,30,0,30,0,0,0,0,0,90,,,,237,167,2
+Citrine,Gem,Rare,0,30,0,0,30,0,0,0,30,0,0,0,0,90,,,,252,203,134
+Ruby,Gem,Rare,0,0,0,0,0,0,0,30,0,30,30,0,0,90,,,,156,0,13
+Topaz,Gem,Rare,30,0,0,0,0,0,30,0,0,0,0,0,30,90,,,,15,122,168
+Amethyst,Gem,Epic,,,,,,,,,,,,,,0,,,,,,
+Beryl,Gem,Epic,,,,,,,,,,,,,,0,,,,,,
+Peridot,Gem,Epic,,,,,,,,,,,,,,0,,,,,,
+Pyrite,Gem,Epic,,,,,,,,,,,,,,0,,,,,,
+Bloodstone,Gem,Legendary,,,,,,,,,,,,,,0,,,,,,
+Moonstone,Gem,Legendary,,,,,,,,,,,,,,0,,,,,,
+Tanzanite,Gem,Legendary,,,,,,,,,,,,,,0,,,,,,
+Cotton,Fabric,Common,,,,,,,,,,,,,,0,,,,,,
+Jute,Fabric,Common,,,,,,,,,,,,,,0,,,,,,
+Linen,Fabric,Common,,,,,,,,,,,,,,0,,,,,,
+Silk,Fabric,Uncommon,,,,,,,,,,,,,,0,,,,,,
+Wool,Fabric,Uncommon,,,,,,,,,,,,,,0,,,,,,
+Gossamer,Fabric,Rare,,,,,,,,,,,,,,0,,,,,,
+Mooncloth,Fabric,Epic,,,,,,,,,,,,,,0,,,,,,
+Runecloth,Fabric,Epic,,,,,,,,,,,,,,0,,,,,,
+Darkweave,Fabric,Legendary,,,,,,,,,,,,,,0,,,,,,
+Lightweave,Fabric,Legendary,,,,,,,,,,,,,,0,,,,,,

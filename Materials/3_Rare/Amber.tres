@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Materials/MaterialResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+icon_texture = 2
+icon_color = Color( 1.1560975609756097, 0.8146341463414634, 0.00975609756097561, 1 )
+slottable_name = "Amber"
+prefix = "Amber"
+special_weapon = ""
+special_armor = ""
+special_accessory = ""
+type = 0
+rarity = 3
+stats = {
+"power": 0,
+"potency": 0,
+"dexterity": 0,
+"precision": 0,
+"ferocity": 0,
+"mastery": 30,
+"expertise": 30,
+"armor": 0,
+"occult_aversion": 0,
+"vitality": 0,
+"toughess": 0,
+"penetration": 30,
+"magic_penetration": 0,
+}

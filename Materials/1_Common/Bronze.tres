@@ -14,16 +14,16 @@ special_accessory = ""
 type = 1
 rarity = 1
 stats = {
-"armor": 12,
+"armor": 8,
 "dexterity": 0,
 "expertise": 0,
 "ferocity": 10,
 "magic_penetration": 0,
 "mastery": 0,
-"occult_aversion": 12,
-"penetration": 12,
+"occult_aversion": 8,
+"penetration": 8,
 "potency": 0,
-"power": 12,
+"power": 8,
 "precision": 10,
 "toughess": 0,
 "vitality": 40

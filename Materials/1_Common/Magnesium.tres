@@ -25,6 +25,6 @@ stats = {
 "occult_aversion": 5,
 "vitality": 15,
 "toughess": 0,
-"penetration": 5,
+"penetration": 15,
 "magic_penetration": 0,
 }

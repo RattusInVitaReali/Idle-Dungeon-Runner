@@ -20,11 +20,11 @@ stats = {
 "ferocity": 15,
 "magic_penetration": 0,
 "mastery": 0,
-"occult_aversion": 5,
+"occult_aversion": 30,
 "penetration": 0,
 "potency": 0,
 "power": 25,
 "precision": 10,
 "toughess": 20,
-"vitality": 40
+"vitality": 50
 }

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Materials/MaterialResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+icon_texture = 2
+icon_color = Color( 0.282927, 0.921951, 0.590244, 1 )
+slottable_name = "Emerald"
+prefix = "Emerald"
+special_weapon = ""
+special_armor = ""
+special_accessory = ""
+type = 0
+rarity = 2
+stats = {
+"armor": 0,
+"dexterity": 30,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 30,
+"occult_aversion": 0,
+"penetration": 0,
+"potency": 0,
+"power": 0,
+"precision": 0,
+"toughess": 0,
+"vitality": 0
+}

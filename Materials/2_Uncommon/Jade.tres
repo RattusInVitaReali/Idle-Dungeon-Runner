@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Materials/MaterialResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+icon_texture = 2
+icon_color = Color( 0.17561, 0.658537, 0.131707, 1 )
+slottable_name = "Jade"
+prefix = "Jade"
+special_weapon = ""
+special_armor = ""
+special_accessory = ""
+type = 0
+rarity = 2
+stats = {
+"armor": 0,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 0,
+"penetration": 30,
+"potency": 0,
+"power": 0,
+"precision": 30,
+"toughess": 0,
+"vitality": 0
+}

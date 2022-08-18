@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Materials/MaterialResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+icon_texture = 2
+icon_color = Color( 1.2292682926829268, 0.9902439024390244, 0.6536585365853659, 1 )
+slottable_name = "Citrine"
+prefix = "Citrine"
+special_weapon = ""
+special_armor = ""
+special_accessory = ""
+type = 0
+rarity = 3
+stats = {
+"power": 0,
+"potency": 30,
+"dexterity": 30,
+"precision": 0,
+"ferocity": 0,
+"mastery": 0,
+"expertise": 0,
+"armor": 0,
+"occult_aversion": 0,
+"vitality": 0,
+"toughess": 0,
+"penetration": 0,
+"magic_penetration": 30,
+}

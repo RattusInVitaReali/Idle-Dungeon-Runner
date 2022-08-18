@@ -22,9 +22,9 @@ stats = {
 "mastery": 30,
 "occult_aversion": 0,
 "penetration": 0,
-"potency": 7,
-"power": 7,
+"potency": 0,
+"power": 0,
 "precision": 0,
 "toughess": 0,
-"vitality": 10
+"vitality": 0
 }

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Materials/MaterialResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+icon_texture = 2
+icon_color = Color( 0.07317073170731707, 0.5951219512195122, 0.8195121951219512, 1 )
+slottable_name = "Topaz"
+prefix = "Topaz"
+special_weapon = ""
+special_armor = ""
+special_accessory = ""
+type = 0
+rarity = 3
+stats = {
+"power": 0,
+"potency": 0,
+"dexterity": 0,
+"precision": 0,
+"ferocity": 0,
+"mastery": 0,
+"expertise": 0,
+"armor": 30,
+"occult_aversion": 30,
+"vitality": 30,
+"toughess": 0,
+"penetration": 0,
+"magic_penetration": 0,
+}
