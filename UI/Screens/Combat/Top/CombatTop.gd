@@ -46,12 +46,12 @@ func update_monster_hp():
 		monster_hp_bar, 
 		"value", 
 		monster_hp_bar.value, 
-		monster.stats.hp, 
+		monster.stats["hp"], 
 		0.2, Tween.TRANS_LINEAR, 
 		Tween.EASE_OUT
 	)
 	monster_hp_tween.start()
-	monster_hp_value.text = str(int(monster.stats.hp)) + " HP"
+	monster_hp_value.text = str(int(monster.stats["hp"])) + " HP"
 
 func apply_effect(effect):
 	var new_effect = EffectIcon.instance()

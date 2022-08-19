@@ -169,6 +169,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/DamageNumbers/DamageNumberManager.gd"
 }, {
+"base": "Effect",
+"class": "Decimated",
+"language": "GDScript",
+"path": "res://Effects/Decimated/Decimated.gd"
+}, {
 "base": "Zone",
 "class": "Desert",
 "language": "GDScript",
@@ -499,6 +504,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Quests/QuestResource.gd"
 }, {
+"base": "Skill",
+"class": "Quickslash",
+"language": "GDScript",
+"path": "res://Skills/Quickslash/Quickslash.gd"
+}, {
 "base": "Item",
 "class": "Ring",
 "language": "GDScript",
@@ -712,6 +722,7 @@ _global_script_class_icons={
 "Crown": "",
 "DamageNumberLabel": "",
 "DamageNumberManager": "",
+"Decimated": "",
 "Desert": "",
 "Effect": "",
 "EffectIcon": "",
@@ -778,6 +789,7 @@ _global_script_class_icons={
 "Pommel": "",
 "Quest": "",
 "QuestResource": "",
+"Quickslash": "",
 "Ring": "",
 "RingBand": "",
 "RingBeads": "",

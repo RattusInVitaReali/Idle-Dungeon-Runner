@@ -3,6 +3,8 @@ class_name Lacerate
 
 var level_damage = 5
 var base_damage = 15
+var base_multi = 1.2
+var level_multi = 0.05
 var bleed_duration = 2
 var tick_duration = 0.5
 
@@ -10,7 +12,7 @@ func base_damage():
 	return base_damage + level_damage * level
 
 func multiplier():
-	return 1.2 + level * 0.05
+	return base_multi + level * level_multi
 
 func calculate_damage():
 	return base_damage() + attacker.stats.phys_damage * multiplier()

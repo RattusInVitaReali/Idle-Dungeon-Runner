@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Skills/Skill.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Skills/DecimatingSmash/DecimatingSmash.gd" type="Script" id=2]
+[ext_resource path="res://_Resources/skill_icons/Icon6.png" type="Texture" id=3]
+
+[node name="DecimatingSmash" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+base_cooldown = 8.0
+skill_name = "Decimating Smash"
+skill_icon = ExtResource( 3 )
+melee = true
+tags = [ 0, 2 ]

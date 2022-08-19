@@ -101,7 +101,7 @@ func _process(delta):
 		rotate(50 * delta)
 
 func set_hp(hp):
-	stats.hp = round(hp)
+	stats["hp"] = round(hp)
 	emit_signal("hp_updated")
 
 # On creation
@@ -164,14 +164,21 @@ func update_skill_cooldowns(auto_combat):
 
 func update_stats():
 	if ready:
-		reset_stats()
-		apply_level_attributes()
-		apply_item_stats()
-		apply_attribute_stats()
-		update_skill_levels()
+		var hp = stats["hp"]
+		calculate_stats()
 		if !CombatProcessor.in_combat:
-			stats.hp = stats.max_hp
+			stats["hp"] = stats.max_hp
+		else:
+			stats["hp"] = hp
 		emit_signal("stats_updated")
+
+func calculate_stats():
+	reset_stats()
+	apply_level_attributes()
+	apply_item_attributes()
+	apply_effect_attributes()
+	apply_attribute_stats()
+	update_skill_levels()
 
 func reset_stats():
 	for stat in stats:
@@ -183,9 +190,14 @@ func apply_level_attributes():
 	for key in per_level.keys():
 		attributes[key] += per_level[key] * level
 
-func apply_item_stats():
+func apply_item_attributes():
 	for item in get_items():
 		item.apply_attributes(attributes)
+
+func apply_effect_attributes():
+	for effect in get_effects():
+		if !effect.expired:
+			effect.apply_attributes(attributes)
 
 func apply_attribute_stats():
 	stats["phys_damage"] += attributes["power"]
@@ -299,7 +311,7 @@ func process_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	stats_outgoing_damage(damage_info)
 	effects_outgoing_damage(damage_info)
 	for effect in damage_info.effects:
-		apply_effect_stats(effect)
+		apply_stats_to_effect(effect)
 	emit_signal("damage_enemy", damage_info)
 
 func apply_crit(damage_info : CombatProcessor.DamageInfo):
@@ -321,10 +333,10 @@ func effects_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 		effect.on_outgoing_damage(damage_info)
 
 func process_outgoing_effect(effect : Effect):
-	apply_effect_stats(effect)
+	apply_stats_to_effect(effect)
 	emit_signal("apply_effect", effect)
 
-func apply_effect_stats(effect : Effect):
+func apply_stats_to_effect(effect : Effect):
 	effect.process_duration_multi(stats["outgoing_effect_duration_multi"])
 	effect.process_strength_multi(stats["outgoing_effect_strength_multi"])
 
@@ -341,15 +353,17 @@ func items_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 		item.on_incoming_damage(damage_info)
 
 func effects_incoming_damage(damage_info : CombatProcessor.DamageInfo):
-	for item in get_items():
-		item.on_incoming_damage(damage_info)
+	for effect in get_effects():
+		effect.on_incoming_damage(damage_info)
 
 func process_incoming_effect(effect : Effect):
 	effect.process_duration_multi(stats["incoming_effect_duration_multi"])
 	effect.process_strength_multi(stats["incoming_effect_strength_multi"])
 	$Effects.add_child(effect)
+	effect.connect("effect_expired", self, "update_stats")
 	effect.begin()
 	emit_signal("effect_applied", effect)
+	update_stats()
 
 func stats_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 	damage_info.phys_damage = damage_info.phys_damage * 100 / (100 + max(0, stats.phys_protection - damage_info.phys_pen))
@@ -365,8 +379,8 @@ func take_damage(damage):
 	damage = round(damage)
 	if damage <= 0:
 		return
-	if stats.hp - damage > 0:
-		set_hp(stats.hp - damage)
+	if stats["hp"] - damage > 0:
+		set_hp(stats["hp"] - damage)
 	else:
 		set_hp(0)
 		die()
@@ -374,8 +388,8 @@ func take_damage(damage):
 func heal(amount):
 	if (amount <= 0):
 		return
-	if stats.hp + amount < stats.max_hp:
-		set_hp(stats.hp + amount)
+	if stats["hp"] + amount < stats.max_hp:
+		set_hp(stats["hp"] + amount)
 	else:
 		set_hp(stats.max_hp)
 

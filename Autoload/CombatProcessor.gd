@@ -1,6 +1,7 @@
 extends Node
 
 var Bleeding = load("res://Effects/Bleeding/Bleeding.tscn")
+var Decimated = load("res://Effects/Decimated/Decimated.tscn")
 
 signal entered_combat
 signal exited_combat

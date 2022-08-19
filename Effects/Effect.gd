@@ -8,6 +8,8 @@ export var base_duration = 0.0
 export var base_tick_duration = 0.0
 export var tick_based = true
 
+var expired = false
+
 var duration = 0.0
 var tick_duration = 0.0
 var attacker = null
@@ -59,6 +61,7 @@ func do_at_end():
 	pass
 
 func expire():
+	expired = true
 	emit_signal("effect_expired")
 	queue_free()
 
@@ -69,6 +72,9 @@ func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	pass
 
 func on_incoming_damage(damage_info : CombatProcessor.DamageInfo):
+	pass
+
+func apply_attributes(attributes):
 	pass
 
 func _on_EffectTime_timeout():

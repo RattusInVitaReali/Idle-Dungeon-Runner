@@ -9,4 +9,3 @@ func bonus_hp(level):
 
 func effect(stats, level):
 	stats.max_hp += bonus_hp(level)
-	stats.hp += bonus_hp(level)

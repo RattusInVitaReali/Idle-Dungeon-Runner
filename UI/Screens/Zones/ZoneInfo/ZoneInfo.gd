@@ -66,7 +66,6 @@ func update_buttons():
 			button.disabled = false
 
 func update_loot():
-	print("Updating loot")
 	for slot in available_loot.get_children():
 		slot.queue_free()
 	for slottable in slottables.get_children():

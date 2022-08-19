@@ -30,13 +30,13 @@ func update_player_hp():
 		player_hp_bar, 
 		"value", 
 		player_hp_bar.value, 
-		player.stats.hp,
+		player.stats["hp"],
 		0.2,
 		Tween.TRANS_LINEAR, 
 		Tween.EASE_OUT
 	)
 	player_hp_tween.start()
-	player_hp_value.text = str(int(player.stats.hp)) + " HP"
+	player_hp_value.text = str(int(player.stats["hp"])) + " HP"
 
 func update_skills():
 	var skills = []
