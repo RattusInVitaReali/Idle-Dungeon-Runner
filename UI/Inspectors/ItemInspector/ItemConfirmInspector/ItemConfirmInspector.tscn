@@ -6,11 +6,14 @@
 [ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 85
+size = 60
 font_data = ExtResource( 4 )
 
 [node name="ItemConfirmInspector" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="Equip" parent="Panel/VBoxContainer/Buttons" index="0"]
+margin_right = 418.0
 
 [node name="Label" parent="Panel/VBoxContainer/Buttons/Equip" index="0"]
 text = "Confirm"
@@ -18,7 +21,7 @@ text = "Confirm"
 [node name="Cancel" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="1"]
 margin_left = 422.0
 margin_right = 840.0
-margin_bottom = 220.0
+margin_bottom = 175.0
 rect_min_size = Vector2( 0, 175 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -37,5 +40,8 @@ valign = 1
 [node name="Upgrade" parent="Panel/VBoxContainer/Buttons" index="2"]
 visible = false
 margin_left = 562.0
+
+[node name="Dismantle" parent="Panel/VBoxContainer/Buttons" index="3"]
+visible = false
 
 [connection signal="pressed" from="Panel/VBoxContainer/Buttons/Cancel" to="." method="_on_Cancel_pressed"]

@@ -10,6 +10,8 @@ signal upgrade
 onready var parts = $Panel/VBoxContainer/Parts
 onready var button_label = $Panel/VBoxContainer/Buttons/Equip/Label
 onready var buttons_container = $Panel/VBoxContainer/Buttons
+onready var buttons_line = $Panel/VBoxContainer/Line5
+onready var dismantle_button = $Panel/VBoxContainer/Buttons/Dismantle
 
 var signal_name = "equip"
 
@@ -31,9 +33,11 @@ func gear_variant():
 	.gear_variant()
 	signal_name = "unequip"
 	button_label.text = "Unequip"
+	dismantle_button.hide()
 
 func upgrade_variant():
 	.upgrade_variant()
+	buttons_line.hide()
 	buttons_container.hide()
 
 func _on_Equip_pressed():
@@ -46,4 +50,8 @@ func _on_Upgrade_pressed():
 		emit_signal("upgrade", slottable)
 	else:
 		emit_signal("upgrade", slottable.split(1))
+	queue_free()
+
+func _on_Dismantle_pressed():
+	slottable.dismantle()
 	queue_free()

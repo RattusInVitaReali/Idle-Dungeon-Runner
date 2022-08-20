@@ -8,3 +8,6 @@ script = ExtResource( 2 )
 
 [node name="Label" parent="Panel/VBoxContainer/Buttons/Button1" index="0"]
 text = "Confirm"
+
+[node name="Label" parent="Panel/VBoxContainer/Buttons/Button2" index="0"]
+text = "Cancel"

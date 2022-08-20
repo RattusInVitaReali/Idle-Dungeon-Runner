@@ -19,10 +19,18 @@ margin_bottom = 1084.0
 [node name="StatsContainer" parent="Panel/VBoxContainer/Stats" index="0"]
 margin_bottom = 477.0
 
-[node name="Line5" type="HBoxContainer" parent="Panel/VBoxContainer" index="8"]
+[node name="Line4" parent="Panel/VBoxContainer" index="8"]
 margin_top = 1088.0
-margin_right = 840.0
 margin_bottom = 1103.0
+
+[node name="Special" parent="Panel/VBoxContainer" index="9"]
+margin_top = 1107.0
+margin_bottom = 1167.0
+
+[node name="Line5" type="HBoxContainer" parent="Panel/VBoxContainer" index="10"]
+margin_top = 1171.0
+margin_right = 840.0
+margin_bottom = 1186.0
 
 [node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line5" index="0"]
 margin_right = 100.0
@@ -46,10 +54,10 @@ margin_bottom = 15.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 3
 
-[node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer" index="9"]
-margin_top = 1107.0
+[node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer" index="11"]
+margin_top = 1190.0
 margin_right = 840.0
-margin_bottom = 1327.0
+margin_bottom = 1410.0
 rect_min_size = Vector2( 0, 220 )
 
 [node name="Button1" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="0"]
