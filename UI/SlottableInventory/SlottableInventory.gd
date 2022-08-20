@@ -11,6 +11,8 @@ export var allow_sorting = true
 export var save_path = ""
 export var force_block_save = false
 
+export var hide_slottable_quantity = false
+
 onready var container = $ScrollContainer/GridContainer
 
 var ready = false
@@ -125,6 +127,8 @@ func update_inventory():
 		if slottable.quantity == 0: # In case something gets freed next frame
 			continue
 		var slot = SlotScene.instance()
+		if hide_slottable_quantity:
+			slot.hide_quantity = true
 		container.add_child(slot)
 		slot.set_slottable(slottable)
 		slot.connect("inspector", self, "_on_inspector")

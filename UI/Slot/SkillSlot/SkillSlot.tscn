@@ -17,7 +17,7 @@ font_data = ExtResource( 4 )
 [node name="SkillSlot" instance=ExtResource( 1 )]
 margin_right = 250.0
 margin_bottom = 375.0
-rect_min_size = Vector2( 250, 375 )
+rect_min_size = Vector2( 225, 375 )
 script = ExtResource( 2 )
 
 [node name="Left" parent="." index="0"]
@@ -27,7 +27,7 @@ margin_bottom = 194.0
 [node name="Background" parent="." index="1"]
 margin_right = 250.0
 margin_bottom = 375.0
-rect_min_size = Vector2( 250, 150 )
+rect_min_size = Vector2( 225, 150 )
 texture = null
 stretch_mode = 5
 

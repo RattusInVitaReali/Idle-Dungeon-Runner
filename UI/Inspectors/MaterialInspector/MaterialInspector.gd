@@ -1,8 +1,14 @@
 extends Inspector
 class_name MaterialInspector
 
-signal merge
+onready var merge_line = $Panel/VBoxContainer/Line5
+onready var merge_button = $Panel/VBoxContainer/Buttons
 
+func set_slot(slot):
+	.set_slot(slot)
+	if slot.hide_quantity:
+		merge_line.hide()
+		merge_button.hide()
 
 func update_special():
 	if slottable.special_weapon and slottable.special_armor:
@@ -16,11 +22,8 @@ func update_special():
 		special_line.hide()
 
 func _on_Button1_pressed():
-	emit_signal("merge", slottable)
-	queue_free()
-
-func _on_Cancel_pressed():
+	LootManager.get_item(slottable.try_to_merge())
 	queue_free()
 
 func _on_TextureButton_pressed():
-	_on_Cancel_pressed()
+	queue_free()

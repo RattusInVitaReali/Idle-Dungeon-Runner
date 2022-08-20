@@ -148,6 +148,10 @@ func apply_attributes(_stats):
 	for stat in stats:
 		_stats[stat] += stats[stat]
 
+func dismantle():
+	for part in get_children():
+		part.dismantle()
+
 func print_item():
 	print("Item : %s (%s)" % [slottable_name, CraftingManager.RARITY.keys()[rarity]])
 	for stat in stats:

@@ -142,6 +142,12 @@ func try_to_merge():
 	emit_signal("slottable_updated")
 	return new_part
 
+func dismantle():
+	mat.quantity(int(mat.quantity / 2))
+	remove_child(mat)
+	LootManager.get_item(mat)
+	queue_free()
+
 func load():
 	for child in get_children():
 		remove_child(child)

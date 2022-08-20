@@ -41,8 +41,8 @@ func level_up():
 	.level_up()
 	GlobalResources.SKILL_POINTS += 1 # TEMP
 
-func update_stats():
-	.update_stats()
+func calculate_stats():
+	.calculate_stats()
 	update_skill_cooldowns(CombatProcessor.auto_combat)
 
 func next_action():

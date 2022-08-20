@@ -91,7 +91,6 @@ func update_part_info(part : ItemPart = null):
 func _on_inspector(slot):
 	if !creating:
 		._on_inspector(slot)
-		inspector.connect("merge", self, "_on_merge")
 	elif selecting_material:
 		var slottable = slot.slottable
 		var new_part = CraftingManager.try_to_forge_part(selected_part, slottable)
@@ -103,11 +102,6 @@ func _on_inspector(slot):
 				new_part.queue_free()
 				end_creation()
 			new_part.queue_free()
-
-func _on_merge(slottable):
-	var new_item = slottable.try_to_merge()
-	if new_item != null:
-		LootManager.get_item(new_item)
 
 func part_confirm_inspector(part):
 	inspector = PartConfirmInspector.instance()

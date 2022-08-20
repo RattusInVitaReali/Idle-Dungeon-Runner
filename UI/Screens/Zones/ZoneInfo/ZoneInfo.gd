@@ -80,7 +80,7 @@ func update_loot():
 			slottable_from_lootable(lootable)
 
 func slottable_from_lootable(lootable):
-	var loot = lootable.get_loot()
+	var loot = lootable.get_loot().quantity(1)
 	for slot in available_loot.get_children():
 		if slot.slottable.same_as(loot):
 			loot.queue_free()

@@ -79,9 +79,7 @@ func update_item_info(item : Item = null):
 
 func _on_inspector(slot):
 	if (!creating and !upgrading) or (upgrading and slot.slottable.get_parent() is Item) or slot.slottable is Item:
-		var inspector = ._on_inspector(slot)
-		if !(slot.slottable is Item):
-			inspector.connect("merge", self, "_on_merge")
+		._on_inspector(slot)
 	elif upgrading:
 		try_to_upgrade(slot)
 	elif selecting_parts:

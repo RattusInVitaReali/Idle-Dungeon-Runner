@@ -8,7 +8,7 @@
 [ext_resource path="res://Quests/Variants/BanditHunter.tres" type="Resource" id=6]
 [ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=7]
 [ext_resource path="res://Materials/1_Common/Iron.tres" type="Resource" id=8]
-[ext_resource path="res://Materials/0_Basic/SheepHide.tres" type="Resource" id=9]
+[ext_resource path="res://Materials/1_Common/CowHide.tres" type="Resource" id=9]
 [ext_resource path="res://Materials/0_Basic/GoatHide.tres" type="Resource" id=10]
 
 [sub_resource type="Resource" id=1]
@@ -27,10 +27,10 @@ base_max_quantity = 3
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 7 )
-chance = 0.3
+chance = 0.1
 material = ExtResource( 9 )
 base_min_quantity = 1
-base_max_quantity = 4
+base_max_quantity = 3
 
 [node name="Desert" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
