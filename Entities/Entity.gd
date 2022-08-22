@@ -421,6 +421,10 @@ func _on_Entity_animation_finished():
 	elif animation == "hurt":
 		play("idle")
 	elif animation == "die":
+		yield(get_tree().create_timer(1), "timeout")
+		on_die_finished()
+
+func on_die_finished():
 		emit_signal("despawned")
 
 func yeet():

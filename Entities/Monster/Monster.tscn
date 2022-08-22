@@ -24,3 +24,6 @@ per_level = {
 base_name = "Monster"
 base_loot = [ ExtResource( 3 ) ]
 monster_types = [  ]
+
+[node name="LargeShadow" parent="." index="3"]
+scale = Vector2( 12.5, 11 )

@@ -18,6 +18,8 @@ const zones = [
 	preload("res://Zones/Desert/Variants/DesertMedium.tscn"),
 	preload("res://Zones/Desert/Variants/DesertHard.tscn"),
 	
+	preload( "res://Zones/IcyCliffs/IcyCliffs.tscn"),
+	
 	preload("res://Zones/Ruins/Ruins.tscn"),
 	
 	preload("res://Zones/AshfallenForest/AshfallenForest.tscn")

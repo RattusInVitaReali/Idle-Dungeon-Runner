@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Entities/Monster/Goatman/Goatman.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Monster/Goatman/Goatman2/Goatman2.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Monster/Goatman/Goatman2/Goatman2Animations.tres" type="SpriteFrames" id=3]
+
+[node name="Goatman2" instance=ExtResource( 1 )]
+frames = ExtResource( 3 )
+animation = "hurt"
+script = ExtResource( 2 )
+base_name = "Mature Goatman"

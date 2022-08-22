@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://Lootable/_ItemLootable.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Monster/Goatman/SteelAxeHead.tres" type="Resource" id=2]
+[ext_resource path="res://Entities/Monster/Goatman/EbonyAxeHandle.tres" type="Resource" id=3]
+[ext_resource path="res://Entities/Monster/Goatman/IronSecondaryAxeHead.tres" type="Resource" id=4]
+[ext_resource path="res://Items/Weapon/Axe/Axe.tscn" type="PackedScene" id=5]
+
+[resource]
+script = ExtResource( 1 )
+chance = 0.07
+item_type = ExtResource( 5 )
+parts = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ]
+custom_name = ""

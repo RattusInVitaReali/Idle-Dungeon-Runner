@@ -11,7 +11,7 @@
 
 [node name="Bandit" instance=ExtResource( 2 )]
 frames = ExtResource( 1 )
-animation = "idle"
+animation = "die"
 script = ExtResource( 4 )
 base_name = "Bandit"
 base_loot = [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ) ]

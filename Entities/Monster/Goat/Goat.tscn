@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Entities/Monster/Monster.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Monster/Goat/Goat.gd" type="Script" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "hurt",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[node name="Goat" instance=ExtResource( 1 )]
+frames = SubResource( 1 )
+animation = "hurt"
+script = ExtResource( 2 )
+per_level = {
+"armor": 5,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 5,
+"penetration": 0,
+"potency": 0,
+"power": 5,
+"precision": 5,
+"toughess": 0,
+"vitality": 10
+}
+base_loot = [  ]

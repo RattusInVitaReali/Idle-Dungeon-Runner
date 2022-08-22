@@ -99,7 +99,6 @@ func set_lootable_level():
 func get_lootables():
 	return loot
 
-func _on_Entity_animation_finished():
-	._on_Entity_animation_finished()
-	if animation == "die":
-		queue_free()
+func on_die_finished():
+	.on_die_finished()
+	queue_free()

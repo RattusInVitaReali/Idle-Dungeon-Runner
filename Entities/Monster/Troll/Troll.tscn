@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Entities/Monster/Monster.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Monster/Troll/Troll.gd" type="Script" id=2]
+
+[node name="Troll" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+per_level = {
+"armor": 10,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 3,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 10,
+"penetration": 0,
+"potency": 0,
+"power": 15,
+"precision": 5,
+"toughess": 0,
+"vitality": 40
+}

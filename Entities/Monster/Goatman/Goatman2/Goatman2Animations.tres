@@ -1,0 +1,76 @@
+[gd_resource type="SpriteFrames" load_steps=52 format=2]
+
+[ext_resource path="res://_Resources/Monsters/Goatman2/Idle/Satyr_02_Idle_006.png" type="Texture" id=1]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Idle/Satyr_02_Idle_004.png" type="Texture" id=2]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Idle/Satyr_02_Idle_011.png" type="Texture" id=3]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Hurt/Satyr_02_Hurt_007.png" type="Texture" id=4]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_005.png" type="Texture" id=5]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Hurt/Satyr_02_Hurt_011.png" type="Texture" id=6]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Idle/Satyr_02_Idle_002.png" type="Texture" id=7]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Idle/Satyr_02_Idle_003.png" type="Texture" id=8]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Idle/Satyr_02_Idle_009.png" type="Texture" id=9]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_013.png" type="Texture" id=10]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Idle/Satyr_02_Idle_000.png" type="Texture" id=11]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_010.png" type="Texture" id=12]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Hurt/Satyr_02_Hurt_004.png" type="Texture" id=13]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_012.png" type="Texture" id=14]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Hurt/Satyr_02_Hurt_006.png" type="Texture" id=15]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Hurt/Satyr_02_Hurt_010.png" type="Texture" id=16]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Hurt/Satyr_02_Hurt_008.png" type="Texture" id=17]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Hurt/Satyr_02_Hurt_000.png" type="Texture" id=18]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Hurt/Satyr_02_Hurt_009.png" type="Texture" id=19]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_014.png" type="Texture" id=20]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Hurt/Satyr_02_Hurt_003.png" type="Texture" id=21]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_011.png" type="Texture" id=22]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_009.png" type="Texture" id=23]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Idle/Satyr_02_Idle_005.png" type="Texture" id=24]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_007.png" type="Texture" id=25]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Idle/Satyr_02_Idle_001.png" type="Texture" id=26]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_006.png" type="Texture" id=27]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_008.png" type="Texture" id=28]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Idle/Satyr_02_Idle_007.png" type="Texture" id=29]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Hurt/Satyr_02_Hurt_001.png" type="Texture" id=30]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Hurt/Satyr_02_Hurt_002.png" type="Texture" id=31]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Idle/Satyr_02_Idle_008.png" type="Texture" id=32]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_004.png" type="Texture" id=33]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Hurt/Satyr_02_Hurt_005.png" type="Texture" id=34]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Idle/Satyr_02_Idle_010.png" type="Texture" id=35]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Attack/Satyr_02_Attacking_007.png" type="Texture" id=36]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Attack/Satyr_02_Attacking_000.png" type="Texture" id=37]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Attack/Satyr_02_Attacking_003.png" type="Texture" id=38]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Attack/Satyr_02_Attacking_001.png" type="Texture" id=39]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Attack/Satyr_02_Attacking_002.png" type="Texture" id=40]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Attack/Satyr_02_Attacking_004.png" type="Texture" id=41]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Attack/Satyr_02_Attacking_008.png" type="Texture" id=42]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Attack/Satyr_02_Attacking_005.png" type="Texture" id=43]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Attack/Satyr_02_Attacking_010.png" type="Texture" id=44]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Attack/Satyr_02_Attacking_011.png" type="Texture" id=45]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Attack/Satyr_02_Attacking_006.png" type="Texture" id=46]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_000.png" type="Texture" id=47]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_001.png" type="Texture" id=48]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_002.png" type="Texture" id=49]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Attack/Satyr_02_Attacking_009.png" type="Texture" id=50]
+[ext_resource path="res://_Resources/Monsters/Goatman2/Die/Satyr_02_Dying_003.png" type="Texture" id=51]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 37 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 38 ), ExtResource( 41 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 36 ), ExtResource( 42 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 45 ) ],
+"loop": false,
+"name": "attack",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 51 ), ExtResource( 33 ), ExtResource( 5 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 23 ), ExtResource( 12 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "die",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 21 ), ExtResource( 13 ), ExtResource( 34 ), ExtResource( 15 ), ExtResource( 4 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "hurt",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 24 ), ExtResource( 1 ), ExtResource( 29 ), ExtResource( 32 ), ExtResource( 9 ), ExtResource( 35 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 60.0
+} ]
