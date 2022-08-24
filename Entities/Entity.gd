@@ -152,9 +152,6 @@ func unequip_item(item : Item):
 	update_stats()
 	LootManager.get_item(item)
 
-func _on_item_broke(item : Item):
-	unequip_item(item)
-
 func update_skill_levels():
 	pass
 
@@ -209,10 +206,10 @@ func apply_attribute_stats():
 	stats["crit_multi"] += attributes["ferocity"] * 0.002
 	stats["phys_protection"] += attributes["armor"]
 	stats["magic_protection"] += attributes["occult_aversion"]
-	stats["max_hp"] += attributes["vitality"]
+	stats["max_hp"] += attributes["vitality"] * 4
 	stats["outgoing_effect_duration_multi"] += attributes["mastery"] * 0.002
 	stats["outgoing_effect_strength_multi"] += attributes["expertise"] * 0.002
-	stats["incoming_effect_duration_multi"] += 1000 / (1000 + attributes["toughess"]) - 1
+	stats["incoming_effect_duration_multi"] += 1000.0 / (1000 + attributes["toughess"]) - 1
 	stats["phys_penetration"] += attributes["penetration"]
 	stats["magic_penetration"] += attributes["magic_penetration"]
 	stats["cd_multi"] += 1000.0 / (1000 + attributes["dexterity"]) - 1
@@ -366,14 +363,19 @@ func process_incoming_effect(effect : Effect):
 	update_stats()
 
 func stats_incoming_damage(damage_info : CombatProcessor.DamageInfo):
-	damage_info.phys_damage = damage_info.phys_damage * 100 / (100 + max(0, stats.phys_protection - damage_info.phys_pen))
-	damage_info.magic_damage = damage_info.magic_damage * 100 / (100 + max(0, stats.magic_protection - damage_info.magic_pen))
+	damage_info.phys_damage = int(damage_info.phys_damage * 15 / sqrt(max(0, stats.phys_protection - damage_info.phys_pen) + 225))
+	damage_info.magic_damage = int(damage_info.magic_damage * 15 / sqrt(max(0, stats.magic_protection - damage_info.magic_pen) + 225))
 
 func take_damage_info(damage_info : CombatProcessor.DamageInfo):
 	play_animation("hurt")
 	take_damage(damage_info.phys_damage)
 	take_damage(damage_info.magic_damage)
 	$DamageNumberManager.new_damage_number(damage_info)
+	var combat_log = name + " took " + str(damage_info.phys_damage + damage_info.magic_damage)
+	if damage_info.is_crit:
+		combat_log += " (Critical)"
+	combat_log += " damage."
+	print(combat_log)
 
 func take_damage(damage):
 	damage = round(damage)

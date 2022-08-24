@@ -1,6 +1,6 @@
 extends Node
 
-var debug = true
+var debug = false
 
 enum RARITY { BASIC, COMMON, UNCOMMON, RARE, EPIC, LEGENDARY }
 

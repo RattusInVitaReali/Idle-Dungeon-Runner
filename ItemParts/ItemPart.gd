@@ -142,8 +142,8 @@ func try_to_merge():
 	emit_signal("slottable_updated")
 	return new_part
 
-func dismantle():
-	mat.quantity(int(mat.quantity / 2))
+func dismantle(var parent_quantity = 1):
+	mat.quantity(int(mat.quantity / 2) * parent_quantity)
 	remove_child(mat)
 	LootManager.get_item(mat)
 	queue_free()

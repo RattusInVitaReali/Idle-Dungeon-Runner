@@ -11,4 +11,4 @@ skill_name = "Quickslash"
 skill_icon = ExtResource( 3 )
 melee = true
 tags = [ 0, 2 ]
-level_required = 10
+level_required = 15

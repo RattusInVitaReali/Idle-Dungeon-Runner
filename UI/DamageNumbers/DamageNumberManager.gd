@@ -17,7 +17,7 @@ func new_damage_number(damage_info : CombatProcessor.DamageInfo):
 	if (damage_info.phys_damage > 0):
 		var new_label = DamageNumberLabel.instance()
 		add_child(new_label)
-		new_label.rect_scale *= get_parent().scale
+		new_label.rect_scale = Vector2(0.33, 0.33) / get_parent().scale
 		new_label.set_params(
 			str(ceil(damage_info.phys_damage)), 
 			phys_color, 

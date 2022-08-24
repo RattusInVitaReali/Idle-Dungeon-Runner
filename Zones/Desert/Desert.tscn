@@ -4,7 +4,7 @@
 [ext_resource path="res://Modifiers/Strong/Strong.tres" type="Resource" id=2]
 [ext_resource path="res://Entities/Monster/Bandit/Bandit.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Zones/Desert/Desert.gd" type="Script" id=4]
-[ext_resource path="res://_Resources/ZoneBackgrounds/Desert.png" type="Texture" id=5]
+[ext_resource path="res://_Resources/ZoneBackgrounds/BetterDesert.png" type="Texture" id=5]
 [ext_resource path="res://Quests/Variants/BanditHunter.tres" type="Resource" id=6]
 [ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=7]
 [ext_resource path="res://Materials/1_Common/Iron.tres" type="Resource" id=8]
@@ -43,4 +43,4 @@ loot = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
 quests = [ ExtResource( 6 ) ]
 texture = ExtResource( 5 )
 min_level = 5
-max_level = 100
+max_level = 50

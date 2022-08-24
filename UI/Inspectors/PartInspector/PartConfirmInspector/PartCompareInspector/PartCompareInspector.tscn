@@ -13,40 +13,35 @@ font_data = ExtResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Stats" parent="Panel/VBoxContainer" index="7"]
-margin_bottom = 1020.0
+margin_bottom = 1080.0
 
 [node name="StatsContainer" parent="Panel/VBoxContainer/Stats" index="0"]
-margin_bottom = 413.0
+margin_bottom = 473.0
 
-[node name="Line5" parent="Panel/VBoxContainer" index="8"]
-margin_top = 1024.0
-margin_bottom = 1039.0
+[node name="Line4" parent="Panel/VBoxContainer" index="8"]
+margin_top = 1084.0
+margin_bottom = 1099.0
 
-[node name="Buttons" parent="Panel/VBoxContainer" index="9"]
-margin_top = 1043.0
-margin_bottom = 1263.0
+[node name="Special" parent="Panel/VBoxContainer" index="9"]
+margin_top = 1103.0
+margin_bottom = 1163.0
 
-[node name="Button1" parent="Panel/VBoxContainer/Buttons" index="0"]
-margin_right = 277.0
+[node name="Line5" parent="Panel/VBoxContainer" index="10"]
+margin_top = 1167.0
+margin_bottom = 1182.0
+
+[node name="Buttons" parent="Panel/VBoxContainer" index="11"]
+margin_top = 1186.0
+margin_bottom = 1346.0
 
 [node name="Dismantle" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="1"]
+visible = false
 margin_left = 281.0
 margin_right = 558.0
-margin_bottom = 220.0
+margin_bottom = 160.0
 size_flags_horizontal = 3
 texture_normal = ExtResource( 4 )
 expand = true
-
-[node name="Button2" parent="Panel/VBoxContainer/Buttons" index="2"]
-margin_left = 562.0
-
-[node name="Line4" parent="Panel/VBoxContainer" index="10"]
-margin_top = 1267.0
-margin_bottom = 1282.0
-
-[node name="Special" parent="Panel/VBoxContainer" index="11"]
-margin_top = 1286.0
-margin_bottom = 1346.0
 
 [node name="LostSpecial" type="Label" parent="Panel/VBoxContainer" index="12"]
 margin_top = 1350.0

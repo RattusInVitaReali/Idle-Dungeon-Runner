@@ -1,11 +1,29 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Entities/Monster/Goatman/Goatman.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Monster/Goatman/Goatman3/Goatman3.gd" type="Script" id=2]
 [ext_resource path="res://Entities/Monster/Goatman/Goatman3/Goatman3Animations.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Skills/Quickslash/Quickslash.tscn" type="PackedScene" id=4]
 
 [node name="Goatman3" instance=ExtResource( 1 )]
 frames = ExtResource( 3 )
 animation = "attack"
 script = ExtResource( 2 )
+per_level = {
+"armor": 10,
+"dexterity": 5,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 10,
+"penetration": 0,
+"potency": 0,
+"power": 17,
+"precision": 5,
+"toughess": 0,
+"vitality": 35
+}
 base_name = "Young Goatman"
+
+[node name="Quickslash" parent="Skills" index="1" instance=ExtResource( 4 )]

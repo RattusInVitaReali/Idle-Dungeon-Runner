@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Zones/Zone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Zones/IcyCliffs/IcyCliffs.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Materials/3_Rare/Titanium.tres" type="Resource" id=9]
 [ext_resource path="res://Materials/3_Rare/Ironbark.tres" type="Resource" id=10]
 [ext_resource path="res://Materials/2_Uncommon/Aluminum.tres" type="Resource" id=11]
+[ext_resource path="res://Quests/Variants/GoatmanHunter.tres" type="Resource" id=12]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 8 )
@@ -41,6 +42,7 @@ unlock_signal_level = 20
 modifiers = [ ExtResource( 4 ) ]
 enemies = [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ) ]
 loot = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
+quests = [ ExtResource( 12 ) ]
 texture = ExtResource( 3 )
-min_level = 30
-max_level = 70
+min_level = 40
+max_level = 100

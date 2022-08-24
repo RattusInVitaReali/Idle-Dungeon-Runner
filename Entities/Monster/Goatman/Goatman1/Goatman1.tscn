@@ -1,11 +1,29 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Entities/Monster/Goatman/Goatman.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Monster/Goatman/Goatman1/Goatman1.gd" type="Script" id=2]
 [ext_resource path="res://Entities/Monster/Goatman/Goatman1/Goatman1Animations.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Skills/Lacerate/Lacerate.tscn" type="PackedScene" id=4]
 
 [node name="Goatman1" instance=ExtResource( 1 )]
 frames = ExtResource( 3 )
 animation = "idle"
 script = ExtResource( 2 )
+per_level = {
+"armor": 12,
+"dexterity": 5,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 12,
+"penetration": 0,
+"potency": 0,
+"power": 13,
+"precision": 5,
+"toughess": 0,
+"vitality": 35
+}
 base_name = "Elder Goatman"
+
+[node name="Lacerate" parent="Skills" index="1" instance=ExtResource( 4 )]

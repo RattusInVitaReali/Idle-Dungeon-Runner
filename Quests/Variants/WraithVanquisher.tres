@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Quests/QuestResource.gd" type="Script" id=1]
+[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=2]
+[ext_resource path="res://Materials/3_Rare/Topaz.tres" type="Resource" id=3]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+chance = 1.0
+material = ExtResource( 3 )
+base_min_quantity = 3
+base_max_quantity = 5
+
+[resource]
+script = ExtResource( 1 )
+quest_name = "Wraith Vanquisher"
+required_kills = 5
+required_types = [ 6 ]
+reward = [ SubResource( 1 ) ]

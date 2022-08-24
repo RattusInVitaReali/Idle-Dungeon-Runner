@@ -5,5 +5,5 @@
 [node name="DesertHard" instance=ExtResource( 1 )]
 zone_name = "Hard Desert"
 unlock_signal_level = 15
-min_level = 21
-max_level = 45
+min_level = 40
+max_level = 60

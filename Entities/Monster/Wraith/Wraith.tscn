@@ -1,22 +1,50 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Entities/Monster/Monster.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Monster/Wraith/Wraith.gd" type="Script" id=2]
+[ext_resource path="res://Skills/Quickslash/Quickslash.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Lootable/Experience/Experience.tres" type="Resource" id=4]
+[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=5]
+[ext_resource path="res://Materials/3_Rare/Bloodsteel.tres" type="Resource" id=6]
+[ext_resource path="res://Materials/3_Rare/Amber.tres" type="Resource" id=7]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 5 )
+chance = 0.3
+material = ExtResource( 6 )
+base_min_quantity = 1
+base_max_quantity = 3
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 5 )
+chance = 0.2
+material = ExtResource( 7 )
+base_min_quantity = 1
+base_max_quantity = 3
 
 [node name="Wraith" instance=ExtResource( 1 )]
+scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
 per_level = {
-"armor": 7,
+"armor": 5,
 "dexterity": 5,
 "expertise": 0,
 "ferocity": 0,
 "magic_penetration": 0,
 "mastery": 0,
-"occult_aversion": 7,
-"penetration": 3,
+"occult_aversion": 5,
+"penetration": 0,
 "potency": 0,
-"power": 15,
-"precision": 10,
-"toughess": 0,
-"vitality": 25
+"power": 10,
+"precision": 5,
+"toughess": 10,
+"vitality": 45
 }
+base_name = "Wraith"
+base_loot = [ ExtResource( 4 ), SubResource( 1 ), SubResource( 2 ) ]
+monster_types = [ 6 ]
+
+[node name="Quickslash" parent="Skills" index="0" instance=ExtResource( 3 )]
+
+[node name="LargeShadow" parent="." index="3"]
+scale = Vector2( 8.325, 7.326 )

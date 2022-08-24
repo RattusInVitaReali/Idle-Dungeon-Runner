@@ -1,7 +1,7 @@
 extends Entity
 class_name Monster
 
-enum MONSTER_TYPE { BANDIT, WOLF, ORC, GOLEM }
+enum MONSTER_TYPE { BANDIT, WOLF, ORC, GOLEM, GOATMAN, BULLMAN, WRAITH, TROLL }
 
 signal loot
 
@@ -61,7 +61,7 @@ func apply_level_attributes():
 
 func update_skill_levels():
 	for skill in get_skills():
-		skill.set_level(level)
+		skill.set_level(int(level / get_skills().size()))
 
 func make_name():
 	monster_name = base_name

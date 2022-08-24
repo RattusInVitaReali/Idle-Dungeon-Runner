@@ -151,7 +151,7 @@ func apply_attributes(_stats):
 func dismantle():
 	for part in get_children():
 		part.print_part()
-		part.dismantle()
+		part.dismantle(quantity)
 	queue_free()
 
 func print_item():

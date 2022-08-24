@@ -4,4 +4,4 @@
 
 [node name="DesertEasy" instance=ExtResource( 1 )]
 zone_name = "Easy Desert"
-max_level = 10
+max_level = 20
