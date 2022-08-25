@@ -6,7 +6,9 @@ signal zone_updated
 signal quest_changed
 
 export var zone_name = ""
-export var unlock_signal = ""
+export var unlock_zone_name = ""
+export var unlock_monster_base_name = ""
+var zone_class_name = ""
 export var unlock_signal_level = 0
 export (Array, Resource) var modifiers = []
 export (Array, PackedScene) var enemies = []
@@ -31,8 +33,8 @@ export var locked = false
 func _ready():
 	max_level_reached = max(max_level_reached, min_level)
 	set_level(max(save_level, min_level))
-	if unlock_signal != "" and locked:
-		Progression.connect(unlock_signal, self, "unlock")
+	if unlock_zone_name != "" or unlock_monster_base_name != "":
+		Progression.connect("progression_monster_died", self, "try_unlock")
 	else:
 		locked = false
 	load_quest()
@@ -43,11 +45,15 @@ func set_level(_level):
 		save_level = level
 		emit_signal("zone_updated")
 
-func unlock(var _level):
-	if _level >= unlock_signal_level:
-		locked = false
-		emit_signal("unlocked")
-		Progression.disconnect(unlock_signal, self, "unlock")
+func try_unlock(monster, zone):
+	if monster.base_name == unlock_monster_base_name or zone.zone_name == unlock_zone_name:
+		if monster.level >= unlock_signal_level:
+			unlock()
+
+func unlock():
+	locked = false
+	emit_signal("unlocked")
+	Progression.disconnect("progression_monster_died", self, "try_unlock")
 
 func modifier(_modifier):
 	modifiers.append(_modifier)

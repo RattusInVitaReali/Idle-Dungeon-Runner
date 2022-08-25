@@ -1,10 +1,9 @@
 extends Node
 
-signal bandit_boss_defeated
+signal progression_monster_died
 
 func _ready():
-	CombatProcessor.connect("monster_died", self, "check_unlocks")
+	CombatProcessor.connect("monster_died", self, "_on_monster_died")
 
-func check_unlocks(monster):
-	if monster is BanditBoss:
-		emit_signal("bandit_boss_defeated", monster.level)
+func _on_monster_died(monster, zone):
+	emit_signal("progression_monster_died", monster, zone)

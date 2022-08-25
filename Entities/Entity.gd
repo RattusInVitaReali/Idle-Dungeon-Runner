@@ -206,13 +206,16 @@ func apply_attribute_stats():
 	stats["crit_multi"] += attributes["ferocity"] * 0.002
 	stats["phys_protection"] += attributes["armor"]
 	stats["magic_protection"] += attributes["occult_aversion"]
-	stats["max_hp"] += attributes["vitality"] * 4
+	apply_vitality()
 	stats["outgoing_effect_duration_multi"] += attributes["mastery"] * 0.002
 	stats["outgoing_effect_strength_multi"] += attributes["expertise"] * 0.002
 	stats["incoming_effect_duration_multi"] += 1000.0 / (1000 + attributes["toughess"]) - 1
 	stats["phys_penetration"] += attributes["penetration"]
 	stats["magic_penetration"] += attributes["magic_penetration"]
-	stats["cd_multi"] += 1000.0 / (1000 + attributes["dexterity"]) - 1
+	stats["cd_multi"] += 25.0 / sqrt(attributes["dexterity"] + 900) - 1 + 1.0/6
+
+func apply_vitality():
+	stats["max_hp"] += attributes["vitality"] * 4
 
 func play_animation(_animation):
 	if (_animation == "melee" and enemy != null):

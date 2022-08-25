@@ -37,7 +37,7 @@ base_max_quantity = 3
 [node name="IcyCliffs" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 zone_name = "Icy Cliffs"
-unlock_signal = "bandit_boss_defeated"
+unlock_zone_name = "Bandit Boss Dungeon"
 unlock_signal_level = 20
 modifiers = [ ExtResource( 4 ) ]
 enemies = [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ) ]

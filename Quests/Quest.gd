@@ -29,7 +29,7 @@ func from_resource(resource):
 	reward = resource.reward.duplicate()
 	return self
  
-func _on_monster_died(monster : Monster):
+func _on_monster_died(monster, zone):
 	if active:
 		for type in required_types:
 			if type in monster.monster_types:

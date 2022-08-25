@@ -8,6 +8,7 @@ const save_path = "user://idle_data.tres"
 
 signal monster_spawned
 signal monster_arrived
+signal monster_died
 signal monster_despawned
 
 signal player_spawned
@@ -44,6 +45,7 @@ func _ready():
 	connect("player_despawned", CombatProcessor, "_on_player_despawned")
 	connect("monster_spawned", CombatProcessor, "_on_monster_spawned")
 	connect("monster_arrived", CombatProcessor, "_on_monster_arrived")
+	connect("monster_died", CombatProcessor, "_on_monster_died")
 	connect("monster_despawned", CombatProcessor, "_on_monster_despawned")
 	measure_screen()
 	image_1.position.x = screen_center_x
@@ -74,9 +76,10 @@ func _on_player_exp_changed():
 
 func spawn_monster():
 	var _monster = zone.make_zone_monster()
-	add_child_below_node($Map, _monster)
-	_monster.connect("despawned", self, "_on_monster_despawned")
 	monster = _monster
+	add_child_below_node($Map, monster)
+	monster.connect("despawned", self, "_on_monster_despawned")
+	monster.connect("died", self, "_on_monster_died")
 	monster.position = Vector2(screen_center_x, monster_spawn_pos_x)
 	monster.scale.x /= 4
 	monster.scale.y /= 4
@@ -124,6 +127,9 @@ func _on_player_despawned():
 	emit_signal("player_despawned")
 	yeet_monster()
 	respawn_player()
+
+func _on_monster_died():
+	emit_signal("monster_died", monster, zone)
 
 func _on_monster_despawned():
 	yield(zone, "zone_updated") # Hack to force zone to process the signal first

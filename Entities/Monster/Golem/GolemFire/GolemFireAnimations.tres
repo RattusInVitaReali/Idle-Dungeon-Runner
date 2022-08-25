@@ -65,7 +65,7 @@ animations = [ {
 "name": "attack",
 "speed": 60.0
 }, {
-"frames": [ ExtResource( 32 ), ExtResource( 48 ), ExtResource( 54 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 41 ), ExtResource( 20 ), ExtResource( 1 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 32 ), ExtResource( 48 ), ExtResource( 54 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 41 ), ExtResource( 20 ), ExtResource( 1 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 4 ), ExtResource( 8 ) ],
 "loop": false,
 "name": "die",
 "speed": 60.0

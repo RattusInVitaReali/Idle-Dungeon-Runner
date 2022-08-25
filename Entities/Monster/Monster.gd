@@ -18,7 +18,6 @@ var prefixes = []
 var suffixes = []
 
 func _ready():
-	connect("died", CombatProcessor, "_on_monster_died")
 	connect("loot", LootManager, "_on_loot")
 	make_name()
 	play("idle")
@@ -51,13 +50,16 @@ func calculate_stats():
 	apply_modifiers()
 	update_skill_cooldowns(true)
 
+func apply_vitality():
+	stats["max_hp"] += int(attributes["vitality"] * 4 * pow(level, 1.5) / level)
+
 func apply_modifiers():
 	for modifier in modifiers:
 		modifier.apply_effect(stats, level)
 
 func apply_level_attributes():
 	for key in per_level.keys():
-		attributes[key] += int(per_level[key] * pow(level, 1.2))
+		attributes[key] += int(per_level[key] * pow(level, 1.1))
 
 func update_skill_levels():
 	for skill in get_skills():

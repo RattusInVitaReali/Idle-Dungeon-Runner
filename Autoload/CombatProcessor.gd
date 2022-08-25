@@ -107,8 +107,8 @@ func _on_monster_spawned(_monster):
 	Monster = _monster
 	emit_signal("monster_spawned", Monster)
 
-func _on_monster_died():
-	emit_signal("monster_died", Monster)
+func _on_monster_died(monster, zone):
+	emit_signal("monster_died", monster, zone)
 
 func _on_monster_despawned():
 	Monster = null

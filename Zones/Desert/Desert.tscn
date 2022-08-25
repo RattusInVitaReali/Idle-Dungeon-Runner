@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Zones/Zone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Modifiers/Strong/Strong.tres" type="Resource" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Materials/1_Common/Iron.tres" type="Resource" id=8]
 [ext_resource path="res://Materials/1_Common/CowHide.tres" type="Resource" id=9]
 [ext_resource path="res://Materials/0_Basic/GoatHide.tres" type="Resource" id=10]
+[ext_resource path="res://Zones/BanditBossDungeon/BanditBossDungeon.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 7 )
@@ -35,7 +36,8 @@ base_max_quantity = 3
 [node name="Desert" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
 zone_name = "Desert"
-unlock_signal = "bandit_boss_defeated"
+unlock_zone_name = "Bandit Boss Dungeon"
+unlock_signal_zone = ExtResource( 11 )
 unlock_signal_level = 5
 modifiers = [ ExtResource( 2 ) ]
 enemies = [ ExtResource( 3 ) ]

@@ -74,10 +74,10 @@ func _on_inspector(slottable):
 
 func _on_equip(item):
 	var item_to_equip = items.remove_slottable(item, 1)
-	CombatProcessor.Player.equip_item(item_to_equip)
+	player.equip_item(item_to_equip)
 
 func _on_unequip(item):
-	CombatProcessor.Player.unequip_item(item)
+	player.unequip_item(item)
 
 func _on_upgrade(item):
 	emit_signal("upgrade", item)
@@ -90,7 +90,7 @@ func update_equipped():
 		slot.set_slottable(null)
 	var weapon_count = 0
 	var ring_count = 0
-	for item in CombatProcessor.Player.get_items():
+	for item in player.get_items():
 		match item.type:
 			CraftingManager.ITEM_TYPE.WEAPON:
 				weapon_slots[weapon_count].set_slottable(item)
