@@ -13,11 +13,6 @@ export (int) var cost
 export (Array, CraftingManager.MATERIAL_TYPE) var allowed_material_types
 export (String) var description
 
-export var unlock_zone_name = ""
-export var unlock_monster_base_name = ""
-export var unlock_signal_level = 0
-export (bool) var locked = false
-
 export var stat_multipliers = {
 	"power": 0.0, 
 	"potency": 0.0, 
@@ -152,24 +147,6 @@ func dismantle(var parent_quantity = 1):
 	remove_child(mat)
 	LootManager.get_item(mat)
 	queue_free()
-
-func lock():
-	if unlock_zone_name != "" or unlock_monster_base_name != "":
-		locked = true
-		Progression.connect("progression_monster_died", self, "try_unlock")
-	else:
-		locked = false
-	emit_signal("slottable_updated")
-
-func try_unlock(monster, zone):
-	if monster.base_name == unlock_monster_base_name or zone.zone_name == unlock_zone_name:
-		if monster.level >= unlock_signal_level:
-			unlock()
-
-func unlock():
-	locked = false
-	Progression.item_part_unlocked[type] = true
-	Progression.disconnect("progression_monster_died", self, "try_unlock")
 
 func load():
 	for child in get_children():

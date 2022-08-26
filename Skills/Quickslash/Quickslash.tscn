@@ -6,9 +6,9 @@
 
 [node name="Quickslash" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_signal_level = 15
 base_cooldown = 1.2
 skill_name = "Quickslash"
 skill_icon = ExtResource( 3 )
 melee = true
 tags = [ 0, 2 ]
-level_required = 15

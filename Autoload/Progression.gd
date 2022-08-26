@@ -55,3 +55,6 @@ func _ready():
 
 func _on_monster_died(monster, zone):
 	emit_signal("progression_monster_died", monster, zone)
+
+func unlock_part(part):
+	item_part_unlocked[part.type] = true

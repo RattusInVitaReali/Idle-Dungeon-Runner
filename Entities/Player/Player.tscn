@@ -15,9 +15,13 @@ script = ExtResource( 5 )
 experience = 0
 
 [node name="BasicAttack" parent="Skills" index="0" instance=ExtResource( 2 )]
+locked = false
 
 [node name="Lacerate" parent="Skills" index="1" instance=ExtResource( 3 )]
+locked = false
 
 [node name="DecimatingSmash" parent="Skills" index="2" instance=ExtResource( 7 )]
+locked = false
 
 [node name="Quickslash" parent="Skills" index="3" instance=ExtResource( 6 )]
+locked = false

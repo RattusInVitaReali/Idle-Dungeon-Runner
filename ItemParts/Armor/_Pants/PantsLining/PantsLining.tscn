@@ -7,6 +7,8 @@
 
 [node name="PantsLining" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Easy Forest"
+unlock_signal_level = 5
 base_icon = ExtResource( 3 )
 item_icon = ExtResource( 4 )
 type = 25
@@ -14,8 +16,6 @@ used_for = 1
 cost = 15
 allowed_material_types = [ 3, 4 ]
 description = "Base pants layer."
-unlock_zone_name = "Easy Forest"
-unlock_signal_level = 5
 stat_multipliers = {
 "armor": 0.75,
 "dexterity": 1.0,

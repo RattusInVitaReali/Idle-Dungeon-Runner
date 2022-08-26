@@ -14,7 +14,9 @@ func set_slottable(var slottable : Slottable):
 	match slottable.slottable_type:
 		Slottable.SLOTTABLE_TYPE.ITEM:
 			modulate = Color(1, 1, 1, 1)
-			if slottable.get_child_count() == 0:
+			if slottable.locked:
+				texture = Locked
+			elif slottable.get_child_count() == 0:
 				texture = slottable.icon
 			else:
 				texture = null

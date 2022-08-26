@@ -374,11 +374,11 @@ func take_damage_info(damage_info : CombatProcessor.DamageInfo):
 	take_damage(damage_info.phys_damage)
 	take_damage(damage_info.magic_damage)
 	$DamageNumberManager.new_damage_number(damage_info)
-	var combat_log = name + " took " + str(damage_info.phys_damage + damage_info.magic_damage)
-	if damage_info.is_crit:
-		combat_log += " (Critical)"
-	combat_log += " damage."
-	print(combat_log)
+#	var combat_log = name + " took " + str(damage_info.phys_damage + damage_info.magic_damage)
+#	if damage_info.is_crit:
+#		combat_log += " (Critical)"
+#	combat_log += " damage."
+#	print(combat_log)
 
 func take_damage(damage):
 	damage = round(damage)

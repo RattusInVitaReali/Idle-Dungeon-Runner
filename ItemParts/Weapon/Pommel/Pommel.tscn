@@ -7,14 +7,14 @@
 
 [node name="Pommel" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+unlock_zone_name = "Bandit Boss Dungeon"
+unlock_signal_level = 10
 base_icon = ExtResource( 2 )
 item_icon = ExtResource( 4 )
 type = 3
 cost = 10
 allowed_material_types = [ 0 ]
 description = "A decorative part that goes under the handle."
-unlock_zone_name = "Bandit Boss Dungeon"
-unlock_signal_level = 10
 stat_multipliers = {
 "armor": 0.0,
 "dexterity": 0.5,

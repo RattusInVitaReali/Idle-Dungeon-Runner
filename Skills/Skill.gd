@@ -37,24 +37,23 @@ var auto_cooldown
 var manual_cooldown
 var on_cd = false
 
-export var locked = true
 export var equipped = false
-export var level_required = 0
 
 func _ready():
 	slottable_name = skill_name
 	cooldown = base_cooldown
 	auto_cooldown = base_cooldown
 	icon = skill_icon
+	locked = true # Why is this needed wtf?
 
 func set_attacker(new_value):
 	attacker = new_value
 	if attacker != null:
-		attacker.connect("level_changed", self, "check_unlock_level")
+		attacker.connect("level_changed", self, "try_unlock")
 		connect("play_animation", attacker, "play_animation")
 		if cast_on_self():
 			target = attacker
-	check_unlock_level()
+	try_unlock(null, null)
 
 func description():
 	pass
@@ -99,21 +98,29 @@ func set_level(_level):
 func level_up():
 	self.level += 1
 
-func check_unlock_level():
+func try_unlock(monster = null, zone = null):
 	if attacker == null or !locked:
 		return
-	if attacker.level >= level_required:
-		lock(false)
+	if attacker.level >= unlock_signal_level:
+		locked(false)
 		equip(true)
-		attacker.disconnect("level_changed", self, "check_unlock_level")
+		attacker.disconnect("level_changed", self, "try_unlock")
 
 func equip(var value):
 	equipped = value
 	emit_signal("slottable_updated")
 
-func lock(var value):
+func locked(var value):
 	locked = value
 	emit_signal("slottable_updated")
+
+func lock():
+	if unlock_signal_level > 0:
+		locked = true
+
+func unlock():
+	locked = false
+	emit_signal("slottable_updated") # Legacy, should use unlocked signal, but fuck it
 
 func update_cooldowns(auto_combat, multi):
 	if attacker != null:

@@ -6,5 +6,4 @@
 [node name="PartSelectionInventory" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 columns = 3
-allow_sorting = false
 hide_slottable_quantity = true
