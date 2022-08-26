@@ -12,4 +12,4 @@ zone_name = "Hard Forest"
 enemies = [ ExtResource( 2 ), ExtResource( 3 ) ]
 quests = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ]
 min_level = 31
-max_level = 40
+max_level = 50

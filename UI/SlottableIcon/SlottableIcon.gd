@@ -47,7 +47,10 @@ func set_slottable(var slottable : Slottable):
 				new_texture.texture = slottable.icon
 			add_child(new_texture)
 		Slottable.SLOTTABLE_TYPE.ITEM_PART:
-			texture = slottable.get_part_icon()
+			if slottable.locked:
+				texture = Locked
+			else:
+				texture = slottable.get_part_icon()
 			modulate = slottable.icon_color
 		_:
 			texture = slottable.icon

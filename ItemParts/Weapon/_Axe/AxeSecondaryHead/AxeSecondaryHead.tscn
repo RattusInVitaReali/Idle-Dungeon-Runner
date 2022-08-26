@@ -13,6 +13,8 @@ type = 10
 cost = 15
 allowed_material_types = [ 1, 2 ]
 description = "An optional, secondary head for battle axes."
+unlock_zone_name = "Bandit Boss Dungeon"
+unlock_signal_level = 15
 stat_multipliers = {
 "armor": 0.0,
 "dexterity": 0.5,

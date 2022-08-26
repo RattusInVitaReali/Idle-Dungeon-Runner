@@ -8,7 +8,6 @@ signal quest_changed
 export var zone_name = ""
 export var unlock_zone_name = ""
 export var unlock_monster_base_name = ""
-var zone_class_name = ""
 export var unlock_signal_level = 0
 export (Array, Resource) var modifiers = []
 export (Array, PackedScene) var enemies = []

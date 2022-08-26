@@ -14,6 +14,8 @@ used_for = 1
 cost = 20
 allowed_material_types = [ 1, 2, 4 ]
 description = "Protection for your shoulders."
+unlock_zone_name = "Easy Forest"
+unlock_signal_level = 10
 stat_multipliers = {
 "armor": 0.7,
 "dexterity": 0.5,

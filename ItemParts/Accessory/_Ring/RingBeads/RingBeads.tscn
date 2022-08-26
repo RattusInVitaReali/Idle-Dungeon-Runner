@@ -14,6 +14,8 @@ used_for = 2
 cost = 10
 allowed_material_types = [ 0 ]
 description = "Decorative beads for a ring."
+unlock_zone_name = "Icy Cliffs"
+unlock_signal_level = 50
 stat_multipliers = {
 "armor": 0.75,
 "dexterity": 0.75,

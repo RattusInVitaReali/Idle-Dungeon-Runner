@@ -15,6 +15,8 @@ type = 17
 cost = 20
 allowed_material_types = [ 1, 2, 4 ]
 description = "Main helmet protctive part."
+unlock_zone_name = "Easy Forest"
+unlock_signal_level = 15
 stat_multipliers = {
 "armor": 1.5,
 "dexterity": 1.0,

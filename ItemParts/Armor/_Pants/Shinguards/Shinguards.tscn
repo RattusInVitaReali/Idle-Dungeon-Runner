@@ -14,6 +14,8 @@ used_for = 1
 cost = 15
 allowed_material_types = [ 1, 2, 4 ]
 description = "Front lower leg protection."
+unlock_zone_name = "Easy Forest"
+unlock_signal_level = 10
 stat_multipliers = {
 "armor": 0.75,
 "dexterity": 1.0,

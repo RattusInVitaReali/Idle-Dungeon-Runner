@@ -14,6 +14,8 @@ used_for = 1
 cost = 10
 allowed_material_types = [ 1, 2, 4 ]
 description = "Protective armor for your neck."
+unlock_zone_name = "Medium Forest"
+unlock_signal_level = 20
 stat_multipliers = {
 "armor": 1.0,
 "dexterity": 0.5,

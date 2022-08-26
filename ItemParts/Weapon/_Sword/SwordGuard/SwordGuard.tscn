@@ -13,6 +13,8 @@ type = 2
 cost = 10
 allowed_material_types = [ 1, 2 ]
 description = "A protective guard above the handle."
+unlock_zone_name = "Bandit Boss Dungeon"
+unlock_signal_level = 5
 stat_multipliers = {
 "armor": 0.5,
 "dexterity": 1.0,

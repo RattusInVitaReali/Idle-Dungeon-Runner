@@ -4,8 +4,11 @@ class_name PartSelectionInventory
 signal part_type_selected
 
 func _ready():
-	for part in CraftingManager.part_scenes:
-		add_slottable(CraftingManager.part_scenes[part].instance(), false)
+	for part_type in CraftingManager.part_scenes:
+		var part = CraftingManager.part_scenes[part_type].instance()
+		if !Progression.item_part_unlocked[part_type]:
+			part.lock()
+		add_slottable(part, false)
 	update_inventory()
 
 func _on_inspector(slot):

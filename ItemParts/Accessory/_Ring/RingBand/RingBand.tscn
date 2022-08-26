@@ -14,6 +14,8 @@ used_for = 2
 cost = 10
 allowed_material_types = [ 1, 2 ]
 description = "A band to hold a focus."
+unlock_zone_name = "Hard Forest"
+unlock_signal_level = 50
 stat_multipliers = {
 "armor": 1.0,
 "dexterity": 0.5,

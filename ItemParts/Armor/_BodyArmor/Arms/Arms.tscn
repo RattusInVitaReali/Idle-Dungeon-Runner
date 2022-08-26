@@ -14,6 +14,8 @@ used_for = 1
 cost = 10
 allowed_material_types = [ 1, 2, 4 ]
 description = "Protection for your arms."
+unlock_zone_name = "Easy Desert"
+unlock_signal_level = 15
 stat_multipliers = {
 "armor": 0.5,
 "dexterity": 0.75,
