@@ -75,14 +75,21 @@ func _on_part_type_selected(slot):
 
 func update_part_info(part : ItemPart = null):
 	if part != null:
-		part_type.text = CraftingManager.PART_TYPE.keys()[part.type].capitalize()
-		var types = ""
-		for type in part.allowed_material_types:
-			types += CraftingManager.MATERIAL_TYPE.keys()[type].capitalize() + " - "
-		if types != "":
-			types.erase(types.length() - 3, 3)
-		part_materials.text = "Cost: " + str(part.cost) + "\n" + "Allowed material types:\n" + types
-		part_description.text = part.description
+		if part.locked:
+			part_type.text = "LOCKED"
+			part_materials.text = "This part is LOCKED! Try defeating stronger enemies to unlock it."
+			part_description.text = ""
+			part_description.hide()
+		else:
+			part_type.text = CraftingManager.PART_TYPE.keys()[part.type].capitalize()
+			var types = ""
+			for type in part.allowed_material_types:
+				types += CraftingManager.MATERIAL_TYPE.keys()[type].capitalize() + " - "
+			if types != "":
+				types.erase(types.length() - 3, 3)
+			part_materials.text = "Cost: " + str(part.cost) + "\n" + "Allowed material types:\n" + types
+			part_description.text = part.description
+			part_description.show()
 	else:
 		part_type.text = ""
 		part_materials.text = ""

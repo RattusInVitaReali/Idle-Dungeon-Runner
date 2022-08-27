@@ -6,6 +6,8 @@
 
 [node name="Pants" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Easy Forest"
+unlock_signal_level = 5
 base_icon = ExtResource( 3 )
 required_parts = [ 25, 26 ]
 optional_parts = [ 27, 28, 29 ]

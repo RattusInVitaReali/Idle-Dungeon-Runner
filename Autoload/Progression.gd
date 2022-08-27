@@ -47,7 +47,15 @@ export var item_part_unlocked = {
 }
 
 var item_unlocked = {
-	
+	CraftingManager.ITEM_SUBTYPE.SWORD : true,
+	CraftingManager.ITEM_SUBTYPE.AXE : false,
+	CraftingManager.ITEM_SUBTYPE.BODY_ARMOR : true,
+	CraftingManager.ITEM_SUBTYPE.PANTS : false,
+	CraftingManager.ITEM_SUBTYPE.HELMET : false,
+	CraftingManager.ITEM_SUBTYPE.BOOTS : false,
+	CraftingManager.ITEM_SUBTYPE.GLOVES : false,
+	CraftingManager.ITEM_SUBTYPE.AMULET : false,
+	CraftingManager.ITEM_SUBTYPE.RING : false
 }
 
 func _ready():
@@ -58,3 +66,6 @@ func _on_monster_died(monster, zone):
 
 func unlock_part(part):
 	item_part_unlocked[part.type] = true
+
+func unlock_item(item):
+	item_unlocked[item.type] = true

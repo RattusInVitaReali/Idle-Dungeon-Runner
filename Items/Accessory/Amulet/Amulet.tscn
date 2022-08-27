@@ -6,6 +6,8 @@
 
 [node name="Amulet" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Hard Desert"
+unlock_signal_level = 60
 base_icon = ExtResource( 3 )
 required_parts = [ 11, 13 ]
 optional_parts = [ 12 ]

@@ -6,6 +6,8 @@
 
 [node name="Axe" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Medium Forest"
+unlock_signal_level = 30
 base_icon = ExtResource( 3 )
 required_parts = [ 9, 8 ]
 optional_parts = [ 10, 3 ]

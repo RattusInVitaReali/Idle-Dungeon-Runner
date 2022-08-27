@@ -107,9 +107,10 @@ margin_bottom = -20.0
 
 [node name="PartType" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartInfoBackground/VBoxContainer" index="0"]
 margin_right = 440.0
-margin_bottom = 137.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 0, 140 )
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 1
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 align = 1
@@ -117,9 +118,9 @@ valign = 2
 autowrap = true
 
 [node name="PartMaterials" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartInfoBackground/VBoxContainer" index="1"]
-margin_top = 141.0
+margin_top = 144.0
 margin_right = 440.0
-margin_bottom = 278.0
+margin_bottom = 280.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -129,7 +130,7 @@ valign = 1
 autowrap = true
 
 [node name="PartDescription" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartInfoBackground/VBoxContainer" index="2"]
-margin_top = 282.0
+margin_top = 284.0
 margin_right = 440.0
 margin_bottom = 420.0
 size_flags_horizontal = 3

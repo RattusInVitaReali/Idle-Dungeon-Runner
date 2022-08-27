@@ -105,6 +105,15 @@ static func _sort_part_type(a, b):
 		return true
 	return false
 
+static func _sort_item_type(a, b):
+	if a == null or b == null:
+		return false
+	if a.type == null or b.type == null:
+		return false
+	if a.type > b.type:
+		return true
+	return false
+
 func sort(array, func_name):
 	var func_ref = FuncRef.new()
 	func_ref.set_instance(self)

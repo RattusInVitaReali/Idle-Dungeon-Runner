@@ -59,19 +59,26 @@ func _on_item_type_selected(slot):
 
 func update_item_info(item : Item = null):
 	if item != null:
-		item_type.text = CraftingManager.ITEM_SUBTYPE.keys()[item.subtype].capitalize()
-		var req_parts = ""
-		for part in item.required_parts:
-			req_parts += CraftingManager.PART_TYPE.keys()[part].capitalize() + " - "
-		if req_parts != "":
-			req_parts.erase(req_parts.length() - 3, 3)
-		var opt_parts = ""
-		for part in item.optional_parts:
-			opt_parts += CraftingManager.PART_TYPE.keys()[part].capitalize() + " - "
-		if opt_parts != "":
-			opt_parts.erase(opt_parts.length() - 3, 3)
-		item_parts.text = "Required parts:\n " + req_parts + "\nOptional parts:\n " + opt_parts
-		item_description.text = item.description
+		if item.locked:
+			item_type.text = "LOCKED"
+			item_parts.text = "This item is LOCKED! Try defeating stronger enemies to unlock it."
+			item_description.text = ""
+			item_description.hide()
+		else:
+			item_type.text = CraftingManager.ITEM_SUBTYPE.keys()[item.subtype].capitalize()
+			var req_parts = ""
+			for part in item.required_parts:
+				req_parts += CraftingManager.PART_TYPE.keys()[part].capitalize() + " - "
+			if req_parts != "":
+				req_parts.erase(req_parts.length() - 3, 3)
+			var opt_parts = ""
+			for part in item.optional_parts:
+				opt_parts += CraftingManager.PART_TYPE.keys()[part].capitalize() + " - "
+			if opt_parts != "":
+				opt_parts.erase(opt_parts.length() - 3, 3)
+			item_parts.text = "Required parts:\n " + req_parts + "\nOptional parts:\n " + opt_parts
+			item_description.text = item.description
+			item_description.hide()
 	else:
 		item_type.text = ""
 		item_parts.text = ""
