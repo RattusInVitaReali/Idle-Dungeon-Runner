@@ -1,4 +1,5 @@
 extends Node
+class_name CraftingManagerScript
 
 var debug = false
 

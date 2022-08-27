@@ -1,4 +1,5 @@
 extends Node
+class_name SaverScript
 
 var save_on_exit = []
 

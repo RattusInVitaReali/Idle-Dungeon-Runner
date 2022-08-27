@@ -1,4 +1,5 @@
 extends Node
+class_name CombatProcessorScript
 
 var Bleeding = load("res://Effects/Bleeding/Bleeding.tscn")
 var Decimated = load("res://Effects/Decimated/Decimated.tscn")

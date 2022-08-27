@@ -1,12 +1,10 @@
-extends Node
+extends GlobalSaveable
 class_name GlobalResourcesScript
 
 enum GLOBAL_RESOURCES {
 	SKILL_LOTUSES
 	SKILL_POINTS
 }
-
-const save_path = "user://globals.tscn"
 
 signal skill_lotuses_changed
 signal skill_points_changed
@@ -24,10 +22,11 @@ onready var global_resource_vars = {
 export var SKILL_LOTUSES = 0 setget set_skill_lotuses
 export var SKILL_POINTS = 0 setget set_skill_points
 
+func save_path():
+	return "user://globals.tscn"
+
 func _ready():
 	LootManager.connect("item_acquired", self, "_on_item_acquired")
-	Saver.save_on_exit(self)
-	self.load()
 
 func set_skill_lotuses(new_value):
 	SKILL_LOTUSES = new_value
@@ -44,14 +43,3 @@ func _on_item_acquired(item):
 
 func process_slottable(slottable):
 	set(global_resource_vars[slottable.global_resource], get(global_resource_vars[slottable.global_resource]) + slottable.quantity)
-
-func load():
-	if save_path != "" and ResourceLoader.exists(save_path):
-		var instance = load(save_path).instance()
-		for prop in instance.get_property_list():
-			if prop.usage == 8199: # EXPORT VAR
-				set(prop.name, instance.get(prop.name))
-		instance.queue_free()
-
-func save_and_exit():
-	Saver.save_scene(self, save_path)

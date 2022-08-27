@@ -71,7 +71,10 @@ func _on_part_type_selected(slot):
 	slot.select()
 	selected_part_slot = slot
 	update_part_info(part)
-	selected_part = part
+	if part.locked:
+		selected_part = null
+	else:
+		selected_part = part
 
 func update_part_info(part : ItemPart = null):
 	if part != null:

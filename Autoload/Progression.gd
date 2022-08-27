@@ -1,4 +1,5 @@
-extends Node
+extends GlobalSaveable
+class_name ProgressionScript
 
 signal progression_monster_died
 
@@ -46,7 +47,7 @@ export var item_part_unlocked = {
 	CraftingManager.PART_TYPE.RING_BEADS : false
 }
 
-var item_unlocked = {
+export var item_unlocked = {
 	CraftingManager.ITEM_SUBTYPE.SWORD : true,
 	CraftingManager.ITEM_SUBTYPE.AXE : false,
 	CraftingManager.ITEM_SUBTYPE.BODY_ARMOR : true,
@@ -57,6 +58,9 @@ var item_unlocked = {
 	CraftingManager.ITEM_SUBTYPE.AMULET : false,
 	CraftingManager.ITEM_SUBTYPE.RING : false
 }
+
+func save_path():
+	return "user://progression.tscn"
 
 func _ready():
 	CombatProcessor.connect("monster_died", self, "_on_monster_died")
@@ -69,3 +73,17 @@ func unlock_part(part):
 
 func unlock_item(item):
 	item_unlocked[item.type] = true
+
+func load():
+	if save_path != "" and ResourceLoader.exists(save_path):
+		var instance = load(save_path).instance()
+		for prop in instance.get_property_list():
+			if prop.usage == 8199: # EXPORT VAR
+				if prop.type in [18, 19]:
+					set(prop.name, instance.get(prop.name).duplicate())
+				else:
+					set(prop.name, instance.get(prop.name))
+		instance.queue_free()
+
+func save_and_exit():
+	Saver.save_scene(self, save_path)

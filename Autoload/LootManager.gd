@@ -1,4 +1,5 @@
 extends Node
+class_name LootManagerScript
 
 signal item_acquired
 signal get_experience

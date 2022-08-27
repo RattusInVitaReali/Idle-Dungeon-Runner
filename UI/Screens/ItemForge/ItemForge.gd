@@ -55,7 +55,10 @@ func _on_item_type_selected(slot):
 	slot.select()
 	selected_item_slot = slot
 	update_item_info(item)
-	selected_item = item
+	if item.locked:
+		selected_item = null
+	else:
+		selected_item = item
 
 func update_item_info(item : Item = null):
 	if item != null:
