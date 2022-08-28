@@ -7,14 +7,14 @@
 
 [node name="AxeHandle" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Medium Forest"
+unlock_signal_level = 75
 base_icon = ExtResource( 3 )
 item_icon = ExtResource( 4 )
 type = 9
 cost = 15
-allowed_material_types = [ 1, 2 ]
+allowed_material_types = [ 2 ]
 description = "Handle for battle axes."
-unlock_zone_name = "Medium Forest"
-unlock_signal_level = 30
 stat_multipliers = {
 "armor": 0.0,
 "dexterity": 1.0,

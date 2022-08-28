@@ -7,6 +7,8 @@
 
 [node name="Calfguards" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Medium Desert"
+unlock_signal_level = 80
 base_icon = ExtResource( 3 )
 item_icon = ExtResource( 4 )
 type = 23
@@ -14,8 +16,6 @@ used_for = 1
 cost = 10
 allowed_material_types = [ 1, 2, 4 ]
 description = "Back lower leg protection."
-unlock_zone_name = "Medium Desert"
-unlock_signal_level = 30
 stat_multipliers = {
 "armor": 0.75,
 "dexterity": 1.0,

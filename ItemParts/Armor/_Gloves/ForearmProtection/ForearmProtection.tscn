@@ -7,6 +7,8 @@
 
 [node name="ForearmProtection" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Hard Desert"
+unlock_signal_level = 125
 base_icon = ExtResource( 3 )
 item_icon = ExtResource( 4 )
 type = 32
@@ -14,8 +16,6 @@ used_for = 1
 cost = 15
 allowed_material_types = [ 1, 2, 4 ]
 description = "Protection for lower arms."
-unlock_zone_name = "Hard Desert"
-unlock_signal_level = 50
 stat_multipliers = {
 "armor": 1.0,
 "dexterity": 0.75,

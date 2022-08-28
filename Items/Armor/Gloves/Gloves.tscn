@@ -7,7 +7,7 @@
 [node name="Gloves" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 unlock_zone_name = "Medium Desert"
-unlock_signal_level = 40
+unlock_signal_level = 100
 base_icon = ExtResource( 3 )
 required_parts = [ 30, 31 ]
 optional_parts = [ 32 ]

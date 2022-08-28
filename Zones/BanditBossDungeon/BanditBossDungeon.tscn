@@ -13,18 +13,21 @@
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 7 )
+chance = 1.0
 material = ExtResource( 8 )
 base_min_quantity = 3
 base_max_quantity = 3
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 7 )
+chance = 1.0
 material = ExtResource( 9 )
 base_min_quantity = 2
 base_max_quantity = 2
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 7 )
+chance = 1.0
 material = ExtResource( 10 )
 base_min_quantity = 2
 base_max_quantity = 2
@@ -36,5 +39,5 @@ modifiers = [ ExtResource( 2 ), ExtResource( 1 ) ]
 enemies = [ ExtResource( 5 ) ]
 loot = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
 texture = ExtResource( 6 )
-min_level = 5
-max_level = 5
+min_level = 10
+max_level = 10

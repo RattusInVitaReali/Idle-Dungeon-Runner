@@ -12,6 +12,15 @@ onready var exp_tween = $VBoxContainer/Background/VBoxContainer/Stats/Bars/ExpBa
 onready var level_label = $VBoxContainer/Background/VBoxContainer/Stats/Level/Control/TextureRect/LevelLabel
 onready var effects = $VBoxContainer/Effects
 
+onready var skill_icons = [
+	$VBoxContainer/Background/VBoxContainer/Skills/Skill1,
+	$VBoxContainer/Background/VBoxContainer/Skills/Skill2,
+	$VBoxContainer/Background/VBoxContainer/Skills/Skill3,
+	$VBoxContainer/Background/VBoxContainer/Skills/Skill4,
+	$VBoxContainer/Background/VBoxContainer/Skills/Skill5,
+	$VBoxContainer/Background/VBoxContainer/Skills/Skill6,
+]
+
 var player : Player
 
 func update_info(_player):
@@ -19,9 +28,9 @@ func update_info(_player):
 	player.connect("hp_updated", self, "update_player_hp")
 	player.connect("effect_applied", self, "apply_effect")
 	update_player_hp()
-	update_skills()
 	update_player_level()
 	update_player_exp()
+	update_skills()
 	connect_skills()
 
 func update_player_hp():
@@ -49,7 +58,9 @@ func update_skills():
 		skills.append(null)
 		i += 1
 	i = 0
-	for skill_icon in get_tree().get_nodes_in_group("skills"):
+	for skill_icon in skill_icons:
+		if i < player.skill_slots:
+			skill_icon.locked = false
 		skill_icon.set_skill(skills[i])
 		i += 1
 

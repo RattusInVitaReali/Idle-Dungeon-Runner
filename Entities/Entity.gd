@@ -68,6 +68,9 @@ export var base_attributes = {
 
 export var level = 0
 
+export var skill_slots = 6
+var skills_equipped = 0
+
 var stats = base_stats.duplicate()
 var attributes = base_attributes.duplicate()
 
@@ -151,6 +154,17 @@ func unequip_item(item : Item):
 	item.disconnect("slottable_updated", self, "update_stats")
 	update_stats()
 	LootManager.get_item(item)
+
+func try_equip_skill(skill, value):
+	if value and can_equip_skill() and !skill.equipped:
+		skill.equipped(true)
+		skills_equipped += 1
+	elif skill.equipped and !value:
+		skill.equipped(false)
+		skills_equipped -= 1
+
+func can_equip_skill():
+	return skills_equipped < skill_slots
 
 func update_skill_levels():
 	pass

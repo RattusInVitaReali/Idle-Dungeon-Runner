@@ -145,6 +145,7 @@ func start_creation():
 	button_right.text = "Confirm"
 	if selected_part_slot != null:
 		selected_part_slot.deselect()
+		selected_part_slot = null
 
 func end_creation():
 	show_all_mats()
@@ -160,6 +161,7 @@ func end_creation():
 	button_right.text = ""
 	if selected_part_slot != null:
 		selected_part_slot.deselect()
+		selected_part_slot = null
 	emit_signal("get_materials")
 
 func hide_other_mats():

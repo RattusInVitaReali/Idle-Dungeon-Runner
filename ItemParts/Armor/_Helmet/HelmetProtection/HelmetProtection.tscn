@@ -9,14 +9,14 @@
 
 [node name="Protection" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Easy Forest"
+unlock_signal_level = 30
 base_icon = ExtResource( 4 )
 item_icon = null
 type = 17
 cost = 20
 allowed_material_types = [ 1, 2, 4 ]
 description = "Main helmet protctive part."
-unlock_zone_name = "Easy Forest"
-unlock_signal_level = 15
 stat_multipliers = {
 "armor": 1.5,
 "dexterity": 1.0,

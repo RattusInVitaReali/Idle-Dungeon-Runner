@@ -58,7 +58,7 @@ func _on_Upgrade_pressed():
 	slottable.try_to_upgrade()
 
 func _on_Equip_pressed():
-	slottable.equip(!slottable.equipped)
+	slottable.try_equip(!slottable.equipped)
 	._on_TextureButton_pressed()
 
 func update_stats():

@@ -7,14 +7,14 @@
 
 [node name="AxeHead" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Medium Forest"
+unlock_signal_level = 75
 base_icon = ExtResource( 4 )
 item_icon = ExtResource( 3 )
 type = 8
 cost = 20
 allowed_material_types = [ 1, 2 ]
 description = "Head for battle axes."
-unlock_zone_name = "Medium Forest"
-unlock_signal_level = 30
 stat_multipliers = {
 "armor": 0.0,
 "dexterity": 0.5,

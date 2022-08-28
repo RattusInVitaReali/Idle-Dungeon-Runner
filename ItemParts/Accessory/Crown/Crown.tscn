@@ -8,6 +8,8 @@
 
 [node name="Crown" instance=ExtResource( 4 )]
 script = ExtResource( 1 )
+unlock_zone_name = "Icy Cliffs"
+unlock_signal_level = 175
 base_icon = ExtResource( 3 )
 item_icon = null
 type = 12
@@ -15,8 +17,6 @@ used_for = 2
 cost = 10
 allowed_material_types = [ 1, 2 ]
 description = "A casing for a focus."
-unlock_zone_name = "Icy Cliffs"
-unlock_signal_level = 40
 stat_multipliers = {
 "armor": 0.0,
 "dexterity": 0.0,

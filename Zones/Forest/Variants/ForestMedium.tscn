@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Zones/Forest/Forest.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Entities/Monster/Bandit/Bandit.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Entities/Monster/Orc/Orc.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Quests/Variants/BanditSlayer.tres" type="Resource" id=2]
 [ext_resource path="res://Quests/Variants/BanditHunter.tres" type="Resource" id=4]
-[ext_resource path="res://Quests/Variants/OrcHunter.tres" type="Resource" id=5]
 
 [node name="ForestMedium" instance=ExtResource( 1 )]
 zone_name = "Medium Forest"
-enemies = [ ExtResource( 2 ), ExtResource( 3 ) ]
-quests = [ ExtResource( 4 ), ExtResource( 5 ) ]
-min_level = 16
-max_level = 30
+quests = [ ExtResource( 4 ), ExtResource( 2 ) ]
+min_level = 30
+max_level = 75

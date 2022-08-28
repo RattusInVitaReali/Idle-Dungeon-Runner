@@ -18,14 +18,14 @@
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 11 )
-chance = 0.4
+chance = 0.15
 material = ExtResource( 10 )
 base_min_quantity = 2
 base_max_quantity = 5
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 11 )
-chance = 0.15
+chance = 0.4
 material = ExtResource( 7 )
 base_min_quantity = 1
 base_max_quantity = 4
@@ -59,5 +59,5 @@ enemies = [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 15 ) ]
 loot = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ]
 quests = [ ExtResource( 6 ) ]
 texture = ExtResource( 4 )
-min_level = 15
-max_level = 75
+min_level = 25
+max_level = 200

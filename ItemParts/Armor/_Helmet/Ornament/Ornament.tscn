@@ -7,6 +7,8 @@
 
 [node name="Ornament" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Hard Forest"
+unlock_signal_level = 100
 base_icon = ExtResource( 4 )
 item_icon = ExtResource( 3 )
 type = 18
@@ -14,8 +16,6 @@ used_for = 1
 cost = 10
 allowed_material_types = [ 3, 2, 1 ]
 description = "An ornamental piece for a helmet. Boo!"
-unlock_zone_name = "Medium Forest"
-unlock_signal_level = 25
 stat_multipliers = {
 "armor": 0.0,
 "dexterity": 0.0,

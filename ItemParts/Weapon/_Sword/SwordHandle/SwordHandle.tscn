@@ -11,7 +11,7 @@ base_icon = ExtResource( 3 )
 item_icon = ExtResource( 2 )
 type = 1
 cost = 10
-allowed_material_types = [ 1, 2 ]
+allowed_material_types = [ 2 ]
 description = "A simple handle for swords."
 stat_multipliers = {
 "armor": 0.0,

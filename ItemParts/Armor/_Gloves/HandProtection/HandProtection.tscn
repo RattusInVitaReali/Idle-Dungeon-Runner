@@ -7,6 +7,8 @@
 
 [node name="HandProtection" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Medium Desert"
+unlock_signal_level = 100
 base_icon = ExtResource( 4 )
 item_icon = ExtResource( 3 )
 type = 31
@@ -14,8 +16,6 @@ used_for = 1
 cost = 15
 allowed_material_types = [ 1, 2, 4 ]
 description = "Protection for your hands."
-unlock_zone_name = "Medium Desert"
-unlock_signal_level = 40
 stat_multipliers = {
 "armor": 1.0,
 "dexterity": 1.0,

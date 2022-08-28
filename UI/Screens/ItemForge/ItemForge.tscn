@@ -54,7 +54,6 @@ patch_margin_right = 38
 patch_margin_bottom = 35
 
 [node name="ForgeImage" type="TextureRect" parent="VBoxContainer/Screen/VBoxContainer/Image" index="0"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 25.0
@@ -65,6 +64,7 @@ texture = ExtResource( 7 )
 expand = true
 
 [node name="ItemCreation" type="HBoxContainer" parent="VBoxContainer/Screen/VBoxContainer/Image" index="1"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0

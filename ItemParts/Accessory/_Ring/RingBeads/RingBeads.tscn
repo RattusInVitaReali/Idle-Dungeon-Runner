@@ -7,6 +7,8 @@
 
 [node name="RingBeads" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Icy Cliffs"
+unlock_signal_level = 150
 base_icon = ExtResource( 4 )
 item_icon = ExtResource( 3 )
 type = 15
@@ -14,8 +16,6 @@ used_for = 2
 cost = 10
 allowed_material_types = [ 0 ]
 description = "Decorative beads for a ring."
-unlock_zone_name = "Icy Cliffs"
-unlock_signal_level = 50
 stat_multipliers = {
 "armor": 0.75,
 "dexterity": 0.75,

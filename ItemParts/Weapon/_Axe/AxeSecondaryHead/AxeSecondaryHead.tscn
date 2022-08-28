@@ -7,14 +7,14 @@
 
 [node name="AxeSecondaryHead" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Bandit Boss Dungeon"
+unlock_signal_level = 60
 base_icon = ExtResource( 4 )
 item_icon = ExtResource( 3 )
 type = 10
 cost = 15
 allowed_material_types = [ 1, 2 ]
 description = "An optional, secondary head for battle axes."
-unlock_zone_name = "Bandit Boss Dungeon"
-unlock_signal_level = 15
 stat_multipliers = {
 "armor": 0.0,
 "dexterity": 0.5,

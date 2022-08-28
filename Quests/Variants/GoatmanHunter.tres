@@ -9,8 +9,8 @@
 script = ExtResource( 3 )
 chance = 1.0
 material = ExtResource( 2 )
-base_min_quantity = 12
-base_max_quantity = 15
+base_min_quantity = 50
+base_max_quantity = 75
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 3 )
@@ -22,6 +22,6 @@ base_max_quantity = 5
 [resource]
 script = ExtResource( 1 )
 quest_name = "Goatman Hunter"
-required_kills = 5
+required_kills = 25
 required_types = [ 4 ]
 reward = [ SubResource( 1 ), SubResource( 2 ) ]

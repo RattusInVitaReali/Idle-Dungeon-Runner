@@ -232,7 +232,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Skill1" parent="VBoxContainer/Background/VBoxContainer/Skills" groups=["skills"] instance=ExtResource( 1 )]
+[node name="Skill1" parent="VBoxContainer/Background/VBoxContainer/Skills" instance=ExtResource( 1 )]
 margin_bottom = 150.0
 
 [node name="Margin2" type="Label" parent="VBoxContainer/Background/VBoxContainer/Skills"]
@@ -242,7 +242,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Skill2" parent="VBoxContainer/Background/VBoxContainer/Skills" groups=["skills"] instance=ExtResource( 1 )]
+[node name="Skill2" parent="VBoxContainer/Background/VBoxContainer/Skills" instance=ExtResource( 1 )]
 margin_left = 184.0
 margin_right = 344.0
 margin_bottom = 150.0
@@ -254,7 +254,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Skill3" parent="VBoxContainer/Background/VBoxContainer/Skills" groups=["skills"] instance=ExtResource( 1 )]
+[node name="Skill3" parent="VBoxContainer/Background/VBoxContainer/Skills" instance=ExtResource( 1 )]
 margin_left = 358.0
 margin_right = 518.0
 margin_bottom = 150.0
@@ -266,7 +266,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Skill4" parent="VBoxContainer/Background/VBoxContainer/Skills" groups=["skills"] instance=ExtResource( 1 )]
+[node name="Skill4" parent="VBoxContainer/Background/VBoxContainer/Skills" instance=ExtResource( 1 )]
 margin_left = 532.0
 margin_right = 692.0
 margin_bottom = 150.0
@@ -278,7 +278,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Skill5" parent="VBoxContainer/Background/VBoxContainer/Skills" groups=["skills"] instance=ExtResource( 1 )]
+[node name="Skill5" parent="VBoxContainer/Background/VBoxContainer/Skills" instance=ExtResource( 1 )]
 margin_left = 706.0
 margin_right = 866.0
 margin_bottom = 150.0
@@ -290,7 +290,7 @@ margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Skill6" parent="VBoxContainer/Background/VBoxContainer/Skills" groups=["skills"] instance=ExtResource( 1 )]
+[node name="Skill6" parent="VBoxContainer/Background/VBoxContainer/Skills" instance=ExtResource( 1 )]
 margin_left = 880.0
 margin_right = 1040.0
 margin_bottom = 150.0

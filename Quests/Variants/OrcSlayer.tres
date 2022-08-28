@@ -2,26 +2,26 @@
 
 [ext_resource path="res://Quests/QuestResource.gd" type="Script" id=1]
 [ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=2]
-[ext_resource path="res://Materials/3_Rare/TrollHide.tres" type="Resource" id=3]
-[ext_resource path="res://Materials/2_Uncommon/Opal.tres" type="Resource" id=4]
+[ext_resource path="res://Materials/3_Rare/Titanium.tres" type="Resource" id=3]
+[ext_resource path="res://Materials/3_Rare/TrollHide.tres" type="Resource" id=4]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
 chance = 1.0
-material = ExtResource( 4 )
-base_min_quantity = 2
-base_max_quantity = 5
+material = ExtResource( 3 )
+base_min_quantity = 1
+base_max_quantity = 1
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 2 )
 chance = 1.0
-material = ExtResource( 3 )
-base_min_quantity = 5
-base_max_quantity = 9
+material = ExtResource( 4 )
+base_min_quantity = 1
+base_max_quantity = 1
 
 [resource]
 script = ExtResource( 1 )
-quest_name = "Orc Hunter"
-required_kills = 15
+quest_name = ""
+required_kills = 25
 required_types = [ 2 ]
 reward = [ SubResource( 1 ), SubResource( 2 ) ]

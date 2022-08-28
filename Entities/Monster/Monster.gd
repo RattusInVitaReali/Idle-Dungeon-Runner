@@ -52,7 +52,7 @@ func calculate_stats():
 
 func apply_vitality():
 	if level < 40:
-		stats["max_hp"] += int(attributes["vitality"] * max(1, pow(level, 1.5) * 0.1))
+		stats["max_hp"] += int(attributes["vitality"] * (1 + pow(level, 1.5) * 0.1))
 	else:
 		stats["max_hp"] += int(attributes["vitality"] * 4 * sqrt(level))
 

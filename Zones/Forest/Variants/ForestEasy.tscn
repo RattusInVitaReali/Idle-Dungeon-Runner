@@ -5,4 +5,5 @@
 [node name="ForestEasy" instance=ExtResource( 1 )]
 zone_name = "Easy Forest"
 level = 1
+max_level = 30
 max_level_reached = 1

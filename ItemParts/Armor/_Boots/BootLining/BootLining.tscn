@@ -7,6 +7,8 @@
 
 [node name="BootLining" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Easy Desert"
+unlock_signal_level = 50
 base_icon = ExtResource( 4 )
 item_icon = ExtResource( 3 )
 type = 21
@@ -14,8 +16,6 @@ used_for = 1
 cost = 10
 allowed_material_types = [ 3, 4 ]
 description = "Base boot layer."
-unlock_zone_name = "Easy Desert"
-unlock_signal_level = 20
 stat_multipliers = {
 "armor": 0.5,
 "dexterity": 1.0,

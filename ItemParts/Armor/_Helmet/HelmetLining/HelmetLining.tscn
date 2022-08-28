@@ -7,6 +7,8 @@
 
 [node name="HelmetLining" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Easy Forest"
+unlock_signal_level = 30
 base_icon = ExtResource( 3 )
 item_icon = ExtResource( 4 )
 type = 16
@@ -14,8 +16,6 @@ used_for = 1
 cost = 15
 allowed_material_types = [ 3, 4 ]
 description = "Inner helmet layer."
-unlock_zone_name = "Easy Forest"
-unlock_signal_level = 15
 stat_multipliers = {
 "armor": 1.0,
 "dexterity": 0.75,

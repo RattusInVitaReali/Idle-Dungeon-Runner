@@ -7,6 +7,8 @@
 
 [node name="Visor" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Medium Forest"
+unlock_signal_level = 60
 base_icon = ExtResource( 4 )
 item_icon = ExtResource( 3 )
 type = 19
@@ -14,8 +16,6 @@ used_for = 1
 cost = 10
 allowed_material_types = [ 1 ]
 description = "Protection for your face."
-unlock_zone_name = "Easy Desert"
-unlock_signal_level = 20
 stat_multipliers = {
 "armor": 1.0,
 "dexterity": 0.0,

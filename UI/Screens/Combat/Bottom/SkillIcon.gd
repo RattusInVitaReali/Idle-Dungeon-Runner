@@ -7,6 +7,8 @@ var skill
 var cooldown
 var max_cooldown
 
+var locked = true
+
 func _ready():
 	CombatProcessor.connect("entered_combat", self, "set_enabled")
 	CombatProcessor.connect("exited_combat", self, "set_disabled")
@@ -45,15 +47,16 @@ func set_skill(_skill = null):
 	update_skill()
 
 func update_skill():
-	if skill == null:
+	if locked:
 		$SkillIcon.texture_normal = lock
-		$SkillIcon.disabled = true
-	elif !skill.locked:
-		$SkillIcon.texture_normal = skill.icon
-		$SkillIcon.disabled = false
+		set_disabled()
+		return
+	elif skill == null:
+		$SkillIcon.texture_normal = null
+		set_disabled()
 	else:
-		$SkillIcon.texture_normal = lock
-		$SkillIcon.disabled = true
+		$SkillIcon.texture_normal = skill.icon
+		set_enabled()
 
 func player_use_skill():
 	if skill != null:

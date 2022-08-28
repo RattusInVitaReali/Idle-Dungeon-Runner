@@ -4,6 +4,7 @@
 [ext_resource path="res://Entities/Monster/Bandit/BanditBoss/BanditBoss.gd" type="Script" id=2]
 
 [node name="BanditBoss" instance=ExtResource( 1 )]
+scale = Vector2( 1.25, 1.25 )
 script = ExtResource( 2 )
 per_level = {
 "armor": 25,
@@ -37,3 +38,5 @@ base_attributes = {
 }
 base_name = "Bandit Boss"
 base_loot = [  ]
+
+[connection signal="timeout" from="ActionTimer" to="." method="_on_ActionTimer_timeout"]

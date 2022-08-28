@@ -6,6 +6,8 @@ signal exp_changed
 
 const save_path = "user://player.tscn"
 
+const skill_slot_unlock_levels = [0, 5, 50, 150, 300, 500]
+
 export var experience = 0 setget set_exp
 
 func _ready():
@@ -29,7 +31,7 @@ func check_experience():
 		check_experience()
 
 func total_exp_required(_level = level + 1):
-	return int(5 * pow(_level, 2.5))
+	return int(10 * pow(_level, 2.5))
 
 func next_level_exp_required():
 	return total_exp_required(level + 1) - total_exp_required(level)
@@ -43,7 +45,16 @@ func level_up():
 
 func calculate_stats():
 	.calculate_stats()
+	update_skill_slots()
 	update_skill_cooldowns(CombatProcessor.auto_combat)
+
+func update_skill_slots():
+	skill_slots = 0
+	for lvl in skill_slot_unlock_levels:
+		if lvl <= level:
+			skill_slots += 1
+		else:
+			break
 
 func next_action():
 	if CombatProcessor.auto_combat:

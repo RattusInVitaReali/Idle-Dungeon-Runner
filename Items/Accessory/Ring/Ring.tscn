@@ -7,7 +7,7 @@
 [node name="Ring" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 unlock_zone_name = "Hard Forest"
-progression_unlock_func_name = "50"
+progression_unlock_func_name = "120"
 base_icon = ExtResource( 3 )
 required_parts = [ 14, 13 ]
 optional_parts = [ 12, 15 ]

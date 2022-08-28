@@ -7,7 +7,7 @@
 [node name="Boots" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 unlock_zone_name = "Easy Desert"
-unlock_signal_level = 20
+unlock_signal_level = 50
 base_icon = ExtResource( 3 )
 required_parts = [ 21, 22 ]
 optional_parts = [ 23, 24 ]

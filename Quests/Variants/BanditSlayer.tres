@@ -30,6 +30,6 @@ base_max_quantity = 12
 [resource]
 script = ExtResource( 1 )
 quest_name = "Bandit Slayer"
-required_kills = 5
+required_kills = 20
 required_types = [ 0 ]
 reward = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]

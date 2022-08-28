@@ -33,4 +33,4 @@ loot = [ SubResource( 1 ), SubResource( 2 ) ]
 quests = [ ExtResource( 7 ) ]
 texture = ExtResource( 1 )
 min_level = 1
-max_level = 15
+max_level = 120

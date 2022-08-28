@@ -206,6 +206,7 @@ func start_creation():
 	button_right.text = "Confirm"
 	if selected_item_slot != null:
 		selected_item_slot.deselect()
+		selected_item_slot = null
 	for part_slot in selected_part_slots:
 		part_slot.deselect()
 	selected_part_slots = []
@@ -224,6 +225,7 @@ func end_creation():
 	button_right.text = ""
 	if selected_item_slot != null:
 		selected_item_slot.deselect()
+		selected_item_slot = null
 	for part_slot in selected_part_slots:
 		part_slot.deselect()
 	selected_part_slots = []

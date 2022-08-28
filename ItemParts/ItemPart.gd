@@ -143,9 +143,10 @@ func try_to_merge():
 	return new_part
 
 func dismantle(var parent_quantity = 1):
-	mat.quantity(int(mat.quantity / 2) * parent_quantity)
+	mat.quantity(int(mat.quantity / 2) * parent_quantity * max(1, quantity))
 	remove_child(mat)
 	LootManager.get_item(mat)
+	print("Got " + str(mat.quantity) + " mats")
 	queue_free()
 
 func load():

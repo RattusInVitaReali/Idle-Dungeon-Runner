@@ -7,7 +7,7 @@
 [node name="Helmet" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 unlock_zone_name = "Easy Forest"
-unlock_signal_level = 15
+unlock_signal_level = 30
 base_icon = ExtResource( 3 )
 required_parts = [ 16, 17 ]
 optional_parts = [ 18, 19, 20 ]

@@ -103,12 +103,8 @@ func try_unlock(monster = null, zone = null):
 		return
 	if attacker.level >= unlock_signal_level:
 		locked(false)
-		equip(true)
+		attacker.try_equip_skill(self, true)
 		attacker.disconnect("level_changed", self, "try_unlock")
-
-func equip(var value):
-	equipped = value
-	emit_signal("slottable_updated")
 
 func locked(var value):
 	locked = value
@@ -121,6 +117,14 @@ func lock():
 func unlock():
 	locked = false
 	emit_signal("slottable_updated") # Legacy, should use unlocked signal, but fuck it
+
+func try_equip(var value):
+	if attacker != null:
+		attacker.try_equip_skill(self, value)
+
+func equipped(var value):
+	equipped = value
+	emit_signal("slottable_updated")
 
 func update_cooldowns(auto_combat, multi):
 	if attacker != null:

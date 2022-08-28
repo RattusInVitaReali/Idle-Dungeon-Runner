@@ -14,6 +14,6 @@ base_max_quantity = 5
 [resource]
 script = ExtResource( 1 )
 quest_name = "Wraith Vanquisher"
-required_kills = 5
+required_kills = 20
 required_types = [ 6 ]
 reward = [ SubResource( 1 ) ]

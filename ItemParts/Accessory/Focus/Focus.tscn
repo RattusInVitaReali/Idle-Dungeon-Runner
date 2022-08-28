@@ -8,6 +8,8 @@
 
 [node name="Focus" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+unlock_zone_name = "Hard Forest"
+unlock_signal_level = 120
 base_icon = ExtResource( 4 )
 item_icon = null
 type = 13
@@ -15,8 +17,6 @@ used_for = 2
 cost = 10
 allowed_material_types = [ 0 ]
 description = "Main source of power for accessories."
-unlock_zone_name = "Hard Forest"
-unlock_signal_level = 50
 stat_multipliers = {
 "armor": 1.0,
 "dexterity": 1.0,
