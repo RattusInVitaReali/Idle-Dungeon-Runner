@@ -10,6 +10,8 @@
 [sub_resource type="Resource" id=1]
 script = ExtResource( 3 )
 chance = 0.4
+min_level = 0
+max_level = 1000
 material = ExtResource( 5 )
 base_min_quantity = 2
 base_max_quantity = 3
@@ -17,6 +19,8 @@ base_max_quantity = 3
 [sub_resource type="Resource" id=2]
 script = ExtResource( 3 )
 chance = 0.3
+min_level = 0
+max_level = 1000
 material = ExtResource( 2 )
 base_min_quantity = 2
 base_max_quantity = 3
@@ -24,6 +28,8 @@ base_max_quantity = 3
 [sub_resource type="Resource" id=3]
 script = ExtResource( 3 )
 chance = 0.25
+min_level = 0
+max_level = 1000
 material = ExtResource( 6 )
 base_min_quantity = 1
 base_max_quantity = 3
@@ -33,4 +39,4 @@ zone_name = "Hard Desert"
 unlock_signal_level = 50
 loot = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
 quests = [ ExtResource( 4 ) ]
-min_level = 100
+min_level = 101

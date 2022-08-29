@@ -203,7 +203,9 @@ func on_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 func from_lootable(lootable):
 	var _parts = []
 	for part in lootable.parts:
-		_parts.append(part.get_loot()) # Making use of ItemPartLootable.get_loot()
+		var generated_part = part.get_loot_if_level()
+		if generated_part != null:
+			_parts.append(generated_part) # Making use of ItemPartLootable.get_loot()
 	create(_parts)
 	custom_name(lootable.custom_name)
 	return self

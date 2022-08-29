@@ -8,6 +8,8 @@
 [resource]
 script = ExtResource( 1 )
 chance = 0.07
+min_level = 0
+max_level = 1000
 item_type = ExtResource( 5 )
 parts = [ ExtResource( 3 ), ExtResource( 2 ) ]
 custom_name = ""

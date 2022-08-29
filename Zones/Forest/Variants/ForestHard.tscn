@@ -11,6 +11,8 @@
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
 chance = 1.0
+min_level = 0
+max_level = 1000
 material = ExtResource( 6 )
 base_min_quantity = 1
 base_max_quantity = 1
@@ -18,6 +20,8 @@ base_max_quantity = 1
 [sub_resource type="Resource" id=2]
 script = ExtResource( 2 )
 chance = 1.0
+min_level = 0
+max_level = 1000
 material = ExtResource( 3 )
 base_min_quantity = 1
 base_max_quantity = 1
@@ -25,6 +29,8 @@ base_max_quantity = 1
 [sub_resource type="Resource" id=3]
 script = ExtResource( 2 )
 chance = 1.0
+min_level = 0
+max_level = 1000
 material = ExtResource( 4 )
 base_min_quantity = 1
 base_max_quantity = 1
@@ -32,6 +38,8 @@ base_max_quantity = 1
 [sub_resource type="Resource" id=4]
 script = ExtResource( 2 )
 chance = 1.0
+min_level = 0
+max_level = 1000
 material = ExtResource( 7 )
 base_min_quantity = 1
 base_max_quantity = 1
@@ -40,4 +48,4 @@ base_max_quantity = 1
 zone_name = "Hard Forest"
 loot = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ]
 quests = [ ExtResource( 5 ) ]
-min_level = 75
+min_level = 76

@@ -45,14 +45,9 @@ func add_kills(count):
 	if kill_count == required_kills:
 		complete()
 
-func set_lootable_level():
-	for lootable in reward:
-		lootable.set_level(total_levels / kill_count)
-
 func complete():
-	set_lootable_level()
 	emit_signal("quest_completed")
-	emit_signal("loot", reward)
+	emit_signal("loot", reward, total_levels / kill_count)
 	CombatProcessor.disconnect("monster_died", self, "_on_monster_died")
 	queue_free()
 

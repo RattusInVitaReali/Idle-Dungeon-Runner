@@ -13,7 +13,8 @@ var max_quantity = base_max_quantity
 func get_loot():
 	return CraftingMaterial.instance().from_lootable(self)
 
-func set_level(level):
+func set_level(_level):
+	.set_level(_level)
 	set_quantity(level)
 
 func set_quantity(level):

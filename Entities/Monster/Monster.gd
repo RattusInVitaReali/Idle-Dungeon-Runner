@@ -83,25 +83,13 @@ func die():
 	.die()
 	drop_loot()
 
-func power_level():
-	return int(level + modifiers.size() * (modifiers.size() + 1) / 2) * (1 + modifiers.size() * 0.1)
-
 func add_loot(_loot):
 	for lootable in _loot:
 		loot.append(lootable)
 	return self
 
 func drop_loot():
-	set_lootable_level()
-	emit_signal("loot", loot)
-
-func _get_loot():
-	set_lootable_level()
-	return LootManager.roll_loot(loot)
-
-func set_lootable_level():
-	for lootable in loot:
-		lootable.set_level(power_level())
+	emit_signal("loot", loot, level)
 
 func get_lootables():
 	return loot

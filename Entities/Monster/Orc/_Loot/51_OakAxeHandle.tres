@@ -2,12 +2,12 @@
 
 [ext_resource path="res://Lootable/_ItemPartLootable.gd" type="Script" id=1]
 [ext_resource path="res://ItemParts/Weapon/_Axe/AxeHandle/AxeHandle.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Materials/2_Uncommon/Ebony.tres" type="Resource" id=3]
+[ext_resource path="res://Materials/0_Basic/Oak.tres" type="Resource" id=3]
 
 [resource]
 script = ExtResource( 1 )
-chance = 0.07
-min_level = 0
+chance = 0.1
+min_level = 51
 max_level = 1000
 part_type = ExtResource( 2 )
 material = ExtResource( 3 )

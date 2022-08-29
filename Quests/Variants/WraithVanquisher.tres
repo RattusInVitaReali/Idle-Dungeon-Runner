@@ -7,6 +7,8 @@
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
 chance = 1.0
+min_level = 0
+max_level = 1000
 material = ExtResource( 3 )
 base_min_quantity = 3
 base_max_quantity = 5

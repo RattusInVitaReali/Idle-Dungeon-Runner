@@ -9,6 +9,8 @@
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
 chance = 0.65
+min_level = 0
+max_level = 1000
 material = ExtResource( 4 )
 base_min_quantity = 2
 base_max_quantity = 3
@@ -16,6 +18,8 @@ base_max_quantity = 3
 [sub_resource type="Resource" id=2]
 script = ExtResource( 2 )
 chance = 0.45
+min_level = 0
+max_level = 1000
 material = ExtResource( 5 )
 base_min_quantity = 2
 base_max_quantity = 3
@@ -25,5 +29,5 @@ zone_name = "Medium Desert"
 unlock_signal_level = 20
 loot = [ SubResource( 1 ), SubResource( 2 ) ]
 quests = [ ExtResource( 3 ) ]
-min_level = 50
+min_level = 51
 max_level = 100
