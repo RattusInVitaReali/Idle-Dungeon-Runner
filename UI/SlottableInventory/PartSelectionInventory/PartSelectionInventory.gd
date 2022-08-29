@@ -2,7 +2,7 @@ extends SlottableInventory
 class_name PartSelectionInventory
 
 signal part_type_selected
-	
+
 func _ready():
 	for part_type in CraftingManager.part_scenes:
 		var part = CraftingManager.part_scenes[part_type].instance()
@@ -13,7 +13,7 @@ func _ready():
 	update_inventory()
 
 func _on_part_unlocked(part):
-	update_inventory()
+	reorder_slots(true)
 
 func get_sorted_order():
 	var items = get_items_container().get_children()

@@ -199,9 +199,12 @@ func get_idle_rewards():
 		for _monster in monsters:
 			add_child(_monster)
 		var iterations = int(elapsed_time / 60)
+		LootManager.idle_reward_container = idle_reward
 		for i in range(iterations):
-			for lootable in monsters[i % monsters.size()]._get_loot():
-				idle_reward.add_lootable(lootable)
+			var _monster = monsters[i % monsters.size()]
+			_monster.die()
+			emit_signal("monster_died", _monster, zone)
+		LootManager.idle_reward_container = null
 		for _monster in monsters:
 			_monster.queue_free()
 

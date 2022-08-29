@@ -1,27 +1,27 @@
 [gd_resource type="Resource" load_steps=7 format=2]
 
 [ext_resource path="res://Quests/QuestResource.gd" type="Script" id=1]
-[ext_resource path="res://Materials/0_Basic/GoatHide.tres" type="Resource" id=2]
+[ext_resource path="res://Materials/3_Rare/DirehornHide.tres" type="Resource" id=2]
 [ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=3]
-[ext_resource path="res://Materials/3_Rare/DirewolfHide.tres" type="Resource" id=4]
+[ext_resource path="res://Materials/3_Rare/Titanium.tres" type="Resource" id=4]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 3 )
 chance = 1.0
-material = ExtResource( 2 )
-base_min_quantity = 50
-base_max_quantity = 75
+material = ExtResource( 4 )
+base_min_quantity = 15
+base_max_quantity = 20
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 3 )
 chance = 1.0
-material = ExtResource( 4 )
-base_min_quantity = 3
-base_max_quantity = 5
+material = ExtResource( 2 )
+base_min_quantity = 13
+base_max_quantity = 17
 
 [resource]
 script = ExtResource( 1 )
-quest_name = "Goatman Hunter"
-required_kills = 25
-required_types = [ 4 ]
+quest_name = "Orc Executioner"
+required_kills = 35
+required_types = [ 2 ]
 reward = [ SubResource( 1 ), SubResource( 2 ) ]

@@ -13,7 +13,7 @@ func _ready():
 	update_inventory()
 
 func _on_item_unlocked(item):
-	update_inventory()
+	reorder_slots(true)
 
 func get_sorted_order():
 	var items = get_items_container().get_children()

@@ -6,43 +6,15 @@
 [ext_resource path="res://_Resources/ZoneBackgrounds/Ruins.png" type="Texture" id=4]
 [ext_resource path="res://Modifiers/Strong/Strong.tres" type="Resource" id=5]
 [ext_resource path="res://Quests/Variants/WraithVanquisher.tres" type="Resource" id=6]
-[ext_resource path="res://Materials/1_Common/Pine.tres" type="Resource" id=7]
+[ext_resource path="res://Materials/2_Uncommon/Sapphire.tres" type="Resource" id=7]
 [ext_resource path="res://Modifiers/Healthy/Healthy.tres" type="Resource" id=8]
-[ext_resource path="res://Materials/2_Uncommon/Chromium.tres" type="Resource" id=9]
-[ext_resource path="res://Materials/2_Uncommon/Birch.tres" type="Resource" id=10]
+[ext_resource path="res://Materials/2_Uncommon/Emerald.tres" type="Resource" id=9]
+[ext_resource path="res://Materials/2_Uncommon/Jade.tres" type="Resource" id=10]
 [ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=11]
-[ext_resource path="res://Materials/1_Common/Iron.tres" type="Resource" id=12]
+[ext_resource path="res://Materials/2_Uncommon/Alexandrite.tres" type="Resource" id=12]
 [ext_resource path="res://Lootable/_GlobalResourceLootable.gd" type="Script" id=13]
 [ext_resource path="res://Entities/Monster/Wraith/Wraith1/Wraith1.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Entities/Monster/Wraith/Wraith3/Wraith3.tscn" type="PackedScene" id=15]
-
-[sub_resource type="Resource" id=1]
-script = ExtResource( 11 )
-chance = 0.15
-material = ExtResource( 10 )
-base_min_quantity = 2
-base_max_quantity = 5
-
-[sub_resource type="Resource" id=2]
-script = ExtResource( 11 )
-chance = 0.4
-material = ExtResource( 7 )
-base_min_quantity = 1
-base_max_quantity = 4
-
-[sub_resource type="Resource" id=3]
-script = ExtResource( 11 )
-chance = 0.1
-material = ExtResource( 9 )
-base_min_quantity = 2
-base_max_quantity = 5
-
-[sub_resource type="Resource" id=4]
-script = ExtResource( 11 )
-chance = 0.45
-material = ExtResource( 12 )
-base_min_quantity = 2
-base_max_quantity = 4
 
 [sub_resource type="Resource" id=5]
 script = ExtResource( 13 )
@@ -51,12 +23,40 @@ global_resource = 0
 base_min_quantity = 2
 base_max_quantity = 3
 
+[sub_resource type="Resource" id=6]
+script = ExtResource( 11 )
+chance = 0.2
+material = ExtResource( 12 )
+base_min_quantity = 1
+base_max_quantity = 2
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 11 )
+chance = 0.2
+material = ExtResource( 9 )
+base_min_quantity = 1
+base_max_quantity = 2
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 11 )
+chance = 0.2
+material = ExtResource( 10 )
+base_min_quantity = 1
+base_max_quantity = 2
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 11 )
+chance = 0.2
+material = ExtResource( 7 )
+base_min_quantity = 1
+base_max_quantity = 2
+
 [node name="Ruins" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 zone_name = "Ruins"
 modifiers = [ ExtResource( 8 ), ExtResource( 5 ) ]
 enemies = [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 15 ) ]
-loot = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ]
+loot = [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ]
 quests = [ ExtResource( 6 ) ]
 texture = ExtResource( 4 )
 min_level = 25

@@ -53,6 +53,7 @@ func complete():
 	set_lootable_level()
 	emit_signal("quest_completed")
 	emit_signal("loot", reward)
+	CombatProcessor.disconnect("monster_died", self, "_on_monster_died")
 	queue_free()
 
 func quest_info():

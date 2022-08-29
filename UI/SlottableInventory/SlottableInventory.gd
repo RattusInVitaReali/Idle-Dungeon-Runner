@@ -147,6 +147,21 @@ func get_sorted_order():
 	sort(items, "_sort_type")
 	return items
 
+func reorder_slots(var reorder_items = false):
+	if reorder_items and allow_sorting:
+		reorder_items()
+	var ordered_slots = []
+	for item in get_items_container().get_children():
+		for slot in container.get_children():
+			if slot.slottable == item:
+				ordered_slots.append(slot)
+				break
+	for slot in container.get_children():
+		container.remove_child(slot)
+	for slot in ordered_slots:
+		container.add_child(slot)
+		slot.update_slot()
+
 func update_inventory():
 	if allow_sorting:
 		reorder_items()

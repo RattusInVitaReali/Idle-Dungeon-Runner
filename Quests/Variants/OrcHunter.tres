@@ -2,22 +2,22 @@
 
 [ext_resource path="res://Quests/QuestResource.gd" type="Script" id=1]
 [ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=2]
-[ext_resource path="res://Materials/3_Rare/TrollHide.tres" type="Resource" id=3]
-[ext_resource path="res://Materials/2_Uncommon/Opal.tres" type="Resource" id=4]
+[ext_resource path="res://Materials/1_Common/Iron.tres" type="Resource" id=3]
+[ext_resource path="res://Materials/2_Uncommon/BoarHide.tres" type="Resource" id=4]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
 chance = 1.0
-material = ExtResource( 4 )
-base_min_quantity = 2
-base_max_quantity = 5
+material = ExtResource( 3 )
+base_min_quantity = 12
+base_max_quantity = 15
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 2 )
 chance = 1.0
-material = ExtResource( 3 )
-base_min_quantity = 5
-base_max_quantity = 9
+material = ExtResource( 4 )
+base_min_quantity = 8
+base_max_quantity = 12
 
 [resource]
 script = ExtResource( 1 )

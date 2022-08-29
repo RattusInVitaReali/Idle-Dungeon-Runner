@@ -1,36 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Zones/Zone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Modifiers/Strong/Strong.tres" type="Resource" id=2]
-[ext_resource path="res://Entities/Monster/Bandit/Bandit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Entities/Monster/Orc/Orc.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Zones/Desert/Desert.gd" type="Script" id=4]
 [ext_resource path="res://_Resources/ZoneBackgrounds/BetterDesert.png" type="Texture" id=5]
 [ext_resource path="res://Quests/Variants/BanditHunter.tres" type="Resource" id=6]
-[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=7]
-[ext_resource path="res://Materials/1_Common/Iron.tres" type="Resource" id=8]
-[ext_resource path="res://Materials/1_Common/CowHide.tres" type="Resource" id=9]
-[ext_resource path="res://Materials/0_Basic/GoatHide.tres" type="Resource" id=10]
-
-[sub_resource type="Resource" id=1]
-script = ExtResource( 7 )
-chance = 0.6
-material = ExtResource( 8 )
-base_min_quantity = 2
-base_max_quantity = 5
-
-[sub_resource type="Resource" id=2]
-script = ExtResource( 7 )
-chance = 0.25
-material = ExtResource( 10 )
-base_min_quantity = 1
-base_max_quantity = 3
-
-[sub_resource type="Resource" id=3]
-script = ExtResource( 7 )
-chance = 0.1
-material = ExtResource( 9 )
-base_min_quantity = 1
-base_max_quantity = 3
 
 [node name="Desert" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
@@ -39,7 +14,6 @@ unlock_zone_name = "Bandit Boss Dungeon"
 unlock_signal_level = 5
 modifiers = [ ExtResource( 2 ) ]
 enemies = [ ExtResource( 3 ) ]
-loot = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
 quests = [ ExtResource( 6 ) ]
 texture = ExtResource( 5 )
 min_level = 10

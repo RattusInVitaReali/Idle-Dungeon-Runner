@@ -34,13 +34,17 @@ func set_slottable(_slottable):
 	if slottable != null:
 		slottable.disconnect("slottable_updated", self, "update_slot")
 		if !gear and !upgrade:
-			slottable.disconnect("slottable_exited", self, "queue_free")
+			slottable.disconnect("tree_exited", self, "_on_slottable_tree_exited")
 	slottable = _slottable
 	if slottable != null:
 		slottable.connect("slottable_updated", self, "update_slot")
 		if !gear and !upgrade:
-			slottable.connect("tree_exited", self, "queue_free")
+			slottable.connect("tree_exited", self, "_on_slottable_tree_exited")
 	update_slot()
+
+func _on_slottable_tree_exited():
+	if slottable.is_queued_for_deletion():
+		queue_free()
 
 func update_slot():
 	if icon == null:

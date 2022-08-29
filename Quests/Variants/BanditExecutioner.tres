@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://Quests/QuestResource.gd" type="Script" id=1]
+[ext_resource path="res://Materials/3_Rare/Ironbark.tres" type="Resource" id=2]
+[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=3]
+[ext_resource path="res://Materials/3_Rare/Bloodsteel.tres" type="Resource" id=4]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 3 )
+chance = 1.0
+material = ExtResource( 4 )
+base_min_quantity = 15
+base_max_quantity = 20
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 3 )
+chance = 1.0
+material = ExtResource( 2 )
+base_min_quantity = 1
+base_max_quantity = 1
+
+[resource]
+script = ExtResource( 1 )
+quest_name = "Bandit Executioner"
+required_kills = 30
+required_types = [ 0 ]
+reward = [ SubResource( 1 ), SubResource( 2 ) ]

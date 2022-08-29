@@ -1,9 +1,43 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Zones/Forest/Forest.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Quests/Variants/BanditSlayer.tres" type="Resource" id=5]
+[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=2]
+[ext_resource path="res://Materials/2_Uncommon/Ebony.tres" type="Resource" id=3]
+[ext_resource path="res://Materials/2_Uncommon/Birch.tres" type="Resource" id=4]
+[ext_resource path="res://Quests/Variants/BanditExecutioner.tres" type="Resource" id=5]
+[ext_resource path="res://Materials/2_Uncommon/Aluminum.tres" type="Resource" id=6]
+[ext_resource path="res://Materials/2_Uncommon/BearHide.tres" type="Resource" id=7]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+chance = 1.0
+material = ExtResource( 6 )
+base_min_quantity = 1
+base_max_quantity = 1
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+chance = 1.0
+material = ExtResource( 3 )
+base_min_quantity = 1
+base_max_quantity = 1
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+chance = 1.0
+material = ExtResource( 4 )
+base_min_quantity = 1
+base_max_quantity = 1
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 2 )
+chance = 1.0
+material = ExtResource( 7 )
+base_min_quantity = 1
+base_max_quantity = 1
 
 [node name="ForestHard" instance=ExtResource( 1 )]
 zone_name = "Hard Forest"
+loot = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ]
 quests = [ ExtResource( 5 ) ]
 min_level = 75

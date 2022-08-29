@@ -69,7 +69,7 @@ export var base_attributes = {
 export var level = 0
 
 export var skill_slots = 6
-var skills_equipped = 0
+export var skills_equipped = 0
 
 var stats = base_stats.duplicate()
 var attributes = base_attributes.duplicate()
@@ -313,7 +313,7 @@ func next_action():
 
 func try_to_use_skill(skill):
 	var _skill = null
-	if next_action_ready and !dead: 
+	if next_action_ready and !dead and enemy != null: 
 		_skill = skill.try_to_use_skill()
 		if _skill:
 			start_action_timer()

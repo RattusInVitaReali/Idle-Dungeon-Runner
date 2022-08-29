@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Quests/QuestResource.gd" type="Script" id=1]
+[ext_resource path="res://Lootable/Materials/TrollHideLootable.tres" type="Resource" id=2]
+[ext_resource path="res://Lootable/Materials/MithrilLootable.tres" type="Resource" id=3]
+
+[resource]
+script = ExtResource( 1 )
+quest_name = "Bane of the Goatmen"
+required_kills = 40
+required_types = [ 4 ]
+reward = [ ExtResource( 3 ), ExtResource( 2 ) ]

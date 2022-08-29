@@ -10,28 +10,28 @@
 [ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=8]
 [ext_resource path="res://Materials/3_Rare/Titanium.tres" type="Resource" id=9]
 [ext_resource path="res://Materials/3_Rare/Ironbark.tres" type="Resource" id=10]
-[ext_resource path="res://Materials/2_Uncommon/Aluminum.tres" type="Resource" id=11]
-[ext_resource path="res://Quests/Variants/GoatmanHunter.tres" type="Resource" id=12]
+[ext_resource path="res://Materials/3_Rare/DirewolfHide.tres" type="Resource" id=11]
+[ext_resource path="res://Quests/Variants/GoatmanBane.tres" type="Resource" id=12]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 8 )
-chance = 0.5
-material = ExtResource( 10 )
+chance = 0.65
+material = ExtResource( 9 )
 base_min_quantity = 2
-base_max_quantity = 5
+base_max_quantity = 3
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 8 )
-chance = 0.6
+chance = 0.45
 material = ExtResource( 11 )
 base_min_quantity = 2
-base_max_quantity = 5
+base_max_quantity = 3
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 8 )
-chance = 0.15
-material = ExtResource( 9 )
-base_min_quantity = 2
+chance = 0.3
+material = ExtResource( 10 )
+base_min_quantity = 1
 base_max_quantity = 3
 
 [node name="IcyCliffs" instance=ExtResource( 1 )]

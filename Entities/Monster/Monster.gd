@@ -51,8 +51,10 @@ func calculate_stats():
 	update_skill_cooldowns(true)
 
 func apply_vitality():
-	if level < 40:
+	if level < 17:
 		stats["max_hp"] += int(attributes["vitality"] * (1 + pow(level, 1.5) * 0.1))
+	elif level < 66:
+		stats["max_hp"] += int(attributes["vitality"] * level / 2 - 0.5)
 	else:
 		stats["max_hp"] += int(attributes["vitality"] * 4 * sqrt(level))
 
