@@ -1,13 +1,117 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/Inspectors/PartInspector/PartInspector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Inspectors/PartInspector/PartConfirmInspector/PartConfirmInspector.gd" type="Script" id=2]
+[ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://_Resources/gui_images/RightArrow.png" type="Texture" id=4]
+[ext_resource path="res://_Resources/gui_images/Division line.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 75
+font_data = ExtResource( 3 )
 
 [node name="PartConfirmInspector" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
+[node name="Stats" parent="Panel/VBoxContainer" index="7"]
+margin_bottom = 1001.0
+
+[node name="StatsContainer" parent="Panel/VBoxContainer/Stats" index="0"]
+margin_bottom = 394.0
+
+[node name="Line4" parent="Panel/VBoxContainer" index="8"]
+margin_top = 1005.0
+margin_bottom = 1020.0
+
+[node name="Special" parent="Panel/VBoxContainer" index="9"]
+margin_top = 1024.0
+margin_bottom = 1084.0
+
+[node name="Line5" parent="Panel/VBoxContainer" index="10"]
+margin_top = 1088.0
+margin_bottom = 1103.0
+
+[node name="Refinement" type="HBoxContainer" parent="Panel/VBoxContainer" index="11"]
+margin_top = 1107.0
+margin_right = 840.0
+margin_bottom = 1227.0
+rect_min_size = Vector2( 0, 120 )
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Refinement" index="0"]
+margin_right = 100.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="RefineDown" type="TextureButton" parent="Panel/VBoxContainer/Refinement" index="1"]
+margin_left = 104.0
+margin_right = 224.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 0 )
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+flip_h = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Refinement" index="2"]
+margin_left = 228.0
+margin_right = 612.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Refined x2"
+align = 1
+valign = 1
+
+[node name="RefineUp" type="TextureButton" parent="Panel/VBoxContainer/Refinement" index="3"]
+margin_left = 616.0
+margin_right = 736.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 0 )
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Refinement" index="4"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Line7" type="HBoxContainer" parent="Panel/VBoxContainer" index="12"]
+margin_top = 1231.0
+margin_right = 840.0
+margin_bottom = 1246.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line7" index="0"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line7" index="1"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 5 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line7" index="2"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
 [node name="Label" parent="Panel/VBoxContainer/Buttons/Button1" index="0"]
-text = "Confirm"
+text = "Confirm (50)"
 
 [node name="Label" parent="Panel/VBoxContainer/Buttons/Button2" index="0"]
 text = "Cancel"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Refinement/RefineDown" to="." method="_on_RefineDown_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Refinement/RefineUp" to="." method="_on_RefineUp_pressed"]

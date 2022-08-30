@@ -6,6 +6,27 @@
 
 [node name="Entity" type="AnimatedSprite"]
 script = ExtResource( 2 )
+base_stats = {
+"action_time": 0.3,
+"action_time_auto": 0.3,
+"action_time_manual": 0.1,
+"cd_multi": 1.0,
+"crit_chance": 0.05,
+"crit_multi": 1.2,
+"hp": 100.0,
+"incoming_effect_duration_multi": 1.0,
+"incoming_effect_strength_multi": 1.0,
+"magic_damage": 0.0,
+"magic_penetration": 0.0,
+"magic_protection": 20.0,
+"manual_cd_multi": 0.33,
+"max_hp": 100.0,
+"outgoing_effect_duration_multi": 1.0,
+"outgoing_effect_strength_multi": 1.0,
+"phys_damage": 10.0,
+"phys_penetration": 0.0,
+"phys_protection": 20.0
+}
 per_level = {
 "armor": 5,
 "dexterity": 3,

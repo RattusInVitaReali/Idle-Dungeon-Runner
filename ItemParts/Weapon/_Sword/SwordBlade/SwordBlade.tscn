@@ -9,21 +9,21 @@
 script = ExtResource( 4 )
 base_icon = ExtResource( 3 )
 item_icon = ExtResource( 2 )
-cost = 15
+cost = 30
 allowed_material_types = [ 1, 2 ]
 description = "A blade used for forging different sword-like weapons."
 stat_multipliers = {
 "armor": 0.0,
 "dexterity": 1.0,
 "expertise": 1.5,
-"ferocity": 1.0,
+"ferocity": 0.75,
 "magic_penetration": 1.5,
 "mastery": 1.5,
 "occult_aversion": 0.0,
 "penetration": 1.5,
 "potency": 2.5,
 "power": 2.5,
-"precision": 0.75,
+"precision": 1.25,
 "toughess": 0.0,
 "vitality": 0.0
 }

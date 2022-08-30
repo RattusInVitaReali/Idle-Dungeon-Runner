@@ -142,6 +142,17 @@ func try_to_merge():
 	emit_signal("slottable_updated")
 	return new_part
 
+func tier_up():
+	remove_child(mat)
+	mat.set_mat(mat.mat, mat.tier + 1)
+	set_mat(mat)
+
+func tier_down():
+	if mat.tier > 0:
+		remove_child(mat)
+		mat.set_mat(mat.mat, mat.tier - 1)
+		set_mat(mat)
+
 func dismantle(var parent_quantity = 1):
 	mat.quantity(int(mat.quantity / 2) * parent_quantity * max(1, quantity))
 	remove_child(mat)

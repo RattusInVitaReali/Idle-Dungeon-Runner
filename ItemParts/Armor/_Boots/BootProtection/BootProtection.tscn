@@ -13,7 +13,7 @@ base_icon = ExtResource( 3 )
 item_icon = ExtResource( 4 )
 type = 22
 used_for = 1
-cost = 15
+cost = 40
 allowed_material_types = [ 1, 2, 4 ]
 description = "Main boot protective layer."
 stat_multipliers = {
@@ -29,5 +29,5 @@ stat_multipliers = {
 "power": 1.0,
 "precision": 1.0,
 "toughess": 1.0,
-"vitality": 1.0
+"vitality": 1.5
 }

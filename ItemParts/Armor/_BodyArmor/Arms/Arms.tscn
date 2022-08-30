@@ -13,23 +13,23 @@ base_icon = ExtResource( 3 )
 item_icon = ExtResource( 4 )
 type = 7
 used_for = 1
-cost = 20
+cost = 40
 allowed_material_types = [ 1, 2, 4 ]
 description = "Protection for your arms."
 stat_multipliers = {
-"armor": 0.5,
+"armor": 0.75,
 "dexterity": 0.75,
 "expertise": 0.0,
 "ferocity": 1.0,
 "magic_penetration": 0.0,
 "mastery": 0.0,
-"occult_aversion": 0.5,
+"occult_aversion": 0.75,
 "penetration": 0.0,
-"potency": 1.0,
-"power": 1.0,
+"potency": 0.75,
+"power": 0.75,
 "precision": 1.0,
 "toughess": 1.0,
-"vitality": 1.0
+"vitality": 1.5
 }
 base_stats = {
 "armor": 0,

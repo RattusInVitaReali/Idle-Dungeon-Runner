@@ -12,7 +12,7 @@ unlock_signal_level = 60
 base_icon = ExtResource( 4 )
 item_icon = ExtResource( 3 )
 type = 10
-cost = 15
+cost = 30
 allowed_material_types = [ 1, 2 ]
 description = "An optional, secondary head for battle axes."
 stat_multipliers = {
@@ -20,10 +20,10 @@ stat_multipliers = {
 "dexterity": 0.5,
 "expertise": 0.75,
 "ferocity": 0.75,
-"magic_penetration": 1.0,
+"magic_penetration": 0.5,
 "mastery": 0.75,
 "occult_aversion": 0.0,
-"penetration": 1.0,
+"penetration": 0.5,
 "potency": 2.0,
 "power": 2.0,
 "precision": 0.75,

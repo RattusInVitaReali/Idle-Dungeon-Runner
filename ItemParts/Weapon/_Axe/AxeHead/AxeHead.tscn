@@ -12,7 +12,7 @@ unlock_signal_level = 75
 base_icon = ExtResource( 4 )
 item_icon = ExtResource( 3 )
 type = 8
-cost = 20
+cost = 40
 allowed_material_types = [ 1, 2 ]
 description = "Head for battle axes."
 stat_multipliers = {
@@ -20,10 +20,10 @@ stat_multipliers = {
 "dexterity": 0.5,
 "expertise": 1.0,
 "ferocity": 1.0,
-"magic_penetration": 1.0,
+"magic_penetration": 0.75,
 "mastery": 1.0,
 "occult_aversion": 0.0,
-"penetration": 1.0,
+"penetration": 0.75,
 "potency": 3.0,
 "power": 3.0,
 "precision": 1.0,

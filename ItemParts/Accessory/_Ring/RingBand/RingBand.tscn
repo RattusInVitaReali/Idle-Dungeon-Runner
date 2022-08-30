@@ -13,21 +13,21 @@ base_icon = ExtResource( 4 )
 item_icon = ExtResource( 3 )
 type = 14
 used_for = 2
-cost = 10
+cost = 30
 allowed_material_types = [ 1, 2 ]
 description = "A band to hold a focus."
 stat_multipliers = {
 "armor": 1.0,
 "dexterity": 0.5,
-"expertise": 0.0,
-"ferocity": 0.0,
+"expertise": 1.0,
+"ferocity": 0.5,
 "magic_penetration": 0.5,
-"mastery": 0.0,
+"mastery": 1.0,
 "occult_aversion": 1.0,
 "penetration": 0.5,
 "potency": 0.5,
 "power": 0.5,
-"precision": 0.0,
+"precision": 0.5,
 "toughess": 1.0,
 "vitality": 1.0
 }

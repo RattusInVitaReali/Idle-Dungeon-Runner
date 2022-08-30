@@ -12,21 +12,21 @@ unlock_signal_level = 75
 base_icon = ExtResource( 3 )
 item_icon = ExtResource( 4 )
 type = 9
-cost = 15
+cost = 25
 allowed_material_types = [ 2 ]
 description = "Handle for battle axes."
 stat_multipliers = {
 "armor": 0.0,
 "dexterity": 1.0,
-"expertise": 0.5,
+"expertise": 0.0,
 "ferocity": 1.0,
 "magic_penetration": 0.0,
-"mastery": 0.5,
+"mastery": 0.0,
 "occult_aversion": 0.0,
 "penetration": 0.0,
 "potency": 0.5,
 "power": 0.5,
 "precision": 1.0,
 "toughess": 0.0,
-"vitality": 0.0
+"vitality": 1.0
 }

@@ -13,21 +13,21 @@ base_icon = ExtResource( 4 )
 item_icon = ExtResource( 3 )
 type = 29
 used_for = 1
-cost = 15
+cost = 30
 allowed_material_types = [ 1, 2, 4 ]
 description = "Crotch protection."
 stat_multipliers = {
-"armor": 0.75,
-"dexterity": 0.75,
+"armor": 1.0,
+"dexterity": 1.0,
 "expertise": 0.0,
 "ferocity": 0.0,
 "magic_penetration": 0.0,
 "mastery": 0.0,
-"occult_aversion": 0.75,
+"occult_aversion": 1.0,
 "penetration": 0.0,
 "potency": 0.0,
 "power": 0.0,
 "precision": 0.0,
 "toughess": 0.0,
-"vitality": 0.75
+"vitality": 1.5
 }

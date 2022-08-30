@@ -14,22 +14,22 @@ base_icon = ExtResource( 4 )
 item_icon = null
 type = 13
 used_for = 2
-cost = 10
+cost = 25
 allowed_material_types = [ 0 ]
 description = "Main source of power for accessories."
 stat_multipliers = {
 "armor": 1.0,
 "dexterity": 1.0,
-"expertise": 1.0,
+"expertise": 1.5,
 "ferocity": 1.0,
 "magic_penetration": 1.0,
-"mastery": 1.0,
+"mastery": 1.5,
 "occult_aversion": 1.0,
 "penetration": 1.0,
 "potency": 1.0,
 "power": 1.0,
 "precision": 1.0,
-"toughess": 1.0,
+"toughess": 1.5,
 "vitality": 1.0
 }
 amulet_icon = ExtResource( 3 )

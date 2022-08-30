@@ -73,13 +73,15 @@ func update_loot():
 	for monster in zone.get_monster_instances():
 		add_child(monster)
 		for lootable in monster.get_lootables():
-			slottable_from_lootable(lootable)
+			slot_from_lootable(lootable)
 		monster.queue_free()
 	for quest in zone.quests:
 		for lootable in quest.get_lootables():
-			slottable_from_lootable(lootable)
+			slot_from_lootable(lootable)
 
-func slottable_from_lootable(lootable):
+func slot_from_lootable(lootable):
+	if lootable.min_level > zone.max_level or lootable.max_level < zone.min_level:
+		return
 	var loot = lootable.get_loot().quantity(1)
 	for slot in available_loot.get_children():
 		if slot.slottable.same_as(loot):

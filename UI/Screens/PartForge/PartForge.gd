@@ -56,7 +56,6 @@ func get_all_files(path: String, file_ext := "", files := []):
 			file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access %s." % path)
-
 	return files
 
 func add_material(mat):
@@ -102,21 +101,26 @@ func _on_inspector(slot):
 	if !creating:
 		._on_inspector(slot)
 	elif selecting_material:
-		var slottable = slot.slottable
-		var new_part = CraftingManager.try_to_forge_part(selected_part, slottable)
-		if new_part != null:
-			var inspector = part_confirm_inspector(new_part)
-			var response = yield(inspector, "confirmed")
-			if response:
-				LootManager.get_item(CraftingManager.actually_forge_part(selected_part, slottable))
-				new_part.queue_free()
-				end_creation()
+		var mat = slot.slottable
+		var new_part = selected_part.duplicate() 
+		add_child(new_part)
+		mat.quantity(mat.quantity + 1)
+		new_part.set_mat(mat.split(1))
+		var inspector = part_confirm_inspector(new_part, mat)
+		var response = yield(inspector, "confirmed")
+		if response[0]:
+			remove_child(new_part)
+			LootManager.get_item(new_part)
+			mat.quantity(mat.quantity - response[2])
+			end_creation()
+		else:
 			new_part.queue_free()
 
-func part_confirm_inspector(part):
+func part_confirm_inspector(part, mat):
 	inspector = PartConfirmInspector.instance()
 	add_child(inspector)
 	inspector.set_slottable(part)
+	inspector.set_mat(mat)
 	return inspector
 
 func _on_ButtonLeft_pressed():

@@ -13,14 +13,14 @@ base_icon = ExtResource( 4 )
 item_icon = null
 type = 5
 used_for = 1
-cost = 25
+cost = 50
 allowed_material_types = [ 1, 2, 4 ]
 description = "Main body armor protective layer."
 stat_multipliers = {
 "armor": 2.0,
-"dexterity": 0.5,
+"dexterity": 1.0,
 "expertise": 0.0,
-"ferocity": 0.0,
+"ferocity": 1.0,
 "magic_penetration": 0.0,
 "mastery": 0.0,
 "occult_aversion": 2.0,
@@ -29,7 +29,7 @@ stat_multipliers = {
 "power": 1.0,
 "precision": 0.0,
 "toughess": 2.0,
-"vitality": 2.0
+"vitality": 2.5
 }
 leather_icon = ExtResource( 6 )
 metal_icon = ExtResource( 4 )

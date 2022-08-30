@@ -1,9 +1,10 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://Quests/QuestResource.gd" type="Script" id=1]
 [ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=2]
 [ext_resource path="res://Materials/2_Uncommon/Steel.tres" type="Resource" id=3]
 [ext_resource path="res://Materials/3_Rare/Amber.tres" type="Resource" id=4]
+[ext_resource path="res://Materials/2_Uncommon/BoarHide.tres" type="Resource" id=5]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
@@ -11,8 +12,8 @@ chance = 1.0
 min_level = 0
 max_level = 1000
 material = ExtResource( 3 )
-base_min_quantity = 13
-base_max_quantity = 17
+base_min_quantity = 12
+base_max_quantity = 15
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 2 )
@@ -20,12 +21,21 @@ chance = 1.0
 min_level = 0
 max_level = 1000
 material = ExtResource( 4 )
-base_min_quantity = 1
-base_max_quantity = 1
+base_min_quantity = 5
+base_max_quantity = 7
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+chance = 1.0
+min_level = 0
+max_level = 1000
+material = ExtResource( 5 )
+base_min_quantity = 9
+base_max_quantity = 12
 
 [resource]
 script = ExtResource( 1 )
 quest_name = "Orc Slayer"
 required_kills = 25
 required_types = [ 2 ]
-reward = [ SubResource( 1 ), SubResource( 2 ) ]
+reward = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]

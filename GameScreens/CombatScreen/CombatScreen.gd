@@ -111,10 +111,13 @@ func change_zone(new_zone):
 func yeet_monster():
 	if monster != null:
 		yield(get_tree().create_timer(timeout / 2), "timeout")
+		if monster == null:
+			return
 		monster.yeet()
 		yield(self, "player_spawned")
-		monster.queue_free()
-		monster = null
+		if monster != null:
+			monster.queue_free()
+			monster = null
 
 func _on_quest_changed(quest):
 	quest.active = true

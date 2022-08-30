@@ -19,15 +19,15 @@ description = "Decorative beads for a ring."
 stat_multipliers = {
 "armor": 0.75,
 "dexterity": 0.75,
-"expertise": 0.75,
+"expertise": 1.25,
 "ferocity": 0.75,
 "magic_penetration": 0.75,
-"mastery": 0.75,
+"mastery": 1.25,
 "occult_aversion": 0.75,
 "penetration": 0.75,
 "potency": 0.75,
 "power": 0.75,
 "precision": 0.75,
-"toughess": 0.75,
+"toughess": 1.25,
 "vitality": 0.75
 }

@@ -81,7 +81,11 @@ func update_special():
 		special_line.hide()
 
 func update_tier_stars():
+	for star in tier_stars.get_children():
+		star.queue_free()
 	if slottable.tier > 0:
+		tier_stars.show()
+		tier_line.show()
 		var i = floor(slottable.tier / 5)
 		while i > 0:
 			tier_stars.add_child(TierStar.instance().set_tier(1))

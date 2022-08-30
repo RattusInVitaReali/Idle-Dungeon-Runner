@@ -8,7 +8,7 @@
 [node name="Pommel" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 unlock_zone_name = "Bandit Boss Dungeon"
-unlock_signal_level = 10
+unlock_signal_level = 30
 base_icon = ExtResource( 2 )
 item_icon = ExtResource( 4 )
 type = 3
@@ -18,12 +18,12 @@ description = "A decorative part that goes under the handle."
 stat_multipliers = {
 "armor": 0.0,
 "dexterity": 0.5,
-"expertise": 0.0,
+"expertise": 0.5,
 "ferocity": 0.5,
-"magic_penetration": 1.0,
-"mastery": 0.0,
+"magic_penetration": 0.5,
+"mastery": 0.5,
 "occult_aversion": 0.0,
-"penetration": 1.0,
+"penetration": 0.5,
 "potency": 0.5,
 "power": 0.5,
 "precision": 0.5,
