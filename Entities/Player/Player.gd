@@ -87,14 +87,12 @@ func get_skills_container():
 func _on_enter_manual_combat():
 	update_skill_cooldowns(CombatProcessor.auto_combat)
 	stats.action_time = stats.action_time_manual
-	calculate_anim_speed()
 
 func _on_enter_auto_combat():
 	update_skill_cooldowns(CombatProcessor.auto_combat)
 	stats.action_time = stats.action_time_auto
 	if $ActionTimer.time_left == 0:
 		start_action_timer()
-	calculate_anim_speed()
 
 func _on_item_acquired(item):
 	if item.slottable_type == Slottable.SLOTTABLE_TYPE.EXPERIENCE:

@@ -38,5 +38,3 @@ base_attributes = {
 }
 base_name = "Bandit Boss"
 base_loot = [  ]
-
-[connection signal="timeout" from="ActionTimer" to="." method="_on_ActionTimer_timeout"]

@@ -12,4 +12,4 @@ func set_level(level):
 		experience = int(12.5 * (pow(level + 1, 2.5) - pow(level, 2.5)) / pow(level, 1.1)) + 5
 
 func get_loot():
-	return ExperienceSlottable.instance().quantity(experience)
+	return ExperienceSlottable.instance().set_quantity(experience)

@@ -97,6 +97,9 @@ func select():
 func deselect():
 	selection.hide()
 
+func set_quantity_color(color : Color):
+	quantity.self_modulate = color
+
 func toggle_selection():
 	if selection.visible:
 		deselect()

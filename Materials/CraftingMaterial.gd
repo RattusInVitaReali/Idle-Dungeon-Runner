@@ -33,7 +33,7 @@ func set_mat(_mat : MaterialResource, _tier = 0, _quantity = 1):
 		if property.name in mat:
 			set(property.name, mat.get(property.name))
 	set_tier(_tier)
-	quantity(_quantity)
+	quantity = _quantity
 	set_icon()
 	return self
 
@@ -64,9 +64,6 @@ func same_as(_mat : Slottable):
 		return false
 	return slottable_name == _mat.slottable_name and mat == _mat.mat and stats.hash() == _mat.stats.hash()
 
-func add_quantity(amount):
-	quantity(quantity + amount)
-
 func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo, item):
 	mat.on_outgoing_damage(damage_info, item)
 
@@ -75,11 +72,18 @@ func on_incoming_damage(damage_info : CombatProcessor.DamageInfo, item):
 
 func from_lootable(lootable):
 	set_mat(lootable.material)
-	quantity(lootable.get_quantity())
+	quantity = lootable.get_quantity()
 	return self
 
 func special_copy(new_material : CraftingMaterial):
 	new_material.set_mat(mat, tier, quantity)
+
+func tier_up():
+	set_mat(mat, tier + 1, quantity)
+
+func tier_down():
+	if tier > 0:
+		set_mat(mat, tier - 1, quantity)
 
 func try_to_merge():
 	if quantity < 5:
@@ -87,7 +91,7 @@ func try_to_merge():
 	var new_quantity = int(quantity / 5)
 	var new_mat = duplicate()
 	new_mat.set_mat(mat, tier + 1, new_quantity)
-	quantity(quantity % 5)
+	quantity %= 5
 	emit_signal("slottable_updated")
 	return new_mat
 

@@ -1,5 +1,7 @@
-extends PartConfirmInspector
+extends PartInspector
 class_name PartCompareInspector
+
+signal confirmed
 
 const null_stats = {
 	"power": 0, 
@@ -46,12 +48,24 @@ func update_compare_stats():
 func update_compare_special():
 	if compare_to == null:
 		lost_special.hide()
-		special.add_color_override("font_color", Color(0, 1, 0, 1))
+		special.add_color_override("font_color", Color.green)
 		return
 	if slottable.special == compare_to.special and slottable.special != "":
+		lost_special.hide()
 		return
-	special.add_color_override("font_color", Color(0, 1, 0, 1))
+	special.add_color_override("font_color", Color.red)
 	if compare_to.special == "":
 		lost_special.hide()
 	else:
 		lost_special.text = compare_to.special
+
+func _on_Button1_pressed():
+	emit_signal("confirmed", true)
+	queue_free()
+
+func _on_Button2_pressed():
+	emit_signal("confirmed", false)
+	queue_free()
+
+func _on_TextureButton_pressed():
+	_on_Button2_pressed()

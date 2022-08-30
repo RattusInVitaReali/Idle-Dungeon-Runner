@@ -188,7 +188,7 @@ func same_as(item : Slottable):
 func special_copy(var new_item : Item):
 	new_item.custom_name = custom_name
 	for part in get_children():
-		part.quantity(part.quantity + 1)
+		part.quantity += 1
 		var new_part = part.split(1)
 		new_item.add_part(new_part)
 

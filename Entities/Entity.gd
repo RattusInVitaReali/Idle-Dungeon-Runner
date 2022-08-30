@@ -94,7 +94,6 @@ func _ready():
 	CombatProcessor.connect("entered_combat", self, "enter_combat")
 	CombatProcessor.connect("exited_combat", self, "exit_combat")
 	set_skills_attacker()
-	calculate_anim_speed()
 
 func _process(delta):
 	next_action()
@@ -273,7 +272,6 @@ func go_to_combat_pos():
 func enter_combat():
 	next_action_ready = false
 	combat_pos = position
-	calculate_anim_speed()
 	play_animation("idle")
 
 func set_target(target): 
@@ -421,10 +419,6 @@ func die():
 	can_be_attacked = false
 	play("die")
 	emit_signal("died")
-
-func calculate_anim_speed():
-	if CombatProcessor.in_combat:
-		speed_scale = base_stats.action_time / stats.action_time
 
 func start_action_timer():
 	next_action_ready = false

@@ -37,7 +37,8 @@ func _notification(what):
 		if CraftingManager.debug:
 			for res in get_all_files("res://Materials", "tres"):
 				var mat = CraftingMaterial.instance()
-				mat.set_mat(load(res)).quantity(5000)
+				mat.set_mat(load(res))
+				mat.quantity = 5000
 				add_material(mat)
 
 func get_all_files(path: String, file_ext := "", files := []):
@@ -102,16 +103,18 @@ func _on_inspector(slot):
 		._on_inspector(slot)
 	elif selecting_material:
 		var mat = slot.slottable
+		if selected_part.cost > mat.quantity:
+			return
 		var new_part = selected_part.duplicate() 
 		add_child(new_part)
-		mat.quantity(mat.quantity + 1)
-		new_part.set_mat(mat.split(1))
+		mat.quantity += selected_part.cost
+		new_part.set_mat(mat.split(selected_part.cost))
 		var inspector = part_confirm_inspector(new_part, mat)
-		var response = yield(inspector, "confirmed")
+		var response = yield(inspector, "confirmed") # response = [confirmed, tier, cost]
 		if response[0]:
 			remove_child(new_part)
 			LootManager.get_item(new_part)
-			mat.quantity(mat.quantity - response[2])
+			mat.quantity -= response[2]
 			end_creation()
 		else:
 			new_part.queue_free()
@@ -170,12 +173,16 @@ func end_creation():
 
 func hide_other_mats():
 	for slot in materials.get_slots():
-		if not slot.slottable.type in selected_part.allowed_material_types:
+		if !(slot.slottable.type in selected_part.allowed_material_types):
 			slot.hide()
+			continue
+		if selected_part.cost > slot.slottable.quantity:
+			slot.set_quantity_color(Color.red)
 
 func show_all_mats():
 	for slot in materials.get_slots():
 		slot.show()
+		slot.set_quantity_color(Color.white)
 
 func start_material_selection():
 	selecting_material = true

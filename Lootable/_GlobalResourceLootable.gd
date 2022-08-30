@@ -11,7 +11,7 @@ var min_quantity = base_min_quantity
 var max_quantity = base_max_quantity
 
 func get_loot():
-	return GlobalResourceSlottable.instance().from_lootable(self).quantity(get_quantity())
+	return GlobalResourceSlottable.instance().from_lootable(self).set_quantity(get_quantity())
 
 func set_level(_level):
 	.set_level(_level)

@@ -114,7 +114,7 @@ func from_lootable(lootable):
 	return self
 
 func special_copy(new_slottable):
-	mat.quantity(mat.quantity + 1)
+	mat.quantity += 1
 	var new_mat = mat.split(1)
 	new_slottable.set_mat(new_mat)
 
@@ -132,13 +132,13 @@ func try_to_merge():
 		return null
 	var new_quantity = int(quantity / 5)
 	var new_part = duplicate()
-	mat.quantity(mat.quantity + 5)
+	mat.quantity += 5
 	var new_mat = mat.split(5)
 	new_mat = new_mat.try_to_merge()
-	new_mat.quantity(cost)
+	new_mat.quantity = cost
 	new_part.set_mat(new_mat)
-	new_part.quantity(new_quantity)
-	quantity(quantity % 5)
+	new_part.quantity = new_quantity
+	self.quantity %= 5
 	emit_signal("slottable_updated")
 	return new_part
 
@@ -154,8 +154,10 @@ func tier_down():
 		set_mat(mat)
 
 func dismantle(var parent_quantity = 1):
-	mat.quantity(int(mat.quantity / 2) * parent_quantity * max(1, quantity))
 	remove_child(mat)
+	mat.quantity = int(mat.quantity / 2) * parent_quantity * max(1, quantity)
+	mat.quantity *= pow(5, mat.tier)
+	mat.set_mat(mat.mat, 0, mat.quantity)
 	LootManager.get_item(mat)
 	print("Got " + str(mat.quantity) + " mats")
 	queue_free()

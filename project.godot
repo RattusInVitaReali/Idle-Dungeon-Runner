@@ -509,10 +509,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://ItemParts/Armor/_Pants/PantsLining/PantsLining.gd"
 }, {
-"base": "PartConfirmInspector",
+"base": "PartInspector",
 "class": "PartCompareInspector",
 "language": "GDScript",
-"path": "res://UI/Inspectors/PartInspector/PartConfirmInspector/PartCompareInspector/PartCompareInspector.gd"
+"path": "res://UI/Inspectors/PartInspector/PartCompareInspector/PartCompareInspector.gd"
 }, {
 "base": "PartInspector",
 "class": "PartConfirmInspector",

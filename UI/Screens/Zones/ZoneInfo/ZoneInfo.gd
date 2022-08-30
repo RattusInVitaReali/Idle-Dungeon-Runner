@@ -82,7 +82,7 @@ func update_loot():
 func slot_from_lootable(lootable):
 	if lootable.min_level > zone.max_level or lootable.max_level < zone.min_level:
 		return
-	var loot = lootable.get_loot().quantity(1)
+	var loot = lootable.get_loot().set_quantity(1)
 	for slot in available_loot.get_children():
 		if slot.slottable.same_as(loot):
 			loot.queue_free()

@@ -31,7 +31,7 @@ func add_slottable(slottable : Slottable, update = true):
 	for _slottable in get_items_container().get_children():
 		if _slottable.slottable_type == slottable.slottable_type:
 			if _slottable.same_as(slottable):
-				_slottable.add_quantity(slottable.quantity)
+				_slottable.quantity += slottable.quantity
 				slottable.queue_free()
 				added = true
 				break
