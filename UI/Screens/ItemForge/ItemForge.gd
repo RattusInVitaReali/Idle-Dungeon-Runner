@@ -42,6 +42,11 @@ func _ready():
 	item_selection.connect("item_type_selected", self, "_on_item_type_selected")
 	item_preview.connect("inspector", self, "_on_inspector")
 	item_slot.connect("inspector", self, "_on_inspector")
+	LootManager.connect("item_acquired", self, "_on_item_acquired")
+
+func _on_item_acquired(item):
+	if item.slottable_type == Slottable.SLOTTABLE_TYPE.ITEM_PART:
+		add_part(item)
 
 func add_part(part):
 	if creating or upgrading:
@@ -291,8 +296,8 @@ func replace_part(var part):
 	var split_part = parts.remove_slottable(part)
 	item_to_upgrade.add_part(split_part)
 
-func _on_lost_focus():
-	._on_lost_focus()
+func on_lost_focus():
+	.on_lost_focus()
 	if creating:
 		end_creation()
 	if upgrading:

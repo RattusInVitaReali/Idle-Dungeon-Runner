@@ -3,32 +3,38 @@ class_name Main
 
 enum SCREEN { COMBAT, INVENTORY, PART_FORGE, ITEM_FORGE, STATS, ZONES, SKILLS }
 
-onready var bottom_bar = $UI/BottomBar
-onready var tween = $UI/Tween
-onready var dimm = $UI/DimmControl
-
-onready var screen = $CombatScreen
+onready var bottom_bar = $BottomBarUI/BottomBar
+onready var tween = $BottomBarUI/Tween
+onready var dimm = $BottomBarUI/DimmControl
 
 onready var screens = {
-	SCREEN.COMBAT: $CombatScreen,
-	SCREEN.INVENTORY: $InventoryScreen,
-	SCREEN.PART_FORGE: $PartForgeScreen,
-	SCREEN.ITEM_FORGE: $ItemForgeScreen,
-	SCREEN.STATS: $StatsScreen,
-	SCREEN.ZONES: $ZoneScreen,
-	SCREEN.SKILLS: $SkillsScreen
+	SCREEN.COMBAT: $Combat,
+	SCREEN.INVENTORY: $Inventory,
+	SCREEN.PART_FORGE: $PartForge,
+	SCREEN.ITEM_FORGE: $ItemForge,
+	SCREEN.STATS: $Stats,
+	SCREEN.ZONES: $Zones,
+	SCREEN.SKILLS: $Skills
 }
 
-var curr_screen = 0
+onready var screen = screens[SCREEN.COMBAT]
+
+var curr_screen = SCREEN.COMBAT
+var height
+var width
 
 func _ready():
 	bottom_bar.connect("change_screen", self, "change_screen")
 	CombatProcessor.connect("zone_changed", self, "_on_zone_changed")
-	$InventoryScreen.connect("upgrade", self, "start_upgrade_process")
-	$ItemForgeScreen.connect("upgrade_finished", self, "end_upgrade_process")
+	screens[SCREEN.INVENTORY].connect("upgrade", self, "start_upgrade_process")
+	screens[SCREEN.ITEM_FORGE].connect("upgrade_finished", self, "end_upgrade_process")
+
+func measure_screen():
+	height = get_viewport().size.y
+	width = get_viewport().size.x
 
 func move_camera():
-	$Camera2D.position = screen.position
+	$Camera2D.position = screen.rect_position
 
 func change_screen(screen_enum):
 	screen.on_lost_focus()
@@ -61,7 +67,7 @@ func _on_zone_changed(_zone):
 
 func start_upgrade_process(var item):
 	change_screen(SCREEN.ITEM_FORGE)
-	$ItemForgeScreen.start_upgrade_process(item)
+	$ItemForge.start_upgrade(item)
 
 func end_upgrade_process():
 	change_screen(SCREEN.INVENTORY)

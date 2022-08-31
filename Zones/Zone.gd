@@ -3,7 +3,6 @@ class_name Zone
 
 signal unlocked
 signal zone_updated
-signal quest_changed
 
 export var zone_name = ""
 export var unlock_zone_name = ""
@@ -95,7 +94,7 @@ func activate_quest(value):
 	if quest != null:
 		quest.active = value
 
-func _on_player_died():
+func _on_player_despawned():
 	CombatProcessor.breakthrough = false
 	level_down()
 
@@ -111,18 +110,24 @@ func _on_monster_despawned():
 func _on_quest_completed():
 	new_quest()
 
+func activate():
+	active = true
+	CombatProcessor.change_quest(quest)
+
 func new_quest():
 	if !quests.empty():
 		quest = quests[Random.rng.randi() % quests.size()].get_quest()
 		add_child(quest)
 		quest.connect("quest_completed", self, "_on_quest_completed")
-		emit_signal("quest_changed", quest)
+		if active:
+			CombatProcessor.change_quest(quest)
 
 func load_quest():
 	if get_child_count() != 0:
 		quest = get_child(0)
 		quest.load()
 		quest.connect("quest_completed", self, "_on_quest_completed")
-		emit_signal("quest_changed", quest)
+		if active:
+			CombatProcessor.change_quest(quest)
 	else:
 		new_quest()

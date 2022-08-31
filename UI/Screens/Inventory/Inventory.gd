@@ -38,7 +38,6 @@ onready var accessory_slots = {
 
 onready var all_slots
 
-var player = null
 var attributes_init = false
 
 func _ready():
@@ -51,12 +50,16 @@ func _ready():
 		all_slots.append(ring)
 	for slot in all_slots:
 		slot.connect("inspector", self, "_on_inspector")
-	CombatProcessor.connect("player_spawned", self, "_on_player_spawned")
 	items.connect("inspector", self, "_on_inspector")
+	LootManager.connect("item_acquired", self, "_on_item_acquired")
+
+func _on_item_acquired(item):
+	if item.slottable_type == Slottable.SLOTTABLE_TYPE.ITEM:
+		add_item(item)
 
 func _on_player_spawned(_player):
-	if _player != player:
-		player = _player
+	if player != _player:
+		._on_player_spawned(_player)
 		player.connect("items_changed", self, "_on_items_changed")
 		player.connect("stats_updated", self, "update_attributes")
 		update_equipped()

@@ -24,14 +24,17 @@ onready var skill_icons = [
 var player : Player
 
 func update_info(_player):
-	player = _player
-	player.connect("hp_updated", self, "update_player_hp")
-	player.connect("effect_applied", self, "apply_effect")
+	if _player != player:
+		player = _player
+		player.connect("hp_updated", self, "update_player_hp")
+		player.connect("effect_applied", self, "apply_effect")
+		player.connect("level_changed", self, "update_player_level")
+		player.connect("exp_changed", self, "update_player_exp")
+		connect_skills()
 	update_player_hp()
 	update_player_level()
 	update_player_exp()
 	update_skills()
-	connect_skills()
 
 func update_player_hp():
 	player_hp_bar.max_value = player.stats.max_hp

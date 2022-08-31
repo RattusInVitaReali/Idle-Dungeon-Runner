@@ -91,7 +91,6 @@ func _ready():
 	visible = true
 	connect("damage_enemy", CombatProcessor, "damage_enemy")
 	connect("apply_effect", CombatProcessor, "apply_effect")
-	CombatProcessor.connect("entered_combat", self, "enter_combat")
 	CombatProcessor.connect("exited_combat", self, "exit_combat")
 	set_skills_attacker()
 

@@ -1,2 +1,0 @@
-extends GameScreen
-class_name StatsScreen

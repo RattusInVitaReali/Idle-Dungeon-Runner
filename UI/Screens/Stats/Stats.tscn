@@ -9,6 +9,11 @@
 [node name="Stats" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
 
+[node name="VBoxContainer" parent="." index="1"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="LeftMargin" parent="VBoxContainer/Upper/VBoxContainer/Name" index="0"]
 texture = ExtResource( 2 )
 

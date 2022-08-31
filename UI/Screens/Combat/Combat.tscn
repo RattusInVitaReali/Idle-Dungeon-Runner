@@ -12,17 +12,25 @@ anchor_bottom = 1.0
 script = ExtResource( 4 )
 
 [node name="CombatBottom" parent="." instance=ExtResource( 1 )]
+anchor_top = 1.0
+margin_top = -700.0
 
 [node name="CombatModeButton" parent="." instance=ExtResource( 3 )]
-margin_left = 856.0
-margin_top = 1056.0
-margin_right = -32.0
+anchor_left = 1.0
+anchor_top = 1.0
+margin_left = -224.0
+margin_top = -864.0
+margin_right = -24.0
 margin_bottom = -736.0
+rect_min_size = Vector2( 192, 128 )
 
 [node name="CombatTop" parent="." instance=ExtResource( 2 )]
+anchor_bottom = 0.0
 
 [node name="BreakthroughButton" parent="." instance=ExtResource( 5 )]
-margin_left = 941.0
-margin_top = 930.0
-margin_right = -39.0
-margin_bottom = -890.0
+anchor_left = 1.0
+anchor_top = 1.0
+margin_left = -139.0
+margin_top = -990.0
+margin_right = -139.0
+margin_bottom = -990.0

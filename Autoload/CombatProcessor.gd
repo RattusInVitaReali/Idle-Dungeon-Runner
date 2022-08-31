@@ -16,8 +16,11 @@ signal monster_spawned
 signal monster_died
 
 signal player_spawned
+signal player_despawned
 
 signal zone_changed
+signal quest_changed
+
 
 var Monster
 var Player
@@ -104,26 +107,24 @@ func exit_combat():
 	in_combat = false
 	emit_signal("exited_combat")
 
-func _on_monster_spawned(_monster):
+func monster_spawned(_monster):
 	Monster = _monster
 	emit_signal("monster_spawned", Monster)
 
-func _on_monster_died(monster, zone):
+func monster_died(monster, zone):
 	emit_signal("monster_died", monster, zone)
 
-func _on_monster_despawned():
+func monster_despawned():
 	Monster = null
 	exit_combat()
 
-func _on_player_spawned(_player):
+func player_spawned(_player):
 	Player = _player
 	emit_signal("player_spawned", Player)
 
-func _on_player_despawned():
+func player_despawned():
 	exit_combat()
-
-func _on_monster_arrived():
-	enter_combat()
+	emit_signal("player_despawned")
 
 func enter_manual_combat():
 	auto_combat = false
@@ -135,6 +136,9 @@ func enter_auto_combat():
 
 func change_zone(zone):
 	emit_signal("zone_changed", zone)
+
+func change_quest(quest):
+	emit_signal("quest_changed", quest)
 
 func set_breakthrough(br):
 	breakthrough = br

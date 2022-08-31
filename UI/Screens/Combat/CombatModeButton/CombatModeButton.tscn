@@ -28,14 +28,12 @@ pressed = true
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 1 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_top = 128.0
-margin_right = 192.0
-margin_bottom = 256.0
+margin_bottom = 128.0
 texture = ExtResource( 4 )
 expand = true
 __meta__ = {
@@ -55,8 +53,5 @@ text = "COMBAT MODE:
 AUTO"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="toggled" from="TextureButton" to="." method="_on_TextureButton_toggled"]

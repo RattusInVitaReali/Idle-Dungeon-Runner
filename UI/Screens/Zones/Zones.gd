@@ -1,8 +1,6 @@
 extends Screen
 class_name ZonesUI
 
-signal play_zone
-
 const save_path = "user://zones.tscn"
 
 const ZoneInfo = preload("res://UI/Screens/Zones/ZoneInfo/ZoneInfo.tscn")
@@ -27,6 +25,8 @@ const zones = [
 
 onready var zone_infos = $VBoxContainer/Screen/VBoxContainer/ScrollContainer/ZoneInfos
 
+var active_zone = null
+
 func _ready():
 	Saver.save_on_exit(self)
 	self.load()
@@ -34,10 +34,11 @@ func _ready():
 	starter_zone()
 
 func _on_play_zone(zone):
-	for _zone in $Zones.get_children():
-		_zone.active = false
-	zone.active = true
-	emit_signal("play_zone", zone)
+	if active_zone != null:
+		active_zone.active = false
+	active_zone = zone
+	zone.activate()
+	CombatProcessor.change_zone(zone)
 
 func starter_zone():
 	for zone_info in zone_infos.get_children():
@@ -49,6 +50,7 @@ func starter_zone():
 
 func load():
 	if ResourceLoader.exists(save_path):
+		print("Loading zones")
 		var saved = load(save_path).instance()
 		for zone in saved.get_children():
 			saved.remove_child(zone)

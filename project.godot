@@ -364,11 +364,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/Inspectors/Inspector.gd"
 }, {
-"base": "GameScreen",
-"class": "InventoryScreen",
-"language": "GDScript",
-"path": "res://GameScreens/InventoryScreen/InventoryScreen.gd"
-}, {
 "base": "Screen",
 "class": "InventoryUI",
 "language": "GDScript",
@@ -383,11 +378,6 @@ _global_script_classes=[ {
 "class": "ItemConfirmInspector",
 "language": "GDScript",
 "path": "res://UI/Inspectors/ItemInspector/ItemConfirmInspector/ItemConfirmInspector.gd"
-}, {
-"base": "GameScreen",
-"class": "ItemForgeScreen",
-"language": "GDScript",
-"path": "res://GameScreens/ItemForgeScreen/ItemForgeScreen.gd"
 }, {
 "base": "Screen",
 "class": "ItemForgeUI",
@@ -519,11 +509,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/Inspectors/PartInspector/PartConfirmInspector/PartConfirmInspector.gd"
 }, {
-"base": "GameScreen",
-"class": "PartForgeScreen",
-"language": "GDScript",
-"path": "res://GameScreens/PartForgeScreen/PartForgeScreen.gd"
-}, {
 "base": "Screen",
 "class": "PartForgeUI",
 "language": "GDScript",
@@ -649,11 +634,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/SlottableInventory/SkillsInventory/SkillsInventory.gd"
 }, {
-"base": "GameScreen",
-"class": "SkillsScreen",
-"language": "GDScript",
-"path": "res://GameScreens/SkillsScreen/SkillsScreen.gd"
-}, {
 "base": "Screen",
 "class": "SkillsUI",
 "language": "GDScript",
@@ -688,11 +668,6 @@ _global_script_classes=[ {
 "class": "Stat",
 "language": "GDScript",
 "path": "res://UI/Screens/Stats/Stat/Stat.gd"
-}, {
-"base": "GameScreen",
-"class": "StatsScreen",
-"language": "GDScript",
-"path": "res://GameScreens/StatsScreen/StatsScreen.gd"
 }, {
 "base": "Screen",
 "class": "StatsUI",
@@ -794,11 +769,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/Screens/Zones/ZoneInfo/ZoneInfo.gd"
 }, {
-"base": "GameScreen",
-"class": "ZonesScreen",
-"language": "GDScript",
-"path": "res://GameScreens/ZonesScreen/ZonesScreen.gd"
-}, {
 "base": "Screen",
 "class": "ZonesUI",
 "language": "GDScript",
@@ -876,11 +846,9 @@ _global_script_class_icons={
 "IdleData": "",
 "IdleReward": "",
 "Inspector": "",
-"InventoryScreen": "",
 "InventoryUI": "",
 "Item": "",
 "ItemConfirmInspector": "",
-"ItemForgeScreen": "",
 "ItemForgeUI": "",
 "ItemInspector": "",
 "ItemLootable": "",
@@ -907,7 +875,6 @@ _global_script_class_icons={
 "PantsLining": "",
 "PartCompareInspector": "",
 "PartConfirmInspector": "",
-"PartForgeScreen": "",
 "PartForgeUI": "",
 "PartInspector": "",
 "PartSelectionInventory": "",
@@ -933,7 +900,6 @@ _global_script_class_icons={
 "SkillInspector": "",
 "SkillSlot": "",
 "SkillsInventory": "",
-"SkillsScreen": "",
 "SkillsUI": "",
 "Slot": "",
 "SlotTierStar": "",
@@ -941,7 +907,6 @@ _global_script_class_icons={
 "SlottableIcon": "",
 "SlottableInventory": "",
 "Stat": "",
-"StatsScreen": "",
 "StatsUI": "",
 "Strong": "",
 "Sword": "",
@@ -962,7 +927,6 @@ _global_script_class_icons={
 "Wraith3": "",
 "Zone": "",
 "ZoneInfo": "",
-"ZonesScreen": "",
 "ZonesUI": ""
 }
 

@@ -8,8 +8,13 @@ const SkillInspector = preload("res://UI/Inspectors/SkillInspector/SkillInspecto
 
 var inspector = null
 
+var player : Player = null
+
 func _ready():
-	get_parent().connect("lost_focus", self, "_on_lost_focus")
+	CombatProcessor.connect("player_spawned", self, "_on_player_spawned")
+
+func _on_player_spawned(_player):
+	player = _player
 
 func _on_inspector(slot):
 	var slottable = slot.slottable
@@ -29,6 +34,9 @@ func _on_inspector(slot):
 			inspector.set_slot(slot)
 	return inspector
 
-func _on_lost_focus():
+func on_focused():
+	pass
+
+func on_lost_focus():
 	if inspector != null and weakref(inspector).get_ref():
 		inspector.queue_free()

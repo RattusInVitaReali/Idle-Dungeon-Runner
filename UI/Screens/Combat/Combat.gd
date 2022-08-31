@@ -1,25 +1,20 @@
 extends Screen
 class_name CombatUI
 
-func player_spawned(player):
+var monster : Monster = null
+
+func _ready():
+	CombatProcessor.connect("monster_spawned", self, "_on_monster_spawned")
+
+func _on_player_spawned(_player):
+	._on_player_spawned(_player)
 	$CombatBottom.update_info(player)
 
-func monster_spawned(monster):
+func _on_monster_spawned(_monster):
+	monster = _monster
 	$CombatTop.update_monster_info(monster)
 
-func quest_changed(quest):
-	$CombatTop.change_quest(quest)
-
-func zone_changed(zone):
-	$CombatTop.change_zone(zone)
-
-func player_level_changed():
-	$CombatBottom.update_player_level()
-
-func player_exp_changed():
-	$CombatBottom.update_player_exp()
-
-func _on_lost_focus():
-	._on_lost_focus()
+func on_lost_focus():
+	.on_lost_focus()
 	if !CombatProcessor.auto_combat:
 		$CombatModeButton.force_auto_combat()

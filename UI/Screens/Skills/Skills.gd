@@ -8,3 +8,7 @@ func _ready():
 
 func set_container(container):
 	skills.set_items_container(container)
+
+func _on_player_spawned(_player):
+	._on_player_spawned(_player)
+	set_container(player.get_skills_container())
