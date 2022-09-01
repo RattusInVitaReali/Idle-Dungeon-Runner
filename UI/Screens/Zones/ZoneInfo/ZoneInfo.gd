@@ -50,12 +50,13 @@ func update_name():
 		zone_name.text = zone.zone_name + " : " + str(zone.min_level) + " - " + str(zone.max_level)
 
 func update_background():
+	yield(get_tree(), "idle_frame")
 	if zone.locked:
 		$ZoneBackground.texture = null
 	else:
 		var new_atlas = AtlasTexture.new()
 		new_atlas.atlas = zone.texture
-		new_atlas.region = Rect2(270, 500, $ZoneBackground.rect_size.x, $ZoneBackground.rect_size.y)
+		new_atlas.region = Rect2((1800 - ScreenMeasurer.get_screen_size().x) / 4, 500, $ZoneBackground.rect_size.x, $ZoneBackground.rect_size.y)
 		$ZoneBackground.texture = new_atlas
 
 func update_buttons():

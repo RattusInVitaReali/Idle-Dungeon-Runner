@@ -202,5 +202,5 @@ func load():
 func save_and_exit():
 	if get_items_container() == null:
 		return
-	if $Items.get_child_count() != 0 and save_path != "":
+	if save_path != "":
 		Saver.save_scene($Items, save_path)

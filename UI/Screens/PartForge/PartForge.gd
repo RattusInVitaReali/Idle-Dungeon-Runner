@@ -29,8 +29,6 @@ var selected_material = null
 var selected_part_slot = null
 
 func _ready():
-	materials.connect("inspector", self, "_on_inspector")
-	part_selection.connect("part_type_selected", self, "_on_part_type_selected")
 	LootManager.connect("item_acquired", self, "_on_item_acquired")
 
 func _on_item_acquired(item):

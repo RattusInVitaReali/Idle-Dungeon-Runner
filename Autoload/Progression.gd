@@ -69,21 +69,12 @@ func _on_monster_died(monster, zone):
 	emit_signal("progression_monster_died", monster, zone)
 
 func unlock_part(part):
+	print("Unlocked part ", part.type)
 	item_part_unlocked[part.type] = true
 
 func unlock_item(item):
-	item_unlocked[item.type] = true
+	print("Unlocked item ", item.subtype)
+	item_unlocked[item.subtype] = true
 
-func load():
-	if save_path != "" and ResourceLoader.exists(save_path):
-		var instance = load(save_path).instance()
-		for prop in instance.get_property_list():
-			if prop.usage == 8199: # EXPORT VAR
-				if prop.type in [18, 19]:
-					set(prop.name, instance.get(prop.name).duplicate())
-				else:
-					set(prop.name, instance.get(prop.name))
-		instance.queue_free()
-
-func save_and_exit():
-	Saver.save_scene(self, save_path)
+func send_idle_reward_node():
+	pass

@@ -48,9 +48,6 @@ func _ready():
 		all_slots.append(accessory_slots[type])
 	for ring in ring_slots:
 		all_slots.append(ring)
-	for slot in all_slots:
-		slot.connect("inspector", self, "_on_inspector")
-	items.connect("inspector", self, "_on_inspector")
 	LootManager.connect("item_acquired", self, "_on_item_acquired")
 
 func _on_item_acquired(item):

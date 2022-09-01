@@ -144,10 +144,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Autoload/CombatProcessor.gd"
 }, {
-"base": "GameScreen",
+"base": "Node2D",
 "class": "CombatScreen",
 "language": "GDScript",
-"path": "res://GameScreens/CombatScreen/CombatScreen.gd"
+"path": "res://CombatScreen/CombatScreen.gd"
 }, {
 "base": "Control",
 "class": "CombatTop",
@@ -233,11 +233,6 @@ _global_script_classes=[ {
 "class": "Forest",
 "language": "GDScript",
 "path": "res://Zones/Forest/Forest.gd"
-}, {
-"base": "Node2D",
-"class": "GameScreen",
-"language": "GDScript",
-"path": "res://GameScreens/GameScreen.gd"
 }, {
 "base": "",
 "class": "GitAPI",
@@ -352,7 +347,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "IdleData",
 "language": "GDScript",
-"path": "res://GameScreens/CombatScreen/IdleData.gd"
+"path": "res://CombatScreen/IdleData.gd"
 }, {
 "base": "Control",
 "class": "IdleReward",
@@ -423,11 +418,6 @@ _global_script_classes=[ {
 "class": "Lacerate",
 "language": "GDScript",
 "path": "res://Skills/Lacerate/Lacerate.gd"
-}, {
-"base": "VBoxContainer",
-"class": "Line",
-"language": "GDScript",
-"path": "res://UI/SlottableInventory/Line/Line.gd"
 }, {
 "base": "Node",
 "class": "LootManagerScript",
@@ -593,6 +583,11 @@ _global_script_classes=[ {
 "class": "Screen",
 "language": "GDScript",
 "path": "res://UI/Screens/Screen.gd"
+}, {
+"base": "Node",
+"class": "ScreenMeasurerScript",
+"language": "GDScript",
+"path": "res://Autoload/ScreenMeasurer.gd"
 }, {
 "base": "ItemPart",
 "class": "Shinguards",
@@ -820,7 +815,6 @@ _global_script_class_icons={
 "Focus": "",
 "ForearmProtection": "",
 "Forest": "",
-"GameScreen": "",
 "GitAPI": "",
 "GlobalResourceLootable": "",
 "GlobalResourceSlottable": "",
@@ -858,7 +852,6 @@ _global_script_class_icons={
 "ItemSelectionInventory": "",
 "Kneepads": "",
 "Lacerate": "",
-"Line": "",
 "LootManagerScript": "",
 "Lootable": "",
 "Main": "",
@@ -892,6 +885,7 @@ _global_script_class_icons={
 "Ruins": "",
 "SaverScript": "",
 "Screen": "",
+"ScreenMeasurerScript": "",
 "Shinguards": "",
 "Shoulders": "",
 "Sideguards": "",
@@ -945,6 +939,7 @@ Random="*res://Autoload/Random.gd"
 GlobalResources="*res://Autoload/GlobalResources.gd"
 Progression="*res://Autoload/Progression.gd"
 Saver="*res://Autoload/Saver.gd"
+ScreenMeasurer="*res://Autoload/ScreenMeasurer.gd"
 
 [debug]
 
@@ -956,7 +951,7 @@ gdscript/warnings/export_hint_type_mistmatch=false
 
 [display]
 
-window/size/width=1200
+window/size/width=1080
 window/size/height=1920
 window/vsync/use_vsync=false
 window/handheld/orientation="portrait"

@@ -9,26 +9,71 @@ script = ExtResource( 3 )
 
 [node name="Zones" type="Node2D" parent="." index="0"]
 
+[node name="Upper" parent="VBoxContainer" index="0"]
+margin_right = 1200.0
+
+[node name="Name" parent="VBoxContainer/Upper/VBoxContainer" index="0"]
+margin_right = 1140.0
+
 [node name="LeftMargin" parent="VBoxContainer/Upper/VBoxContainer/Name" index="0"]
 texture = ExtResource( 2 )
+
+[node name="TextureRect" parent="VBoxContainer/Upper/VBoxContainer/Name" index="1"]
+margin_right = 961.0
 
 [node name="Label" parent="VBoxContainer/Upper/VBoxContainer/Name/TextureRect" index="0"]
 text = "Zones"
 
 [node name="RightMargin" parent="VBoxContainer/Upper/VBoxContainer/Name" index="2"]
+margin_left = 965.0
+margin_right = 1140.0
 texture = ExtResource( 2 )
 
+[node name="ResourcesBackground" parent="VBoxContainer/Upper/VBoxContainer" index="1"]
+margin_right = 1140.0
+
+[node name="ResourceValue1" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="1"]
+margin_right = 279.0
+
+[node name="TextureRect2" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="2"]
+margin_left = 283.0
+margin_right = 403.0
+
+[node name="ResourceValue2" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="3"]
+margin_left = 407.0
+margin_right = 563.0
+
+[node name="TextureRect3" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="4"]
+margin_left = 567.0
+margin_right = 687.0
+
+[node name="ResourceValue3" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="5"]
+margin_left = 691.0
+margin_right = 846.0
+
+[node name="TextureRect4" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="6"]
+margin_left = 850.0
+margin_right = 970.0
+
+[node name="ResourceValue4" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="7"]
+margin_left = 974.0
+margin_right = 1130.0
+
+[node name="Screen" parent="VBoxContainer" index="1"]
+margin_right = 1200.0
+
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Screen/VBoxContainer" index="0"]
-margin_right = 1080.0
+margin_right = 1200.0
 margin_bottom = 1392.0
 size_flags_vertical = 3
 
 [node name="ZoneInfos" type="VBoxContainer" parent="VBoxContainer/Screen/VBoxContainer/ScrollContainer" index="0"]
-margin_right = 1080.0
+margin_right = 1200.0
 margin_bottom = 1392.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="BottomOffset" parent="VBoxContainer/Screen/VBoxContainer" index="1"]
 margin_top = 1396.0
+margin_right = 1200.0
 margin_bottom = 1616.0

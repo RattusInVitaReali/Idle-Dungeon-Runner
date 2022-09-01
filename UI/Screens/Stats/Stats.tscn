@@ -14,14 +14,58 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Upper" parent="VBoxContainer" index="0"]
+margin_right = 1080.0
+
+[node name="Name" parent="VBoxContainer/Upper/VBoxContainer" index="0"]
+margin_right = 1020.0
+
 [node name="LeftMargin" parent="VBoxContainer/Upper/VBoxContainer/Name" index="0"]
 texture = ExtResource( 2 )
+
+[node name="TextureRect" parent="VBoxContainer/Upper/VBoxContainer/Name" index="1"]
+margin_right = 841.0
 
 [node name="Label" parent="VBoxContainer/Upper/VBoxContainer/Name/TextureRect" index="0"]
 text = "Stats"
 
 [node name="RightMargin" parent="VBoxContainer/Upper/VBoxContainer/Name" index="2"]
+margin_left = 845.0
+margin_right = 1020.0
 texture = ExtResource( 2 )
+
+[node name="ResourcesBackground" parent="VBoxContainer/Upper/VBoxContainer" index="1"]
+margin_right = 1020.0
+
+[node name="ResourceValue1" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="1"]
+margin_right = 249.0
+
+[node name="TextureRect2" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="2"]
+margin_left = 253.0
+margin_right = 373.0
+
+[node name="ResourceValue2" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="3"]
+margin_left = 377.0
+margin_right = 503.0
+
+[node name="TextureRect3" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="4"]
+margin_left = 507.0
+margin_right = 627.0
+
+[node name="ResourceValue3" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="5"]
+margin_left = 631.0
+margin_right = 756.0
+
+[node name="TextureRect4" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="6"]
+margin_left = 760.0
+margin_right = 880.0
+
+[node name="ResourceValue4" parent="VBoxContainer/Upper/VBoxContainer/ResourcesBackground/Resources" index="7"]
+margin_left = 884.0
+margin_right = 1010.0
+
+[node name="Screen" parent="VBoxContainer" index="1"]
+margin_right = 1080.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/Screen/VBoxContainer" index="0"]
 margin_right = 1080.0
@@ -60,4 +104,5 @@ size_flags_vertical = 3
 
 [node name="BottomOffset" parent="VBoxContainer/Screen/VBoxContainer" index="1"]
 margin_top = 1396.0
+margin_right = 1080.0
 margin_bottom = 1616.0

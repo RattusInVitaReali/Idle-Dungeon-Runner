@@ -18,19 +18,20 @@ margin_top = -700.0
 [node name="CombatModeButton" parent="." instance=ExtResource( 3 )]
 anchor_left = 1.0
 anchor_top = 1.0
-margin_left = -224.0
-margin_top = -864.0
-margin_right = -24.0
-margin_bottom = -736.0
+margin_left = -200.0
+margin_top = -860.0
+margin_right = -8.0
+margin_bottom = -732.0
 rect_min_size = Vector2( 192, 128 )
 
 [node name="CombatTop" parent="." instance=ExtResource( 2 )]
-anchor_bottom = 0.0
+anchor_bottom = 0.234
+margin_bottom = -1919.28
 
 [node name="BreakthroughButton" parent="." instance=ExtResource( 5 )]
 anchor_left = 1.0
 anchor_top = 1.0
-margin_left = -139.0
-margin_top = -990.0
-margin_right = -139.0
-margin_bottom = -990.0
+margin_left = -112.0
+margin_top = -992.0
+margin_right = -112.0
+margin_bottom = -992.0

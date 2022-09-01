@@ -141,7 +141,7 @@ size_flags_vertical = 3
 [node name="SlottableInventory" parent="Panel/VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 306.0
 margin_right = 880.0
-margin_bottom = 1430.0
+margin_bottom = 1850.0
 columns = 5
 force_block_save = true
 

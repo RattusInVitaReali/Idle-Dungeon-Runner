@@ -3,6 +3,11 @@ class_name BottomBar
 
 signal change_screen
 
+func _ready():
+	rect_scale = ScreenMeasurer.get_game_scale()
+	rect_position = Vector2(16, (ScreenMeasurer.height - 210 * ScreenMeasurer.screen_scale))
+	rect_size.x = 1048
+
 func _on_Combat_pressed():
 	emit_signal("change_screen", Main.SCREEN.COMBAT)
 

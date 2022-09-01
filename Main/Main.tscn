@@ -3,7 +3,7 @@
 [ext_resource path="res://Main/Main.gd" type="Script" id=1]
 [ext_resource path="res://UI/BottomBar/BottomBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/Screens/Stats/Stats.tscn" type="PackedScene" id=3]
-[ext_resource path="res://GameScreens/CombatScreen/CombatScreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://CombatScreen/CombatScreen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/Screens/Combat/Combat.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/Screens/Skills/Skills.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/Screens/Inventory/Inventory.tscn" type="PackedScene" id=7]
@@ -18,7 +18,6 @@ script = ExtResource( 1 )
 layer = 3
 
 [node name="BottomBar" parent="BottomBarUI" instance=ExtResource( 2 )]
-anchor_top = 1.0
 margin_left = 16.0
 margin_top = -220.0
 margin_right = -16.0
@@ -87,3 +86,8 @@ margin_right = 7560.0
 margin_bottom = 1920.0
 
 [node name="CombatScreen" parent="." instance=ExtResource( 4 )]
+
+[connection signal="change_screen" from="BottomBarUI/BottomBar" to="." method="change_screen"]
+[connection signal="upgrade" from="Inventory" to="." method="start_upgrade_process"]
+[connection signal="upgrade_finished" from="ItemForge" to="." method="end_upgrade_process"]
+[connection signal="idle_reward" from="CombatScreen" to="." method="_on_CombatScreen_idle_reward"]

@@ -1,4 +1,4 @@
-extends GameScreen
+extends Node2D
 class_name CombatScreen
 
 const PlayerScene = preload("res://Entities/Player/Player.tscn")
@@ -6,9 +6,8 @@ const IdleReward = preload("res://UI/IdleReward/IdleReward.tscn")
 
 const save_path = "user://idle_data.tres"
 
-var screen_width = 1080
-var screen_height = 1920
-var screen_center_x = 540
+signal idle_reward
+
 var padding_bottom = 900
 var padding_top = 600
 var scale_value = 1
@@ -31,9 +30,6 @@ onready var image_2 = $Map/Image2
 func _ready():
 	Saver.save_on_exit(self)
 	CombatProcessor.connect("zone_changed", self, "change_zone")
-	measure_screen()
-	image_1.position.x = screen_center_x
-	image_2.position.x = screen_center_x
 	spawn_player()
 
 func spawn_player():
@@ -45,7 +41,7 @@ func spawn_player():
 			player.load()
 	add_child_below_node($Map, player)
 	player.connect("despawned", self, "_on_player_despawned")
-	player.position = Vector2(screen_center_x, player_spawn_pos_x)
+	player.position = Vector2(540, player_spawn_pos_x)
 	player.scale = Vector2(0.25, 0.25)
 	CombatProcessor.player_spawned(player)
 
@@ -55,7 +51,7 @@ func spawn_monster():
 	add_child_below_node($Map, monster)
 	monster.connect("despawned", self, "_on_monster_despawned")
 	monster.connect("died", self, "_on_monster_died")
-	monster.position = Vector2(screen_center_x, monster_spawn_pos_x)
+	monster.position = Vector2(540, monster_spawn_pos_x)
 	monster.scale.x /= 4
 	monster.scale.y /= 4
 	CombatProcessor.monster_spawned(monster)
@@ -108,15 +104,6 @@ func load_images():
 	image_1.texture = zone.texture
 	image_2.texture = zone.texture
 
-func measure_screen():
-	screen_height = get_viewport().size.y
-	screen_width = get_viewport().size.x
-	scale_value = screen_width / 1080
-	scale = Vector2(scale_value, scale_value)
-	screen_center_x = (screen_width / scale_value) / 2
-
-var f2_on_top = true
-var f1_on_top = false
 
 func _process(delta):
 	if not CombatProcessor.in_combat and !player.dead:
@@ -124,26 +111,22 @@ func _process(delta):
 	if not CombatProcessor.in_combat and !player.dead:
 		move_map(delta)
 
+onready var bg_top = image_2
+onready var bg_bot = image_1
+
 func move_map(delta):
-	if f2_on_top:
-		image_1.position = image_1.position.move_toward(Vector2(screen_center_x, 3520), global_speed * delta)
-		image_2.position = image_2.position.move_toward(Vector2(screen_center_x, 320), global_speed * delta)
-		if image_1.position == Vector2(screen_center_x, 3520):
-			image_1.position = Vector2(screen_center_x, -2880)
-			f1_on_top = true
-			f2_on_top = false
-	elif f1_on_top:
-		image_2.position = image_2.position.move_toward(Vector2(screen_center_x, 3520), global_speed * delta)
-		image_1.position = image_1.position.move_toward(Vector2(screen_center_x, 320), global_speed * delta)
-		if image_2.position == Vector2(screen_center_x, 3520):
-			image_2.position = Vector2(screen_center_x, -2880)
-			f2_on_top = true
-			f1_on_top = false
+	bg_top.position = bg_top.position.move_toward(Vector2(-260, 0), global_speed * delta)
+	bg_bot.position = bg_bot.position.move_toward(Vector2(-260, 3200), global_speed * delta)
+	if bg_top.position == Vector2(-260, 0):
+		bg_bot.position = Vector2(-260, -3200)
+		var temp = bg_top
+		bg_top = bg_bot
+		bg_bot = temp
 
 func move_monster(delta):
 	if monster != null:
-		if monster.position != Vector2(screen_center_x, padding_top):
-			monster.position = monster.position.move_toward(Vector2(screen_center_x, padding_top), global_speed * delta)
+		if monster.position != Vector2(540, padding_top):
+			monster.position = monster.position.move_toward(Vector2(540, padding_top), global_speed * delta)
 		else:
 			CombatProcessor.enter_combat()
 			player.enter_combat()
@@ -157,8 +140,8 @@ func check_idle_rewards():
 func get_idle_rewards():
 	if ResourceLoader.exists(save_path):
 		var idle_reward = IdleReward.instance()
-		$CanvasLayer.add_child(idle_reward)
-		idle_reward.rect_size = Vector2(1080, 1920)
+		emit_signal("idle_reward", idle_reward)
+		idle_reward.rect_size = ScreenMeasurer.get_screen_size()
 		var elapsed_time = OS.get_unix_time() - load(save_path).idle_time
 		idle_reward.set_time(elapsed_time)
 		var monsters = zone.get_monster_instances()

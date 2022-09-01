@@ -38,10 +38,6 @@ var selected_item_slot = null
 var selected_part_slots = []
 
 func _ready():
-	parts.connect("inspector", self, "_on_inspector")
-	item_selection.connect("item_type_selected", self, "_on_item_type_selected")
-	item_preview.connect("inspector", self, "_on_inspector")
-	item_slot.connect("inspector", self, "_on_inspector")
 	LootManager.connect("item_acquired", self, "_on_item_acquired")
 
 func _on_item_acquired(item):

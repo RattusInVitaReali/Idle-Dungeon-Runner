@@ -11,11 +11,11 @@
 [ext_resource path="res://_Resources/icons2/image_part_051.png" type="Texture" id=9]
 
 [node name="BottomBar" type="Control"]
-anchor_top = 0.921
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -48.3199
-margin_bottom = 0.00012207
+margin_top = -210.0
+margin_bottom = -9.99988
 script = ExtResource( 6 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
@@ -26,9 +26,6 @@ patch_margin_left = 38
 patch_margin_top = 49
 patch_margin_right = 45
 patch_margin_bottom = 47
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
 anchor_right = 1.0

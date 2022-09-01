@@ -188,6 +188,7 @@ func calculate_stats():
 	apply_effect_attributes()
 	apply_attribute_stats()
 	update_skill_levels()
+	stepify_stats()
 
 func reset_stats():
 	for stat in stats:
@@ -228,6 +229,10 @@ func apply_attribute_stats():
 
 func apply_vitality():
 	stats["max_hp"] += attributes["vitality"] * 4
+
+func stepify_stats():
+	for stat in stats:
+		stats[stat] = stepify(float(stats[stat]), 0.01)
 
 func play_animation(_animation):
 	if (_animation == "melee" and enemy != null):

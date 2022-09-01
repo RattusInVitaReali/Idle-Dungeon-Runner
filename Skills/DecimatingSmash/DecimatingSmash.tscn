@@ -7,7 +7,7 @@
 [node name="DecimatingSmash" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 unlock_signal_level = 30
-base_cooldown = 12.0
+base_cooldown = 8.0
 skill_name = "Decimating Smash"
 skill_icon = ExtResource( 3 )
 melee = true

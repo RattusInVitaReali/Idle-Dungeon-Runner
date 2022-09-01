@@ -20,23 +20,15 @@ onready var screens = {
 onready var screen = screens[SCREEN.COMBAT]
 
 var curr_screen = SCREEN.COMBAT
-var height
-var width
 
 func _ready():
-	bottom_bar.connect("change_screen", self, "change_screen")
+	scale = ScreenMeasurer.get_game_scale()
 	CombatProcessor.connect("zone_changed", self, "_on_zone_changed")
-	screens[SCREEN.INVENTORY].connect("upgrade", self, "start_upgrade_process")
-	screens[SCREEN.ITEM_FORGE].connect("upgrade_finished", self, "end_upgrade_process")
-	measure_screen()
+	move_screens()
 
-func measure_screen():
-	height = get_viewport().size.y
-	width = get_viewport().size.x
-	print("Screen size: ", height, "x", width)
+func move_screens():
 	for i in screens:
-		screens[i].rect_position = Vector2(width * i, 0)
-		screens[i].rect_size = Vector2(width, height)
+		screens[i].rect_position = Vector2(1080 * i, 0)
 
 func move_camera():
 	$Camera2D.position = screen.rect_position
@@ -76,3 +68,6 @@ func start_upgrade_process(var item):
 
 func end_upgrade_process():
 	change_screen(SCREEN.INVENTORY)
+
+func _on_CombatScreen_idle_reward(idle_reward):
+	add_child(idle_reward)

@@ -12,6 +12,7 @@ var player : Player = null
 
 func _ready():
 	CombatProcessor.connect("player_spawned", self, "_on_player_spawned")
+	rect_size = ScreenMeasurer.get_screen_size()
 
 func _on_player_spawned(_player):
 	player = _player
