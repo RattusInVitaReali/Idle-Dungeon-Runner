@@ -37,7 +37,6 @@ func _on_play_zone(zone):
 	if active_zone != null:
 		active_zone.active = false
 	active_zone = zone
-	zone.activate()
 	CombatProcessor.change_zone(zone)
 
 func starter_zone():
@@ -50,7 +49,6 @@ func starter_zone():
 
 func load():
 	if ResourceLoader.exists(save_path):
-		print("Loading zones")
 		var saved = load(save_path).instance()
 		for zone in saved.get_children():
 			saved.remove_child(zone)

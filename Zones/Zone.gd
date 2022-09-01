@@ -90,9 +90,10 @@ func level_up():
 func level_down():
 	self.level = max(level - 1, min_level)
 
-func activate_quest(value):
+func activate_quest():
 	if quest != null:
-		quest.active = value
+		quest.active = true
+	CombatProcessor.change_quest(quest)
 
 func _on_player_despawned():
 	CombatProcessor.breakthrough = false
@@ -110,9 +111,9 @@ func _on_monster_despawned():
 func _on_quest_completed():
 	new_quest()
 
-func activate():
-	active = true
-	CombatProcessor.change_quest(quest)
+func activate(value):
+	active = value
+	activate_quest()
 
 func new_quest():
 	if !quests.empty():
@@ -120,7 +121,7 @@ func new_quest():
 		add_child(quest)
 		quest.connect("quest_completed", self, "_on_quest_completed")
 		if active:
-			CombatProcessor.change_quest(quest)
+			activate_quest()
 
 func load_quest():
 	if get_child_count() != 0:
@@ -128,6 +129,6 @@ func load_quest():
 		quest.load()
 		quest.connect("quest_completed", self, "_on_quest_completed")
 		if active:
-			CombatProcessor.change_quest(quest)
+			activate_quest()
 	else:
 		new_quest()

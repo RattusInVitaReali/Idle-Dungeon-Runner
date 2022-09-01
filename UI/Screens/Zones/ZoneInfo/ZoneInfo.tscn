@@ -22,8 +22,8 @@ size = 40
 font_data = ExtResource( 7 )
 
 [node name="ZoneInfo" type="NinePatchRect"]
-margin_right = 1080.0
-margin_bottom = 300.0
+anchor_right = 1.0
+margin_bottom = 79.0
 rect_min_size = Vector2( 0, 300 )
 texture = ExtResource( 5 )
 patch_margin_left = 30
@@ -33,10 +33,12 @@ patch_margin_bottom = 39
 script = ExtResource( 8 )
 
 [node name="ZoneBackground" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 1060.0
-margin_bottom = 280.0
+margin_right = -20.0
+margin_bottom = -20.0
 rect_min_size = Vector2( 1040, 260 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -74,12 +76,12 @@ valign = 1
 
 [node name="MidPart" type="VBoxContainer" parent="ZoneBackground/HBoxContainer"]
 margin_left = 264.0
-margin_right = 748.0
+margin_right = 868.0
 margin_bottom = 240.0
 size_flags_horizontal = 3
 
 [node name="ZoneName" type="Label" parent="ZoneBackground/HBoxContainer/MidPart"]
-margin_right = 484.0
+margin_right = 604.0
 margin_bottom = 76.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -93,14 +95,14 @@ clip_text = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ZoneBackground/HBoxContainer/MidPart"]
 margin_top = 80.0
-margin_right = 484.0
+margin_right = 604.0
 margin_bottom = 240.0
 rect_min_size = Vector2( 0, 160 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AvailableLoot" type="HBoxContainer" parent="ZoneBackground/HBoxContainer/MidPart/ScrollContainer"]
-margin_right = 484.0
+margin_right = 604.0
 margin_bottom = 160.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -108,8 +110,8 @@ size_flags_vertical = 3
 [node name="Slottables" type="Node2D" parent="ZoneBackground/HBoxContainer/MidPart/ScrollContainer"]
 
 [node name="LevelControl" type="VBoxContainer" parent="ZoneBackground/HBoxContainer"]
-margin_left = 752.0
-margin_right = 872.0
+margin_left = 872.0
+margin_right = 992.0
 margin_bottom = 240.0
 
 [node name="LevelUp" type="TextureButton" parent="ZoneBackground/HBoxContainer/LevelControl"]
@@ -138,15 +140,15 @@ texture_normal = ExtResource( 3 )
 expand = true
 
 [node name="Margin" type="Label" parent="ZoneBackground/HBoxContainer"]
-margin_left = 876.0
+margin_left = 996.0
 margin_top = 113.0
-margin_right = 896.0
+margin_right = 1016.0
 margin_bottom = 127.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="Play" type="TextureButton" parent="ZoneBackground/HBoxContainer"]
-margin_left = 900.0
-margin_right = 1020.0
+margin_left = 1020.0
+margin_right = 1140.0
 margin_bottom = 240.0
 rect_min_size = Vector2( 120, 0 )
 texture_normal = ExtResource( 1 )

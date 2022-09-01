@@ -28,10 +28,15 @@ func _ready():
 	CombatProcessor.connect("zone_changed", self, "_on_zone_changed")
 	screens[SCREEN.INVENTORY].connect("upgrade", self, "start_upgrade_process")
 	screens[SCREEN.ITEM_FORGE].connect("upgrade_finished", self, "end_upgrade_process")
+	measure_screen()
 
 func measure_screen():
 	height = get_viewport().size.y
 	width = get_viewport().size.x
+	print("Screen size: ", height, "x", width)
+	for i in screens:
+		screens[i].rect_position = Vector2(width * i, 0)
+		screens[i].rect_size = Vector2(width, height)
 
 func move_camera():
 	$Camera2D.position = screen.rect_position

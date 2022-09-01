@@ -55,7 +55,7 @@ func update_background():
 	else:
 		var new_atlas = AtlasTexture.new()
 		new_atlas.atlas = zone.texture
-		new_atlas.region = Rect2(270, 500, 1040, 260)
+		new_atlas.region = Rect2(270, 500, $ZoneBackground.rect_size.x, $ZoneBackground.rect_size.y)
 		$ZoneBackground.texture = new_atlas
 
 func update_buttons():

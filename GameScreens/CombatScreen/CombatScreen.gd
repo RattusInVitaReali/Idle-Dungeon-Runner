@@ -65,12 +65,7 @@ func change_zone(new_zone):
 		CombatProcessor.exit_combat()
 	if monster != null:
 		monster.queue_free()
-	if zone != null:
-		CombatProcessor.disconnect("player_despawned", zone, "_on_player_despawned")
-		zone.activate_quest(false)
 	zone = new_zone
-	CombatProcessor.connect("player_despawned", zone, "_on_player_despawned")
-	zone.activate_quest(true)
 	load_images()
 	new_combat()
 	check_idle_rewards()
@@ -159,7 +154,6 @@ func check_idle_rewards():
 		get_idle_rewards()
 		got_idle_rewards = true
 
-# Transfer to ui?
 func get_idle_rewards():
 	if ResourceLoader.exists(save_path):
 		var idle_reward = IdleReward.instance()
@@ -171,6 +165,7 @@ func get_idle_rewards():
 		for _monster in monsters:
 			add_child(_monster)
 		var iterations = int(elapsed_time / 60)
+		zone.zone_floor += iterations
 		LootManager.idle_reward_container = idle_reward
 		for i in range(iterations):
 			var _monster = monsters[i % monsters.size()]

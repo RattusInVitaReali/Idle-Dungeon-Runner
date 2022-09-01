@@ -22,8 +22,9 @@ signal zone_changed
 signal quest_changed
 
 
-var Monster
-var Player
+var Monster = null
+var Player = null
+var Zone = null
 
 var in_combat = false
 
@@ -135,7 +136,13 @@ func enter_auto_combat():
 	emit_signal("entered_auto_combat")
 
 func change_zone(zone):
-	emit_signal("zone_changed", zone)
+	if Zone != null:
+		Zone.activate(false)
+		disconnect("player_despawned", Zone, "_on_player_despawned")
+	Zone = zone
+	Zone.activate(true)
+	connect("player_despawned", Zone, "_on_player_despawned")
+	emit_signal("zone_changed", Zone)
 
 func change_quest(quest):
 	emit_signal("quest_changed", quest)

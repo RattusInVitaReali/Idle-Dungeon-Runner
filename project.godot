@@ -956,7 +956,7 @@ gdscript/warnings/export_hint_type_mistmatch=false
 
 [display]
 
-window/size/width=1080
+window/size/width=1200
 window/size/height=1920
 window/vsync/use_vsync=false
 window/handheld/orientation="portrait"

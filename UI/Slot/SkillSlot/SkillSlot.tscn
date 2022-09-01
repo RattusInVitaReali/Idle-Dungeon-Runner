@@ -15,8 +15,8 @@ size = 45
 font_data = ExtResource( 4 )
 
 [node name="SkillSlot" instance=ExtResource( 1 )]
-margin_right = 250.0
-margin_bottom = 375.0
+margin_right = -975.0
+margin_bottom = -1545.0
 rect_min_size = Vector2( 225, 375 )
 script = ExtResource( 2 )
 
@@ -25,7 +25,7 @@ margin_top = 180.0
 margin_bottom = 194.0
 
 [node name="Background" parent="." index="1"]
-margin_right = 250.0
+margin_right = 225.0
 margin_bottom = 375.0
 rect_min_size = Vector2( 225, 150 )
 texture = null
@@ -33,7 +33,7 @@ stretch_mode = 5
 
 [node name="NameBackground" type="TextureRect" parent="Background" index="5"]
 margin_top = 250.0
-margin_right = 250.0
+margin_right = 225.0
 margin_bottom = 375.0
 texture = ExtResource( 5 )
 expand = true
@@ -42,10 +42,10 @@ stretch_mode = 1
 [node name="Name" type="Label" parent="Background/NameBackground" index="0"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 12.0
-margin_right = -10.0
-margin_bottom = -8.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Skill name name"
@@ -74,7 +74,7 @@ autowrap = true
 clip_text = true
 
 [node name="Right" parent="." index="2"]
-margin_left = 250.0
+margin_left = 225.0
 margin_top = 180.0
-margin_right = 250.0
+margin_right = 225.0
 margin_bottom = 194.0
