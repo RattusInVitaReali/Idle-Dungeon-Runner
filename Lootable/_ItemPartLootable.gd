@@ -8,8 +8,8 @@ var tier = 0
 
 func set_level(_level):
 	.set_level(_level)
-	if level > 1:
-		tier = max(0, floor(sqrt(level / 2 - 1)) - 1)
+	if level > 5:
+		tier = max(0, floor(sqrt(level / 5 - 1)) - 1)
 	else:
 		tier = 0
 

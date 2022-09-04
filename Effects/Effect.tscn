@@ -4,6 +4,7 @@
 
 [node name="Effect" type="Node2D"]
 script = ExtResource( 1 )
+effect_name = "Effect"
 base_duration = 5.0
 base_tick_duration = 0.25
 

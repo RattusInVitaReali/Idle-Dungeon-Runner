@@ -219,6 +219,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Slottable/ExperienceSlottable/ExperienceSlottable.gd"
 }, {
+"base": "Skill",
+"class": "FesteringSlash",
+"language": "GDScript",
+"path": "res://Skills/FesteringSlash/FesteringSlash.gd"
+}, {
 "base": "ItemPart",
 "class": "Focus",
 "language": "GDScript",
@@ -353,6 +358,11 @@ _global_script_classes=[ {
 "class": "IdleReward",
 "language": "GDScript",
 "path": "res://UI/IdleReward/IdleReward.gd"
+}, {
+"base": "Skill",
+"class": "Incise",
+"language": "GDScript",
+"path": "res://Skills/Incise/Incise.gd"
 }, {
 "base": "Control",
 "class": "Inspector",
@@ -812,6 +822,7 @@ _global_script_class_icons={
 "Entity": "",
 "ExperienceLootable": "",
 "ExperienceSlottable": "",
+"FesteringSlash": "",
 "Focus": "",
 "ForearmProtection": "",
 "Forest": "",
@@ -839,6 +850,7 @@ _global_script_class_icons={
 "IcyCliffs": "",
 "IdleData": "",
 "IdleReward": "",
+"Incise": "",
 "Inspector": "",
 "InventoryUI": "",
 "Item": "",

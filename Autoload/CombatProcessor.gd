@@ -41,6 +41,10 @@ class DamageInfo:
 	var phys_pen = 0
 	var magic_pen = 0
 	var can_crit = true
+	var crit_chance_multi = 1
+	var crit_chance_flat = 0
+	var crit_multi_multi = 1
+	var crit_multi_flat = 0
 	var effects = []
 	var dot_tick = false
 	var bleeding_tick = false
@@ -85,7 +89,30 @@ class DamageInfo:
 		dot_tick = _bleeding_tick
 		return self
 
+	func crit_chance_multi(ccm):
+		crit_chance_multi = ccm
+		return self
+
+	func crit_chance_flat(ccf):
+		crit_chance_flat = ccf
+		return self
+
+	func crit_multi_multi(cmm):
+		crit_multi_multi = cmm
+		return self
+
+	func crit_multi_flat(cmf):
+		crit_multi_flat = cmf
+		return self
+
+	func roll_crit(crit_chance, crit_multi):
+		if !can_crit:
+			return
+		if Random.rng.randf() < crit_chance * crit_chance_multi + crit_chance_flat:
+			apply_crit(crit_multi)
+
 	func apply_crit(crit_multi):
+		crit_multi = crit_multi * crit_multi_multi + crit_multi_flat
 		phys_damage *= crit_multi
 		magic_damage *= crit_multi
 		can_crit = false

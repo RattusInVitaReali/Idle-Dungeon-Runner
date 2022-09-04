@@ -7,3 +7,4 @@
 [node name="Bleeding" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 icon = ExtResource( 3 )
+effect_name = "Bleeding"

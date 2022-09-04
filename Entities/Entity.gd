@@ -298,6 +298,12 @@ func get_skills():
 func get_effects():
 	return $Effects.get_children()
 
+func has_effect(effect):
+	for ef in get_effects():
+		if ef.effect_name == effect:
+			return true
+	return false
+
 func get_items():
 	return $Items.get_children()
 
@@ -322,19 +328,13 @@ func try_to_use_skill(skill):
 	return _skill
 
 func process_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
-	apply_crit(damage_info)
+	damage_info.roll_crit(stats["crit_chance"], stats["crit_multi"])
 	items_outgoing_damage(damage_info)
 	stats_outgoing_damage(damage_info)
 	effects_outgoing_damage(damage_info)
 	for effect in damage_info.effects:
 		apply_stats_to_effect(effect)
 	emit_signal("damage_enemy", damage_info)
-
-func apply_crit(damage_info : CombatProcessor.DamageInfo):
-	if damage_info.can_crit:
-		var roll = Random.rng.randf()
-		if roll < stats.crit_chance:
-			damage_info.apply_crit(stats.crit_multi)
 
 func items_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	for item in get_items():

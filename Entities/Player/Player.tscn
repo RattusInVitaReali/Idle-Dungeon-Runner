@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Entities/Player/PlayerAnimations.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Skills/BasicAttack/BasicAttack.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Entities/Player/Player.gd" type="Script" id=5]
 [ext_resource path="res://Skills/Quickslash/Quickslash.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Skills/DecimatingSmash/DecimatingSmash.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Skills/Incise/Incise.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Skills/FesteringSlash/FesteringSlash.tscn" type="PackedScene" id=9]
 
 [node name="Player" instance=ExtResource( 4 )]
 frames = ExtResource( 1 )
@@ -25,3 +27,7 @@ locked = false
 
 [node name="Quickslash" parent="Skills" index="3" instance=ExtResource( 6 )]
 locked = false
+
+[node name="Incise" parent="Skills" index="4" instance=ExtResource( 8 )]
+
+[node name="FesteringSlash" parent="Skills" index="5" instance=ExtResource( 9 )]

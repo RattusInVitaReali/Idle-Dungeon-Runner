@@ -7,5 +7,6 @@
 [node name="Decimated" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 icon = ExtResource( 3 )
+effect_name = "Decimated"
 base_tick_duration = 0.0
 tick_based = false
