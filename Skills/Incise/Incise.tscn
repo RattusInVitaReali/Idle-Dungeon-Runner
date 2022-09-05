@@ -2,11 +2,11 @@
 
 [ext_resource path="res://Skills/Skill.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skills/Incise/Incise.gd" type="Script" id=2]
-[ext_resource path="res://_Resources/skill_icons/Icon25.png" type="Texture" id=3]
+[ext_resource path="res://_Resources/skill_icons/Icon47.png" type="Texture" id=3]
 
 [node name="Incise" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-unlock_signal_level = 40
+unlock_signal_level = 35
 base_cooldown = 3.0
 skill_name = "Incise"
 skill_icon = ExtResource( 3 )

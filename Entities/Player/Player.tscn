@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Entities/Player/PlayerAnimations.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Skills/BasicAttack/BasicAttack.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Skills/DecimatingSmash/DecimatingSmash.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Skills/Incise/Incise.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Skills/FesteringSlash/FesteringSlash.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Skills/Envenom/Envenom.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Skills/Execute/Execute.tscn" type="PackedScene" id=11]
 
 [node name="Player" instance=ExtResource( 4 )]
 frames = ExtResource( 1 )
@@ -20,14 +22,15 @@ experience = 0
 locked = false
 
 [node name="Lacerate" parent="Skills" index="1" instance=ExtResource( 3 )]
-locked = false
 
-[node name="DecimatingSmash" parent="Skills" index="2" instance=ExtResource( 7 )]
-locked = false
+[node name="Quickslash" parent="Skills" index="2" instance=ExtResource( 6 )]
 
-[node name="Quickslash" parent="Skills" index="3" instance=ExtResource( 6 )]
-locked = false
+[node name="Envenom" parent="Skills" index="3" instance=ExtResource( 10 )]
 
-[node name="Incise" parent="Skills" index="4" instance=ExtResource( 8 )]
+[node name="Execute" parent="Skills" index="4" instance=ExtResource( 11 )]
 
-[node name="FesteringSlash" parent="Skills" index="5" instance=ExtResource( 9 )]
+[node name="DecimatingSmash" parent="Skills" index="5" instance=ExtResource( 7 )]
+
+[node name="Incise" parent="Skills" index="6" instance=ExtResource( 8 )]
+
+[node name="FesteringSlash" parent="Skills" index="7" instance=ExtResource( 9 )]
