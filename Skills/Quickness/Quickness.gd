@@ -17,8 +17,9 @@ func do_skill():
 	var amount = calculate_amount()
 	var duration = calculate_duration()
 	attacker.process_outgoing_effect(
-		CombatProcessor.Quick.instance() \
+		CombatProcessor.AttributeBonusFlat.instance() \
 		.initialize(attacker, target) \
+		.attribute("dexterity") \
 		.amount(amount) \
 		.duration(duration)
 	)
