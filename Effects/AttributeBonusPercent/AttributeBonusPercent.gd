@@ -11,8 +11,10 @@ func strength(_strength):
 	strength = _strength
 	if strength > 0:
 		icon(IconPositive)
+		negative = false
 	else:
 		icon(IconNegative)
+		negative = true
 	return self
 
 func attribute(_attribute): # set the type of attribute to which the effect is applied
