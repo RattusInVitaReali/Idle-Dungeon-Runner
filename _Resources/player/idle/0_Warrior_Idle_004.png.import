@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/0_Warrior_Idle_004.png-dfc38f68121a0f50348a017db17741df.stex"
+path="res://.import/0_Warrior_Idle_004.png-37b79ef981007500935b8366e608b1b2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Resources/Player/Idle/0_Warrior_Idle_004.png"
-dest_files=[ "res://.import/0_Warrior_Idle_004.png-dfc38f68121a0f50348a017db17741df.stex" ]
+source_file="res://_Resources/Player/idle/0_Warrior_Idle_004.png"
+dest_files=[ "res://.import/0_Warrior_Idle_004.png-37b79ef981007500935b8366e608b1b2.stex" ]
 
 [params]
 
