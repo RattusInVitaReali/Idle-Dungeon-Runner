@@ -29,6 +29,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/Screens/Inventory/Attribute/Attribute.gd"
 }, {
+"base": "Effect",
+"class": "AttributeBonusFlat",
+"language": "GDScript",
+"path": "res://Effects/AttributeBonusFlat/AttributeBonusFlat.gd"
+}, {
+"base": "Effect",
+"class": "AttributeBonusPercent",
+"language": "GDScript",
+"path": "res://Effects/AttributeBonusPercent/AttributeBonusPercent.gd"
+}, {
 "base": "Item",
 "class": "Axe",
 "language": "GDScript",
@@ -814,6 +824,8 @@ _global_script_class_icons={
 "Arms": "",
 "AshfallenForest": "",
 "Attribute": "",
+"AttributeBonusFlat": "",
+"AttributeBonusPercent": "",
 "Axe": "",
 "AxeHandle": "",
 "AxeHead": "",

@@ -19,8 +19,9 @@ func do_skill():
 	print(attacker.name)
 	print(target.name)
 	attacker.process_outgoing_effect(
-		CombatProcessor.Quick.instance() \
+		CombatProcessor.AttributeBonusFlat.instance() \
 		.initialize(attacker, target) \
+		.attribute("dexterity") \
 		.amount(amount) \
 		.duration(duration)
 	)

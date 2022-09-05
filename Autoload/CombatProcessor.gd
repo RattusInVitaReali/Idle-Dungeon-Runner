@@ -5,6 +5,8 @@ var Bleeding = load("res://Effects/Bleeding/Bleeding.tscn")
 var Decimated = load("res://Effects/Decimated/Decimated.tscn")
 var Poisoned = load("res://Effects/Poisoned/Poisoned.tscn")
 var Quick = load("res://Effects/Quick/Quick.tscn")
+var AttributeBonusPercent = load("res://Effects/AttributeBonusPercent/AttributeBonusPercent.tscn")
+var AttributeBonusFlat = load("res://Effects/AttributeBonusFlat/AttributeBonusFlat.tscn")
 
 signal entered_combat
 signal exited_combat

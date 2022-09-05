@@ -1,6 +1,9 @@
 extends Node2D
 class_name Effect
 
+const IconPositive = preload("res://_Resources/icons2/image_part_033.png")
+const IconNegative = preload("res://_Resources/icons2/image_part_034.png")
+
 signal effect_expired
 
 export (Texture) var icon
@@ -36,6 +39,10 @@ func duration(_duration):
 func tick_duration(_tick_duration):
 	tick_duration = _tick_duration
 	$TickTime.wait_time = tick_duration
+	return self
+	
+func icon(_icon):
+	icon = _icon
 	return self
 
 func process_duration_multi(dm):

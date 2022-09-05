@@ -29,10 +29,11 @@ func do_skill():
 		CombatProcessor.DamageInfo.new(attacker, target) \
 		.phys_damage(damage) \
 		.effect(
-			CombatProcessor.Decimated.instance() \
+			CombatProcessor.AttributeBonusPercent.instance() \
 			.initialize(attacker, target) \
+			.attribute("armor") \
 			.duration(decimated_duration) \
-			.strength(decimated_strength)
+			.strength(-decimated_strength)
 		)
 	)
 
