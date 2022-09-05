@@ -12,3 +12,6 @@ func process_strength_multi(sm):
 
 func apply_attributes(attributes):
 	attributes["dexterity"] += amount
+
+func get_value():
+	return str(amount)

@@ -19,3 +19,6 @@ func tick():
 	if is_crit:
 		damage_info.apply_crit(attacker.stats.crit_multi)
 	attacker.process_outgoing_damage(damage_info)
+
+func get_value():
+	return str(round(tick_damage))

@@ -12,3 +12,6 @@ func process_strength_multi(sm):
 
 func apply_attributes(attributes):
 	attributes["armor"] *= (1 - strength)
+
+func get_value():
+	return str(strength * 100) + "%"

@@ -16,8 +16,6 @@ func do_skill():
 	play_animation("attack")
 	var amount = calculate_amount()
 	var duration = calculate_duration()
-	print(attacker.name)
-	print(target.name)
 	attacker.process_outgoing_effect(
 		CombatProcessor.Quick.instance() \
 		.initialize(attacker, target) \

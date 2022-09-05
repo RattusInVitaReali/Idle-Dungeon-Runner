@@ -10,3 +10,4 @@ icon = ExtResource( 3 )
 effect_name = "Quick"
 base_tick_duration = 0.0
 tick_based = false
+negative = false

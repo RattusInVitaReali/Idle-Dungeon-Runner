@@ -8,6 +8,7 @@ export (String) var effect_name
 export var base_duration = 0.0
 export var base_tick_duration = 0.0
 export var tick_based = true
+export var negative = true
 
 var expired = false
 
@@ -46,6 +47,9 @@ func process_strength_multi(sm):
 
 func get_duration_timer():
 	return $EffectTime
+
+func get_value():
+	pass
 
 func begin():
 	$EffectTime.start()

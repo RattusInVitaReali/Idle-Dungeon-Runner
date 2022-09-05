@@ -1,6 +1,9 @@
 extends TextureRect
 class_name EffectIcon
 
+const BorderPositive = preload("res://_Resources/skill_borders/Border5.png")
+const BorderNegative = preload("res://_Resources/skill_borders/Border2.png")
+
 var effect
 var duration
 
@@ -14,7 +17,12 @@ func initialize(_effect):
 		expire()
 	effect = _effect
 	effect.connect("effect_expired", self, "expire")
+	if effect.negative:
+		texture = BorderNegative
+	else:
+		texture = BorderPositive
 	$TextureRect.texture = effect.icon
+	$Value.text = effect.get_value()
 	duration = effect.duration
 
 func expire():
