@@ -9,7 +9,6 @@ var level_multi = 0.04
 var bleeding_or_poisoned_damage_multi = 1.75
 var bleeding_and_posioned_damage_multi = 2.5
 
-
 func base_damage():
 	return base_damage + level_damage * level
 

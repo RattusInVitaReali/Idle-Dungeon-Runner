@@ -6,7 +6,7 @@
 
 [node name="FesteringSlash" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-unlock_signal_level = 40
+unlock_signal_level = 25
 base_cooldown = 3.0
 skill_name = "Festering Slash"
 skill_icon = ExtResource( 3 )

@@ -6,7 +6,7 @@
 
 [node name="Execute" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-unlock_signal_level = 25
+unlock_signal_level = 40
 base_cooldown = 6.0
 skill_name = "Execute"
 skill_icon = ExtResource( 3 )

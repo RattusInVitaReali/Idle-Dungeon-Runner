@@ -4,6 +4,7 @@ class_name CombatProcessorScript
 var Bleeding = load("res://Effects/Bleeding/Bleeding.tscn")
 var Decimated = load("res://Effects/Decimated/Decimated.tscn")
 var Poisoned = load("res://Effects/Poisoned/Poisoned.tscn")
+var Quick = load("res://Effects/Quick/Quick.tscn")
 
 signal entered_combat
 signal exited_combat

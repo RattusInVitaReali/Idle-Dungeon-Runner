@@ -212,10 +212,10 @@ func apply_effect_attributes():
 func apply_attribute_stats():
 	stats["phys_damage"] += attributes["power"]
 	stats["magic_damage"] += attributes["potency"]
-	if attributes["precision"] < 75:
-		stats["crit_chance"] += attributes["precision"] * 0.002
+	if attributes["precision"] < 800:
+		stats["crit_chance"] += attributes["precision"] * 0.0005
 	else:
-		stats["crit_chance"] += sqrt(attributes["precision"] * 0.0003)
+		stats["crit_chance"] += sqrt(attributes["precision"] * 0.0002)
 	stats["crit_multi"] += attributes["ferocity"] * 0.002
 	stats["phys_protection"] += attributes["armor"]
 	stats["magic_protection"] += attributes["occult_aversion"]
@@ -373,8 +373,9 @@ func effects_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 		effect.on_incoming_damage(damage_info)
 
 func process_incoming_effect(effect : Effect):
-	effect.process_duration_multi(stats["incoming_effect_duration_multi"])
-	effect.process_strength_multi(stats["incoming_effect_strength_multi"])
+	if effect.attacker != self:
+		effect.process_duration_multi(stats["incoming_effect_duration_multi"])
+		effect.process_strength_multi(stats["incoming_effect_strength_multi"])
 	$Effects.add_child(effect)
 	effect.connect("effect_expired", self, "update_stats")
 	effect.begin()

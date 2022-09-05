@@ -53,7 +53,7 @@ func set_attacker(new_value):
 		connect("play_animation", attacker, "play_animation")
 		if cast_on_self():
 			target = attacker
-	try_unlock(null, null)
+	try_unlock()
 
 func description():
 	pass
@@ -103,6 +103,8 @@ func try_unlock(monster = null, zone = null):
 		return
 	if attacker.level >= unlock_signal_level:
 		locked(false)
+		if !attacker.ready:
+			yield(attacker, "ready")
 		attacker.try_equip_skill(self, true)
 		attacker.disconnect("level_changed", self, "try_unlock")
 

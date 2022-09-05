@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Skills/Skill.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Skills/Quickness/Quickness.gd" type="Script" id=2]
+[ext_resource path="res://_Resources/skill_icons/Icon43.png" type="Texture" id=3]
+
+[node name="Quickness" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+unlock_signal_level = 45
+base_cooldown = 10.0
+skill_name = "Quickness"
+skill_icon = ExtResource( 3 )
+tags = [ 3 ]

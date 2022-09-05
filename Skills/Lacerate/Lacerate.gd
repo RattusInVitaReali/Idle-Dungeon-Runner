@@ -38,7 +38,5 @@ func do_skill():
 	)
 
 func description():
-	var text = "Deal (" + str(base_damage()) + " + " + str(multiplier() * 100) + "% PD) = " + str(calculate_damage()) + " physical damage to your enemy, "
-	text += "and apply a bleeding effect that deals (" + str(base_damage() / 5) + " + " + str(multiplier() * 100 / 5) + "% PD) = " + str(calculate_bleed_damage(calculate_damage())) + " physical "
-	text += " damage every " + str(tick_duration) + " seconds for " + str(bleed_duration) + " seconds."
+	var text = "Deal (" + str(base_damage()) + " + " + str(multiplier() * 100) + "% PD) = " + str(calculate_damage()) + " physical damage to your enemy, " + "and apply a bleeding effect that deals (" + str(base_damage() / 5) + " + " + str(multiplier() * 100 / 5) + "% PD) = " + str(calculate_bleed_damage(calculate_damage())) + " physical "+ " damage every " + str(tick_duration) + " seconds for " + str(bleed_duration) + " seconds."
 	return text

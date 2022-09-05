@@ -121,14 +121,15 @@ func fake_respawn():
 		play("run")
 
 func load():
-	for effect in $Effects.get_children():
-		effect.expire()
-	for dn in $DamageNumberManager.get_children():
-		dn.queue_free()
-	for item in $Items.get_children():
-		item.load()
-		item.connect("slottable_updated", self, "update_stats")
-	update_stats()
+	if save_path != "" and ResourceLoader.exists(save_path):
+		for effect in $Effects.get_children():
+			effect.expire()
+		for dn in $DamageNumberManager.get_children():
+			dn.queue_free()
+		for item in $Items.get_children():
+			item.load()
+			item.connect("slottable_updated", self, "update_stats")
+		update_stats()
 
 func save_and_exit():
 	for effect in $Effects.get_children():
