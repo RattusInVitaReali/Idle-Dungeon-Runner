@@ -189,11 +189,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/DamageNumbers/DamageNumberManager.gd"
 }, {
-"base": "Effect",
-"class": "Decimated",
-"language": "GDScript",
-"path": "res://Effects/Decimated/Decimated.gd"
-}, {
 "base": "Zone",
 "class": "Desert",
 "language": "GDScript",
@@ -579,11 +574,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Quests/QuestResource.gd"
 }, {
-"base": "Effect",
-"class": "Quick",
-"language": "GDScript",
-"path": "res://Effects/Quick/Quick.gd"
-}, {
 "base": "Skill",
 "class": "Quickness",
 "language": "GDScript",
@@ -851,7 +841,6 @@ _global_script_class_icons={
 "Crown": "",
 "DamageNumberLabel": "",
 "DamageNumberManager": "",
-"Decimated": "",
 "Desert": "",
 "Effect": "",
 "EffectIcon": "",
@@ -929,7 +918,6 @@ _global_script_class_icons={
 "Protected": "",
 "Quest": "",
 "QuestResource": "",
-"Quick": "",
 "Quickness": "",
 "Quickslash": "",
 "RandomScript": "",
