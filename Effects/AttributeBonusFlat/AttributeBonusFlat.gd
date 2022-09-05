@@ -4,6 +4,9 @@ class_name AttributeBonusFlat
 var amount = 0
 var attribute : String
 
+func get_value():
+	return str(amount)
+
 func amount(_amount):
 	amount = _amount
 	if amount > 0:
