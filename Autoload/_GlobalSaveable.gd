@@ -17,7 +17,7 @@ func load():
 		for prop in instance.get_property_list():
 			if prop.usage == 8199: # EXPORT VAR
 				if prop.type in [18, 19]:
-					set(prop.name, instance.get(prop.name).duplicate())
+					set(prop.name, instance.get(prop.name).duplicate(true))
 				else:
 					set(prop.name, instance.get(prop.name))
 		instance.queue_free()

@@ -19,6 +19,8 @@
 [sub_resource type="Resource" id=5]
 script = ExtResource( 13 )
 chance = 0.3
+min_level = 0
+max_level = 1000
 global_resource = 0
 base_min_quantity = 2
 base_max_quantity = 3
@@ -26,6 +28,8 @@ base_max_quantity = 3
 [sub_resource type="Resource" id=6]
 script = ExtResource( 11 )
 chance = 0.2
+min_level = 0
+max_level = 1000
 material = ExtResource( 12 )
 base_min_quantity = 1
 base_max_quantity = 2
@@ -33,6 +37,8 @@ base_max_quantity = 2
 [sub_resource type="Resource" id=7]
 script = ExtResource( 11 )
 chance = 0.2
+min_level = 0
+max_level = 1000
 material = ExtResource( 9 )
 base_min_quantity = 1
 base_max_quantity = 2
@@ -40,6 +46,8 @@ base_max_quantity = 2
 [sub_resource type="Resource" id=8]
 script = ExtResource( 11 )
 chance = 0.2
+min_level = 0
+max_level = 1000
 material = ExtResource( 10 )
 base_min_quantity = 1
 base_max_quantity = 2
@@ -47,6 +55,8 @@ base_max_quantity = 2
 [sub_resource type="Resource" id=9]
 script = ExtResource( 11 )
 chance = 0.2
+min_level = 0
+max_level = 1000
 material = ExtResource( 7 )
 base_min_quantity = 1
 base_max_quantity = 2

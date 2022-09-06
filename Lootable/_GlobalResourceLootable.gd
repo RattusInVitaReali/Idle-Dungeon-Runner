@@ -3,7 +3,7 @@ class_name GlobalResourceLootable
 
 const GlobalResourceSlottable = preload("res://Slottable/GlobalResourceSlottable/GlobalResourceSlottable.tscn")
 
-export (GlobalResourcesScript.GLOBAL_RESOURCES) var global_resource
+export (GlobalResources.GR) var global_resource
 export (int) var base_min_quantity = 1
 export (int) var base_max_quantity = 1
 
@@ -15,8 +15,11 @@ func get_loot():
 
 func set_level(_level):
 	.set_level(_level)
-	min_quantity = int(base_min_quantity * (1 + level / 2))
-	max_quantity = int(base_max_quantity * (1 + level / 2))
+	set_quantity(level)
+
+func set_quantity(level):
+	min_quantity = max(base_min_quantity, int(ceil(float(base_min_quantity) * sqrt(1 + level) - base_min_quantity)))
+	max_quantity = max(base_max_quantity, int(ceil(float(base_max_quantity) * sqrt(1 + level) - base_max_quantity)))
 
 func get_quantity():
 	return min_quantity + Random.rng.randi() % (max_quantity - min_quantity + 1)

@@ -2,17 +2,11 @@ extends Slottable
 class_name Skill
 
 enum SKILL_TAGS { PHYSICAL, MAGIC, ATTACK, CAST_ON_SELF }
-enum UPGRADE_REQS { LOTUS, SKILL_POINT }
 
 const BorderTexture1 = preload("res://_Resources/skill_borders/Border3.png")
 const BorderTexture2 = preload("res://_Resources/skill_borders/Border4.png")
 const BorderTexture3 = preload("res://_Resources/skill_borders/Border5.png")
 const BorderTexture4 = preload("res://_Resources/skill_borders/Border6.png")
-
-const req_type_vars = {
-	UPGRADE_REQS.LOTUS : "SKILL_LOTUSES",
-	UPGRADE_REQS.SKILL_POINT : "SKILL_POINTS"
-}
 
 signal play_animation
 
@@ -77,17 +71,17 @@ func get_upgrade_reqs():
 	else:
 		lotuses = 0
 	return {
-		UPGRADE_REQS.LOTUS : lotuses,
-		UPGRADE_REQS.SKILL_POINT : skill_points
+		GlobalResources.GR.SKILL_LOTUS : lotuses,
+		GlobalResources.GR.SKILL_POINT : skill_points
 	}
 
 func try_to_upgrade():
 	var reqs = get_upgrade_reqs()
 	for req in reqs:
-		if reqs[req] > GlobalResources.get(req_type_vars[req]):
+		if reqs[req] > GlobalResources.get_gr_quantity(req):
 			return
 	for req in reqs:
-		GlobalResources.set(req_type_vars[req], GlobalResources.get(req_type_vars[req]) - reqs[req])
+		GlobalResources.spend_gr(req, reqs[req])
 	level_up()
 
 func set_level(_level):

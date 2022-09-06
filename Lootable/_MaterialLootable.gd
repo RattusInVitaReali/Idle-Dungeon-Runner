@@ -18,8 +18,8 @@ func set_level(_level):
 	set_quantity(level)
 
 func set_quantity(level):
-	min_quantity = max(base_max_quantity, int(ceil(base_min_quantity * sqrt(1 + level) - base_min_quantity)))
-	max_quantity = max(base_min_quantity, int(ceil(base_max_quantity * sqrt(1 + level) - base_max_quantity)))
+	min_quantity = max(base_min_quantity, int(ceil(base_min_quantity * sqrt(1 + level) - base_min_quantity)))
+	max_quantity = max(base_max_quantity, int(ceil(base_max_quantity * sqrt(1 + level) - base_max_quantity)))
 
 func get_quantity():
 	return max(1, int(round(Random.rng.randf_range(min_quantity, max_quantity))))

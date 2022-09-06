@@ -5,6 +5,8 @@
 [resource]
 script = ExtResource( 1 )
 chance = 1.0
+min_level = 0
+max_level = 1000
 global_resource = 0
 base_min_quantity = 1
 base_max_quantity = 1

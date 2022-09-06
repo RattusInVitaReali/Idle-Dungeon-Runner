@@ -1,32 +1,37 @@
 extends GlobalSaveable
 class_name GlobalResourcesScript
 
-enum GLOBAL_RESOURCES {
-	SKILL_LOTUSES
-	SKILL_POINTS
-	BASIC_SPELLSTONE
-	COMMON_SPELLSTONE
-	UNCOMMON_SPELLSTONE
-	RARE_SPELLSTONE
-	EPIC_SPELLSTONE
-	LEGENDARY_SPELLSTONE
+signal global_resource_changed
+
+enum GR {
+	SKILL_LOTUS,
+	SKILL_POINT,
+	SPELLSTONE_BASIC,
+	SPELLSTONE_COMMON,
+	SPELLSTONE_UNCOMMON,
+	SPELLSTONE_RARE,
+	SPELLSTONE_EPIC,
+	SPELLSTONE_LEGENDARY
 }
 
-signal skill_lotuses_changed
-signal skill_points_changed
-
-onready var global_resource_icons = {
-	GLOBAL_RESOURCES.SKILL_LOTUSES : preload("res://_Resources/lotus.png"),
-	GLOBAL_RESOURCES.SKILL_POINTS : preload("res://_Resources/SkillIcon.png")
+export (Dictionary) var GLOBAL_RESOURCES = {
+	GR.SKILL_LOTUS:
+		[1000, "Skill Lotus", preload("res://_Resources/lotus.png")],
+	GR.SKILL_POINT:
+		[1000, "Skill Point", preload( "res://_Resources/SkillIcon.png")],
+	GR.SPELLSTONE_BASIC:
+		[0, "Basic Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC367.png")],
+	GR.SPELLSTONE_COMMON:
+		[0, "Common Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC368.png")],
+	GR.SPELLSTONE_UNCOMMON:
+		[0, "Uncommon Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC369.png")],
+	GR.SPELLSTONE_RARE:
+		[0, "Rare Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC370.png")],
+	GR.SPELLSTONE_EPIC:
+		[0, "Epic Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC371.png")],
+	GR.SPELLSTONE_LEGENDARY:
+		[0, "Legendary Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC372.png")]
 }
-
-onready var global_resource_vars = {
-	GLOBAL_RESOURCES.SKILL_LOTUSES : "SKILL_LOTUSES",
-	GLOBAL_RESOURCES.SKILL_POINTS : "SKILL_POINTS"
-}
-
-export var SKILL_LOTUSES = 0 setget set_skill_lotuses
-export var SKILL_POINTS = 0 setget set_skill_points
 
 func save_path():
 	return "user://globals.tscn"
@@ -34,18 +39,29 @@ func save_path():
 func _ready():
 	LootManager.connect("item_acquired", self, "_on_item_acquired")
 
-func set_skill_lotuses(new_value):
-	SKILL_LOTUSES = new_value
-	emit_signal("skill_lotuses_changed")
-
-func set_skill_points(new_value):
-	SKILL_POINTS = new_value
-	emit_signal("skill_points_changed")
-
 func _on_item_acquired(item):
 	if item.slottable_type == Slottable.SLOTTABLE_TYPE.GLOBAL_RESOURCE:
 		process_slottable(item)
 		item.queue_free()
 
+func set_gr_quantity(gr, quant):
+	GLOBAL_RESOURCES[gr][0] = quant
+	emit_signal("global_resource_changed", gr)
+
+func get_gr_quantity(gr):
+	return GLOBAL_RESOURCES[gr][0]
+
+func get_gr_name(gr):
+	return GLOBAL_RESOURCES[gr][1]
+
+func get_gr_icon(gr):
+	return GLOBAL_RESOURCES[gr][2]
+
+func gain_gr(gr, amount):
+	set_gr_quantity(gr, get_gr_quantity(gr) + amount)
+
+func spend_gr(gr, amount):
+	set_gr_quantity(gr, get_gr_quantity(gr) - amount)
+
 func process_slottable(slottable):
-	set(global_resource_vars[slottable.global_resource], get(global_resource_vars[slottable.global_resource]) + slottable.quantity)
+	set(slottable.global_resource, get(slottable.global_resource) + slottable.quantity)
