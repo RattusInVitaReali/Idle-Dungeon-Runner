@@ -16,9 +16,9 @@ enum GR {
 
 export (Dictionary) var GLOBAL_RESOURCES = {
 	GR.SKILL_LOTUS:
-		[1000, "Skill Lotus", preload("res://_Resources/lotus.png")],
+		[0, "Skill Lotus", preload("res://_Resources/lotus.png")],
 	GR.SKILL_POINT:
-		[1000, "Skill Point", preload( "res://_Resources/SkillIcon.png")],
+		[0, "Skill Point", preload( "res://_Resources/SkillIcon.png")],
 	GR.SPELLSTONE_BASIC:
 		[0, "Basic Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC367.png")],
 	GR.SPELLSTONE_COMMON:
