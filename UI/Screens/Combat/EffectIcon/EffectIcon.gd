@@ -13,10 +13,14 @@ func _process(delta):
 	$TimeProgress.value = (effect.get_duration_timer().time_left / duration) * 100
 
 func initialize(_effect):
-	if _effect.target.dead:
-		expire()
 	effect = _effect
+	if effect.target.dead:
+		expire()
 	effect.connect("effect_expired", self, "expire")
+	effect.connect("effect_updated", self, "update_effect")
+	update_effect()
+
+func update_effect():
 	if effect.negative:
 		texture = BorderNegative
 	else:
@@ -24,6 +28,7 @@ func initialize(_effect):
 	$TextureRect.texture = effect.icon
 	$Value.text = effect.get_value()
 	duration = effect.duration
+
 
 func expire():
 	set_process(false)

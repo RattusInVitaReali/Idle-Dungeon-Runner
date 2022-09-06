@@ -21,7 +21,8 @@ func do_skill():
 		.initialize(attacker, target) \
 		.attribute("dexterity") \
 		.amount(amount) \
-		.duration(duration)
+		.duration(duration) \
+		.icon(skill_icon)
 	)
 
 func description():

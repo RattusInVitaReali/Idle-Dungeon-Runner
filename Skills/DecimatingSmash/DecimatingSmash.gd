@@ -33,7 +33,8 @@ func do_skill():
 			.initialize(attacker, target) \
 			.attribute("armor") \
 			.duration(decimated_duration) \
-			.strength(-decimated_strength)
+			.strength(-decimated_strength) \
+			.icon(skill_icon)
 		)
 	)
 

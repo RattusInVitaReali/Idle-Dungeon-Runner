@@ -35,7 +35,5 @@ func do_skill():
 	)
 
 func description():
-	var text = "Deal (" + str(base_damage()) + " + " + str(multiplier() * 100) + "% PD) = " + str(calculate_damage()) + " physical damage to your enemy."
-	text += " This skill deals " + str(bleeding_or_poisoned_damage_multi * 100) + "% damage if the target is bleeding or poisoned, or "
-	text += str(bleeding_and_posioned_damage_multi) + "% damage if the target is both bleeding and poisoned."
+	var text = "Deal (" + str(base_damage()) + " + " + str(multiplier() * 100) + "% PD) = " + str(calculate_damage()) + " physical damage to your enemy." + " This skill deals " + str(bleeding_or_poisoned_damage_multi * 100) + "% damage if the target is bleeding or poisoned, or " + str(bleeding_and_posioned_damage_multi * 100) + "% damage if the target is both bleeding and poisoned."
 	return text

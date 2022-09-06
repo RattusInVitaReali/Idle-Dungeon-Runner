@@ -5,6 +5,8 @@ const IconPositive = preload("res://_Resources/icons2/image_part_033.png")
 const IconNegative = preload("res://_Resources/icons2/image_part_034.png")
 
 signal effect_expired
+# warning-ignore:unused_signal
+signal effect_updated
 
 export (Texture) var icon
 export (String) var effect_name

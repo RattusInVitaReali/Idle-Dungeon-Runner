@@ -199,6 +199,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/DamageNumbers/DamageNumberManager.gd"
 }, {
+"base": "Skill",
+"class": "DefensiveStrike",
+"language": "GDScript",
+"path": "res://Skills/DefensiveStrike/DefensiveStrike.gd"
+}, {
 "base": "Zone",
 "class": "Desert",
 "language": "GDScript",
@@ -514,6 +519,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://ItemParts/Armor/_Pants/Overpants/Overpants.gd"
 }, {
+"base": "Skill",
+"class": "Overpower",
+"language": "GDScript",
+"path": "res://Skills/Overpower/Overpower.gd"
+}, {
 "base": "Item",
 "class": "Pants",
 "language": "GDScript",
@@ -633,6 +643,11 @@ _global_script_classes=[ {
 "class": "ScreenMeasurerScript",
 "language": "GDScript",
 "path": "res://Autoload/ScreenMeasurer.gd"
+}, {
+"base": "Effect",
+"class": "Shielded",
+"language": "GDScript",
+"path": "res://Effects/Shielded/Shielded.gd"
 }, {
 "base": "ItemPart",
 "class": "Shinguards",
@@ -853,6 +868,7 @@ _global_script_class_icons={
 "Crown": "",
 "DamageNumberLabel": "",
 "DamageNumberManager": "",
+"DefensiveStrike": "",
 "Desert": "",
 "Effect": "",
 "EffectIcon": "",
@@ -916,6 +932,7 @@ _global_script_class_icons={
 "Orc": "",
 "Ornament": "",
 "Overpants": "",
+"Overpower": "",
 "Pants": "",
 "PantsLining": "",
 "PartCompareInspector": "",
@@ -940,6 +957,7 @@ _global_script_class_icons={
 "SaverScript": "",
 "Screen": "",
 "ScreenMeasurerScript": "",
+"Shielded": "",
 "Shinguards": "",
 "Shoulders": "",
 "Sideguards": "",

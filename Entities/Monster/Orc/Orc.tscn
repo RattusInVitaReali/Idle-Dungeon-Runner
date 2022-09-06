@@ -7,7 +7,7 @@
 [ext_resource path="res://Entities/Monster/Orc/_Loot/51_IronAxeHead.tres" type="Resource" id=5]
 [ext_resource path="res://Entities/Monster/Orc/_Loot/51_OakAxeHandle.tres" type="Resource" id=6]
 [ext_resource path="res://Entities/Monster/Orc/_Loot/51_OrcAxe.tres" type="Resource" id=7]
-[ext_resource path="res://Skills/BasicAttack/BasicAttack.tscn" type="PackedScene" id=48]
+[ext_resource path="res://Skills/Overpower/Overpower.tscn" type="PackedScene" id=8]
 
 [node name="Orc" instance=ExtResource( 1 )]
 frames = ExtResource( 3 )
@@ -32,4 +32,4 @@ base_name = "Orc"
 base_loot = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
 monster_types = [ 2 ]
 
-[node name="BasicAttack" parent="Skills" index="0" instance=ExtResource( 48 )]
+[node name="Overpower" parent="Skills" index="0" instance=ExtResource( 8 )]

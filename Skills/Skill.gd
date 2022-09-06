@@ -71,9 +71,9 @@ func get_upgrade_reqs():
 	var skill_points = 1
 	var lotuses = 0
 	if level >= 10:
-		lotuses = level * 6
+		lotuses = round(3 * pow(level, 1.5))
 	elif level >= 5:
-		lotuses = level * 4
+		lotuses = level * 10
 	else:
 		lotuses = 0
 	return {
