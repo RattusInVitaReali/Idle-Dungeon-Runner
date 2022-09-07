@@ -48,9 +48,9 @@ anchor_bottom = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 100.0
-margin_top = 200.0
+margin_top = 100.0
 margin_right = -100.0
-margin_bottom = -250.0
+margin_bottom = -300.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
@@ -213,20 +213,20 @@ size_flags_vertical = 3
 [node name="Stats" type="ScrollContainer" parent="Panel/VBoxContainer"]
 margin_top = 607.0
 margin_right = 840.0
-margin_bottom = 1327.0
+margin_bottom = 1377.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="StatsContainer" type="VBoxContainer" parent="Panel/VBoxContainer/Stats"]
 margin_right = 840.0
-margin_bottom = 720.0
+margin_bottom = 770.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Line4" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_top = 1331.0
+margin_top = 1381.0
 margin_right = 840.0
-margin_bottom = 1346.0
+margin_bottom = 1396.0
 
 [node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line4"]
 margin_right = 100.0
@@ -251,9 +251,9 @@ rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 3
 
 [node name="Special" type="Label" parent="Panel/VBoxContainer"]
-margin_top = 1350.0
+margin_top = 1400.0
 margin_right = 840.0
-margin_bottom = 1410.0
+margin_bottom = 1460.0
 custom_fonts/font = SubResource( 4 )
 text = "Special"
 align = 1

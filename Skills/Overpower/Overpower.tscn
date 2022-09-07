@@ -12,4 +12,3 @@ skill_name = "Overpower"
 skill_icon = ExtResource( 3 )
 melee = true
 tags = [ 0, 2 ]
-level = 1

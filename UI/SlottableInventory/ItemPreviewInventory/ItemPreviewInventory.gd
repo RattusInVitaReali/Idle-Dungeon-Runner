@@ -7,5 +7,8 @@ func set_item(_item):
 	item = _item
 	update_inventory()
 
+func update_inventory():
+	.update_inventory()
+
 func get_items_container():
 	return item

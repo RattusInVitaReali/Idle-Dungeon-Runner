@@ -155,6 +155,7 @@ func tier_down():
 
 func dismantle(var parent_quantity = 1):
 	remove_child(mat)
+	mat.quantity = cost # "TemProARy" fix for stupid ass dismantling previously equipped items bug 
 	mat.quantity = int(mat.quantity / 2) * parent_quantity * max(1, quantity)
 	mat.quantity *= pow(5, mat.tier)
 	mat.set_mat(mat.mat, 0, mat.quantity)

@@ -12,8 +12,7 @@ const FrameUncommon = preload("res://_Resources/gui_images/Frame_Uncommon.png")
 const FrameRare = preload("res://_Resources/gui_images/Frame_Rare.png")
 const FrameEpic = preload("res://_Resources/gui_images/Frame_Epic.png")
 
-export var gear = false
-export var upgrade = false
+export var hide_inspector_buttons = false
 export var hide_quantity = false
 export var delete_on_slottable_removed = true 
 

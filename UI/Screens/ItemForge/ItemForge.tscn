@@ -196,7 +196,7 @@ margin_left = 93.0
 margin_right = 343.0
 margin_bottom = 250.0
 rect_min_size = Vector2( 250, 250 )
-upgrade = true
+hide_inspector_buttons = true
 hide_quantity = true
 delete_on_slottable_removed = false
 

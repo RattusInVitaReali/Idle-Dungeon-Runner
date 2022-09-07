@@ -50,5 +50,5 @@ func do_skill():
 	)
 
 func description():
-	var text = "Deal (" + str(base_damage()) + " + " + str(multiplier() * 100) + "% PD) = " + str(calculate_damage()) + " physical damage to your enemy."
+	var text = "Deal (" + str(base_damage()) + " + " + str(multiplier() * 100) + "% PD) = " + str(calculate_damage()) + " physical damage to your enemy and steal " + str(calculate_overpower()) + " power from them for " + str(overpower_duration) + " seconds."
 	return text

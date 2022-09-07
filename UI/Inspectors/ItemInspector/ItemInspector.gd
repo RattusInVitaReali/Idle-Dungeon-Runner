@@ -15,6 +15,15 @@ onready var dismantle_button = $Panel/VBoxContainer/Buttons/Dismantle
 
 var signal_name = "equip"
 
+var inventory = false
+
+func set_slot(_slot):
+	.set_slot(_slot)
+	if slot is InventorySlot:
+		inventory_variant()
+	if slot.hide_inspector_buttons:
+		hide_buttons()
+
 func set_slottable(_slottable):
 	.set_slottable(_slottable)
 	update_parts()
@@ -29,14 +38,12 @@ func update_parts():
 	p.erase(p.length() - 3, 3)
 	parts.text = p
 
-func gear_variant():
-	.gear_variant()
+func inventory_variant():
 	signal_name = "unequip"
 	button_label.text = "Unequip"
 	dismantle_button.hide()
 
-func upgrade_variant():
-	.upgrade_variant()
+func hide_buttons():
 	buttons_line.hide()
 	buttons_container.hide()
 
@@ -46,7 +53,7 @@ func _on_Equip_pressed():
 
 
 func _on_Upgrade_pressed():
-	if gear:
+	if inventory:
 		emit_signal("upgrade", slottable)
 	else:
 		emit_signal("upgrade", slottable.split(1))

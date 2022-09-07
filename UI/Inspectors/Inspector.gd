@@ -16,25 +16,12 @@ onready var tier_line = $Panel/VBoxContainer/Line1
 var slot : Slot
 var slottable : Slottable
 
-var gear = false
-var upgrade = false
-
 func set_slot(_slot):
 	slot = _slot
 	if slot == null:
 		set_slottable(null)
 		return
-	if slot.gear:
-		gear_variant()
-	if slot.upgrade:
-		upgrade_variant()
 	set_slottable(slot.slottable)
-
-func gear_variant():
-	gear = true
-
-func upgrade_variant():
-	upgrade = true
 
 func set_slottable(_slottable):
 	slottable = _slottable
