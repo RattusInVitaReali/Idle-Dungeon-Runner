@@ -3,13 +3,24 @@ class_name SlottableIcon
 
 const Locked = preload("res://_Resources/skill_icons/lock.png")
 
+var inventory_icon = null
+var gear = false
+
+func inventory_icon(_inventory_icon):
+	gear = true
+	inventory_icon = _inventory_icon
+
 func set_slottable(var slottable : Slottable):
 	for child in get_children():
 		remove_child(child)
 		child.queue_free()
 	if slottable == null:
-		texture = null
-		modulate = Color(1, 1, 1, 1)
+		if gear:
+			texture = inventory_icon
+			modulate = Color(1, 1, 1, 0.2)
+		else:
+			texture = null
+			modulate = Color(1, 1, 1, 1)
 		return
 	match slottable.slottable_type:
 		Slottable.SLOTTABLE_TYPE.ITEM:

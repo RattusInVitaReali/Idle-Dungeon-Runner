@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Slot/Slot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Slot/InventorySlot/InventorySlot.gd" type="Script" id=2]
+
+[node name="InventorySlot" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+gear = true
+hide_quantity = true
+delete_on_slottable_removed = false
+item_subtype = 0

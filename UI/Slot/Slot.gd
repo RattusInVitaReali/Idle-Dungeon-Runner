@@ -15,6 +15,7 @@ const FrameEpic = preload("res://_Resources/gui_images/Frame_Epic.png")
 export var gear = false
 export var upgrade = false
 export var hide_quantity = false
+export var delete_on_slottable_removed = true 
 
 var slottable = null
 
@@ -24,21 +25,15 @@ onready var selection = $Background/Selection
 onready var tier_stars = $Background/TierStars
 onready var button = $Background/Button
 
-func try_to_add_slottable(_slottable):
-	if slottable == null:
-		set_slottable(_slottable)
-		return slottable
-	return null
-
 func set_slottable(_slottable):
 	if slottable != null:
 		slottable.disconnect("slottable_updated", self, "update_slot")
-		if !gear and !upgrade:
+		if delete_on_slottable_removed:
 			slottable.disconnect("tree_exited", self, "_on_slottable_tree_exited")
 	slottable = _slottable
 	if slottable != null:
 		slottable.connect("slottable_updated", self, "update_slot")
-		if !gear and !upgrade:
+		if delete_on_slottable_removed:
 			slottable.connect("tree_exited", self, "_on_slottable_tree_exited")
 	update_slot()
 
@@ -68,7 +63,7 @@ func update_slot():
 				$Background.texture = FrameRare
 			CraftingManager.RARITY.EPIC:
 				$Background.texture = FrameEpic
-		if !(gear or upgrade or hide_quantity):
+		if !hide_quantity:
 			quantity.text = str(slottable.quantity)
 			quantity.visible = true
 		for tier_star in tier_stars.get_children():
