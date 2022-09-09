@@ -62,18 +62,44 @@ func get_cooldown_timer():
 	return $Cooldown
 
 func get_upgrade_reqs():
-	var skill_points = 1
-	var lotuses = 0
-	if level >= 10:
-		lotuses = round(3 * pow(level, 1.5))
-	elif level >= 5:
-		lotuses = level * 10
-	else:
-		lotuses = 0
 	return {
-		GlobalResources.GR.SKILL_LOTUS : lotuses,
-		GlobalResources.GR.SKILL_POINT : skill_points
+		GlobalResources.GR.SKILL_LOTUS : get_skill_lotuses(),
+		GlobalResources.GR.SKILL_POINT : get_skill_points(),
+		GlobalResources.GR.SPELLSTONE_BASIC : get_basic_spellstones(),
+		GlobalResources.GR.SPELLSTONE_COMMON : get_common_spellstones(),
+		GlobalResources.GR.SPELLSTONE_UNCOMMON : get_uncommon_spellstones(),
+		GlobalResources.GR.SPELLSTONE_RARE : get_rare_spellstones()
 	}
+
+func get_skill_points():
+	return 1
+
+func get_skill_lotuses():
+	if level >= 10:
+		return round(3 * pow(level, 1.5))
+	elif level >= 5:
+		return level * 10
+	return 0
+
+func get_basic_spellstones():
+	if level % 5 == 0 and level >= 15:
+		return (level - 10) / 5
+	return 0
+
+func get_common_spellstones():
+	if level % 5 == 0 and level >= 25:
+		return (level - 20) / 5
+	return 0
+
+func get_uncommon_spellstones():
+	if level % 5 == 0 and level >= 35:
+		return (level - 30) / 5
+	return 0
+
+func get_rare_spellstones():
+	if level % 5 == 0 and level >= 45:
+		return (level - 40) / 5
+	return 0
 
 func try_to_upgrade():
 	var reqs = get_upgrade_reqs()

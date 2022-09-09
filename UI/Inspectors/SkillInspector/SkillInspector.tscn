@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/Inspectors/Inspector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Inspectors/SkillInspector/SkillInspector.gd" type="Script" id=2]
@@ -14,10 +14,6 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 85
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 40
 font_data = ExtResource( 4 )
 
 [node name="SkillInspector" instance=ExtResource( 1 )]
@@ -99,15 +95,15 @@ margin_bottom = 750.0
 
 [node name="Stats" parent="Panel/VBoxContainer" index="10"]
 margin_top = 754.0
-margin_bottom = 1044.0
+margin_bottom = 1094.0
 
 [node name="StatsContainer" parent="Panel/VBoxContainer/Stats" index="0"]
-margin_bottom = 290.0
+margin_bottom = 340.0
 
 [node name="SkillDescription" type="Label" parent="Panel/VBoxContainer/Stats/StatsContainer" index="0"]
-margin_top = 83.0
+margin_top = 108.0
 margin_right = 840.0
-margin_bottom = 206.0
+margin_bottom = 231.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -118,13 +114,13 @@ valign = 1
 autowrap = true
 
 [node name="Line4" parent="Panel/VBoxContainer" index="11"]
-margin_top = 1048.0
-margin_bottom = 1063.0
+margin_top = 1098.0
+margin_bottom = 1113.0
 
 [node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer" index="12"]
-margin_top = 1067.0
+margin_top = 1117.0
 margin_right = 840.0
-margin_bottom = 1287.0
+margin_bottom = 1337.0
 rect_min_size = Vector2( 0, 220 )
 
 [node name="Upgrade" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="0"]
@@ -161,9 +157,9 @@ align = 1
 valign = 1
 
 [node name="Line7" type="HBoxContainer" parent="Panel/VBoxContainer" index="13"]
-margin_top = 1291.0
+margin_top = 1341.0
 margin_right = 840.0
-margin_bottom = 1306.0
+margin_bottom = 1356.0
 
 [node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line7" index="0"]
 margin_right = 100.0
@@ -188,32 +184,22 @@ rect_min_size = Vector2( 100, 0 )
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" index="14"]
-margin_top = 1310.0
+margin_top = 1360.0
 margin_right = 840.0
-margin_bottom = 1410.0
+margin_bottom = 1460.0
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer" index="0"]
-margin_top = 26.0
-margin_right = 225.0
-margin_bottom = 74.0
-custom_fonts/font = SubResource( 3 )
-text = "Upgrade reqs:"
-valign = 1
-
-[node name="Margin" type="Label" parent="Panel/VBoxContainer/HBoxContainer" index="1"]
-margin_left = 229.0
+[node name="Margin" type="Label" parent="Panel/VBoxContainer/HBoxContainer" index="0"]
 margin_top = 43.0
-margin_right = 616.0
+margin_right = 686.0
 margin_bottom = 57.0
 size_flags_horizontal = 3
 
-[node name="UpgradeReqContainter" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer" index="2"]
-margin_left = 620.0
+[node name="UpgradeReqContainter" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer" index="1"]
+margin_left = 690.0
 margin_right = 840.0
 margin_bottom = 100.0
 
 [node name="UpgradeRequirement" parent="Panel/VBoxContainer/HBoxContainer/UpgradeReqContainter" index="0" instance=ExtResource( 7 )]
-margin_right = 220.0
 
 [node name="Special" parent="Panel/VBoxContainer" index="15"]
 visible = false

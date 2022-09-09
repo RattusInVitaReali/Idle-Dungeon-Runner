@@ -16,6 +16,8 @@ func _ready():
 	CombatProcessor.connect("entered_manual_combat", self, "_on_enter_manual_combat")
 	LootManager.connect("item_acquired", self, "_on_item_acquired")
 	set_level(level)
+	if CraftingManager.debug:
+		set_level(500)
 	play("run")
 	ready = true
 	update_stats()

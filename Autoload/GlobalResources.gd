@@ -38,6 +38,9 @@ func save_path():
 
 func _ready():
 	LootManager.connect("item_acquired", self, "_on_item_acquired")
+	if CraftingManager.debug:
+		for gr in GLOBAL_RESOURCES:
+			GLOBAL_RESOURCES[gr][0] = 10000
 
 func _on_item_acquired(item):
 	if item.slottable_type == Slottable.SLOTTABLE_TYPE.GLOBAL_RESOURCE:
@@ -64,4 +67,4 @@ func spend_gr(gr, amount):
 	set_gr_quantity(gr, get_gr_quantity(gr) - amount)
 
 func process_slottable(slottable):
-	set(slottable.global_resource, get(slottable.global_resource) + slottable.quantity)
+	gain_gr(slottable.global_resource, slottable.quantity)

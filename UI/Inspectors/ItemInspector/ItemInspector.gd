@@ -39,6 +39,7 @@ func update_parts():
 	parts.text = p
 
 func inventory_variant():
+	inventory = true
 	signal_name = "unequip"
 	button_label.text = "Unequip"
 	dismantle_button.hide()

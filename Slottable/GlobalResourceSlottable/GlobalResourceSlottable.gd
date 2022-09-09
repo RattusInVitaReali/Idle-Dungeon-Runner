@@ -1,10 +1,11 @@
 extends Slottable
 class_name GlobalResourceSlottable
 
-export (GlobalResources.GR) var global_resource
+export (GlobalResourcesScript.GR) var global_resource
 
 func from_lootable(lootable):
 	global_resource = lootable.global_resource
+	rarity = lootable.rarity
 	slottable_name = GlobalResources.get_gr_name(global_resource)
 	icon = GlobalResources.get_gr_icon(global_resource)
 	return self
