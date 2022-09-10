@@ -269,6 +269,11 @@ _global_script_classes=[ {
 "language": "NativeScript",
 "path": "res://Addons/godot-git-plugin/git_api.gdns"
 }, {
+"base": "HBoxContainer",
+"class": "GlobalResourceIcon",
+"language": "GDScript",
+"path": "res://UI/Screens/GlobalResourceIcon.gd"
+}, {
 "base": "Lootable",
 "class": "GlobalResourceLootable",
 "language": "GDScript",
@@ -887,6 +892,7 @@ _global_script_class_icons={
 "ForearmProtection": "",
 "Forest": "",
 "GitAPI": "",
+"GlobalResourceIcon": "",
 "GlobalResourceLootable": "",
 "GlobalResourceSlottable": "",
 "GlobalResourcesScript": "",

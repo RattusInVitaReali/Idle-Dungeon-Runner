@@ -6,13 +6,41 @@ const PartInspector = preload("res://UI/Inspectors/PartInspector/PartInspector.t
 const ItemInspector = preload("res://UI/Inspectors/ItemInspector/ItemInspector.tscn")
 const SkillInspector = preload("res://UI/Inspectors/SkillInspector/SkillInspector.tscn")
 
+const GlobalResourceIcon = preload("res://UI/Screens/GlobalResourceIcon.tscn")
+
+export (Array, GlobalResourcesScript.GR) var global_resources
+
+
+var upper
+var resources_background
+var resources_container
+
 var inspector = null
 
 var player : Player = null
 
 func _ready():
+	if has_node("VBoxContainer/Upper"):
+		upper = $VBoxContainer/Upper
+		resources_background = $VBoxContainer/Upper/VBoxContainer/ResourcesBackground
+		resources_container = $VBoxContainer/Upper/VBoxContainer/ResourcesBackground/GridContainer
+		set_global_resources()
 	CombatProcessor.connect("player_spawned", self, "_on_player_spawned")
 	rect_size = ScreenMeasurer.get_screen_size()
+
+func set_global_resources():
+	if global_resources.size() == 0:
+		resources_background.hide()
+		upper.rect_min_size -= Vector2(0, 100)
+		return
+	if global_resources.size() > 4:
+		var extend = 100 * ceil(float(global_resources.size() - 4) / 4)
+		upper.rect_min_size += Vector2(0, extend)
+		resources_background.rect_min_size += Vector2(0, extend)
+	for gr in global_resources:
+		var gr_icon = GlobalResourceIcon.instance()
+		resources_container.add_child(gr_icon)
+		gr_icon.initialize(gr)
 
 func _on_player_spawned(_player):
 	player = _player

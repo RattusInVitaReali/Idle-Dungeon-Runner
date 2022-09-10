@@ -18,7 +18,7 @@ export (Dictionary) var GLOBAL_RESOURCES = {
 	GR.SKILL_LOTUS:
 		[0, "Skill Lotus", preload("res://_Resources/lotus.png")],
 	GR.SKILL_POINT:
-		[0, "Skill Point", preload( "res://_Resources/SkillIcon.png")],
+		[0, "Skill Point", preload("res://_Resources/icons/arrow_diamond.png")],
 	GR.SPELLSTONE_BASIC:
 		[0, "Basic Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC367.png")],
 	GR.SPELLSTONE_COMMON:

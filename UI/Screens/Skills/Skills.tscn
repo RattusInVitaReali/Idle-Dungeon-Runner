@@ -6,6 +6,7 @@
 
 [node name="Skills" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+global_resources = [ 1, 0, 2, 3, 4, 5, 6, 7 ]
 
 [node name="Label" parent="VBoxContainer/Upper/VBoxContainer/Name/TextureRect" index="0"]
 text = "Skills"
