@@ -3,10 +3,10 @@ class_name Skill
 
 enum SKILL_TAGS { PHYSICAL, MAGIC, ATTACK, CAST_ON_SELF }
 
-const BorderTexture1 = preload("res://_Resources/skill_borders/Border3.png")
-const BorderTexture2 = preload("res://_Resources/skill_borders/Border4.png")
-const BorderTexture3 = preload("res://_Resources/skill_borders/Border5.png")
-const BorderTexture4 = preload("res://_Resources/skill_borders/Border6.png")
+const BorderTexture1 = preload("res://RESOURCES/SkillBorders/Border3.png")
+const BorderTexture2 = preload("res://RESOURCES/SkillBorders/Border4.png")
+const BorderTexture3 = preload("res://RESOURCES/SkillBorders/Border5.png")
+const BorderTexture4 = preload("res://RESOURCES/SkillBorders/Border6.png")
 
 signal play_animation
 

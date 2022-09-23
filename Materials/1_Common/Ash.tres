@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 1
-icon_color = Color( 0.921875, 0.76171875, 0.60546875, 1 )
+icon_color = Color( 0.921875, 0.761719, 0.605469, 1 )
 slottable_name = "Ash"
 prefix = "Ash"
 special_weapon = ""
@@ -14,17 +14,17 @@ special_accessory = ""
 type = 2
 rarity = 1
 stats = {
-"power": 8,
-"potency": 0,
-"dexterity": 3,
-"precision": 0,
-"ferocity": 0,
-"mastery": 0,
-"expertise": 0,
 "armor": 8,
-"occult_aversion": 8,
-"vitality": 30,
-"toughess": 0,
-"penetration": 0,
+"dexterity": 3,
+"expertise": 0,
+"ferocity": 0,
 "magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 8,
+"penetration": 0,
+"potency": 0,
+"power": 8,
+"precision": 0,
+"toughess": 0,
+"vitality": 30
 }

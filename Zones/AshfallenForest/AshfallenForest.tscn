@@ -5,15 +5,16 @@
 [ext_resource path="res://Entities/Monster/Golem/GolemFire/GolemFire.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Entities/Monster/Golem/GolemIce/GolemIce.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Entities/Monster/Golem/GolemEarth/GolemEarth.tscn" type="PackedScene" id=5]
-[ext_resource path="res://_Resources/ZoneBackgrounds/AshfallenForest.png" type="Texture" id=6]
+[ext_resource path="res://RESOURCES/ZoneBackgrounds/AshfallenForest.png" type="Texture" id=6]
 [ext_resource path="res://Materials/4_Epic/Mithril.tres" type="Resource" id=7]
 [ext_resource path="res://Materials/4_Epic/Darksteel.tres" type="Resource" id=8]
-[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=9]
+[ext_resource path="res://Lootable/MaterialLootable.gd" type="Script" id=9]
 [ext_resource path="res://Materials/4_Epic/Bloodwood.tres" type="Resource" id=10]
 [ext_resource path="res://Materials/4_Epic/DrakeHide.tres" type="Resource" id=11]
 [ext_resource path="res://Materials/4_Epic/Adamantium.tres" type="Resource" id=12]
 [ext_resource path="res://Materials/4_Epic/Blackwood.tres" type="Resource" id=13]
 [ext_resource path="res://Materials/4_Epic/ChortHide.tres" type="Resource" id=14]
+
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 9 )

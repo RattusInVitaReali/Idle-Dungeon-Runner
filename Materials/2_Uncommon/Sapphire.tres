@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 2
-icon_color = Color( 0.03515625, 0.09375, 0.71875, 1 )
+icon_color = Color( 0.0351563, 0.09375, 0.71875, 1 )
 slottable_name = "Sapphire"
 prefix = "Sapphire"
 special_weapon = ""
@@ -14,17 +14,17 @@ special_accessory = ""
 type = 0
 rarity = 2
 stats = {
-"power": 0,
-"potency": 0,
-"dexterity": 0,
-"precision": 0,
-"ferocity": 0,
-"mastery": 0,
-"expertise": 0,
 "armor": 20,
-"occult_aversion": 20,
-"vitality": 30,
-"toughess": 0,
-"penetration": 0,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
 "magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 20,
+"penetration": 0,
+"potency": 0,
+"power": 0,
+"precision": 0,
+"toughess": 0,
+"vitality": 30
 }

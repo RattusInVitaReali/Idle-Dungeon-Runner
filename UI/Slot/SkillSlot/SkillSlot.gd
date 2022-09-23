@@ -1,8 +1,8 @@
 extends Slot
 class_name SkillSlot
 
-const LockedBorder = preload("res://_Resources/skill_borders/Border3.png")
-const Lock = preload("res://_Resources/skill_icons/lock.png")
+const LockedBorder = preload("res://RESOURCES/SkillBorders/Border3.png")
+const Lock = preload("res://RESOURCES/SkillIcons/Lock.png")
 
 onready var skill_name = $Background/NameBackground/Name
 onready var equipped = $Background/Equipped

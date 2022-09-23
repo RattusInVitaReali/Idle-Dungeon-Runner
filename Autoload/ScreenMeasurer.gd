@@ -12,6 +12,9 @@ func _ready():
 	height = get_viewport().size.y
 	aspect_ratio = width / height
 	screen_scale = width / 1080
+	print("Screen size: ", width, "x", height)
+	print("Aspect ratio: ", aspect_ratio)
+	print("Screen scale:" , screen_scale)
 
 func get_screen_size():
 	return Vector2(1080, height / screen_scale)

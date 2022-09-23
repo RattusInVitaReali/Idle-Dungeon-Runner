@@ -5,11 +5,12 @@
 [ext_resource path="res://Zones/Zone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Zones/BanditBossDungeon/BanditBossDungeon.gd" type="Script" id=4]
 [ext_resource path="res://Entities/Monster/Bandit/BanditBoss/BanditBoss.tscn" type="PackedScene" id=5]
-[ext_resource path="res://_Resources/ZoneBackgrounds/Dungeon.png" type="Texture" id=6]
-[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=7]
+[ext_resource path="res://RESOURCES/ZoneBackgrounds/Dungeon.png" type="Texture" id=6]
+[ext_resource path="res://Lootable/MaterialLootable.gd" type="Script" id=7]
 [ext_resource path="res://Materials/3_Rare/Ruby.tres" type="Resource" id=8]
 [ext_resource path="res://Materials/3_Rare/Titanium.tres" type="Resource" id=9]
 [ext_resource path="res://Materials/3_Rare/Ironbark.tres" type="Resource" id=10]
+
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 7 )

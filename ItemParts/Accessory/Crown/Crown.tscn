@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ItemParts/Accessory/Crown/Crown.gd" type="Script" id=1]
-[ext_resource path="res://_Resources/Items/Accessory/Amulet/ItemAmuletCrown.png" type="Texture" id=2]
-[ext_resource path="res://_Resources/ItemParts/Accessory/Crown.png" type="Texture" id=3]
+[ext_resource path="res://RESOURCES/Items/Accessory/Amulet/ItemAmuletCrown.png" type="Texture" id=2]
+[ext_resource path="res://RESOURCES/ItemParts/Accessory/Crown.png" type="Texture" id=3]
 [ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=4]
-[ext_resource path="res://_Resources/Items/Accessory/Ring/ItemRingCrown.png" type="Texture" id=5]
+[ext_resource path="res://RESOURCES/Items/Accessory/Ring/ItemRingCrown.png" type="Texture" id=5]
+
 
 [node name="Crown" instance=ExtResource( 4 )]
 script = ExtResource( 1 )

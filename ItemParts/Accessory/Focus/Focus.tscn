@@ -2,9 +2,10 @@
 
 [ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ItemParts/Accessory/Focus/Focus.gd" type="Script" id=2]
-[ext_resource path="res://_Resources/Items/Accessory/Amulet/ItemAmuletFocus.png" type="Texture" id=3]
-[ext_resource path="res://_Resources/ItemParts/Accessory/Focus.png" type="Texture" id=4]
-[ext_resource path="res://_Resources/Items/Accessory/Ring/ItemRingFocus.png" type="Texture" id=5]
+[ext_resource path="res://RESOURCES/Items/Accessory/Amulet/ItemAmuletFocus.png" type="Texture" id=3]
+[ext_resource path="res://RESOURCES/ItemParts/Accessory/Focus.png" type="Texture" id=4]
+[ext_resource path="res://RESOURCES/Items/Accessory/Ring/ItemRingFocus.png" type="Texture" id=5]
+
 
 [node name="Focus" instance=ExtResource( 1 )]
 script = ExtResource( 2 )

@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "Arms",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_BodyArmor/Arms/Arms.gd"
+"path": "res://ItemParts/Armor/BODYARMOR/Arms/Arms.gd"
 }, {
 "base": "Zone",
 "class": "AshfallenForest",
@@ -47,17 +47,17 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "AxeHandle",
 "language": "GDScript",
-"path": "res://ItemParts/Weapon/_Axe/AxeHandle/AxeHandle.gd"
+"path": "res://ItemParts/Weapon/AXE/AxeHandle/AxeHandle.gd"
 }, {
 "base": "ItemPart",
 "class": "AxeHead",
 "language": "GDScript",
-"path": "res://ItemParts/Weapon/_Axe/AxeHead/AxeHead.gd"
+"path": "res://ItemParts/Weapon/AXE/AxeHead/AxeHead.gd"
 }, {
 "base": "ItemPart",
 "class": "AxeSecondaryHead",
 "language": "GDScript",
-"path": "res://ItemParts/Weapon/_Axe/AxeSecondaryHead/AxeSecondaryHead.gd"
+"path": "res://ItemParts/Weapon/AXE/AxeSecondaryHead/AxeSecondaryHead.gd"
 }, {
 "base": "Monster",
 "class": "Bandit",
@@ -92,17 +92,17 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "BootCollars",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Boots/BootCollars/BootCollars.gd"
+"path": "res://ItemParts/Armor/BOOTS/BootCollars/BootCollars.gd"
 }, {
 "base": "ItemPart",
 "class": "BootLining",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Boots/BootLining/BootLining.gd"
+"path": "res://ItemParts/Armor/BOOTS/BootLining/BootLining.gd"
 }, {
 "base": "ItemPart",
 "class": "BootProtection",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Boots/BootProtection/BootProtection.gd"
+"path": "res://ItemParts/Armor/BOOTS/BootProtection/BootProtection.gd"
 }, {
 "base": "Item",
 "class": "Boots",
@@ -127,17 +127,17 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "Calfguards",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Boots/Calfguards/Calfguards.gd"
+"path": "res://ItemParts/Armor/BOOTS/Calfguards/Calfguards.gd"
 }, {
 "base": "ItemPart",
 "class": "Chain",
 "language": "GDScript",
-"path": "res://ItemParts/Accessory/_Amulet/Chain/Chain.gd"
+"path": "res://ItemParts/Accessory/AMULET/Chain/Chain.gd"
 }, {
 "base": "ItemPart",
 "class": "Chestplate",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_BodyArmor/Chestplate/Chestplate.gd"
+"path": "res://ItemParts/Armor/BODYARMOR/Chestplate/Chestplate.gd"
 }, {
 "base": "Control",
 "class": "CombatBottom",
@@ -257,17 +257,12 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "ForearmProtection",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Gloves/ForearmProtection/ForearmProtection.gd"
+"path": "res://ItemParts/Armor/GLOVES/ForearmProtection/ForearmProtection.gd"
 }, {
 "base": "Zone",
 "class": "Forest",
 "language": "GDScript",
 "path": "res://Zones/Forest/Forest.gd"
-}, {
-"base": "",
-"class": "GitAPI",
-"language": "NativeScript",
-"path": "res://Addons/godot-git-plugin/git_api.gdns"
 }, {
 "base": "HBoxContainer",
 "class": "GlobalResourceIcon",
@@ -277,7 +272,7 @@ _global_script_classes=[ {
 "base": "Lootable",
 "class": "GlobalResourceLootable",
 "language": "GDScript",
-"path": "res://Lootable/_GlobalResourceLootable.gd"
+"path": "res://Lootable/GlobalResourceLootable.gd"
 }, {
 "base": "Slottable",
 "class": "GlobalResourceSlottable",
@@ -292,12 +287,12 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "GlobalSaveable",
 "language": "GDScript",
-"path": "res://Autoload/_GlobalSaveable.gd"
+"path": "res://Autoload/GlobalSaveable.gd"
 }, {
 "base": "ItemPart",
 "class": "GloveLining",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Gloves/GloveLining/GloveLining.gd"
+"path": "res://ItemParts/Armor/GLOVES/GloveLining/GloveLining.gd"
 }, {
 "base": "Item",
 "class": "Gloves",
@@ -352,7 +347,7 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "HandProtection",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Gloves/HandProtection/HandProtection.gd"
+"path": "res://ItemParts/Armor/GLOVES/HandProtection/HandProtection.gd"
 }, {
 "base": "Modifier",
 "class": "Healthy",
@@ -367,12 +362,12 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "HelmetLining",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Helmet/HelmetLining/HelmetLining.gd"
+"path": "res://ItemParts/Armor/HELMET/HelmetLining/HelmetLining.gd"
 }, {
 "base": "ItemPart",
 "class": "HelmetProtection",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Helmet/HelmetProtection/HelmetProtection.gd"
+"path": "res://ItemParts/Armor/HELMET/HelmetProtection/HelmetProtection.gd"
 }, {
 "base": "Zone",
 "class": "IcyCliffs",
@@ -437,7 +432,7 @@ _global_script_classes=[ {
 "base": "Lootable",
 "class": "ItemLootable",
 "language": "GDScript",
-"path": "res://Lootable/_ItemLootable.gd"
+"path": "res://Lootable/ItemLootable.gd"
 }, {
 "base": "Slottable",
 "class": "ItemPart",
@@ -447,7 +442,7 @@ _global_script_classes=[ {
 "base": "Lootable",
 "class": "ItemPartLootable",
 "language": "GDScript",
-"path": "res://Lootable/_ItemPartLootable.gd"
+"path": "res://Lootable/ItemPartLootable.gd"
 }, {
 "base": "SlottableInventory",
 "class": "ItemPreviewInventory",
@@ -462,7 +457,7 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "Kneepads",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Pants/Kneepads/Kneepads.gd"
+"path": "res://ItemParts/Armor/PANTS/Kneepads/Kneepads.gd"
 }, {
 "base": "Skill",
 "class": "Lacerate",
@@ -492,7 +487,7 @@ _global_script_classes=[ {
 "base": "Lootable",
 "class": "MaterialLootable",
 "language": "GDScript",
-"path": "res://Lootable/_MaterialLootable.gd"
+"path": "res://Lootable/MaterialLootable.gd"
 }, {
 "base": "Resource",
 "class": "MaterialResource",
@@ -512,7 +507,7 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "Neckguard",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Helmet/Neckguard/Neckguard.gd"
+"path": "res://ItemParts/Armor/HELMET/Neckguard/Neckguard.gd"
 }, {
 "base": "Monster",
 "class": "Orc",
@@ -522,12 +517,12 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "Ornament",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Helmet/Ornament/Ornament.gd"
+"path": "res://ItemParts/Armor/HELMET/Ornament/Ornament.gd"
 }, {
 "base": "ItemPart",
 "class": "Overpants",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Pants/Overpants/Overpants.gd"
+"path": "res://ItemParts/Armor/PANTS/Overpants/Overpants.gd"
 }, {
 "base": "Skill",
 "class": "Overpower",
@@ -542,7 +537,7 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "PantsLining",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Pants/PantsLining/PantsLining.gd"
+"path": "res://ItemParts/Armor/PANTS/PantsLining/PantsLining.gd"
 }, {
 "base": "PartInspector",
 "class": "PartCompareInspector",
@@ -627,12 +622,12 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "RingBand",
 "language": "GDScript",
-"path": "res://ItemParts/Accessory/_Ring/RingBand/RingBand.gd"
+"path": "res://ItemParts/Accessory/RING/RingBand/RingBand.gd"
 }, {
 "base": "ItemPart",
 "class": "RingBeads",
 "language": "GDScript",
-"path": "res://ItemParts/Accessory/_Ring/RingBeads/RingBeads.gd"
+"path": "res://ItemParts/Accessory/RING/RingBeads/RingBeads.gd"
 }, {
 "base": "Zone",
 "class": "Ruins",
@@ -662,17 +657,17 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "Shinguards",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Pants/Shinguards/Shinguards.gd"
+"path": "res://ItemParts/Armor/PANTS/Shinguards/Shinguards.gd"
 }, {
 "base": "ItemPart",
 "class": "Shoulders",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_BodyArmor/Shoulders/Shoulders.gd"
+"path": "res://ItemParts/Armor/BODYARMOR/Shoulders/Shoulders.gd"
 }, {
 "base": "ItemPart",
 "class": "Sideguards",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Pants/Sideguards/Sideguards.gd"
+"path": "res://ItemParts/Armor/PANTS/Sideguards/Sideguards.gd"
 }, {
 "base": "Slottable",
 "class": "Skill",
@@ -752,17 +747,17 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "SwordBlade",
 "language": "GDScript",
-"path": "res://ItemParts/Weapon/_Sword/SwordBlade/SwordBlade.gd"
+"path": "res://ItemParts/Weapon/SWORD/SwordBlade/SwordBlade.gd"
 }, {
 "base": "ItemPart",
 "class": "SwordGuard",
 "language": "GDScript",
-"path": "res://ItemParts/Weapon/_Sword/SwordGuard/SwordGuard.gd"
+"path": "res://ItemParts/Weapon/SWORD/SwordGuard/SwordGuard.gd"
 }, {
 "base": "ItemPart",
 "class": "SwordHandle",
 "language": "GDScript",
-"path": "res://ItemParts/Weapon/_Sword/SwordHandle/SwordHandle.gd"
+"path": "res://ItemParts/Weapon/SWORD/SwordHandle/SwordHandle.gd"
 }, {
 "base": "TextureRect",
 "class": "TierStar",
@@ -792,7 +787,7 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "Tunic",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_BodyArmor/Tunic/Tunic.gd"
+"path": "res://ItemParts/Armor/BODYARMOR/Tunic/Tunic.gd"
 }, {
 "base": "TextureRect",
 "class": "UpgradeRequirement",
@@ -802,7 +797,7 @@ _global_script_classes=[ {
 "base": "ItemPart",
 "class": "Visor",
 "language": "GDScript",
-"path": "res://ItemParts/Armor/_Helmet/Visor/Visor.gd"
+"path": "res://ItemParts/Armor/HELMET/Visor/Visor.gd"
 }, {
 "base": "Monster",
 "class": "Wraith",
@@ -891,7 +886,6 @@ _global_script_class_icons={
 "Focus": "",
 "ForearmProtection": "",
 "Forest": "",
-"GitAPI": "",
 "GlobalResourceIcon": "",
 "GlobalResourceLootable": "",
 "GlobalResourceSlottable": "",
@@ -1044,7 +1038,7 @@ window/stretch/aspect="keep"
 
 [gdnative]
 
-singletons=[ "res://Addons/godot-git-plugin/git_api.gdnlib" ]
+singletons=[  ]
 
 [global]
 

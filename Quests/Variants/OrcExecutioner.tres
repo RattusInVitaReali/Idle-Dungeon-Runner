@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Quests/QuestResource.gd" type="Script" id=1]
 [ext_resource path="res://Materials/3_Rare/DirehornHide.tres" type="Resource" id=2]
-[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=3]
+[ext_resource path="res://Lootable/MaterialLootable.gd" type="Script" id=3]
 [ext_resource path="res://Materials/3_Rare/Titanium.tres" type="Resource" id=4]
 
 [sub_resource type="Resource" id=1]

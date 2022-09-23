@@ -1,13 +1,14 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://_Resources/gui_images/RightArrow.png" type="Texture" id=1]
-[ext_resource path="res://_Resources/gui_images/UpArrow.png" type="Texture" id=2]
-[ext_resource path="res://_Resources/gui_images/DownArrow.png" type="Texture" id=3]
-[ext_resource path="res://_Resources/ZoneBackgrounds/Forest.png" type="Texture" id=4]
-[ext_resource path="res://_Resources/gui_images/UI board Small  stone.png" type="Texture" id=5]
-[ext_resource path="res://_Resources/gui_images/UI board Small  parchment.png" type="Texture" id=6]
-[ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://RESOURCES/GuiImages/RightArrow.png" type="Texture" id=1]
+[ext_resource path="res://RESOURCES/GuiImages/UpArrow.png" type="Texture" id=2]
+[ext_resource path="res://RESOURCES/GuiImages/DownArrow.png" type="Texture" id=3]
+[ext_resource path="res://RESOURCES/ZoneBackgrounds/Forest.png" type="Texture" id=4]
+[ext_resource path="res://RESOURCES/GuiImages/StoneBoardSmall.png" type="Texture" id=5]
+[ext_resource path="res://RESOURCES/GuiImages/ParchmentSmall.png" type="Texture" id=6]
+[ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://UI/Screens/Zones/ZoneInfo/ZoneInfo.gd" type="Script" id=8]
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )

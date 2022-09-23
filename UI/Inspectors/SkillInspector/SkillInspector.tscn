@@ -2,10 +2,10 @@
 
 [ext_resource path="res://UI/Inspectors/Inspector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Inspectors/SkillInspector/SkillInspector.gd" type="Script" id=2]
-[ext_resource path="res://_Resources/skill_borders/Border3.png" type="Texture" id=3]
-[ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://_Resources/gui_images/Division line.png" type="Texture" id=5]
-[ext_resource path="res://_Resources/gui_images/UI board Small  parchment.png" type="Texture" id=6]
+[ext_resource path="res://RESOURCES/SkillBorders/Border3.png" type="Texture" id=3]
+[ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://RESOURCES/GuiImages/DivisionLine.png" type="Texture" id=5]
+[ext_resource path="res://RESOURCES/GuiImages/ParchmentSmall.png" type="Texture" id=6]
 [ext_resource path="res://UI/Inspectors/SkillInspector/UpgradeRequirement/UpgradeRequirement.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]

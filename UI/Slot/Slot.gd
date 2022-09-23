@@ -5,12 +5,12 @@ signal inspector
 
 const TierStar = preload("res://UI/Slot/SlotTierStar/SlotTierStar.tscn")
 
-const Frame = preload("res://_Resources/gui_images/Frame.png")
-const FrameBasic = preload("res://_Resources/gui_images/Frame_Basic.png")
-const FrameCommon = preload("res://_Resources/gui_images/Frame_Common.png")
-const FrameUncommon = preload("res://_Resources/gui_images/Frame_Uncommon.png")
-const FrameRare = preload("res://_Resources/gui_images/Frame_Rare.png")
-const FrameEpic = preload("res://_Resources/gui_images/Frame_Epic.png")
+const Frame = preload("res://RESOURCES/GuiImages/Frame.png")
+const FrameBasic = preload("res://RESOURCES/GuiImages/FrameBasic.png")
+const FrameCommon = preload("res://RESOURCES/GuiImages/FrameCommon.png")
+const FrameUncommon = preload("res://RESOURCES/GuiImages/FrameUncommon.png")
+const FrameRare = preload("res://RESOURCES/GuiImages/FrameRare.png")
+const FrameEpic = preload("res://RESOURCES/GuiImages/FrameEpic.png")
 
 export var hide_inspector_buttons = false
 export var hide_quantity = false

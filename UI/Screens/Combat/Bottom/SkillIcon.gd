@@ -1,7 +1,7 @@
 extends TextureRect
 class_name SkillIcon
 
-const lock = preload("res://_Resources/skill_icons/lock.png")
+const lock = preload("res://RESOURCES/SkillIcons/Lock.png")
 
 var skill
 var cooldown

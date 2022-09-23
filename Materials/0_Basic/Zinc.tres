@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 0
-icon_color = Color( 0.0, 0.8359375, 0.6953125, 1 )
+icon_color = Color( 0, 0.835938, 0.695313, 1 )
 slottable_name = "Zinc"
 prefix = "Zinc"
 special_weapon = ""
@@ -14,17 +14,17 @@ special_accessory = ""
 type = 1
 rarity = 0
 stats = {
-"power": 7,
-"potency": 0,
-"dexterity": 7,
-"precision": 7,
-"ferocity": 7,
-"mastery": 0,
-"expertise": 0,
 "armor": 7,
-"occult_aversion": 7,
-"vitality": 25,
-"toughess": 0,
-"penetration": 7,
+"dexterity": 7,
+"expertise": 0,
+"ferocity": 7,
 "magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 7,
+"penetration": 7,
+"potency": 0,
+"power": 7,
+"precision": 7,
+"toughess": 0,
+"vitality": 25
 }

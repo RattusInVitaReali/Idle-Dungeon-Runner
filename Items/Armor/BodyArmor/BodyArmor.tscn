@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Items/Item.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Items/Armor/BodyArmor/BodyArmor.gd" type="Script" id=2]
-[ext_resource path="res://_Resources/icons/armour_silver.png" type="Texture" id=3]
+[ext_resource path="res://RESOURCES/Items/Armor/BodyArmor/BodyArmor.png" type="Texture" id=3]
 
 [node name="BodyArmor" instance=ExtResource( 1 )]
 script = ExtResource( 2 )

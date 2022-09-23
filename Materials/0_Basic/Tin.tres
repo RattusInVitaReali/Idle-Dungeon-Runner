@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 0
-icon_color = Color( 0.87109375, 0.99609375, 0.98828125, 1 )
+icon_color = Color( 0.871094, 0.996094, 0.988281, 1 )
 slottable_name = "Tin"
 prefix = "Tin"
 special_weapon = ""
@@ -14,17 +14,17 @@ special_accessory = ""
 type = 1
 rarity = 0
 stats = {
-"power": 5,
-"potency": 0,
-"dexterity": 0,
-"precision": 5,
-"ferocity": 5,
-"mastery": 0,
-"expertise": 0,
 "armor": 5,
-"occult_aversion": 5,
-"vitality": 20,
-"toughess": 0,
-"penetration": 0,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 5,
 "magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 5,
+"penetration": 0,
+"potency": 0,
+"power": 5,
+"precision": 5,
+"toughess": 0,
+"vitality": 20
 }

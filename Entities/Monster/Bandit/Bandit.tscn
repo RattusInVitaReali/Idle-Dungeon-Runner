@@ -4,12 +4,12 @@
 [ext_resource path="res://Entities/Monster/Monster.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Skills/Lacerate/Lacerate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Entities/Monster/Bandit/Bandit.gd" type="Script" id=4]
-[ext_resource path="res://Entities/Monster/Bandit/_Loot/0_30CopperSwordBlade.tres" type="Resource" id=5]
-[ext_resource path="res://Entities/Monster/Bandit/_Loot/0_BanditSword.tres" type="Resource" id=6]
-[ext_resource path="res://Entities/Monster/Bandit/_Loot/0_OakSwordHandle.tres" type="Resource" id=7]
+[ext_resource path="res://Entities/Monster/Bandit/Loot/0_30CopperSwordBlade.tres" type="Resource" id=5]
+[ext_resource path="res://Entities/Monster/Bandit/Loot/0_BanditSword.tres" type="Resource" id=6]
+[ext_resource path="res://Entities/Monster/Bandit/Loot/0_OakSwordHandle.tres" type="Resource" id=7]
 [ext_resource path="res://Lootable/Experience/Experience.tres" type="Resource" id=8]
-[ext_resource path="res://Entities/Monster/Bandit/_Loot/31_75BronzeSwordBlade.tres" type="Resource" id=9]
-[ext_resource path="res://Entities/Monster/Bandit/_Loot/20_CopperSwordGuard.tres" type="Resource" id=10]
+[ext_resource path="res://Entities/Monster/Bandit/Loot/31_75BronzeSwordBlade.tres" type="Resource" id=9]
+[ext_resource path="res://Entities/Monster/Bandit/Loot/20_CopperSwordGuard.tres" type="Resource" id=10]
 
 [node name="Bandit" instance=ExtResource( 2 )]
 frames = ExtResource( 1 )

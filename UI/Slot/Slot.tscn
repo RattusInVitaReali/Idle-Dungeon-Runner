@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://_Resources/gui_images/Frame.png" type="Texture" id=1]
+[ext_resource path="res://RESOURCES/GuiImages/Frame.png" type="Texture" id=1]
 [ext_resource path="res://UI/Slot/Slot.gd" type="Script" id=2]
-[ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://_Resources/gui_images/selection.png" type="Texture" id=4]
+[ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://RESOURCES/GuiImages/Selection.png" type="Texture" id=4]
 [ext_resource path="res://UI/SlottableIcon/SlottableIcon.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]

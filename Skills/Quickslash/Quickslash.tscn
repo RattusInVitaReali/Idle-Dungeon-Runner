@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Skills/Skill.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skills/Quickslash/Quickslash.gd" type="Script" id=2]
-[ext_resource path="res://_Resources/skill_icons/Icon20.png" type="Texture" id=3]
+[ext_resource path="res://RESOURCES/SkillIcons/Icon20.png" type="Texture" id=3]
+
 
 [node name="Quickslash" instance=ExtResource( 1 )]
 script = ExtResource( 2 )

@@ -1,7 +1,8 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=1]
+[ext_resource path="res://Lootable/MaterialLootable.gd" type="Script" id=1]
 [ext_resource path="res://Materials/0_Basic/Copper.tres" type="Resource" id=2]
+
 
 [resource]
 script = ExtResource( 1 )

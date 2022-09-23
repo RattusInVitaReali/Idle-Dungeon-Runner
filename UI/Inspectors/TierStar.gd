@@ -1,9 +1,9 @@
 extends TextureRect
 class_name TierStar
 
-const Yellow = preload("res://_Resources/icons2/image_part_292.png")
-const Red = preload("res://_Resources/icons2/image_part_289.png")
-const Purple = preload("res://_Resources/icons2/image_part_293.png")
+const Yellow = preload("res://RESOURCES/GuiImages/TierStarYellow.png")
+const Red = preload("res://RESOURCES/GuiImages/TierStarRed.png")
+const Purple = preload("res://RESOURCES/GuiImages/TierStarPurple.png")
 
 const tier_icons = {
 	0 : Yellow,

@@ -1,7 +1,7 @@
 extends TextureRect
 class_name SlottableIcon
 
-const Locked = preload("res://_Resources/skill_icons/lock.png")
+const Locked = preload("res://RESOURCES/SkillIcons/Lock.png")
 
 var inventory_icon = null
 var gear = false

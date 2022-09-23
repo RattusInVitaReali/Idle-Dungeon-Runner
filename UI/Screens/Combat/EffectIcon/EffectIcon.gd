@@ -1,8 +1,8 @@
 extends TextureRect
 class_name EffectIcon
 
-const BorderPositive = preload("res://_Resources/skill_borders/Border5.png")
-const BorderNegative = preload("res://_Resources/skill_borders/Border2.png")
+const BorderPositive = preload("res://RESOURCES/SkillBorders/Border5.png")
+const BorderNegative = preload("res://RESOURCES/SkillBorders/Border2.png")
 
 var effect
 var duration

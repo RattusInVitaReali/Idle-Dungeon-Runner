@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://_Resources/skill_borders/Border3.png" type="Texture" id=1]
-[ext_resource path="res://_Resources/skill_icons/BlackSquare.png" type="Texture" id=2]
-[ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://_Resources/skill_icons/lock.png" type="Texture" id=4]
+[ext_resource path="res://RESOURCES/SkillBorders/Border3.png" type="Texture" id=1]
+[ext_resource path="res://RESOURCES/SkillIcons/BlackSquare.png" type="Texture" id=2]
+[ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://RESOURCES/SkillIcons/Lock.png" type="Texture" id=4]
 [ext_resource path="res://UI/Screens/Combat/Bottom/SkillIcon.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]

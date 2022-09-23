@@ -1,10 +1,11 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/IdleReward/IdleReward.gd" type="Script" id=1]
-[ext_resource path="res://_Resources/gui_images/UI board Small  parchment.png" type="Texture" id=2]
-[ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://RESOURCES/GuiImages/ParchmentSmall.png" type="Texture" id=2]
+[ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://UI/SlottableInventory/SlottableInventory.tscn" type="PackedScene" id=4]
-[ext_resource path="res://_Resources/gui_images/Division line.png" type="Texture" id=5]
+[ext_resource path="res://RESOURCES/GuiImages/DivisionLine.png" type="Texture" id=5]
+
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.317647, 0.317647, 0.317647, 1 )

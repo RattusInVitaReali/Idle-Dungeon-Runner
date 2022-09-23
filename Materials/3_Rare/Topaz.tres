@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 2
-icon_color = Color( 0.65625, 0.83984375, 0.9375, 1 )
+icon_color = Color( 0.65625, 0.839844, 0.9375, 1 )
 slottable_name = "Topaz"
 prefix = "Topaz"
 special_weapon = ""
@@ -14,17 +14,17 @@ special_accessory = ""
 type = 0
 rarity = 3
 stats = {
-"power": 0,
-"potency": 0,
-"dexterity": 0,
-"precision": 0,
-"ferocity": 0,
-"mastery": 0,
-"expertise": 0,
 "armor": 30,
-"occult_aversion": 30,
-"vitality": 30,
-"toughess": 0,
-"penetration": 0,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
 "magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 30,
+"penetration": 0,
+"potency": 0,
+"power": 0,
+"precision": 0,
+"toughess": 0,
+"vitality": 30
 }

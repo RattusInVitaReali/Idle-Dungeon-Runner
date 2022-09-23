@@ -4,8 +4,9 @@
 [ext_resource path="res://Modifiers/Strong/Strong.tres" type="Resource" id=2]
 [ext_resource path="res://Entities/Monster/Orc/Orc.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Zones/Desert/Desert.gd" type="Script" id=4]
-[ext_resource path="res://_Resources/ZoneBackgrounds/BetterDesert.png" type="Texture" id=5]
+[ext_resource path="res://RESOURCES/ZoneBackgrounds/BetterDesert.png" type="Texture" id=5]
 [ext_resource path="res://Quests/Variants/BanditHunter.tres" type="Resource" id=6]
+
 
 [node name="Desert" instance=ExtResource( 1 )]
 script = ExtResource( 4 )

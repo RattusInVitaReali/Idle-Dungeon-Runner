@@ -1,8 +1,8 @@
 extends Node2D
 class_name Effect
 
-const IconPositive = preload("res://_Resources/icons2/image_part_033.png")
-const IconNegative = preload("res://_Resources/icons2/image_part_034.png")
+const IconPositive = preload("res://RESOURCES/Effects/BaseNegative.png")
+const IconNegative = preload("res://RESOURCES/Effects/BasePositive.png")
 
 signal effect_expired
 # warning-ignore:unused_signal

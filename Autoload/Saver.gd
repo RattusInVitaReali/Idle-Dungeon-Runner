@@ -7,7 +7,7 @@ func _ready():
 	get_tree().set_auto_accept_quit(false)
 
 func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+	if what in [MainLoop.NOTIFICATION_WM_QUIT_REQUEST, MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST]:
 		for saveable in save_on_exit:
 			saveable.save_and_exit()
 		get_tree().quit()

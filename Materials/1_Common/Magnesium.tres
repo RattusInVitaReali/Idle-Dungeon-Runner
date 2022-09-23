@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 0
-icon_color = Color( 0.66796875, 0.8203125, 0.8359375, 1 )
+icon_color = Color( 0.667969, 0.820313, 0.835938, 1 )
 slottable_name = "Magnesium"
 prefix = "Magnesium"
 special_weapon = ""
@@ -14,17 +14,17 @@ special_accessory = ""
 type = 1
 rarity = 1
 stats = {
-"power": 5,
-"potency": 0,
-"dexterity": 15,
-"precision": 15,
-"ferocity": 15,
-"mastery": 0,
-"expertise": 0,
 "armor": 5,
-"occult_aversion": 5,
-"vitality": 15,
-"toughess": 0,
-"penetration": 15,
+"dexterity": 15,
+"expertise": 0,
+"ferocity": 15,
 "magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 5,
+"penetration": 15,
+"potency": 0,
+"power": 5,
+"precision": 15,
+"toughess": 0,
+"vitality": 15
 }

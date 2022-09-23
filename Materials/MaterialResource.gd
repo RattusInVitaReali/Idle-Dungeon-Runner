@@ -4,10 +4,10 @@ class_name MaterialResource
 enum ICON_TEXTURE { INGOT, LOG, CLUMP, LEATHER }
 
 const icon_texture_dict = {
-	ICON_TEXTURE.INGOT : preload("res://_Resources/Materials/Ingot.png"),
-	ICON_TEXTURE.LOG : preload("res://_Resources/Materials/Log.png"),
-	ICON_TEXTURE.CLUMP : preload("res://_Resources/Materials/Clump.png"),
-	ICON_TEXTURE.LEATHER : preload("res://_Resources/Materials/Leather.png")
+	ICON_TEXTURE.INGOT : preload("res://RESOURCES/Materials/Ingot.png"),
+	ICON_TEXTURE.LOG : preload("res://RESOURCES/Materials/Log.png"),
+	ICON_TEXTURE.CLUMP : preload("res://RESOURCES/Materials/Clump.png"),
+	ICON_TEXTURE.LEATHER : preload("res://RESOURCES/Materials/Leather.png")
 }
 
 export (ICON_TEXTURE) var icon_texture

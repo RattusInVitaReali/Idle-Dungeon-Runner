@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 1
-icon_color = Color( 0.31640625, 0.25390625, 0.1953125, 1 )
+icon_color = Color( 0.316406, 0.253906, 0.195313, 1 )
 slottable_name = "Ebony"
 prefix = "Ebony"
 special_weapon = ""
@@ -14,17 +14,17 @@ special_accessory = ""
 type = 2
 rarity = 2
 stats = {
-"power": 10,
-"potency": 0,
-"dexterity": 5,
-"precision": 0,
-"ferocity": 0,
-"mastery": 0,
-"expertise": 0,
 "armor": 10,
-"occult_aversion": 10,
-"vitality": 40,
-"toughess": 0,
-"penetration": 0,
+"dexterity": 5,
+"expertise": 0,
+"ferocity": 0,
 "magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 10,
+"penetration": 0,
+"potency": 0,
+"power": 10,
+"precision": 0,
+"toughess": 0,
+"vitality": 40
 }

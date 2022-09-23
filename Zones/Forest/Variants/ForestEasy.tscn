@@ -5,8 +5,8 @@
 [ext_resource path="res://Materials/0_Basic/Oak.tres" type="Resource" id=3]
 [ext_resource path="res://Materials/0_Basic/Copper.tres" type="Resource" id=4]
 [ext_resource path="res://Materials/0_Basic/Cedar.tres" type="Resource" id=5]
-[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=6]
-[ext_resource path="res://Lootable/_GlobalResourceLootable.gd" type="Script" id=7]
+[ext_resource path="res://Lootable/MaterialLootable.gd" type="Script" id=6]
+[ext_resource path="res://Lootable/GlobalResourceLootable.gd" type="Script" id=7]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 6 )

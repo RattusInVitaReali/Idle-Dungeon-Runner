@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ItemParts/Weapon/AXE/AxeHead/AxeHead.gd" type="Script" id=2]
+[ext_resource path="res://RESOURCES/Items/Weapon/Axe/ItemAxeHead.png" type="Texture" id=3]
+[ext_resource path="res://RESOURCES/ItemParts/Weapon/Axe/AxeHead.png" type="Texture" id=4]
+
+[node name="AxeHead" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+unlock_zone_name = "Medium Forest"
+unlock_signal_level = 75
+base_icon = ExtResource( 4 )
+item_icon = ExtResource( 3 )
+type = 8
+cost = 40
+allowed_material_types = [ 1, 2 ]
+description = "Head for battle axes."
+stat_multipliers = {
+"armor": 0.0,
+"dexterity": 0.5,
+"expertise": 1.0,
+"ferocity": 1.0,
+"magic_penetration": 0.75,
+"mastery": 1.0,
+"occult_aversion": 0.0,
+"penetration": 0.75,
+"potency": 3.0,
+"power": 3.0,
+"precision": 1.0,
+"toughess": 0.0,
+"vitality": 0.0
+}

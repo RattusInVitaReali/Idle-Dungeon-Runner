@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 2
-icon_color = Color( 0.9375, 0.75390625, 0.25390625, 1 )
+icon_color = Color( 0.9375, 0.753906, 0.253906, 1 )
 slottable_name = "Amber"
 prefix = "Amber"
 special_weapon = ""
@@ -14,17 +14,17 @@ special_accessory = ""
 type = 0
 rarity = 3
 stats = {
-"power": 0,
-"potency": 0,
-"dexterity": 0,
-"precision": 0,
-"ferocity": 0,
-"mastery": 30,
-"expertise": 30,
 "armor": 0,
-"occult_aversion": 0,
-"vitality": 0,
-"toughess": 0,
-"penetration": 30,
+"dexterity": 0,
+"expertise": 30,
+"ferocity": 0,
 "magic_penetration": 0,
+"mastery": 30,
+"occult_aversion": 0,
+"penetration": 30,
+"potency": 0,
+"power": 0,
+"precision": 0,
+"toughess": 0,
+"vitality": 0
 }

@@ -3,18 +3,19 @@
 [ext_resource path="res://Zones/Zone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Zones/Ruins/Ruins.gd" type="Script" id=2]
 [ext_resource path="res://Entities/Monster/Wraith/Wraith2/Wraith2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://_Resources/ZoneBackgrounds/Ruins.png" type="Texture" id=4]
+[ext_resource path="res://RESOURCES/ZoneBackgrounds/Ruins.png" type="Texture" id=4]
 [ext_resource path="res://Modifiers/Strong/Strong.tres" type="Resource" id=5]
 [ext_resource path="res://Quests/Variants/WraithVanquisher.tres" type="Resource" id=6]
 [ext_resource path="res://Materials/2_Uncommon/Sapphire.tres" type="Resource" id=7]
 [ext_resource path="res://Modifiers/Healthy/Healthy.tres" type="Resource" id=8]
 [ext_resource path="res://Materials/2_Uncommon/Emerald.tres" type="Resource" id=9]
 [ext_resource path="res://Materials/2_Uncommon/Jade.tres" type="Resource" id=10]
-[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=11]
+[ext_resource path="res://Lootable/MaterialLootable.gd" type="Script" id=11]
 [ext_resource path="res://Materials/2_Uncommon/Alexandrite.tres" type="Resource" id=12]
-[ext_resource path="res://Lootable/_GlobalResourceLootable.gd" type="Script" id=13]
+[ext_resource path="res://Lootable/GlobalResourceLootable.gd" type="Script" id=13]
 [ext_resource path="res://Entities/Monster/Wraith/Wraith1/Wraith1.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Entities/Monster/Wraith/Wraith3/Wraith3.tscn" type="PackedScene" id=15]
+
 
 [sub_resource type="Resource" id=5]
 script = ExtResource( 13 )

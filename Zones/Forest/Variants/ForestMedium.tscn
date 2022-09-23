@@ -3,12 +3,12 @@
 [ext_resource path="res://Zones/Forest/Forest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Quests/Variants/BanditSlayer.tres" type="Resource" id=2]
 [ext_resource path="res://Materials/1_Common/Bronze.tres" type="Resource" id=3]
-[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=4]
+[ext_resource path="res://Lootable/MaterialLootable.gd" type="Script" id=4]
 [ext_resource path="res://Materials/1_Common/Ash.tres" type="Resource" id=5]
 [ext_resource path="res://Materials/1_Common/Iron.tres" type="Resource" id=6]
 [ext_resource path="res://Materials/1_Common/Pine.tres" type="Resource" id=7]
 [ext_resource path="res://Materials/1_Common/ElkHide.tres" type="Resource" id=8]
-[ext_resource path="res://Lootable/_GlobalResourceLootable.gd" type="Script" id=9]
+[ext_resource path="res://Lootable/GlobalResourceLootable.gd" type="Script" id=9]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 4 )

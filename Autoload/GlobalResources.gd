@@ -16,21 +16,21 @@ enum GR {
 
 export (Dictionary) var GLOBAL_RESOURCES = {
 	GR.SKILL_LOTUS:
-		[0, "Skill Lotus", preload("res://_Resources/lotus.png")],
+		[0, "Skill Lotus", preload("res://RESOURCES/GlobalResources/Lotus.png")],
 	GR.SKILL_POINT:
-		[0, "Skill Point", preload("res://_Resources/icons/arrow_diamond.png")],
+		[0, "Skill Point", preload("res://RESOURCES/GlobalResources/SkillPoint.png")],
 	GR.SPELLSTONE_BASIC:
-		[0, "Basic Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC367.png")],
+		[0, "Basic Spellstone", preload("res://RESOURCES/GlobalResources/SpellstoneBasic.png")],
 	GR.SPELLSTONE_COMMON:
-		[0, "Common Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC368.png")],
+		[0, "Common Spellstone", preload("res://RESOURCES/GlobalResources/SpellstoneCommon.png")],
 	GR.SPELLSTONE_UNCOMMON:
-		[0, "Uncommon Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC369.png")],
+		[0, "Uncommon Spellstone", preload("res://RESOURCES/GlobalResources/SpellstoneUncommon.png")],
 	GR.SPELLSTONE_RARE:
-		[0, "Rare Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC370.png")],
+		[0, "Rare Spellstone", preload("res://RESOURCES/GlobalResources/SpellstoneRare.png")],
 	GR.SPELLSTONE_EPIC:
-		[0, "Epic Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC371.png")],
+		[0, "Epic Spellstone", preload("res://RESOURCES/GlobalResources/SpellstoneEpic.png")],
 	GR.SPELLSTONE_LEGENDARY:
-		[0, "Legendary Spellstone", preload("res://_Resources/Icon sprite sheet/Equipment Icons/EquipmentIconsC372.png")]
+		[0, "Legendary Spellstone", preload("res://RESOURCES/GlobalResources/SpellstoneLegendary.png")]
 }
 
 func save_path():

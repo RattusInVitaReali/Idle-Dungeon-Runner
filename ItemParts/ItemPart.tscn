@@ -1,11 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://ItemParts/ItemPart.gd" type="Script" id=1]
-[ext_resource path="res://_Resources/icons2/image_part_339.png" type="Texture" id=2]
 
 [node name="ItemPart" type="Node2D"]
 script = ExtResource( 1 )
 slottable_type = 1
 progression_unlock_func_name = "unlock_part"
-base_icon = ExtResource( 2 )
-item_icon = ExtResource( 2 )

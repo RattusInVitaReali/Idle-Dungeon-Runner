@@ -1,9 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://_Resources/font/BMYEONSUNG_ttf.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://_Resources/gui_images/UI board Small  parchment.png" type="Texture" id=2]
-[ext_resource path="res://_Resources/lotus.png" type="Texture" id=3]
+[ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://RESOURCES/GuiImages/ParchmentSmall.png" type="Texture" id=2]
+[ext_resource path="res://RESOURCES/GlobalResources/Lotus.png" type="Texture" id=3]
 [ext_resource path="res://UI/Inspectors/SkillInspector/UpgradeRequirement/UpgradeRequirement.gd" type="Script" id=4]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 32

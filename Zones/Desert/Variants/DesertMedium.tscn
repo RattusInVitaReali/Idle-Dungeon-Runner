@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Zones/Desert/Desert.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Lootable/_MaterialLootable.gd" type="Script" id=2]
+[ext_resource path="res://Lootable/MaterialLootable.gd" type="Script" id=2]
 [ext_resource path="res://Quests/Variants/OrcSlayer.tres" type="Resource" id=3]
 [ext_resource path="res://Materials/1_Common/Magnesium.tres" type="Resource" id=4]
 [ext_resource path="res://Materials/2_Uncommon/WolfHide.tres" type="Resource" id=5]
-[ext_resource path="res://Lootable/_GlobalResourceLootable.gd" type="Script" id=6]
+[ext_resource path="res://Lootable/GlobalResourceLootable.gd" type="Script" id=6]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )

@@ -23,47 +23,47 @@ enum ITEM_SUBTYPE { SWORD, AXE, BODY_ARMOR, BOOTS, HELMET, PANTS, WRIST, GLOVES,
 onready var CraftingMaterial = load("res://Materials/CraftingMaterial.tscn")
 
 onready var part_scenes = {
-	PART_TYPE.SWORD_BLADE : load("res://ItemParts/Weapon/_Sword/SwordBlade/SwordBlade.tscn"),
-	PART_TYPE.SWORD_HANDLE : load("res://ItemParts/Weapon/_Sword/SwordHandle/SwordHandle.tscn"),
-	PART_TYPE.SWORD_GUARD : load("res://ItemParts/Weapon/_Sword/SwordGuard/SwordGuard.tscn"),
+	PART_TYPE.SWORD_BLADE : load("res://ItemParts/Weapon/SWORD/SwordBlade/SwordBlade.tscn"),
+	PART_TYPE.SWORD_HANDLE : load("res://ItemParts/Weapon/SWORD/SwordHandle/SwordHandle.tscn"),
+	PART_TYPE.SWORD_GUARD : load("res://ItemParts/Weapon/SWORD/SwordGuard/SwordGuard.tscn"),
 	PART_TYPE.POMMEL : load("res://ItemParts/Weapon/Pommel/Pommel.tscn"),
 	
-	PART_TYPE.AXE_HEAD : load("res://ItemParts/Weapon/_Axe/AxeHead/AxeHead.tscn"),
-	PART_TYPE.AXE_HANDLE : load("res://ItemParts/Weapon/_Axe/AxeHandle/AxeHandle.tscn"),
-	PART_TYPE.SECONDARY_AXE_HEAD : load("res://ItemParts/Weapon/_Axe/AxeSecondaryHead/AxeSecondaryHead.tscn"),
+	PART_TYPE.AXE_HEAD : load("res://ItemParts/Weapon/AXE/AxeHead/AxeHead.tscn"),
+	PART_TYPE.AXE_HANDLE : load("res://ItemParts/Weapon/AXE/AxeHandle/AxeHandle.tscn"),
+	PART_TYPE.SECONDARY_AXE_HEAD : load("res://ItemParts/Weapon/AXE/AxeSecondaryHead/AxeSecondaryHead.tscn"),
 	
-	PART_TYPE.TUNIC : load("res://ItemParts/Armor/_BodyArmor/Tunic/Tunic.tscn"),
-	PART_TYPE.CHESTPLATE : load("res://ItemParts/Armor/_BodyArmor/Chestplate/Chestplate.tscn"),
-	PART_TYPE.SHOULDERS : load("res://ItemParts/Armor/_BodyArmor/Shoulders/Shoulders.tscn"),
-	PART_TYPE.ARMS : load("res://ItemParts/Armor/_BodyArmor/Arms/Arms.tscn"), 
+	PART_TYPE.TUNIC : load("res://ItemParts/Armor/BODYARMOR/Tunic/Tunic.tscn"),
+	PART_TYPE.CHESTPLATE : load("res://ItemParts/Armor/BODYARMOR/Chestplate/Chestplate.tscn"),
+	PART_TYPE.SHOULDERS : load("res://ItemParts/Armor/BODYARMOR/Shoulders/Shoulders.tscn"),
+	PART_TYPE.ARMS : load("res://ItemParts/Armor/BODYARMOR/Arms/Arms.tscn"), 
 	
-	PART_TYPE.PANTS_LINING : load("res://ItemParts/Armor/_Pants/PantsLining/PantsLining.tscn"),
-	PART_TYPE.SIDEGUARDS : load("res://ItemParts/Armor/_Pants/Sideguards/Sideguards.tscn"), 
-	PART_TYPE.SHINGUARDS : load("res://ItemParts/Armor/_Pants/Shinguards/Shinguards.tscn"), 
-	PART_TYPE.KNEEPADS : load("res://ItemParts/Armor/_Pants/Kneepads/Kneepads.tscn"),
-	PART_TYPE.OVERPANTS : load("res://ItemParts/Armor/_Pants/Overpants/Overpants.tscn"),
+	PART_TYPE.PANTS_LINING : load("res://ItemParts/Armor/PANTS/PantsLining/PantsLining.tscn"),
+	PART_TYPE.SIDEGUARDS : load("res://ItemParts/Armor/PANTS/Sideguards/Sideguards.tscn"), 
+	PART_TYPE.SHINGUARDS : load("res://ItemParts/Armor/PANTS/Shinguards/Shinguards.tscn"), 
+	PART_TYPE.KNEEPADS : load("res://ItemParts/Armor/PANTS/Kneepads/Kneepads.tscn"),
+	PART_TYPE.OVERPANTS : load("res://ItemParts/Armor/PANTS/Overpants/Overpants.tscn"),
 	
-	PART_TYPE.HELMET_LINING : load("res://ItemParts/Armor/_Helmet/HelmetLining/HelmetLining.tscn"),
-	PART_TYPE.HELMET_PROTECTION : load("res://ItemParts/Armor/_Helmet/HelmetProtection/HelmetProtection.tscn"), 
-	PART_TYPE.ORNAMENT : load("res://ItemParts/Armor/_Helmet/Ornament/Ornament.tscn"), 
-	PART_TYPE.VISOR : load("res://ItemParts/Armor/_Helmet/Visor/Visor.tscn"), 
-	PART_TYPE.NECKGUARD : load("res://ItemParts/Armor/_Helmet/Neckguard/Neckguard.tscn"),
+	PART_TYPE.HELMET_LINING : load("res://ItemParts/Armor/HELMET/HelmetLining/HelmetLining.tscn"),
+	PART_TYPE.HELMET_PROTECTION : load("res://ItemParts/Armor/HELMET/HelmetProtection/HelmetProtection.tscn"), 
+	PART_TYPE.ORNAMENT : load("res://ItemParts/Armor/HELMET/Ornament/Ornament.tscn"), 
+	PART_TYPE.VISOR : load("res://ItemParts/Armor/HELMET/Visor/Visor.tscn"), 
+	PART_TYPE.NECKGUARD : load("res://ItemParts/Armor/HELMET/Neckguard/Neckguard.tscn"),
 	
-	PART_TYPE.BOOT_LINING : load("res://ItemParts/Armor/_Boots/BootLining/BootLining.tscn"),
-	PART_TYPE.BOOT_PROTECTION : load("res://ItemParts/Armor/_Boots/BootProtection/BootProtection.tscn"),
-	PART_TYPE.CALFGUARDS : load("res://ItemParts/Armor/_Boots/Calfguards/Calfguards.tscn"),
-	PART_TYPE.BOOT_COLLARS : load("res://ItemParts/Armor/_Boots/BootCollars/BootCollars.tscn"),
+	PART_TYPE.BOOT_LINING : load("res://ItemParts/Armor/BOOTS/BootLining/BootLining.tscn"),
+	PART_TYPE.BOOT_PROTECTION : load("res://ItemParts/Armor/BOOTS/BootProtection/BootProtection.tscn"),
+	PART_TYPE.CALFGUARDS : load("res://ItemParts/Armor/BOOTS/Calfguards/Calfguards.tscn"),
+	PART_TYPE.BOOT_COLLARS : load("res://ItemParts/Armor/BOOTS/BootCollars/BootCollars.tscn"),
 	
-	PART_TYPE.GLOVE_LINING : load("res://ItemParts/Armor/_Gloves/GloveLining/GloveLining.tscn"), 
-	PART_TYPE.HAND_PROTECTION : load("res://ItemParts/Armor/_Gloves/HandProtection/HandProtection.tscn"), 
-	PART_TYPE.FOREARM_PROTECTION : load("res://ItemParts/Armor/_Gloves/ForearmProtection/ForearmProtection.tscn"), 
+	PART_TYPE.GLOVE_LINING : load("res://ItemParts/Armor/GLOVES/GloveLining/GloveLining.tscn"), 
+	PART_TYPE.HAND_PROTECTION : load("res://ItemParts/Armor/GLOVES/HandProtection/HandProtection.tscn"), 
+	PART_TYPE.FOREARM_PROTECTION : load("res://ItemParts/Armor/GLOVES/ForearmProtection/ForearmProtection.tscn"), 
 	
-	PART_TYPE.CHAIN : load("res://ItemParts/Accessory/_Amulet/Chain/Chain.tscn"), 
+	PART_TYPE.CHAIN : load("res://ItemParts/Accessory/AMULET/Chain/Chain.tscn"), 
 	PART_TYPE.FOCUS : load("res://ItemParts/Accessory/Focus/Focus.tscn"), 
 	PART_TYPE.CROWN : load("res://ItemParts/Accessory/Crown/Crown.tscn"), 
 	
-	PART_TYPE.RING_BAND : load("res://ItemParts/Accessory/_Ring/RingBand/RingBand.tscn"), 
-	PART_TYPE.RING_BEADS : load("res://ItemParts/Accessory/_Ring/RingBeads/RingBeads.tscn")
+	PART_TYPE.RING_BAND : load("res://ItemParts/Accessory/RING/RingBand/RingBand.tscn"), 
+	PART_TYPE.RING_BEADS : load("res://ItemParts/Accessory/RING/RingBeads/RingBeads.tscn")
 }
 
 onready var item_scenes = {

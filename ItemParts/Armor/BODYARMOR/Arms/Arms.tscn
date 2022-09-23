@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ItemParts/Armor/BODYARMOR/Arms/Arms.gd" type="Script" id=2]
+[ext_resource path="res://RESOURCES/ItemParts/Armor/BodyArmor/Arms.png" type="Texture" id=3]
+[ext_resource path="res://RESOURCES/Items/Armor/BodyArmor/ItemArms.png" type="Texture" id=4]
+
+
+[node name="Arms" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+unlock_zone_name = "Easy Desert"
+unlock_signal_level = 30
+base_icon = ExtResource( 3 )
+item_icon = ExtResource( 4 )
+type = 7
+used_for = 1
+cost = 40
+allowed_material_types = [ 1, 2, 4 ]
+description = "Protection for your arms."
+stat_multipliers = {
+"armor": 0.75,
+"dexterity": 0.75,
+"expertise": 0.0,
+"ferocity": 1.0,
+"magic_penetration": 0.0,
+"mastery": 0.0,
+"occult_aversion": 0.75,
+"penetration": 0.0,
+"potency": 0.75,
+"power": 0.75,
+"precision": 1.0,
+"toughess": 1.0,
+"vitality": 1.5
+}
+base_stats = {
+"armor": 0,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 0,
+"penetration": 0,
+"potency": 0,
+"power": 0,
+"precision": 0,
+"toughess": 0,
+"vitality": 0
+}

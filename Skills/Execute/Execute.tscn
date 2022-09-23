@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Skills/Skill.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skills/Execute/Execute.gd" type="Script" id=2]
-[ext_resource path="res://_Resources/skill_icons/Icon18.png" type="Texture" id=3]
+[ext_resource path="res://RESOURCES/SkillIcons/Icon18.png" type="Texture" id=3]
 
 [node name="Execute" instance=ExtResource( 1 )]
 script = ExtResource( 2 )

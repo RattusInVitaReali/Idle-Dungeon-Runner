@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/Screens/Screen.tscn" type="PackedScene" id=1]
-[ext_resource path="res://_Resources/icons2/image_part_213.png" type="Texture" id=2]
-[ext_resource path="res://_Resources/gui_images/UI board Large stone.png" type="Texture" id=4]
+[ext_resource path="res://RESOURCES/GuiImages/CornerStats.png" type="Texture" id=2]
+[ext_resource path="res://RESOURCES/GuiImages/StoneBoardLarge.png" type="Texture" id=4]
 [ext_resource path="res://UI/Screens/Stats/Stats.gd" type="Script" id=5]
-[ext_resource path="res://_Resources/gui_images/UI board Large  parchment vertical.png" type="Texture" id=6]
+[ext_resource path="res://RESOURCES/GuiImages/ParchmentLargeVertical.png" type="Texture" id=6]
+
 
 [node name="Stats" instance=ExtResource( 1 )]
 script = ExtResource( 5 )

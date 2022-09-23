@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ItemParts/ItemPart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ItemParts/Accessory/RING/RingBeads/RingBeads.gd" type="Script" id=2]
+[ext_resource path="res://RESOURCES/Items/Accessory/Ring/ItemRingBeads.png" type="Texture" id=3]
+[ext_resource path="res://RESOURCES/ItemParts/Accessory/Ring/RingBeads.png" type="Texture" id=4]
+
+
+[node name="RingBeads" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+unlock_zone_name = "Icy Cliffs"
+unlock_signal_level = 150
+base_icon = ExtResource( 4 )
+item_icon = ExtResource( 3 )
+type = 15
+used_for = 2
+cost = 10
+allowed_material_types = [ 0 ]
+description = "Decorative beads for a ring."
+stat_multipliers = {
+"armor": 0.75,
+"dexterity": 0.75,
+"expertise": 1.25,
+"ferocity": 0.75,
+"magic_penetration": 0.75,
+"mastery": 1.25,
+"occult_aversion": 0.75,
+"penetration": 0.75,
+"potency": 0.75,
+"power": 0.75,
+"precision": 0.75,
+"toughess": 1.25,
+"vitality": 0.75
+}
