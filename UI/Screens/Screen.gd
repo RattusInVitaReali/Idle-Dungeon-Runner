@@ -1,10 +1,10 @@
 extends Control
 class_name Screen
 
-const MaterialInspector = preload("res://UI/Inspectors/MaterialInspector/MaterialInspector.tscn")
-const PartInspector = preload("res://UI/Inspectors/PartInspector/PartInspector.tscn")
-const ItemInspector = preload("res://UI/Inspectors/ItemInspector/ItemInspector.tscn")
-const SkillInspector = preload("res://UI/Inspectors/SkillInspector/SkillInspector.tscn")
+const MaterialInspector = preload("res://UI/FullScreenPopup/SlottableInspector/StatsInspector/MaterialInspector/MaterialInspector.tscn")
+const PartInspector = preload("res://UI/FullScreenPopup/SlottableInspector/StatsInspector/PartInspector/PartInspector.tscn")
+const ItemInspector = preload("res://UI/FullScreenPopup/SlottableInspector/StatsInspector/ItemInspector/ItemInspector.tscn")
+const SkillInspector = preload("res://UI/FullScreenPopup/SlottableInspector/SkillInspector/SkillInspector.tscn")
 
 const GlobalResourceIcon = preload("res://UI/Screens/GlobalResourceIcon.tscn")
 

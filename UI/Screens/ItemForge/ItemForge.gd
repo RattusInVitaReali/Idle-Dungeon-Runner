@@ -4,8 +4,8 @@ class_name ItemForgeUI
 signal get_parts
 signal upgrade_finished
 
-const ItemConfirmInspector = preload("res://UI/Inspectors/ItemInspector/ItemConfirmInspector/ItemConfirmInspector.tscn")
-const PartCompareInspector = preload("res://UI/Inspectors/PartInspector/PartCompareInspector/PartCompareInspector.tscn")
+const ItemConfirmInspector = preload("res://UI/FullScreenPopup/SlottableInspector/StatsInspector/ItemInspector/ItemConfirmInspector/ItemConfirmInspector.tscn")
+const PartCompareInspector = preload("res://UI/FullScreenPopup/SlottableInspector/StatsInspector/PartInspector/PartCompareInspector/PartCompareInspector.tscn")
 
 onready var parts = $VBoxContainer/Screen/VBoxContainer/SlottableInventory
 onready var forge = $VBoxContainer/Screen/VBoxContainer/Image/ForgeImage

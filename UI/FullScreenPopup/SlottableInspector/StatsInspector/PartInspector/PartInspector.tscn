@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://RESOURCES/GuiImages/DivisionLine.png" type="Texture" id=1]
+[ext_resource path="res://UI/FullScreenPopup/SlottableInspector/StatsInspector/PartInspector/PartInspector.gd" type="Script" id=2]
+[ext_resource path="res://RESOURCES/GuiImages/ParchmentSmall.png" type="Texture" id=3]
+[ext_resource path="res://UI/FullScreenPopup/SlottableInspector/StatsInspector/StatsInspector.tscn" type="PackedScene" id=4]
+[ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 5 )
+
+[node name="PartInspector" instance=ExtResource( 4 )]
+script = ExtResource( 2 )
+
+[node name="Stats" parent="Panel/VBoxContainer" index="7"]
+margin_bottom = 1194.0
+
+[node name="StatsContainer" parent="Panel/VBoxContainer/Stats" index="0"]
+margin_bottom = 587.0
+
+[node name="Line2" parent="Panel/VBoxContainer" index="8"]
+margin_top = 1198.0
+margin_bottom = 1213.0
+
+[node name="Special" parent="Panel/VBoxContainer" index="9"]
+margin_top = 1217.0
+margin_bottom = 1277.0
+
+[node name="ButtonsLine" type="HBoxContainer" parent="Panel/VBoxContainer" index="10"]
+margin_top = 1281.0
+margin_right = 840.0
+margin_bottom = 1296.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/ButtonsLine" index="0"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/ButtonsLine" index="1"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 1 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/ButtonsLine" index="2"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer" index="11"]
+margin_top = 1300.0
+margin_right = 840.0
+margin_bottom = 1460.0
+rect_min_size = Vector2( 0, 160 )
+
+[node name="Button1" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="0"]
+margin_right = 418.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 3 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Buttons/Button1" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Merge"
+align = 1
+valign = 1
+
+[node name="Button2" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="1"]
+margin_left = 422.0
+margin_right = 840.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 3 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Buttons/Button2" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Dismantle"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Button2" to="." method="_on_Button2_pressed"]

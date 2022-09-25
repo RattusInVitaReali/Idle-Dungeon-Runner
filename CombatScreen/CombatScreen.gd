@@ -2,7 +2,7 @@ extends Node2D
 class_name CombatScreen
 
 const PlayerScene = preload("res://Entities/Player/Player.tscn")
-const IdleReward = preload("res://UI/IdleReward/IdleReward.tscn")
+const IdleReward = preload("res://UI/FullScreenPopup/IdleReward/IdleReward.tscn")
 
 const save_path = "user://idle_data.tres"
 

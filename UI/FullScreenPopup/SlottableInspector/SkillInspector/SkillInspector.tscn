@@ -1,0 +1,189 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://UI/FullScreenPopup/SlottableInspector/SkillInspector/SkillInspector.gd" type="Script" id=1]
+[ext_resource path="res://UI/FullScreenPopup/SlottableInspector/SlottableInspector.tscn" type="PackedScene" id=2]
+[ext_resource path="res://RESOURCES/GuiImages/DivisionLine.png" type="Texture" id=3]
+[ext_resource path="res://RESOURCES/GuiImages/ParchmentSmall.png" type="Texture" id=4]
+[ext_resource path="res://UI/FullScreenPopup/SlottableInspector/SkillInspector/UpgradeRequirement/UpgradeRequirement.tscn" type="PackedScene" id=5]
+[ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 85
+font_data = ExtResource( 6 )
+
+[node name="SkillInspector" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="SkillTagsLine" type="HBoxContainer" parent="Panel/VBoxContainer" index="2"]
+margin_top = 128.0
+margin_right = 840.0
+margin_bottom = 143.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/SkillTagsLine" index="0"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/SkillTagsLine" index="1"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/SkillTagsLine" index="2"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="SkillTags" type="Label" parent="Panel/VBoxContainer" index="3"]
+margin_top = 147.0
+margin_right = 840.0
+margin_bottom = 207.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Attack - Physical"
+align = 1
+valign = 1
+
+[node name="Line1" parent="Panel/VBoxContainer" index="4"]
+margin_top = 211.0
+margin_bottom = 226.0
+
+[node name="SkillLevel" type="Label" parent="Panel/VBoxContainer" index="5"]
+margin_top = 230.0
+margin_right = 840.0
+margin_bottom = 290.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Level 17"
+align = 1
+valign = 1
+
+[node name="Image" parent="Panel/VBoxContainer" index="6"]
+margin_top = 294.0
+margin_bottom = 694.0
+
+[node name="Line2" parent="Panel/VBoxContainer" index="7"]
+margin_top = 698.0
+margin_bottom = 713.0
+
+[node name="SkillDescription" type="Label" parent="Panel/VBoxContainer" index="8"]
+margin_top = 717.0
+margin_right = 840.0
+margin_bottom = 1113.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Kick your enemy in the ass for (69 + 123% PD) = 420 physical damage."
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer" index="9"]
+margin_top = 1117.0
+margin_right = 840.0
+margin_bottom = 1337.0
+rect_min_size = Vector2( 0, 220 )
+
+[node name="Upgrade" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="0"]
+margin_right = 418.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Buttons/Upgrade" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Upgrade"
+align = 1
+valign = 1
+
+[node name="Equip" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="1"]
+margin_left = 422.0
+margin_right = 840.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Buttons/Equip" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Equip"
+align = 1
+valign = 1
+
+[node name="Line7" type="HBoxContainer" parent="Panel/VBoxContainer" index="10"]
+margin_top = 1341.0
+margin_right = 840.0
+margin_bottom = 1356.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/Line7" index="0"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Line7" index="1"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/Line7" index="2"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" index="11"]
+margin_top = 1360.0
+margin_right = 840.0
+margin_bottom = 1460.0
+
+[node name="Margin" type="Label" parent="Panel/VBoxContainer/HBoxContainer" index="0"]
+margin_top = 43.0
+margin_right = 686.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+
+[node name="UpgradeReqContainter" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer" index="1"]
+margin_left = 690.0
+margin_right = 840.0
+margin_bottom = 100.0
+
+[node name="UpgradeRequirement" parent="Panel/VBoxContainer/HBoxContainer/UpgradeReqContainter" index="0" instance=ExtResource( 5 )]
+
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Upgrade" to="." method="_on_Upgrade_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Equip" to="." method="_on_Equip_pressed"]

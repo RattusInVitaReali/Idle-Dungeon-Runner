@@ -1,0 +1,183 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://UI/FullScreenPopup/SlottableInspector/StatsInspector/StatsInspector.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/FullScreenPopup/SlottableInspector/StatsInspector/ItemInspector/ItemInspector.gd" type="Script" id=2]
+[ext_resource path="res://RESOURCES/GuiImages/DivisionLine.png" type="Texture" id=3]
+[ext_resource path="res://RESOURCES/GuiImages/ParchmentSmall.png" type="Texture" id=4]
+[ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 5 )
+
+[node name="ItemInspector" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="PartsLine" type="HBoxContainer" parent="Panel/VBoxContainer" index="2"]
+margin_top = 128.0
+margin_right = 840.0
+margin_bottom = 143.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/PartsLine" index="0"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PartsLine" index="1"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/PartsLine" index="2"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Parts" type="Label" parent="Panel/VBoxContainer" index="3"]
+margin_top = 147.0
+margin_right = 840.0
+margin_bottom = 246.0
+custom_fonts/font = SubResource( 2 )
+text = "Steel Sword Blade - Fir Sword Handle - Ruby Pommel"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TierLine" parent="Panel/VBoxContainer" index="4"]
+margin_top = 250.0
+margin_bottom = 265.0
+
+[node name="TierStars" parent="Panel/VBoxContainer" index="5"]
+margin_top = 269.0
+margin_bottom = 283.0
+
+[node name="Line1" parent="Panel/VBoxContainer" index="6"]
+margin_top = 287.0
+margin_bottom = 302.0
+
+[node name="Image" parent="Panel/VBoxContainer" index="7"]
+margin_top = 306.0
+margin_bottom = 706.0
+
+[node name="StatsLine" parent="Panel/VBoxContainer" index="8"]
+margin_top = 710.0
+margin_bottom = 725.0
+
+[node name="Stats" parent="Panel/VBoxContainer" index="9"]
+margin_top = 729.0
+margin_bottom = 1179.0
+
+[node name="StatsContainer" parent="Panel/VBoxContainer/Stats" index="0"]
+margin_bottom = 450.0
+
+[node name="Line2" parent="Panel/VBoxContainer" index="10"]
+margin_top = 1183.0
+margin_bottom = 1198.0
+
+[node name="Special" parent="Panel/VBoxContainer" index="11"]
+margin_top = 1202.0
+margin_bottom = 1262.0
+
+[node name="ButtonsLine" type="HBoxContainer" parent="Panel/VBoxContainer" index="12"]
+margin_top = 1266.0
+margin_right = 840.0
+margin_bottom = 1281.0
+
+[node name="LeftMargin" type="Label" parent="Panel/VBoxContainer/ButtonsLine" index="0"]
+margin_right = 100.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/ButtonsLine" index="1"]
+margin_left = 104.0
+margin_right = 736.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+expand = true
+
+[node name="RightMargin" type="Label" parent="Panel/VBoxContainer/ButtonsLine" index="2"]
+margin_left = 740.0
+margin_right = 840.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer" index="13"]
+margin_top = 1285.0
+margin_right = 840.0
+margin_bottom = 1460.0
+rect_min_size = Vector2( 0, 160 )
+
+[node name="Button1" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="0"]
+margin_right = 277.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 0, 175 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Buttons/Button1" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Equip"
+align = 1
+valign = 1
+
+[node name="Button2" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="1"]
+margin_left = 281.0
+margin_right = 558.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 0, 175 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Buttons/Button2" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Upgrade"
+align = 1
+valign = 1
+
+[node name="Button3" type="TextureButton" parent="Panel/VBoxContainer/Buttons" index="2"]
+margin_left = 562.0
+margin_right = 840.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 0, 175 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Buttons/Button3" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Dismantle"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Button3" to="." method="_on_Button3_pressed"]

@@ -3,7 +3,7 @@ class_name PartForgeUI
 
 signal get_materials
 
-const PartConfirmInspector = preload("res://UI/Inspectors/PartInspector/PartConfirmInspector/PartConfirmInspector.tscn")
+const PartConfirmInspector = preload("res://UI/FullScreenPopup/SlottableInspector/StatsInspector/PartInspector/PartConfirmInspector/PartConfirmInspector.tscn")
 const CraftingMaterial = preload("res://Materials/CraftingMaterial.tscn")
 
 onready var materials = $VBoxContainer/Screen/VBoxContainer/SlottableInventory
