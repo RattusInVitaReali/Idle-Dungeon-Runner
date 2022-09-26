@@ -31,6 +31,8 @@ func _ready():
 	Saver.save_on_exit(self)
 	CombatProcessor.connect("zone_changed", self, "change_zone")
 	spawn_player()
+	yield(get_tree(), "idle_frame")
+	get_idle_rewards()
 
 func spawn_player():
 	player = PlayerScene.instance()
@@ -64,7 +66,6 @@ func change_zone(new_zone):
 	zone = new_zone
 	load_images()
 	new_combat()
-	check_idle_rewards()
 
 func yeet_monster():
 	if monster != null:
@@ -139,10 +140,13 @@ func check_idle_rewards():
 
 func get_idle_rewards():
 	if ResourceLoader.exists(save_path):
+		var elapsed_time = OS.get_unix_time() - load(save_path).idle_time
+		print("Elapsed time: ", elapsed_time)
+		if elapsed_time < 60:
+			return
 		var idle_reward = IdleReward.instance()
 		emit_signal("idle_reward", idle_reward)
 		idle_reward.rect_size = ScreenMeasurer.get_screen_size()
-		var elapsed_time = OS.get_unix_time() - load(save_path).idle_time
 		idle_reward.set_time(elapsed_time)
 		var monsters = zone.get_monster_instances()
 		for _monster in monsters:
@@ -157,6 +161,11 @@ func get_idle_rewards():
 		LootManager.idle_reward_container = null
 		for _monster in monsters:
 			_monster.queue_free()
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_APP_RESUMED:
+		yield(get_tree(), "idle_frame")
+		get_idle_rewards()
 
 func save_and_exit():
 	var resource = IdleData.new()

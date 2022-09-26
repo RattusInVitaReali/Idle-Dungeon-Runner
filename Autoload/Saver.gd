@@ -7,9 +7,9 @@ func _ready():
 	get_tree().set_auto_accept_quit(false)
 
 func _notification(what):
+	if what in [MainLoop.NOTIFICATION_WM_QUIT_REQUEST, MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST, MainLoop.NOTIFICATION_APP_PAUSED]:
+		save_all()
 	if what in [MainLoop.NOTIFICATION_WM_QUIT_REQUEST, MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST]:
-		for saveable in save_on_exit:
-			saveable.save_and_exit()
 		get_tree().quit()
 
 func save_on_exit(node):
@@ -28,3 +28,7 @@ func save_scene(node, path):
 	var packed_scene = PackedScene.new()
 	packed_scene.pack(node)
 	ResourceSaver.save(path, packed_scene)
+
+func save_all():
+	for saveable in save_on_exit:
+		saveable.save_and_exit()

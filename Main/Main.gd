@@ -18,7 +18,6 @@ onready var screens = {
 }
 
 onready var screen = screens[SCREEN.COMBAT]
-
 var curr_screen = SCREEN.COMBAT
 
 func _ready():
@@ -36,8 +35,15 @@ func move_camera():
 func change_screen(screen_enum):
 	screen.on_lost_focus()
 	screen = screens[screen_enum]
+	curr_screen = screen_enum
 	screen.on_focused()
 	move_camera()
+
+func _on_SwipeDetector_swiped(dir):
+	if dir.x == 1:
+		change_screen(min(curr_screen + 1, screens.size() - 1))
+	elif dir.x == -1:
+		change_screen(max(curr_screen - 1, 0))
 
 func _on_zone_changed(_zone):
 	tween.interpolate_property(

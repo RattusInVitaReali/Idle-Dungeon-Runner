@@ -33,3 +33,4 @@ base_loot = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource(
 monster_types = [ 2 ]
 
 [node name="Overpower" parent="Skills" index="0" instance=ExtResource( 8 )]
+unlock_signal_level = 0

@@ -14,3 +14,9 @@ func set_time(_time):
 	if hours > 0:
 		time.text += str(hours) + "h "
 	time.text += str(mins) + "m"
+
+func _on_TextureButton_pressed():
+	for slottable in inventory.get_items_container().get_children():
+		inventory.get_items_container().remove_child(slottable)
+		LootManager.get_item(slottable)
+	queue_free()

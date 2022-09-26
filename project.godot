@@ -754,6 +754,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Modifiers/Strong/Strong.gd"
 }, {
+"base": "Node2D",
+"class": "SwipeDetector",
+"language": "GDScript",
+"path": "res://SwipeDetector/SwipeDetector.gd"
+}, {
 "base": "Item",
 "class": "Sword",
 "language": "GDScript",
@@ -999,6 +1004,7 @@ _global_script_class_icons={
 "StatsInspector": "",
 "StatsUI": "",
 "Strong": "",
+"SwipeDetector": "",
 "Sword": "",
 "SwordBlade": "",
 "SwordGuard": "",

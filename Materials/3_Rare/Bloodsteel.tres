@@ -5,26 +5,26 @@
 [resource]
 script = ExtResource( 1 )
 icon_texture = 0
-icon_color = Color( 0, 0, 0, 1 )
-slottable_name = ""
-prefix = ""
-special_weapon = ""
-special_armor = ""
+icon_color = Color( 0.478431, 0.0392157, 0, 1 )
+slottable_name = "Bloodsteel"
+prefix = "Bloodsteel"
+special_weapon = "20% more Bleeding damage."
+special_armor = "20% less Bleeding damage taken."
 special_accessory = ""
-type = 0
-rarity = 0
+type = 1
+rarity = 3
 stats = {
-"armor": 0,
-"dexterity": 0,
-"expertise": 0,
-"ferocity": 0,
+"armor": 5,
+"dexterity": 5,
+"expertise": 10,
+"ferocity": 20,
 "magic_penetration": 0,
-"mastery": 0,
-"occult_aversion": 0,
+"mastery": 10,
+"occult_aversion": 20,
 "penetration": 0,
-"potency": 0,
-"power": 0,
-"precision": 0,
+"potency": 10,
+"power": 10,
+"precision": 20,
 "toughess": 0,
-"vitality": 0
+"vitality": 40
 }
