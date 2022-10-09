@@ -15,7 +15,6 @@
 [ext_resource path="res://RESOURCES/GuiImages/ParchmentSmall.png" type="Texture" id=13]
 [ext_resource path="res://UI/Slot/Slot.tscn" type="PackedScene" id=14]
 
-
 [sub_resource type="DynamicFont" id=2]
 size = 70
 font_data = ExtResource( 5 )

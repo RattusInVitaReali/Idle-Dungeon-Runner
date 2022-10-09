@@ -174,6 +174,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Skills/ComboSlash/ComboSlash.gd"
 }, {
+"base": "Control",
+"class": "ConfirmDialog",
+"language": "GDScript",
+"path": "res://UI/ConfirmDialog/ConfirmDialog.gd"
+}, {
 "base": "Node",
 "class": "CraftingManagerScript",
 "language": "GDScript",
@@ -729,6 +734,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/SlottableInventory/SlottableInventory.gd"
 }, {
+"base": "FullScreenPopup",
+"class": "SpecializationInspector",
+"language": "GDScript",
+"path": "res://UI/FullScreenPopup/SpecializationInspector/SpecializationInspector.gd"
+}, {
 "base": "Screen",
 "class": "Specializations",
 "language": "GDScript",
@@ -888,6 +898,7 @@ _global_script_class_icons={
 "CombatTop": "",
 "CombatUI": "",
 "ComboSlash": "",
+"ConfirmDialog": "",
 "CraftingManagerScript": "",
 "CraftingMaterial": "",
 "Crown": "",
@@ -999,6 +1010,7 @@ _global_script_class_icons={
 "SlottableIcon": "",
 "SlottableInspector": "",
 "SlottableInventory": "",
+"SpecializationInspector": "",
 "Specializations": "",
 "Stat": "",
 "StatsInspector": "",

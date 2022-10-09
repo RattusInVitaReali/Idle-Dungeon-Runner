@@ -24,7 +24,7 @@ export (Array, SKILL_TAGS) var tags
 
 var border_texture = BorderTexture1
 
-export var level = 1 setget set_level
+export var level = 0 setget set_level
 
 var cooldown
 var auto_cooldown
@@ -75,10 +75,10 @@ func get_skill_points():
 	return 1
 
 func get_skill_lotuses():
-	if level >= 10:
-		return round(3 * pow(level, 1.5))
-	elif level >= 5:
-		return level * 10
+#	if level >= 10:
+#		return round(3 * pow(level, 1.5))
+#	elif level >= 5:
+#		return level * 10
 	return 0
 
 func get_basic_spellstones():
@@ -117,6 +117,10 @@ func set_level(_level):
 
 func level_up():
 	self.level += 1
+
+func refund():
+	GlobalResources.gain_gr(GlobalResources.GR.SKILL_POINT, level)
+	self.level = 0
 
 func try_unlock(monster = null, zone = null):
 	if attacker == null or !locked:

@@ -1,0 +1,3 @@
+extends FullScreenPopup
+class_name SpecializationInspector
+

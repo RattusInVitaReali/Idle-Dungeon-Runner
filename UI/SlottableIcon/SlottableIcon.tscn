@@ -1,14 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://UI/SlottableIcon/SlottableIcon.gd" type="Script" id=1]
-[ext_resource path="res://RESOURCES/GlobalResources/SpellstoneLegendary.png" type="Texture" id=2]
 
 [node name="SlottableIcon" type="TextureRect"]
 anchor_right = 0.12
 anchor_bottom = 0.068
 margin_right = 0.399994
 margin_bottom = -0.560013
-texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
 script = ExtResource( 1 )

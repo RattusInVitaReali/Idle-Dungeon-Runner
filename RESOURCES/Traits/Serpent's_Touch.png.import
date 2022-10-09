@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Serpent's_Touch.png-ba9d81fefb9c5c9f2e9b13eaab2555aa.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://RESOURCES/Traits/Serpent's_Touch.png"
+dest_files=[ "res://.import/Serpent's_Touch.png-ba9d81fefb9c5c9f2e9b13eaab2555aa.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

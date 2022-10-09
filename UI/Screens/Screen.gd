@@ -6,10 +6,13 @@ const PartInspector = preload("res://UI/FullScreenPopup/SlottableInspector/Stats
 const ItemInspector = preload("res://UI/FullScreenPopup/SlottableInspector/StatsInspector/ItemInspector/ItemInspector.tscn")
 const SkillInspector = preload("res://UI/FullScreenPopup/SlottableInspector/SkillInspector/SkillInspector.tscn")
 
+const ConfirmDialog = preload("res://UI/ConfirmDialog/ConfirmDialog.tscn")
+
 const GlobalResourceIcon = preload("res://UI/Screens/GlobalResourceIcon.tscn")
 
-export (Array, GlobalResourcesScript.GR) var global_resources
+signal confirm_response
 
+export (Array, GlobalResourcesScript.GR) var global_resources
 
 var upper
 var resources_background
@@ -41,6 +44,12 @@ func set_global_resources():
 		var gr_icon = GlobalResourceIcon.instance()
 		resources_container.add_child(gr_icon)
 		gr_icon.initialize(gr)
+
+func get_confirm_response(question):
+	var confirm_dialog = ConfirmDialog.instance()
+	add_child(confirm_dialog)
+	confirm_dialog.set_question(question)
+	emit_signal("confirm_response", yield(confirm_dialog, "response"))
 
 func _on_player_spawned(_player):
 	player = _player

@@ -7,7 +7,6 @@ script = ExtResource( 1 )
 slottable_type = 3
 locked = true
 base_cooldown = 5.0
-level = 0
 
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true
