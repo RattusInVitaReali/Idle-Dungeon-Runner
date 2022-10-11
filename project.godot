@@ -794,6 +794,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/FullScreenPopup/SlottableInspector/StatsInspector/TierStar/TierStar.gd"
 }, {
+"base": "Resource",
+"class": "Trait",
+"language": "GDScript",
+"path": "res://Traits/Trait.gd"
+}, {
+"base": "TextureRect",
+"class": "TraitSlot",
+"language": "GDScript",
+"path": "res://UI/Screens/Specializations/TraitSlot/TraitSlot.gd"
+}, {
 "base": "Monster",
 "class": "Troll",
 "language": "GDScript",
@@ -1022,6 +1032,8 @@ _global_script_class_icons={
 "SwordGuard": "",
 "SwordHandle": "",
 "TierStar": "",
+"Trait": "",
+"TraitSlot": "",
 "Troll": "",
 "Troll1": "",
 "Troll2": "",
