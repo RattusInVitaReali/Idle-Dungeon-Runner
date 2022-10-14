@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Specializations/Specialization.tscn" type="PackedScene" id=1]
+[ext_resource path="res://RESOURCES/Specializations/Assassination.png" type="Texture" id=2]
+
+[node name="Assassination" instance=ExtResource( 1 )]
+specialization_name = "Assassination"
+titles = [ "Rogue", "Cutthroat", "Slayer", "Executioner", "Deathmaster" ]
+background = ExtResource( 2 )
+attributes_per_level = {
+"armor": 0,
+"dexterity": 50,
+"expertise": 0,
+"ferocity": 0,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 0,
+"penetration": 0,
+"potency": 0,
+"power": 50,
+"precision": 100,
+"toughess": 0,
+"vitality": 0
+}

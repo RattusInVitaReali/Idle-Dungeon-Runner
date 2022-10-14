@@ -7,7 +7,7 @@
 [ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://RESOURCES/GuiImages/BoardSetSmall.png" type="Texture" id=6]
 [ext_resource path="res://RESOURCES/GuiImages/Forge.png" type="Texture" id=7]
-[ext_resource path="res://RESOURCES/GuiImages/StoneBoardSmall.png" type="Texture" id=8]
+[ext_resource path="res://RESOURCES/GuiImages/StoneBoardBorder.png" type="Texture" id=8]
 [ext_resource path="res://UI/SlottableInventory/ItemSelectionInventory/ItemSelectionInventory.tscn" type="PackedScene" id=9]
 [ext_resource path="res://RESOURCES/GuiImages/ParchmentLarge.png" type="Texture" id=10]
 [ext_resource path="res://RESOURCES/GuiImages/DivisionLineVertical.png" type="Texture" id=11]
@@ -48,12 +48,13 @@ margin_right = 1080.0
 margin_bottom = 500.0
 rect_min_size = Vector2( 0, 500 )
 texture = ExtResource( 8 )
-patch_margin_left = 35
-patch_margin_top = 39
-patch_margin_right = 38
-patch_margin_bottom = 35
+patch_margin_left = 47
+patch_margin_top = 55
+patch_margin_right = 49
+patch_margin_bottom = 57
 
 [node name="ForgeImage" type="TextureRect" parent="VBoxContainer/Screen/VBoxContainer/Image" index="0"]
+show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 25.0

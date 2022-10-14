@@ -3,7 +3,6 @@
 [ext_resource path="res://Items/Item.gd" type="Script" id=1]
 [ext_resource path="res://RESOURCES/Items/Weapon/Sword/Sword.png" type="Texture" id=2]
 
-
 [node name="Item" type="Node2D"]
 script = ExtResource( 1 )
 slottable_type = 2

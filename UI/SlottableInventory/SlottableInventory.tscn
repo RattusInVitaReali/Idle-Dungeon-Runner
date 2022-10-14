@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://UI/SlottableInventory/SlottableInventory.gd" type="Script" id=1]
-[ext_resource path="res://RESOURCES/GuiImages/StoneBoardLarge.png" type="Texture" id=2]
+[ext_resource path="res://RESOURCES/GuiImages/StoneBoard.png" type="Texture" id=2]
 
 [node name="SlottableInventory" type="NinePatchRect"]
 margin_right = 1080.0
@@ -13,6 +13,8 @@ patch_margin_left = 42
 patch_margin_top = 47
 patch_margin_right = 42
 patch_margin_bottom = 47
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 script = ExtResource( 1 )
 
 [node name="Items" type="Node2D" parent="."]

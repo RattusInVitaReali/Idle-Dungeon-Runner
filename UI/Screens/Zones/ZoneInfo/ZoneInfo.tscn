@@ -4,11 +4,10 @@
 [ext_resource path="res://RESOURCES/GuiImages/UpArrow.png" type="Texture" id=2]
 [ext_resource path="res://RESOURCES/GuiImages/DownArrow.png" type="Texture" id=3]
 [ext_resource path="res://RESOURCES/ZoneBackgrounds/Forest.png" type="Texture" id=4]
-[ext_resource path="res://RESOURCES/GuiImages/StoneBoardSmall.png" type="Texture" id=5]
+[ext_resource path="res://RESOURCES/GuiImages/StoneBoardBorder.png" type="Texture" id=5]
 [ext_resource path="res://RESOURCES/GuiImages/ParchmentSmall.png" type="Texture" id=6]
 [ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://UI/Screens/Zones/ZoneInfo/ZoneInfo.gd" type="Script" id=8]
-
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
@@ -27,13 +26,17 @@ anchor_right = 1.0
 margin_bottom = 79.0
 rect_min_size = Vector2( 0, 300 )
 texture = ExtResource( 5 )
-patch_margin_left = 30
-patch_margin_top = 40
-patch_margin_right = 31
-patch_margin_bottom = 39
+region_rect = Rect2( 0, 0, 250, 200 )
+patch_margin_left = 50
+patch_margin_top = 60
+patch_margin_right = 50
+patch_margin_bottom = 60
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 script = ExtResource( 8 )
 
 [node name="ZoneBackground" type="TextureRect" parent="."]
+show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0

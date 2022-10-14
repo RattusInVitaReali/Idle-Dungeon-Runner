@@ -1,23 +1,21 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://RESOURCES/GuiImages/ParchmentSmall.png" type="Texture" id=2]
 [ext_resource path="res://RESOURCES/GuiImages/DivisionLine.png" type="Texture" id=3]
-[ext_resource path="res://RESOURCES/GuiImages/StoneBoardLarge.png" type="Texture" id=4]
+[ext_resource path="res://RESOURCES/GuiImages/StoneBoardBorder.png" type="Texture" id=4]
 [ext_resource path="res://RESOURCES/Specializations/Assassination.png" type="Texture" id=5]
 [ext_resource path="res://RESOURCES/GuiImages/ParchmentMedium.png" type="Texture" id=6]
 [ext_resource path="res://RESOURCES/GuiImages/SkillTree.png" type="Texture" id=7]
+[ext_resource path="res://UI/Screens/Specializations/SpecializationInfo/SpecializationInfo.gd" type="Script" id=8]
+[ext_resource path="res://UI/Screens/Specializations/SpecializationInfo/SpecializationAttribute/SpecializationAttribute.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
-size = 90
+size = 60
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 35
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 35
+size = 40
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
@@ -26,15 +24,20 @@ corner_radius_top_right = 200
 corner_radius_bottom_right = 200
 corner_radius_bottom_left = 200
 
-[node name="SpecializationInfo" type="TextureRect"]
+[node name="SpecializationInfo" type="NinePatchRect"]
 margin_right = 1080.0
 margin_bottom = 461.0
 rect_min_size = Vector2( 0, 461 )
 size_flags_horizontal = 3
 texture = ExtResource( 4 )
-expand = true
+patch_margin_left = 61
+patch_margin_top = 67
+patch_margin_right = 55
+patch_margin_bottom = 69
+script = ExtResource( 8 )
 
 [node name="Background" type="TextureRect" parent="."]
+show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
@@ -43,32 +46,32 @@ margin_right = -20.0
 margin_bottom = -20.0
 texture = ExtResource( 5 )
 expand = true
-stretch_mode = 2
+stretch_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
-margin_top = 10.0
 margin_right = -10.0
+margin_bottom = -10.0
 
 [node name="Margin" type="Label" parent="Background/HBoxContainer"]
-margin_top = 198.0
+margin_top = 200.0
 margin_right = 400.0
-margin_bottom = 212.0
+margin_bottom = 214.0
 rect_min_size = Vector2( 400, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background/HBoxContainer"]
 margin_left = 404.0
 margin_right = 1020.0
-margin_bottom = 411.0
+margin_bottom = 414.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="NameBackground" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer"]
 margin_right = 616.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 0, 150 )
+margin_bottom = 170.0
+rect_min_size = Vector2( 0, 170 )
 texture = ExtResource( 2 )
 expand = true
 
@@ -77,20 +80,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Assassination"
+text = "Assassination:
+Apprentice"
 align = 1
 valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Background/HBoxContainer/VBoxContainer"]
-margin_top = 154.0
+margin_top = 174.0
 margin_right = 616.0
-margin_bottom = 411.0
+margin_bottom = 414.0
 size_flags_vertical = 3
 
 [node name="AttributesBackground" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_right = 300.0
-margin_bottom = 257.0
-rect_min_size = Vector2( 300, 0 )
+margin_right = 310.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 310, 0 )
 texture = ExtResource( 6 )
 expand = true
 
@@ -103,142 +107,61 @@ margin_right = -20.0
 margin_bottom = -15.0
 
 [node name="Label" type="Label" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer"]
-margin_right = 260.0
-margin_bottom = 42.0
+margin_right = 270.0
+margin_bottom = 48.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Total Attributes:"
 
+[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer"]
+margin_top = 52.0
+margin_right = 270.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 0, 10 )
+texture = ExtResource( 3 )
+expand = true
+
 [node name="ScrollContainer" type="ScrollContainer" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer"]
+margin_top = 66.0
+margin_right = 270.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AttributesContainer" type="VBoxContainer" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer"]
+margin_right = 139.0
+margin_bottom = 134.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SpecializationAttribute" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/AttributesContainer" instance=ExtResource( 9 )]
+margin_top = 0.0
+margin_right = 270.0
+margin_bottom = 42.0
+
+[node name="SpecializationAttribute2" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/AttributesContainer" instance=ExtResource( 9 )]
 margin_top = 46.0
-margin_right = 260.0
-margin_bottom = 222.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_right = 270.0
+margin_bottom = 88.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer"]
-margin_right = 260.0
-margin_bottom = 176.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_right = 260.0
-margin_bottom = 56.0
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
-margin_right = 260.0
-margin_bottom = 10.0
-rect_min_size = Vector2( 0, 10 )
-texture = ExtResource( 3 )
-expand = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer"]
-margin_top = 14.0
-margin_right = 260.0
-margin_bottom = 56.0
-
-[node name="Name" type="Label" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-margin_right = 205.0
-margin_bottom = 42.0
-size_flags_horizontal = 3
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "Power"
-valign = 1
-
-[node name="Value" type="Label" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 209.0
-margin_right = 260.0
-margin_bottom = 42.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "500"
-valign = 1
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 60.0
-margin_right = 260.0
-margin_bottom = 116.0
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
-margin_right = 260.0
-margin_bottom = 10.0
-rect_min_size = Vector2( 0, 10 )
-texture = ExtResource( 3 )
-expand = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer2"]
-margin_top = 14.0
-margin_right = 260.0
-margin_bottom = 56.0
-
-[node name="Name" type="Label" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
-margin_right = 189.0
-margin_bottom = 42.0
-size_flags_horizontal = 3
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "Precision"
-valign = 1
-
-[node name="Value" type="Label" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
-margin_left = 193.0
-margin_right = 260.0
-margin_bottom = 42.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "1000"
-valign = 1
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer"]
-margin_top = 120.0
-margin_right = 260.0
-margin_bottom = 176.0
-
-[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer3"]
-margin_right = 260.0
-margin_bottom = 10.0
-rect_min_size = Vector2( 0, 10 )
-texture = ExtResource( 3 )
-expand = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer3"]
-margin_top = 14.0
-margin_right = 260.0
-margin_bottom = 56.0
-
-[node name="Name" type="Label" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer3/HBoxContainer"]
-margin_right = 205.0
-margin_bottom = 42.0
-size_flags_horizontal = 3
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "Ferocity"
-valign = 1
-
-[node name="Value" type="Label" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer3/HBoxContainer"]
-margin_left = 209.0
-margin_right = 260.0
-margin_bottom = 42.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "500"
-valign = 1
+[node name="SpecializationAttribute3" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer/AttributesContainer" instance=ExtResource( 9 )]
+margin_top = 92.0
+margin_right = 270.0
+margin_bottom = 134.0
 
 [node name="MarginCenter" type="Label" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 304.0
-margin_top = 121.0
-margin_right = 327.0
-margin_bottom = 135.0
+margin_left = 314.0
+margin_top = 113.0
+margin_right = 341.0
+margin_bottom = 127.0
 size_flags_horizontal = 3
 
 [node name="Panel" type="Panel" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer"]
 self_modulate = Color( 0, 0, 0, 0.701961 )
-margin_left = 331.0
-margin_right = 588.0
-margin_bottom = 257.0
-rect_min_size = Vector2( 257, 0 )
+margin_left = 345.0
+margin_right = 585.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 240, 240 )
 custom_styles/panel = SubResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/Panel"]
@@ -258,8 +181,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="MarginRight" type="Label" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 592.0
-margin_top = 121.0
+margin_left = 589.0
+margin_top = 113.0
 margin_right = 616.0
-margin_bottom = 135.0
+margin_bottom = 127.0
 size_flags_horizontal = 3
