@@ -1,13 +1,12 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://RESOURCES/GuiImages/Chain.png" type="Texture" id=1]
-[ext_resource path="res://RESOURCES/GuiImages/StoneBoardMedium.png" type="Texture" id=2]
 [ext_resource path="res://UI/Screens/Combat/Top/CombatTop.gd" type="Script" id=3]
 [ext_resource path="res://RESOURCES/GuiImages/ParchmentSmall.png" type="Texture" id=4]
 [ext_resource path="res://RESOURCES/GuiImages/DivisionLine.png" type="Texture" id=5]
 [ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://RESOURCES/GuiImages/StoneBoardSmall.png" type="Texture" id=7]
-
+[ext_resource path="res://RESOURCES/GuiImages/Frame.png" type="Texture" id=7]
+[ext_resource path="res://RESOURCES/GuiImages/StoneBoard.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
@@ -39,7 +38,7 @@ font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=5]
 resource_local_to_scene = true
-size = 60
+size = 55
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=6]
@@ -106,7 +105,7 @@ margin_right = 890.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 700, 0 )
 size_flags_horizontal = 3
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 patch_margin_left = 36
 patch_margin_top = 39
 patch_margin_right = 35
@@ -115,17 +114,22 @@ patch_margin_bottom = 42
 [node name="VBoxContainer" type="VBoxContainer" parent="Main/HigherBackground/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 10.0
-margin_bottom = -15.0
+margin_left = 30.0
+margin_top = 20.0
+margin_right = -30.0
+margin_bottom = -20.0
 
-[node name="Background" type="TextureRect" parent="Main/HigherBackground/Background/VBoxContainer"]
-margin_right = 700.0
-margin_bottom = 81.0
+[node name="Background" type="NinePatchRect" parent="Main/HigherBackground/Background/VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 66.0
 rect_min_size = Vector2( 80, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 4 )
-expand = true
+texture = ExtResource( 7 )
+patch_margin_left = 29
+patch_margin_top = 35
+patch_margin_right = 35
+patch_margin_bottom = 31
 
 [node name="ZoneInfo" type="Label" parent="Main/HigherBackground/Background/VBoxContainer/Background"]
 anchor_right = 1.0
@@ -139,28 +143,18 @@ custom_fonts/font = SubResource( 1 )
 text = "Bandit-Infested Forest: Floor 23"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Quest" type="HBoxContainer" parent="Main/HigherBackground/Background/VBoxContainer"]
-margin_top = 85.0
-margin_right = 700.0
-margin_bottom = 125.0
+margin_top = 70.0
+margin_right = 640.0
+margin_bottom = 110.0
 rect_min_size = Vector2( 0, 40 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LeftMargin" type="Label" parent="Main/HigherBackground/Background/VBoxContainer/Quest"]
-margin_right = 12.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 12, 0 )
-size_flags_vertical = 3
-
 [node name="QuestBar" type="ProgressBar" parent="Main/HigherBackground/Background/VBoxContainer/Quest"]
-margin_left = 16.0
-margin_right = 684.0
+margin_right = 640.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -181,13 +175,6 @@ valign = 1
 
 [node name="QuestTween" type="Tween" parent="Main/HigherBackground/Background/VBoxContainer/Quest/QuestBar"]
 
-[node name="RightMargin" type="Label" parent="Main/HigherBackground/Background/VBoxContainer/Quest"]
-margin_left = 688.0
-margin_right = 700.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 12, 0 )
-size_flags_vertical = 3
-
 [node name="RightMargin" type="Label" parent="Main/HigherBackground"]
 margin_left = 894.0
 margin_right = 1080.0
@@ -202,11 +189,13 @@ margin_right = 1080.0
 margin_bottom = 456.0
 rect_min_size = Vector2( 0, 256 )
 size_flags_vertical = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 8 )
 patch_margin_left = 30
 patch_margin_top = 39
 patch_margin_right = 32
 patch_margin_bottom = 38
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -214,20 +203,22 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="Main/LowerBackground"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = -12.0
-margin_bottom = -20.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = 30.0
+margin_top = 20.0
+margin_right = -30.0
+margin_bottom = -30.0
 
-[node name="MonsterInfo" type="TextureRect" parent="Main/LowerBackground/VBoxContainer"]
-margin_right = 1056.0
-margin_bottom = 191.0
+[node name="MonsterInfo" type="NinePatchRect" parent="Main/LowerBackground/VBoxContainer"]
+margin_right = 1020.0
+margin_bottom = 173.0
 size_flags_vertical = 3
 texture = ExtResource( 4 )
-expand = true
+patch_margin_left = 65
+patch_margin_top = 86
+patch_margin_right = 71
+patch_margin_bottom = 75
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main/LowerBackground/VBoxContainer/MonsterInfo"]
 anchor_right = 1.0
@@ -238,8 +229,8 @@ margin_right = -20.0
 margin_bottom = -15.0
 
 [node name="Name" type="Label" parent="Main/LowerBackground/VBoxContainer/MonsterInfo/VBoxContainer"]
-margin_right = 1016.0
-margin_bottom = 72.0
+margin_right = 980.0
+margin_bottom = 66.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -250,9 +241,9 @@ valign = 1
 clip_text = true
 
 [node name="Line" type="HBoxContainer" parent="Main/LowerBackground/VBoxContainer/MonsterInfo/VBoxContainer"]
-margin_top = 76.0
-margin_right = 1016.0
-margin_bottom = 91.0
+margin_top = 70.0
+margin_right = 980.0
+margin_bottom = 85.0
 rect_min_size = Vector2( 0, 15 )
 
 [node name="LeftMargin" type="Label" parent="Main/LowerBackground/VBoxContainer/MonsterInfo/VBoxContainer/Line"]
@@ -263,23 +254,23 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Main/LowerBackground/VBoxContainer/MonsterInfo/VBoxContainer/Line"]
 margin_left = 79.0
-margin_right = 937.0
+margin_right = 901.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
 texture = ExtResource( 5 )
 expand = true
 
 [node name="RightMargin" type="Label" parent="Main/LowerBackground/VBoxContainer/MonsterInfo/VBoxContainer/Line"]
-margin_left = 941.0
-margin_right = 1016.0
+margin_left = 905.0
+margin_right = 980.0
 margin_bottom = 15.0
 rect_min_size = Vector2( 75, 15 )
 size_flags_vertical = 3
 
 [node name="Modifiers" type="Label" parent="Main/LowerBackground/VBoxContainer/MonsterInfo/VBoxContainer"]
-margin_top = 95.0
-margin_right = 1016.0
-margin_bottom = 140.0
+margin_top = 89.0
+margin_right = 980.0
+margin_bottom = 134.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -290,9 +281,9 @@ valign = 1
 clip_text = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Main/LowerBackground/VBoxContainer"]
-margin_top = 195.0
-margin_right = 1056.0
-margin_bottom = 270.0
+margin_top = 177.0
+margin_right = 1020.0
+margin_bottom = 252.0
 rect_min_size = Vector2( 0, 75 )
 
 [node name="LeftMargin" type="Label" parent="Main/LowerBackground/VBoxContainer/HBoxContainer"]
@@ -303,7 +294,7 @@ size_flags_vertical = 3
 
 [node name="MonsterHP" type="ProgressBar" parent="Main/LowerBackground/VBoxContainer/HBoxContainer"]
 margin_left = 154.0
-margin_right = 902.0
+margin_right = 866.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -324,8 +315,8 @@ valign = 1
 [node name="Tween" type="Tween" parent="Main/LowerBackground/VBoxContainer/HBoxContainer/MonsterHP"]
 
 [node name="RightMargin" type="Label" parent="Main/LowerBackground/VBoxContainer/HBoxContainer"]
-margin_left = 906.0
-margin_right = 1056.0
+margin_left = 870.0
+margin_right = 1020.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 150, 0 )
 size_flags_vertical = 3

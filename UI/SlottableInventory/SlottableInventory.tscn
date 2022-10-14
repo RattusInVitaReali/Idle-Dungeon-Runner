@@ -30,8 +30,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
-margin_right = 1030.0
-margin_bottom = 1332.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/vseparation = 20

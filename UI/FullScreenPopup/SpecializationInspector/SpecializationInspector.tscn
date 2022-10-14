@@ -6,7 +6,7 @@
 [ext_resource path="res://UI/FullScreenPopup/SpecializationInspector/SpecializationInspector.gd" type="Script" id=4]
 [ext_resource path="res://RESOURCES/GuiImages/ParchmentSmall.png" type="Texture" id=5]
 [ext_resource path="res://RESOURCES/GuiImages/ParchmentLargeVertical.png" type="Texture" id=6]
-[ext_resource path="res://RESOURCES/GuiImages/StoneBoardMedium.png" type="Texture" id=10]
+[ext_resource path="res://RESOURCES/GuiImages/StoneBoard.png" type="Texture" id=7]
 [ext_resource path="res://RESOURCES/GuiImages/DivisionLineVertical.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
@@ -53,18 +53,20 @@ text = "Assassination"
 align = 1
 valign = 1
 
-[node name="TextureRect" type="NinePatchRect" parent="Panel/VBoxContainer" index="1"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel/VBoxContainer" index="1"]
 margin_top = 154.0
 margin_right = 840.0
 margin_bottom = 454.0
 rect_min_size = Vector2( 0, 300 )
-texture = ExtResource( 10 )
+texture = ExtResource( 7 )
 patch_margin_left = 46
 patch_margin_top = 45
 patch_margin_right = 45
 patch_margin_bottom = 51
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/TextureRect" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/NinePatchRect" index="0"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -72,12 +74,12 @@ margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/TextureRect/HBoxContainer" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/NinePatchRect/HBoxContainer" index="0"]
 margin_right = 400.0
 margin_bottom = 280.0
 rect_min_size = Vector2( 400, 0 )
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/TextureRect/HBoxContainer/VBoxContainer" index="0"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/NinePatchRect/HBoxContainer/VBoxContainer" index="0"]
 margin_right = 400.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
@@ -88,7 +90,7 @@ text = "Current Rank:"
 align = 1
 valign = 2
 
-[node name="Rank" type="Label" parent="Panel/VBoxContainer/TextureRect/HBoxContainer/VBoxContainer" index="1"]
+[node name="Rank" type="Label" parent="Panel/VBoxContainer/NinePatchRect/HBoxContainer/VBoxContainer" index="1"]
 margin_top = 84.0
 margin_right = 400.0
 margin_bottom = 280.0
@@ -99,7 +101,7 @@ text = "Apprentice"
 align = 1
 autowrap = true
 
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/TextureRect/HBoxContainer" index="1"]
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/NinePatchRect/HBoxContainer" index="1"]
 margin_left = 404.0
 margin_right = 419.0
 margin_bottom = 280.0
@@ -129,8 +131,8 @@ margin_right = -60.0
 margin_bottom = -60.0
 
 [node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer/SkillTree/ScrollContainer" index="0"]
-margin_right = 720.0
-margin_bottom = 882.0
+margin_right = 210.0
+margin_bottom = 405.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/vseparation = 85

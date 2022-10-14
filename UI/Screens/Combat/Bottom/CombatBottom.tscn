@@ -7,7 +7,7 @@
 [ext_resource path="res://UI/Screens/Combat/HpBar/HpBarForeground.tres" type="StyleBox" id=5]
 [ext_resource path="res://UI/Screens/Combat/HpBar/HpBarBackground.tres" type="StyleBox" id=6]
 [ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://RESOURCES/GuiImages/StoneBoardSmall.png" type="Texture" id=8]
+[ext_resource path="res://RESOURCES/GuiImages/StoneBoard.png" type="Texture" id=8]
 [ext_resource path="res://RESOURCES/GuiImages/ParchmentSmall.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
@@ -69,6 +69,8 @@ patch_margin_left = 33
 patch_margin_top = 44
 patch_margin_right = 31
 patch_margin_bottom = 40
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

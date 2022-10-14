@@ -7,7 +7,7 @@
 [ext_resource path="res://RESOURCES/GuiImages/FrameBasic.png" type="Texture" id=5]
 [ext_resource path="res://RESOURCES/GuiImages/CornerInventory.png" type="Texture" id=6]
 [ext_resource path="res://RESOURCES/GuiImages/ParchmentLargeVertical.png" type="Texture" id=7]
-[ext_resource path="res://RESOURCES/GuiImages/StoneBoardLarge.png" type="Texture" id=8]
+[ext_resource path="res://RESOURCES/GuiImages/StoneBoard.png" type="Texture" id=8]
 
 [node name="Inventory" instance=ExtResource( 3 )]
 script = ExtResource( 1 )
