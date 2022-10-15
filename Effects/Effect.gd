@@ -89,6 +89,12 @@ func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 func on_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 	pass
 
+func on_outgoing_effect(effect : Effect):
+	pass
+
+func on_incoming_effect(effect : Effect):
+	pass
+
 func apply_attributes(attributes):
 	pass
 

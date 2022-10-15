@@ -50,6 +50,11 @@ func calculate_stats():
 	update_skill_slots()
 	update_skill_cooldowns(CombatProcessor.auto_combat)
 
+func apply_spec_attributes():
+	for spec in $Specializations.get_children():
+		if spec.active:
+			spec.on_calculate_attributes(attributes)
+
 func update_skill_slots():
 	skill_slots = 0
 	for lvl in skill_slot_unlock_levels:

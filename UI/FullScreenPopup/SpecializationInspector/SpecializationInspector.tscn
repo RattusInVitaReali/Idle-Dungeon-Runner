@@ -131,8 +131,8 @@ margin_right = -60.0
 margin_bottom = -60.0
 
 [node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer/SkillTree/ScrollContainer" index="0"]
-margin_right = 210.0
-margin_bottom = 405.0
+margin_right = 720.0
+margin_bottom = 882.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/vseparation = 85
@@ -142,17 +142,42 @@ columns = 3
 [node name="SpecializationSlot" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer" index="0" instance=ExtResource( 1 )]
 margin_bottom = 160.0
 
+[node name="Line2D" type="Line2D" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer/SpecializationSlot" index="1"]
+show_behind_parent = true
+position = Vector2( 85, 150 )
+points = PoolVector2Array( 0, 0, 275, 100 )
+width = 5.0
+default_color = Color( 0.87451, 0.254902, 0.0392157, 1 )
+joint_mode = 2
+
 [node name="SpecializationSlot2" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer" index="1" instance=ExtResource( 1 )]
 margin_left = 275.0
 margin_right = 445.0
 margin_bottom = 160.0
+
+[node name="Line2D" type="Line2D" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer/SpecializationSlot2" index="1"]
+show_behind_parent = true
+position = Vector2( 85, 150 )
+points = PoolVector2Array( 0, 0, 0, 100 )
+width = 5.0
+default_color = Color( 0.87451, 0.254902, 0.0392157, 1 )
+joint_mode = 2
 
 [node name="SpecializationSlot3" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer" index="2" instance=ExtResource( 1 )]
 margin_left = 550.0
 margin_right = 720.0
 margin_bottom = 160.0
 
+[node name="Line2D" type="Line2D" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer/SpecializationSlot3" index="1"]
+show_behind_parent = true
+position = Vector2( 85, 150 )
+points = PoolVector2Array( 0, 0, -275, 100 )
+width = 5.0
+default_color = Color( 0.87451, 0.254902, 0.0392157, 1 )
+joint_mode = 2
+
 [node name="SpecializationSlot4" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer" index="3" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 245.0
 margin_bottom = 405.0
 
@@ -162,8 +187,49 @@ margin_top = 245.0
 margin_right = 445.0
 margin_bottom = 405.0
 
+[node name="Line2D" type="Line2D" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer/SpecializationSlot5" index="1"]
+show_behind_parent = true
+position = Vector2( 85, 150 )
+points = PoolVector2Array( 0, 0, 275, 100 )
+width = 5.0
+default_color = Color( 0.87451, 0.254902, 0.0392157, 1 )
+joint_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer/SpecializationSlot5" index="2"]
+show_behind_parent = true
+position = Vector2( 85, 150 )
+points = PoolVector2Array( 0, 0, 0, 100 )
+width = 5.0
+default_color = Color( 0.87451, 0.254902, 0.0392157, 1 )
+joint_mode = 2
+
+[node name="Line2D3" type="Line2D" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer/SpecializationSlot5" index="3"]
+show_behind_parent = true
+position = Vector2( 85, 150 )
+points = PoolVector2Array( 0, 0, -275, 100 )
+width = 5.0
+default_color = Color( 0.87451, 0.254902, 0.0392157, 1 )
+joint_mode = 2
+
 [node name="SpecializationSlot6" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer" index="5" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 550.0
 margin_top = 245.0
 margin_right = 720.0
 margin_bottom = 405.0
+
+[node name="SpecializationSlot7" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer" index="6" instance=ExtResource( 1 )]
+margin_top = 490.0
+margin_bottom = 650.0
+
+[node name="SpecializationSlot8" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer" index="7" instance=ExtResource( 1 )]
+margin_left = 275.0
+margin_top = 490.0
+margin_right = 445.0
+margin_bottom = 650.0
+
+[node name="SpecializationSlot9" parent="Panel/VBoxContainer/SkillTree/ScrollContainer/GridContainer" index="8" instance=ExtResource( 1 )]
+margin_left = 550.0
+margin_top = 490.0
+margin_right = 720.0
+margin_bottom = 650.0

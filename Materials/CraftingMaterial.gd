@@ -70,6 +70,12 @@ func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo, item):
 func on_incoming_damage(damage_info : CombatProcessor.DamageInfo, item):
 	mat.on_incoming_damage(damage_info, item)
 
+func on_outgoing_effect(effect : Effect, item):
+	mat.on_outgoing_effect(effect, item)
+
+func on_incoming_effect(effect : Effect, item):
+	mat.on_incoming_effect(effect, item)
+
 func from_lootable(lootable):
 	set_mat(lootable.material)
 	quantity = lootable.get_quantity()

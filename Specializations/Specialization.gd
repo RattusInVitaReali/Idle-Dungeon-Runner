@@ -24,15 +24,10 @@ export (Dictionary) var attributes_per_level = {
 export (bool) var active = false
 export (int) var level = 0
 
-func on_outgoing_effect(effect : Effect):
-	if active:
-		for trait in traits:
-			trait.on_outgoing_effect(effect)
-
-func on_incoming_effect(effect : Effect):
-	if active:
-		for trait in traits:
-			trait.on_incoming_effect(effect)
+func on_calculate_attributes(attributes):
+	for trait in traits:
+		if trait.active:
+			trait.on_calculate_attributes(attributes)
 
 func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	if active:
@@ -43,3 +38,13 @@ func on_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 	if active:
 		for trait in traits:
 			trait.on_incoming_damage(damage_info)
+
+func on_outgoing_effect(effect : Effect):
+	if active:
+		for trait in traits:
+			trait.on_outgoing_effect(effect)
+
+func on_incoming_effect(effect : Effect):
+	if active:
+		for trait in traits:
+			trait.on_incoming_effect(effect)

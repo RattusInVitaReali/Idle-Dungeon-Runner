@@ -200,6 +200,14 @@ func on_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 	for part in get_children():
 		part.on_incoming_damage(damage_info, self)
 
+func on_outgoing_effect(effect : Effect):
+	for part in get_children():
+		part.on_outgoing_effect(effect, self)
+
+func on_incoming_effect(effect : Effect, item):
+	for part in get_children():
+		part.on_incoming_effect(effect, self)
+
 func from_lootable(lootable):
 	var _parts = []
 	for part in lootable.parts:

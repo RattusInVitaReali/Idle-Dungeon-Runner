@@ -68,5 +68,7 @@ phys_crit_color = Color( 0.866667, 0, 0, 1 )
 
 [node name="Tween" type="Tween" parent="."]
 
+[node name="Specializations" type="Node2D" parent="."]
+
 [connection signal="animation_finished" from="." to="." method="_on_Entity_animation_finished"]
 [connection signal="timeout" from="ActionTimer" to="." method="_on_ActionTimer_timeout"]

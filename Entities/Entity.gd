@@ -175,6 +175,7 @@ func update_stats():
 	if ready:
 		var hp = stats["hp"]
 		calculate_stats()
+		stepify_stats()
 		if !CombatProcessor.in_combat:
 			stats["hp"] = stats.max_hp
 		else:
@@ -183,18 +184,21 @@ func update_stats():
 
 func calculate_stats():
 	reset_stats()
-	apply_level_attributes()
-	apply_item_attributes()
-	apply_effect_attributes()
+	calculate_attributes()
 	apply_attribute_stats()
 	update_skill_levels()
-	stepify_stats()
 
 func reset_stats():
 	for stat in stats:
 		stats[stat] = base_stats[stat]
 	for at in attributes:
 		attributes[at] = base_attributes[at]
+
+func calculate_attributes():
+	apply_level_attributes()
+	apply_item_attributes()
+	apply_specs_attributes()
+	apply_effect_attributes()
 
 func apply_level_attributes():
 	for key in per_level.keys():
@@ -203,6 +207,10 @@ func apply_level_attributes():
 func apply_item_attributes():
 	for item in get_items():
 		item.apply_attributes(attributes)
+
+func apply_specs_attributes():
+	for spec in get_active_specs():
+			spec.on_calculate_attributes(attributes)
 
 func apply_effect_attributes():
 	for effect in get_effects():
@@ -307,6 +315,13 @@ func has_effect(effect):
 func get_items():
 	return $Items.get_children()
 
+func get_active_specs():
+	var active_specs = []
+	for spec in $Specializations.get_children():
+		if spec.active:
+			active_specs.append(spec)
+	return active_specs
+
 func next_action():
 	var _skill = null
 	if CombatProcessor.in_combat:
@@ -328,63 +343,118 @@ func try_to_use_skill(skill):
 	return _skill
 
 func process_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
-	damage_info.roll_crit(stats["crit_chance"], stats["crit_multi"])
-	items_outgoing_damage(damage_info)
-	stats_outgoing_damage(damage_info)
-	effects_outgoing_damage(damage_info)
-	for effect in damage_info.effects:
-		apply_stats_to_effect(effect)
+	calculate_outgoing_damage(damage_info)
 	emit_signal("damage_enemy", damage_info)
 
-func items_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
-	for item in get_items():
-		item.on_outgoing_damage(damage_info)
+func calculate_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
+	damage_info.roll_crit(stats["crit_chance"], stats["crit_multi"])
+	stats_outgoing_damage(damage_info)
+	items_outgoing_damage(damage_info)
+	specs_outgoing_damage(damage_info)
+	effects_outgoing_damage(damage_info)
+	for effect in damage_info.effects:
+		calculate_outgoing_effect(effect)
 
 func stats_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	damage_info.phys_pen(stats["phys_penetration"])
 	damage_info.magic_pen(stats["magic_penetration"])
 
+func items_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
+	for item in get_items():
+		item.on_outgoing_damage(damage_info)
+
+func specs_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
+	for spec in get_active_specs():
+		spec.on_outgoing_damage(damage_info)
+
 func effects_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	for effect in get_effects():
 		effect.on_outgoing_damage(damage_info)
 
-func process_outgoing_effect(effect : Effect):
-	apply_stats_to_effect(effect)
-	emit_signal("apply_effect", effect)
-
-func apply_stats_to_effect(effect : Effect):
-	effect.process_duration_multi(stats["outgoing_effect_duration_multi"])
-	effect.process_strength_multi(stats["outgoing_effect_strength_multi"])
-
 func process_incoming_damage(damage_info : CombatProcessor.DamageInfo):
+	calculate_incoming_damage(damage_info)
+	take_damage_info(damage_info)
+
+func calculate_incoming_damage(damage_info : CombatProcessor.DamageInfo):
+	stats_incoming_damage(damage_info)
 	items_incoming_damage(damage_info)
+	specs_incoming_damage(damage_info)
 	effects_incoming_damage(damage_info)
 	for effect in damage_info.effects:
 		process_incoming_effect(effect)
-	stats_incoming_damage(damage_info)
-	take_damage_info(damage_info)
+
+func stats_incoming_damage(damage_info : CombatProcessor.DamageInfo):
+	damage_info.phys_damage = int(damage_info.phys_damage * 15 / sqrt(max(0, stats.phys_protection - damage_info.phys_pen) + 225))
+	damage_info.magic_damage = int(damage_info.magic_damage * 15 / sqrt(max(0, stats.magic_protection - damage_info.magic_pen) + 225))
 
 func items_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 	for item in get_items():
 		item.on_incoming_damage(damage_info)
 
+func specs_incoming_damage(damage_info : CombatProcessor.DamageInfo):
+	for spec in get_active_specs():
+		spec.on_incoming_damage(damage_info)
+
 func effects_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 	for effect in get_effects():
 		effect.on_incoming_damage(damage_info)
 
+func process_outgoing_effect(effect : Effect):
+	calculate_outgoing_effect(effect)
+	emit_signal("apply_effect", effect)
+
+func calculate_outgoing_effect(effect : Effect):
+	stats_outgoing_effect(effect)
+	items_outgoing_effect(effect)
+	specs_outgoing_effect(effect)
+	effects_outgoing_effect(effect)
+
+func stats_outgoing_effect(effect : Effect):
+	effect.process_duration_multi(stats["outgoing_effect_duration_multi"])
+	effect.process_strength_multi(stats["outgoing_effect_strength_multi"])
+
+func items_outgoing_effect(effect : Effect):
+	for item in get_items():
+		item.on_outgoing_effect(effect)
+
+func specs_outgoing_effect(effect : Effect):
+	for spec in get_active_specs():
+		spec.on_outgoing_effect()
+
+func effects_outgoing_effect(effect : Effect):
+	for ef in get_effects():
+		ef.on_outgoing_effect(effect)
+
 func process_incoming_effect(effect : Effect):
-	if effect.attacker != self:
-		effect.process_duration_multi(stats["incoming_effect_duration_multi"])
-		effect.process_strength_multi(stats["incoming_effect_strength_multi"])
+	calculate_incoming_effect(effect)
 	$Effects.add_child(effect)
 	effect.connect("effect_expired", self, "update_stats")
 	effect.begin()
 	emit_signal("effect_applied", effect)
 	update_stats()
 
-func stats_incoming_damage(damage_info : CombatProcessor.DamageInfo):
-	damage_info.phys_damage = int(damage_info.phys_damage * 15 / sqrt(max(0, stats.phys_protection - damage_info.phys_pen) + 225))
-	damage_info.magic_damage = int(damage_info.magic_damage * 15 / sqrt(max(0, stats.magic_protection - damage_info.magic_pen) + 225))
+func calculate_incoming_effect(effect : Effect):
+	stats_incoming_effect(effect)
+	items_incoming_effect(effect)
+	specs_incoming_effect(effect)
+	effects_incoming_effect(effect)
+
+func stats_incoming_effect(effect : Effect):
+	if effect.attacker != self:
+		effect.process_duration_multi(stats["incoming_effect_duration_multi"])
+		effect.process_strength_multi(stats["incoming_effect_strength_multi"])
+
+func items_incoming_effect(effect : Effect):
+	for item in get_items():
+		item.on_incoming_effect(effect)
+
+func specs_incoming_effect(effect : Effect):
+	for spec in get_active_specs():
+		spec.on_incoming_effect(effect)
+
+func effects_incoming_effect(effect : Effect):
+	for ef in get_effects():
+		ef.on_incoming_effect(effect)
 
 func take_damage_info(damage_info : CombatProcessor.DamageInfo):
 	play_animation("hurt")
