@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Traits/AttributeBonusPercentTrait.gd" type="Script" id=1]
+[ext_resource path="res://RESOURCES/Traits/Revealed_Training.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+trait_name = "Bladedancer"
+level_required = 1
+trait_icon = ExtResource( 2 )
+active = false
+attribute_multipliers = {
+"armor": 1.0,
+"dexterity": 1.07,
+"expertise": 1.0,
+"ferocity": 1.07,
+"magic_penetration": 1.0,
+"mastery": 1.0,
+"occult_aversion": 1.0,
+"penetration": 1.0,
+"potency": 1.0,
+"power": 1.07,
+"precision": 1.07,
+"toughess": 1.0,
+"vitality": 1.0
+}

@@ -22,7 +22,10 @@ export (Dictionary) var attributes_per_level = {
 }
 
 export (bool) var active = false
-export (int) var level = 0
+export (int) var level = 1
+
+func get_title():
+	return titles[level - 1]
 
 func on_calculate_attributes(attributes):
 	for trait in traits:

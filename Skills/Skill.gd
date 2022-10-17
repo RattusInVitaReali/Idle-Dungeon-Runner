@@ -50,7 +50,7 @@ func set_attacker(new_value):
 	try_unlock()
 
 func description():
-	pass
+	return ""
 
 func cast_on_self():
 	for tag in tags:

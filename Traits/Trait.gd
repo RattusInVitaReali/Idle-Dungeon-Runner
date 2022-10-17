@@ -2,7 +2,7 @@ extends Resource
 class_name Trait
 
 export (String) var trait_name
-export (String) var requirement
+export (int) var level_required
 export (Texture) var trait_icon
 export (bool) var active
 
@@ -20,3 +20,6 @@ func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 
 func on_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 	pass
+
+func description():
+	return ""
