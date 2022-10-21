@@ -129,11 +129,11 @@ func fake_respawn():
 
 func load():
 	if save_path != "" and ResourceLoader.exists(save_path):
-		for effect in $Effects.get_children():
+		for effect in get_effects():
 			effect.expire()
 		for dn in $DamageNumberManager.get_children():
 			dn.queue_free()
-		for item in $Items.get_children():
+		for item in get_items():
 			item.load()
 			item.connect("slottable_updated", self, "update_stats")
 		update_stats()

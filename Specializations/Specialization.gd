@@ -25,10 +25,13 @@ export (Dictionary) var attributes_per_level = {
 
 export (bool) var active = false
 export (int) var level = 1
+export (Array, String) var active_traits = []
 
 func _ready():
 	for trait in get_traits():
 		trait.connect("slottable_updated", self, "_on_trait_updated")
+		if trait.slottable_name in active_traits:
+			trait.active = true
 
 func get_traits():
 	return get_children()
@@ -39,6 +42,7 @@ func get_title():
 func try_allocate(trait):
 	if trait in get_traits() and trait.level_required == level:
 		level += 1
+		active_traits.append(trait.slottable_name)
 		trait.active = true
 
 func get_level_attributes():
