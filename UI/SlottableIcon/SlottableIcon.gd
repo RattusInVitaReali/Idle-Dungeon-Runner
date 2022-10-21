@@ -59,6 +59,19 @@ func set_slottable(var slottable : Slottable):
 			else:
 				new_texture.texture = slottable.icon
 			add_child(new_texture)
+		Slottable.SLOTTABLE_TYPE.TRAIT:
+			texture = slottable.get_border_texture()
+			stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+			var new_texture = TextureRect.new()
+			new_texture.expand = true
+			new_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+			new_texture.show_behind_parent = true
+			new_texture.rect_size = rect_size
+			if slottable.locked:
+				new_texture.texture = Locked
+			else:
+				new_texture.texture = slottable.icon
+			add_child(new_texture)
 		Slottable.SLOTTABLE_TYPE.ITEM_PART:
 			if slottable.locked:
 				texture = Locked

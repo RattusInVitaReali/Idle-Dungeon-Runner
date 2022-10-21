@@ -28,10 +28,10 @@ func description():
 			desc += str(attribute_bonuses[at]) + " " + at.capitalize() + ", "
 	var index = desc.find_last(",")
 	if index != -1:
-		desc.erase(index, 1)
+		desc.erase(index, 2)
 	index = desc.find_last(",")
 	if index != -1:
 		desc.erase(index, 1)
-		desc.insert(index, " and")
+		desc = desc.insert(index, " and")
 	desc += "."
 	return desc

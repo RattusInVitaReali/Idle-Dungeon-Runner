@@ -1,10 +1,21 @@
-extends Resource
+extends Slottable
 class_name Trait
 
-export (String) var trait_name
+const BorderDefault = preload("res://RESOURCES/SkillBorders/Border3.png")
+const BorderActive = preload("res://RESOURCES/SkillBorders/Border4.png")
+
 export (int) var level_required
-export (Texture) var trait_icon
-export (bool) var active
+export (bool) var active setget set_active
+
+func set_active(_active):
+	if _active != active:
+		active = _active
+		emit_signal("slottable_updated")
+
+func get_border_texture():
+	if active:
+		return BorderActive
+	return BorderDefault
 
 func on_calculate_attributes(attributes):
 	pass

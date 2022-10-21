@@ -5,6 +5,7 @@ const MaterialInspector = preload("res://UI/FullScreenPopup/SlottableInspector/S
 const PartInspector = preload("res://UI/FullScreenPopup/SlottableInspector/StatsInspector/PartInspector/PartInspector.tscn")
 const ItemInspector = preload("res://UI/FullScreenPopup/SlottableInspector/StatsInspector/ItemInspector/ItemInspector.tscn")
 const SkillInspector = preload("res://UI/FullScreenPopup/SlottableInspector/SkillInspector/SkillInspector.tscn")
+const TraitInspectorScene = preload( "res://UI/FullScreenPopup/SlottableInspector/TraitInspector/TraitInspector.tscn")
 
 const ConfirmDialog = preload("res://UI/ConfirmDialog/ConfirmDialog.tscn")
 
@@ -67,6 +68,8 @@ func _on_inspector(slot):
 				inspector = ItemInspector.instance()
 			Slottable.SLOTTABLE_TYPE.SKILL:
 				inspector = SkillInspector.instance()
+			Slottable.SLOTTABLE_TYPE.TRAIT:
+				inspector = TraitInspectorScene.instance()
 		if inspector != null:
 			add_child(inspector)
 			inspector.set_slot(slot)

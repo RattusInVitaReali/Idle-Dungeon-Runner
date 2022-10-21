@@ -1,7 +1,7 @@
 extends Node2D
 class_name Slottable
 
-enum SLOTTABLE_TYPE { MATERIAL, ITEM_PART, ITEM, SKILL, EXPERIENCE, GLOBAL_RESOURCE }
+enum SLOTTABLE_TYPE { MATERIAL, ITEM_PART, ITEM, SKILL, EXPERIENCE, GLOBAL_RESOURCE, TRAIT }
 
 signal slottable_updated
 signal unlocked

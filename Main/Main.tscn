@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Main/Main.gd" type="Script" id=1]
 [ext_resource path="res://UI/BottomBar/BottomBar.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://UI/Screens/PartForge/PartForge.tscn" type="PackedScene" id=9]
 [ext_resource path="res://UI/Screens/Zones/Zones.tscn" type="PackedScene" id=10]
 [ext_resource path="res://SwipeDetector/SwipeDetector.tscn" type="PackedScene" id=11]
+[ext_resource path="res://UI/Screens/Specializations/Specializations.tscn" type="PackedScene" id=12]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -84,6 +85,11 @@ margin_bottom = 1920.0
 anchor_left = 0.857
 margin_left = 6480.0
 margin_right = 7560.0
+margin_bottom = 1920.0
+
+[node name="Specializations" parent="." instance=ExtResource( 12 )]
+margin_left = 7560.0
+margin_right = 8640.0
 margin_bottom = 1920.0
 
 [node name="CombatScreen" parent="." instance=ExtResource( 4 )]

@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/Screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Screens/Specializations/Specializations.gd" type="Script" id=2]
 [ext_resource path="res://RESOURCES/GuiImages/CornerSpecializations.png" type="Texture" id=3]
-[ext_resource path="res://UI/Screens/Specializations/SpecializationInfo/SpecializationInfo.tscn" type="PackedScene" id=4]
 
 [node name="Specializations" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -17,11 +16,18 @@ text = "Specializations"
 [node name="RightMargin" parent="VBoxContainer/Upper/VBoxContainer/Name" index="2"]
 texture = ExtResource( 3 )
 
-[node name="SpecializationInfo" parent="VBoxContainer/Screen/VBoxContainer" index="0" instance=ExtResource( 4 )]
-margin_bottom = 460.0
-rect_min_size = Vector2( 0, 460 )
-stretch_mode = 1
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Screen/VBoxContainer" index="0"]
+margin_right = 1080.0
+margin_bottom = 1392.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SpecializationsContainer" type="VBoxContainer" parent="VBoxContainer/Screen/VBoxContainer/ScrollContainer" index="0"]
+margin_right = 1080.0
+margin_bottom = 1392.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="BottomOffset" parent="VBoxContainer/Screen/VBoxContainer" index="1"]
-margin_top = 464.0
-margin_bottom = 684.0
+margin_top = 1396.0
+margin_bottom = 1616.0

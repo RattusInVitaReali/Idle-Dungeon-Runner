@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Slot/Slot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Slot/TraitSlot/TraitSlot.gd" type="Script" id=2]
+
+[node name="TraitSlot" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+hide_quantity = true
+
+[node name="Background" parent="." index="1"]
+texture = null
+
+[node name="SlottableIcon" parent="Background" index="0"]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Button" parent="Background" index="4"]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0

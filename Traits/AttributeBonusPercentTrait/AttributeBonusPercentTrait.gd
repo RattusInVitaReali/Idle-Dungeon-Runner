@@ -24,14 +24,14 @@ func on_calculate_attributes(attributes):
 func description():
 	var desc = "Gain "
 	for at in attribute_multipliers:
-		if attribute_multipliers[at] != 0:
-			desc += str(attribute_multipliers[at] - 1) + "% " + at.capitalize() + ", "
+		if attribute_multipliers[at] != 1.0:
+			desc += str((attribute_multipliers[at] - 1) * 100) + "% " + at.capitalize() + ", "
 	var index = desc.find_last(",")
 	if index != -1:
-		desc.erase(index, 1)
+		desc.erase(index, 2)
 	index = desc.find_last(",")
 	if index != -1:
 		desc.erase(index, 1)
-		desc.insert(index, " and")
+		desc = desc.insert(index, " and")
 	desc += "."
 	return desc

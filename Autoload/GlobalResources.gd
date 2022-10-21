@@ -11,7 +11,8 @@ enum GR {
 	SPELLSTONE_UNCOMMON,
 	SPELLSTONE_RARE,
 	SPELLSTONE_EPIC,
-	SPELLSTONE_LEGENDARY
+	SPELLSTONE_LEGENDARY,
+	TRAIT_POINT
 }
 
 export (Dictionary) var GLOBAL_RESOURCES = {
@@ -30,7 +31,9 @@ export (Dictionary) var GLOBAL_RESOURCES = {
 	GR.SPELLSTONE_EPIC:
 		[0, "Epic Spellstone", preload("res://RESOURCES/GlobalResources/SpellstoneEpic.png")],
 	GR.SPELLSTONE_LEGENDARY:
-		[0, "Legendary Spellstone", preload("res://RESOURCES/GlobalResources/SpellstoneLegendary.png")]
+		[0, "Legendary Spellstone", preload("res://RESOURCES/GlobalResources/SpellstoneLegendary.png")],
+	GR.TRAIT_POINT:
+		[0, "Trait Point", preload("res://RESOURCES/GlobalResources/TraitPoint.png")]
 }
 
 func save_path():

@@ -1,5 +1,5 @@
 extends HBoxContainer
-class_name SpecializationAttribute
+class_name SpecializationInspectorAttribute
 
 func set_attribute(att, value):
 	$Name.text = att.capitalize()

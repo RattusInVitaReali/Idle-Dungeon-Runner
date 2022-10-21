@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://RESOURCES/Traits/No_Quarter_(trait).png" type="Texture" id=1]
+[ext_resource path="res://Traits/AttributeBonusFlatTrait/AttributeBonusFlatTrait.tscn" type="PackedScene" id=2]
+
+[node name="UnmatchedBrutality" instance=ExtResource( 2 )]
+icon = ExtResource( 1 )
+slottable_name = "Unmatched Brutality"
+attribute_bonuses = {
+"armor": 0,
+"dexterity": 0,
+"expertise": 0,
+"ferocity": 200,
+"magic_penetration": 0,
+"mastery": 0,
+"occult_aversion": 0,
+"penetration": 0,
+"potency": 0,
+"power": 0,
+"precision": 0,
+"toughess": 0,
+"vitality": 0
+}

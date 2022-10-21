@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Entities/Player/PlayerAnimations.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Skills/BasicAttack/BasicAttack.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Skills/ComboSlash/ComboSlash.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Skills/DefensiveStrike/DefensiveStrike.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Skills/Overpower/Overpower.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Specializations/Variants/Assassination.tscn" type="PackedScene" id=17]
 
 [node name="Player" instance=ExtResource( 4 )]
 frames = ExtResource( 1 )
@@ -64,3 +65,5 @@ locked = false
 [node name="DefensiveStrike" parent="Skills" index="11" instance=ExtResource( 15 )]
 
 [node name="Overpower" parent="Skills" index="12" instance=ExtResource( 16 )]
+
+[node name="Assassination" parent="Specializations" index="0" instance=ExtResource( 17 )]

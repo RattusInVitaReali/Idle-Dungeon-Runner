@@ -1,7 +1,7 @@
 extends Node2D
 class_name Main
 
-enum SCREEN { COMBAT, INVENTORY, PART_FORGE, ITEM_FORGE, STATS, ZONES, SKILLS }
+enum SCREEN { COMBAT, INVENTORY, PART_FORGE, ITEM_FORGE, STATS, ZONES, SKILLS, SPECIALIZATIONS }
 
 onready var bottom_bar = $BottomBarUI/BottomBar
 onready var tween = $BottomBarUI/Tween
@@ -14,7 +14,8 @@ onready var screens = {
 	SCREEN.ITEM_FORGE: $ItemForge,
 	SCREEN.STATS: $Stats,
 	SCREEN.ZONES: $Zones,
-	SCREEN.SKILLS: $Skills
+	SCREEN.SKILLS: $Skills,
+	SCREEN.SPECIALIZATIONS: $Specializations
 }
 
 onready var screen = screens[SCREEN.COMBAT]

@@ -93,6 +93,7 @@ func _ready():
 	connect("apply_effect", CombatProcessor, "apply_effect")
 	CombatProcessor.connect("exited_combat", self, "exit_combat")
 	set_skills_attacker()
+	connect_traits()
 
 func _process(delta):
 	next_action()
@@ -120,6 +121,11 @@ func set_skills_attacker():
 	for skill in get_skills():
 		skill.attacker = self
 	return self
+
+func connect_traits():
+	for spec in get_all_specs():
+		for trait in spec.get_traits():
+			trait.connect("slottable_updated", self, "update_stats")
 
 func equip_item(item : Item):
 	if item.type == CraftingManager.ITEM_TYPE.WEAPON:
@@ -210,7 +216,7 @@ func apply_item_attributes():
 
 func apply_specs_attributes():
 	for spec in get_active_specs():
-			spec.on_calculate_attributes(attributes)
+		spec.on_calculate_attributes(attributes)
 
 func apply_effect_attributes():
 	for effect in get_effects():
@@ -314,6 +320,9 @@ func has_effect(effect):
 
 func get_items():
 	return $Items.get_children()
+
+func get_all_specs():
+	return $Specializations.get_children()
 
 func get_active_specs():
 	var active_specs = []
@@ -419,7 +428,7 @@ func items_outgoing_effect(effect : Effect):
 
 func specs_outgoing_effect(effect : Effect):
 	for spec in get_active_specs():
-		spec.on_outgoing_effect()
+		spec.on_outgoing_effect(effect)
 
 func effects_outgoing_effect(effect : Effect):
 	for ef in get_effects():

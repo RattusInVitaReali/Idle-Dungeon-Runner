@@ -129,8 +129,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AttributesContainer" type="VBoxContainer" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/AttributesBackground/VBoxContainer/ScrollContainer"]
-margin_right = 139.0
-margin_bottom = 134.0
+margin_right = 270.0
+margin_bottom = 139.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -175,7 +175,7 @@ texture = ExtResource( 7 )
 expand = true
 stretch_mode = 6
 
-[node name="Button" type="Button" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/Panel"]
+[node name="SkillTree" type="Button" parent="Background/HBoxContainer/VBoxContainer/HBoxContainer/Panel"]
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -186,3 +186,5 @@ margin_top = 113.0
 margin_right = 616.0
 margin_bottom = 127.0
 size_flags_horizontal = 3
+
+[connection signal="pressed" from="Background/HBoxContainer/VBoxContainer/HBoxContainer/Panel/SkillTree" to="." method="_on_SkillTree_pressed"]
