@@ -81,12 +81,6 @@ var enemy = null
 
 var combat_pos = Vector2(0, 0)
 
-var yeeting = false
-var yeet_x = 1500
-var yeet_y = -1500
-const yeet_dist = 2000
-const yeet_spread = PI
-
 func _ready():
 	visible = true
 	connect("damage_enemy", CombatProcessor, "damage_enemy")
@@ -97,10 +91,6 @@ func _ready():
 
 func _process(delta):
 	next_action()
-	if yeeting:
-		position.x += yeet_x * delta
-		position.y += yeet_y * delta
-		rotate(50 * delta)
 
 func set_hp(hp):
 	stats["hp"] = round(hp)
@@ -470,7 +460,7 @@ func take_damage_info(damage_info : CombatProcessor.DamageInfo):
 	take_damage(damage_info.phys_damage)
 	take_damage(damage_info.magic_damage)
 	$DamageNumberManager.new_damage_number(damage_info)
-
+	$CombatEffects.play_on_hit(damage_info)
 
 func take_damage(damage):
 	damage = round(damage)
@@ -519,8 +509,3 @@ func _on_Entity_animation_finished():
 
 func on_die_finished():
 		emit_signal("despawned")
-
-func yeet():
-	yeet_x = sin(Random.rng.randf_range(- yeet_spread / 2, yeet_spread / 2)) * yeet_dist
-	yeet_y = - cos(Random.rng.randf_range(- yeet_spread / 2, yeet_spread / 2)) * yeet_dist
-	yeeting = true

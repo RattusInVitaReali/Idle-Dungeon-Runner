@@ -23,3 +23,6 @@ monster_types = [ 0 ]
 
 [node name="ActionTimer" parent="." index="2"]
 one_shot = false
+
+[node name="CombatEffects" parent="." index="8"]
+frame = 0

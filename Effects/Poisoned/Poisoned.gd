@@ -14,7 +14,8 @@ func tick():
 	var damage_info = \
 		CombatProcessor.DamageInfo.new(attacker, target) \
 		.magic_damage(tick_damage) \
-		.can_crit(false)
+		.can_crit(false) \
+		.color(Color.darkolivegreen)
 	if is_crit:
 		damage_info.apply_crit(attacker.stats.crit_multi)
 	attacker.process_outgoing_damage(damage_info)

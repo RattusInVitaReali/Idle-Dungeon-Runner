@@ -72,7 +72,6 @@ func yeet_monster():
 		yield(get_tree().create_timer(timeout / 2), "timeout")
 		if monster == null:
 			return
-		monster.yeet()
 		yield(CombatProcessor, "player_spawned")
 		if monster != null:
 			monster.queue_free()

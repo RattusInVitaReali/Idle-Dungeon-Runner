@@ -67,3 +67,6 @@ locked = false
 [node name="Overpower" parent="Skills" index="12" instance=ExtResource( 16 )]
 
 [node name="Assassination" parent="Specializations" index="0" instance=ExtResource( 17 )]
+
+[node name="CombatEffects" parent="." index="8"]
+visible = false

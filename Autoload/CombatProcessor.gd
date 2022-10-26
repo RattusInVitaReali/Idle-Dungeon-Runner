@@ -51,6 +51,7 @@ class DamageInfo:
 	var effects = []
 	var dot_tick = false
 	var bleeding_tick = false
+	var color = Color.darkred
 	
 	var is_crit = false
 	
@@ -106,6 +107,10 @@ class DamageInfo:
 
 	func crit_multi_flat(cmf):
 		crit_multi_flat = cmf
+		return self
+
+	func color(c):
+		color = c
 		return self
 
 	func roll_crit(crit_chance, crit_multi):

@@ -204,7 +204,7 @@ func on_outgoing_effect(effect : Effect):
 	for part in get_children():
 		part.on_outgoing_effect(effect, self)
 
-func on_incoming_effect(effect : Effect, item):
+func on_incoming_effect(effect : Effect):
 	for part in get_children():
 		part.on_incoming_effect(effect, self)
 

@@ -4,7 +4,6 @@
 [ext_resource path="res://Effects/Poisoned/Poisoned.gd" type="Script" id=2]
 [ext_resource path="res://RESOURCES/Effects/Poisoned.png" type="Texture" id=3]
 
-
 [node name="Poisoned" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 icon = ExtResource( 3 )
