@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/OnHit.mp3-45ae7ed6b943e28e7d962912d020cef1.mp3str"
+
+[deps]
+
+source_file="res://RESOURCES/Sound/Combat/OnHit.mp3"
+dest_files=[ "res://.import/OnHit.mp3-45ae7ed6b943e28e7d962912d020cef1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

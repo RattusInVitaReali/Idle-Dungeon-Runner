@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/RenektonW.wav-21043cdfe796be839b6605da8fd7f56e.sample"
+
+[deps]
+
+source_file="res://RESOURCES/Sound/Combat/Skill/RenektonW.wav"
+dest_files=[ "res://.import/RenektonW.wav-21043cdfe796be839b6605da8fd7f56e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

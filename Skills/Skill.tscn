@@ -11,4 +11,6 @@ base_cooldown = 5.0
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true
 
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+
 [connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]

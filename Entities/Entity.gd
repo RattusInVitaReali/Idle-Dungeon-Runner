@@ -461,6 +461,8 @@ func take_damage_info(damage_info : CombatProcessor.DamageInfo):
 	take_damage(damage_info.magic_damage)
 	$DamageNumberManager.new_damage_number(damage_info)
 	$CombatEffects.play_on_hit(damage_info)
+	$CombatSounds.play_on_hit()
+	$AnimationPlayer.play("on_hit")
 
 func take_damage(damage):
 	damage = round(damage)

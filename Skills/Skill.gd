@@ -173,6 +173,7 @@ func update_border():
 
 func use_skill():
 	do_skill()
+	play_sound()
 	put_skill_on_cooldown()
 
 func do_skill():
@@ -181,6 +182,9 @@ func do_skill():
 func put_skill_on_cooldown():
 	$Cooldown.start(cooldown)
 	on_cd = true
+
+func play_sound():
+	$Sound.play()
 
 func try_to_use_skill():
 	if !on_cd and !locked and equipped:

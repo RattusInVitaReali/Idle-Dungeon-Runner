@@ -157,7 +157,7 @@ _global_script_classes=[ {
 "base": "AnimatedSprite",
 "class": "CombatEffects",
 "language": "GDScript",
-"path": "res://Entities/CombatEffects/CombatEffects.gd"
+"path": "res://Entities/CombatEffects.gd"
 }, {
 "base": "Control",
 "class": "CombatModeButton",
@@ -173,6 +173,11 @@ _global_script_classes=[ {
 "class": "CombatScreen",
 "language": "GDScript",
 "path": "res://CombatScreen/CombatScreen.gd"
+}, {
+"base": "AudioStreamPlayer",
+"class": "CombatSounds",
+"language": "GDScript",
+"path": "res://Entities/CombatSounds.gd"
 }, {
 "base": "Control",
 "class": "CombatTop",
@@ -943,6 +948,7 @@ _global_script_class_icons={
 "CombatModeButton": "",
 "CombatProcessorScript": "",
 "CombatScreen": "",
+"CombatSounds": "",
 "CombatTop": "",
 "CombatUI": "",
 "ComboSlash": "",
@@ -1121,7 +1127,6 @@ gdscript/warnings/export_hint_type_mistmatch=false
 
 window/size/width=1080
 window/size/height=1920
-window/vsync/use_vsync=false
 window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
@@ -1162,5 +1167,10 @@ texture={
 
 [rendering]
 
+quality/intended_usage/framebuffer_allocation.mobile=2
+2d/snapping/use_gpu_pixel_snap=true
+gles3/shaders/shader_compilation_mode=2
+gles3/shaders/shader_compilation_mode.mobile=2
+gles3/shaders/shader_compilation_mode.web=2
 environment/default_environment="res://default_env.tres"
 quality/2d/use_nvidia_rect_flicker_workaround=true
