@@ -25,5 +25,7 @@ func _on_Button1_pressed():
 	queue_free()
 
 func _on_Button2_pressed():
-	slottable.dismantle()
-	queue_free()
+	get_confirm_response("Are you sure you want to dismantle ALL " + slottable.slottable_name + "s? You will get 25% of the materials required to craft them.")
+	if yield(self, "confirm_response"):
+		slottable.dismantle()
+		queue_free()

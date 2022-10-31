@@ -40,10 +40,11 @@ func get_title():
 	return titles[level - 1]
 
 func try_allocate(trait):
-	if trait in get_traits() and trait.level_required == level:
+	if trait in get_traits() and trait.level_required == level and GlobalResources.get_gr_quantity(GlobalResources.GR.TRAIT_POINT) > 0:
 		level += 1
 		active_traits.append(trait.slottable_name)
 		trait.active = true
+		GlobalResources.spend_gr(GlobalResources.GR.TRAIT_POINT, 1)
 
 func get_level_attributes():
 	var atts = {}

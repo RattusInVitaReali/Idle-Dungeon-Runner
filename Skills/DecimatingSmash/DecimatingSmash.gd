@@ -5,7 +5,7 @@ var base_damage = 20
 var base_multi = 1.75
 var level_multi = 0.07
 var base_decimated_strength = 0.2
-var level_decimated_strength = 0.02
+var level_decimated_strength = 0.005
 var decimated_duration = 5
 
 func base_damage():

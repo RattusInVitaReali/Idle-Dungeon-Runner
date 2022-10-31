@@ -24,11 +24,7 @@ var curr_screen = SCREEN.COMBAT
 func _ready():
 	scale = ScreenMeasurer.get_game_scale()
 	CombatProcessor.connect("zone_changed", self, "_on_zone_changed")
-	move_screens()
-
-func move_screens():
-	for i in screens:
-		screens[i].rect_position = Vector2(1080 * i, 0)
+	Saver.connect("idle_reward", self, "_on_idle_reward")
 
 func move_camera():
 	$Camera2D.position = screen.rect_position
@@ -76,5 +72,5 @@ func start_upgrade_process(var item):
 func end_upgrade_process():
 	change_screen(SCREEN.INVENTORY)
 
-func _on_CombatScreen_idle_reward(idle_reward):
+func _on_idle_reward(idle_reward):
 	add_child(idle_reward)

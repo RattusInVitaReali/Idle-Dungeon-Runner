@@ -49,6 +49,9 @@ func update_allocate():
 	elif spec.level != slottable.level_required:
 		allocate.text = "Locked"
 		allocate.self_modulate = Color(1, 1, 1, 0.5)
+	elif GlobalResources.get_gr_quantity(GlobalResources.GR.TRAIT_POINT) == 0:
+		allocate.text = "Allocate"
+		allocate.self_modulate = Color(1, 1, 1, 0.5)
 	else:
 		allocate.text = "Allocate"
 		allocate.self_modulate = Color(1, 1, 1, 1)

@@ -3,8 +3,8 @@ class_name Quickness
 
 var base_amount = 100
 var level_amount = 40
-var base_duration = 5
-var level_duration = 0.2
+var base_duration = 3
+var level_duration = 0.1
 
 func calculate_amount():
 	return base_amount + level * level_amount

@@ -1,9 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Skills/Skill.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skills/DefensiveStrike/DefensiveStrike.gd" type="Script" id=2]
 [ext_resource path="res://RESOURCES/SkillIcons/Icon17.png" type="Texture" id=3]
-
+[ext_resource path="res://RESOURCES/Sound/Combat/Skill/RenektonW.wav" type="AudioStream" id=4]
 
 [node name="DefensiveStrike" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -12,3 +12,6 @@ skill_name = "Defensive Strike"
 skill_icon = ExtResource( 3 )
 melee = true
 tags = [ 0, 2 ]
+
+[node name="Sound" parent="." index="1"]
+stream = ExtResource( 4 )

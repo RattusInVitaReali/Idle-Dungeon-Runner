@@ -2,11 +2,8 @@ extends Node2D
 class_name CombatScreen
 
 const PlayerScene = preload("res://Entities/Player/Player.tscn")
-const IdleReward = preload("res://UI/FullScreenPopup/IdleReward/IdleReward.tscn")
 
 const save_path = "user://idle_data.tres"
-
-signal idle_reward
 
 var padding_bottom = 900
 var padding_top = 600
@@ -22,8 +19,6 @@ var player : Player = null
 var monster : Monster = null
 var zone : Zone = null
 
-var got_idle_rewards = false
-
 onready var image_1 = $Map/Image1
 onready var image_2 = $Map/Image2
 
@@ -32,7 +27,6 @@ func _ready():
 	CombatProcessor.connect("zone_changed", self, "change_zone")
 	spawn_player()
 	yield(get_tree(), "idle_frame")
-	get_idle_rewards()
 
 func spawn_player():
 	player = PlayerScene.instance()
@@ -131,40 +125,6 @@ func move_monster(delta):
 			CombatProcessor.enter_combat()
 			player.enter_combat()
 			monster.enter_combat()
-
-func check_idle_rewards():
-	if !got_idle_rewards:
-		get_idle_rewards()
-		got_idle_rewards = true
-
-func get_idle_rewards():
-	if ResourceLoader.exists(save_path):
-		var elapsed_time = OS.get_unix_time() - load(save_path).idle_time
-		print("Elapsed time: ", elapsed_time)
-		if elapsed_time < 60:
-			return
-		var idle_reward = IdleReward.instance()
-		emit_signal("idle_reward", idle_reward)
-		idle_reward.rect_size = ScreenMeasurer.get_screen_size()
-		idle_reward.set_time(elapsed_time)
-		var monsters = zone.get_monster_instances()
-		for _monster in monsters:
-			add_child(_monster)
-		var iterations = int(elapsed_time / 60)
-		zone.zone_floor += iterations
-		LootManager.idle_reward_container = idle_reward
-		for i in range(iterations):
-			var _monster = monsters[i % monsters.size()]
-			_monster.die()
-			CombatProcessor.monster_died(monster, zone)
-		LootManager.idle_reward_container = null
-		for _monster in monsters:
-			_monster.queue_free()
-
-func _notification(what):
-	if what == MainLoop.NOTIFICATION_APP_RESUMED:
-		yield(get_tree(), "idle_frame")
-		get_idle_rewards()
 
 func save_and_exit():
 	var resource = IdleData.new()

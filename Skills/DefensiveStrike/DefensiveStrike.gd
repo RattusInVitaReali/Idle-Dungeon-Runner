@@ -29,10 +29,10 @@ func do_skill():
 	attacker.process_outgoing_effect(
 		CombatProcessor.Shielded.instance() \
 		.initialize(attacker, attacker) \
-		.amount(damage) \
+		.amount(damage / 2) \
 		.duration(shielded_duration)
 	)
 
 func description():
-	var text = "Deal (" + str(base_damage()) + " + " + str(multiplier() * 100) + "% PD) = " + str(calculate_damage()) + " physical damage to your enemy, and gain that much shielding."
+	var text = "Deal (" + str(base_damage()) + " + " + str(multiplier() * 100) + "% PD) = " + str(calculate_damage()) + " physical damage to your enemy, and gain " + str(calculate_damage() / 2) + " shielding."
 	return text

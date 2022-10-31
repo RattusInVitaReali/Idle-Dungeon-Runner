@@ -6,7 +6,9 @@ signal exp_changed
 
 const save_path = "user://player.tscn"
 
-const skill_slot_unlock_levels = [0, 5, 50, 150, 300, 500]
+const skill_slot_unlock_levels = [0, 5, 30, 75, 150, 250]
+
+const trait_point_levels = [20, 50]
 
 export var experience = 0 setget set_exp
 
@@ -44,6 +46,8 @@ func current_level_exp():
 func level_up():
 	.level_up()
 	GlobalResources.gain_gr(GlobalResources.GR.SKILL_POINT, 1) # TEMP
+	if level in trait_point_levels:
+		GlobalResources.gain_gr(GlobalResources.GR.TRAIT_POINT, 1) # TEMP
 
 func calculate_stats():
 	.calculate_stats()

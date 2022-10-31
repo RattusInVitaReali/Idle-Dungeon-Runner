@@ -25,27 +25,37 @@ const zones = [
 
 onready var zone_infos = $VBoxContainer/Screen/VBoxContainer/ScrollContainer/ZoneInfos
 
-var active_zone = null
+var idle_zone = null
 
 func _ready():
 	Saver.save_on_exit(self)
 	self.load()
 	yield(get_parent(), "ready")
+	CombatProcessor.connect("zone_changed", self, "_on_zone_changed")
 	starter_zone()
 
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_APP_RESUMED:
+		starter_zone()
+
 func _on_play_zone(zone):
-	if active_zone != null:
-		active_zone.active = false
-	active_zone = zone
 	CombatProcessor.change_zone(zone)
+
+func _on_zone_changed(zone):
+	if zone.can_idle_here():
+		if idle_zone != null:
+			idle_zone.idle_here = false
+		idle_zone = zone
+		idle_zone.idle_here = true
 
 func starter_zone():
 	for zone_info in zone_infos.get_children():
-		if zone_info.zone.active:
+		if zone_info.zone.idle_here:
 			zone_info.play_zone()
 			return
 	var starter = zone_infos.get_child(0)
 	starter.play_zone()
+	Saver.get_idle_rewards()
 
 func load():
 	if ResourceLoader.exists(save_path):

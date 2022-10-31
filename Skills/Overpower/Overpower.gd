@@ -7,8 +7,8 @@ var base_multi = 1.3
 var level_multi = 0.06
 
 var overpower_duration = 3
-var base_overpower = 50
-var level_overpower = 15
+var base_overpower = 25
+var level_overpower = 5
 
 func base_damage():
 	return base_damage + level_damage * level

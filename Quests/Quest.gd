@@ -15,7 +15,7 @@ export (Resource) var quest_resource = null
 export (int) var kill_count = 0
 export (int) var total_levels = 0
 
-export var active = false
+var active = false
 
 func _ready():
 	connect("loot", LootManager, "_on_loot")

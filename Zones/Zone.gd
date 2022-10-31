@@ -21,12 +21,13 @@ export (int) var max_level
 export (int) var max_level_reached
 export (int) var zone_floor = 0
 
-export (bool) var active = false
+export (bool) var can_idle = true
+export (bool) var idle_here = false
+export var locked = false
 
 var quest = null
 var player : Player = null
-
-export var locked = false
+var active = false
 
 func _ready():
 	max_level_reached = max(max_level_reached, min_level)
@@ -36,6 +37,9 @@ func _ready():
 	else:
 		locked = false
 	load_quest()
+
+func can_idle_here():
+	return can_idle and zone_floor > 1
 
 func set_level(_level):
 	if _level <= max_level_reached:
@@ -90,10 +94,11 @@ func level_up():
 func level_down():
 	self.level = max(level - 1, min_level)
 
-func activate_quest():
+func activate_quest(value = true):
 	if quest != null:
-		quest.active = true
-	CombatProcessor.change_quest(quest)
+		quest.active = value
+	if value:
+		CombatProcessor.change_quest(quest)
 
 func _on_player_despawned():
 	CombatProcessor.breakthrough = false
@@ -113,7 +118,7 @@ func _on_quest_completed():
 
 func activate(value):
 	active = value
-	activate_quest()
+	activate_quest(value)
 
 func new_quest():
 	if !quests.empty():

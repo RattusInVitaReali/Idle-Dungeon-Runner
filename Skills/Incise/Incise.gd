@@ -1,10 +1,10 @@
 extends Skill
 class_name Incise
 
-var base_damage = 10
-var level_damage = 3
+var base_damage = 12
+var level_damage = 4
 var base_multi = 1.0
-var level_multi = 0.03
+var level_multi = 0.04
 var crit_chance_flat = 0.2
 var crit_multi_multi = 1.5
 

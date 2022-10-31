@@ -105,5 +105,4 @@ autoplay = true
 [connection signal="change_screen" from="BottomBarUI/BottomBar" to="." method="change_screen"]
 [connection signal="upgrade" from="Inventory" to="." method="start_upgrade_process"]
 [connection signal="upgrade_finished" from="ItemForge" to="." method="end_upgrade_process"]
-[connection signal="idle_reward" from="CombatScreen" to="." method="_on_CombatScreen_idle_reward"]
 [connection signal="swiped" from="SwipeDetector" to="." method="_on_SwipeDetector_swiped"]
