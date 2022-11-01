@@ -1130,7 +1130,7 @@ window/size/height=1920
 window/vsync/use_vsync=false
 window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep_width"
 
 [gdnative]
 
