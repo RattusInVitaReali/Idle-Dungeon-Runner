@@ -30,8 +30,8 @@ var idle_zone = null
 func _ready():
 	Saver.save_on_exit(self)
 	self.load()
-	yield(get_parent(), "ready")
 	CombatProcessor.connect("zone_changed", self, "_on_zone_changed")
+	yield(get_parent(), "ready")
 	starter_zone()
 
 func _notification(what):
@@ -55,7 +55,6 @@ func starter_zone():
 			return
 	var starter = zone_infos.get_child(0)
 	starter.play_zone()
-	Saver.get_idle_rewards()
 
 func load():
 	if ResourceLoader.exists(save_path):

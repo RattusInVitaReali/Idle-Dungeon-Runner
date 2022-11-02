@@ -3,10 +3,10 @@ class_name CombatTop
 
 const EffectIcon = preload("res://UI/Screens/Combat/EffectIcon/EffectIcon.tscn")
 
-onready var zone_info = $Main/HigherBackground/Background/VBoxContainer/Background/ZoneInfo
-onready var quest_info = $Main/HigherBackground/Background/VBoxContainer/Quest/QuestBar/QuestInfo
-onready var quest_bar = $Main/HigherBackground/Background/VBoxContainer/Quest/QuestBar
-onready var quest_bar_tween = $Main/HigherBackground/Background/VBoxContainer/Quest/QuestBar/QuestTween
+onready var zone_info = $Main/HigherBackground/VBoxContainer/Background/VBoxContainer/Background/ZoneInfo
+onready var quest_info = $Main/HigherBackground/VBoxContainer/Background/VBoxContainer/Quest/QuestBar/QuestInfo
+onready var quest_bar = $Main/HigherBackground/VBoxContainer/Background/VBoxContainer/Quest/QuestBar
+onready var quest_bar_tween = $Main/HigherBackground/VBoxContainer/Background/VBoxContainer/Quest/QuestBar/QuestTween
 
 onready var monster_name = $Main/LowerBackground/VBoxContainer/MonsterInfo/VBoxContainer/Name
 onready var monster_modifiers = $Main/LowerBackground/VBoxContainer/MonsterInfo/VBoxContainer/Modifiers

@@ -2,16 +2,12 @@ extends Node2D
 class_name CombatScreen
 
 const PlayerScene = preload("res://Entities/Player/Player.tscn")
-
-const save_path = "user://idle_data.tres"
-
-var padding_bottom = 900
-var padding_top = 600
 var scale_value = 1
 var global_speed = 300
 
-var monster_spawn_pos_x = -500
-var player_spawn_pos_x = 1020
+var monster_spawn_y = -500
+var monster_combat_y = 850
+var player_bottom_y = 800
 
 var timeout = 2
 
@@ -23,10 +19,8 @@ onready var image_1 = $Map/Image1
 onready var image_2 = $Map/Image2
 
 func _ready():
-	Saver.save_on_exit(self)
 	CombatProcessor.connect("zone_changed", self, "change_zone")
 	spawn_player()
-	yield(get_tree(), "idle_frame")
 
 func spawn_player():
 	player = PlayerScene.instance()
@@ -37,8 +31,8 @@ func spawn_player():
 			player.load()
 	add_child_below_node($Map, player)
 	player.connect("despawned", self, "_on_player_despawned")
-	player.position = Vector2(540, player_spawn_pos_x)
-	player.scale = Vector2(0.25, 0.25)
+	player.position = Vector2(540, ScreenMeasurer.height - player_bottom_y)
+	player.scale = Vector2(0.33, 0.33)
 	CombatProcessor.player_spawned(player)
 
 func spawn_monster():
@@ -47,9 +41,9 @@ func spawn_monster():
 	add_child_below_node($Map, monster)
 	monster.connect("despawned", self, "_on_monster_despawned")
 	monster.connect("died", self, "_on_monster_died")
-	monster.position = Vector2(540, monster_spawn_pos_x)
-	monster.scale.x /= 4
-	monster.scale.y /= 4
+	monster.position = Vector2(540, monster_spawn_y)
+	monster.scale.x /= 3
+	monster.scale.y /= 3
 	CombatProcessor.monster_spawned(monster)
 
 func change_zone(new_zone):
@@ -119,14 +113,9 @@ func move_map(delta):
 
 func move_monster(delta):
 	if monster != null:
-		if monster.position != Vector2(540, padding_top):
-			monster.position = monster.position.move_toward(Vector2(540, padding_top), global_speed * delta)
+		if monster.position != Vector2(540, monster_combat_y):
+			monster.position = monster.position.move_toward(Vector2(540, monster_combat_y), global_speed * delta)
 		else:
 			CombatProcessor.enter_combat()
 			player.enter_combat()
 			monster.enter_combat()
-
-func save_and_exit():
-	var resource = IdleData.new()
-	resource.idle_time = OS.get_unix_time()
-	ResourceSaver.save(save_path, resource)

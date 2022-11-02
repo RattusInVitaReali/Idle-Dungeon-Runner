@@ -26,7 +26,7 @@ rect_min_size = Vector2( 192, 128 )
 
 [node name="CombatTop" parent="." instance=ExtResource( 2 )]
 anchor_bottom = 0.234
-margin_bottom = -1919.28
+margin_bottom = 0.720001
 
 [node name="BreakthroughButton" parent="." instance=ExtResource( 5 )]
 anchor_left = 1.0

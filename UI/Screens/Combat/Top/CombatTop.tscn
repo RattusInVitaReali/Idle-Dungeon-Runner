@@ -73,37 +73,55 @@ font_data = ExtResource( 6 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -1470.0
-rect_min_size = Vector2( 0, 450 )
+rect_min_size = Vector2( 0, 750 )
 script = ExtResource( 3 )
 
 [node name="Main" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-margin_bottom = 450.0
-rect_min_size = Vector2( 0, 560 )
+anchor_right = 1.015
+margin_right = -16.2001
+margin_bottom = 700.0
+rect_min_size = Vector2( 0, 750 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HigherBackground" type="HBoxContainer" parent="Main"]
 margin_right = 1080.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 0, 150 )
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 300 )
 size_flags_vertical = 8
 
 [node name="LeftMargin" type="Label" parent="Main/HigherBackground"]
 margin_right = 186.0
-margin_bottom = 150.0
+margin_bottom = 300.0
 rect_min_size = Vector2( 70, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Background" type="NinePatchRect" parent="Main/HigherBackground"]
+[node name="TextureRect" type="TextureRect" parent="Main/HigherBackground/LeftMargin"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 20.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/HigherBackground"]
 margin_left = 190.0
 margin_right = 890.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 700, 0 )
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Main/HigherBackground/VBoxContainer"]
+margin_right = 700.0
+margin_bottom = 146.0
+size_flags_vertical = 3
+
+[node name="Background" type="NinePatchRect" parent="Main/HigherBackground/VBoxContainer"]
+margin_top = 150.0
+margin_right = 700.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 700, 150 )
 size_flags_horizontal = 3
 texture = ExtResource( 8 )
 patch_margin_left = 36
@@ -111,7 +129,7 @@ patch_margin_top = 39
 patch_margin_right = 35
 patch_margin_bottom = 42
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main/HigherBackground/Background"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/HigherBackground/VBoxContainer/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 30.0
@@ -119,7 +137,7 @@ margin_top = 20.0
 margin_right = -30.0
 margin_bottom = -20.0
 
-[node name="Background" type="NinePatchRect" parent="Main/HigherBackground/Background/VBoxContainer"]
+[node name="Background" type="NinePatchRect" parent="Main/HigherBackground/VBoxContainer/Background/VBoxContainer"]
 margin_right = 640.0
 margin_bottom = 66.0
 rect_min_size = Vector2( 80, 0 )
@@ -131,7 +149,7 @@ patch_margin_top = 35
 patch_margin_right = 35
 patch_margin_bottom = 31
 
-[node name="ZoneInfo" type="Label" parent="Main/HigherBackground/Background/VBoxContainer/Background"]
+[node name="ZoneInfo" type="Label" parent="Main/HigherBackground/VBoxContainer/Background/VBoxContainer/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 15.0
@@ -144,7 +162,7 @@ text = "Bandit-Infested Forest: Floor 23"
 align = 1
 valign = 1
 
-[node name="Quest" type="HBoxContainer" parent="Main/HigherBackground/Background/VBoxContainer"]
+[node name="Quest" type="HBoxContainer" parent="Main/HigherBackground/VBoxContainer/Background/VBoxContainer"]
 margin_top = 70.0
 margin_right = 640.0
 margin_bottom = 110.0
@@ -153,7 +171,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuestBar" type="ProgressBar" parent="Main/HigherBackground/Background/VBoxContainer/Quest"]
+[node name="QuestBar" type="ProgressBar" parent="Main/HigherBackground/VBoxContainer/Background/VBoxContainer/Quest"]
 margin_right = 640.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
@@ -165,7 +183,7 @@ value = 50.0
 rounded = true
 percent_visible = false
 
-[node name="QuestInfo" type="Label" parent="Main/HigherBackground/Background/VBoxContainer/Quest/QuestBar"]
+[node name="QuestInfo" type="Label" parent="Main/HigherBackground/VBoxContainer/Background/VBoxContainer/Quest/QuestBar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 4 )
@@ -173,20 +191,29 @@ text = "Quest: Bandit Hunter Progress - 1 / 15"
 align = 1
 valign = 1
 
-[node name="QuestTween" type="Tween" parent="Main/HigherBackground/Background/VBoxContainer/Quest/QuestBar"]
+[node name="QuestTween" type="Tween" parent="Main/HigherBackground/VBoxContainer/Background/VBoxContainer/Quest/QuestBar"]
 
 [node name="RightMargin" type="Label" parent="Main/HigherBackground"]
 margin_left = 894.0
 margin_right = 1080.0
-margin_bottom = 150.0
+margin_bottom = 300.0
 rect_min_size = Vector2( 70, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="TextureRect" type="TextureRect" parent="Main/HigherBackground/RightMargin"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 20.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
 [node name="LowerBackground" type="NinePatchRect" parent="Main"]
-margin_top = 154.0
+show_behind_parent = true
+margin_top = 304.0
 margin_right = 1080.0
-margin_bottom = 456.0
+margin_bottom = 646.0
 rect_min_size = Vector2( 0, 256 )
 size_flags_vertical = 3
 texture = ExtResource( 8 )
@@ -210,7 +237,7 @@ margin_bottom = -30.0
 
 [node name="MonsterInfo" type="NinePatchRect" parent="Main/LowerBackground/VBoxContainer"]
 margin_right = 1020.0
-margin_bottom = 173.0
+margin_bottom = 213.0
 size_flags_vertical = 3
 texture = ExtResource( 4 )
 patch_margin_left = 65
@@ -281,9 +308,9 @@ valign = 1
 clip_text = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Main/LowerBackground/VBoxContainer"]
-margin_top = 177.0
+margin_top = 217.0
 margin_right = 1020.0
-margin_bottom = 252.0
+margin_bottom = 292.0
 rect_min_size = Vector2( 0, 75 )
 
 [node name="LeftMargin" type="Label" parent="Main/LowerBackground/VBoxContainer/HBoxContainer"]
@@ -322,62 +349,7 @@ rect_min_size = Vector2( 150, 0 )
 size_flags_vertical = 3
 
 [node name="Effects" type="HBoxContainer" parent="Main"]
-margin_top = 460.0
+margin_top = 650.0
 margin_right = 1080.0
-margin_bottom = 560.0
+margin_bottom = 750.0
 rect_min_size = Vector2( 0, 100 )
-
-[node name="Chain" type="HBoxContainer" parent="."]
-anchor_right = 1.0
-margin_bottom = 160.0
-
-[node name="LeftMargin" type="Label" parent="Chain"]
-margin_right = 73.0
-margin_bottom = 160.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="LeftChain" type="TextureRect" parent="Chain"]
-margin_left = 77.0
-margin_right = 109.0
-margin_bottom = 160.0
-rect_min_size = Vector2( 32, 0 )
-texture = ExtResource( 1 )
-expand = true
-
-[node name="LeftMargin2" type="Label" parent="Chain"]
-margin_left = 113.0
-margin_right = 186.0
-margin_bottom = 160.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="CenterMargin" type="Label" parent="Chain"]
-margin_left = 190.0
-margin_right = 890.0
-margin_bottom = 160.0
-rect_min_size = Vector2( 700, 0 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="RightMargin2" type="Label" parent="Chain"]
-margin_left = 894.0
-margin_right = 967.0
-margin_bottom = 160.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="RightChain" type="TextureRect" parent="Chain"]
-margin_left = 971.0
-margin_right = 1003.0
-margin_bottom = 160.0
-rect_min_size = Vector2( 32, 0 )
-texture = ExtResource( 1 )
-expand = true
-
-[node name="RightMargin" type="Label" parent="Chain"]
-margin_left = 1007.0
-margin_right = 1080.0
-margin_bottom = 160.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
