@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Desert.mp3-934ffa4e2e2512769898ae19a1c60de3.mp3str"
+
+[deps]
+
+source_file="res://RESOURCES/Sound/Zones/Desert.mp3"
+dest_files=[ "res://.import/Desert.mp3-934ffa4e2e2512769898ae19a1c60de3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

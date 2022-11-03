@@ -47,6 +47,7 @@ func _on_SwipeDetector_swiped(dir):
 		change_screen(max(curr_screen - 1, 0))
 
 func _on_zone_changed(_zone):
+	tween.start()
 	tween.interpolate_property(
 		dimm, 
 		"self_modulate", 
@@ -56,8 +57,18 @@ func _on_zone_changed(_zone):
 		Tween.TRANS_CUBIC, 
 		Tween.EASE_IN
 	)
-	tween.start()
+	tween.interpolate_property(
+		$BackgroundMusic,
+		"volume_db",
+		-10,
+		-80,
+		0.3,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
 	yield(tween, "tween_completed")
+	$BackgroundMusic.stream = _zone.music
+	$BackgroundMusic.play()
 	change_screen(SCREEN.COMBAT)
 	tween.interpolate_property(
 		dimm, 
@@ -66,6 +77,15 @@ func _on_zone_changed(_zone):
 		Color(1, 1, 1, 0), 
 		0.3, 
 		Tween.TRANS_CUBIC, 
+		Tween.EASE_IN
+	)
+	tween.interpolate_property(
+		$BackgroundMusic,
+		"volume_db",
+		-80,
+		-10,
+		0.3,
+		Tween.TRANS_LINEAR,
 		Tween.EASE_IN
 	)
 

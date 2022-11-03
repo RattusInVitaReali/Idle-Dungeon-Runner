@@ -13,6 +13,7 @@ export (Array, PackedScene) var enemies = []
 export (Array, Resource) var loot = []
 export (Array, Resource) var quests = []
 export (Texture) var texture
+export (AudioStream) var music
 
 export (int) var level setget set_level
 export (int) var save_level

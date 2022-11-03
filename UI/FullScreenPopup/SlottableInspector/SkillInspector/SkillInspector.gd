@@ -34,7 +34,7 @@ func update_level():
 	skill_level.text = "Level " + str(slottable.level)
 
 func update_description():
-	skill_description.text = slottable.description()
+	skill_description.text = slottable.description() + "\n\nCooldown : " + "%3.1f" % slottable.cooldown + "s"
 
 func update_upgrade_reqs():
 	for req in upgrade_req_container.get_children():

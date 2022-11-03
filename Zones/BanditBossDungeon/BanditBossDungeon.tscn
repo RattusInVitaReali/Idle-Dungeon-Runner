@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Modifiers/Strong/Strong.tres" type="Resource" id=1]
 [ext_resource path="res://Modifiers/Healthy/Healthy.tres" type="Resource" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Materials/3_Rare/Ruby.tres" type="Resource" id=8]
 [ext_resource path="res://Materials/3_Rare/Titanium.tres" type="Resource" id=9]
 [ext_resource path="res://Materials/3_Rare/Ironbark.tres" type="Resource" id=10]
+[ext_resource path="res://RESOURCES/Sound/Zones/Boss.mp3" type="AudioStream" id=11]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 7 )
@@ -45,6 +46,7 @@ modifiers = [ ExtResource( 2 ), ExtResource( 1 ) ]
 enemies = [ ExtResource( 5 ) ]
 loot = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
 texture = ExtResource( 6 )
+music = ExtResource( 11 )
 min_level = 10
 max_level = 10
 can_idle = false

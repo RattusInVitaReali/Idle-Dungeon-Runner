@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Zones/Zone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Zones/Ruins/Ruins.gd" type="Script" id=2]
@@ -15,7 +15,7 @@
 [ext_resource path="res://Lootable/GlobalResourceLootable.gd" type="Script" id=13]
 [ext_resource path="res://Entities/Monster/Wraith/Wraith1/Wraith1.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Entities/Monster/Wraith/Wraith3/Wraith3.tscn" type="PackedScene" id=15]
-
+[ext_resource path="res://RESOURCES/Sound/Zones/Ruins.mp3" type="AudioStream" id=16]
 
 [sub_resource type="Resource" id=5]
 script = ExtResource( 13 )
@@ -25,6 +25,9 @@ max_level = 1000
 global_resource = 0
 base_min_quantity = 2
 base_max_quantity = 3
+force_quantity = false
+forced_quantity = 1
+rarity = 0
 
 [sub_resource type="Resource" id=6]
 script = ExtResource( 11 )
@@ -70,5 +73,6 @@ enemies = [ ExtResource( 14 ), ExtResource( 3 ), ExtResource( 15 ) ]
 loot = [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ]
 quests = [ ExtResource( 6 ) ]
 texture = ExtResource( 4 )
+music = ExtResource( 16 )
 min_level = 25
 max_level = 200

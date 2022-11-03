@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Ruins.mp3-5ceae68609fde58e546283e6644fc383.mp3str"
+
+[deps]
+
+source_file="res://RESOURCES/Sound/Zones/Ruins.mp3"
+dest_files=[ "res://.import/Ruins.mp3-5ceae68609fde58e546283e6644fc383.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

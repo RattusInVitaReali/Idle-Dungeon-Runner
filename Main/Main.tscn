@@ -12,7 +12,7 @@
 [ext_resource path="res://UI/Screens/Zones/Zones.tscn" type="PackedScene" id=10]
 [ext_resource path="res://SwipeDetector/SwipeDetector.tscn" type="PackedScene" id=11]
 [ext_resource path="res://UI/Screens/Specializations/Specializations.tscn" type="PackedScene" id=12]
-[ext_resource path="res://RESOURCES/Sound/BackgroundMusic.mp3" type="AudioStream" id=13]
+[ext_resource path="res://RESOURCES/Sound/Zones/Forest.mp3" type="AudioStream" id=13]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -100,7 +100,6 @@ margin_bottom = 1920.0
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 volume_db = -10.0
-autoplay = true
 
 [connection signal="change_screen" from="BottomBarUI/BottomBar" to="." method="change_screen"]
 [connection signal="upgrade" from="Inventory" to="." method="start_upgrade_process"]
