@@ -1,11 +1,13 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://Items/Weapon/Sword/Sword.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Lootable/ItemLootable.gd" type="Script" id=2]
-[ext_resource path="res://Entities/Monster/Bandit/Loot/20_CopperSwordGuard.tres" type="Resource" id=3]
+[ext_resource path="res://Entities/Monster/Bandit/Loot/76_125AluminumSwordBlade.tres" type="Resource" id=3]
 [ext_resource path="res://Entities/Monster/Bandit/Loot/0_30CopperSwordBlade.tres" type="Resource" id=4]
 [ext_resource path="res://Entities/Monster/Bandit/Loot/31_75BronzeSwordBlade.tres" type="Resource" id=5]
 [ext_resource path="res://Entities/Monster/Bandit/Loot/0_OakSwordHandle.tres" type="Resource" id=6]
+[ext_resource path="res://Entities/Monster/Bandit/Loot/20_60CopperSwordGuard.tres" type="Resource" id=7]
+[ext_resource path="res://Entities/Monster/Bandit/Loot/61_125IronSwordGuard.tres" type="Resource" id=8]
 
 [resource]
 resource_local_to_scene = true
@@ -14,5 +16,5 @@ chance = 0.05
 min_level = 0
 max_level = 1000
 item_type = ExtResource( 1 )
-parts = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ) ]
+parts = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 3 ) ]
 custom_name = "Bandit Sword"

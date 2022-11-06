@@ -8,7 +8,7 @@ const save_path = "user://player.tscn"
 
 const skill_slot_unlock_levels = [0, 5, 30, 75, 150, 250]
 
-const trait_point_levels = [20, 50]
+const trait_point_levels = [20, 40, 60, 80]
 
 export var experience = 0 setget set_exp
 
@@ -67,8 +67,8 @@ func update_skill_slots():
 		else:
 			break
 
-func next_action():
-	if CombatProcessor.auto_combat:
+func next_action(var override = false):
+	if CombatProcessor.auto_combat or override:
 		.next_action()
 
 func enter_combat():

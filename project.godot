@@ -89,6 +89,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Effects/Bleeding/Bleeding.gd"
 }, {
+"base": "Trait",
+"class": "Bloodlust",
+"language": "GDScript",
+"path": "res://Traits/Variants/Assassination/Bloodlust.gd"
+}, {
 "base": "MaterialResource",
 "class": "Bloodsteel",
 "language": "GDScript",
@@ -199,6 +204,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/ConfirmDialog/ConfirmDialog.gd"
 }, {
+"base": "Trait",
+"class": "CoupDeGrace",
+"language": "GDScript",
+"path": "res://Traits/Variants/Assassination/CoupDeGrace.gd"
+}, {
 "base": "Node",
 "class": "CraftingManagerScript",
 "language": "GDScript",
@@ -293,6 +303,11 @@ _global_script_classes=[ {
 "class": "FullScreenPopup",
 "language": "GDScript",
 "path": "res://UI/FullScreenPopup/FullScreenPopup.gd"
+}, {
+"base": "Trait",
+"class": "GiantSlayer",
+"language": "GDScript",
+"path": "res://Traits/Variants/Assassination/GiantSlayer.gd"
 }, {
 "base": "HBoxContainer",
 "class": "GlobalResourceIcon",
@@ -931,6 +946,7 @@ _global_script_class_icons={
 "BanditBoss": "",
 "BasicAttack": "",
 "Bleeding": "",
+"Bloodlust": "",
 "Bloodsteel": "",
 "BodyArmor": "",
 "BootCollars": "",
@@ -953,6 +969,7 @@ _global_script_class_icons={
 "CombatUI": "",
 "ComboSlash": "",
 "ConfirmDialog": "",
+"CoupDeGrace": "",
 "CraftingManagerScript": "",
 "CraftingMaterial": "",
 "Crown": "",
@@ -972,6 +989,7 @@ _global_script_class_icons={
 "ForearmProtection": "",
 "Forest": "",
 "FullScreenPopup": "",
+"GiantSlayer": "",
 "GlobalResourceIcon": "",
 "GlobalResourceLootable": "",
 "GlobalResourceSlottable": "",

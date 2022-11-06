@@ -11,6 +11,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
 
+[node name="NextSkill" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 650.0
+margin_bottom = -600.0
+
 [node name="CombatBottom" parent="." instance=ExtResource( 1 )]
 anchor_top = 1.0
 margin_top = -700.0
@@ -35,3 +42,5 @@ margin_left = -112.0
 margin_top = -992.0
 margin_right = -112.0
 margin_bottom = -992.0
+
+[connection signal="pressed" from="NextSkill" to="." method="_on_NextSkill_pressed"]

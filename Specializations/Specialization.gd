@@ -64,22 +64,26 @@ func on_calculate_attributes(attributes):
 func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	if active:
 		for trait in get_traits():
-			trait.on_outgoing_damage(damage_info)
+			if trait.active:
+				trait.on_outgoing_damage(damage_info)
 
 func on_incoming_damage(damage_info : CombatProcessor.DamageInfo):
 	if active:
 		for trait in get_traits():
-			trait.on_incoming_damage(damage_info)
+			if trait.active:
+				trait.on_incoming_damage(damage_info)
 
 func on_outgoing_effect(effect : Effect):
 	if active:
 		for trait in get_traits():
-			trait.on_outgoing_effect(effect)
+			if trait.active:
+				trait.on_outgoing_effect(effect)
 
 func on_incoming_effect(effect : Effect):
 	if active:
 		for trait in get_traits():
-			trait.on_incoming_effect(effect)
+			if trait.active:
+				trait.on_incoming_effect(effect)
 
 func _on_trait_updated():
 	emit_signal("spec_updated")

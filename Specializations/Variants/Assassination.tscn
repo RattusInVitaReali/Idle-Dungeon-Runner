@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Specializations/Specialization.tscn" type="PackedScene" id=1]
 [ext_resource path="res://RESOURCES/Specializations/Assassination.png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Traits/Variants/Assassination/UnmatchedSpeed.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Traits/Variants/Assassination/UnmatchedAccuracy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Traits/Variants/Assassination/Bladedancer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Traits/Variants/Assassination/Bloodlust.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Traits/Variants/Assassination/CoupDeGrace.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Traits/Variants/Assassination/GiantSlayer.tscn" type="PackedScene" id=9]
 
 [node name="Assassination" instance=ExtResource( 1 )]
 specialization_name = "Assassination"
@@ -35,3 +38,9 @@ attributes_per_level = {
 [node name="UnmatchedSpeed" parent="." index="2" instance=ExtResource( 4 )]
 
 [node name="Bladedancer" parent="." index="3" instance=ExtResource( 6 )]
+
+[node name="CoupDeGrace" parent="." index="4" instance=ExtResource( 8 )]
+
+[node name="GiantSlayer" parent="." index="5" instance=ExtResource( 9 )]
+
+[node name="Bloodlust" parent="." index="6" instance=ExtResource( 7 )]

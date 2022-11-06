@@ -1,8 +1,6 @@
 extends Screen
 class_name ZonesUI
 
-const save_path = "user://zones.tscn"
-
 const ZoneInfo = preload("res://UI/Screens/Zones/ZoneInfo/ZoneInfo.tscn")
 
 const zones = [
@@ -28,8 +26,7 @@ onready var zone_infos = $VBoxContainer/Screen/VBoxContainer/ScrollContainer/Zon
 var idle_zone = null
 
 func _ready():
-	Saver.save_on_exit(self)
-	self.load()
+	make_zones()
 	CombatProcessor.connect("zone_changed", self, "_on_zone_changed")
 	yield(get_parent(), "ready")
 	starter_zone()
@@ -56,22 +53,15 @@ func starter_zone():
 	var starter = zone_infos.get_child(0)
 	starter.play_zone()
 
-func load():
-	if ResourceLoader.exists(save_path):
-		var saved = load(save_path).instance()
-		for zone in saved.get_children():
-			saved.remove_child(zone)
-			$Zones.add_child(zone)
-	else:
-		for zone in zones:
-			$Zones.add_child(zone.instance())
-	for zone in $Zones.get_children():
+func get_zones():
+	return $Zones.get_children()
+
+func make_zones():
+	for zone in zones:
+		$Zones.add_child(zone.instance())
+	for zone in get_zones():
 		var zone_info = ZoneInfo.instance()
 		zone_infos.add_child(zone_info)
 		zone_info.set_zone(zone)
 		zone_info.connect("play_zone", self, "_on_play_zone")
 		zone_info.connect("inspector", self, "_on_inspector")
-
-func save_and_exit():
-	if $Zones.get_child_count() != 0:
-		Saver.save_scene($Zones, save_path)

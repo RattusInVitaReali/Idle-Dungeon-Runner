@@ -123,7 +123,7 @@ func get_idle_rewards():
 		var iterations = 0
 		var time_per_combat = 60
 		while elapsed_time > 0:
-			var part = min(elapsed_time, 180 * 60)
+			var part = min(elapsed_time, 360 * 60)
 			iterations += part / time_per_combat
 			time_per_combat += 60
 			elapsed_time -= part

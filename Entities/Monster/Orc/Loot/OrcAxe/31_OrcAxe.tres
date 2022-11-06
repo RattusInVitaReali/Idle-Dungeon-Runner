@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=9 format=2]
+
+[ext_resource path="res://Lootable/ItemLootable.gd" type="Script" id=1]
+[ext_resource path="res://Items/Weapon/Axe/Axe.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/Monster/Orc/Loot/OrcAxe/31_OakAxeHandle.tres" type="Resource" id=3]
+[ext_resource path="res://Entities/Monster/Orc/Loot/OrcAxe/31_60IronAxeHead.tres" type="Resource" id=4]
+[ext_resource path="res://Entities/Monster/Orc/Loot/OrcAxe/126_150ChromiumSecondaryAxeHead.tres" type="Resource" id=5]
+[ext_resource path="res://Entities/Monster/Orc/Loot/OrcAxe/116_150TitaniumAxeHead.tres" type="Resource" id=6]
+[ext_resource path="res://Entities/Monster/Orc/Loot/OrcAxe/75_125MagnesiumSecondaryAxeHead.tres" type="Resource" id=7]
+[ext_resource path="res://Entities/Monster/Orc/Loot/OrcAxe/61_115SteelAxeHead.tres" type="Resource" id=8]
+
+[resource]
+script = ExtResource( 1 )
+chance = 0.05
+min_level = 31
+max_level = 1000
+item_type = ExtResource( 2 )
+parts = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ]
+custom_name = "Orc Axe"

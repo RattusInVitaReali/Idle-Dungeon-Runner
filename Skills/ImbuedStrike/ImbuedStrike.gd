@@ -1,10 +1,10 @@
 extends Skill
 class_name ImbuedStrike
 
-var base_damage = 18
-var level_damage = 6
-var base_multi = 1.3
-var level_multi = 0.06
+var base_damage = 20
+var level_damage = 7
+var base_multi = 1.4
+var level_multi = 0.07
 
 var magic_percentage = 0.6
 

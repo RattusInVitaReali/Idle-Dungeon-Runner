@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Lootable/ItemPartLootable.gd" type="Script" id=1]
+[ext_resource path="res://ItemParts/Weapon/AXE/AxeHandle/AxeHandle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Materials/0_Basic/Oak.tres" type="Resource" id=3]
+
+[resource]
+script = ExtResource( 1 )
+chance = 0.1
+min_level = 31
+max_level = 1000
+part_type = ExtResource( 2 )
+material = ExtResource( 3 )

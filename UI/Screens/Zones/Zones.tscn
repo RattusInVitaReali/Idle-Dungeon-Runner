@@ -20,15 +20,15 @@ texture = ExtResource( 2 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Screen/VBoxContainer" index="0"]
 margin_right = 1080.0
-margin_bottom = 1392.0
+margin_bottom = 1238.0
 size_flags_vertical = 3
 
 [node name="ZoneInfos" type="VBoxContainer" parent="VBoxContainer/Screen/VBoxContainer/ScrollContainer" index="0"]
 margin_right = 1080.0
-margin_bottom = 1392.0
+margin_bottom = 1238.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="BottomOffset" parent="VBoxContainer/Screen/VBoxContainer" index="1"]
-margin_top = 1396.0
-margin_bottom = 1616.0
+margin_top = 1242.0
+margin_bottom = 1462.0

@@ -16,13 +16,15 @@ func do_skill():
 	play_animation("attack")
 	var amount = calculate_amount()
 	var duration = calculate_duration()
+	attacker.remove_effect("Quickness")
 	attacker.process_outgoing_effect(
 		CombatProcessor.AttributeBonusFlat.instance() \
 		.initialize(attacker, target) \
 		.attribute("dexterity") \
 		.amount(amount) \
 		.duration(duration) \
-		.icon(skill_icon)
+		.icon(skill_icon) \
+		.effect_name("Quickness")
 	)
 
 func description():

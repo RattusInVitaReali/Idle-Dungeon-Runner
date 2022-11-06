@@ -96,6 +96,9 @@ func set_hp(hp):
 	stats["hp"] = round(hp)
 	emit_signal("hp_updated")
 
+func hp_percent():
+	return float(stats["hp"]) / stats["max_hp"]
+
 # On creation
 func set_level(_level):
 	level = _level
@@ -181,6 +184,7 @@ func update_stats():
 func calculate_stats():
 	reset_stats()
 	calculate_attributes()
+	round_attributes()
 	apply_attribute_stats()
 	update_skill_levels()
 
@@ -195,6 +199,10 @@ func calculate_attributes():
 	apply_item_attributes()
 	apply_specs_attributes()
 	apply_effect_attributes()
+
+func round_attributes():
+	for at in attributes:
+		attributes[at] = round(attributes[at])
 
 func apply_level_attributes():
 	for key in per_level.keys():
@@ -302,11 +310,16 @@ func get_skills():
 func get_effects():
 	return $Effects.get_children()
 
-func has_effect(effect):
+func has_effect(effect_name):
 	for ef in get_effects():
-		if ef.effect_name == effect:
+		if ef.effect_name == effect_name:
 			return true
 	return false
+
+func remove_effect(effect_name):
+	for ef in get_effects():
+		if ef.effect_name == effect_name:
+			ef.expire()
 
 func get_items():
 	return $Items.get_children()

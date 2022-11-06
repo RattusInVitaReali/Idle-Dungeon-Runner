@@ -8,6 +8,6 @@
 script = ExtResource( 2 )
 chance = 0.05
 min_level = 20
-max_level = 1000
+max_level = 60
 part_type = ExtResource( 1 )
 material = ExtResource( 3 )

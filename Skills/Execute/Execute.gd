@@ -16,7 +16,7 @@ func calculate_damage():
 	return base_damage() + attacker.stats.phys_damage * multiplier()
 
 func multiply_damage(damage):
-	return damage * (2 - float(target.stats.hp) / target.stats.max_hp)
+	return damage * (3 - 2 * target.hp_percent())
 
 func do_skill():
 	play_animation("melee")
@@ -30,5 +30,5 @@ func do_skill():
 
 func description():
 	var text = "Deal (" + str(base_damage()) + " + " + str(multiplier() * 100) + "% PD) = " + str(calculate_damage()) + " physical damage to your enemy."
-	text += " Deals up to 200% damage based on the target's missing hp."
+	text += " Deals up to 300% damage based on the target's missing hp."
 	return text

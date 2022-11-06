@@ -18,3 +18,7 @@ func on_lost_focus():
 	.on_lost_focus()
 	if !CombatProcessor.auto_combat:
 		$CombatModeButton.force_auto_combat()
+
+func _on_NextSkill_pressed():
+	if !CombatProcessor.auto_combat:
+		player.next_action(true)

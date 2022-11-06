@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Entities/Monster/Bandit/BanditAnimations.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Entities/Monster/Monster.tscn" type="PackedScene" id=2]
@@ -9,8 +9,28 @@
 [ext_resource path="res://Entities/Monster/Bandit/Loot/0_OakSwordHandle.tres" type="Resource" id=7]
 [ext_resource path="res://Lootable/Experience/Experience.tres" type="Resource" id=8]
 [ext_resource path="res://Entities/Monster/Bandit/Loot/31_75BronzeSwordBlade.tres" type="Resource" id=9]
-[ext_resource path="res://Entities/Monster/Bandit/Loot/20_CopperSwordGuard.tres" type="Resource" id=10]
+[ext_resource path="res://Entities/Monster/Bandit/Loot/20_60CopperSwordGuard.tres" type="Resource" id=10]
 [ext_resource path="res://RESOURCES/CombatEffects/BloodSplatter3.png" type="Texture" id=11]
+[ext_resource path="res://Entities/Monster/Bandit/Loot/76_125AluminumSwordBlade.tres" type="Resource" id=12]
+[ext_resource path="res://Entities/Monster/Bandit/Loot/61_125IronSwordGuard.tres" type="Resource" id=13]
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : hint_color = vec4(1.0);
+uniform float flash_modifier : hint_range(0.0, 1.0) = 0.0;
+
+void fragment() {
+	vec4 color = texture (TEXTURE, UV);
+	color.rgb = mix(color.rgb, flash_color.rgb, flash_modifier);
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=16]
+resource_local_to_scene = true
+shader = SubResource( 7 )
+shader_param/flash_color = Color( 1, 1, 1, 1 )
+shader_param/flash_modifier = 0.0
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 11 )
@@ -32,7 +52,7 @@ region = Rect2( 512, 0, 128, 128 )
 atlas = ExtResource( 11 )
 region = Rect2( 0, 128, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 11 )
 region = Rect2( 128, 128, 128, 128 )
 
@@ -54,7 +74,7 @@ region = Rect2( 0, 256, 128, 128 )
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 15 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 2 ), SubResource( 15 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 17 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "blood_3",
 "speed": 30.0
@@ -80,11 +100,12 @@ func _on_CombatEffects_animation_finished():
 "
 
 [node name="Bandit" instance=ExtResource( 2 )]
+material = SubResource( 16 )
 frames = ExtResource( 1 )
 animation = "die"
 script = ExtResource( 4 )
 base_name = "Bandit"
-base_loot = [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 6 ) ]
+base_loot = [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 6 ) ]
 monster_types = [ 0 ]
 
 [node name="Lacerate" parent="Skills" index="0" instance=ExtResource( 3 )]

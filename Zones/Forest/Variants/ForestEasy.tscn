@@ -59,6 +59,6 @@ rarity = 0
 [node name="ForestEasy" instance=ExtResource( 1 )]
 zone_name = "Easy Forest"
 loot = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ]
-level = 1
 max_level = 30
+level = 1
 max_level_reached = 1

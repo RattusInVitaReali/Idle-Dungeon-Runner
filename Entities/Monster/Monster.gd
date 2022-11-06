@@ -68,7 +68,7 @@ func apply_level_attributes():
 
 func update_skill_levels():
 	for skill in get_skills():
-		skill.set_level(int(level / get_skills().size()))
+		skill.set_level(int(level / 2 * get_skills().size()))
 
 func make_name():
 	monster_name = base_name

@@ -10,10 +10,10 @@ var required_kills = 0
 var required_types
 var reward
 
-export (Resource) var quest_resource = null
+var quest_resource = null
 
-export (int) var kill_count = 0
-export (int) var total_levels = 0
+var kill_count = 0
+var total_levels = 0
 
 var active = false
 
@@ -56,6 +56,3 @@ func quest_info():
 
 func get_lootables():
 	return reward
-
-func load():
-	from_resource(quest_resource)

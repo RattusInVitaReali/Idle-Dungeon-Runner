@@ -1,10 +1,10 @@
 extends Skill
 class_name FesteringSlash
 
-var base_damage = 12
-var level_damage = 4
-var base_multi = 1.0
-var level_multi = 0.04
+var base_damage = 15
+var level_damage = 5
+var base_multi = 1.2
+var level_multi = 0.05
 
 var bleeding_or_poisoned_damage_multi = 1.75
 var bleeding_and_posioned_damage_multi = 2.5

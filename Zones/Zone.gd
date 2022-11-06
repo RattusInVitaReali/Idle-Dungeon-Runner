@@ -1,6 +1,8 @@
 extends Node2D
 class_name Zone
 
+const folder_name = "user://zones"
+
 signal unlocked
 signal zone_updated
 
@@ -15,29 +17,40 @@ export (Array, Resource) var quests = []
 export (Texture) var texture
 export (AudioStream) var music
 
-export (int) var level setget set_level
-export (int) var save_level
 export (int) var min_level
 export (int) var max_level
+
+export (int) var level setget set_level
+export (int) var save_level
 export (int) var max_level_reached
 export (int) var zone_floor = 0
-
 export (bool) var can_idle = true
 export (bool) var idle_here = false
-export var locked = false
+export (bool) var locked = false
+
+const save_properties = [
+	"level",
+	"save_level",
+	"max_level_reached",
+	"zone_floor",
+	"can_idle",
+	"idle_here",
+	"locked"
+]
 
 var quest = null
 var player : Player = null
 var active = false
 
 func _ready():
+	Saver.save_on_exit(self)
+	self.load()
 	max_level_reached = max(max_level_reached, min_level)
 	set_level(max(save_level, min_level))
-	if unlock_zone_name != "" or unlock_monster_base_name != "":
+	if (unlock_zone_name != "" or unlock_monster_base_name != "") and locked:
 		Progression.connect("progression_monster_died", self, "try_unlock")
 	else:
 		locked = false
-	load_quest()
 
 func can_idle_here():
 	return can_idle and zone_floor > 1
@@ -123,18 +136,47 @@ func activate(value):
 
 func new_quest():
 	if !quests.empty():
-		quest = quests[Random.rng.randi() % quests.size()].get_quest()
-		add_child(quest)
-		quest.connect("quest_completed", self, "_on_quest_completed")
-		if active:
-			activate_quest()
+		var new_quest = quests[Random.rng.randi() % quests.size()].get_quest()
+		add_quest(new_quest)
 
-func load_quest():
-	if get_child_count() != 0:
-		quest = get_child(0)
-		quest.load()
-		quest.connect("quest_completed", self, "_on_quest_completed")
-		if active:
-			activate_quest()
+func add_quest(_quest):
+	quest = _quest
+	add_child(quest)
+	quest.connect("quest_completed", self, "_on_quest_completed")
+	if active:
+		activate_quest()
+
+func copy_quest(from):
+	if from.quest_resource != null:
+		var new_quest = from.quest_resource.get_quest()
+		new_quest.kill_count = from.quest_kills
+		new_quest.total_levels = from.quest_levels
+		add_quest(new_quest)
+
+func save_path():
+	return folder_name + "/" + zone_name.to_lower().replace(" ", "_") + ".tscn"
+
+func load():
+	if ResourceLoader.exists(save_path()):
+		var saved_scene = load(save_path())
+		var instance = saved_scene.instance()
+		for prop in save_properties:
+			set(prop, instance.get(prop))
+		if instance.quest_resource != null:
+			copy_quest(instance)
 	else:
 		new_quest()
+
+export (Resource) var quest_resource
+export (int) var quest_kills
+export (int) var quest_levels
+
+func save_and_exit():
+	if quest != null:
+		quest_resource = quest.quest_resource
+		quest_kills = quest.kill_count
+		quest_levels = quest.total_levels
+	var dir = Directory.new()
+	if !dir.dir_exists(folder_name):
+		dir.make_dir(folder_name)
+	Saver.save_scene(self, save_path())

@@ -48,6 +48,10 @@ func icon(_icon):
 	icon = _icon
 	return self
 
+func effect_name(_effect_name):
+	effect_name = _effect_name
+	return self
+
 func process_duration_multi(dm):
 	duration(duration * dm)
 

@@ -1,12 +1,12 @@
 extends Skill
 class_name Incise
 
-var base_damage = 12
-var level_damage = 4
-var base_multi = 1.0
-var level_multi = 0.04
-var crit_chance_flat = 0.2
-var crit_multi_multi = 1.5
+var base_damage = 15
+var level_damage = 5
+var base_multi = 1.2
+var level_multi = 0.05
+var crit_chance_flat = 0.25
+var crit_multi_multi = 1.75
 
 func base_damage():
 	return base_damage + level_damage * level
