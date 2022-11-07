@@ -27,6 +27,8 @@ export (bool) var active = false
 export (int) var level = 1
 export (Array, String) var active_traits = []
 
+var entity = null setget set_entity
+
 func _ready():
 	for trait in get_traits():
 		trait.connect("slottable_updated", self, "_on_trait_updated")
@@ -38,6 +40,11 @@ func get_traits():
 
 func get_title():
 	return titles[level - 1]
+
+func set_entity(e):
+	entity = e
+	for trait in get_traits():
+		trait.entity = entity
 
 func try_allocate(trait):
 	if trait in get_traits() and trait.level_required == level and GlobalResources.get_gr_quantity(GlobalResources.GR.TRAIT_POINT) > 0:
@@ -84,6 +91,12 @@ func on_incoming_effect(effect : Effect):
 		for trait in get_traits():
 			if trait.active:
 				trait.on_incoming_effect(effect)
+
+func on_skill_used(skill : Skill):
+	if active:
+		for trait in get_traits():
+			if trait.active:
+				trait.on_skill_used(skill)
 
 func _on_trait_updated():
 	emit_signal("spec_updated")

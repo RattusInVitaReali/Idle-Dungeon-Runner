@@ -1,10 +1,10 @@
 extends Skill
 class_name DefensiveStrike
 
-var base_damage = 15
-var level_damage = 5
-var base_multi = 1.2
-var level_multi = 0.05
+var base_damage = 10
+var level_damage = 3
+var base_multi = 1.0
+var level_multi = 0.03
 
 var shielded_duration = 3
 
@@ -26,10 +26,11 @@ func do_skill():
 		CombatProcessor.DamageInfo.new(attacker, target) \
 		.phys_damage(damage)
 	)
+	attacker.remove_effect("Shielded")
 	attacker.process_outgoing_effect(
 		CombatProcessor.Shielded.instance() \
 		.initialize(attacker, attacker) \
-		.amount(damage / 2) \
+		.amount(damage / 3) \
 		.duration(shielded_duration)
 	)
 

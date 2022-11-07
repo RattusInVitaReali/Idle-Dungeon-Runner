@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Effects/Effect.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Effects/Conqueror/ConquerorEffect.gd" type="Script" id=2]
+[ext_resource path="res://RESOURCES/Effects/Conqueror.png" type="Texture" id=3]
+
+[node name="ConquerorEffect" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+icon = ExtResource( 3 )
+effect_name = "Conqueror"
+base_duration = 3600.0
+base_tick_duration = 0.0
+tick_based = false
+negative = false

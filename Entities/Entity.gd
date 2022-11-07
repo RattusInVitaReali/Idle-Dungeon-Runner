@@ -117,6 +117,7 @@ func set_skills_attacker():
 
 func connect_traits():
 	for spec in get_all_specs():
+		spec.entity = self
 		for trait in spec.get_traits():
 			trait.connect("slottable_updated", self, "update_stats")
 
@@ -316,6 +317,12 @@ func has_effect(effect_name):
 			return true
 	return false
 
+func get_effect(effect_name):
+	for ef in get_effects():
+		if ef.effect_name == effect_name:
+			return ef
+	return null
+
 func remove_effect(effect_name):
 	for ef in get_effects():
 		if ef.effect_name == effect_name:
@@ -352,7 +359,15 @@ func try_to_use_skill(skill):
 		_skill = skill.try_to_use_skill()
 		if _skill:
 			start_action_timer()
+			process_skill_used(skill)
 	return _skill
+
+func process_skill_used(skill):
+	specs_skill_used(skill)
+
+func specs_skill_used(skill):
+	for spec in get_active_specs():
+		spec.on_skill_used(skill)
 
 func process_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	calculate_outgoing_damage(damage_info)

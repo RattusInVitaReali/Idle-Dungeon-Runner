@@ -164,6 +164,7 @@ func load():
 			set(prop, instance.get(prop))
 		if instance.quest_resource != null:
 			copy_quest(instance)
+		instance.queue_free()
 	else:
 		new_quest()
 

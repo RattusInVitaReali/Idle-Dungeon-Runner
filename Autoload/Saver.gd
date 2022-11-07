@@ -30,6 +30,5 @@ func save_scene(node, path):
 	ResourceSaver.save(path, packed_scene)
 
 func save_all():
-	
 	for saveable in save_on_exit:
 		saveable.save_and_exit()

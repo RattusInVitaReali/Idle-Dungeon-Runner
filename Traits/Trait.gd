@@ -7,6 +7,11 @@ const BorderActive = preload("res://RESOURCES/SkillBorders/Border4.png")
 export (int) var level_required
 export (bool) var active setget set_active
 
+var entity
+
+func _ready():
+	CombatProcessor.connect("exited_combat", self, "_on_exited_combat")
+
 func set_active(_active):
 	if _active != active:
 		active = _active
@@ -30,6 +35,12 @@ func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	pass
 
 func on_incoming_damage(damage_info : CombatProcessor.DamageInfo):
+	pass
+
+func on_skill_used(skill : Skill):
+	pass
+
+func _on_exited_combat():
 	pass
 
 func description():

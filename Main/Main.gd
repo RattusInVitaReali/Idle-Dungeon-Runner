@@ -107,6 +107,7 @@ func _notification(what):
 
 func get_idle_rewards():
 	yield(get_tree(), "idle_frame")
+	print_stray_nodes()
 	print("Getting idle rewards")
 	if ResourceLoader.exists(save_path):
 		var elapsed_time = OS.get_unix_time() - load(save_path).idle_time

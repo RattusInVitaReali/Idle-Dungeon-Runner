@@ -205,6 +205,16 @@ _global_script_classes=[ {
 "path": "res://UI/ConfirmDialog/ConfirmDialog.gd"
 }, {
 "base": "Trait",
+"class": "Conqueror",
+"language": "GDScript",
+"path": "res://Traits/Variants/Assassination/Conqueror.gd"
+}, {
+"base": "Effect",
+"class": "ConquerorEffect",
+"language": "GDScript",
+"path": "res://Effects/Conqueror/ConquerorEffect.gd"
+}, {
+"base": "Trait",
 "class": "CoupDeGrace",
 "language": "GDScript",
 "path": "res://Traits/Variants/Assassination/CoupDeGrace.gd"
@@ -969,6 +979,8 @@ _global_script_class_icons={
 "CombatUI": "",
 "ComboSlash": "",
 "ConfirmDialog": "",
+"Conqueror": "",
+"ConquerorEffect": "",
 "CoupDeGrace": "",
 "CraftingManagerScript": "",
 "CraftingMaterial": "",

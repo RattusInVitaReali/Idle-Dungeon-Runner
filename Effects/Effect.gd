@@ -24,6 +24,9 @@ var target = null
 
 var is_crit = false
 
+func _ready():
+	CombatProcessor.connect("exited_combat", self, "_on_exited_combat")
+
 func initialize(_attacker, _target):
 	attacker = _attacker
 	target = _target
@@ -110,3 +113,6 @@ func _on_EffectTime_timeout():
 
 func _on_TickTime_timeout():
 	tick()
+
+func _on_exited_combat():
+	pass

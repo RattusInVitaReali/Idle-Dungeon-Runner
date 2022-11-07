@@ -1,8 +1,8 @@
 extends Skill
 class_name Quickness
 
-var base_amount = 100
-var level_amount = 40
+var base_amount = 90
+var level_amount = 30
 var base_duration = 3
 var level_duration = 0.1
 

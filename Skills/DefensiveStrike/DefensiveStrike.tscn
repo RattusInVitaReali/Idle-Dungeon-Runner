@@ -8,6 +8,7 @@
 [node name="DefensiveStrike" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 unlock_signal_level = 50
+base_cooldown = 7.0
 skill_name = "Defensive Strike"
 skill_icon = ExtResource( 3 )
 melee = true
