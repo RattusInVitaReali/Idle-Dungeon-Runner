@@ -88,9 +88,13 @@ func _ready():
 	CombatProcessor.connect("exited_combat", self, "exit_combat")
 	set_skills_attacker()
 	connect_traits()
+	set_effects_scale()
 
 func _process(delta):
 	next_action()
+
+func set_effects_scale():
+	$CombatEffects.scale = Vector2(10, 10) / scale
 
 func set_hp(hp):
 	stats["hp"] = round(hp)

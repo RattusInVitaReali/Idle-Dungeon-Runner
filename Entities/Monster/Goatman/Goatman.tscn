@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Entities/Monster/Monster.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Monster/Goatman/Goatman.gd" type="Script" id=2]
@@ -8,7 +8,26 @@
 [ext_resource path="res://Entities/Monster/Goatman/GoatmanAxe.tres" type="Resource" id=7]
 [ext_resource path="res://Skills/BasicAttack/BasicAttack.tscn" type="PackedScene" id=8]
 
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : hint_color = vec4(1.0);
+uniform float flash_modifier : hint_range(0.0, 1.0) = 0.0;
+
+void fragment() {
+	vec4 color = texture (TEXTURE, UV);
+	color.rgb = mix(color.rgb, flash_color.rgb, flash_modifier);
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+resource_local_to_scene = true
+shader = SubResource( 7 )
+shader_param/flash_color = Color( 1, 1, 1, 1 )
+shader_param/flash_modifier = 0.0
+
 [node name="Goatman" instance=ExtResource( 1 )]
+material = SubResource( 8 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 per_level = {

@@ -1171,6 +1171,7 @@ singletons=[  ]
 autoload=false
 CombatProcessor=NodePath("")
 vsyn=false
+"Debug game"=false
 
 [importer_defaults]
 
