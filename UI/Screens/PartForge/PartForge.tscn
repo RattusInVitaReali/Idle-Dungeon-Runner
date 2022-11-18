@@ -144,7 +144,7 @@ autowrap = true
 
 [node name="SlottableInventory" parent="VBoxContainer/Screen/VBoxContainer" index="1" instance=ExtResource( 3 )]
 margin_top = 504.0
-margin_bottom = 1168.0
+margin_bottom = 1014.0
 save_path = "user://part_forge.tscn"
 
 [node name="MaterialsDimm" type="Panel" parent="VBoxContainer/Screen/VBoxContainer/SlottableInventory" index="2"]
@@ -158,9 +158,9 @@ margin_right = -5.0
 margin_bottom = -5.0
 
 [node name="Buttons" type="HBoxContainer" parent="VBoxContainer/Screen/VBoxContainer" index="2"]
-margin_top = 1172.0
+margin_top = 1018.0
 margin_right = 1080.0
-margin_bottom = 1392.0
+margin_bottom = 1238.0
 rect_min_size = Vector2( 0, 220 )
 
 [node name="ButtonLeft" type="TextureButton" parent="VBoxContainer/Screen/VBoxContainer/Buttons" index="0"]
@@ -196,8 +196,8 @@ align = 1
 valign = 1
 
 [node name="BottomOffset" parent="VBoxContainer/Screen/VBoxContainer" index="3"]
-margin_top = 1396.0
-margin_bottom = 1616.0
+margin_top = 1242.0
+margin_bottom = 1462.0
 
 [connection signal="part_type_selected" from="VBoxContainer/Screen/VBoxContainer/Image/PartCreation/PartSelectionInventory" to="." method="_on_part_type_selected"]
 [connection signal="inspector" from="VBoxContainer/Screen/VBoxContainer/SlottableInventory" to="." method="_on_inspector"]

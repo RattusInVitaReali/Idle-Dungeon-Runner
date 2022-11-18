@@ -78,6 +78,7 @@ func _on_part_type_selected(slot):
 		selected_part = null
 	else:
 		selected_part = part
+		start_material_selection()
 
 func update_part_info(part : ItemPart = null):
 	if part != null:

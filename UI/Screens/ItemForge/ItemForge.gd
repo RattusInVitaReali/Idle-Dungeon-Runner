@@ -60,6 +60,8 @@ func _on_item_type_selected(slot):
 		selected_item = null
 	else:
 		selected_item = item
+		reset_part_selection()
+		start_part_selection()
 
 func update_item_info(item : Item = null):
 	if item != null:
