@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/Screens/Combat/Bottom/CombatBottom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Screens/Combat/Top/CombatTop.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/Screens/Combat/CombatModeButton/CombatModeButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/Screens/Combat/Combat.gd" type="Script" id=4]
 [ext_resource path="res://UI/Screens/Combat/BreakthroughButton/BreakthroughButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://RESOURCES/GuiImages/SoundOn.png" type="Texture" id=6]
+[ext_resource path="res://RESOURCES/GuiImages/MusicOff.png" type="Texture" id=7]
+[ext_resource path="res://RESOURCES/GuiImages/MusicOn.png" type="Texture" id=8]
+[ext_resource path="res://RESOURCES/GuiImages/SoundOff.png" type="Texture" id=9]
 
 [node name="Combat" type="Control"]
 anchor_right = 1.0
@@ -39,8 +43,34 @@ margin_bottom = 0.720001
 anchor_left = 1.0
 anchor_top = 1.0
 margin_left = -112.0
-margin_top = -992.0
+margin_top = -990.0
 margin_right = -112.0
-margin_bottom = -992.0
+margin_bottom = -990.0
+
+[node name="Music" type="TextureButton" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -990.0
+margin_right = 120.0
+margin_bottom = -890.0
+toggle_mode = true
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+expand = true
+
+[node name="Sound" type="TextureButton" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -870.0
+margin_right = 120.0
+margin_bottom = -770.0
+toggle_mode = true
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 9 )
+expand = true
 
 [connection signal="pressed" from="NextSkill" to="." method="_on_NextSkill_pressed"]
+[connection signal="toggled" from="Music" to="." method="_on_Music_toggled"]
+[connection signal="toggled" from="Sound" to="." method="_on_Sound_toggled"]

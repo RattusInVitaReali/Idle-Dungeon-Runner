@@ -137,3 +137,9 @@ func get_idle_rewards():
 		LootManager.idle_reward_container = null
 		for _monster in monsters:
 			_monster.queue_free()
+
+func _process(delta):
+	set_music_enabled()
+
+func set_music_enabled():
+	$BackgroundMusic.stream_paused = !GlobalSettings.music_enabled

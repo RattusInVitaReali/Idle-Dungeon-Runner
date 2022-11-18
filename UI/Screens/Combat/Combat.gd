@@ -22,3 +22,9 @@ func on_lost_focus():
 func _on_NextSkill_pressed():
 	if !CombatProcessor.auto_combat:
 		player.next_action(true)
+
+func _on_Music_toggled(button_pressed: bool) -> void:
+	GlobalSettings.music_enabled = !button_pressed
+
+func _on_Sound_toggled(button_pressed: bool) -> void:
+	GlobalSettings.sound_enabled = !button_pressed

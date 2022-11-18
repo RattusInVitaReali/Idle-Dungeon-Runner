@@ -344,6 +344,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Autoload/GlobalSaveable.gd"
 }, {
+"base": "GlobalSaveable",
+"class": "GlobalSettingsScript",
+"language": "GDScript",
+"path": "res://Autoload/GlobalSettings.gd"
+}, {
 "base": "ItemPart",
 "class": "GloveLining",
 "language": "GDScript",
@@ -1007,6 +1012,7 @@ _global_script_class_icons={
 "GlobalResourceSlottable": "",
 "GlobalResourcesScript": "",
 "GlobalSaveable": "",
+"GlobalSettingsScript": "",
 "GloveLining": "",
 "Gloves": "",
 "Goat": "",
@@ -1144,6 +1150,7 @@ GlobalResources="*res://Autoload/GlobalResources.gd"
 Progression="*res://Autoload/Progression.gd"
 Saver="*res://Autoload/Saver.gd"
 ScreenMeasurer="*res://Autoload/ScreenMeasurer.gd"
+GlobalSettings="*res://Autoload/GlobalSettings.gd"
 
 [debug]
 
