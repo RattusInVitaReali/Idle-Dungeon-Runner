@@ -84,6 +84,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Skills/BasicAttack/BasicAttack.gd"
 }, {
+"base": "AudioStreamPlayer",
+"class": "BetterAudioStreamPlayer",
+"language": "GDScript",
+"path": "res://Better/BetterAudioStreamPlayer.gd"
+}, {
 "base": "Effect",
 "class": "Bleeding",
 "language": "GDScript",
@@ -179,7 +184,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://CombatScreen/CombatScreen.gd"
 }, {
-"base": "AudioStreamPlayer",
+"base": "BetterAudioStreamPlayer",
 "class": "CombatSounds",
 "language": "GDScript",
 "path": "res://Entities/CombatSounds.gd"
@@ -960,6 +965,7 @@ _global_script_class_icons={
 "Bandit": "",
 "BanditBoss": "",
 "BasicAttack": "",
+"BetterAudioStreamPlayer": "",
 "Bleeding": "",
 "Bloodlust": "",
 "Bloodsteel": "",

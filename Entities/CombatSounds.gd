@@ -1,4 +1,4 @@
-extends AudioStreamPlayer
+extends BetterAudioStreamPlayer
 class_name CombatSounds
 
 var OnHit = preload("res://RESOURCES/Sound/Combat/OnHit.mp3")
