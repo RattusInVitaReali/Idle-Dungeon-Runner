@@ -89,6 +89,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Better/BetterAudioStreamPlayer.gd"
 }, {
+"base": "TextureButton",
+"class": "BetterTextureButton",
+"language": "GDScript",
+"path": "res://Better/BetterTextureButton.gd"
+}, {
 "base": "Effect",
 "class": "Bleeding",
 "language": "GDScript",
@@ -966,6 +971,7 @@ _global_script_class_icons={
 "BanditBoss": "",
 "BasicAttack": "",
 "BetterAudioStreamPlayer": "",
+"BetterTextureButton": "",
 "Bleeding": "",
 "Bloodlust": "",
 "Bloodsteel": "",

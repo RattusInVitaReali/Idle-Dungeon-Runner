@@ -1,16 +1,17 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://RESOURCES/GuiImages/CornerForge.png" type="Texture" id=1]
 [ext_resource path="res://UI/Screens/PartForge/PartForge.gd" type="Script" id=2]
 [ext_resource path="res://UI/SlottableInventory/SlottableInventory.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/Screens/Screen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://RESOURCES/Font/BMYEONSUNG.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://RESOURCES/GuiImages/BoardSetSmall.png" type="Texture" id=6]
+[ext_resource path="res://Better/BetterTextureButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://RESOURCES/GuiImages/Forge.png" type="Texture" id=7]
 [ext_resource path="res://RESOURCES/GuiImages/StoneBoardBorder.png" type="Texture" id=8]
 [ext_resource path="res://RESOURCES/GuiImages/DivisionLineVertical.png" type="Texture" id=9]
 [ext_resource path="res://RESOURCES/GuiImages/ParchmentLarge.png" type="Texture" id=10]
 [ext_resource path="res://UI/SlottableInventory/PartSelectionInventory/PartSelectionInventory.tscn" type="PackedScene" id=11]
+[ext_resource path="res://RESOURCES/GuiImages/BoardSetSmall.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=2]
 size = 70
@@ -163,14 +164,15 @@ margin_right = 1080.0
 margin_bottom = 1238.0
 rect_min_size = Vector2( 0, 220 )
 
-[node name="ButtonLeft" type="TextureButton" parent="VBoxContainer/Screen/VBoxContainer/Buttons" index="0"]
+[node name="ButtonLeft" parent="VBoxContainer/Screen/VBoxContainer/Buttons" index="0" instance=ExtResource( 6 )]
 margin_right = 538.0
 margin_bottom = 220.0
 size_flags_horizontal = 3
-texture_normal = ExtResource( 6 )
+size_flags_vertical = 3
+texture_normal = ExtResource( 12 )
 expand = true
 
-[node name="Label" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Buttons/ButtonLeft" index="0"]
+[node name="Label" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Buttons/ButtonLeft" index="1"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -179,15 +181,16 @@ text = "New Part"
 align = 1
 valign = 1
 
-[node name="ButtonRight" type="TextureButton" parent="VBoxContainer/Screen/VBoxContainer/Buttons" index="1"]
+[node name="ButtonRight" parent="VBoxContainer/Screen/VBoxContainer/Buttons" index="1" instance=ExtResource( 6 )]
 margin_left = 542.0
 margin_right = 1080.0
 margin_bottom = 220.0
 size_flags_horizontal = 3
-texture_normal = ExtResource( 6 )
+size_flags_vertical = 3
+texture_normal = ExtResource( 12 )
 expand = true
 
-[node name="Label" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Buttons/ButtonRight" index="0"]
+[node name="Label" type="Label" parent="VBoxContainer/Screen/VBoxContainer/Buttons/ButtonRight" index="1"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
