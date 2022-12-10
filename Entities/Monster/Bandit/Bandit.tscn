@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Entities/Monster/Bandit/BanditAnimations.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Entities/Monster/Monster.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://RESOURCES/CombatEffects/BloodSplatter3.png" type="Texture" id=11]
 [ext_resource path="res://Entities/Monster/Bandit/Loot/76_125AluminumSwordBlade.tres" type="Resource" id=12]
 [ext_resource path="res://Entities/Monster/Bandit/Loot/61_125IronSwordGuard.tres" type="Resource" id=13]
+[ext_resource path="res://Entities/Monster/Orc/Loot/OrcAxe/31_OrcAxe.tres" type="Resource" id=14]
 
 [sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
@@ -105,7 +106,7 @@ frames = ExtResource( 1 )
 animation = "die"
 script = ExtResource( 4 )
 base_name = "Bandit"
-base_loot = [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 6 ) ]
+base_loot = [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 14 ) ]
 monster_types = [ 0 ]
 
 [node name="Lacerate" parent="Skills" index="0" instance=ExtResource( 3 )]

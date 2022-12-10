@@ -32,7 +32,7 @@ func spawn_player():
 	add_child_below_node($Map, player)
 	player.connect("despawned", self, "_on_player_despawned")
 	player.position = Vector2(540, ScreenMeasurer.height - player_bottom_y)
-	player.scale = Vector2(0.33, 0.33)
+	player.scale *= Vector2(0.33, 0.33)
 	CombatProcessor.player_spawned(player)
 
 func spawn_monster():

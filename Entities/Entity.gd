@@ -257,6 +257,8 @@ func play_animation(_animation):
 		return
 	if (_animation == "hurt" and animation == "attack"):
 		return
+	if (_animation == "attack"):
+		$AnimationPlayer.play("attack")
 	stop()
 	frame = 0
 	play(_animation)

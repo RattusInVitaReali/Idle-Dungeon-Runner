@@ -1,7 +1,7 @@
 extends Node
 class_name CraftingManagerScript
 
-var debug = false
+var debug = true
 
 enum RARITY { BASIC, COMMON, UNCOMMON, RARE, EPIC, LEGENDARY }
 

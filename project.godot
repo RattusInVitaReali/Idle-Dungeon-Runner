@@ -914,6 +914,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://UI/FullScreenPopup/SlottableInspector/SkillInspector/UpgradeRequirement/UpgradeRequirement.gd"
 }, {
+"base": "Node2D",
+"class": "VisibleItem",
+"language": "GDScript",
+"path": "res://VisibleItem/VisibleItem.gd"
+}, {
 "base": "ItemPart",
 "class": "Visor",
 "language": "GDScript",
@@ -1136,6 +1141,7 @@ _global_script_class_icons={
 "Troll3": "",
 "Tunic": "",
 "UpgradeRequirement": "",
+"VisibleItem": "",
 "Visor": "",
 "Wraith": "",
 "Wraith1": "",

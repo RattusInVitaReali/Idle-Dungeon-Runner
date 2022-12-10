@@ -86,6 +86,9 @@ func exit_combat():
 
 func equip_item(item : Item):
 	.equip_item(item)
+	if item.type == CraftingManager.ITEM_TYPE.WEAPON:
+		$Weapon1.set_slottable(item)
+		$Weapon2.set_slottable(item)
 	emit_signal("items_changed")
 
 func unequip_item(item : Item):

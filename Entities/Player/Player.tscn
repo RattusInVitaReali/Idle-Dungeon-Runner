@@ -1,6 +1,6 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Entities/Player/PlayerAnimations.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Entities/Player/ModularPlayerBaseAnimations.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Skills/BasicAttack/BasicAttack.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Skills/Lacerate/Lacerate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Entities/Entity.tscn" type="PackedScene" id=4]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Skills/DefensiveStrike/DefensiveStrike.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Skills/Overpower/Overpower.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Specializations/Variants/Assassination.tscn" type="PackedScene" id=17]
+[ext_resource path="res://VisibleItem/VisibleItem.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
@@ -36,10 +37,90 @@ shader = SubResource( 7 )
 shader_param/flash_color = Color( 1, 1, 1, 1 )
 shader_param/flash_modifier = 0.0
 
+[sub_resource type="Animation" id=9]
+resource_name = "attack"
+length = 0.6
+step = 0.033
+tracks/0/type = "value"
+tracks/0/path = NodePath("Weapon1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.066, 0.132, 0.198, 0.264, 0.33, 0.561, 0.594 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -18, 9 ), Vector2( 5, 10 ), Vector2( 5, 5 ), Vector2( 9, -5 ), Vector2( -13, -8 ), Vector2( -22, -3 ), Vector2( -22, -3 ), Vector2( 0, 8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Weapon1:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.066, 0.132, 0.198, 0.264, 0.33, 0.561, 0.594 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -90.0, 75.0, 45.0, 25.0, -20.0, -75.0, -75.0, 90.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Weapon1:show_behind_parent")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.594 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Weapon2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.066, 0.132, 0.198, 0.264, 0.33, 0.561, 0.594 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 18, 9 ), Vector2( -5, 10 ), Vector2( -5, 5 ), Vector2( -9, -5 ), Vector2( 13, -8 ), Vector2( 22, -3 ), Vector2( 22, -3 ), Vector2( -2, 12 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Weapon2:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.066, 0.132, 0.198, 0.264, 0.33, 0.561, 0.594 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -165.0, -135.0, -110.0, -70.0, -20.0, -20.0, 90.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Weapon2:show_behind_parent")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.594 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
 [node name="Player" instance=ExtResource( 4 )]
 material = SubResource( 8 )
+scale = Vector2( 10, 10 )
 frames = ExtResource( 1 )
-animation = "die"
+animation = "attack"
+frame = 8
+playing = true
 script = ExtResource( 5 )
 per_level = {
 "armor": 7,
@@ -85,4 +166,26 @@ locked = false
 
 [node name="Overpower" parent="Skills" index="12" instance=ExtResource( 16 )]
 
+[node name="LargeShadow" parent="." index="3"]
+position = Vector2( 0, 28 )
+scale = Vector2( 1, 1 )
+
 [node name="Assassination" parent="Specializations" index="0" instance=ExtResource( 17 )]
+
+[node name="CombatEffects" parent="." index="8"]
+position = Vector2( 0, 0 )
+scale = Vector2( 0.5, 0.5 )
+frame = 1
+
+[node name="AnimationPlayer" parent="." index="10"]
+anims/attack = SubResource( 9 )
+
+[node name="Weapon1" parent="." index="11" instance=ExtResource( 18 )]
+show_behind_parent = true
+position = Vector2( -18, 9 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Weapon2" parent="." index="12" instance=ExtResource( 18 )]
+show_behind_parent = true
+position = Vector2( 18, 9 )
+scale = Vector2( 0.7, 0.7 )
