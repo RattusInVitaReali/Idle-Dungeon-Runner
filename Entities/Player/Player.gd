@@ -20,9 +20,19 @@ func _ready():
 	set_level(level)
 	if CraftingManager.debug:
 		set_level(500)
-	play("run")
+	play_animation("run")
 	ready = true
 	update_stats()
+
+func play_animation(_animation):
+	if (_animation == "melee" and enemy != null):
+		go_to_enemy()
+		return
+	if (_animation == "hurt" and animation == "attack"):
+		return
+	$AnimationPlayer.play("RESET")
+	yield($AnimationPlayer, "animation_finished")
+	$AnimationPlayer.play(_animation)
 
 func set_exp(value):
 	experience = value
@@ -130,9 +140,9 @@ func fake_respawn():
 	visible = true
 	set_hp(stats["max_hp"])
 	if CombatProcessor.in_combat:
-		play("idle")
+		play_animation("idle")
 	else:
-		play("run")
+		play_animation("run")
 
 func load():
 	if save_path != "" and ResourceLoader.exists(save_path):

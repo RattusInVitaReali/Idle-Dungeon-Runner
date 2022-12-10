@@ -257,8 +257,10 @@ func play_animation(_animation):
 		return
 	if (_animation == "hurt" and animation == "attack"):
 		return
-	if (_animation == "attack"):
+	if (_animation == "attack" and $AnimationPlayer.has_animation("attack")):
 		$AnimationPlayer.play("attack")
+	if (_animation == "hurt"):
+		$AnimationPlayer.play("on_hit")
 	stop()
 	frame = 0
 	play(_animation)
@@ -496,7 +498,6 @@ func take_damage_info(damage_info : CombatProcessor.DamageInfo):
 	$DamageNumberManager.new_damage_number(damage_info)
 	$CombatEffects.play_on_hit(damage_info)
 	$CombatSounds.play_on_hit()
-	$AnimationPlayer.play("on_hit")
 
 func take_damage(damage):
 	damage = round(damage)
@@ -517,13 +518,12 @@ func heal(amount):
 		set_hp(stats.max_hp)
 
 func exit_combat():
-	if position != combat_pos:
-		go_to_combat_pos()
+	go_to_combat_pos()
 
 func die():
 	dead = true
 	can_be_attacked = false
-	play("die")
+	play_animation("die")
 	emit_signal("died")
 
 func start_action_timer():
@@ -536,9 +536,9 @@ func _on_ActionTimer_timeout():
 func _on_Entity_animation_finished():
 	if animation == "attack" or animation == "attack_alt":
 		go_to_combat_pos()
-		play("idle")
+		play_animation("idle")
 	elif animation == "hurt":
-		play("idle")
+		play_animation("idle")
 	elif animation == "die":
 		yield(get_tree().create_timer(1), "timeout")
 		on_die_finished()

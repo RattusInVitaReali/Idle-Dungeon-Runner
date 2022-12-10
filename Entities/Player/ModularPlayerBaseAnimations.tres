@@ -116,7 +116,7 @@ region = Rect2( 512, 512, 64, 64 )
 
 [resource]
 animations = [ {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": false,
 "name": "attack",
 "speed": 15.0
@@ -124,12 +124,12 @@ animations = [ {
 "frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": false,
 "name": "die",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 23 ), SubResource( 22 ), SubResource( 21 ) ],
 "loop": false,
 "name": "hurt",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 26 ), SubResource( 25 ) ],
 "loop": true,

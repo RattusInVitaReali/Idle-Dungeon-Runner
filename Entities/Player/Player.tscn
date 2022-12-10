@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Entities/Player/ModularPlayerBaseAnimations.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Skills/BasicAttack/BasicAttack.tscn" type="PackedScene" id=2]
@@ -39,8 +39,8 @@ shader_param/flash_modifier = 0.0
 
 [sub_resource type="Animation" id=9]
 resource_name = "attack"
-length = 0.6
-step = 0.033
+length = 0.61
+step = 0.066
 tracks/0/type = "value"
 tracks/0/path = NodePath("Weapon1:position")
 tracks/0/interp = 1
@@ -113,14 +113,218 @@ tracks/5/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "attack" ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.066, 0.132, 0.198, 0.264, 0.33, 0.594 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 0 ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.594 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "go_to_combat_pos"
+} ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.594 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle" ],
+"method": "play_animation"
+} ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "die"
+length = 2.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "die" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Weapon1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Weapon2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "hurt"
+length = 0.15
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/flash_modifier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.02, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "idle"
+length = 1.5
+loop = true
+step = 0.33
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.33, 0.66, 0.99, 1.32 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "run"
+length = 0.595
+loop = true
+step = 0.066
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "run" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.066, 0.132, 0.198, 0.264, 0.33, 0.396, 0.462, 0.528 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Weapon2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.198, 0.264, 0.462, 0.528 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -2, 12 ), Vector2( -2, 14 ), Vector2( -2, 12 ), Vector2( -2, 14 ), Vector2( -2, 12 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Weapon1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.198, 0.264, 0.462, 0.528 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 8 ), Vector2( 0, 10 ), Vector2( 0, 8 ), Vector2( 0, 10 ), Vector2( 0, 8 ) ]
+}
 
 [node name="Player" instance=ExtResource( 4 )]
 material = SubResource( 8 )
-scale = Vector2( 10, 10 )
+scale = Vector2( 12, 12 )
 frames = ExtResource( 1 )
-animation = "attack"
-frame = 8
-playing = true
+animation = "idle"
 script = ExtResource( 5 )
 per_level = {
 "armor": 7,
@@ -174,18 +378,22 @@ scale = Vector2( 1, 1 )
 
 [node name="CombatEffects" parent="." index="8"]
 position = Vector2( 0, 0 )
-scale = Vector2( 0.5, 0.5 )
-frame = 1
+scale = Vector2( 0.4, 0.4 )
+frame = 2
 
 [node name="AnimationPlayer" parent="." index="10"]
 anims/attack = SubResource( 9 )
+anims/die = SubResource( 10 )
+anims/hurt = SubResource( 2 )
+anims/idle = SubResource( 11 )
+anims/run = SubResource( 12 )
 
 [node name="Weapon1" parent="." index="11" instance=ExtResource( 18 )]
-show_behind_parent = true
-position = Vector2( -18, 9 )
+position = Vector2( 0, 8 )
+rotation = 1.5708
 scale = Vector2( 0.7, 0.7 )
 
 [node name="Weapon2" parent="." index="12" instance=ExtResource( 18 )]
-show_behind_parent = true
-position = Vector2( 18, 9 )
+position = Vector2( -2, 12 )
+rotation = 1.5708
 scale = Vector2( 0.7, 0.7 )
