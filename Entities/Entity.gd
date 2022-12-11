@@ -21,9 +21,9 @@ export var base_stats = {
 	"magic_protection": 20.0, 
 	"crit_chance": 0.05, 
 	"crit_multi": 1.5, 
-	"action_time": 0.3, 
+	"action_time": 0.5, 
 	"action_time_manual": 0.1,
-	"action_time_auto": 0.3,
+	"action_time_auto": 0.5,
 	"manual_cd_multi": 0.33,
 	"outgoing_effect_duration_multi": 1.0,
 	"outgoing_effect_strength_multi": 1.0,
@@ -271,6 +271,8 @@ func go_to_enemy():
 		enemy_pos += Vector2(0, -70)
 	else:
 		enemy_pos += Vector2(0, 70)
+	if position == enemy_pos:
+		return
 	$Tween.interpolate_property(
 		self,
 		"position",

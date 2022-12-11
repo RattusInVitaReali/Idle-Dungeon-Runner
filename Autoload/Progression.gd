@@ -64,6 +64,11 @@ func save_path():
 
 func _ready():
 	CombatProcessor.connect("monster_died", self, "_on_monster_died")
+	if CraftingManager.debug:
+		for i in item_unlocked:
+			item_unlocked[i] = true
+		for p in item_part_unlocked:
+			item_part_unlocked[p] = true
 
 func _on_monster_died(monster, zone):
 	emit_signal("progression_monster_died", monster, zone)

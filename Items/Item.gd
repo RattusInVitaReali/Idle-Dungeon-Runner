@@ -160,6 +160,16 @@ func print_item():
 			print("- %s : %s" % [stat.capitalize(), stats[stat]])
 	print()
 
+func get_sprite_paths():
+	var base_path = CraftingManager.ITEM_TYPE.keys()[type].capitalize().replace(" ", "") + "/"
+	base_path += CraftingManager.ITEM_SUBTYPE.keys()[subtype].capitalize().replace(" ", "") + "/"
+	var sprite_paths = []
+	for part in get_children():
+		var full_path = base_path + CraftingManager.PART_TYPE.keys()[part.type].capitalize()
+		sprite_paths.append([full_path, part.mat.mat.icon_color])
+	print(sprite_paths)
+	return sprite_paths
+
 func get_draw_order():
 	var order = required_parts.duplicate()
 	order.append_array(optional_parts)

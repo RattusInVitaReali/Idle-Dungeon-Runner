@@ -111,6 +111,54 @@ tracks/6/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armor/BodyArmor/Chestplate:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "attack" ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Armor/BodyArmor/Chestplate:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Armor/BodyArmor/Shoulders:animation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "die" ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Armor/BodyArmor/Shoulders:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "hurt"
@@ -132,27 +180,6 @@ tracks/0/keys = {
 [node name="Entity" type="AnimatedSprite"]
 material = SubResource( 6 )
 script = ExtResource( 2 )
-base_stats = {
-"action_time": 0.3,
-"action_time_auto": 0.3,
-"action_time_manual": 0.1,
-"cd_multi": 1.0,
-"crit_chance": 0.05,
-"crit_multi": 1.2,
-"hp": 100.0,
-"incoming_effect_duration_multi": 1.0,
-"incoming_effect_strength_multi": 1.0,
-"magic_damage": 0.0,
-"magic_penetration": 0.0,
-"magic_protection": 20.0,
-"manual_cd_multi": 0.33,
-"max_hp": 100.0,
-"outgoing_effect_duration_multi": 1.0,
-"outgoing_effect_strength_multi": 1.0,
-"phys_damage": 10.0,
-"phys_penetration": 0.0,
-"phys_protection": 20.0
-}
 per_level = {
 "armor": 5,
 "dexterity": 3,

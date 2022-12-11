@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Entities/Player/ModularPlayerBaseAnimations.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Skills/BasicAttack/BasicAttack.tscn" type="PackedScene" id=2]
@@ -18,6 +18,8 @@
 [ext_resource path="res://Skills/Overpower/Overpower.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Specializations/Variants/Assassination.tscn" type="PackedScene" id=17]
 [ext_resource path="res://VisibleItem/VisibleItem.tscn" type="PackedScene" id=18]
+[ext_resource path="res://RESOURCES/Player/Chestplate.png" type="Texture" id=19]
+[ext_resource path="res://RESOURCES/Player/Shoulders.png" type="Texture" id=20]
 
 [sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
@@ -40,7 +42,8 @@ shader_param/flash_modifier = 0.0
 [sub_resource type="Animation" id=9]
 resource_name = "attack"
 length = 0.61
-step = 0.066
+loop = true
+step = 0.033
 tracks/0/type = "value"
 tracks/0/path = NodePath("Weapon1:position")
 tracks/0/interp = 1
@@ -165,6 +168,54 @@ tracks/9/keys = {
 "method": "play_animation"
 } ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("Armor/BodyArmor/Chestplate:animation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "attack" ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Armor/BodyArmor/Chestplate:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.066, 0.132, 0.198, 0.264, 0.33, 0.561, 0.594 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 5, 0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Armor/BodyArmor/Shoulders:animation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "attack" ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Armor/BodyArmor/Shoulders:frame")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.066, 0.132, 0.198, 0.264, 0.33, 0.561, 0.594 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 5, 0 ]
+}
 
 [sub_resource type="Animation" id=10]
 resource_name = "die"
@@ -218,6 +269,54 @@ tracks/3/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armor/BodyArmor/Chestplate:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "die" ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armor/BodyArmor/Chestplate:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armor/BodyArmor/Shoulders:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "die" ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armor/BodyArmor/Shoulders:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "hurt"
@@ -260,6 +359,54 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
+"times": PoolRealArray( 0, 0.33, 0.66, 0.99, 1.32 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Armor/BodyArmor/Chestplate:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "idle" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Armor/BodyArmor/Chestplate:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.33, 0.66, 0.99, 1.32 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armor/BodyArmor/Shoulders:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "idle" ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armor/BodyArmor/Shoulders:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0, 0.33, 0.66, 0.99, 1.32 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
@@ -319,10 +466,296 @@ tracks/3/keys = {
 "update": 1,
 "values": [ Vector2( 0, 8 ), Vector2( 0, 10 ), Vector2( 0, 8 ), Vector2( 0, 10 ), Vector2( 0, 8 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Armor/BodyArmor/Chestplate:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "run" ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Armor/BodyArmor/Chestplate:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.066, 0.132, 0.198, 0.264, 0.33, 0.396, 0.462, 0.528 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Armor/BodyArmor/Shoulders:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "run" ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Armor/BodyArmor/Shoulders:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.066, 0.132, 0.198, 0.264, 0.33, 0.396, 0.462, 0.528 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 19 )
+region = Rect2( 0, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 19 )
+region = Rect2( 64, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 19 )
+region = Rect2( 128, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 19 )
+region = Rect2( 192, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 19 )
+region = Rect2( 256, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 19 )
+region = Rect2( 320, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 19 )
+region = Rect2( 0, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 19 )
+region = Rect2( 64, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 19 )
+region = Rect2( 128, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 19 )
+region = Rect2( 192, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 19 )
+region = Rect2( 256, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 19 )
+region = Rect2( 320, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 19 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 19 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 19 )
+region = Rect2( 0, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 19 )
+region = Rect2( 64, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 19 )
+region = Rect2( 128, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 19 )
+region = Rect2( 192, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 19 )
+region = Rect2( 256, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 19 )
+region = Rect2( 320, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 19 )
+region = Rect2( 384, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 19 )
+region = Rect2( 448, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 19 )
+region = Rect2( 512, 512, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=37]
+animations = [ {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 26 ), SubResource( 25 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 20 )
+region = Rect2( 64, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 20 )
+region = Rect2( 128, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 20 )
+region = Rect2( 192, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 20 )
+region = Rect2( 256, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 20 )
+region = Rect2( 320, 768, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 20 )
+region = Rect2( 64, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 20 )
+region = Rect2( 128, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 20 )
+region = Rect2( 192, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 20 )
+region = Rect2( 256, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 20 )
+region = Rect2( 320, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 20 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 20 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 20 )
+region = Rect2( 64, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 20 )
+region = Rect2( 128, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 20 )
+region = Rect2( 192, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 20 )
+region = Rect2( 256, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 20 )
+region = Rect2( 320, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 20 )
+region = Rect2( 384, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 20 )
+region = Rect2( 448, 512, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 20 )
+region = Rect2( 512, 512, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=62]
+animations = [ {
+"frames": [ SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ) ],
+"loop": true,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 51 ), SubResource( 50 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+} ]
 
 [node name="Player" instance=ExtResource( 4 )]
 material = SubResource( 8 )
-scale = Vector2( 12, 12 )
+scale = Vector2( 14, 14 )
 frames = ExtResource( 1 )
 animation = "idle"
 script = ExtResource( 5 )
@@ -388,12 +821,28 @@ anims/hurt = SubResource( 2 )
 anims/idle = SubResource( 11 )
 anims/run = SubResource( 12 )
 
-[node name="Weapon1" parent="." index="11" instance=ExtResource( 18 )]
+[node name="Armor" type="Node2D" parent="." index="11"]
+
+[node name="BodyArmor" type="Node2D" parent="Armor" index="0"]
+
+[node name="Chestplate" type="AnimatedSprite" parent="Armor/BodyArmor" index="0"]
+frames = SubResource( 37 )
+animation = "attack"
+
+[node name="Shoulders" type="AnimatedSprite" parent="Armor/BodyArmor" index="1"]
+frames = SubResource( 62 )
+animation = "die"
+
+[node name="Weapon1" parent="." index="12" instance=ExtResource( 18 )]
+show_behind_parent = true
 position = Vector2( 0, 8 )
-rotation = 1.5708
+rotation = -1.5708
 scale = Vector2( 0.7, 0.7 )
 
-[node name="Weapon2" parent="." index="12" instance=ExtResource( 18 )]
+[node name="Weapon2" parent="." index="13" instance=ExtResource( 18 )]
+show_behind_parent = true
 position = Vector2( -2, 12 )
-rotation = 1.5708
 scale = Vector2( 0.7, 0.7 )
+
+[connection signal="items_changed" from="." to="." method="set_weapon_sprites"]
+[connection signal="items_changed" from="." to="." method="set_armor_sprites"]

@@ -94,11 +94,43 @@ func exit_combat():
 		speed_scale = 1
 		play_animation("run")
 
+func get_weapons():
+	var weapons = []
+	for item in get_items():
+		if item.type == CraftingManager.ITEM_TYPE.WEAPON:
+			weapons.append(item)
+	return weapons
+
+func get_armor():
+	var armor = []
+	for item in get_items():
+		if item.type == CraftingManager.ITEM_TYPE.ARMOR:
+			armor.append(item)
+	return armor
+
+func set_weapon_sprites():
+	var weapons = get_weapons()
+	if weapons.size() > 0:
+		$Weapon1.set_slottable(weapons[0])
+	if weapons.size() > 1:
+		$Weapon2.set_slottable(weapons[1])
+
+func set_armor_sprites():
+	for i in $Armor.get_children():
+		for j in i.get_children():
+			j.hide()
+	var armor = get_armor()
+	for piece in armor:
+		var paths = piece.get_sprite_paths()
+		for path in paths:
+			if !has_node(path[0]):
+				continue
+			var node = get_node(path[0])
+			node.show()
+			node.modulate = path[1]
+
 func equip_item(item : Item):
 	.equip_item(item)
-	if item.type == CraftingManager.ITEM_TYPE.WEAPON:
-		$Weapon1.set_slottable(item)
-		$Weapon2.set_slottable(item)
 	emit_signal("items_changed")
 
 func unequip_item(item : Item):
