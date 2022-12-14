@@ -24,6 +24,10 @@ func _ready():
 	loot += base_loot.duplicate()
 	ready = true
 	update_stats()
+	set_effects_scale()
+
+func set_effects_scale():
+	$CombatEffects.scale = Vector2(8, 8) / scale
 
 func enter_combat():
 	.enter_combat()

@@ -1187,6 +1187,10 @@ window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/Trail/plugin.cfg" )
+
 [gdnative]
 
 singletons=[  ]

@@ -246,8 +246,26 @@ func reset_part_selection():
 	selected_parts = []
 	selected_part_slots = []
 
+func forge_item(item, _parts):
+	if item.can_create(_parts):
+		var new_item = item.duplicate()
+		var new_parts = []
+		for req_part in item.required_parts:
+			for part in _parts:
+				if part.type == req_part:
+					new_parts.append(part.split(1))
+					break
+		for opt_part in item.optional_parts:
+			for part in _parts:
+				if part.type == opt_part:
+					new_parts.append(part.split(1))
+					break
+		new_item.create(new_parts)
+		return new_item
+	return null
+
 func create_item():
-	var new_item = CraftingManager.forge_item(selected_item, selected_parts)
+	var new_item = forge_item(selected_item, selected_parts)
 	if new_item != null:
 		reset_part_selection()
 		var inspector = item_confirm_inspector(new_item)

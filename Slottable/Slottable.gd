@@ -39,21 +39,23 @@ func set_quantity(quant):
 func split(quant):
 	if quant > quantity: 
 		return null
-	var new_slottable = load(filename).instance()
-	special_copy(new_slottable)
+	var new_slottable = make_copy()
 	new_slottable.quantity = quant
 	self.quantity = quantity - quant
 	emit_signal("slottable_updated")
 	return new_slottable
 
-func special_copy(new_slottable):
-	pass
+func copy(slottable : Slottable):
+	quantity = slottable.quantity
+	locked = slottable.locked
+
+func make_copy():
+	var new_slottable = load(filename).instance()
+	new_slottable.copy(self)
+	return new_slottable
 
 func same_as(slottable : Slottable):
 	return false
-
-func load():
-	pass
 
 func lock():
 	if unlock_zone_name != "" or unlock_monster_base_name != "":

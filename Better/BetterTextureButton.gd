@@ -7,4 +7,5 @@ func _ready():
 	$AudioStreamPlayer.stream = button_sound
 
 func _on_BetterTextureButton_pressed() -> void:
-	$AudioStreamPlayer.play()
+	if GlobalSettings.sound_enabled:
+		$AudioStreamPlayer.play()

@@ -77,39 +77,3 @@ onready var item_scenes = {
 	ITEM_SUBTYPE.AMULET : load("res://Items/Accessory/Amulet/Amulet.tscn"),
 	ITEM_SUBTYPE.RING : load("res://Items/Accessory/Ring/Ring.tscn")
 }
-
-func try_to_forge_part(part, material):
-	if part.can_use_material(material):
-		var new_mat = material.split(0)
-		if new_mat == null:
-			return null
-		var new_part = part.duplicate()
-		new_part.set_mat(new_mat)
-		return new_part
-	return null
-
-func actually_forge_part(part, material):
-	var new_mat = material.split(part.cost)
-	if new_mat == null:
-		return null
-	var new_part = part.duplicate()
-	new_part.set_mat(new_mat)
-	return new_part
-
-func forge_item(item, parts):
-	if item.can_create(parts):
-		var new_item = item.duplicate()
-		var new_parts = []
-		for req_part in item.required_parts:
-			for part in parts:
-				if part.type == req_part:
-					new_parts.append(part.split(1))
-					break
-		for opt_part in item.optional_parts:
-			for part in parts:
-				if part.type == opt_part:
-					new_parts.append(part.split(1))
-					break
-		new_item.create(new_parts)
-		return new_item
-	return null

@@ -27,6 +27,10 @@ var stats = {
 	"magic_penetration": 0, 
 }
 
+func copy(_mat : Slottable):
+	.copy(_mat)
+	set_mat(_mat.mat, _mat.tier, _mat.quantity)
+
 func set_mat(_mat : MaterialResource, _tier = 0, _quantity = 1):
 	mat = _mat
 	for property in get_script().get_script_property_list():
@@ -80,9 +84,6 @@ func from_lootable(lootable):
 	set_mat(lootable.material)
 	quantity = lootable.get_quantity()
 	return self
-
-func special_copy(new_material : CraftingMaterial):
-	new_material.set_mat(mat, tier, quantity)
 
 func tier_up():
 	set_mat(mat, tier + 1, quantity)

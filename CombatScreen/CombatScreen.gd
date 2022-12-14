@@ -24,15 +24,9 @@ func _ready():
 
 func spawn_player():
 	player = PlayerScene.instance()
-	if Player.save_path != "":
-		if ResourceLoader.exists(Player.save_path):
-			player.queue_free()
-			player = load(Player.save_path).instance()
-			player.load()
 	add_child_below_node($Map, player)
 	player.connect("despawned", self, "_on_player_despawned")
 	player.position = Vector2(540, ScreenMeasurer.height - player_bottom_y)
-	player.scale *= Vector2(0.33, 0.33)
 	CombatProcessor.player_spawned(player)
 
 func spawn_monster():

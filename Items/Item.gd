@@ -1,6 +1,8 @@
 extends Slottable
 class_name Item
 
+const ItemPart = preload("res://ItemParts/ItemPart.tscn")
+
 export (Texture) var base_icon
 
 export (Array, CraftingManager.PART_TYPE) var required_parts
@@ -33,6 +35,13 @@ var special = ""
 
 func _ready():
 	icon = base_icon
+
+func copy(var item : Slottable):
+	.copy(item)
+	custom_name = item.custom_name
+	for part in item.get_parts():
+		var new_part = part.make_copy()
+		add_part(new_part)
 
 func can_create(parts : Array):
 	for req_part_type in required_parts:
@@ -165,7 +174,7 @@ func get_sprite_paths():
 	base_path += CraftingManager.ITEM_SUBTYPE.keys()[subtype].capitalize().replace(" ", "") + "/"
 	var sprite_paths = []
 	for part in get_children():
-		var full_path = base_path + CraftingManager.PART_TYPE.keys()[part.type].capitalize()
+		var full_path = base_path + CraftingManager.PART_TYPE.keys()[part.type].capitalize().replace(" ", "")
 		sprite_paths.append([full_path, part.mat.mat.icon_color])
 	print(sprite_paths)
 	return sprite_paths
@@ -194,13 +203,6 @@ func same_as(item : Slottable):
 			return false
 		i += 1
 	return true
-
-func special_copy(var new_item : Item):
-	new_item.custom_name = custom_name
-	for part in get_children():
-		part.quantity += 1
-		var new_part = part.split(1)
-		new_item.add_part(new_part)
 
 func on_outgoing_damage(damage_info : CombatProcessor.DamageInfo):
 	for part in get_children():
@@ -231,7 +233,7 @@ func from_lootable(lootable):
 func load():
 	tier = 0
 	var parts = []
-	for part in get_children():
+	for part in get_parts():
 		remove_child(part)
 		parts.append(part)
 	for part in parts:

@@ -12,6 +12,8 @@ signal effect_applied
 signal died
 signal despawned
 
+const ENEMY_POS_DELTA = 100
+
 export var base_stats = { 
 	"hp": 100.0, 
 	"max_hp": 100.0, 
@@ -69,7 +71,6 @@ export var base_attributes = {
 export var level = 0
 
 export var skill_slots = 6
-export var skills_equipped = 0
 
 var stats = base_stats.duplicate()
 var attributes = base_attributes.duplicate()
@@ -88,13 +89,9 @@ func _ready():
 	CombatProcessor.connect("exited_combat", self, "exit_combat")
 	set_skills_attacker()
 	connect_traits()
-	set_effects_scale()
 
 func _process(delta):
 	next_action()
-
-func set_effects_scale():
-	$CombatEffects.scale = Vector2(10, 10) / scale
 
 func set_hp(hp):
 	stats["hp"] = round(hp)
@@ -155,18 +152,25 @@ func unequip_item(item : Item):
 	$Items.remove_child(item)
 	item.disconnect("slottable_updated", self, "update_stats")
 	update_stats()
-	LootManager.get_item(item)
+
+func remove_item(item : Item):
+	$Items.remove_child(item)
 
 func try_equip_skill(skill, value):
 	if value and can_equip_skill() and !skill.equipped:
 		skill.equipped(true)
-		skills_equipped += 1
 	elif skill.equipped and !value:
 		skill.equipped(false)
-		skills_equipped -= 1
 
 func can_equip_skill():
-	return skills_equipped < skill_slots
+	return skills_equipped_count() < skill_slots
+
+func skills_equipped_count():
+	var se = 0
+	for skill in get_skills():
+		if skill.equipped:
+			se += 1
+	return se
 
 func update_skill_levels():
 	pass
@@ -268,9 +272,9 @@ func play_animation(_animation):
 func go_to_enemy():
 	var enemy_pos = enemy.combat_pos
 	if enemy.combat_pos.y > combat_pos.y:
-		enemy_pos += Vector2(0, -70)
+		enemy_pos += Vector2(0, -ENEMY_POS_DELTA)
 	else:
-		enemy_pos += Vector2(0, 70)
+		enemy_pos += Vector2(0, ENEMY_POS_DELTA)
 	if position == enemy_pos:
 		return
 	$Tween.interpolate_property(

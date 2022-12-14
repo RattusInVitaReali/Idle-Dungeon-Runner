@@ -10,10 +10,13 @@ const skill_slot_unlock_levels = [0, 5, 30, 75, 150, 250]
 
 const trait_point_levels = [20, 40, 60, 80]
 
+const save_properties = ["level", "experience"]
+
 export var experience = 0 setget set_exp
 
 func _ready():
 	Saver.save_on_exit(self)
+	self.load()
 	CombatProcessor.connect("entered_auto_combat", self, "_on_enter_auto_combat")
 	CombatProcessor.connect("entered_manual_combat", self, "_on_enter_manual_combat")
 	LootManager.connect("item_acquired", self, "_on_item_acquired")
@@ -23,6 +26,8 @@ func _ready():
 	play_animation("run")
 	ready = true
 	update_stats()
+	set_weapon_sprites()
+	set_armor_sprites()
 
 func play_animation(_animation):
 	if (_animation == "melee" and enemy != null):
@@ -99,6 +104,8 @@ func get_weapons():
 	for item in get_items():
 		if item.type == CraftingManager.ITEM_TYPE.WEAPON:
 			weapons.append(item)
+	while weapons.size() < 2:
+		weapons.append(null)
 	return weapons
 
 func get_armor():
@@ -110,10 +117,8 @@ func get_armor():
 
 func set_weapon_sprites():
 	var weapons = get_weapons()
-	if weapons.size() > 0:
-		$Weapon1.set_slottable(weapons[0])
-	if weapons.size() > 1:
-		$Weapon2.set_slottable(weapons[1])
+	$Weapon1.set_slottable(weapons[0])
+	$Weapon2.set_slottable(weapons[1])
 
 func set_armor_sprites():
 	for i in $Armor.get_children():
@@ -135,6 +140,7 @@ func equip_item(item : Item):
 
 func unequip_item(item : Item):
 	.unequip_item(item)
+	LootManager.get_item(item)
 	emit_signal("items_changed")
 
 func get_skills_container():
@@ -177,15 +183,24 @@ func fake_respawn():
 		play_animation("run")
 
 func load():
-	if save_path != "" and ResourceLoader.exists(save_path):
-		for effect in get_effects():
-			effect.expire()
-		for dn in $DamageNumberManager.get_children():
-			dn.queue_free()
-		for item in get_items():
+	if ResourceLoader.exists(save_path):
+		var saved_scene = load(save_path)
+		var instance = saved_scene.instance()
+		for prop in save_properties:
+			set(prop, instance.get(prop))
+		for item in instance.get_items():
 			item.load()
-			item.connect("slottable_updated", self, "update_stats")
-		update_stats()
+			instance.remove_item(item)
+			equip_item(item)
+		for skill in get_skills():
+			for iskill in instance.get_skills():
+				if skill.skill_name == iskill.skill_name:
+					skill.copy(iskill)
+		for spec in get_all_specs():
+			for ispec in instance.get_all_specs():
+				if spec.specialization_name == ispec.specialization_name:
+					spec.copy(ispec)
+		instance.queue_free()
 
 func save_and_exit():
 	for effect in $Effects.get_children():

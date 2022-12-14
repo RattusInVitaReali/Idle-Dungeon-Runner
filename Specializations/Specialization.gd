@@ -35,6 +35,14 @@ func _ready():
 		if trait.slottable_name in active_traits:
 			trait.active = true
 
+func copy(spec : Specialization):
+	active = spec.active
+	level = spec.level
+	active_traits = spec.active_traits.duplicate()
+	for trait in get_traits():
+		if trait.slottable_name in active_traits:
+			trait.active = true
+
 func get_traits():
 	return get_children()
 

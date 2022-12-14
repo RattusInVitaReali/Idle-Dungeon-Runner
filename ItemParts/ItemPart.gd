@@ -53,6 +53,12 @@ var special = ""
 func _ready():
 	icon = base_icon
 
+func copy(item_part : Slottable):
+	.copy(item_part)
+	var new_mat = CraftingMaterial.instance()
+	new_mat.copy(item_part.mat)
+	set_mat(new_mat)
+
 func can_use_material(_mat : CraftingMaterial):
 	return _mat.type in allowed_material_types and _mat.quantity >= cost
 
@@ -118,11 +124,6 @@ func from_lootable(lootable):
 	var _mat = CraftingMaterial.instance().set_mat(lootable.material, lootable.tier, cost)
 	set_mat(_mat)
 	return self
-
-func special_copy(new_slottable):
-	mat.quantity += 1
-	var new_mat = mat.split(1)
-	new_slottable.set_mat(new_mat)
 
 func same_as(item_part : Slottable):
 	if item_part.slottable_type != SLOTTABLE_TYPE.ITEM_PART:

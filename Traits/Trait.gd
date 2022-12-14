@@ -12,6 +12,10 @@ var entity
 func _ready():
 	CombatProcessor.connect("exited_combat", self, "_on_exited_combat")
 
+func copy(trait : Slottable):
+	.copy(trait)
+	set_active(trait.active)
+
 func set_active(_active):
 	if _active != active:
 		active = _active

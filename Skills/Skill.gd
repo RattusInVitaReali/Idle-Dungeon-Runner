@@ -40,7 +40,16 @@ func _ready():
 	icon = skill_icon
 	locked = true # Why is this needed wtf?
 
+func copy(skill : Slottable):
+	set_level(skill.level)
+	equipped = skill.equipped
+
 func set_attacker(new_value):
+	if attacker == new_value:
+		return
+	if attacker != null:
+		attacker.disconnect("level_changed", self, "try_unlock")
+		disconnect("play_animation", attacker, "play_animation")
 	attacker = new_value
 	if attacker != null:
 		attacker.connect("level_changed", self, "try_unlock")
@@ -75,10 +84,6 @@ func get_skill_points():
 	return 1
 
 func get_skill_lotuses():
-#	if level >= 10:
-#		return round(3 * pow(level, 1.5))
-#	elif level >= 5:
-#		return level * 10
 	return 0
 
 func get_basic_spellstones():
@@ -129,7 +134,6 @@ func try_unlock(monster = null, zone = null):
 		locked(false)
 		if !attacker.ready:
 			yield(attacker, "ready")
-		attacker.try_equip_skill(self, true)
 		attacker.disconnect("level_changed", self, "try_unlock")
 
 func locked(var value):
